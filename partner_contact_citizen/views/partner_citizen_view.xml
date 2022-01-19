@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_citizen_form" model="ir.ui.view">
+        <field name="name">horanet citizen form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <!-- On agrandi la vue -->
+            <xpath expr="//sheet" position="attributes">
+                <attribute name="class">o-form-sheet-width-wider</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='company_type']" position="replace">
+                <field name="company_type" widget="radio"
+                       invisible="1"
+                       options="{'horizontal': true}"/>
+            </xpath>
+
+            <!-- On déplace le titre -->
+            <xpath expr="//div[@name='labels_title']" position="replace">
+            </xpath>
+            <xpath expr="//field[@name='title']" position="replace">
+            </xpath>
+            <xpath expr="//div[@class='oe_title']/h1" position="before">
+                <field name="title" widget="selection"
+                       domain="[('is_company_title', '=',is_company)]"
+                       attrs="{'required': [('is_company', '=', False)]}"/>
+            </xpath>
+
+            <!-- On cache le menu des ventes -->
+            <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='parent_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <!-- On cache la fonction -->
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+            <!-- On cache le fax et le site web -->
+            <!--<xpath expr="//field[@name='fax']" position="replace">-->
+            <!--</xpath>-->
+            <xpath expr="//field[@name='website']" position="replace">
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_citizen_form_other_firstname" model="ir.ui.view">
+        <field name="name">horanet citizen form other fistname</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_firstname.view_partner_form_firstname"/>
+        <field name="arch" type="xml">
+            <!-- On agrandi ce champs pour agrandir les champs nom/prénom -->
+            <xpath expr="//field[@name='lastname']" position="replace">
+                <field name="lastname" attrs="{'required': [('firstname', '=', False),('is_company', '=', False)]}"
+                       style="width: 250px;"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="citizen_kanban_view">
+        <field name="name">Citizen kanban</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <kanban class="o_res_partner_kanban">
+                <field name="id"/>
+                <field name="color"/>
+                <field name="display_name"/>
+                <field name="title"/>
+                <field name="email"/>
+                <field name="parent_id"/>
+                <field name="is_company"/>
+                <field name="function"/>
+                <field name="phone"/>
+                <field name="street"/>
+                <field name="street2"/>
+                <field name="zip"/>
+                <field name="city"/>
+                <field name="country_id"/>
+                <field name="mobile"/>
+                <field name="state_id"/>
+                <field name="category_id"/>
+                <field name="image_small"/>
+                <field name="type"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_res_partner_kanban">
+                            <div class="o_kanban_tags_section oe_kanban_partner_categories">
+                                <span class="oe_kanban_list_many2many">
+                                    <field name="subscription_category_ids"/>
+                                </span>
+                            </div>
+                            <div class="o_kanban_image">
+                                <t t-if="record.image_small.raw_value">
+                                    <img t-att-src="kanban_image('res.partner', 'image_small', record.id.raw_value)"/>
+                                </t>
+                                <t t-if="!record.image_small.raw_value">
+                                    <t t-if="record.type.raw_value === 'delivery'">
+                                        <img t-att-src='_s + "/base/static/src/img/truck.png"'
+                                             class="o_kanban_image oe_kanban_avatar_smallbox"/>
+                                    </t>
+                                    <t t-if="record.type.raw_value === 'invoice'">
+                                        <img t-att-src='_s + "/base/static/src/img/money.png"'
+                                             class="o_kanban_image oe_kanban_avatar_smallbox"/>
+                                    </t>
+                                    <t t-if="record.type.raw_value != 'invoice' &amp;&amp; record.type.raw_value != 'delivery'">
+                                        <t t-if="record.is_company.raw_value === true">
+                                            <img t-att-src='_s + "/base/static/src/img/company_image.png"'/>
+                                        </t>
+                                        <t t-if="record.is_company.raw_value === false">
+                                            <img t-att-src='_s + "/base/static/src/img/avatar.png"'/>
+                                        </t>
+                                    </t>
+                                </t>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <strong class="oe_partner_heading">
+                                    <field name="name"/>
+                                </strong>
+                                <ul>
+                                    <li>
+                                        <field name="better_contact_address"/>
+                                    </li>
+                                </ul>
+                                <div class="oe_kanban_partner_links"/>
+                            </div>
+                        </div>
+
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+</odoo>

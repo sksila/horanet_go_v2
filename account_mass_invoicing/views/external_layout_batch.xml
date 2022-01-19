@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <template id="external_layout_header_batch">
+            <div class="header">
+                <div style="position:absolute;opacity:0.25;z-index:1000;transform:rotate(300deg);
+                -webkit-transform:rotate(300deg);width:100%;bottom: 50%;">
+                    <p style="font-size:120px;">BROUILLON</p>
+                </div>
+                <div class="row">
+
+                    <div class="col-xs-3 text-right">
+                        <br></br>
+                        <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+                             style="max-height: 100px;"/>
+                    </div>
+                    <div class="col-xs-6 text-center">
+                        <br></br>
+                        <h5>
+                            <strong t-translation="on">
+                                Bordereau de lot
+                            </strong>
+                            <br></br>
+                            <br></br>
+                        </h5>
+                        <h4>
+                            <strong>
+                                <span t-field="o.name"/>
+                            </strong>
+                        </h4>
+                        <h4>
+                            <strong t-translation="on">
+                                fait le
+                                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d')"/>
+                            </strong>
+                        </h4>
+                    </div>
+
+                    <div class="col-xs-4"/>
+                </div>
+            </div>
+        </template>
+
+
+        <template id="external_layout_footer_batch">
+            <div class="footer">
+
+            </div>
+        </template>
+
+
+        <template id="external_layout_batch">
+            <!-- Multicompany -->
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"></t>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"></t>
+            </t>
+
+            <t t-call="account_mass_invoicing.external_layout_header_batch"/>
+            <t t-raw="0"/>
+            <t t-call="account_mass_invoicing.external_layout_footer_batch"/>
+        </template>
+
+    </data>
+</openerp>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="license_plates_cardmaker_export_wizard_view" model="ir.ui.view">
+        <field name="name">Add license plates on Cardmaker Export Wizard View</field>
+        <field name="model">partner.contact.identification.cardmaker.export.wizard</field>
+        <field name="inherit_id" ref="cardmaker_export.cardmaker_export_wizard_form_view"/>
+        <field name="arch" type="xml">
+
+            <field name="mapping_id" position="after">
+                <field name="use_license_plates"/>
+            </field>
+
+        </field>
+    </record>
+</odoo>

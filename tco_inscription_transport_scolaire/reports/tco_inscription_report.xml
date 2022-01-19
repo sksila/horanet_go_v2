@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="tco_inscription_transport_scolaire_report"
+            model="tco.inscription.transport.scolaire"
+            string="Inscription report"
+            name="tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report"
+            file="tco_inscription_transport_scolaire.tco_inscription_transport_scolaire_report"
+            report_type="qweb-pdf"/>
+
+    <template id="view_tco_inscription_transport_scolaire_report">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <br/>
+                        <t t-call="tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content"/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div style="margin: auto; padding: 20px; width: 700px; background-color: #FFF0AD; color: red;">
+                                <p>
+                                    <strong>
+                                        A défaut de disposer du formulaire attestant l’inscription de votre enfant dans
+                                        l’établissement scolaire retenu, vous avez la possibilité d’utiliser ce document pour
+                                        attester de son inscription après l’avoir remis au responsable d’établissement pour visa
+                                        (date, cachet et signature).
+                                    </strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="view_tco_inscription_transport_scolaire_report_content">
+        <div class="mt16 mb16">
+            <h3 class="text-center">School transport inscription report</h3>
+            <h4 class="text-center">Statut :
+                <span t-field="doc.status"/>
+            </h4>
+            <h4>Date :
+                <span t-field="doc.create_date"/>
+            </h4>
+            <h4>Inscription n°
+                <span t-field="doc.name"/>
+            </h4>
+        </div>
+        <p>
+            <b>Period</b>
+        </p>
+        <ul>
+            <li>
+                <span t-field="doc.period_id"/>
+            </li>
+            <li>Date start :
+                <span t-field="doc.period_id.date_start"/>
+            </li>
+            <li>Date end :
+                <span t-field="doc.period_id.date_end"/>
+            </li>
+        </ul>
+        <p>
+            <b>Responsible</b>
+        </p>
+        <ul>
+            <li>Title :
+                <span t-field="doc.responsible_id.title"/>
+            </li>
+            <li>Lastname :
+                <span t-field="doc.responsible_id.lastname"/>
+            </li>
+            <li>Firstname :
+                <span t-field="doc.responsible_id.firstname"/>
+            </li>
+            <li>Adress :
+                <span t-field="doc.responsible_id.street_number_id.name"/>
+                <span t-field="doc.responsible_id.street_id.name"/>
+                <span t-field="doc.responsible_id.zip_id.name"/>
+                <span t-field="doc.responsible_id.city_id.name"/>
+            </li>
+        </ul>
+        <p>
+            <b>Beneficiary</b>
+        </p>
+        <ul>
+            <li>Lastname :
+                <span t-field="doc.recipient_id.lastname"/>
+            </li>
+            <li>Firstname :
+                <span t-field="doc.recipient_id.firstname"/>
+            </li>
+            <li>Birthdate :
+                <span t-field="doc.recipient_id.birthdate_date"/>
+            </li>
+        </ul>
+        <p>
+            <b>Assist(s)</b>
+        </p>
+        <div t-if="doc.assist or doc.assist2">
+            <ul t-if="doc.assist or doc.assist2">
+                <li><span t-field="doc.assist"/>, tel:
+                    <span t-field="doc.assist_phone"/>
+                </li>
+                <li t-if="assist2"><span t-field="doc.assist2"/>, tel
+                    <span t-field="doc.assist_phone2"/>
+                </li>
+            </ul>
+        </div>
+        <div t-else="">
+            <p>Aucune personne mandatée.</p>
+        </div>
+        <p>
+            <b>School attended</b>
+        </p>
+        <ul>
+            <li>
+                <span t-field="doc.school_establishment_id.name"/>
+            </li>
+            <li>
+                Regime :
+                <span t-field="doc.regime"/>
+            </li>
+        </ul>
+        <p>
+            <b>Transport type</b>
+        </p>
+        <ul>
+            <li>
+                <span t-field="doc.transport_titre"/>
+            </li>
+        </ul>
+        <p>
+            <b>Invoice period</b>
+        </p>
+        <ul>
+            <li>
+                <span t-field="doc.invoice_period"/>
+            </li>
+        </ul>
+    </template>
+</odoo>

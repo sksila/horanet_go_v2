@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_unsubscribe_user_form" model="ir.ui.view">
+        <field name="name">Unsubscribe form view</field>
+        <field name="model">user.unsubscribe</field>
+        <field name="arch" type="xml">
+            <form string="Unsubscription">
+                <header>
+                    <button name="action_pending" string="Pending" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('status','=','pending')]}"/>
+                    <button name="action_accept" string="Accept unsubscription" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('status','in',['accepted', 'cancelled'])]}"
+                            confirm="Are you sure you want to unsubscribe the user ?
+                            He won't be able to connect afterward."/>
+                    <button name="%(action_wizard_refuse_unsubscription)d" string="Refuse unsubscription" type="action"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('status','in',['accepted', 'cancelled'])]}"
+                            context="{'default_request_id':active_id}"/>
+                    <field name="status" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div style="text-align: center;" attrs="{'invisible': [('status','!=','cancelled')]}">
+                        <label for="refuse_reason"
+                               string="This unsubscription has been refused for the following reason :"/>
+                        <field name="refuse_reason" nolabel="1" readonly="1"/>
+                    </div>
+                    <group string="Informations">
+                        <field name="user_id"/>
+                        <field name="partner_id"/>
+                        <field name="date"/>
+                        <field name="write_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_unsubscribe_user_tree" model="ir.ui.view">
+        <field name="name">Unsubscribe tree view</field>
+        <field name="model">user.unsubscribe</field>
+        <field name="arch" type="xml">
+            <tree default_order="status desc" colors="#190066:status=='pending';#005108:status=='accepted'">
+                <field name="user_id"/>
+                <field name="date"/>
+                <field name="write_date"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_search_unsubscribe_user" model="ir.ui.view">
+        <field name="name">Unsubscribe search view</field>
+        <field name="model">user.unsubscribe</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="pending_requests" string="Pending requests"
+                        domain="[('status','=','pending')]"/>
+                <filter name="accepted_requests" string="Accepted requests"
+                        domain="[('status','=','accepted')]"/>
+                <filter name="refused_requests" string="Refused requests"
+                        domain="[('status','=','refused')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_unsubscribe_users" model="ir.actions.act_window">
+        <field name="name">Unsubscriptions</field>
+        <field name="res_model">user.unsubscribe</field>
+        <field name="view_id" ref="view_unsubscribe_user_tree"/>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

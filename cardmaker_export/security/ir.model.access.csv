@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_partner_contact_identification_cardmaker_export,access_partner_contact_identification_cardmaker_export,model_partner_contact_identification_cardmaker_export,group_cardmaker_export,1,1,1,1

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_validate_partner_relations_form" model="ir.ui.view">
+        <field name="name">Relations validation wizard</field>
+        <field name="model">horanet.citizen.wizard.validate.partner.relations</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="garant_workflow" widget="statusbar"
+                           statusbar_visible="pending,validated,rejected"/>
+                </header>
+                <field name="partner_id" invisible="True"/>
+                <group>
+                    <group string="Relations to validate">
+                        <field name="garant_ids">
+                            <tree>
+                                <field name="display_name"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group string="Family record book">
+                        <field name="document_id"
+                               context="{'default_partner_id': partner_id, 'validation_wizard': True}"/>
+                        <field name="document_status"/>
+                        <field name="document_link"/>
+                    </group>
+                </group>
+                <footer>
+                    <button type="object" name="action_reject_relations"
+                            string="Reject relations"/>
+                    <button type="object" name="action_validate_relations"
+                            string="Validate relations" class="oe_highlight"/>
+                    <button type="object" name="action_change_document_status" args="['valid']"
+                            string="Validate document" class="oe_highlight oe_right"/>
+                    <button type="object" name="action_change_document_status" args="['rejected']"
+                            string="Reject document" class="oe_right"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <act_window id="action_wizard_validate_partner_relations"
+                name="Relations validation wizard"
+                res_model="horanet.citizen.wizard.validate.partner.relations"
+                view_mode="form"
+                view_id="wizard_validate_partner_relations_form"
+                target="new"/>
+</odoo>

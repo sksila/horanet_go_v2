@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Add the main menu for the application horanet collectivity-->
+    <menuitem id="menu_base_collectivity" name="Horanet GO"
+              web_icon="horanet_go,static/description/icon.png" sequence="6"/>
+
+    <!--Add the collectivity configuration menu-->
+    <menuitem id="menu_collectivity_config" name="Configuration"
+              parent="menu_base_collectivity"
+              sequence="100"/>
+
+    <!-- Add the collectivity general settings menu -->
+    <menuitem id="menu_collectivity_general_settings" name="Settings"
+              parent="menu_collectivity_config"
+              action="horanet_go.action_collectivity_generic_settings" sequence="0"
+              groups="base.group_system"/>
+
+    <!-- menu Partner category -->
+    <menuitem id="menu_subscription_partner_category" name="Partner categories"
+              parent="menu_collectivity_config"
+              action="horanet_go.action_partner_category"
+              groups="base.group_system"
+              sequence="50"/>
+</odoo>

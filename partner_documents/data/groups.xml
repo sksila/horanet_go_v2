@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Read Documents -->
+    <record id="group_read_document" model="res.groups">
+        <field name="name">Read Document</field>
+        <field name="category_id" ref="base.module_category_document_management"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="menu_access" eval="[(6,0, [])]"/>
+    </record>
+
+    <!-- Manage Documents -->
+    <record id="group_manage_document" model="res.groups">
+        <field name="name">Manage Document</field>
+        <field name="category_id" ref="base.module_category_document_management"/>
+        <field name="implied_ids" eval="[(4, ref('group_read_document'))]"/>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+</odoo>

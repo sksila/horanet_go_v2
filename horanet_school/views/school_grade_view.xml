@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_school_grade_view_form" model="ir.ui.view">
+        <field name="name">horanet_school_grade form</field>
+        <field name="model">horanet.school.grade</field>
+        <field name="arch" type="xml">
+            <form string="School grade">
+                <sheet>
+                    <group></group>
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group></group>
+                    <group string="Properties">
+                        <group>
+                            <field name="school_cycle_id" options="{'no_open': False}"></field>
+                        </group>
+                        <group></group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_school_grade_view_tree" model="ir.ui.view">
+        <field name="name">horanet_school_grade tree</field>
+        <field name="model">horanet.school.grade</field>
+        <field name="arch" type="xml">
+            <tree string="School grade">
+                <field name="name"/>
+                <field name="school_cycle_id"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="horanet_school_grade_action" model="ir.actions.act_window">
+        <field name="name">School Grades</field>
+        <field name="res_model">horanet.school.grade</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_school_grade_view_tree"/>
+    </record>
+</odoo>

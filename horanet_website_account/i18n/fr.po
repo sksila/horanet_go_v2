@@ -1,0 +1,501 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_website_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-08 14:31+0000\n"
+"PO-Revision-Date: 2018-06-08 14:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "* City"
+msgstr "* Ville"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "* Street"
+msgstr "* Rue"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "* Street n°"
+msgstr "* N°"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "* Zipcode"
+msgstr "* Code postal"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "<b>Invoice address (if different)</b>\n"
+"                                                    <br/>\n"
+"                                                    <br/>"
+msgstr "<b>Adresse de facturation (si différente)</b>\n"
+"                                                    <br/>\n"
+"                                                    <br/>"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "<b>Shipping address (if different)</b>\n"
+"                                                    <br/>\n"
+"                                                    <br/>"
+msgstr "<b>Adresse de livraison (si différente)</b>\n"
+"                                                    <br/>\n"
+"                                                    <br/>"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_image
+msgid "Choose an image"
+msgstr "Choisissez une image"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_image
+msgid "Submit"
+msgstr "Soumettre"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/partner.py:96
+#, python-format
+msgid "A phone or a mobile phone is required"
+msgstr "Un numéro de téléphone ou de mobile est nécessaire"
+
+#. module: horanet_website_account
+#: model:ir.model.fields,field_description:horanet_website_account.field_res_partner_ape_code
+#: model:ir.model.fields,field_description:horanet_website_account.field_res_users_ape_code
+msgid "APE code"
+msgstr "Code APE"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+msgid "APE number"
+msgstr "Numéro APE"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.create_employee
+#: model:ir.ui.view,arch_db:horanet_website_account.modal_dialog_create_employee_template
+msgid "Add a new employee"
+msgstr "Ajouter un nouvel employé"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/address.py:88
+#: code:addons/horanet_website_account/tools/address.py:134
+#: code:addons/horanet_website_account/tools/address.py:180
+#, python-format
+msgid "Address fields missing"
+msgstr "Champs d'adresse manquants"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.portal_my_company_menu
+msgid "Alerts"
+msgstr "Notifications"
+
+#. module: horanet_website_account
+#: model:ir.model.fields,field_description:horanet_website_account.field_collectivity_config_settings_manage_employees
+msgid "Allow professionals to manage their employees"
+msgstr "Autorise les professionnels à gérer leurs employés"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "Birthdate"
+msgstr "Date de naissance"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/partner.py:49
+#, python-format
+msgid "Birthdate is incorrect"
+msgstr "La date de naissance est incorrecte"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.modal_dialog_create_employee_template
+msgid "Close"
+msgstr "Fermer"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+msgid "Company type"
+msgstr "Type d'entreprise"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.create_employee
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "Confirm\n"
+"                                            <span class=\"fa fa-long-arrow-right\"/>"
+msgstr "Valider\n"
+"<span class=\"fa fa-long-arrow-right\"/>"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "Contact Details"
+msgstr "Détails du contact"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "Contact address"
+msgstr "Adresse de contact"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "Contact informations"
+msgstr "Informations de contact"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "Country"
+msgstr "Pays"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.my_company
+msgid "Create new employee"
+msgstr "Créer un nouvel employé"
+
+#. module: horanet_website_account
+#: model:ir.model.fields,field_description:horanet_website_account.field_collectivity_config_settings_custom_front_view_id
+msgid "Custom front view"
+msgstr "Vue de personnalisation"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.website_account_configuration_form
+msgid "Custom partner informations of Front Office"
+msgstr "Personnalisation des informations du partenaire sur le site web "
+
+#. module: horanet_website_account
+#: model:ir.model.fields,field_description:horanet_website_account.field_base_config_settings_country_id
+msgid "Default country used for portal users"
+msgstr "Pays par défault des utilisateurs du portail"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.create_employee
+msgid "Edit an employee"
+msgstr "Editer un employé"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.my_company
+msgid "Edit employee informations"
+msgstr "Editer les informations de l'employé"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.my_company
+msgid "Employees list"
+msgstr "Liste des employés"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/partner.py:147
+#, python-format
+msgid "Enter a valid SIRET or SIREN number."
+msgstr "Veuillez saisir un numéro SIRET/SIREN correct."
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/partner.py:113
+#, python-format
+msgid "Enter a valid family quotient."
+msgstr "Veuillez entrez un quotient familial correct."
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "Family quotient"
+msgstr "Quotient familial"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+msgid "Firstname"
+msgstr "Prénom"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/partner.py:108
+#, python-format
+msgid "Firstname is missing"
+msgstr "Prénom manquant"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.create_employee_body
+msgid "Function"
+msgstr "Poste"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/partner.py:63
+#, python-format
+msgid "Incorrect email ! Please enter a valid email address."
+msgstr "Courriel incorrect ! Veuillez entrer un courriel valide."
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "Invoice address"
+msgstr "Adresse de facturation"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+msgid "Lastname"
+msgstr "Nom"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/partner.py:105
+#, python-format
+msgid "Lastname is missing"
+msgstr "Nom manquant"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.create_employee_body
+msgid "Mobile"
+msgstr "Portable"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.create_employee
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+#: model:ir.ui.view,arch_db:horanet_website_account.my_company
+msgid "My Account"
+msgstr "Mon compte"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.create_employee
+#: model:ir.ui.view,arch_db:horanet_website_account.my_company
+#: model:ir.ui.view,arch_db:horanet_website_account.portal_my_company_menu
+msgid "My Company"
+msgstr "Mon entreprise"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.my_company
+msgid "My Company details"
+msgstr "Les détails de mon entreprise"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "My informations"
+msgstr "Mes informations"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "Name"
+msgstr "Nom"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "New Street"
+msgstr "Nouvelle rue"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "Other informations"
+msgstr "Autres informations"
+
+#. module: horanet_website_account
+#: model:ir.model,name:horanet_website_account.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: horanet_website_account
+#: model:ir.model.fields,help:horanet_website_account.field_collectivity_config_settings_manage_employees
+msgid "Professionals will have access to the My Company tab and will manage their employees."
+msgstr "Les professionnels auront accès à l'onglet Mon Entreprise et pourrons gérer leurs employés."
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.my_company
+msgid "Remove employee"
+msgstr "Supprimer l'employé"
+
+#. module: horanet_website_account
+#: model:ir.model.fields,field_description:horanet_website_account.field_collectivity_config_settings_required_ape_code
+msgid "Required ape code"
+msgstr "Code APE requis"
+
+#. module: horanet_website_account
+#: model:ir.model.fields,field_description:horanet_website_account.field_collectivity_config_settings_required_siret_code
+msgid "Required siret code"
+msgstr "SIRET/SIREN requis"
+
+#. module: horanet_website_account
+#: model:ir.model.fields,field_description:horanet_website_account.field_collectivity_config_settings_required_vat_number
+msgid "Required vat number"
+msgstr "Numéro TVA requis"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.create_employee
+msgid "Return"
+msgstr "Retour"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+msgid "SIREN / SIRET"
+msgstr "SIREN / SIRET"
+
+#. module: horanet_website_account
+#: model:ir.model.fields,field_description:horanet_website_account.field_res_partner_siret_code
+#: model:ir.model.fields,field_description:horanet_website_account.field_res_users_siret_code
+msgid "SIRET/SIREN"
+msgstr "SIRET/SIREN"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.modal_dialog_create_employee_template
+msgid "Save changes"
+msgstr "Sauvegarder"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+msgid "Second Firstname"
+msgstr "Deuxième prénom"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+msgid "Second Lastname"
+msgstr "Deuxième nom"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "Second street additional (building, access)"
+msgstr "Deuxième complément d'adresse (bâtiment, porte)"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+msgid "Select a type"
+msgstr "Sélectionnez un type"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "Select..."
+msgstr "Sélectionnez..."
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "Shipping address"
+msgstr "Adresse de livraison"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/partner.py:69
+#, python-format
+msgid "Some required fields are empty."
+msgstr "Certains champs obligatoires sont vides."
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "Street additional (floor, stairs, apartment number)"
+msgstr "Complément d'adresse (n° appartement, escalier, étage)"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "Street not referenced"
+msgstr "Rue non référencée"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/address.py:84
+#: code:addons/horanet_website_account/tools/address.py:130
+#: code:addons/horanet_website_account/tools/address.py:176
+#, python-format
+msgid "Street number field is incorrectly formatted"
+msgstr "Le numéro de rue n'est pas correct"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/image.py:57
+#, python-format
+msgid "The image file used for avatar is invalid. Accepted formats are jpeg, jpg and png"
+msgstr "L'image utilisé pour l'avatar n'est pas valide. Les formats acceptés sont jpeg, jpg et png"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/address.py:73
+#: code:addons/horanet_website_account/tools/address.py:119
+#: code:addons/horanet_website_account/tools/address.py:165
+#, python-format
+msgid "The street is not correctly set"
+msgstr "La rue n'est pas correctement sélectionnée"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+msgid "Title"
+msgstr "Civilité"
+
+#. module: horanet_website_account
+#: code:addons/horanet_website_account/tools/partner.py:102
+#, python-format
+msgid "Title is missing"
+msgstr "La civilité est manquante"
+
+#. module: horanet_website_account
+#: model:ir.model.fields,help:horanet_website_account.field_base_config_settings_country_id
+msgid "Used to set the default country value on website \"My personal informations\" page"
+msgstr "Utilisé pour définir le pays par défault sur la page \"Mes informations personnelles\""
+
+#. module: horanet_website_account
+#: model:ir.model.fields,field_description:horanet_website_account.field_res_partner_vat_number
+#: model:ir.model.fields,field_description:horanet_website_account.field_res_users_vat_number
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+msgid "VAT number"
+msgstr "Numéro TVA"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.website_account_configuration_form
+msgid "Warning! Check before if fields are not invisible in the custom view."
+msgstr "Attention! Veuillez vérifier que les champs selectionnés ne soient pas invisibles dans la vue de personnalisation."
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+msgid "Your details"
+msgstr "Vos informations"
+
+#. module: horanet_website_account
+#: model:ir.model,name:horanet_website_account.model_base_config_settings
+msgid "base.config.settings"
+msgstr "base.config.settings"
+
+#. module: horanet_website_account
+#: model:ir.model,name:horanet_website_account.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.custom_partner_informations_front_view
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_informations
+msgid "select title"
+msgstr "choisir une civilité"
+
+#. module: horanet_website_account
+#: model:ir.ui.view,arch_db:horanet_website_account.horanet_my_details
+#: model:ir.ui.view,arch_db:horanet_website_account.invoice_partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.partner_address
+#: model:ir.ui.view,arch_db:horanet_website_account.shipping_partner_address
+msgid "select..."
+msgstr "sélectionner..."

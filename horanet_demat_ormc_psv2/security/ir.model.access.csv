@@ -1,0 +1,29 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+default_access_pes_ref_value_read, Default read access on pes.referential.value,model_pes_referential_value,,1,0,0,0
+
+access_pes_domain_read,Read access on pes.domain,model_pes_domain,base.group_user,1,0,0,0
+access_pes_ref_read,Read access on pes.referential,model_pes_referential,base.group_user,1,0,0,0
+access_pes_bloc_attrs_read,Read access on pes.bloc.attrs,model_pes_bloc_attrs,base.group_user,1,0,0,0
+access_pes_input_object_read,Read access on pes.input.object,model_pes_input_object,base.group_user,1,0,0,0
+access_pes_bloc_read,Read access on pes.bloc,model_pes_bloc,base.group_user,1,0,0,0
+access_pes_file_read,Read access on pes.file,model_pes_file,base.group_user,1,0,0,0
+access_pes_file_type_read,Read access on pes.file.type,model_pes_file_type,base.group_user,1,0,0,0
+access_pes_ref_value_read,Read access on pes.referential.value,model_pes_referential_value,base.group_user,1,0,0,0
+access_pes_declaration_read,Read access on pes.declaration,model_pes_declaration,base.group_user,1,0,0,0
+access_pes_declaration_file_read,Read access on pes.declaration.file,model_pes_declaration_file,base.group_user,1,0,0,0
+access_pes_message_user,pes.message user,model_pes_message,group_center_user,1,0,0,0
+access_pes_application_user,pes.application user,model_pes_application,group_center_user,1,0,0,0
+
+access_pes_domain,Full access on pes.domain,model_pes_domain,horanet_demat_ormc_psv2.group_admin_ormc_psv2,1,1,1,1
+access_pes_ref,Full access on pes.referential,model_pes_referential,horanet_demat_ormc_psv2.group_admin_ormc_psv2,1,1,1,1
+access_pes_bloc_attrs,Full access on pes.bloc.attrs,model_pes_bloc_attrs,horanet_demat_ormc_psv2.group_admin_ormc_psv2,1,1,1,1
+access_pes_input_object,Full access on pes.input.object,model_pes_input_object,horanet_demat_ormc_psv2.group_admin_ormc_psv2,1,1,1,1
+access_pes_bloc,Full access on pes.bloc,model_pes_bloc,horanet_demat_ormc_psv2.group_admin_ormc_psv2,1,1,1,1
+access_pes_file,Full access on pes.file,model_pes_file,horanet_demat_ormc_psv2.group_admin_ormc_psv2,1,1,1,1
+access_pes_file_type,Full access on pes.file.type,model_pes_file_type,horanet_demat_ormc_psv2.group_admin_ormc_psv2,1,1,1,1
+access_pes_ref_value,Full access on pes.referential.value,model_pes_referential_value,horanet_demat_ormc_psv2.group_admin_ormc_psv2,1,1,1,1
+access_pes_declaration,Full access on pes.declaration,model_pes_declaration,horanet_demat_ormc_psv2.group_admin_ormc_psv2,1,1,1,1
+access_pes_declaration_file,Full access on pes.declaration.file,model_pes_declaration_file,horanet_demat_ormc_psv2.group_admin_ormc_psv2,1,1,1,1
+access_pes_message_manager,pes.message manager,model_pes_message,group_center_manager,1,1,1,1
+access_pes_application_manager,pes.application manager,model_pes_application,group_center_manager,1,1,1,1

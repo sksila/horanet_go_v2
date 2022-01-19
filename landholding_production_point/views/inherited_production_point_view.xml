@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="inherited_production_point_view_form" model="ir.ui.view">
+        <field name="name">production.point.inherited.form</field>
+        <field name="model">production.point</field>
+        <field name="inherit_id" ref="environment_production_point.production_point_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group[1]" position="replace">
+                <group>
+                    <field name="bati_id"/>
+                    <field name="display_address" invisible="1"/>
+                    <label for="zip_id" string="Address" invisible="1"/>
+                    <div invisible="1">
+                        <field name="state_id" placeholder="State..."/>
+                        <field name="zip_id" placeholder="ZIP" class="h_address_zip"/>
+                        <field name="city_id" placeholder="City" class="h_address_city"/>
+                        <field name="street_number_id" placeholder="Street number..."/>
+                        <field name="street_id" placeholder="Street..."/>
+                        <field name="street2" placeholder="Additional address (floor, stairs, apartment number) ..."/>
+                        <field name="street3" placeholder="Second additional address (building, access) ..."/>
+                        <field name="country_id" placeholder="Country ..."/>
+                    </div>
+                    <button name="action_geolocalize" type="object" string="Localize"
+                            attrs="{'invisible': [('display_address', '=', False)]}"/>
+                </group>
+            </xpath>
+
+
+        </field>
+    </record>
+</odoo>

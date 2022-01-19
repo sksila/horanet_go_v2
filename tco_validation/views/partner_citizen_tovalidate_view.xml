@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_citizen_tovalidate" model="ir.ui.view">
+        <field name="name">Partner validate form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <field name="address_workflow" invisible="1"/>
+                    <field name="garant_workflow" invisible="1"/>
+                    <field name="is_address_valid" invisible="1"/>
+                    <field name="is_garant_valid" invisible="1"/>
+                    <button type="action" name="tco_validation.action_wizard_validate_partner_address"
+                            class="oe_highlight"
+                            context="{'default_partner_id': active_id}"
+                            attrs="{'invisible': [('is_address_valid', '=', True)]}">
+                        <span>Validate address</span>
+                    </button>
+                    <button type="action" name="tco_validation.action_wizard_validate_partner_relations"
+                            class="oe_highlight"
+                            context="{'default_partner_id': active_id}"
+                            attrs="{'invisible': [('is_garant_valid', '=', True)]}">
+                        <span>Validate relations</span>
+                    </button>
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_tree_horanet_citizen_tovalidate" model="ir.ui.view">
+        <field name="name">horanet.citizen.tovalidate.view.tree</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree string="Partners to validate">
+                <field name="display_name"/>
+                <field name="garant_workflow"/>
+                <field name="address_workflow"/>
+                <field name="create_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="partner_tovalidate_action" model="ir.actions.act_window">
+        <field name="name">Partners to validate</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain"
+               eval="['|', ('is_address_valid', '=', False),
+                           ('is_garant_valid', '=', False),
+                           ('is_company', '=', False)]"/>
+    </record>
+
+    <record id="act_citizen_tovalidate_form_view" model="ir.actions.act_window.view">
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="tco_validation.view_form_citizen_tovalidate"/>
+        <field name="act_window_id" ref="partner_tovalidate_action"/>
+        <field eval="2" name="sequence"/>
+    </record>
+
+    <record id="act_citizen_tovalidate_tree_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="tco_validation.view_tree_horanet_citizen_tovalidate"/>
+        <field name="act_window_id" ref="partner_tovalidate_action"/>
+    </record>
+</odoo>

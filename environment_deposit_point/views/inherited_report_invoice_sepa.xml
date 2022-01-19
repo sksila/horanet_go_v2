@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_invoice_document_sepa_deposit_point" name="Deposit point usages">
+            <!-- LISTE DES APPORTS VOLONTAIRES -->
+            <t t-set="list_tags_usages" t-value="o.get_dict_tags_usages()"/>
+            <t t-if="list_tags_usages and list_tags_usages[0].get('usages')">
+                <div style="text-align: center; background-color: gainsboro;">
+                   <strong> <span style="text-decoration: underline;font-size: 18px;">Détail des apports réalisés</span> </strong>
+                </div>
+                <br/>
+                <t t-foreach="list_tags_usages" t-as="tag">
+                    <t t-if="tag.get('usages')">
+                        <div class="row">
+                            <span style="font-size:10px;">
+                                Carte
+                                - n° puce : <t t-esc="tag.get('chip_number')"/>
+                                - Nombre d'apports : <t t-esc="tag.get('usage_quantity')"/>
+                            </span>
+                            <br/>
+                            <t t-foreach="tag.get('usages')" t-as="usage">
+                                <div class="col-xs-2" style="border: 1px solid black; text-align:center; height: 22px; font-size: 10px;">
+                                    <span t-field="usage.usage_date"/>
+                                </div>
+                            </t>
+                        </div>
+                        <br/>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_partner_contact_identification_assignation" model="ir.ui.view">
+        <field name="name">Add Packages on assignation form</field>
+        <field name="model">partner.contact.identification.assignation</field>
+        <field name="inherit_id"
+               ref="partner_contact_identification.view_form_partner_contact_identification_assignation"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='reference']" position="inside">
+                <field name="package_id" attrs="{'invisible': [('package_id', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

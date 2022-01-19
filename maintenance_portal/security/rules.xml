@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="portal_see_own_equipment" model="ir.rule">
+        <field name="name">Portal users see their own equipment only</field>
+        <field name="model_id" ref="maintenance.model_maintenance_equipment"/>
+        <field name="domain_force">[('owner_partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+    </record>
+
+    <record id="portal_see_own_maintenance_requests" model="ir.rule">
+        <field name="name">Portal users see their own maintenance requests only</field>
+        <field name="model_id" ref="maintenance.model_maintenance_request"/>
+        <field name="domain_force">[('equipment_id.owner_partner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+    </record>
+</odoo>

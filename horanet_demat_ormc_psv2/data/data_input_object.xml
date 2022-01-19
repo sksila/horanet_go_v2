@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="pes_input_object_1" model="pes.input.object">
+            <field name="name">Facture</field>
+            <field name="code">account_invoice</field>
+            <field name="model">account.invoice</field>
+        </record>
+        <record id="pes_input_object_2" model="pes.input.object">
+            <field name="name">Ligne Facture</field>
+            <field name="code">account_invoice_line</field>
+            <field name="model">account.invoice.line</field>
+        </record>
+        <record id="pes_input_object_5" model="pes.input.object">
+            <field name="name">Objet Ligne Facture</field>
+            <field name="code">account_invoice_line_obj</field>
+            <field name="model">account.invoice.line</field>
+        </record>
+        <record id="pes_input_object_3" model="pes.input.object">
+            <field name="name">Objet Facture</field>
+            <field name="code">account_invoice_obj</field>
+            <field name="model">account.invoice</field>
+        </record>
+        <record id="pes_input_object_4" model="pes.input.object">
+            <field name="name">Objet Ligne Facture</field>
+            <field name="code">account_invoice_line_obj</field>
+            <field name="model">account.invoice.line</field>
+        </record>
+        <record id="pes_input_object_6" model="pes.input.object">
+            <field name="name">Ecriture Comptable</field>
+            <field name="code">account_move_line</field>
+            <field name="model">account.move.line</field>
+        </record>
+        <record id="pes_input_object_7" model="pes.input.object">
+            <field name="name">Objet Ecriture Comptable</field>
+            <field name="code">account_move_line_obj</field>
+            <field name="model">account.move.line</field>
+        </record>
+    </data>
+</odoo>

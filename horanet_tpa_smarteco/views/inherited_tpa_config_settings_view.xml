@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Add SmartEco TPA Settings view in horanet_go settings -->
+        <record id="view_form_collectivity_config_settings" model="ir.ui.view">
+            <field name="name">SmartEco TPA Settings</field>
+            <field name="model">collectivity.config.settings</field>
+            <field name="inherit_id" ref="horanet_go.view_form_collectivity_config_settings"/>
+
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='tpa_settings']" position="inside">
+                    <group colspan="2">
+                        <h3>SmartEco TPA Settings</h3>
+                        <newline/>
+                        <group name="tpa_smarteco">
+                            <field name="tpa_smarteco_url"/>
+                            <field name="tpa_smarteco_name_method_partner"/>
+                            <field name="tpa_smarteco_is_enable"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

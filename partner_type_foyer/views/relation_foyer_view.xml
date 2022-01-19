@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_relation_foyer_view_form" model="ir.ui.view">
+        <field name="name">horanet.relation.foyer.form</field>
+        <field name="model">horanet.relation.foyer</field>
+        <field name="arch" type="xml">
+            <form string="Relation partner &lt;-&gt; foyer">
+                <sheet>
+                    <group string="Relation between" col="5">
+                        <group colspan="4">
+                            <field name="partner_id"
+                                   context="{'default_partner_id': active_id,'partner_view_mode' : 'citizen'}"
+                                   readonly="context.get('readonly_partner_id', False)"/>
+                            <field name="foyer_id" placeholder="Select a foyer"
+                                   context="{'default_is_company': True, 'default_name': 'Foyer',
+                                       'form_view_ref':'partner_contact_citizen.horanet_foyer_view_form',
+                                       'tree_view_ref': 'partner_contact_citizen.horanet_foyer_view_tree',
+                                       'search_foyer': True,
+                                       'partner_view_mode' : 'foyer'}"
+
+                            />
+                            <!--context="{'default_foyer_member_ids': [active_id]}"-->
+                        </group>
+                        <group>
+                        </group>
+                    </group>
+                    <group string="Relation options">
+                        <group>
+                            <field name="begin_date" placeholder="Optional" widget="date"/>
+                            <field name="end_date" placeholder="Optional" widget="date"/>
+                        </group>
+                        <group>
+                            <field name="is_valid"/>
+                            <field name="is_responsible"/>
+                        </group>
+                    </group>
+                    <group string="Foyer current active members">
+                        <field name="foyer_active_partners" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_relation_foyer_view_tree" model="ir.ui.view">
+        <field name="name">horanet.relation.foyer.tree</field>
+        <field name="model">horanet.relation.foyer</field>
+        <field name="arch" type="xml">
+            <tree string="Foyers">
+                <field name="foyer_id"/>
+                <field name="partner_id"/>
+                <field name="begin_date"/>
+                <field name="end_date"/>
+                <field name="is_valid"/>
+                <field name="is_responsible"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="horanet_relation_foyer_action" model="ir.actions.act_window">
+        <field name="name">Foyer relation Management</field>
+        <field name="res_model">horanet.relation.foyer</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_relation_foyer_view_tree"/>
+    </record>
+</odoo>
+

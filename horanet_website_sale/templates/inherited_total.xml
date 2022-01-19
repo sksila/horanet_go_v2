@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Hide tax and subtotal lines if tax is null and if config is set to hide it -->
+    <template id="hide_tax_if_null_in_total" inherit_id="website_sale.total">
+        <xpath expr="//div[@id='cart_total']//div[@id='order_total_untaxed']" position="attributes">
+            <attribute
+                    name="t-if">not request.env['res.config.settings'].get_hide_taxes_and_subtotal() or website_sale_order.amount_tax and float(website_sale_order.amount_tax) != 0.0
+            </attribute>
+        </xpath>
+        <xpath expr="//div[@id='cart_total']//div[@id='order_total_taxes']" position="attributes">
+            <attribute
+                    name="t-if">not request.env['res.config.settings'].get_hide_taxes_and_subtotal() or website_sale_order.amount_tax and float(website_sale_order.amount_tax) != 0.0
+            </attribute>
+        </xpath>
+    </template>
+</odoo>

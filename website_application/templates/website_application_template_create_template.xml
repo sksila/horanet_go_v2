@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="create_request_application_template">
+        <!-- Modal dialog template for documents -->
+        <t t-call="partner_documents.modal_add_document"/>
+
+        <div class="application_add_documents">
+            <h1 class="col-md-offset-2">
+                <t t-esc="request_template.name"/>
+            </h1>
+
+            <t t-if="request_template.description">
+                <p class="col-md-offset-2">
+                    <t t-raw="request_template.description"/>
+                </p>
+            </t>
+
+            <t t-if="len(stages) > 1">
+                <div class="col-md-offset-2">
+                    <ul id="breadcrumb-arrow">
+                        <t t-foreach="stages" t-as="stage">
+                            <li t-att-class="current_stage == stage and 'current active' or ''">
+                                <span>
+                                    <t t-esc="stage"/>
+                                </span>
+                            </li>
+                        </t>
+                    </ul>
+                </div>
+            </t>
+
+            <p t-if="required_document_types"
+               class="col-md-offset-2 col-md-9 alert alert-danger"
+               t-att-style="current_stage != stages[0] and 'display: none'">
+                <t t-foreach="required_document_types" t-as="document_type">
+                    <b>
+                        <t t-esc="document_type.name"/>
+                        <t t-if="document_type.validity_period">
+                            dated from
+                            <t t-esc="document_type.validity_period"/>
+                            months or less
+                        </t>
+                    </b>
+                    <br/>
+                </t>
+            </p>
+
+            <form method="POST" enctype="multipart/form-data" class="form-horizontal mt32">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <input type="hidden" name="request_template" t-att-value="request_template"/>
+                <input type="hidden" name="stages" t-att-value="stages"/>
+                <input type="hidden" name="current_stage" t-att-value="current_stage"/>
+
+                <t t-if="request_template.is_recipient_to_select">
+                    <div t-attf-class="form-group form-inline"
+                         t-att-style="current_stage != stages[0] and 'display: none'">
+                        <label class="col-md-3 control-label" for="recipient_id">Recipient</label>
+                        <div class="col-md-7">
+                            <select class="form-control" name="recipient_id" style="width: 100%;">
+                                <option value="no_one">Select a recipient</option>
+                                <t t-foreach="recipients" t-as="recipient">
+                                    <option t-att-value="recipient.id"
+                                            t-att-selected="post.get('recipient_id', False) == str(recipient.id)
+                                            or len(recipients) == 1">
+                                        <t t-esc="recipient.name"/>
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                    </div>
+                </t>
+
+                <t t-if="required_document_types">
+                    <t t-foreach="required_document_types" t-as="document_type">
+                        <div t-attf-class="form-group form-inline"
+                             t-att-style="current_stage != stages[0] and 'display: none'">
+                            <label class="col-md-3 control-label required" for="'document_' + str(document_type.id)">
+                                <t t-esc="document_type.name"/>
+                            </label>
+                            <div class="col-md-7">
+                                <div class="description" style="color: #8c8c8c;">
+                                    <i>Click on the document to select it (hold down the control (Ctrl) button to select multiple documents)</i>
+                                </div>
+
+                                <select multiple="multiple" size="3" class="form-control" id="document_selection"
+                                        t-att-name="'document_' + str(document_type.id)" style="width: 610px;"
+                                        t-att-data-document-type-id="document_type.id"
+                                        t-att-data-technical-name="document_type.technical_name">
+                                    <t t-foreach="user_documents" t-as="doc">
+                                        <t t-if="doc.document_type_id.id == document_type.id">
+                                            <option t-att-value="doc.id"
+                                                    t-att-selected="str(doc.id) in post.get('document_' + str(document_type.id), [])">
+                                                <t t-esc="doc.name"/>
+                                                (<t t-esc="doc.datas_fname"/>
+                                                <t t-foreach="doc.child_ids" t-as="child">
+                                                    ,<t t-esc="child.datas_fname"/>
+                                                </t>)
+                                            </option>
+                                        </t>
+                                    </t>
+                                </select>
+                                <button t-att-class="'btn btn-default a-submit modalButton' + str(document_type.id)"
+                                        type="button" data-toggle="modal"
+                                        data-target="#ModalDocument"
+                                        t-att-data-document-technical-name="document_type.technical_name"
+                                        t-att-data-document-type-id="document_type.id">
+                                    <span class="fa fa-plus"/>
+                                </button>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+
+                <t t-if="other_informations">
+                    <t t-set="block" t-value="none"/>
+                    <t t-foreach="other_informations" t-as="other_information">
+                        <!--Affichage du nom du bloc-->
+                        <t t-if="other_information.website_application_block_id != block">
+                            <t t-set="block" t-value="other_information.website_application_block_id"/>
+                            <t t-if="block">
+                                <h3 class="block-header page-header col-md-offset-2 col-md-9"
+                                    t-att-style="(other_information.website_application_stage_id.name or '') != current_stage and 'display: none'">
+                                    <t t-esc="block.name"></t>
+                                </h3>
+                            </t>
+                        </t>
+
+                        <div t-attf-class="form-group form-inline other_information"
+                             t-att-style="((other_information.website_application_stage_id.name or '') != current_stage or other_information.type == 'hidden') and 'display: none'">
+                            <label t-att-class="'col-md-3 control-label required' if other_information.is_required else 'col-md-3 control-label'">
+                                <t t-if="other_information.type != 'explanation'">
+                                    <t t-esc="other_information.name"/>
+                                    <t t-if="other_information.help_image">
+                                                    <i class="fa fa-info-circle" data-html="true" data-toggle="popover"
+                                                       data-trigger="hover"
+                                                       t-att-data-img="'data:image/png;base64,' + other_information.help_image"/>
+                                                </t>
+                                </t>
+                            </label>
+                            <div class="col-md-7">
+                                <t t-if="other_information.type == 'explanation'">
+                                    <t t-raw="other_information.text_explanation"/>
+                                </t>
+                                <t t-if="other_information.type == 'number'">
+                                    <input class="form-control"
+                                           type="number"
+                                           t-att-name="'information_' + str(other_information.id)"
+                                           style="width: 100%;"
+                                           t-att-required="other_information.is_required and (other_information.website_application_stage_id.name or '') == current_stage"
+                                           t-att-value="post.get('information_' + str(other_information.id), '') or False"
+                                    />
+                                </t>
+                                <t t-if="other_information.type == 'text'">
+                                    <input class="form-control"
+                                           type="text"
+                                           t-att-name="'information_' + str(other_information.id)"
+                                           style="width: 100%;"
+                                           t-att-required="other_information.is_required and (other_information.website_application_stage_id.name or '') == current_stage"
+                                           t-att-value="post.get('information_' + str(other_information.id), '') or False"
+                                    />
+                                </t>
+                                <t t-if="other_information.type == 'selection'">
+                                    <t t-set="choices"
+                                       t-value="other_information.text_choices.split(',')"/>
+                                    <select class="form-control" t-att-name="'information_' + str(other_information.id)"
+                                            style="width: 100%;">
+                                        <t t-if="not other_information.is_required">
+                                            <option value=""
+                                                    t-att-selected="post.get('information_' + str(other_information.id)) == str(choice)">
+                                            </option>
+                                        </t>
+                                        <t t-foreach="choices" t-as="choice">
+                                            <option t-att-value="choice"
+                                                    t-att-selected="post.get('information_' + str(other_information.id)) == str(choice)">
+                                                <t t-esc="choice"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                </t>
+                                <t t-if="other_information.type == 'model'">
+                                    <t t-set="choices"
+                                       t-value="other_information.get_model_choices(user)"/>
+                                    <select class="form-control" t-att-name="'information_' + str(other_information.id)"
+                                            t-att-required="other_information.is_required and (other_information.website_application_stage_id.name or '') == current_stage"
+                                            style="width: 100%;">
+                                        <t t-if="not other_information.is_required">
+                                            <option value=""
+                                                    t-att-selected="post.get('information_' + str(other_information.id)) == str(choice)">
+                                            </option>
+                                        </t>
+                                        <t t-foreach="choices" t-as="choice">
+                                            <option t-att-value="choice.id"
+                                                    t-att-selected="post.get('information_' + str(other_information.id)) == str(choice)">
+                                                <t t-esc="choice.name_get()[0][1]"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                </t>
+
+                                <t t-if="other_information.type == 'document'">
+
+                                    <t t-if="other_information.allow_multiple_documents_selection">
+                                        <div class="description" style="color: #8c8c8c;">
+                                            <i>Hold down the control (Ctrl) button to select multiple documents</i>
+                                        </div>
+
+                                        <select multiple="multiple" size="3" class="form-control" id="document_selection"
+                                                t-att-name="'document_' + str(other_information.document_type_id.id)"
+                                                style="width: 610px;"
+                                                t-att-required="other_information.is_required and (other_information.website_application_stage_id.name or '') == current_stage"
+                                                t-att-data-technical-name="other_information.document_type_id.technical_name"
+                                                t-att-data-document-type-id="other_information.document_type_id.id"
+                                                t-att-data-show-existing-documents="other_information.show_existing_documents or 'False'">
+                                            <t t-foreach="user_documents" t-as="doc">
+                                                <t t-if="other_information.show_existing_documents or str(doc.id) in post.get('document_' + str(other_information.document_type_id.id), [])">
+                                                    <t t-if="doc.document_type_id.id == other_information.document_type_id.id">
+                                                        <option t-att-value="doc.id"
+                                                                t-att-selected="str(doc.id) in post.get('document_' + str(other_information.document_type_id.id), [])">
+                                                            <t t-esc="doc.name"/>
+                                                            (<t t-esc="doc.datas_fname"/>
+                                                            <t t-foreach="doc.child_ids" t-as="child">
+                                                                ,<t t-esc="child.datas_fname"/>
+                                                            </t>)
+                                                        </option>
+                                                    </t>
+                                                </t>
+                                            </t>
+                                        </select>
+                                    </t>
+                                    <t t-if="not other_information.allow_multiple_documents_selection">
+                                        <select size="3" class="form-control" id="document_selection"
+                                                t-att-name="'document_' + str(other_information.document_type_id.id)"
+                                                style="width: 610px;"
+                                                t-att-required="other_information.is_required and (other_information.website_application_stage_id.name or '') == current_stage"
+                                                t-att-data-technical-name="other_information.document_type_id.technical_name"
+                                                t-att-data-document-type-id="other_information.document_type_id.id"
+                                                t-att-data-show-existing-documents="other_information.show_existing_documents or 'False'">
+                                            <t t-foreach="user_documents" t-as="doc">
+                                                <t t-if="other_information.show_existing_documents or str(doc.id) in post.get('document_' + str(other_information.document_type_id.id), [])">
+                                                    <t t-if="doc.document_type_id.id == other_information.document_type_id.id">
+                                                        <option t-att-value="doc.id"
+                                                                t-att-selected="str(doc.id) in post.get('document_' + str(other_information.document_type_id.id), [])">
+                                                            <t t-esc="doc.name"/>
+                                                            (<t t-esc="doc.datas_fname"/>
+                                                            <t t-foreach="doc.child_ids" t-as="child">
+                                                                ,<t t-esc="child.datas_fname"/>
+                                                            </t>)
+                                                        </option>
+                                                    </t>
+                                                </t>
+                                            </t>
+                                        </select>
+                                    </t>
+                                    <button t-att-class="'btn btn-default a-submit modalButton' + str(other_information.document_type_id.id)"
+                                            type="button" data-toggle="modal"
+                                            data-target="#ModalDocument"
+                                            t-att-data-document-technical-name="other_information.document_type_id.technical_name"
+                                            t-att-data-document-type-id="other_information.document_type_id.id">
+                                        <span class="fa fa-plus"/>
+                                    </button>
+                                </t>
+
+                                <t t-if="other_information.type == 'date'">
+                                    <t t-set="lang_model" t-value="request.env['res.lang']"/>
+                                    <t t-set="date_format" t-value="lang_model.get_universal_date_format()"/>
+                                    <input type="text" t-att-name="'information_' + str(other_information.id)"
+                                           class="form-control input_date" size="10"
+                                           t-att-data_date_format="date_format"
+                                           t-att-required="other_information.is_required and (other_information.website_application_stage_id.name or '') == current_stage"
+                                           t-att-value="post.get('information_' + str(other_information.id), '') or False"/>
+                                </t>
+                                <t t-if="other_information.type == 'option'">
+                                    <div class="col-md-2">
+                                        <input
+                                                type="radio"
+                                                t-att-name="'information_' + str(other_information.id)"
+                                                value="1"
+                                                t-att-required="other_information.is_required and (other_information.website_application_stage_id.name or '') == current_stage"
+                                                t-att-checked="post.get('information_' + str(other_information.id)) == '1'">
+                                            Yes
+                                        </input>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input
+                                                type="radio"
+                                                t-att-name="'information_' + str(other_information.id)"
+                                                value="0"
+                                                t-att-required="other_information.is_required and (other_information.website_application_stage_id.name or '') == current_stage"
+                                                t-att-checked="post.get('information_' + str(other_information.id)) == '0'">
+                                            No
+                                        </input>
+                                    </div>
+                                    <br/>
+                                    <br/>
+                                </t>
+                                <t t-if="other_information.type == 'hidden'">
+                                    <input type="hidden"
+                                           t-att-name="'information_' + str(other_information.id)"
+                                           t-att-required="other_information.is_required and (other_information.website_application_stage_id.name or '') == current_stage"
+                                           t-att-value="post.get('information_' + str(other_information.id), '') or False"
+                                    />
+                                </t>
+                                <t t-if="other_information.description">
+                                    <div class="description" style="color: #8c8c8c;">
+                                        <t t-esc="other_information.description"/>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+
+                <t t-if="stages.index(current_stage) == len(stages) - 1">
+                    <div t-attf-class="form-group">
+                        <label class="col-md-3 control-label" for="description">Description</label>
+                        <div class="col-md-7">
+                            <!-- DO NOT TOUCH or the placeholder will disappear ! -->
+                            <textarea class="form-control" name="description" style="min-height: 120px"
+                                      placeholder="Add any additional informations">
+                                <t t-esc="post.get('description', '') or False"/>
+                            </textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-check col-md-offset-3 col-md-7">
+                        <input type="checkbox" class="form-check-input" required="True"
+                               name="exact_datas"
+                               t-att-checked="post.get('exact_datas', False)"/>
+                        <b>
+                            I certify the accuracy of the informations provided
+                        </b>
+                        <br/>
+                        <br/>
+                    </div>
+
+                    <t t-if="request_template.show_terms_link">
+                        <div class="form-check col-md-offset-3 col-md-7">
+                            <input type="checkbox" class="form-check-input" required="True"
+                                   name="is_accepting_terms"
+                                   t-att-checked="post.get('is_accepting_terms', False)"/>
+                            <b>
+                                <t t-esc="request_template.terms_checkbox_label"/>
+                                <a target="_blank" t-att-href="request_template.terms_link_target_url if request_template.terms_link_target_type=='url'
+                                                               else '/web/content/' + str(request_template.terms_link_target_document.id)">
+                                    <t t-esc="request_template.terms_link_label"/>
+                                </a>
+                            </b>
+                            <br/>
+                            <br/>
+                        </div>
+                    </t>
+                </t>
+
+                <div class="form-group">
+                    <div class="col-md-offset-3 col-md-7">
+                        <button id="btnSubmitRequest" type="submit" class="btn btn-primary">
+                            <t t-if="stages.index(current_stage) != len(stages) - 1">
+                                Continue
+                            </t>
+                            <t t-if="stages.index(current_stage) == len(stages) - 1">
+                                Submit Request
+                            </t>
+                        </button>
+                        <a href="/my/requests" class="btn btn-default">
+                            Abort
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="/website_application/static/src/js/website_application_documents_reload.js"
+                type="text/javascript"></script>
+        <script src="/website_application/static/src/js/website_application_information_date.js"
+                type="text/javascript"></script>
+         <script type="text/javascript"><![CDATA[
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+    container: 'body',
+    content: function () {
+            var img = $(this).data('img');
+            var html_content = "<img src='"+img+"' style='width: 100%; height: 100%;'/>";
+            return html_content;
+        }
+    });
+});
+            ]]></script>
+    </template>
+
+    <template id="assets_frontend" name="im_livechat assets frontend" inherit_id="website.assets_frontend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/website_application/static/src/less/website_application.less"/>
+        </xpath>
+    </template>
+
+</odoo>

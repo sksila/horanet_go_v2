@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Attributs pour PES_PJ -->
+        <record id="pes_attrs_pj_1_2_3" model="pes.bloc.attrs">
+            <field name="name">Attrs pour NomPJ</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour NomPJ</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value_type">simple</field>
+            <field name="value">get_pdf_name</field>
+        </record>
+        <record id="pes_bloc_attrs_prm_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Version</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Version</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">2</field>
+        </record>
+
+        <record id="pes_attrs_pj_support" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Support</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Support</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">01</field>
+        </record>
+
+        <record id="pes_attrs_pj_id_unique" model="pes.bloc.attrs">
+            <field name="name">Attrs pour IdUnique</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour IdUnique</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value">id</field>
+        </record>
+    </data>
+</odoo>

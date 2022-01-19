@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Add button in collectivity module menu to access to TPA functionalities -->
+    <menuitem id="horanet_settings_menu_TPA"
+              name="Interfaces TPA"
+              parent="horanet_go.menu_collectivity_config"
+              sequence="30"/>
+
+    <!-- Add button in TPA functionalities menu to access to synchronization status list -->
+    <menuitem id="horanet_settings_synchronization_status"
+              name="Synchronizations status"
+              parent="horanet_settings_menu_TPA"
+              action="action_tpa_synchronization_status"
+              sequence="5"/>
+
+    <menuitem id="horanet_settings_synchronization_merge"
+              name="Synchronizations merge TPA"
+              parent="horanet_settings_menu_TPA"
+              action="action_tpa_synchronization_merge"
+              sequence="5"/>
+
+    <!--Wizard import tpa data-->
+    <menuitem id="wizard_import_data_synchro_menu"
+              name="Import synchronizations"
+              action="wizard_import_data_synchro_action"
+              parent="horanet_settings_menu_TPA"
+              groups="horanet_go.group_horanet_go_admin"
+              sequence="50"/>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="horanet_demat_ormc_configuration_form" model="ir.ui.view">
+        <field name="name">Add NatJur and CatTiers required config</field>
+        <field name="model">collectivity.config.settings</field>
+        <field name="inherit_id" ref="horanet_website_account.website_account_configuration_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='required_ape_code']" position="after">
+                <label for="required_nat_jur"/>
+                <div class="o_row">
+                    <field name="required_nat_jur"/>
+                    <field name="nat_jur_help" placeholder="help message for website user"/>
+                </div>
+
+                <label for="required_cat_tiers"/>
+                <div class="o_row">
+                    <field name="required_cat_tiers" />
+                    <field name="cat_tiers_help" placeholder="help message for website user"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

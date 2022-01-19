@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="partner_category_view_form" model="ir.ui.view">
+        <field name="name">Add environment producer/staff options</field>
+        <field name="model">subscription.category.partner</field>
+        <field name="inherit_id" ref="horanet_go.partner_category_view_form"/>
+        <field name="arch" type="xml">
+
+            <group name="group-domain" position="after">
+                <group name="environment" attrs="{'invisible': [('application_type', '!=', 'environment')]}">
+                    <field name="is_environment_producer"
+                           attrs="{'readonly': [('is_environment_staff','=',True)]}"/>
+                </group>
+                <group name="environment" attrs="{'invisible': [('application_type', '!=', 'environment')]}">
+                    <field name="is_environment_staff"
+                           attrs="{'readonly': [('is_environment_producer','=',True)]}"/>
+                </group>
+            </group>
+
+        </field>
+    </record>
+
+</odoo>

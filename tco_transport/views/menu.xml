@@ -1,0 +1,117 @@
+<odoo>
+    <menuitem id="menu_settings_tco_transport"
+              parent="horanet_transport.transport_main"
+              name="Transport"
+              sequence="20"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_transport_station_type"/>
+
+    <menuitem id="menu_tco_transport_station"
+              parent="menu_settings_tco_transport"
+              name="Station"
+              sequence="15"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_transport_station"/>
+
+    <menuitem id="menu_tco_transports_stop"
+              parent="menu_settings_tco_transport"
+              name="Stop"
+              sequence="20"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_transport_stop"/>
+
+    <menuitem id="menu_tco_transport_line"
+              parent="menu_settings_tco_transport"
+              name="Line"
+              sequence="25"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_transport_line"/>
+
+    <menuitem id="menu_tco_transport_station_type"
+              parent="menu_settings_tco_transport"
+              name="Station type"
+              sequence="30"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_transport_station_type"/>
+
+    <menuitem id="menu_tco_transport_service"
+              parent="menu_settings_tco_transport"
+              name="Service"
+              sequence="35"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_transport_service"/>
+
+    <menuitem id="menu_tco_transport_vehicles_main"
+              parent="menu_settings_tco_transport"
+              name="Vehicles"
+              sequence="40"
+              groups="tco_transport.group_tco_transport_manage"/>
+
+    <menuitem id="menu_tco_transport_vehicle_category"
+              parent="menu_tco_transport_vehicles_main"
+              name="Vehicle category"
+              sequence="10"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_transport_vehicle_category"/>
+
+    <menuitem id="menu_tco_transport_vehicle_brand"
+              parent="menu_tco_transport_vehicles_main"
+              name="Vehicle brand"
+              sequence="20"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_transport_vehicle_brand"/>
+
+    <menuitem id="menu_tco_transport_vehicle_model"
+              parent="menu_tco_transport_vehicles_main"
+              name="Vehicle model"
+              sequence="30"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_transport_vehicle_model"/>
+
+    <menuitem id="menu_tco_transport_vehicle"
+              parent="menu_tco_transport_vehicles_main"
+              name="Vehicle"
+              sequence="40"
+              action="action_transport_vehicle"/>
+
+    <menuitem id="menu_tco_transport_vehicle_assignment"
+              parent="menu_tco_transport_vehicles_main"
+              name="Vehicle assignment"
+              sequence="50"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_transport_vehicle_assignment"/>
+
+    <menuitem id="menu_horanet_terminals_main"
+              parent="menu_settings_tco_transport"
+              name="Terminals"
+              sequence="50"
+              groups="tco_transport.group_tco_transport_manage"/>
+
+    <menuitem id="menu_horanet_terminal_software"
+              parent="menu_horanet_terminals_main"
+              name="Terminal software"
+              sequence="20"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_terminal_software"/>
+
+    <menuitem id="menu_horanet_terminal"
+              parent="menu_horanet_terminals_main"
+              name="Terminal"
+              sequence="30"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_terminal"/>
+
+    <menuitem id="menu_horanet_pointage"
+              parent="menu_horanet_terminals_main"
+              name="Pointages"
+              sequence="40"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_tco_transport_pointage"/>
+
+    <menuitem id="menu_horanet_terminal_lb7_log"
+              parent="menu_horanet_terminals_main"
+              name="LB7 terminal logs"
+              sequence="50"
+              groups="tco_transport.group_tco_transport_manage"
+              action="action_tco_terminal_lb7_log"/>
+</odoo>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="ecopad_session_form_view" model="ir.ui.view">
+        <field name="name">Ecopad session form view</field>
+        <field name="model">environment.ecopad.session</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <field name="is_closing_issue" invisible="1"/>
+                    <field name="wrong_nb_transactions" invisible="True"/>
+                    <field name="wrong_nb_operations" invisible="True"/>
+                    <group>
+                        <field name="number"/>
+                        <field name="last_number"/>
+                        <field name="start_date_time"/>
+                        <field name="end_date_time"/>
+                        <field name="tag_id"/>
+                        <field name="tag_number"/>
+                        <field name="guardian_id"/>
+                        <field name="ecopad_id"/>
+                        <field name="waste_site_id"/>
+                        <field name="activity_sector_ids" widget="many2many_tags"/>
+                    </group>
+                    <p class="text-danger"
+                       attrs="{
+                        'invisible': [
+                          ('is_closing_issue', '=', False),
+                          ('wrong_nb_transactions', '=', False),
+                          ('wrong_nb_operations', '=', False)
+                        ]}">
+                        <strong t-translation="on">Warnings:</strong>
+                        <br/>
+                        <span attrs="{'invisible': [('is_closing_issue', '=', False)]}" t-translation="on">
+                            - The session isn't closed despite being opened for more than 3 days.
+                            <br t-translation="off"/>
+                        </span>
+                        <span attrs="{'invisible': [('wrong_nb_transactions', '=', False)]}" t-translation="on">
+                            - The number of transactions in Odoo is different from what Ecopad should have transmitted.
+                            <br t-translation="off"/>
+                        </span>
+                        <span attrs="{'invisible': [('wrong_nb_operations', '=', False)]}" t-translation="on">
+                            - The number of operations in Odoo is different from what Ecopad should have transmitted.
+                            <br t-translation="off"/>
+                        </span>
+                    </p>
+                    <notebook>
+                        <page name="transactions" string="Transactions">
+                            <group>
+                                <field name="nb_transactions_from_ecopad"/>
+                            </group>
+                            <field name="transaction_ids"/>
+                        </page>
+                        <page name="operations" string="Operations">
+                            <group>
+                                <field name="nb_operations_from_ecopad"/>
+                            </group>
+                            <field name="operations_ids" nolabel="1" readonly="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ecopad_session_tree_view" model="ir.ui.view">
+        <field name="name">Ecopad session list view</field>
+        <field name="model">environment.ecopad.session</field>
+        <field name="arch" type="xml">
+            <tree string="Usage"
+                  decoration-danger="is_closing_issue or wrong_nb_transactions or wrong_nb_operations">
+                <field name="operations_ids" invisible="1"/>
+                <field name="is_closing_issue" invisible="1"/>
+                <field name="wrong_nb_transactions" invisible="True"/>
+                <field name="wrong_nb_operations" invisible="True"/>
+                <field name="state"/>
+                <field name="waste_site_id"/>
+                <field name="start_date_time"/>
+                <field name="end_date_time"/>
+                <field name="operations_ids_count"/>
+                <field name="guardian_id"/>
+                <field name="number"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ecopad_session_search_view" model="ir.ui.view">
+        <field name="name">Ecopad session search view</field>
+        <field name="model">environment.ecopad.session</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="open_sessions" string="Open sessions" domain="[('state', '=', 'open')]"/>
+                <group string="Group By">
+                    <filter name="group_by_waste_site" string="Waste sites"
+                            context="{'group_by': 'waste_site_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="ecopad_session_action" model="ir.actions.act_window">
+        <field name="name">Ecopad session</field>
+        <field name="res_model">environment.ecopad.session</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context" eval="{'search_default_open_sessions': 1}"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                No session to display
+            </p>
+        </field>
+    </record>
+</odoo>

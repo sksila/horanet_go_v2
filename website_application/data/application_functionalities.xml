@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="application_functionality_support_request" model="application.functionality">
+        <field name="name">Support request</field>
+    </record>
+    <record id="application_functionality_support_loss" model="application.functionality">
+        <field name="name">Support loss</field>
+    </record>
+</odoo>

@@ -1,0 +1,9 @@
+<odoo>
+    <record id="group_tco_transport_manage" model="res.groups">
+        <field name="name">Manage Transport</field>
+        <field name="category_id" ref="horanet_go.horanet_go_category"/>
+        <field name="comment">Enable the menus to manage transport lines and stops as well as vehicles and terminals.</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="implied_ids" eval="[(4, ref('horanet_transport.group_manage_transport'))]"/>
+    </record>
+</odoo>

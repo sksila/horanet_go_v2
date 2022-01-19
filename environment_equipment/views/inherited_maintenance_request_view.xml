@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="environment_maintenance_request_form_view" model="ir.ui.view">
+        <field name="name">environment.maintenance.request.form</field>
+        <field name="model">maintenance.request</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form"/>
+        <field name="arch" type="xml">
+            <field name="maintenance_type" position="after">
+                <field name="intervention_type_ids" widget="many2many_tags"/>
+                <field name="exchanged"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="environment_maintenance_requests_action" model="ir.actions.act_window">
+        <field name="name">Container maintenance requests</field>
+        <field name="res_model">maintenance.request</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,calendar,pivot,graph,form</field>
+        <field name="context" eval="{'equipment_environment': True}"/>
+    </record>
+</odoo>

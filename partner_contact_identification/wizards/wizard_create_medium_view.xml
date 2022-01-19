@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_create_medium_form" model="ir.ui.view">
+        <field name="name">Create medium form</field>
+        <field name="model">partner.contact.identification.wizard.create.medium</field>
+        <field name="arch" type="xml">
+            <form string="create medium">
+                <group name="mapping">
+                    <field name="mapping_id"/>
+                    <field name="max_length" invisible="True"/>
+                    <field name="mapping" invisible="True"/>
+                    <field name="csn_number" attrs="{'invisible': [('mapping', '!=', 'csn')]}"/>
+                    <field name="external_reference"/>
+                </group>
+                <div name="h3_enrollment" attrs="{'invisible': [('mapping', '!=', 'h3')]}">
+                    <p>Place the medium you want to read on your medium reader then click on the button below.</p>
+                    <div class="alert alert-success hide" name="read-success"></div>
+                    <div class="alert alert-warning hide" name="read-warning"></div>
+                    <div class="alert alert-danger hide" name="read-error"></div>
+                    <input type="button" class="oe_button hide" name="enroll-medium-btn"/>
+                </div>
+                <footer>
+                    <button name="action_enroll_medium" type="object" attrs="{'invisible': [('mapping', '!=', 'csn')]}"
+                            class="btn-primary">
+                        <span>Assign the medium</span>
+                    </button>
+                    <button name="action_enroll_and_continue" type="object"
+                            attrs="{'invisible': [('mapping', '!=', 'csn')]}" class="btn-primary">
+                        <span>Assign and create new</span>
+                    </button>
+                    <button string="Cancel" special="cancel" class="btn-default"/>
+                    <div name="h3_enrollment_actions" attrs="{'invisible': [('mapping', '!=', 'h3')]}">
+                        <input type="button" class="oe_button" name="read-medium-btn"/>
+                        <input type="button" class="oe_button" name="format-medium-btn" disabled="disabled"/>
+                        <input type="button" class="oe_button" name="write-medium-btn" disabled="disabled"/>
+                    </div>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="launch_create_medium_wizard"
+                name="Create medium"
+                res_model="partner.contact.identification.wizard.create.medium"
+                view_mode="form"
+                view_id="wizard_create_medium_form"
+                target="new"/>
+</odoo>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="create_employee" name="Add an employee">
+        <t t-call="website.layout">
+            <div class="horanet_blockui horanet_spinner" style="display:inline-block"/>
+            <div id="wrap" name="horanet_contact_details">
+                <div class="container mt16 mb32">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="/my/home">My Account</a>
+                                </li>
+                                <li>
+                                    <a href="/my/company">My Company</a>
+                                </li>
+                                <li t-if="mode_creation" class="active">Add a new employee</li>
+                                <li t-if="not mode_creation" class="active">Edit an employee</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="row">
+                            <h3 t-if="partner">
+                                <t t-esc="partner.name"/>
+                            </h3>
+                            <h3 t-if="mode_creation">Add a new employee</h3>
+                        </div>
+
+                        <form method="post" name="form_company_employee" class="form-group"
+                              enctype="multipart/form-data">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="row mt16" t-if="error_message">
+                                <div class="col-md-12">
+                                    <div class="alert alert-danger">
+                                        <t t-foreach="error_message" t-as="err">
+                                            <t t-esc="err"/>
+                                            <br/>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <t t-call="horanet_website_account.create_employee_body"/>
+
+                            <div class="row mt16 mb32">
+                                <div class="col-md-12">
+                                    <a href="/my/company" class="btn btn-default">
+                                        <i class="fa fa-long-arrow-left" aria-hidden="true" t-translation="off"/>
+                                        Return
+                                    </a>
+                                    <button type="submit" class="btn btn-default btn-primary pull-right">
+                                        Confirm
+                                        <i class="fa fa-long-arrow-right" aria-hidden="true" t-translation="off"/>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="create_employee_body" name="Add an employee">
+        <div class="row mt8">
+            <div id="partner_image" class="col-md-5">
+                <t t-call="horanet_website_account.partner_image"/>
+            </div>
+            <div class="col-md-7">
+                <t t-call="horanet_website_account.partner_informations">
+                </t>
+            </div>
+        </div>
+        <div class="row mt8">
+            <!--Email-->
+            <div class="col-lg-6">
+                <div class="row">
+                    <div t-attf-class="form-group col-md-12 required {{error.get('email') and 'has-error' or ''}}">
+                        <label class="control-label" for="contact_name">
+                            <t t-esc="partner.fields_get('email')['email']['string']"/>
+                        </label>
+                        <input type="email" name="email" class="form-control"
+                               t-att-value="post.get('email', partner.email)"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHONE -->
+            <div class="col-md-3">
+                <div class="row">
+                    <div t-attf-class="form-group col-md-12 required {{error.get('phone') and 'has-error' or ''}}">
+                        <label class="control-label" for="phone">
+                            <t t-esc="partner.fields_get('phone')['phone']['string']"/>
+                        </label>
+                        <input type="tel" name="phone" class="form-control" size="10"
+                               t-att-value="post.get('phone', partner.phone)"/>
+                    </div>
+                </div>
+            </div>
+            <!-- MOBILE -->
+            <div class="col-lg-3">
+                <div class="row">
+                    <div t-attf-class="form-group col-md-12 #{error.get('mobile') and 'has-error' or ''}">
+                        <label class="control-label" for="mobile">Mobile</label>
+                        <input type="tel" name="mobile" class="form-control"
+                               t-att-value="post.get('mobile', partner.mobile)"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FUNCTION -->
+        <div class="row">
+            <div t-attf-class="form-group col-md-6 required {{error.get('function') and 'has-error' or ''}}">
+                <label class="control-label" for="function">Function
+                </label>
+                <input type="text" name="function" class="form-control"
+                       t-att-value="post.get('function', partner.function)"/>
+            </div>
+        </div>
+
+    </template>
+
+    <template id="modal_dialog_create_employee_template">
+        <div class="modal fade" id="ModalCreateEmployee" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Add a new employee</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <t t-call="horanet_website_account.create_employee_body"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" id="btnCreateEmployee" class="btn btn-primary"
+                                data-dismiss="modal">Save changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/horanet_website_account/static/src/js/modal_create_employee.js"
+                type="text/javascript"></script>
+    </template>
+
+</odoo>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="attachment_type_rib" model="ir.attachment.type">
+            <field name="name">Relevé d'identité bancaire</field>
+            <field name="technical_name">bank_details</field>
+        </record>
+
+        <record id="attachment_type_proof" model="ir.attachment.type">
+            <field name="name">Proof document(s)</field>
+            <field name="technical_name">proof_document</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <template id="external_layout_header_role">
+            <div class="header">
+                <div class="row">
+                    <div class="col-xs-3 text-right">
+                        <br></br>
+                        <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+                             style="max-height: 100px;"/>
+                    </div>
+                    <div class="col-xs-6 text-center">
+                        <br></br>
+                        <h5>
+                            <strong>
+
+                                Bordereau de rôle n°
+                                <span t-field="o.number"/>
+                            </strong>
+                            <br></br>
+                            <br></br>
+                        </h5>
+                        <h4>
+                            <strong>
+                                <span t-field="o.batch_id.name"/>
+                            </strong>
+                        </h4>
+                        <h4>
+                            <strong>
+                                Période du
+                                <span t-field="o.batch_id.campaign_id.prestation_period_ids[0].start_date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                au
+                                <span t-field="o.batch_id.campaign_id.prestation_period_ids[0].end_date" t-options='{"format": "dd/MM/yyyy"}'/>
+                            </strong>
+                        </h4>
+
+                    </div>
+
+                    <div class="col-xs-4"/>
+                </div>
+            </div>
+        </template>
+
+
+        <template id="external_layout_footer_role">
+            <div class="footer">
+
+            </div>
+        </template>
+
+
+        <template id="external_layout_role">
+            <!-- Multicompany -->
+            <t t-if="not o and doc">
+                <t t-set="o" t-value="doc"/>
+            </t>
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"></t>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"></t>
+            </t>
+
+            <t t-call="account_mass_invoicing.external_layout_header_role"/>
+            <t t-raw="0"/>
+            <t t-call="account_mass_invoicing.external_layout_footer_role"/>
+        </template>
+
+    </data>
+</openerp>

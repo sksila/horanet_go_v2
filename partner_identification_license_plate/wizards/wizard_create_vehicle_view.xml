@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="create_vehicle_form" model="ir.ui.view">
+        <field name="name">Create vehicle form</field>
+        <field name="model">wizard.create.vehicle</field>
+        <field name="arch" type="xml">
+            <form string="Create vehicle">
+                <field name="partner_id" invisible="1"/>
+                <field name="license_plate_mapping" invisible="1"/>
+                <group>
+
+                    <field name="assignation_start_date"/>
+                    <field name="assignation_end_date"/>
+                    <field name="documentation_id"/>
+                </group>
+                <group>
+                    <field name="license_plate"/>
+                    <field name="vehicle_type_id"/>
+                    <field name="ptac"/>
+
+                </group>
+                <footer>
+                    <button name="create_vehicle_from_license_plate" type="object" class="btn-primary">
+                        <span>Create the vehicle</span>
+                    </button>
+                    <button string="Cancel" special="cancel" class="btn-default"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <act_window id="action_wizard_create_vehicle"
+                name="Create Vehicle"
+                res_model="wizard.create.vehicle"
+                view_mode="form"
+                view_id="create_vehicle_form"
+                target="new"/>
+</odoo>
+
+

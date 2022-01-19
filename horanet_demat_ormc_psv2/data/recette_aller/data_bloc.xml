@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Sous-Bloc de InfoPrelevementSEPA -->
+        <record id="pes_bloc_sr_2_2_1_2_1_2_1" model="pes.bloc">
+            <field name="name">NatPrel</field>
+            <field name="code">NatPrel</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">NatPrel</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_nat_prel'))]"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_2_2" model="pes.bloc">
+            <field name="name">PerPrel</field>
+            <field name="code">PerPrel</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">PerPrel</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_per_prel'))]"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_2_3" model="pes.bloc">
+            <field name="name">DtePrel</field>
+            <field name="code">DtePrel</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">DtePrel</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_6"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_dte_prel'))]"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_2_4" model="pes.bloc">
+            <field name="name">MtPrel</field>
+            <field name="code">MtPrel</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">MtPrel</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_6"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_mt_prel'))]"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_2_5" model="pes.bloc">
+            <field name="name">SequencePres</field>
+            <field name="code">SequencePres</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">SequencePres</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_sequence_pres'))]"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_2_6" model="pes.bloc">
+            <field name="name">DateSignMandat</field>
+            <field name="code">DateSignMandat</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">DateSignMandat</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_date_sign_mandat'))]"/>
+        </record>
+
+        <record id="pes_bloc_sr_2_2_1_2_1_2_7" model="pes.bloc">
+            <field name="name">RefUniMdt</field>
+            <field name="code">RefUniMdt</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">RefUniMdt</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_ref_unit_md'))]"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_2_8" model="pes.bloc">
+            <field name="name">LibPrel</field>
+            <field name="code">LibPrel</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">LibPrel</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_lib_prel'))]"/>
+        </record>
+
+        <!-- Sous-Bloc de InfoLignePiece -->
+        <record id="pes_bloc_sr_2_2_1_2_1_1_1" model="pes.bloc">
+            <field name="name">IdLigne</field>
+            <field name="code">IdLigne</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IdLigne</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_id_ligne'))]"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_6"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_1_2" model="pes.bloc">
+            <field name="name">ObjLignePce</field>
+            <field name="code">ObjLignePce</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">ObjLignePce</field>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_sfind_LF_1'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_6"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_1_3" model="pes.bloc">
+            <field name="name">CodProdLoc</field>
+            <field name="code">CodProdLoc</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">CodProdLoc</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_cod_prod_loc'))]"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_1_4" model="pes.bloc">
+            <field name="name">Nature</field>
+            <field name="code">Nature</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Nature</field>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_2_2_1_2_1_1_4'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_6"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_1_5" model="pes.bloc">
+            <field name="name">Majo</field>
+            <field name="code">Majo</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Majo</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_majo'))]"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_6"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_1_6" model="pes.bloc">
+            <field name="name">TvaIntraCom</field>
+            <field name="code">TvaIntraCom</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">TvaIntraCom</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_tva_intracom'))]"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_6"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_1_7" model="pes.bloc">
+            <field name="name">MtHT</field>
+            <field name="code">MtHT</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Montant HT</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_6"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sfind_LF_3'))]"/>
+        </record>
+
+        <!-- Sous-Bloc de LigneDePiece -->
+        <record id="pes_bloc_sr_2_2_1_2_1_1" model="pes.bloc">
+            <field name="name">InfoLignePiece</field>
+            <field name="code">InfoLignePiece</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">InfoLignePiece</field>
+            <!--
+                        <field name="children_bloc_ids"
+                            eval="[(4,ref('pes_bloc_sr_2_2_1_2_1_1_1')),(4,ref('pes_bloc_sr_2_2_1_2_1_1_2')),
+                            (4,ref('pes_bloc_sr_2_2_1_2_1_1_3')),(4,ref('pes_bloc_sr_2_2_1_2_1_1_4')),
+                            (4,ref('pes_bloc_sr_2_2_1_2_1_1_5')),(4,ref('pes_bloc_sr_2_2_1_2_1_1_6')),
+                            (4,ref('pes_bloc_sr_2_2_1_2_1_1_7'))]" />
+            -->
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sr_2_2_1_2_1_1_1')),
+            	(4,ref('pes_bloc_sr_2_2_1_2_1_1_3')),(4,ref('pes_bloc_sr_2_2_1_2_1_1_4')),
+            	(4,ref('pes_bloc_sr_2_2_1_2_1_1_5')),(4,ref('pes_bloc_sr_2_2_1_2_1_1_6')),
+            	(4,ref('pes_bloc_sr_2_2_1_2_1_1_7'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_1_2" model="pes.bloc">
+            <field name="name">InfoPrelevementSEPA</field>
+            <field name="code">InfoPrelevementSEPA</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">InfoPrelevementSEPA</field>
+            <field name="conditionnal_attr_id" eval="ref('pes_bloc_attrs_mandate_infos_to_add')"/>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sr_2_2_1_2_1_2_1')),(4,ref('pes_bloc_sr_2_2_1_2_1_2_2')),
+            	(4,ref('pes_bloc_sr_2_2_1_2_1_2_3')),(4,ref('pes_bloc_sr_2_2_1_2_1_2_4')),
+            	(4,ref('pes_bloc_sr_2_2_1_2_1_2_5')),(4,ref('pes_bloc_sr_2_2_1_2_1_2_6')),
+            	(4,ref('pes_bloc_sr_2_2_1_2_1_2_7')),(4,ref('pes_bloc_sr_2_2_1_2_1_2_8'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+
+        <!-- Sous-Bloc de LigneDePiece -->
+        <record id="pes_bloc_sr_2_2_1_2_1" model="pes.bloc">
+            <field name="name">BlocLignePiece</field>
+            <field name="code">BlocLignePiece</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">BlocLignePiece</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sr_2_2_1_2_1_1')),(4,ref('pes_bloc_sr_2_2_1_2_1_2'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2_2" model="pes.bloc">
+            <field name="name">Tiers</field>
+            <field name="code">Tiers</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Tiers</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_strc_deb_1')),(4,ref('pes_bloc_strc_deb_2')),(4,ref('pes_bloc_strc_5'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+        <!-- Sous-Bloc de PJRef -->
+        <record id="pes_bloc_sr_2_2_1_1_10_1" model="pes.bloc">
+            <field name="name">Support</field>
+            <field name="code">Support</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Support</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_pj_support'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_10_2" model="pes.bloc">
+            <field name="name">IdUnique</field>
+            <field name="code">IdUnique</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IdUnique</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_pj_id_unique'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_10_3" model="pes.bloc">
+            <field name="name">NomPJ</field>
+            <field name="code">NomPJ</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">NomPJ</field>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_pj_1_2_3'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+        <!-- Sous-Bloc de BlocPiece -->
+        <record id="pes_bloc_sr_2_2_1_1_1" model="pes.bloc">
+            <field name="name">IdPce</field>
+            <field name="code">IdPce</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IdPce</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_id_pce'))]"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_3"/>-->
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_2" model="pes.bloc">
+            <field name="name">TypPce</field>
+            <field name="code">TypPce</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">TypPce</field>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_2_2_1_1_2'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_3" model="pes.bloc">
+            <field name="name">NatPce</field>
+            <field name="code">NatPce</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">NatPce</field>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_2_2_1_1_3'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_4" model="pes.bloc">
+            <field name="name">Edition</field>
+            <field name="code">Edition</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Edition</field>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_2_2_1_1_4'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_5" model="pes.bloc">
+            <field name="name">ObjPce</field>
+            <field name="code">ObjPce</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">ObjPce</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_obj_pce'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_6" model="pes.bloc">
+            <field name="name">NumDette</field>
+            <field name="code">NumDette</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">NumDette</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_num_dette'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_7" model="pes.bloc">
+            <field name="name">Per</field>
+            <field name="code">Per</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Per</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_per'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_8" model="pes.bloc">
+            <field name="name">Cle1</field>
+            <field name="code">Cle1</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Cle1</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_cle1'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_9" model="pes.bloc">
+            <field name="name">Cle2</field>
+            <field name="code">Cle2</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Cle2</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_cle2'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_10" model="pes.bloc">
+            <field name="name">PJRef</field>
+            <field name="code">PJRef</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">PJRef</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sr_2_2_1_1_10_1')),(4,ref('pes_bloc_sr_2_2_1_1_10_2')),(4,ref('pes_bloc_sr_2_2_1_1_10_3'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_1_11" model="pes.bloc">
+            <field name="name">NumeroFacture</field>
+            <field name="code">NumeroFacture</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">NumeroFacture</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+        <!-- Sous-Bloc de Piece -->
+        <record id="pes_bloc_sr_2_2_1_1" model="pes.bloc">
+            <field name="name">BlocPiece</field>
+            <field name="code">BlocPiece</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">BlocPiece</field>
+            <field name="children_bloc_ids"
+                   eval="[
+                    (4,ref('pes_bloc_sr_2_2_1_1_1')),
+                    (4,ref('pes_bloc_sr_2_2_1_1_2')),
+                    (4,ref('pes_bloc_sr_2_2_1_1_3')),
+                    (4,ref('pes_bloc_sr_2_2_1_1_5')),
+                    (4,ref('pes_bloc_sr_2_2_1_1_6')),
+                    (4,ref('pes_bloc_sr_2_2_1_1_7')),
+                    (4,ref('pes_bloc_sr_2_2_1_1_8')),
+                    (4,ref('pes_bloc_sr_2_2_1_1_9')),
+                   ]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1_2" model="pes.bloc">
+            <field name="name">LigneDePiece</field>
+            <field name="code">LigneDePiece</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">LigneDePiece</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sr_2_2_1_2_1')),(4,ref('pes_bloc_sr_2_2_1_2_2'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_2"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+        <!-- Sous-Bloc de BlocBordereau -->
+        <record id="pes_bloc_sr_2_2_2_1" model="pes.bloc">
+            <field name="name">Exer</field>
+            <field name="code">Exer</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Exer</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_sf_2'))]"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_2_2" model="pes.bloc">
+            <field name="name">IdBord</field>
+            <field name="code">IdBord</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IdBord</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_sf_id_bord'))]"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_2_3" model="pes.bloc">
+            <field name="name">DteBordEm</field>
+            <field name="code">DteBordEm</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">DteBordEm</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_bloc_attrs_sf_dte_bord_em'))]"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_2_4" model="pes.bloc">
+            <field name="name">TypBord</field>
+            <field name="code">TypBord</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">TypBord</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_2_2_2_4'))]"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_2_5" model="pes.bloc">
+            <field name="name">NbrPce</field>
+            <field name="code">NbrPce</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">NbrPce</field>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_2_2_2_5'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_2_6" model="pes.bloc">
+            <field name="name">MtBordHt</field>
+            <field name="code">MtBordHt</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">MtBordHt</field>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_2_2_2_6'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_2_7" model="pes.bloc">
+            <field name="name">DteAsp</field>
+            <field name="code">DteAsp</field>
+            <field name="is_required" eval="False"/>
+            <field name="description">DteAsp</field>
+            <field name="attrs_ids" eval="[(4,ref('pes_attrs_sr_2_2_2_7'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_2_8" model="pes.bloc">
+            <field name="name">Objet</field>
+            <field name="code">Objet</field>
+            <field name="is_required" eval="False"/>
+            <field name="description">Objet</field>
+            <field name="attrs_ids" eval="[(4,ref('pes_attrs_sr_2_2_2_8'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+
+        <!-- Sous-Bloc de Bordereau -->
+        <record id="pes_bloc_sr_2_2_2" model="pes.bloc">
+            <field name="name">BlocBordereau</field>
+            <field name="code">BlocBordereau</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">BlocBordereau</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sr_2_2_2_1')),(4,ref('pes_bloc_sr_2_2_2_2')),
+                (4,ref('pes_bloc_sr_2_2_2_3')),(4,ref('pes_bloc_sr_2_2_2_4')),
+                (4,ref('pes_bloc_sr_2_2_2_5')),(4,ref('pes_bloc_sr_2_2_2_6')),
+                (4,ref('pes_bloc_sr_2_2_2_7')),(4,ref('pes_bloc_sr_2_2_2_8'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_sr_2_2_1" model="pes.bloc">
+            <field name="name">Piece</field>
+            <field name="code">Piece</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Piece</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sr_2_2_1_1')),(4,ref('pes_bloc_sr_2_2_1_2'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_1"/>
+        </record>
+
+        <!-- Sous-Bloc de EnTeteRecette -->
+        <record id="pes_bloc_sr_2_1_1" model="pes.bloc">
+            <field name="name">IdVer</field>
+            <field name="code">IdVer</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IdVer</field>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_2_1_1'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_sr_2_1_2" model="pes.bloc">
+            <field name="name">InfoDematerialisee</field>
+            <field name="code">InfoDematerialisee</field>
+            <field name="is_required" eval="False"/>
+            <field name="description">InfoDematerialisee</field>
+            <field name="attrs_ids"
+                   eval="[(4,ref('pes_attrs_sr_2_1_2'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+
+        <!-- Sous-Bloc de PES_RecetteAller -->
+        <record id="pes_bloc_sr_2_1" model="pes.bloc">
+            <field name="name">EnTeteRecette</field>
+            <field name="code">EnTeteRecette</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">EnTeteRecette</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sr_2_1_1'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_sr_2_2" model="pes.bloc">
+            <field name="name">Bordereau</field>
+            <field name="code">Bordereau</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Bordereau</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sr_2_2_2')),(4,ref('pes_bloc_sr_2_2_1'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+
+        <!-- Sous-Bloc de la Racine : PES_RecetteAller -->
+        <record id="pes_bloc_sr_2" model="pes.bloc">
+            <field name="name">PES_RecetteAller</field>
+            <field name="code">PES_RecetteAller</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">PES_RecetteAller</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sr_2_1')),(4,ref('pes_bloc_sr_2_2'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+    </data>
+</odoo>

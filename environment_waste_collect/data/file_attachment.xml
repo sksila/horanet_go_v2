@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!--Ecopad web API cached data-->
+        <record id="ecopad_get_partner_cached_data_file" model="ir.attachment">
+            <field name="name">Ecopad Sync Partner cached data</field>
+            <field name="type">binary</field>
+            <field name="datas_fname">ecopad_partner_json.cache</field>
+            <field name="user_id">1</field>
+        </record>
+        <record id="ecopad_get_contract_cached_data_file" model="ir.attachment">
+            <field name="name">Ecopad Sync contract cached data</field>
+            <field name="type">binary</field>
+            <field name="datas_fname">ecopad_contract_json.cache</field>
+            <field name="user_id">1</field>
+        </record>
+        <record id="ecopad_get_tag_cached_data_file" model="ir.attachment">
+            <field name="name">Ecopad Sync tag cached data</field>
+            <field name="type">binary</field>
+            <field name="datas_fname">ecopad_tag_json.cache</field>
+            <field name="user_id">1</field>
+        </record>
+    </data>
+</odoo>

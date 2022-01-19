@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="Horanet backend sources" inherit_id="web.assets_backend">
+
+        <!-- Backend CSS sources -->
+        <xpath expr="//link[last()]" position="after">
+            <link href='/partner_contact_citizen/static/src/css/field.less' type="text/css" rel='stylesheet'/>
+        </xpath>
+    </template>
+</odoo>

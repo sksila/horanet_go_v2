@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add the ormc_id_post and ormc_cod_col fields -->
+    <record id="inherited_view_company_form" model="ir.ui.view">
+        <field name="name">IdPost and IdCol on res.company</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="ormc_pesv2" string="ORMC PESV2">
+                    <group>
+                        <group>
+                            <field name="ormc_id_post"/>
+                            <field name="ormc_cod_col"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form" model="ir.ui.view">
+        <field name="name">Add second last name</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="partner_firstname.view_users_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='lastname']" position="after">
+                    <field name="lastname2"/>
+                </xpath>
+                <xpath expr="//field[@name='firstname']" position="after">
+                    <field name="firstname2"/>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>

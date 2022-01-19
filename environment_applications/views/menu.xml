@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Requests -->
+    <menuitem id="environment_requests" name="Requests"
+              parent="horanet_environment.environment_main" sequence="4"
+              groups="horanet_environment.group_browse_environment"
+              action="action_environment_website_application"/>
+    <menuitem id="website_application_template_env_menu" name="Request templates"
+              parent="horanet_environment.environment_configuration" sequence="32"
+              groups="horanet_go.group_horanet_go_agent"
+              action="environment_applications.action_website_application_template_env"/>
+</odoo>

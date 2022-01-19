@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_partner_contact_identification_medium" model="ir.ui.view">
+        <field name="name">medium form</field>
+        <field name="model">partner.contact.identification.medium</field>
+        <field name="arch" type="xml">
+            <form string="medium" create="false">
+                <header>
+                    <button name="deallocate" type="object" class="oe_highlight oe_left"
+                            attrs="{'invisible': [('partner_id', '=', False)]}"
+                            groups="partner_contact_identification.group_partner_contact_identification_manage,
+                                    horanet_go.group_horanet_go_agent"
+                            string="Deallocate"
+                            confirm="Are you sure you want to deallocate this medium?"/>
+                    <button name="set_lost" type="object" class="oe_highlight oe_right"
+                            attrs="{'invisible': [('is_lost', '=', True)]}"
+                            groups="partner_contact_identification.group_partner_contact_identification_manage,
+                                    horanet_go.group_horanet_go_agent"
+                            string="Declare lost"
+                            confirm="Are you sure you want to declare this medium as lost? The medium cannot be used anymore after this operation."/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="type_id"></field>
+                        <field name="partner_id"></field>
+                        <field name="tag_ids" context="{'active_test': False}"></field>
+                    </group>
+                    <group>
+                        <field name="active"/>
+                        <field name="is_lost"/>
+                    </group>
+                    <group attrs="{'invisible': [('active', '=', True)]}">
+                        <field name="deactivated_by"/>
+                        <field name="deactivated_on"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_partner_contact_identification_medium" model="ir.ui.view">
+        <field name="name">Medium list</field>
+        <field name="model">partner.contact.identification.medium</field>
+        <field name="arch" type="xml">
+            <tree string="medium" create="false">
+                <field name="type_id"/>
+                <field name="partner_id"/>
+                <field name="active"/>
+                <field name="deactivated_on"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="medium_view_filter" model="ir.ui.view">
+        <field name="name">Medium search view</field>
+        <field name="model">partner.contact.identification.medium</field>
+        <field name="arch" type="xml">
+            <search string="Search medium">
+                <field name="partner_id"/>
+                <field name="tag_ids" string="Tag numbers"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_identification_medium" model="ir.actions.act_window">
+        <field name="name">Mediums</field>
+        <field name="res_model">partner.contact.identification.medium</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_partner_contact_identification_medium"/>
+        <field name="context">{'active_test': False}</field>
+    </record>
+</odoo>

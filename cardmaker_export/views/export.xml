@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="cardmaker_export_form_view" model="ir.ui.view">
+        <field name="name">Cardmaker Export Form View</field>
+        <field name="model">partner.contact.identification.cardmaker.export</field>
+        <field name="arch" type="xml">
+            <form create="false">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="create_uid"/>
+                        <field name="create_date"/>
+                        <field name="category_id"/>
+                        <field name="partner_ids">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                        <field name="nb_partners"/>
+
+                        <field name="generated_file" filename="generated_filename"/>
+                        <field name="generated_filename" invisible="True" class="oe_inline oe_right"/>
+
+                        <field name="imported_file" filename="imported_filename"
+                               attrs="{'readonly': [('import_date', '!=', False)]}"/>
+                        <field name="imported_filename" invisible="True" class="oe_inline oe_right"/>
+
+                        <field name="do_files_match"/>
+                        <field name="import_date"/>
+                    </group>
+
+                    <button name="create_mediums_and_tags" type="object"
+                            string="Generate mediums" class="btn-primary"
+                            attrs="{'invisible': ['|', ('do_files_match', '=', False), ('import_date', '!=', False)]}"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cardmaker_export_tree_view" model="ir.ui.view">
+        <field name="name">Cardmaker Export Tree View</field>
+        <field name="model">partner.contact.identification.cardmaker.export</field>
+        <field name="arch" type="xml">
+            <tree create="false">
+                <field name="name"/>
+                <field name="category_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_cardmaker_export" model="ir.actions.act_window">
+        <field name="name">Exports history</field>
+        <field name="res_model">partner.contact.identification.cardmaker.export</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="cardmaker_export_tree_view"/>
+        <field name="groups_id" eval="[(4, ref('cardmaker_export.group_cardmaker_export'))]"/>
+    </record>
+</odoo>
+

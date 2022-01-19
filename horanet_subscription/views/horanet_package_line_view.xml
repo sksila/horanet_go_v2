@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_package_line_view_form" model="ir.ui.view">
+        <field name="name">horanet package line form</field>
+        <field name="model">horanet.package.line</field>
+        <field name="arch" type="xml">
+            <form string="Contract line">
+                <header>
+                    <button string="Compute" name="compute_package_line" type="object"
+                            attrs="{'invisible': [('state', '=', 'done')]}"/>
+                    <button string="Recompute operations" name="action_recompute_operations" type="object"
+                            groups="horanet_subscription.group_activity_rule_manager"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Contract name"/>
+                        </h1>
+                    </div>
+                    <group></group>
+                    <group>
+                        <group>
+                            <field name="recipient_id"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="opening_date"/>
+                            <field name="closing_date"/>
+                            <field name="sale_order_id"/>
+                            <field name="subscription_id"/>
+                        </group>
+                        <group>
+                            <field name="balance_initial"/>
+                            <field name="balance_total"/>
+                            <field name="balance_remaining"/>
+                            <field name="is_blocked"/>
+                            <field name="is_salable"/>
+                            <label for="use_product"/>
+                            <div class="o_row">
+                                <field name="use_product"/>
+                                <field name="product_id" attrs="{'invisible': [('use_product', '=', False)]}"/>
+                            </div>
+                            <field name="package_price_prorata" attrs="{'invisible': [('use_product', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <separator string="Activity configuration"/>
+                    <group>
+                        <field name="prestation_id"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page name="line_details" string="Details">
+                            <field name="package_line_detail_ids"/>
+                        </page>
+                        <page name="usages_lines" string="Usages">
+                            <field name="usage_ids"
+                                   context="{'default_package_id': active_id}"/>
+                        </page>
+                        <page name="sale_order_lines" string="Sale order lines">
+                            <field name="package_order_line_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_package_line_view_tree" model="ir.ui.view">
+        <field name="name">horanet package line tree</field>
+        <field name="model">horanet.package.line</field>
+        <field name="arch" type="xml">
+            <tree string="Contract line period">
+                <field name="name"/>
+                <field name="recipient_id"/>
+                <field name="display_progress_period" widget="progressbar"/>
+                <field name="display_opening_date"/>
+                <field name="display_closing_date"/>
+                <field name="balance_remaining"/>
+                <field name="is_blocked"/>
+                <field name="is_salable"/>
+                <field name="is_derogation"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="package_line_search_view" model="ir.ui.view">
+        <field name="name">Package line search view</field>
+        <field name="model">horanet.package.line</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="recipient_id" string="Recipient" filter_domain="[('recipient_id.name', 'ilike', self)]"/>
+                <field name="prestation_id" string="Prestation"
+                       filter_domain="[('prestation_id.name','ilike',self)]"/>
+                <filter string="Derogation" name="filter_is_derogation"
+                        domain="[('is_derogation', '=', True)]"/>
+                <newline/>
+                <filter string="Active" name="filter_state_active"
+                        domain="[('state', '=', 'active')]"/>
+                <filter string="Draft" name="filter_state_draft"
+                        domain="[('state', '=', 'draft')]"/>
+                <filter string="Pending" name="filter_state_pending"
+                        domain="[('state', '=', 'pending')]"/>
+                <filter string="Closed" name="filter_state_closed"
+                        domain="[('state', '=', 'closed')]"/>
+                <filter string="Done" name="filter_state_done"
+                        domain="[('state', '=', 'done')]"/>
+                <filter string="To compute" name="filter_state_to_compute"
+                        domain="[('state', '=', 'to_compute')]"/>
+                <newline/>
+                <filter string="Has closing date" name="filter_has_closing_date"
+                        domain="[('closing_date', '!=', False)]"/>
+                <group expand="1" string="Group By">
+                    <filter name="group_by_recipient" string="Group by recipient"
+                            context="{'group_by': 'recipient_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_horanet_package_line" model="ir.actions.act_window">
+        <field name="name">Contract line</field>
+        <field name="res_model">horanet.package.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_package_line_view_tree"/>
+        <field name="search_view_id" ref="package_line_search_view"/>
+    </record>
+
+    <record id="horanet_package_line_recompute_operations_action_server" model="ir.actions.server">
+        <field name="name">Recompute operations</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_horanet_package_line"/>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+            action = records.action_recompute_operations()
+        </field>
+    </record>
+
+    <act_window id="action_multi_wizard_recompute_package_line_operation"
+                name="Recompute operation"
+                src_model="horanet.package.line"
+                res_model="wizard.operation.recompute"
+                view_mode="form"
+                target="new"
+                multi="True"
+                context="{'default_package_line_ids': active_ids}"
+                groups="horanet_subscription.group_activity_rule_manager"
+                key2="client_action_multi"
+    />
+
+
+</odoo>

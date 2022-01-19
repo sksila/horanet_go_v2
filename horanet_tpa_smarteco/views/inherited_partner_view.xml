@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Add SmartEco membership button in partner view -->
+        <record id="view_partner_form" model="ir.ui.view">
+            <field name="name">Add SmartEco membership button in partner view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="horanet_tpa.view_partner_form"/>
+            <field name="priority">14</field>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='tpa_synchronization_page']" position="inside">
+                    <group string="SmartEco">
+                        <field name="tpa_membership_smarteco"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

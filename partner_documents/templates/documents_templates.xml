@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="documents" name="User documents">
+        <t t-call="portal.portal_layout">
+            <a href="/my/documents/add" class="btn btn-default">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Add a document
+            </a>
+            <br/>
+            <br/>
+
+            <div t-if="not documents">
+                <p class="text-info">You don't have any documents.</p>
+            </div>
+
+            <div t-if="documents">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Number of files</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Expiration date</th>
+                            <th>Type</th>
+                            <th colspan="2">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="documents" t-as="document">
+                            <tr t-if="not document[0].parent_doc_id">
+                                <td>
+                                    <t t-if="not document[0].child_ids">
+                                        <a t-if="document[0].datas"
+                                           t-attf-href="/my/documents/preview/{{ document[0].id }}" target="_blank">
+                                            <span t-field="document.name"/>
+                                        </a>
+                                        <t t-if="not document[0].datas">
+                                            <span t-field="document.name"/>
+                                        </t>
+                                    </t>
+                                    <t t-if="document[0].child_ids">
+                                        <a t-attf-href="/my/documents/{{ int(document[0].id) }}">
+                                            <span t-field="document.name"/>
+                                        </a>
+                                    </t>
+                                </td>
+                                <td>
+                                    <span t-esc="document[0].number_of_files"/>
+                                </td>
+                                <td>
+                                    <span t-field="document.status"/>
+                                </td>
+                                <td>
+                                    <span t-field="document.document_date"/>
+                                </td>
+                                <td>
+                                    <span t-field="document.expiry_date"/>
+                                </td>
+                                <td>
+                                    <span t-field="document.document_type_id.name"/>
+                                </td>
+                                <td>
+                                    <t t-if="document.status=='rejected'">
+                                        <a t-att-href="'/my/documents/update/%s' % str(document.id)"
+                                           class="btn btn-info">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                                            Edit
+                                        </a>
+                                    </t>
+                                </td>
+                                <td>
+                                    <form action="/my/documents/delete" method="post">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <input type="hidden" name="parent_doc_id" t-att-value="document.id"/>
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                            Remove
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>

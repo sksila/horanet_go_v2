@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Change default address formulary in billing/shipping cart workflow with horanet_website_account address
+    formulary -->
+    <template id="address_checkout" inherit_id="website_sale.address">
+        <xpath expr="//div[contains(@t-attf-class, 'div_name')]" position="attributes">
+            <attribute
+                    name="t-attf-class">form-group required #{error.get('name') and 'has-error' or ''} col-md-12 div_name
+            </attribute>
+        </xpath>
+        <xpath expr="//div[@id='div_email']" position="attributes">
+            <attribute name="t-attf-class">form-group required #{error.get('email') and 'has-error' or ''} col-md-6
+            </attribute>
+        </xpath>
+        <xpath expr="//div[contains(@t-attf-class, 'div_street')]" position="before">
+            <div class="col-xs-12" id="div_address">
+                <div class="row">
+                    <fieldset>
+                            <t t-call="horanet_website_account.partner_address"/>
+                    </fieldset>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[contains(@t-attf-class, 'div_street')]" position="replace"></xpath>
+        <xpath expr="//div[contains(@t-attf-class, 'div_city')]" position="replace"></xpath>
+        <xpath expr="//div[contains(@t-attf-class, 'div_zip')]" position="replace"></xpath>
+        <xpath expr="//div[contains(@t-attf-class, 'div_zip')]" position="replace"></xpath>
+        <xpath expr="//div[contains(@t-attf-class, 'div_country')]" position="replace"></xpath>
+        <xpath expr="//div[contains(@t-attf-class, 'div_state')]" position="replace"></xpath>
+        <xpath expr="//input[@name='field_required']" position="replace"></xpath>
+    </template>
+</odoo>

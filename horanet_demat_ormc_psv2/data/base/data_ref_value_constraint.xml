@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Contraintes cat_tiers <=> nat_jur -->
+        <record id="constraint_cattiers_natjur_01" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_01"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_01"/>
+        </record>
+        <record id="constraint_cattiers_natjur_02" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_01"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_02"/>
+        </record>
+        <record id="constraint_cattiers_natjur_03" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_50"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_03"/>
+        </record>
+        <record id="constraint_cattiers_natjur_04" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_74"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_04"/>
+        </record>
+        <record id="constraint_cattiers_natjur_05" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_60"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_04"/>
+        </record>
+        <record id="constraint_cattiers_natjur_06" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_61"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_04"/>
+        </record>
+        <record id="constraint_cattiers_natjur_07" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_62"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_04"/>
+        </record>
+        <record id="constraint_cattiers_natjur_08" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_63"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_04"/>
+        </record>
+        <record id="constraint_cattiers_natjur_09" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_64"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_04"/>
+        </record>
+        <record id="constraint_cattiers_natjur_10" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_65"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_04"/>
+        </record>
+        <record id="constraint_cattiers_natjur_11" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_72"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_04"/>
+        </record>
+        <record id="constraint_cattiers_natjur_12" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_65"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_05"/>
+        </record>
+        <record id="constraint_cattiers_natjur_13" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_70"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_05"/>
+        </record>
+        <record id="constraint_cattiers_natjur_14" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_71"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_05"/>
+        </record>
+        <record id="constraint_cattiers_natjur_15" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_73"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_05"/>
+        </record>
+        <record id="constraint_cattiers_natjur_16" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_50"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_06"/>
+        </record>
+        <record id="constraint_cattiers_natjur_17" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_20"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_07"/>
+        </record>
+        <record id="constraint_cattiers_natjur_18" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_20"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_08"/>
+        </record>
+        <record id="constraint_cattiers_natjur_19" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_28"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_08"/>
+        </record>
+        <record id="constraint_cattiers_natjur_20" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_21"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_09"/>
+        </record>
+        <record id="constraint_cattiers_natjur_21" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_22"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_09"/>
+        </record>
+        <record id="constraint_cattiers_natjur_22" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_23"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_09"/>
+        </record>
+        <record id="constraint_cattiers_natjur_23" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_24"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_09"/>
+        </record>
+        <record id="constraint_cattiers_natjur_24" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_25"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_09"/>
+        </record>
+        <record id="constraint_cattiers_natjur_25" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_26"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_09"/>
+        </record>
+        <record id="constraint_cattiers_natjur_26" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_27"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_09"/>
+        </record>
+        <record id="constraint_cattiers_natjur_27" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_29"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_10"/>
+        </record>
+        <record id="constraint_cattiers_natjur_28" model="pes.referential.value.constraint">
+            <field name="ref_value_1_id" ref="pes_ref_cat_tiers_63"/>
+            <field name="ref_value_2_id" ref="pes_ref_nat_jur_11"/>
+        </record>
+    </data>
+</odoo>

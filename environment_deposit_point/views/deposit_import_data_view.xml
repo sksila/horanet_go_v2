@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="deposit_import_data_form_view" model="ir.ui.view">
+        <field name="name">Deposit Import Data Form View</field>
+        <field name="model">deposit.import.data</field>
+        <field name="arch" type="xml">
+            <form duplicate="false">
+                <header>
+                    <button name="action_process_data" string="Process data" type="object"
+                            class="oe_highlight oe_read_only"
+                            attrs="{'invisible': [('state','=','processed')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="code"/>
+                        <h1>
+                            <field name="code"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="import_date"/>
+                            <field name="display_count" readonly="1"/>
+                            <field name="deposit_point_mapping_id"/>
+                        </group>
+                        <group>
+                            <field name="first_deposit_date"/>
+                            <field name="last_deposit_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="data"/>
+                        <field name="errors" widget="html" readonly="1"/>
+                        <field name="comment"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="deposit_import_data_tree_view" model="ir.ui.view">
+        <field name="name">Deposit Import Data List View</field>
+        <field name="model">deposit.import.data</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="state=='error' or created_operations_count==0">
+                <field name="import_date"/>
+                <field name="display_count"/>
+                <field name="first_deposit_date"/>
+                <field name="last_deposit_date"/>
+                <field name="state"/>
+                <field name="code"/>
+                <field name="created_operations_count" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="deposit_import_data_search_view" model="ir.ui.view">
+         <field name="name">Deposit Import Data Search View</field>
+        <field name="model">deposit.import.data</field>
+        <field name="arch" type="xml">
+            <search string="Search import">
+                <filter string="Today" name="filter_today"
+                        domain="[('import_date', '&lt;=', time.strftime('%Y-%m-%d 23:59:59')),('import_date', '&gt;=', time.strftime('%Y-%m-%d 00:00:00'))]"/>
+                <filter string="This week" name="filter_week"
+                        domain="[('import_date', '&lt;=', time.strftime('%Y-%m-%d 23:59:59')),('import_date', '&gt;=', ((context_today()+relativedelta(weeks=-1, days=1, weekday=0)).strftime('%Y-%m-%d 00:00:00')))]"/>
+                <filter string="This month" name="filter_month"
+                        domain="[('import_date', '&lt;=', time.strftime('%Y-%m-%d 23:59:59')),('import_date', '&gt;=', time.strftime('%Y-%m-01 00:00:00'))]"/>
+                <filter string="This Year" name="filter_year"
+                        domain="[('import_date','&lt;=',time.strftime('%%Y-12-31 23:59:59')),('import_date','&gt;=',time.strftime('%%Y-01-01 00:00:00'))]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="deposit_import_data_action" model="ir.actions.act_window">
+        <field name="name">Deposit import datas</field>
+        <field name="res_model">deposit.import.data</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create a new deposit import data.
+            </p>
+        </field>
+    </record>
+
+    <record id="deposit_import_data_process_data_action_server" model="ir.actions.server">
+        <field name="name">Process data</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_deposit_import_data"/>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+            action = records.action_process_data()
+        </field>
+    </record>
+
+    <record id="action_multi_process_data" model="ir.values">
+        <field name="name">Process data</field>
+        <field name="model_id" ref="model_deposit_import_data"/>
+        <field name="model">deposit.import.data</field>
+        <field name="key2">client_action_multi</field>
+        <field eval="'ir.actions.server,%d'%deposit_import_data_process_data_action_server" name="value"/>
+    </record>
+</odoo>

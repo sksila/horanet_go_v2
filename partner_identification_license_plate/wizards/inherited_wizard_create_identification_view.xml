@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="vehicle_create_identification" model="ir.ui.view">
+        <field name="name">Vehicle in create identification wizard</field>
+        <field name="model">create.identification</field>
+        <field name="inherit_id" ref="partner_contact_identification.create_identification_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type_id']" position="after">
+                <field name="is_medium_type_vehicle" invisible="1"/>
+                <field name="vehicle_identification_number"
+                       attrs="{'invisible': [('is_medium_type_vehicle', '=', False)]}"/>
+                <field name="brand"
+                       attrs="{'invisible': [('is_medium_type_vehicle', '=', False)]}"/>
+                <field name="vehicle_model_name"
+                       attrs="{'invisible': [('is_medium_type_vehicle', '=', False)]}"/>
+                <field name="color"
+                       attrs="{'invisible': [('is_medium_type_vehicle', '=', False)]}"/>
+                <field name="ptac"
+                       attrs="{'invisible': [('is_medium_type_vehicle', '=', False)]}"/>
+                <field name="documentation_id"
+                       attrs="{'invisible': [('is_medium_type_vehicle', '=', False)]}"/>
+                <field name="vehicle_type_id"
+                       attrs="{'invisible': [('is_medium_type_vehicle', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

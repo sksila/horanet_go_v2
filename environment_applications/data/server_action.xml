@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="environment_application_server_action_create_contract" model="ir.actions.server">
+            <field name="name">Create contract from application (template)</field>
+            <field name="model_id" ref="website_application.model_website_application"/>
+            <field name="condition">True</field>
+            <field name="sequence">5</field>
+            <field name="state">code</field>
+            <field name="code">
+# Ce super code sert à créer un contrat pour un partner à la validation d'un téléservice
+record = model.browse(context['active_id'])
+
+# Cette partie est à personnaliser en fonction du template de contrat à appliquer
+subscription_template = env['horanet.subscription.template'].search([('name', '=', 'INSERT NAME'),
+                                                                     ('subscription_category_ids', 'in', record.recipient_id.subscription_category_ids.ids)])
+
+if subscription_template:
+    env['subscription.wizard.create.contract'].create_contract(record.recipient_id, subscription_template)
+            </field>
+        </record>
+    </data>
+</odoo>

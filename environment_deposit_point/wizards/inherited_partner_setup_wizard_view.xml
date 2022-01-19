@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherited_view_partner_setup_wizard_pav" model="ir.ui.view">
+        <field name="name">inherited.partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_stage_support_attribution"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='add_medium']" position="inside">
+                <group string="Add deposit point medium">
+                    <field name="deposit_point_mapping_id" readonly="1"/>
+                    <field name="deposit_point_max_length" invisible="True"/>
+                    <field name="deposit_point_mapping" invisible="True"/>
+                    <field name="deposit_point_csn_number"/>
+                    <field name="deposit_point_tag_id" invisible="True"/>
+                    <button string="Create tag" name="action_enroll_medium" type="object" class="btn-info"
+                            attrs="{'invisible': [('deposit_point_tag_id', '!=', False)]}"
+                            context="{'csn_number': deposit_point_csn_number,
+                                      'mapping_id': deposit_point_mapping_id}"/>
+                    <button string="Move tag" name="action_move_tag" type="object" class="btn-info"
+                            attrs="{'invisible': [('deposit_point_tag_id', '=', False)]}"
+                            context="{'tag_id': deposit_point_tag_id}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

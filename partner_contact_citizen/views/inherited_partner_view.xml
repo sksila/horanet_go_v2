@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner_form_view" model="ir.ui.view">
+        <field name="name">Add international phone on partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="phone" position="replace">
+                <label for="country_phone" string="Phone:"/>
+
+                <div class="o_phone_format">
+                    <div class="oe_edit_only">
+                        <field name="country_phone" options='{"no_open": True, "no_create":True}'
+                               class="h_country_phone"/>
+                        <label for="country_phone_code" string=" + " class="h_label"/>
+                        <field name="country_phone_code" class="h_country_code"/>
+                        <field name="phone" class="h_phone"/>
+                    </div>
+                    <field name="display_international_phone"/>
+                </div>
+            </field>
+            <field name="mobile" position="replace">
+                <label for="country_phone" string="Mobile:"/>
+                <div class="o_phone_format">
+                    <div class="oe_edit_only">
+                        <field name="country_mobile" options='{"no_open": True, "no_create":True}'
+                               class="h_country_phone"/>
+                        <label for="country_mobile_code" string=" + " class="h_label"/>
+                        <field name="country_mobile_code" class="h_country_code"/>
+                        <field name="mobile" class="h_phone"/>
+                    </div>
+                    <field name="display_international_mobile"/>
+                </div>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">Add phone search</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="display_international_phone"/>
+                <field name="display_international_mobile"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

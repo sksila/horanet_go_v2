@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Cron de suppression des demandes d'inscription non abouties -->
+        <record id="cron_delete_invalid_signup" model="ir.cron">
+            <field name="name">Delete user and associated partner with invalid signup</field>
+            <field name="active">False</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <!--Run this task each day at midnight (UTC)-->
+            <field name="nextcall" eval="(datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d 00:00:00')"/>
+            <field name="model" eval="'res.users'"/>
+            <field name="function" eval="'_cron_delete_invalid_signup'"/>
+        </record>
+
+    </data>
+</odoo>
+

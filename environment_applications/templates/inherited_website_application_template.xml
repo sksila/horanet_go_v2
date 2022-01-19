@@ -1,0 +1,163 @@
+<odoo>
+
+    <template id="environment_support_rules" name="Règlement d'utilisation">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <h2>Règlement d’utilisation</h2>
+                            <h3>Badges d’accès au centre de valorisation pour les « particuliers »</h3>
+                            <div style="width: 800px;">
+                                <div style="width: 380px; float: right;">
+                                    <p>
+                                        <b>4.2: délivrance du badge</b>
+                                        <br/>
+                                        La demande de badge d’accès est effectuée directement par l’usager auprès de la
+                                        communauté de communes. A la remise du formulaire dûment complété, signé et après vérification des
+                                        justificatifs, la communauté de communes enregistre la demande et attribue un numéro unique à
+                                        chaque usager. Ce numéro figure au verso du badge d’accès et permet un suivi
+                                        informatisé de l’utilisation du service par l’usager.
+                                    </p>
+
+                                    <p>
+                                        <b>4.3 : validité et propriété des badges</b>
+                                        <br/>
+                                        En cas de non utilisation du badge sur une période d’un an, un courrier sera
+                                        adressé à l’usager pour savoir s’il a toujours besoin de son badge. En cas de
+                                        non-réponse sous un délai de deux mois, le badge sera désactivé. Le badge
+                                        d’accès au centre de valorisation est la propriété exclusive de la communauté de communes.
+                                    </p>
+
+                                    <p>
+                                        <b>4.4 : contrôle des accès au centre de valorisation</b>
+                                        <br/>
+                                        La communauté de communes veille au respect du présent règlement et peut, le cas échéant,
+                                        procéder à la vérification du badge d’accès sur le centre de valorisation. Ce
+                                        contrôle portera sur l’identité de l’utilisateur et sur la correspondance
+                                        avec l’enregistrement dans la base de données. L’utilisateur sera invité à
+                                        apporter immédiatement la preuve de son identité et/ou de son appartenance au
+                                        foyer ; en cas de fraude, le badge sera confisqué par la communauté de communes et le compte
+                                        suspendu. Faute de pouvoir apporter la preuve de son identité immédiatement,
+                                        l’usager aura un délai de 15 jours pour y remédier sous peine de voir son
+                                        badge d’accès désactivé.
+                                    </p>
+
+                                    <p>
+                                        <b>5. Règlement intérieur du centre de valorisation</b>
+                                        <br/>
+                                        Le présent règlement d’utilisation des badges fait partie du règlement
+                                        intérieur du centre de valorisation ; en cas de modification, c’est ce
+                                        dernier qui fait foi.
+                                    </p>
+
+                                    <p>
+                                        <b>6. Conditions de dépôt au centre de valorisation</b>
+                                        <br/>
+                                        Lors de chaque passage au centre de valorisation, l’usager doit présenter
+                                        devant la borne son badge d’accès. A défaut, l’accès au centre de valorisation
+                                        est refusé. Le badge d’accès permet d’identifier l’usager et de mesurer
+                                        l’utilisation qu’il fait du service.
+                                        <br/>
+
+                                        <b>6.1 : produits acceptés au centre de valorisation</b>
+                                        <br/>
+                                        La liste des produits acceptés au centre de valorisation figure sur le
+                                        règlement intérieur du centre de valorisation ; il est consultable directement
+                                        sur le site, de même que la liste des déchets refusés, ou sur le site
+                                        internet www.cc-vallee-munster.fr
+                                        6.2 : limitation des apports
+                                        Pour certains types de produits, les quantités journalières d’apport sont
+                                        limitées ; ces limites sont précisées dans le règlement intérieur du
+                                        centre de valorisation.
+                                    </p>
+
+                                    <p>
+                                        <b>7. Informations et Libertés</b>
+                                        <br/>
+                                        Les conditions d’attribution des badges on fait l’objet d’une déclaration
+                                        auprès de la CNIL ; conformément aux dispositions de la loi 78-17 du 6
+                                        janvier 1978 relative à l’informatique, aux fichiers et aux libertés,
+                                        toute personne qui figure sur le fichier centralisé tenu par la communauté de communes
+                                        dispose d’un droit d’accès et de rectification des informations le concernant.
+                                    </p>
+                                    <p>
+                                        <b>Edition du 03/05/2017</b>
+                                    </p>
+                                </div>
+                                <div style="width: 400px;">
+                                    <p>
+                                        <b>1. Usagers concernés</b>
+                                        <br/>
+                                        Le présent règlement d’utilisation des badges d’accès au centre de valorisation
+                                        s’applique à l’ensemble des usagers « particuliers » résidant dans l’une des
+                                        communes de la communauté de communes.
+                                    </p>
+
+                                    <p>
+                                        <b>2. Objet</b>
+                                        <br/>
+                                        Le présent règlement a pour objet :
+                                        <ul>
+                                            <li>de définir les conditions d’attribution d’un badge d’accès au centre de
+                                                valorisation de la communauté de communes,
+                                            </li>
+                                            <li>de clarifier les relations entre les « particulier » et la communauté de communes.</li>
+                                        </ul>
+                                        Le présent règlement est porté à la connaissance des usagers par voie :
+                                        <ul>
+                                            <li>d’affichage au centre de valorisation</li>
+                                            <li>d’information auprès de la communauté de communes</li>
+                                            <li>d’information sur le site internet de la communauté de communes : www.cc-vallee-munster.fr</li>
+                                        </ul>
+                                    </p>
+
+                                    <p>
+                                        <b>3. Responsabilités</b>
+                                        <br/>
+                                        Chaque badge est attribué à un foyer. Il possède un numéro d’identification
+                                        unique, il est nominatif et engage la responsabilité de son détenteur qu’il en
+                                        soit titulaire direct ou indirect. La cession, le don, le prêt du badge d’accès
+                                        est interdit ; en cas d’utilisation frauduleuse de celui-ci, la responsabilité
+                                        du titulaire sera engagée et il pourra voir son badge être désactivé.
+                                        En cas de perte, vol ou destruction du badge, le titulaire devra avertir la
+                                        communauté de communes qui procédera à la désactivation du badge.
+                                        Un nouveau badge pourra être créé à la demande de l’usager à ses frais (15€).
+                                        Tout usager autorisé à accéder au centre de valorisation respectera le présent
+                                        règlement d’utilisation.
+                                        L’usager s’engage et engage les ayants droits au respect du présent règlement
+                                        et du règlement intérieur du centre de valorisation. Tout comportement ou
+                                        utilisation frauduleux portant atteinte à l’ordre, à la sécurité des biens et
+                                        des personnes ou à la salubrité du centre de valorisation est de la
+                                        responsabilité de l’usager qui s’expose à des poursuites civiles ou pénales
+                                        et au retrait de son autorisation d’accès (badge désactivé).
+                                        La communauté de communes ne saurait être tenu pour responsable de la méconnaissance pour
+                                        l’usager du présent règlement. Tout résultant de l’exécution du présent
+                                        règlement relève de la compétence du tribunal de Colmar.
+                                    </p>
+
+                                    <p>
+                                        <b>4. Conditions d’accès au centre de valorisation</b>
+                                        <br/>
+                                        L’autorisation d’accéder au centre de valorisation est matérialisée par la
+                                        délivrance d’un badge d’accès, nominatif, numéroté et répertorié.
+                                        <br/>
+                                        <b>4.1 : obligation de l’usager</b>
+                                        <br/>
+                                        L’usager s’engage sur l’exactitude des renseignements fournis par ses soins
+                                        sur le formulaire de demande de badge d’accès ; il sera tenu pour seul
+                                        responsable de toute indication erronée, incomplète ou obsolète. La communauté de communes
+                                        se réserve le droit de procéder aux vérifications des informations fournies
+                                        par l’usager.
+                                        L’usager est tenu d’informer dans les meilleurs délais la communauté de communes de toute
+                                        modification concernant sa situation au regard des informations demandées.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

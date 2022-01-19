@@ -1,0 +1,8 @@
+<odoo>
+    <record id="group_address_manage" model="res.groups">
+        <field name="name">Manage Location</field>
+        <field name="category_id" ref="horanet_go.horanet_go_category"/>
+        <field name="comment">Enable the menus to manage addresses like cities and streets.</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+</odoo>

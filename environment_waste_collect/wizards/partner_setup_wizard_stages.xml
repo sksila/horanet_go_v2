@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="wizard_stage_subscription_template_choice" model="partner.setup.wizard.stage">
+            <field name="name">Subscription template choice</field>
+            <field name="order">10</field>
+            <field name="view_id" ref="view_partner_setup_wizard_stage_template_choice"/>
+        </record>
+        <record id="wizard_stage_support_attribution" model="partner.setup.wizard.stage">
+            <field name="name">Support attribution</field>
+            <field name="order">40</field>
+            <field name="view_id" ref="view_partner_setup_wizard_stage_support_attribution"/>
+        </record>
+        <record id="wizard_stage_fixed_part_choice" model="partner.setup.wizard.stage">
+            <field name="name">Fixed part choice</field>
+            <field name="order">50</field>
+            <field name="view_id" ref="view_partner_setup_wizard_stage_fixed_part_choice"/>
+        </record>
+        <record id="wizard_stage_summary" model="partner.setup.wizard.stage">
+            <field name="name">Summary</field>
+            <field name="order">99</field>
+            <field name="view_id" ref="view_partner_setup_wizard_summary"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="horanet_merge_partner"
+              name="Merge duplicate partner"
+              parent="horanet_go.menu_collectivity_config"
+              groups="partner_merge.group_contact_merge"
+              sequence="60"/>
+
+    <menuitem id="horanet_settings_menu_list_duplicate_partner"
+              name="Potentially duplicate partner"
+              parent="partner_merge.horanet_merge_partner"
+              action="partner_merge.action_duplicate_partner_view"
+              groups="partner_merge.group_contact_merge"
+              sequence="10"/>
+
+    <menuitem id="horanet_settings_menu_duplicate_partner"
+              name="launch merge wizard"
+              parent="partner_merge.horanet_merge_partner"
+              action="partner_merge.action_open_wizard_merge"
+              groups="partner_merge.group_contact_merge"
+              sequence="20"/>
+</odoo>

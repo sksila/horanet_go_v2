@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Main menu -->
+    <menuitem id="psv2_root_menu"
+              name="PESV2"
+              parent="account.menu_finance_configuration"
+              groups="account_mass_invoicing.group_admin_mass_invoicing"
+              sequence="100"/>
+
+    <!-- Menu export/import PSV2 -->
+    <menuitem id="menu_management_psv2"
+              name="Dématérialisation PSV2"
+              parent="psv2_root_menu"
+              sequence="10"/>
+    <menuitem id="menu_declaration_psv2"
+              name="Déclaration"
+              action="pes_declaration_action"
+              parent="menu_management_psv2"
+              sequence="10"/>
+
+    <!-- Menus du module de construction des fichiers PSE V2 -->
+    <menuitem id="menu_construct_pse"
+              name="PSE construction"
+              parent="psv2_root_menu"
+              sequence="20"/>
+    <menuitem id="menu_pes_file"
+              name="PES file construction"
+              action="horanet_demat_ormc_psv2.pes_file_action"
+              parent="menu_construct_pse"
+              sequence="10"/>
+    <menuitem id="menu_pes_bloc"
+              name="File bloc"
+              action="horanet_demat_ormc_psv2.pes_bloc_action"
+              parent="menu_construct_pse"
+              sequence="20"/>
+    <menuitem id="menu_pes_bloc_attrs"
+              name="File bloc attributes"
+              action="horanet_demat_ormc_psv2.pes_bloc_attrs_action"
+              parent="menu_construct_pse"
+              sequence="30"/>
+    <menuitem id="pes_domain_psv2"
+              name="PES domain"
+              action="horanet_demat_ormc_psv2.pes_domain_action"
+              parent="menu_construct_pse"
+              sequence="40"/>
+    <menuitem id="pes_ref_psv2"
+              name="Reference"
+              action="horanet_demat_ormc_psv2.pes_ref_action"
+              parent="menu_construct_pse"
+              sequence="50"/>
+    <menuitem id="pes_ref_constraint_psv2"
+              name="Reference constraints"
+              action="horanet_demat_ormc_psv2.pes_ref_value_constraint_action"
+              parent="menu_construct_pse"
+              sequence="60"/>
+
+    <!-- Menu Message Center -->
+    <menuitem id="menu_main_center"
+              parent="psv2_root_menu"
+              sequence="30"
+              name="Messages center"/>
+    <menuitem id="menu_message"
+              parent="menu_main_center"
+              sequence="10"
+              action="horanet_demat_ormc_psv2.act_open_pes_message_view"/>
+    <menuitem id="menu_application"
+              parent="menu_main_center"
+              sequence="20"
+              action="horanet_demat_ormc_psv2.act_open_pes_application_view"/>
+
+</odoo>

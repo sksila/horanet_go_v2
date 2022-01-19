@@ -1,0 +1,18 @@
+<odoo>
+    <record id="partner_see_relatives" model="ir.rule">
+        <field name="name">res_partner: partners can see their relatives</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="domain_force">['|', '|', '|',
+('id','=',user.partner_id.id),
+('id', 'in', user.partner_id.dependant_ids.ids),
+('create_uid', '=', user.id),
+('search_field_all_foyers_members','in',user.partner_id.id)]
+        </field>
+        <field name="groups" eval="[(4, ref('base.group_portal')), (4, ref('base.group_public'))]"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_read" eval="True"/>
+        <field name="global" eval="0"/>
+    </record>
+</odoo>

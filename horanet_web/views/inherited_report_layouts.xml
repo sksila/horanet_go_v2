@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="no_height_minimal_layout" inherit_id="web.minimal_layout">
+        <!--Remove the html height style set to 0, in order to allow relative positioning in report template-->
+        <xpath expr="//html" position="attributes">
+            <attribute name="style">height:auto;</attribute>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_validate_partner_address_form" model="ir.ui.view">
+        <field name="name">Address validation wizard</field>
+        <field name="model">horanet.citizen.wizard.validate.partner.address</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="address_workflow" widget="statusbar"
+                           statusbar_visible="pending,validated,rejected"/>
+                </header>
+                <field name="partner_id" invisible="True"/>
+                <group>
+                    <group string="Address to validate">
+                        <field name="street"/>
+                        <field name="city"/>
+                        <field name="state_id"/>
+                        <field name="country_id"/>
+                        <field name="street_number_id"/>
+                        <field name="address_status"/>
+                    </group>
+                    <group string="Proof of address">
+                        <field name="document_id"
+                               context="{'default_partner_id': partner_id, 'validation_wizard': True}"/>
+                        <field name="document_status"/>
+                        <field name="document_link"/>
+                    </group>
+                </group>
+                <footer>
+                    <!-- Address validation buttons -->
+                    <button type="object" name="action_reject_address"
+                            string="Reject address"/>
+                    <button type="object" name="action_validate_address"
+                            string="Validate address" class="oe_highlight"/>
+
+                    <!-- Document validation buttons -->
+                    <button type="object" name="action_change_document_status" args="['valid']"
+                            string="Validate document" class="oe_highlight oe_right"/>
+                    <button type="object" name="action_change_document_status" args="['rejected']"
+                            string="Reject document" class="oe_right"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <act_window id="action_wizard_validate_partner_address"
+                name="Address validation wizard"
+                res_model="horanet.citizen.wizard.validate.partner.address"
+                view_mode="form"
+                view_id="wizard_validate_partner_address_form"
+                target="new"/>
+</odoo>

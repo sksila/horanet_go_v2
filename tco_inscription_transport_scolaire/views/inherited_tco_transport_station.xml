@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="inherited_view_form_transport_station" model="ir.ui.view">
+        <field name="name">inherited.tco.transport.station.form</field>
+        <field name="model">tco.transport.station</field>
+        <field name="inherit_id" ref="tco_transport.view_form_transport_station"/>
+        <field name="arch" type="xml">
+            <field name="type_id" position="after">
+                <field name="service_ids"/>
+            </field>
+        </field>
+    </record>
+</odoo>

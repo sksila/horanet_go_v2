@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_maintenance_equipment_portal,maintenance equipment portal,maintenance.model_maintenance_equipment,base.group_portal,1,0,0,0
+access_maintenance_requests_portal,maintenance requests portal,maintenance.model_maintenance_request,base.group_portal,1,0,0,0

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_form_MODEL_NAME" model="ir.ui.view">
+            <field name="name">horanet.MODEL.NAME.form</field>
+            <field name="model">horanet.MODEL.NAME</field>
+            <field name="arch" type="xml">
+                <form string="MODEL in english for humans">
+                    <sheet>
+                        <group>
+                            <field name="name"></field>
+                        </group>
+                        <group>
+                            <field name="field_1"></field>
+                        </group>
+                        <group string="Properties">
+                            <field name="field_2"></field>
+                            <field name="field_3"></field>
+                            <field name="field_4"></field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_MODEL_NAME" model="ir.ui.view">
+            <field name="name">horanet.MODEL.NAME.tree</field>
+            <field name="model">horanet.MODEL.NAME</field>
+            <field name="arch" type="xml">
+                <tree string="MODEL in english for humans">
+                    <field name="name"/>
+                    <field name="field_2"></field>
+                    <field name="field_3"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_MODEL_NAME" model="ir.actions.act_window">
+            <field name="name">MODEL in english for humans</field>
+            <field name="res_model">horanet.MODEL.NAME</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_tree_MODEL_NAME"/>
+        </record>
+    </data>
+</odoo>

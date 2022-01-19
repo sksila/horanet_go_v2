@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_batch_invoice_document">
+            <t t-call="account_mass_invoicing.external_layout_batch">
+                <div class="page">
+                    <style type="text/css">
+                        table {
+                        border-collapse: collapse;
+                        font-size: 10px;
+                        }
+
+                        table, th, td {
+                        border: 3px solid black;
+                        }
+
+                    </style>
+
+                    <table class="table table-condensed">
+
+                        <tr style="background-color:#dddddd;">
+                            <td>
+                                <strong t-translation="on">ID Facture</strong>
+                            </td>
+                            <td style='border-right:none;'>
+                                <strong t-translation="on">Document d'origine</strong>
+                            </td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;'>
+                                <strong t-translation="on">Payeurs - Clients</strong>
+                            </td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td>
+                                <strong t-translation="on">Emargement</strong>
+                            </td>
+                        </tr>
+                        <tr style="background-color:#dddddd;">
+                            <td style='border-right:none;'>
+                                <strong t-translation="on">Désignation</strong>
+                            </td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td>
+                                <strong t-translation="on">Quantité</strong>
+                            </td>
+                            <td>
+                                <strong t-translation="on">PU TTC</strong>
+                            </td>
+                            <td>
+                                <strong t-translation="on">Montant TTC</strong>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <t t-set="batch_amount_total" t-value="0"/>
+                        <tbody class="invoice_tbody">
+
+                            <!-- forEach for invoices   -->
+                            <t t-as="item" t-foreach="o.invoice_ids">
+                                <tr>
+                                    <td>
+                                        <strong>ID: </strong>
+                                        <span t-field="item.id"/>
+                                    </td>
+                                    <td style='border-right:none;'>
+                                        <span t-esc="item.origin"/>
+                                    </td>
+                                    <td colspan="3" style='border-right:none;border-left:none;border-bottom:none;border-top:none'>
+
+                                    </td>
+                                    <td colspan="4">
+                                         <span t-field="item.partner_id"/>
+                                    </td>
+                                    <td style='border-right:none;border-left:none;border-bottom:none;border-top:none'></td>
+                                </tr>
+                                <t t-set="line"
+                                   t-value="item"/>
+                                    <tr t-foreach="item.invoice_line_ids" t-as="invoice_line">
+                                    <td colspan="6">
+                                        <span t-field="invoice_line.product_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="invoice_line.quantity"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="invoice_line.price_unit"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="invoice_line.price_subtotal"/>
+                                    </td>
+                                    <td style='border-right:none;border-left:none;border-bottom:none;border-top:none'></td>
+
+                                </tr>
+
+                                <tr>
+                                    <td colspan="8">
+                                        <strong t-translation="on">TOTAL</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="item.amount_total"/>
+                                    </td>
+                                    <td class="text-center" style='border-right:none;border-left:none;border-top:none'>
+                                        <span t-field="item.amount_total"/>
+                                    </td>
+
+                                </tr>
+                                <t t-set="batch_amount_total" t-value="batch_amount_total+item.amount_total"/>
+                            </t>
+                        </tbody>
+                        <tr style="background-color:#dddddd;">
+                            <td colspan="8" class="text-left">
+                                <strong>
+                                    <strong>
+                                        <span t-esc="len(o.invoice_ids)"></span>
+                                        factures
+                                    </strong>
+                                </strong>
+                            </td>
+                            <td class="text-right">
+                                <strong t-translation="on">Tolal du lot</strong>
+                            </td>
+                            <td class="text-center">
+                                <strong>
+                                    <t t-esc="batch_amount_total"/>
+                                </strong>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_batch_mass_invoice">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="account_mass_invoicing.report_batch_invoice_document"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

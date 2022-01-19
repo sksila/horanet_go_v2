@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_partner_contact_identification_tag" model="ir.ui.view">
+        <field name="name">Tag form</field>
+        <field name="model">partner.contact.identification.tag</field>
+        <field name="arch" type="xml">
+            <form string="Tag" create="false">
+                <header>
+                    <button name="deallocate" type="object" class="oe_highlight oe_left"
+                            attrs="{'invisible': [('is_assigned', '=', False)]}"
+                            string="Deallocate"
+                            confirm="Are you sure you want to deallocate this tag?"/>
+                    <button name="set_lost" type="object" class="oe_highlight oe_right"
+                            attrs="{'invisible': ['|', ('medium_id', '=', False), ('is_lost', '=', True)]}"
+                            string="Declare lost"
+                            confirm="Are you sure you want to declare this tag as lost? The tag cannot be used anymore after this operation."/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="number"></field>
+                    </group>
+                    <group>
+                        <field name="mapping_id" widget="many2one"></field>
+                        <field name="medium_id" context="{'active_test': False}"></field>
+                        <field name="partner_id"/>
+                        <field name="external_reference"/>
+                    </group>
+                    <group>
+                        <field name="active"/>
+                        <field name="is_lost"/>
+                        <field name="is_assigned" invisible="1"/>
+                    </group>
+                    <group attrs="{'invisible': [('active', '=', True)]}">
+                        <field name="deactivated_by"/>
+                        <field name="deactivated_on"/>
+                    </group>
+                    <group>
+                        <field name="assignation_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_partner_contact_identification_tag" model="ir.ui.view">
+        <field name="name">Tag list</field>
+        <field name="model">partner.contact.identification.tag</field>
+        <field name="arch" type="xml">
+            <tree string="Tag" create="false">
+                <field name="number"/>
+                <field name="mapping_id"/>
+                <field name="is_assigned"/>
+                <field name="deactivated_on"/>
+            </tree>
+        </field>
+    </record>
+    <record id="tag_search_view" model="ir.ui.view">
+        <field name="name">Tag Search View</field>
+        <field name="model">partner.contact.identification.tag</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="number"/>
+                <filter string="Is assigned" name="is_assigned" domain="[('is_assigned', '=', True)]"/>
+                <filter string="Is available" name="is_available" domain="[('is_assigned', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_identification_tag" model="ir.actions.act_window">
+        <field name="name">Tags</field>
+        <field name="res_model">partner.contact.identification.tag</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_partner_contact_identification_tag"/>
+        <field name="search_view_id" ref="tag_search_view"/>
+        <field name="context">{'active_test': False}</field>
+    </record>
+</odoo>

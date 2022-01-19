@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.form.inherit</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="website_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <!--<group name="delivery" position="inside">-->
+             <xpath expr="//div[@data-key='sale_management']" position="inside">
+                 <h2>E-commerce</h2>
+                 <div class="row mt16 o_settings_container">
+                      <!-- Shop is private setting -->
+                      <div class="col-xs-12 col-md-6 o_setting_box" id="delivery">
+                            <div class="o_setting_left_pane">
+                                <field name="shop_is_private"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="shop_is_private" string="Shop is private"/>
+                            </div>
+                        </div>
+                      <!-- Terms checkbox checked by default setting -->
+                      <div class="col-xs-12 col-md-6 o_setting_box" id="delivery">
+                            <div class="o_setting_left_pane">
+                                <field name="terms_checkbox_checked"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="terms_checkbox_checked" string="Terms checkbox checked by default"/>
+                            </div>
+                      </div>
+                       <!-- Skip addresses checkout setting -->
+                      <div class="col-xs-12 col-md-6 o_setting_box" id="delivery">
+                            <div class="o_setting_left_pane">
+                                <field name="skip_checkout_addresses"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="skip_checkout_addresses" string="Skip addresses checkout"/>
+                            </div>
+                      </div>
+                      <!-- Terms checkbox checked by default setting -->
+                     <div class="col-xs-12 col-md-6 o_setting_box" id="delivery">
+                            <div class="o_setting_left_pane">
+                                <field name="hide_taxes_and_subtotal"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="hide_taxes_and_subtotal"/>
+                            </div>
+                      </div>
+                 </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

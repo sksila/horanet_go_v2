@@ -1,0 +1,18 @@
+# This file is only used for CI because of the need to use ssh key
+# to clone private repositories
+
+-r python.txt
+-r python-dev.txt
+-r addons-required.txt
+-r addons-useful.txt
+
+# Add private repositories below
+git+ssh://git@ssh-gitlab.horanet.com/ingenierie/projets/environment/sulo.git@10.1.2.0
+git+ssh://git@ssh-gitlab.horanet.com/ingenierie/projets/environment/emz.git@10.1.0.1
+
+# ORMC PESv2 modules
+git+ssh://git@ssh-gitlab.horanet.com/cadrin_situ/hn_demat_const.git@10.0.0.0.2
+git+ssh://git@ssh-gitlab.horanet.com/cadrin_situ/hn_demat_data_nsbase.git@10.0.0.0.2
+git+ssh://git@ssh-gitlab.horanet.com/cadrin_situ/hn_demat_data_nsfacture.git@10.0.0.0.2
+git+ssh://git@ssh-gitlab.horanet.com/cadrin_situ/hn_demat_psv2.git@10.0.0.0.2
+git+ssh://git@ssh-gitlab.horanet.com/cadrin_situ/hn_message_center.git@10.0.0.0.2

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="application_information_view_tree" model="ir.ui.view">
+        <field name="name">Application information query tree view</field>
+        <field name="model">application.information</field>
+        <field name="arch" type="xml">
+            <tree string="Application information">
+                <field name="website_application_stage_id"/>
+                <field name="website_application_block_id"/>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="text_choices"
+                       attrs="{'invisible': [('type', '!=', 'selection')]}"/>
+                <field name="sequence"/>
+                <field name="is_required"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="application_information_result_view_tree" model="ir.ui.view">
+        <field name="name">Application information result tree view</field>
+        <field name="model">application.information</field>
+        <field name="arch" type="xml">
+            <tree string="Application information">
+                <field name="name"/>
+                <field name="type"/>
+                <field name="text_choices"
+                       attrs="{'invisible': [('type', '!=', 'selection')]}"/>
+                <field name="is_required"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="application_information_view_form" model="ir.ui.view">
+        <field name="name">Application information form view</field>
+        <field name="model">application.information</field>
+        <field name="arch" type="xml">
+            <form string="Application information">
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="technical_name"/>
+                        <field name="website_application_stage_id"/>
+                        <field name="website_application_block_id"/>
+                        <field name="sequence"/>
+                        <field name="help_image" widget="binary"/>
+                        <field name="is_required"/>
+                    </group>
+                    <group colspan="4">
+                        <field name="description"/>
+                        <field name="type"/>
+                        <newline/>
+                        <field name="text_choices"
+                               attrs="{'invisible': [('type', '!=', 'selection')],
+                                       'required': [('type', '=', 'selection')]}"
+                               placeholder="Option 1, Option 2, ..."/>
+                        <field name="text_explanation"
+                               attrs="{'invisible': [('type', '!=', 'explanation')],
+                                       'required': [('type', '=', 'explanation')]}"/>
+                        <field name="document_type_id"
+                               attrs="{'invisible': [('type', '!=', 'document')],
+                                       'required': [('type', '=', 'document')]}"/>
+                        <field name="show_existing_documents"
+                               attrs="{'invisible': [('type', '!=', 'document')]}"/>
+                        <field name="allow_multiple_documents_selection"
+                               attrs="{'invisible': [('type', '!=', 'document')]}"/>
+                        <field name="model_id"
+                               attrs="{'invisible': [('type', '!=', 'model')],
+                                       'required': [('type', '=', 'model')]}"/>
+                        <field name="model" invisible="1"/>
+                        <field name="model_relational_field_id"
+                               attrs="{'invisible': ['|', ('type', '!=', 'model'), ('model_id', '=', False)]}"/>
+                        <field name="domain" widget="domain" options="{'model': 'model'}"
+                               attrs="{'invisible': ['|', ('type', '!=', 'model'), ('model_id', '=', False)]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="application_information_result_view_form" model="ir.ui.view">
+        <field name="name">Application information result form view</field>
+        <field name="model">application.information</field>
+        <field name="arch" type="xml">
+            <form string="Application information">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="technical_name" invisible="1"/>
+                        <field name="type" invisible="1"/>
+                        <field name="model" invisible="1"/>
+
+                        <field name="selection_field_id" attrs="{'invisible' : [('type', 'not in', ('selection'))]}"
+                               options="{'no_create': True,'no_create_edit': True,}"/>
+                        <label for="information_choice_id" class="oe_edit_only"
+                               attrs="{'invisible' : [('type', 'not in', ['model', 'document'])]}"/>
+                        <field name="information_choice_id"
+                               attrs="{'invisible' : [('type', 'not in', ['model', 'document'])]}"
+                               options="{'no_create': True,'no_create_edit': True,'no_open': True,}"
+                               nolabel="1" class="oe_edit_only"/>
+                        <label for="reference_field_id" class="oe_read_only"
+                               attrs="{'invisible' : [('type', 'not in', ['model', 'document'])]}"/>
+                        <field name="reference_field_id"
+                               attrs="{'invisible' : [('type', 'not in', ['model', 'document'])]}"
+                               options="{'no_create': True,'no_create_edit': True,}" nolabel="1" class="oe_read_only"/>
+                        <field name="value_integer" string="Value"
+                               attrs="{'invisible' : [('type', 'not in', ('number', 'option'))]}"/>
+                        <field name="value_date" string="Value"
+                               attrs="{'invisible' : [('type', 'not in', ('date', 'datetime'))]}"/>
+                        <field name="value_text" string="Value"
+                               attrs="{'invisible' : [('type', 'not in', ('char', 'text'))]}"/>
+                        <field name="model" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

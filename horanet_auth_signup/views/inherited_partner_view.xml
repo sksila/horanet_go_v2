@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_partner" model="ir.ui.view">
+        <field name="name">Add quick portal user creation button</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!--Ajout de l'état de l'adresse sous le libellé "address"-->
+            <xpath expr="(//notebook)[1]" position="before">
+                <field name="has_default_portal_group" invisible="1"/>
+                <button name="action_create_portal_access" type="object"
+                        attrs="{'invisible':[('has_default_portal_group','=',True)]}"
+                        string="Create Portal Access" class="oe_right"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

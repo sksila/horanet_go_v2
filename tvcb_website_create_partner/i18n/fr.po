@@ -1,0 +1,113 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tvcb_website_create_partner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-11 11:45+0000\n"
+"PO-Revision-Date: 2017-07-11 11:45+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "* City"
+msgstr "* Ville"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "* Email"
+msgstr "* Courriel"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "* Firstname"
+msgstr "* Prénom"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "* Mandatory fields"
+msgstr "* Champs obligatoire"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "* Name"
+msgstr "* Nom"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "* Street"
+msgstr "* Voie"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "* Street n°"
+msgstr "* N° de voie"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "* Title"
+msgstr "* Titre"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "* Zipcode"
+msgstr "* Code postal"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "Additional address"
+msgstr "Complément d'adresse"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "Check this if you want to create a user account."
+msgstr "Cochez cette case si vous voulez créer un compte utilisateur."
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "Phone number"
+msgstr "N° de téléphone"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "Save"
+msgstr "Enregistrer"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "Save and create"
+msgstr "Enregistrer et créer"
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "Select.."
+msgstr "Sélectionner.."
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "The partner"
+msgstr "L'usager"
+
+#. module: tvcb_website_create_partner
+#: code:addons/tvcb_website_create_partner/controllers/create_partner.py:87
+#, python-format
+msgid "This email belongs to %s which address is %s. Click on \"Save\" to add %s %s in the family of %s."
+msgstr "Ce courriel appartient à %s dont l'adresse est %s. Cliquez sur \"Enregistrer\" pour ajouter %s %s dans le foyer de %s."
+
+#. module: tvcb_website_create_partner
+#: model:ir.ui.view,arch_db:tvcb_website_create_partner.create_partner
+msgid "was successfully created."
+msgstr "a bien été créé."
+

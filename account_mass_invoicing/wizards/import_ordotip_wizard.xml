@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_import_ordotip_form_view" model="ir.ui.view">
+        <field name="name">Wizard Import ORDOTIP Base Form View</field>
+        <field name="model">wizard.import.ordotip</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <group>
+                    <group>
+                        <field widget="binary" height="64" name="upload_file" filename="file_name"/>
+                    </group>
+                    <group>
+                        <button name="import_file"
+                                type="object"
+                                string="IMPORT"
+                                class="oe_highlight"
+                                icon="fa-archive"
+                        />
+                    </group>
+                </group>
+                <group string="Log">
+                    <field name="log_text" nolabel="1" readonly="1" widget="html"/>
+                </group>
+                <footer>
+                    <button special="cancel" string="Close"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_Import_ordotip_menu" model="ir.actions.act_window">
+        <field name="name">Import ORDOTIP</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">wizard.import.ordotip</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="wizard_import_ordotip_form_view"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

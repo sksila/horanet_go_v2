@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_cardmaker_export_base"
+              parent="partner_contact_identification.menu_settings_partner_contact_identification"
+              name="Cardmaker exports"
+              sequence="45"/>
+
+    <menuitem id="menu_cardmaker_export"
+              parent="menu_cardmaker_export_base"
+              name="Exports history"
+              sequence="5"
+              action="action_cardmaker_export"/>
+
+    <menuitem id="menu_cardmaker_export_wizard"
+              parent="menu_cardmaker_export_base"
+              name="New export"
+              sequence="10"
+              groups="group_cardmaker_export"
+              action="action_cardmaker_export_wizard"/>
+</odoo>

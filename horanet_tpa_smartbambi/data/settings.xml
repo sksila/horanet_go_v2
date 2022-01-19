@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- URL of SmartBambi backend -->
+        <record model="ir.config_parameter" id="backend_url_tpa_smartbambi">
+            <field name="key">tpa.smartbambi.backend_url</field>
+            <field name="value">/default/url/</field>
+        </record>
+        <!-- Activation of SmartBambi synchronization -->
+        <record model="ir.config_parameter" id="tpa_smartbambi_enable">
+            <field name="key">tpa.smartbambi.is_enable</field>
+            <field name="value">False</field>
+        </record>
+        <!-- Method of SmartBambi backend -->
+        <record model="ir.config_parameter" id="method_tpa_smartbambi_partner">
+            <field name="key">tpa.smartbambi.partner_method</field>
+            <field name="value">backendOdooPartner</field>
+        </record>
+
+        <!-- URL of other SmartBambi backend -->
+        <record model="ir.config_parameter" id="backend_url_other_tpa_smartbambi">
+            <field name="key">tpa.smartbambi.backend_other_url</field>
+            <field name="value">/default/url/</field>
+        </record>
+        <!-- Activation of other SmartBambi synchronization -->
+        <record model="ir.config_parameter" id="other_tpa_smartbambi_enable">
+            <field name="key">tpa.smartbambi.is_other_enable</field>
+            <field name="value">False</field>
+        </record>
+        <!-- Method of other SmartBambi backend -->
+        <record model="ir.config_parameter" id="method_other_tpa_smartbambi_partner">
+            <field name="key">tpa.smartbambi.other_partner_method</field>
+            <field name="value">backendOdooPartner</field>
+        </record>
+    </data>
+</odoo>

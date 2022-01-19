@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="partner_category_collectivity" model="res.partner.category">
+        <field name="name">Collectivity</field>
+    </record>
+    <record id="partner_category_association" model="res.partner.category">
+        <field name="name">Association</field>
+    </record>
+</odoo>

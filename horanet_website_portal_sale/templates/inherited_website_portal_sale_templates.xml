@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Hide quotes if checked -->
+    <template id="portal_my_home_menu_quotes" customize_show="True" active="False" name="Hide quotes"
+              inherit_id="website_portal_sale.portal_my_home_menu_sale" priority="35">
+        <xpath expr="//a[contains(@href,'/my/quotes')]/parent::li" position="replace">
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_title_quotes" name="Your Quotes" inherit_id="website_portal_sale.portal_my_home_sale"
+              priority="25">
+        <xpath expr="//a[contains(@href,'/my/quotes')]/parent::h3" position="replace">
+            <t t-if="not env.ref('horanet_website_portal_sale.portal_my_home_menu_quotes').active">
+                <h3 class="page-header">
+                    <a href="/my/quotes">Your Quotes
+                        <small class="ml8">
+                            <t t-if="quotation_count">
+                                <span class='badge'>
+                                    <t t-esc="quotation_count"/>
+                                </span>
+                            </t>
+                            <t t-if="not quotation_count">
+                                There are currently no quotes for your account.
+                            </t>
+                        </small>
+                    </a>
+                </h3>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Hide orders if checked -->
+    <template id="portal_my_home_menu_orders" customize_show="True" active="False"
+              name="Hide orders" inherit_id="website_portal_sale.portal_my_home_menu_sale" priority="35">
+        <xpath expr="//a[contains(@href,'/my/orders')]/parent::li" position="replace">
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_title_orders" name="Your Quotes" inherit_id="website_portal_sale.portal_my_home_sale"
+              priority="25">
+        <xpath expr="//a[contains(@href,'/my/orders')]/parent::h3" position="replace">
+            <t t-if="not env.ref('horanet_website_portal_sale.portal_my_home_menu_orders').active">
+                <h3 class="page-header">
+                    <a href="/my/orders">Your Orders
+                        <small class="ml8">
+                            <t t-if="order_count">
+                                <span class='badge'>
+                                    <t t-esc="order_count"/>
+                                </span>
+                            </t>
+                            <t t-if="not order_count">
+                                There are currently no orders for your account.
+                            </t>
+                        </small>
+                    </a>
+                </h3>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Hide invoices if checked -->
+    <template id="portal_my_home_menu_invoices" customize_show="True" active="False"
+              name="Hide invoices" inherit_id="website_portal_sale.portal_my_home_menu_sale" priority="35">
+        <xpath expr="//a[contains(@href,'/my/invoices')]/parent::li" position="replace">
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_title_invoices" name="Your Invoices"
+              inherit_id="website_portal_sale.portal_my_home_sale"
+              priority="25">
+        <xpath expr="//a[contains(@href,'/my/invoices')]/parent::h3" position="replace">
+            <t t-if="not env.ref('horanet_website_portal_sale.portal_my_home_menu_invoices').active">
+                <h3 class="page-header">
+                    <a href="/my/invoices">Your Invoices and Payments
+                        <small class="ml8">
+                            <t t-if="invoice_count">
+                                <span class='badge'>
+                                    <t t-esc="invoice_count"/>
+                                </span>
+                            </t>
+                            <t t-if="not invoice_count">
+                                There are currently no invoices for your account.
+                            </t>
+                        </small>
+                    </a>
+                </h3>
+            </t>
+        </xpath>
+    </template>
+
+    <!-- Base template to display invoices in the portal -->
+    <template id="invoices_without_payment_terms" name="Invoices and Payments"
+              inherit_id="website_portal_sale.portal_my_invoices">
+        <xpath expr="(//h3[1])" position="attributes">
+            <attribute name="class">horanet_my_home</attribute>
+        </xpath>
+
+        <xpath expr="(//t[@t-if='invoices']//table)" position="replace">
+            <t t-if="invoices">
+                <table class="table table-hover o_my_status_table">
+                    <thead>
+                        <tr class="active">
+                            <th>Invoice #</th>
+                            <th>Invoice Date</th>
+                            <th>Last due Date</th>
+                            <th></th>
+                            <th>Amount Due</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <t t-foreach="invoices" t-as="invoice">
+                        <tr>
+                            <td>
+                                <a t-att-href="'/report/pdf/account.report_invoice/'+str(invoice.id)"
+                                   t-att-title="invoice.number">
+                                    <t t-esc="invoice.number"/>
+                                </a>
+                            </td>
+                            <td>
+                                <span t-field="invoice.date_invoice"/>
+                            </td>
+                            <td>
+                                <span t-field="invoice.date_due"/>
+                            </td>
+                            <td>
+                                <t t-if="invoice.state == 'open'">
+                                    <span class="label label-info">
+                                        <i class="fa fa-fw fa-clock-o" aria-hidden="true" t-translation="off"/>
+                                        Waiting for Payment
+                                    </span>
+                                </t>
+                                <t t-if="invoice.state == 'paid'">
+                                    <span class="label label-default">
+                                        <i class="fa fa-fw fa-check" aria-hidden="true" t-translation="off"/>
+                                        Paid
+                                    </span>
+                                </t>
+                                <t t-if="invoice.state == 'cancel'">
+                                    <span class="label label-default">
+                                        <i class="fa fa-fw fa-remove" aria-hidden="true" t-translation="off"/>
+                                        Cancelled
+                                    </span>
+                                </t>
+                            </td>
+                            <td>
+                                <span t-field="invoice.residual"
+                                      t-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/>
+                            </td>
+                            <td>
+                                <t t-if="invoice.state == 'open'">
+                                    <a t-if="invoice.payment_term_id" t-attf-href="/my/invoice/{{ invoice.id }}"
+                                       class="btn btn-default">Scheduler
+                                    </a>
+
+                                    <t t-if="not invoice.payment_term_id">
+                                        <a t-if="available_acquirer"
+                                           t-attf-href="/website_payment/pay?reference=#{invoice.number}&amp;amount=#{invoice.residual}&amp;currency_id=#{invoice.currency_id.id}&amp;country_id=#{invoice.partner_id.country_id.id}"
+                                           alt="Pay Now" class="btn btn-xs btn-primary">
+                                            <i class="fa fa-arrow-circle-right" aria-hidden="true" t-translation="off"/>
+                                            Pay Now
+                                        </a>
+                                        <a t-if="not available_acquirer"
+                                           disabled="disabled"
+                                           alt="Pay Now" class="btn btn-xs btn-primary">
+                                            <i class="fa fa-arrow-circle-right" aria-hidden="true" t-translation="off"/>
+                                            Pay Now
+                                        </a>
+                                    </t>
+                                </t>
+                            </td>
+                        </tr>
+                    </t>
+                </table>
+
+                <div t-if="pager" class="o_portal_pager text-center">
+                    <t t-call="website.pager"/>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

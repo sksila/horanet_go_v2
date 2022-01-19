@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_production_point,access production points,model_production_point,,1,0,0,0
+access_partner_move,access partner moves,model_partner_move,,1,0,0,0
+
+manage_production_point,manage production points,model_production_point,horanet_environment.group_manage_environment,1,1,1,1
+manage_partner_move,manage partner moves,model_partner_move,horanet_environment.group_manage_environment,1,1,1,1
+

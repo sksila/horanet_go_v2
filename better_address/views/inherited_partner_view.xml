@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_partner" model="ir.ui.view">
+        <field name="name">Add better address fields in partner form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!--Ajout de l'état de l'adresse sous le libellé "address"-->
+            <xpath expr="//label[@for='street']" position="replace">
+                <div>
+                    <label for="street" string="Address">
+                    </label>
+                    <field name="address_status" class="horanet_td_form_label"/>
+                </div>
+            </xpath>
+
+            <!--Ajout des nouveaux champs d'adresse dans la vue -->
+            <xpath expr="(//div[hasclass('o_address_format')])[1]" position="replace">
+                <div class="o_address_format">
+                    <button name="open_parent" type="object" string="(edit)" class="oe_link oe_edit_only"
+                            attrs="{'invisible': ['|', ('parent_id', '=', False), ('type', '!=', 'contact')]}"/>
+                    <field name="better_contact_address" class="oe_read_only"/>
+                    <div class="oe_edit_only">
+                        <field name="zip_id" class="h_address_zip"
+                               options="{'no_open': True}"
+                               placeholder="CP ..."
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)],
+                                   'required': ['|', ('parent_id', '=', False), ('type', '!=', 'contact'),('is_company', '=', False),('id','not in',[1,2,3])],}">
+                        </field>
+                        <field name="city_id" class="h_address_city"
+                               options="{'create_name_field': 'name', 'no_open': True}"
+                               context="{'force_dirty':True}"
+                               placeholder="City ..."
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)],
+                                   'required': ['|', ('parent_id', '=', False), ('type', '!=', 'contact'),('is_company', '=', False),('id','not in',[1,2,3])],}">
+                        </field>
+                        <br/>
+                        <field name="street_number_id" class="h_address_street_number"
+                               options='{"create_name_field": "name", "no_open": True}'
+                               context="{'default_street_id': street_id,'no_open': False}"
+                               placeholder="N°"
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)],
+                                   'required': ['|', ('parent_id', '=', False), ('type', '!=', 'contact'),('is_company', '=', False),('id','not in',[1,2,3])],}">
+                        </field>
+                        <field name="street_id" class="h_address_street"
+                               options="{'create_name_field': 'name', 'no_open': True, 'no_create': False}"
+                               context="{'default_city_id': city_id}"
+                               placeholder="Street ..."
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)],
+                                   'required': ['|', ('parent_id', '=', False), ('type', '!=', 'contact'),('is_company', '=', False),('id','not in',[1,2,3])],}">
+                        </field>
+                        <field name="street2"
+                               class="h_address_street2"
+                               placeholder="Additional address (floor, stairs, apartment number) ..."
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}">
+                        </field>
+                        <field name="street3" class="h_address_street2"
+                               placeholder="Second additional address (building, access) ..."
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}">
+                        </field>
+                        <field name="state_id" placeholder="State ..."
+                               class="h_address_state"
+                               options='{"no_open": True}'
+                               context="{'country_id': country_id, 'zip': zip}"
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)],
+                                   'required': ['|', ('parent_id', '=', False), ('type', '!=', 'contact'),('is_company', '=', False),('id','not in',[1,2,3])],}">
+                        </field>
+                        <field name="country_id" placeholder="Country ..." class="h_address_country"
+                               options='{"no_open": True, "no_create": True}'
+                               attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)],
+                                   'required': ['|', ('parent_id', '=', False), ('type', '!=', 'contact'),('is_company', '=', False),('id','not in',[1,2,3])],}">
+                        </field>
+                    </div>
+                </div>
+
+                <!-- Restoring the old fields for a possible compatibility with other module -->
+                <field name="street" invisible="1"></field>
+                <field name="zip" invisible="1"></field>
+                <field name="city" invisible="1"></field>
+
+                <!-- Adding the id field to be used in client-side Javascript domain -->
+                <field name="id" invisible="1"></field>
+            </xpath>
+
+            <!--Modification du context de la pages des child, utilisation des fields d'adresse horanet-->
+            <xpath expr="//field[@name='child_ids']" position="attributes">
+                <attribute name="context">{
+                    'default_parent_id': active_id,
+                    'default_supplier': supplier,
+                    'default_customer': customer,
+                    'default_lang': lang,
+                    'default_country_id': country_id,
+                    'default_state_id': state_id,
+                    'default_city_id': city_id,
+                    'default_zip_id': zip_id,
+                    'default_street_id': street_id,
+                    'default_street2': street2,
+                    'default_street_number_id':street_number_id,
+                    }
+                </attribute>
+            </xpath>
+
+            <!--Ajout de l'état de l'adresse sous le libellé "address"-->
+            <xpath expr="//field[@name='child_ids']/form//label[@for='street']" position="replace">
+                <div>
+                    <label for="street" string="Address">
+                    </label>
+                    <field name="address_status" class="horanet_td_form_label"/>
+                </div>
+            </xpath>
+
+            <!--Ajout des nouveaux champ d'adresse dans la vue -->
+            <xpath expr="//field[@name='child_ids']/form//div[@name='div_address']" position="replace">
+                <div class="o_address_format">
+                    <field name="zip_id" class="h_address_zip"
+                           options="{'no_open': True}"
+                           placeholder="ZIP ...">
+                    </field>
+                    <field name="city_id" class="h_address_city"
+                           options="{'create_name_field': 'name', 'no_open': True}"
+                           context="{'force_dirty':True}"
+                           placeholder="City ...">
+                    </field>
+                    <field name="street_number_id" class="h_address_street_number"
+                           options='{"create_name_field": "name", "no_open": True}'
+                           context="{'default_street_id': street_id,'no_open': False}"
+                           placeholder="N°">
+                    </field>
+                    <field name="street_id" class="h_address_street"
+                           options="{'create_name_field': 'name', 'no_open': True, 'no_create': False}"
+                           context="{'default_city_id': city_id}"
+                           placeholder="Street ...">
+                    </field>
+                    <field name="street2" class="h_address_street2"
+                           placeholder="Additional address (floor, stairs, apartment number) ...">
+                    </field>
+                    <field name="street3" class="h_address_street2"
+                           placeholder="Second additional address (building, access) ...">
+                    </field>
+                    <field name="state_id" placeholder="State ..." class="h_address_state"
+                           options='{"no_open": True}'
+                           context="{'country_id': country_id, 'zip': zip}">
+                    </field>
+                    <field name="country_id" placeholder="Country ..."
+                           class="h_address_country"
+                           options='{"no_open": True, "no_create": True}'>
+                    </field>
+                </div>
+
+                <!-- Restoring the old fields for a possible compatibility with other module -->
+                <field name="street" invisible="1"/>
+                <field name="zip" invisible="1"/>
+                <field name="city" invisible="1"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_partner_address_form" model="ir.ui.view">
+        <field name="name">Add better address fields in address form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_address_form"/>
+        <field name="arch" type="xml">
+            <!--Ajout des nouveaux champ d'adresse dans la vue -->
+            <xpath expr="//div[hasclass('o_address_format')]" position="replace">
+                <div class="o_address_format">
+                    <field name="zip_id" class="h_address_zip"
+                           options="{'no_open': True}"
+                           placeholder="ZIP ...">
+                    </field>
+                    <field name="city_id" class="h_address_city"
+                           options="{'create_name_field': 'name', 'no_open': True}"
+                           context="{'force_dirty':True}"
+                           placeholder="City ...">
+                    </field>
+                    <field name="street_number_id" class="h_address_street_number"
+                           options='{"create_name_field": "name", "no_open": True}'
+                           context="{'default_street_id': street_id,'no_open': False}"
+                           placeholder="N°">
+                    </field>
+                    <field name="street_id" class="h_address_street"
+                           options="{'create_name_field': 'name', 'no_open': True, 'no_create': False}"
+                           context="{'default_city_id': city_id}"
+                           placeholder="Street ...">
+                    </field>
+                    <field name="street2" class="h_address_street2"
+                           placeholder="Additional address (floor, stairs, apartment number) ...">
+                    </field>
+                    <field name="street3" class="h_address_street2"
+                           placeholder="Second additional address (building, access) ...">
+                    </field>
+                    <field name="state_id" class="h_address_state"
+                           options='{"no_open": True, "no_create": True}'
+                           context="{'country_id': country_id, 'zip': zip}"
+                           placeholder="State ...">
+                    </field>
+                    <field name="country_id" class="h_address_country"
+                           options='{"no_open": True, "no_create": True}'
+                           placeholder="Country ...">
+                    </field>
+                </div>
+                <field name="street" invisible="1"></field>
+                <field name="zip" invisible="1"></field>
+                <field name="city" invisible="1"></field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_tree" model="ir.ui.view">
+        <field name="name">res.partner.tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='display_name']" position="after">
+                <field name="better_contact_address"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.select</field>
+        <field name="model">res.partner</field>
+        <field name="type">search</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="before">
+                <field name='better_contact_address'/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

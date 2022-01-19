@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="pes_input_object_0" model="pes.input.object">
+            <field name="name">Fichier PES</field>
+            <field name="code">pes_file</field>
+            <field name="model">pes.file</field>
+        </record>
+    </data>
+</odoo>

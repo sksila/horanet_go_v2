@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="windows_service_port" model="ir.config_parameter">
+        <field name="key">partner_contact_identification.windows_service_port</field>
+        <field name="value">8586</field>
+    </record>
+</odoo>

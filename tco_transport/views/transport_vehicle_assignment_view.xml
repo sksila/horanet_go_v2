@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_transport_vehicle_assignment" model="ir.ui.view">
+        <field name="name">tco.transport.vehicle.assignment.form</field>
+        <field name="model">tco.transport.vehicle.assignment</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle assignment">
+                <sheet>
+                    <group>
+                        <field name="vehicle_id"></field>
+                        <field name="service_id"></field>
+                    </group>
+
+                    <group>
+                        <field name="begin_date"></field>
+                        <field name="end_date"></field>
+                        <field name="is_valid"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_transport_vehicle_assignment" model="ir.ui.view">
+        <field name="name">tco.transport.vehicle.assignment.tree</field>
+        <field name="model">tco.transport.vehicle.assignment</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicle assignment">
+                <field name="vehicle_id"/>
+                <field name="service_id"/>
+                <field name="begin_date"/>
+                <field name="end_date"/>
+                <field name="is_valid"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_transport_vehicle_assignment" model="ir.actions.act_window">
+        <field name="name">Vehicle assignment</field>
+        <field name="res_model">tco.transport.vehicle.assignment</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_transport_vehicle_assignment"/>
+    </record>
+</odoo>

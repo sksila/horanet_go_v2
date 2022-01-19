@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="pes_bloc_attrs_sf_4" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TypeFact</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TypeFact</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value_type">reference</field>
+            <field name="reference_id" ref="horanet_demat_ormc_psv2.pes_ref_1"/>
+            <field name="value">ASAP</field>
+        </record>
+        <record id="pes_bloc_attrs_sf_2" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Annee</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Annee</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value_type">simple</field>
+            <field name="value">get_exercice</field>
+        </record>
+
+        <record id="pes_bloc_attrs_sf_id_bord" model="pes.bloc.attrs">
+            <field name="name">Attrs pour IdBord</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour IdBord</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value">role_id.number</field>
+        </record>
+
+        <record id="pes_bloc_attrs_sf_dte_bord_em" model="pes.bloc.attrs">
+            <field name="name">Attrs pour DteBordEm</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour DteBordEm</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value_type">simple</field>
+            <field name="value">get_date_emission_bordereau</field>
+        </record>
+
+        <record id="pes_bloc_attrs_sad_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TypAdr emetteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TypAdr emetteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">0</field>
+        </record>
+        <record id="pes_bloc_attrs_sad_2" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Adr1 emetteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Adr1 emetteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">company_id.partner_id.street</field>
+        </record>
+        <record id="pes_bloc_attrs_sad_3" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Adr2 emetteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Adr2 emetteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">company_id.partner_id.street</field>
+        </record>
+        <record id="pes_bloc_attrs_sad_4" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Adr3 emetteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Adr3 emetteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">company_id.partner_id.street3</field>
+        </record>
+        <record id="pes_bloc_attrs_sad_5" model="pes.bloc.attrs">
+            <field name="name">Attrs pour zip emetteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour zip emetteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">company_id.partner_id.zip</field>
+        </record>
+        <record id="pes_bloc_attrs_sad_6" model="pes.bloc.attrs">
+            <field name="name">Attrs pour city emetteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour city emetteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">company_id.partner_id.city</field>
+        </record>
+        <record id="pes_bloc_attrs_sad_7" model="pes.bloc.attrs">
+            <field name="name">Attrs pour CodRes emetteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour CodRes emetteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">reference</field>
+            <field name="reference_id" ref="horanet_demat_ormc_psv2.pes_ref_2"/>
+            <field name="field_type">field</field>
+            <field name="value">company_id.partner_id.country_id.name</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_em_9" model="pes.bloc.attrs">
+            <field name="name">Attrs pour nom emetteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Nom Tiers emetteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">company_id.name</field>
+        </record>
+
+        <!-- Attributs pour tiers -->
+        <record id="pes_bloc_attrs_sit_9" model="pes.bloc.attrs">
+            <field name="name">Attrs pour nom Tiers</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Nom Tiers Tiers</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">CENTRE D’ENCAISSEMENT</field>
+        </record>
+
+
+        <record id="pes_bloc_attrs_sit_7" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TypTiers Tiers</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TypTiers Tiers</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">reference</field>
+            <field name="reference_id" ref="horanet_demat_ormc_psv2.pes_ref_3"/>
+            <field name="field_type">text</field>
+            <field name="value">Destinataire Paiement</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_10" model="pes.bloc.attrs">
+            <field name="name">Attrs pour ComplNom Tiers</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour ComplNom Tiers</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">DES FINANCES PUBLIQUES</field>
+        </record>
+
+        <!-- Attributs pour Debiteur -->
+        <record id="pes_bloc_attrs_sad_deb_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TypAdr Debiteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TypAdr Debiteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">1</field>
+        </record>
+
+        <record id="pes_bloc_attrs_adr1_to_add" model="pes.bloc.attrs">
+            <field name="name">Attrs pour afficher Adr1 Debiteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour afficher Adr1 Debiteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.street2</field>
+        </record>
+
+        <record id="pes_bloc_attrs_sad_deb_2" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Adr1 Debiteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Adr1 Debiteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.street2</field>
+        </record>
+        <record id="pes_bloc_attrs_sad_deb_3" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Adr2 Debiteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Adr2 Debiteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_adr2</field>
+        </record>
+        <record id="pes_bloc_attrs_sad_deb_5" model="pes.bloc.attrs">
+            <field name="name">Attrs pour zip Debiteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour zip Debiteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.zip</field>
+        </record>
+        <record id="pes_bloc_attrs_sad_deb_6" model="pes.bloc.attrs">
+            <field name="name">Attrs pour city Debiteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour city Debiteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.city</field>
+        </record>
+        <record id="pes_bloc_attrs_sad_deb_7" model="pes.bloc.attrs">
+            <field name="name">Attrs pour CodRes Debiteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour CodRes Debiteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_code_res_deb</field>
+        </record>
+        <record id="pes_bloc_attrs_sad_deb_8" model="pes.bloc.attrs">
+            <field name="name">Attrs pour CodPays Debiteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour CodPays Debiteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.country_id.ormc_cod_pays</field>
+            <!--See: https://www.insee.fr/fr/information/2028273-->
+        </record>
+
+        <!-- Attributs pour tiers -->
+        <record id="pes_bloc_attrs_sit_deb_ref_tiers" model="pes.bloc.attrs">
+            <field name="name">Attrs pour RefTiers</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour RefTiers</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.ref</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_deb_cat_tiers" model="pes.bloc.attrs">
+            <field name="name">Attrs pour CatTiers Tiers</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour CatTiers Tiers</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.cat_tiers_id.value</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_deb_nat_jur" model="pes.bloc.attrs">
+            <field name="name">Attrs pour NatJur Tiers</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour NatJur Tiers</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.nat_jur_id.value</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_deb_typ_tiers" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TypTiers Tiers</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TypTiers Tiers</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">text</field>
+            <!-- TODO: This should be like cat_tiers and nat_jur -->
+            <field name="value">01</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_deb_civilite_to_add" model="pes.bloc.attrs">
+            <field name="name">Attrs pour ajouter Civilite Tiers</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour ajouter Civilite Tiers</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_civilite_to_add</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_deb_civilite" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Civilite Tiers</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Civilite Tiers</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.title.shortcut.replace(' ', '_')</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_deb_nom_part_to_add" model="pes.bloc.attrs">
+            <field name="name">Attrs pour ajouter nom Debiteur Particulier</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour ajouter Nom Tiers Debiteur Particulier</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.is_company == False</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_deb_nom_part" model="pes.bloc.attrs">
+            <field name="name">Attrs pour nom Debiteur Particulier</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Nom Tiers Debiteur Particulier</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.lastname.replace('&amp;', '')[0:38]</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_deb_nom_pro_to_add" model="pes.bloc.attrs">
+            <field name="name">Attrs pour ajouter nom Debiteur Professionnel</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour ajouter Nom Tiers Debiteur Professionnel</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.is_company</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_deb_nom_pro" model="pes.bloc.attrs">
+            <field name="name">Attrs pour nom Debiteur Professionnel</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Nom Tiers Debiteur Professionnel</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.name.replace('&amp;', '')[0:38]</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_deb_prenom_to_add" model="pes.bloc.attrs">
+            <field name="name">Attrs pour ajouter Prenom Tiers</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour ajouter Prenom Tiers</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_civilite_to_add</field>
+        </record>
+        <record id="pes_bloc_attrs_sit_deb_prenom" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Prenom Tiers</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Prenom Tiers</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">partner_id.firstname</field>
+        </record>
+
+        <!-- Attributs pour DateEmission Facture -->
+        <record id="pes_bloc_attrs_sfind_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour DateEmission Facture</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour DateEmission Facture</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">date_invoice</field>
+        </record>
+
+        <!-- Attributs pour Ligne Facture -->
+        <record id="pes_bloc_attrs_sfind_LF_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Libelle Ligne Facture</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Libelle Ligne Facture</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">product_id.name</field>
+        </record>
+        <record id="pes_bloc_attrs_sfind_LF_2" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Quantite Ligne Facture</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Quantite Ligne Facture</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">quantity</field>
+        </record>
+        <record id="pes_bloc_attrs_sfind_LF_3" model="pes.bloc.attrs">
+            <field name="name">Attrs pour MtHT Ligne Facture</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour MtHT Ligne Facture</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">function</field>
+            <!--<field name="value">price_unit</field>-->
+            <field name="value">get_ormc_debit</field>
+        </record>
+        <record id="pes_bloc_attrs_sfind_LF_4" model="pes.bloc.attrs">
+            <field name="name">Attrs pour MtTVA Ligne Facture</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour MtTVA Ligne Facture</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">price_tva_value</field>
+        </record>
+        <record id="pes_bloc_attrs_sfind_LF_6" model="pes.bloc.attrs">
+            <field name="name">Attrs pour MtTTC Ligne Facture</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour MtTTC Ligne Facture</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">price_subtotal</field>
+        </record>
+        <!-- Attribut TotalAPayer -->
+        <record id="pes_bloc_attrs_sfind_TAP_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TotalAPayer Facture</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TotalAPayer Facture</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">amount_total</field>
+        </record>
+
+        <!-- Attributs CptBancaire -->
+        <record id="pes_bloc_attrs_bank_infos_to_add" model="pes.bloc.attrs">
+            <field name="name">Attrs pour ajouter les blocs d'informations bancaires</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour ajouter les blocs d'informations bancaires</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">subscription_id.bank_account_id</field>
+        </record>
+
+        <record id="pes_bloc_attrs_scb_7" model="pes.bloc.attrs">
+            <field name="name">Attrs pour BIC</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour BIC</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">subscription_id.bank_account_id.bank_id.bic</field>
+        </record>
+
+        <record id="pes_bloc_attrs_scb_8" model="pes.bloc.attrs">
+            <field name="name">Attrs pour IBAN</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour IBAN</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">subscription_id.bank_account_id.acc_number.replace(" ","")</field>
+        </record>
+
+        <record id="pes_bloc_attrs_scb_9" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TitCpte</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TitCpte</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">subscription_id.bank_account_id.partner_id.name</field>
+        </record>
+
+    </data>
+</odoo>

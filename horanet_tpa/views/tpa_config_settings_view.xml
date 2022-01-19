@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Add TPA Settings group in view collectivity_config_settings_view -->
+    <record id="view_form_collectivity_config_settings" model="ir.ui.view">
+        <field name="name">Aquagliss TPA Settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="horanet_go.view_form_collectivity_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='horanet_go']/*[last()]" position="after">
+                <h2>TPA Settings</h2>
+                <group name="tpa_settings">
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

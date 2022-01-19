@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="activity_papier_pav" model="horanet.activity">
+            <field name="name">Papier</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot_pav"/>
+            <field name="product_uom_id" ref="deposit_unit_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/papier.gif"/>
+        </record>
+        <record id="activity_emballages_pav" model="horanet.activity">
+            <field name="name">Emballages</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot_pav"/>
+            <field name="product_uom_id" ref="deposit_unit_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/plastique.gif"/>
+        </record>
+        <record id="activity_ordures_menageres_pav" model="horanet.activity">
+            <field name="name">Ordures ménagères</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot_pav"/>
+            <field name="product_uom_id" ref="deposit_unit_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_deposit_point/static/src/img/wastes/activite-ordures-menageres.gif"/>
+        </record>
+        <record id="activity_verre_pav" model="horanet.activity">
+            <field name="name">Verre</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot_pav"/>
+            <field name="product_uom_id" ref="deposit_unit_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/verre.gif"/>
+        </record>
+        <record id="activity_textile_pav" model="horanet.activity">
+            <field name="name">Textile</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot_pav"/>
+            <field name="product_uom_id" ref="deposit_unit_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/textile.gif"/>
+        </record>
+
+    </data>
+</odoo>

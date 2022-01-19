@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="terminal_lb7_directory_path" model="ir.config_parameter">
+        <field name="key">tco_transport.terminal_lb7_directory_path</field>
+        <field name="value">/var/www/lb7-data/</field>
+    </record>
+</odoo>

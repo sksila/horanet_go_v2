@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="pes_application_base" model="pes.application">
+            <field name="name">Base</field>
+            <field name="code">BASE</field>
+        </record>
+        <record id="pes_application_export_psv2" model="pes.application">
+            <field name="name">PES Aller</field>
+            <field name="code">pes_aller</field>
+        </record>
+        <record id="pes_application_import_psv2" model="pes.application">
+            <field name="name">PES Retour</field>
+            <field name="code">pes_retour</field>
+        </record>
+        <record id="pes_application_acquit_psv2" model="pes.application">
+            <field name="name">PES Acquit</field>
+            <field name="code">pes_acquit</field>
+        </record>
+    </data>
+</odoo>

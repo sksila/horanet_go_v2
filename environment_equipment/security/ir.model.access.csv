@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_equipment_portal,access equipment portal,model_maintenance_equipment,base.group_portal,1,0,0,0
+access_maintenance_intervention_type,access maintenance intervention type,environment_equipment.model_maintenance_intervention_type,,1,0,0,0
+access_maintenance_intervention_type_manager,access maintenance intervention type manager,environment_equipment.model_maintenance_intervention_type,maintenance.group_equipment_manager,1,1,1,1
+access_pickup_import,access pickup imports,environment_equipment.model_equipment_pickup_import,,1,0,0,0
+access_pickup_import_manager,access pickup imports manager,environment_equipment.model_equipment_pickup_import,horanet_environment.group_manage_environment,1,1,1,1
+
+access_partner_move_equipment_rel,access_partner_move_equipment_rel,model_partner_move_equipment_rel,,1,0,0,0
+manage_partner_move_equipment_rel,manage_partner_move_equipment_rel,model_partner_move_equipment_rel,horanet_environment.group_manage_environment,1,1,1,1

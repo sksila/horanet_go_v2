@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Form view of synchronization -->
+    <record id="view_form_tpa_synchronization_status" model="ir.ui.view">
+        <field name="name">tpa synchronization status form</field>
+        <field name="model">tpa.synchronization.status</field>
+        <field name="arch" type="xml">
+            <form string="Synchronization status" create="false" edit="false">
+                <sheet>
+                    <header>
+                    </header>
+                    <group col="2">
+                        <group colspan="2" string="Synchronized partner">
+                            <field name="ref_partner"></field>
+                            <field name="tpa_name"></field>
+                        </group>
+                        <group col="2" string="Synchronization informations">
+                            <group>
+                                <field name="ref_write_date" readonly="1"></field>
+                                <field name="last_sync_date" readonly="1"></field>
+                                <field name="last_sync_try" readonly="1"></field>
+                                <field name="is_up_to_date"></field>
+                                <field name="try_number"></field>
+                            </group>
+                            <group>
+                                <field name="external_id"></field>
+                                <field name="ir_model_data_id"></field>
+                            </group>
+                        </group>
+                    </group>
+                    <label for="last_message_export"/>
+                    <field name="last_message_export" readonly="1"></field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view of synchronizations with color decoration by status -->
+    <record id="view_tree_tpa_synchronization_status" model="ir.ui.view">
+        <field name="name">tpa synchronization status tree</field>
+        <field name="model">tpa.synchronization.status</field>
+        <field name="arch" type="xml">
+            <tree string="Synchronization informations"
+                  decoration-muted="last_sync_date==False and is_up_to_date==False"
+                  decoration-success="is_up_to_date==True"
+                  decoration-danger="is_up_to_date==False">
+                <field name="tpa_name"></field>
+                <field name="ref_partner"></field>
+                <field name="last_sync_date"></field>
+                <field name="ref_write_date"></field>
+
+                <field name="external_id"></field>
+                <field name="last_message_export"></field>
+                <field name="is_up_to_date"></field>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action to open tree view from menu button -->
+    <record id='action_tpa_synchronization_status' model='ir.actions.act_window'>
+        <field name="name">tpa synchronization status</field>
+        <field name="res_model">tpa.synchronization.status</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_tpa_synchronization_status"/>
+    </record>
+</odoo>

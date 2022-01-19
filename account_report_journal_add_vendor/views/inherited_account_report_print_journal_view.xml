@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherited_account_report_print_journal_view" model="ir.ui.view">
+        <field name="name">Sale/Purchase Journal add vendor</field>
+        <field name="model">account.print.journal</field>
+        <field name="inherit_id" ref="account.account_report_print_journal_view"/>
+        <field name="arch" type="xml">
+            <data>
+                <field name="sort_selection" position="after">
+                    <newline/>
+                    <field name="vendor_id"/>
+                </field>
+            </data>
+        </field>
+    </record>
+
+    <template id="inherited_report_journal" inherit_id="account.report_journal" name="Add vendor in journal">
+        <xpath expr="(//h2)" position="after">
+            <t t-if="data['form'].get('vendor_name', False)">
+                <h4>Vendor: <span t-esc="data['form'].get('vendor_name')"/></h4>
+            </t>
+        </xpath>
+    </template>
+</odoo>

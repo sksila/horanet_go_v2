@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="website_application_template_view_form" model="ir.ui.view">
+        <field name="name">website.application.template.form</field>
+        <field name="model">website.application.template</field>
+        <field name="arch" type="xml">
+            <form string="Website application template">
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                    </group>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Template name"/>
+                        </h1>
+                    </div>
+                    <field name="description"/>
+                    <group name="general" string="General">
+                        <group>
+                            <field name="functionality_id"/>
+                            <field name="multiple_requests_allowed"/>
+                        </group>
+                        <group>
+                            <field name="application_type"/>
+                            <field name="is_recipient_to_select"/>
+                        </group>
+                        <group colspan="2">
+                            <field name="recipient_domain" widget="domain" options="{'model': 'res.partner'}"
+                                   attrs="{'invisible': [('is_recipient_to_select', '=', False)]}"/>
+                            <field name="application_front_image" widget='image' options='{"size": [100, 100]}' style="width:100px"/>
+                        </group>
+                    </group>
+                    <group name="avaibility" string="Avaibility properties">
+                        <group>
+                            <field name="beginning_date" required="True"/>
+                            <field name="ending_date"/>
+                        </group>
+                        <group>
+                            <field name="is_active_all_day"/>
+                            <field name="opening_hour" widget="float_time"
+                                   attrs="{'invisible': [('is_active_all_day', '=', True)],
+                                           'required': [('is_active_all_day', '=', False)]}"/>
+                            <field name="closing_hour" widget="float_time"
+                                   attrs="{'invisible': [('is_active_all_day', '=', True)],
+                                           'required': [('is_active_all_day', '=', False)]}"/>
+                        </group>
+                        <group colspan="2">
+                            <field name="subscription_category_partner_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <group string="Required data">
+                        <field name="ask_partner_informations"/>
+                        <field name="attachment_types"/>
+                        <field name="application_informations"
+                               context="{'default_mode': 'query'}"
+                               domain="[('mode', '=', 'query')]">
+                            <tree>
+                                <field name="sequence" widget="handle"/>
+                                <field name="website_application_stage_id"/>
+                                <field name="website_application_block_id"/>
+                                <field name="name"/>
+                                <field name="type"/>
+                                <field name="is_required"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group string="Terms and conditions">
+                        <field name="show_terms_link"/>
+                    </group>
+                    <div attrs="{'invisible': [('show_terms_link', '=', False)]}">
+                        <group>
+                            <group>
+                                <field name="terms_checkbox_label"
+                                       attrs="{'invisible': [('show_terms_link', '=', False)],
+                                               'required': [('show_terms_link', '=', True)]}"/>
+                            </group>
+                            <group>
+                                <field name="terms_link_label"
+                                       attrs="{'invisible': [('show_terms_link', '=', False)],
+                                               'required': [('show_terms_link', '=', True)]}"/>
+                            </group>
+                            <group colspan="2">
+                                <label for="id" string="Link target"/>
+                                <div>
+                                    <div>
+                                        <field name="terms_link_target_type"
+                                               class="oe_inline"
+                                               attrs="{'required': [('show_terms_link', '=', True)]}"/>:
+                                        <field name="terms_link_target_url"
+                                               class="oe_inline"
+                                               attrs="{'invisible': [('terms_link_target_type', '!=', 'url')],
+                                                       'required': [('show_terms_link', '=', True),
+                                                                    ('terms_link_target_type', '=', 'url')]}"
+                                               placeholder="/page/terms-and-conditions"/>
+                                        <field name="terms_link_target_document"
+                                               class="oe_inline"
+                                               context="{'default_public': True,
+                                                         'default_document_type_id': %(website_application.attachment_type_terms_and_conditions)d}"
+                                               attrs="{'invisible': [('terms_link_target_type', '!=', 'document')],
+                                                       'required': [('show_terms_link', '=', True),
+                                                                    ('terms_link_target_type', '=', 'document')]}"/>
+                                    </div>
+                                </div>
+                            </group>
+                        </group>
+                    </div>
+
+                    <group string="Automatic validation">
+                        <field name="auto_validation"/>
+                        <field name="validation_action_id"/>
+                    </group>
+
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="website_application_template_view_tree" model="ir.ui.view">
+        <field name="name">website.application.template.tree</field>
+        <field name="model">website.application.template</field>
+        <field name="arch" type="xml">
+            <tree string="Website application template"
+                  decoration-muted="state=='inactive'"
+                  default_order="beginning_date asc">
+                <field name="name"/>
+                <field name="application_type"/>
+                <field name="functionality_id"/>
+                <field name="subscription_category_partner_ids" widget="many2many_tags"/>
+                <field name="beginning_date"/>
+                <field name="ending_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="website_application_template_view_filter" model="ir.ui.view">
+        <field name="name">website.application.template.filter</field>
+        <field name="model">website.application.template</field>
+        <field name="arch" type="xml">
+            <search string="Search website application template">
+                <field name="name"/>
+                <field name="state"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_website_application_template" model="ir.actions.act_window">
+        <field name="name">Website application templates</field>
+        <field name="res_model">website.application.template</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="website_application_template_view_tree"/>
+        <field name="search_view_id" ref="website_application_template_view_filter"/>
+    </record>
+</odoo>

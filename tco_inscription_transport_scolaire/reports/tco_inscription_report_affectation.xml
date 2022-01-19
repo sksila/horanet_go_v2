@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="tco_inscription_transport_scolaire_report_affectation"
+            model="tco.inscription.transport.scolaire"
+            string="Inscription report with affectations"
+            name="tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation"
+            file="tco_inscription_transport_scolaire.tco_inscription_transport_scolaire_report_affectation"
+            report_type="qweb-pdf"/>
+
+    <template id="view_tco_inscription_transport_scolaire_report_affectation">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <br/>
+                        <t t-call="tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content"/>
+                        <p>
+                            <b>Forward line</b>
+                        </p>
+                        <ul>
+                            <li>Line name :
+                                <span t-field="doc.line_forward_id.name"/>
+                            </li>
+                            <li>Stop name :
+                                <span t-field="doc.transport_stop_aller_id.station_id.name"/>
+                            </li>
+                            <li>Hour :
+                                <!-- Petit truc magnifique pour passer d'un float à un format horaire -->
+                                <t t-set="delay" t-value="doc.transport_stop_aller_id.stop_time"/>
+                                <t t-esc="'%s:%s' % (str(delay).split('.')[0], int(float(str('%.2f' % delay).split('.')[1])/100*60))"/>
+                            </li>
+                            <li>Radier :
+                                <span t-field="doc.radier_aller_id.name"/>
+                            </li>
+                        </ul>
+                        <p>
+                            <b>Backward line</b>
+                        </p>
+                        <ul>
+                            <li>Line name :
+                                <span t-field="doc.line_backward_id.name"/>
+                            </li>
+                            <li>Stop name :
+                                <span t-field="doc.transport_stop_retour_id.station_id.name"/>
+                            </li>
+                            <li>Hour :
+                                <!-- Petit truc magnifique pour passer d'un float à un format horaire -->
+                                <t t-set="delay2" t-value="doc.transport_stop_retour_id.stop_time"/>
+                                <t t-esc="'%s:%s' % (str(delay2).split('.')[0], int(float(str('%.2f' % delay2).split('.')[1])/100*60))"/>
+                            </li>
+                            <li>Radier :
+                                <span t-field="doc.radier_retour_id.name"/>
+                            </li>
+                        </ul>
+
+                        <div id="qr_code" style="float: right; margin-top: -200px">
+                            <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('QR', doc.name, 200, 200)"
+                                 style="width:200px;height:200px;"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="view_tco_inscription_transport_scolaire_report_affectation_content">
+        <div class="mt16 mb16">
+            <h3 class="text-center">School transport inscription report</h3>
+            <h4 class="text-center">Statut :
+                <span t-field="doc.status"/>
+            </h4>
+            <h4>Date :
+                <span t-field="doc.create_date"/>
+            </h4>
+            <h4>Inscription n°
+                <span t-field="doc.name"/>
+            </h4>
+        </div>
+        <p>
+            <b>Period</b>
+        </p>
+        <ul>
+            <li>
+                <span t-field="doc.period_id"/>
+            </li>
+            <li>Date start :
+                <span t-field="doc.period_id.date_start"/>
+            </li>
+            <li>Date end :
+                <span t-field="doc.period_id.date_end"/>
+            </li>
+        </ul>
+        <p>
+            <b>Responsible</b>
+        </p>
+        <ul>
+            <li>Title :
+                <span t-field="doc.responsible_id.title"/>
+            </li>
+            <li>Lastname :
+                <span t-field="doc.responsible_id.lastname"/>
+            </li>
+            <li>Firstname :
+                <span t-field="doc.responsible_id.firstname"/>
+            </li>
+            <li>Adress :
+                <span t-field="doc.responsible_id.street_number_id.name"/>
+                <span t-field="doc.responsible_id.street_id.name"/>
+                <span t-field="doc.responsible_id.zip_id.name"/>
+                <span t-field="doc.responsible_id.city_id.name"/>
+            </li>
+        </ul>
+        <p>
+            <b>Beneficiary</b>
+        </p>
+        <ul>
+            <li>Lastname :
+                <span t-field="doc.recipient_id.lastname"/>
+            </li>
+            <li>Firstname :
+                <span t-field="doc.recipient_id.firstname"/>
+            </li>
+            <li>Birthdate :
+                <span t-field="doc.recipient_id.birthdate_date"/>
+            </li>
+        </ul>
+        <p>
+            <b>Assist(s)</b>
+        </p>
+        <ul t-if="doc.assist or doc.assist2">
+            <li><span t-field="doc.assist"/>, tel:
+                <span t-field="doc.assist_phone"/>
+            </li>
+            <li t-if="assist2"><span t-field="doc.assist2"/>, tel
+                <span t-field="doc.assist_phone2"/>
+            </li>
+        </ul>
+        <p>
+            <b>School attended</b>
+        </p>
+        <ul>
+            <li>
+                <span t-field="doc.school_establishment_id.name"/>
+            </li>
+            <li>
+                Regime :
+                <span t-field="doc.regime"/>
+            </li>
+        </ul>
+        <p>
+            <b>Transport type</b>
+        </p>
+        <ul>
+            <li>
+                <span t-field="doc.transport_titre"/>
+            </li>
+        </ul>
+        <p>
+            <b>Invoice period</b>
+        </p>
+        <ul>
+            <li>
+                <span t-field="doc.invoice_period"/>
+            </li>
+        </ul>
+    </template>
+</odoo>

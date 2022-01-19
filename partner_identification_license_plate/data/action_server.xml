@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="action_generate_immat" model="ir.actions.server">
+            <field name="name">Create licenses from application</field>
+            <field name="model_id" ref="website_application.model_website_application"/>
+            <field name="condition">True</field>
+            <field name="sequence">5</field>
+            <field name="state">code</field>
+            <field name="code">
+# Ce super code de la mort sert à créer les supports pour les plaques d'immatriculation du téléservices
+# Les plaques sont enregistrées sans espaces et en majuscule.
+
+record = model.browse(context['active_id'])
+re = context.get('re', False)
+# Type plaque immatriculation
+type_id = env.ref('environment_waste_collect.immatriculation_medium_type') or False
+
+# On filtre sur les infos de type plaque immat et on boucle au cas où il y en aurait plusieurs
+for info in record.application_information_ids.filtered(lambda r: r.type == 'license_plate'):
+    # On sépare les plaques s'il y en a plusieurs dans le même champs
+    licenses = info.value_text.split(',')
+    if re and type_id:
+        # On boucle sur les plaques
+        for license in licenses:
+            if re.match("([a-zA-Z0-9\-]{7,10})", license.replace(' ', ''), re.IGNORECASE):
+                tag_model = env['partner.contact.identification.tag']
+                mapping_id = env.ref('environment_waste_collect.immatriculation_mapping')
+                tag = tag_model.create({
+                            'number': license.upper(),
+                            'mapping_id': mapping_id.id
+                })
+                env['partner.contact.identification.wizard.create.medium'].create_assignation(tag.id, record.recipient_id.id)
+                env['partner.contact.identification.wizard.create.medium'].create_medium([tag.id], type_id)
+# PS: ce code est parfait !
+            </field>
+        </record>
+    </data>
+</odoo>

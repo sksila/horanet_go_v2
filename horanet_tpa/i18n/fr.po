@@ -1,0 +1,355 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_tpa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-30 14:02+0000\n"
+"PO-Revision-Date: 2017-10-30 14:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_tpa
+#: selection:tpa.synchronization.status,tpa_name:0
+msgid "Aquagliss"
+msgstr "Aquagliss"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.wizard_import_data_synchro_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_import_method
+msgid "Choose import method"
+msgstr "Choisissez la méthode d'import"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_datafile
+msgid "Compressed file containing data"
+msgstr "Archive contenant les données"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_conserve_uploaded_file
+msgid "Conserve uploaded file"
+msgstr "Conserver les fichiers importés"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_is_up_to_date
+msgid "Create synchronized"
+msgstr "Create synchronized"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_create_uid
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_config_settings_create_uid
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_create_uid
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_create_date
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_config_settings_create_date
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_create_date
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_data
+msgid "Data merge"
+msgstr "Merge des données"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_ref_write_date
+msgid "DateTime last partner update"
+msgstr "Dernière mise à jour du partenaire"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_last_sync_date
+msgid "DateTime last synchronization"
+msgstr "Dernière synchronisation"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_last_sync_try
+msgid "DateTime last try of synchronization"
+msgstr "Dernier essai de synchronisation"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_status_date
+msgid "DateTime status"
+msgstr "Date de modification de statut"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_delete_all_before_import
+msgid "Delete all previous synchronization records"
+msgstr "Supprimer toutes les synchronisations précédentes"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_display_name
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_config_settings_display_name
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_display_name
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_last_message_export
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_last_message_export
+msgid "Export message"
+msgstr "Message d'export"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_ir_model_data_id
+msgid "External ID"
+msgstr "ID Externe"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,help:horanet_tpa.field_tpa_synchronization_status_external_id
+msgid "External Key/Identifier that can be used for data integration with third-party systems"
+msgstr "Identifiant des partenaire tiers"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_datafile_file_name
+msgid "Hidden file name"
+msgstr "Cacher le nom du fichier"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_id
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_config_settings_id
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_id
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_id
+msgid "ID"
+msgstr "ID"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.wizard_import_data_synchro_form
+msgid "Import"
+msgstr "Importer"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.wizard_import_data_synchro_form
+msgid "Import base parameters"
+msgstr "Import des paramètres de la base"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.wizard_import_data_synchro_form
+msgid "Import data file"
+msgstr "Import des fichiers de données"
+
+#. module: horanet_tpa
+#: model:ir.model,name:horanet_tpa.model_horanet_tpa_wizard_import
+#: model:ir.ui.view,arch_db:horanet_tpa.wizard_import_data_synchro_form
+msgid "Import data synchronization"
+msgstr "Import des données de synchronisation"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.wizard_import_data_synchro_form
+msgid "Import performance parameters"
+msgstr "Import des paramètres de synchronisation"
+
+#. module: horanet_tpa
+#: model:ir.actions.act_window,name:horanet_tpa.wizard_import_data_synchro_action
+msgid "Import synchro partner"
+msgstr "Import de la synchronisation du partenaire"
+
+#. module: horanet_tpa
+#: model:ir.ui.menu,name:horanet_tpa.wizard_import_data_synchro_menu
+msgid "Import synchronizations"
+msgstr "Synchronisation de l'import"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.view_partner_form
+msgid "Interfaces"
+msgstr "Interfaces"
+
+#. module: horanet_tpa
+#: model:ir.ui.menu,name:horanet_tpa.horanet_settings_menu_TPA
+msgid "Interfaces TPA"
+msgstr "Interfaces TPA"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_is_up_to_date
+msgid "Is up to date"
+msgstr "Est à jour"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import___last_update
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_config_settings___last_update
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge___last_update
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_write_uid
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_config_settings_write_uid
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_write_uid
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_write_date
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_config_settings_write_date
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_write_date
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_try_number
+msgid "Number of attempts of sending"
+msgstr "Nombre de tentatives d'envoi"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_try_number
+msgid "Number of tries since last export"
+msgstr "Nombre de tentatives depuis le dernier export"
+
+#. module: horanet_tpa
+#: model:ir.model,name:horanet_tpa.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_ref_partner_dest
+msgid "Partner recipient"
+msgstr "Partenaire référencé"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_ref_partner
+msgid "Ref partner"
+msgstr "Partenaire référencé"
+
+#. module: horanet_tpa
+#: selection:tpa.synchronization.status,tpa_name:0
+msgid "SmartBambi"
+msgstr "SmartBambi"
+
+#. module: horanet_tpa
+#: selection:tpa.synchronization.status,tpa_name:0
+msgid "SmartEco"
+msgstr "SmartEco"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_status
+msgid "Status"
+msgstr "État"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.view_form_tpa_synchronization_merge
+#: model:ir.ui.view,arch_db:horanet_tpa.view_form_tpa_synchronization_status
+#: model:ir.ui.view,arch_db:horanet_tpa.view_tree_tpa_synchronization_merge
+#: model:ir.ui.view,arch_db:horanet_tpa.view_tree_tpa_synchronization_status
+msgid "Synchronization informations"
+msgstr "Informations de synchronisation"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.view_form_tpa_synchronization_merge
+msgid "Synchronization merge TPA"
+msgstr "Synchronisation merge TPA"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.view_form_tpa_synchronization_status
+msgid "Synchronization status"
+msgstr "Statuts de synchronisation"
+
+#. module: horanet_tpa
+#: model:ir.ui.menu,name:horanet_tpa.horanet_settings_synchronization_merge
+msgid "Synchronizations merge TPA"
+msgstr "Synchronisations merge TPA"
+
+#. module: horanet_tpa
+#: model:ir.ui.menu,name:horanet_tpa.horanet_settings_synchronization_status
+msgid "Synchronizations status"
+msgstr "Synchronizations status"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.view_form_tpa_synchronization_merge
+#: model:ir.ui.view,arch_db:horanet_tpa.view_form_tpa_synchronization_status
+msgid "Synchronized partner"
+msgstr "Partenaire synchronisé"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_external_id
+msgid "TPA ID"
+msgstr "Id TPA"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_external_id_dest
+msgid "TPA ID Dest"
+msgstr "Id TPA du partenaire référencé"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_external_id_src
+msgid "TPA ID Source"
+msgstr "Id TPA du partenaire source"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.view_form_collectivity_config_settings
+msgid "TPA Settings"
+msgstr "Configurations TPA"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_merge_tpa_name
+#: model:ir.model.fields,field_description:horanet_tpa.field_tpa_synchronization_status_tpa_name
+msgid "TPA name"
+msgstr "Nom du TPA"
+
+#. module: horanet_tpa
+#: model:ir.ui.view,arch_db:horanet_tpa.wizard_import_data_synchro_form
+msgid "This operation could take time and is irreversible, are you sure to proceed ?"
+msgstr "Cette opération peut prendre du temps et est irréversible, êtes-vous sur de vouloir continuer"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,field_description:horanet_tpa.field_horanet_tpa_wizard_import_track_history
+msgid "Track history during import"
+msgstr "Visualiser l'historique de l'importation"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,help:horanet_tpa.field_horanet_tpa_wizard_import_conserve_uploaded_file
+msgid "Uploaded archive content is save on the server in a temporary directory, if set to true, the folder will be conserved after the import, otherwise it will be regarding of the import result. (consult the log for the path)"
+msgstr "Uploaded archive content is save on the server in a temporary directory, if set to true, the folder will be conserved after the import, otherwise it will be regarding of the import result. (consult the log for the path)"
+
+#. module: horanet_tpa
+#: selection:horanet.tpa.wizard.import,import_method:0
+msgid "Using ORM"
+msgstr "Utiliser l'ORM"
+
+#. module: horanet_tpa
+#: model:ir.model.fields,help:horanet_tpa.field_tpa_synchronization_status_ref_partner
+msgid "partner-related data"
+msgstr "Données de l'usager"
+
+#. module: horanet_tpa
+#: model:ir.actions.act_window,name:horanet_tpa.action_tpa_synchronization_merge
+msgid "tpa synchronization merge"
+msgstr "Statut de synchronisation des merge de données"
+
+#. module: horanet_tpa
+#: model:ir.actions.act_window,name:horanet_tpa.action_tpa_synchronization_status
+msgid "tpa synchronization status"
+msgstr "Statuts des synchronisations des TPA"
+
+#. module: horanet_tpa
+#: model:ir.model,name:horanet_tpa.model_tpa_config_settings
+msgid "tpa.config.settings"
+msgstr "tpa.config.settings"
+
+#. module: horanet_tpa
+#: model:ir.model,name:horanet_tpa.model_tpa_synchronization_merge
+msgid "tpa.synchronization.merge"
+msgstr "tpa.synchronization.merge"
+
+#. module: horanet_tpa
+#: model:ir.model,name:horanet_tpa.model_tpa_synchronization_status
+msgid "tpa.synchronization.status"
+msgstr "tpa.synchronization.status"
+

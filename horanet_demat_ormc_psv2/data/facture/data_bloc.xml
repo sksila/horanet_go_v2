@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Sous-Bloc Personne -->
+        <record id="pes_bloc_sper_1" model="pes.bloc">
+            <field name="name">Nom</field>
+            <field name="code">Nom</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Nom</field>
+            <field name="is_required" eval="True"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sper_2" model="pes.bloc">
+            <field name="name">Prenom</field>
+            <field name="code">Prenom</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Prenom</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+
+        <!-- Sous-Bloc Signataire -->
+        <!-- Données non necessaire hors ASAP -->
+        <record id="pes_bloc_ssig_1" model="pes.bloc">
+            <field name="name">Personne</field>
+            <field name="code">Personne</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Personne</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sper_1')),(4,ref('pes_bloc_sper_2'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_ssig_2" model="pes.bloc">
+            <field name="name">Role</field>
+            <field name="code">Role</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">InfoCode2D</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+
+        <!-- Sous-Bloc InfoSuppl -->
+        <record id="pes_bloc_sis_1" model="pes.bloc">
+            <field name="name">NumTel</field>
+            <field name="code">NumTel</field>
+            <field name="description">NumTel</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sis_2" model="pes.bloc">
+            <field name="name">HorairesOuv</field>
+            <field name="code">HorairesOuv</field>
+            <field name="description">HorairesOuv</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sis_3" model="pes.bloc">
+            <field name="name">CodeTipi</field>
+            <field name="code">CodeTipi</field>
+            <field name="description">CodeTipi</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sis_4" model="pes.bloc">
+            <field name="name">AdrTipi</field>
+            <field name="code">AdrTipi</field>
+            <field name="description">AdrTipi</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sis_5" model="pes.bloc">
+            <field name="name">RefBdf</field>
+            <field name="code">RefBdf</field>
+            <field name="description">RefBdf</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sis_6" model="pes.bloc">
+            <field name="name">InfoCode2D</field>
+            <field name="code">InfoCode2D</field>
+            <field name="description">InfoCode2D</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+
+        <!-- Sous-Bloc InfoTVAEmetteur -->
+        <record id="pes_bloc_sitvae_1" model="pes.bloc">
+            <field name="name">NumTVA</field>
+            <field name="code">NumTVA</field>
+            <field name="description">NumTVA</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sitvae_2" model="pes.bloc">
+            <field name="name">Service</field>
+            <field name="code">Service</field>
+            <field name="description">Service</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+
+        <!-- Sous-Bloc CptBancaire -->
+        <record id="pes_bloc_scb_1" model="pes.bloc">
+            <field name="name">IdPayInt</field>
+            <field name="code">IdPayInt</field>
+            <field name="description">IdPayInt</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_scb_2" model="pes.bloc">
+            <field name="name">IdBancInt</field>
+            <field name="code">IdBancInt</field>
+            <field name="description">IdBancInt</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_scb_3" model="pes.bloc">
+            <field name="name">CodeEtab</field>
+            <field name="code">CodeEtab</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">CodeEtab</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_scb_4" model="pes.bloc">
+            <field name="name">CodeGuic</field>
+            <field name="code">CodeGuic</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">CodeGuic</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_scb_5" model="pes.bloc">
+            <field name="name">IdCpte</field>
+            <field name="code">IdCpte</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IdCpte</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_scb_6" model="pes.bloc">
+            <field name="name">CleRib</field>
+            <field name="code">CleRib</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">CleRib</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_scb_7" model="pes.bloc">
+            <field name="name">BIC</field>
+            <field name="code">BIC</field>
+            <field name="description">BIC</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="conditionnal_attr_id" eval="ref('pes_bloc_attrs_scb_7')"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_scb_7'))]"/>
+        </record>
+        <record id="pes_bloc_scb_8" model="pes.bloc">
+            <field name="name">IBAN</field>
+            <field name="code">IBAN</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IBAN</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_scb_8'))]"/>
+        </record>
+        <record id="pes_bloc_scb_9" model="pes.bloc">
+            <field name="name">TitCpte</field>
+            <field name="code">TitCpte</field>
+            <field name="description">TitCpte</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_scb_9'))]"/>
+        </record>
+
+
+        <!-- Sous-Bloc Adresse -->
+        <record id="pes_bloc_sad_1" model="pes.bloc">
+            <field name="name">TypAdr</field>
+            <field name="code">TypAdr</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">TypAdr</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_1'))]"/>
+        </record>
+        <record id="pes_bloc_sad_2" model="pes.bloc">
+            <field name="name">Adr1</field>
+            <field name="code">Adr1</field>
+            <field name="description">Adr1</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_2'))]"/>
+        </record>
+        <record id="pes_bloc_sad_3" model="pes.bloc">
+            <field name="name">Adr2</field>
+            <field name="code">Adr2</field>
+            <field name="description">Adr2</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_3'))]"/>
+        </record>
+        <record id="pes_bloc_sad_4" model="pes.bloc">
+            <field name="name">Adr3</field>
+            <field name="code">Adr3</field>
+            <field name="description">Adr3</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_4'))]"/>
+        </record>
+        <record id="pes_bloc_sad_5" model="pes.bloc">
+            <field name="name">CP</field>
+            <field name="code">CP</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">CP</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_5'))]"/>
+        </record>
+        <record id="pes_bloc_sad_6" model="pes.bloc">
+            <field name="name">Ville</field>
+            <field name="code">Ville</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Ville</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_6'))]"/>
+        </record>
+        <record id="pes_bloc_sad_7" model="pes.bloc">
+            <field name="name">CodRes</field>
+            <field name="code">CodRes</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">CodRes</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_7'))]"/>
+        </record>
+        <record id="pes_bloc_sad_8" model="pes.bloc">
+            <field name="name">CodPays</field>
+            <field name="code">CodPays</field>
+            <field name="description">CodPays</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+
+        <!-- Sous-Bloc Adresse Debitteur-->
+        <record id="pes_bloc_sad_deb_1" model="pes.bloc">
+            <field name="name">TypAdr Debitteur</field>
+            <field name="code">TypAdr</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">TypAdr</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_deb_1'))]"/>
+        </record>
+        <record id="pes_bloc_sad_deb_2" model="pes.bloc">
+            <field name="name">Adr1 Debitteur</field>
+            <field name="code">Adr1</field>
+            <field name="description">Adr1</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="conditionnal_attr_id" eval="ref('pes_bloc_attrs_adr1_to_add')"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_deb_2'))]"/>
+        </record>
+        <record id="pes_bloc_sad_deb_3" model="pes.bloc">
+            <field name="name">Adr2 Debitteur</field>
+            <field name="code">Adr2</field>
+            <field name="description">Adr2</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_deb_3'))]"/>
+        </record>
+        <record id="pes_bloc_sad_deb_5" model="pes.bloc">
+            <field name="name">CP Debitteur</field>
+            <field name="code">CP</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">CP</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_deb_5'))]"/>
+        </record>
+
+        <record id="pes_bloc_sad_deb_6" model="pes.bloc">
+            <field name="name">Ville Debitteur</field>
+            <field name="code">Ville</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Ville</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_deb_6'))]"/>
+        </record>
+
+        <record id="pes_bloc_sad_deb_7" model="pes.bloc">
+            <field name="name">CodRes Debitteur</field>
+            <field name="code">CodRes</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">CodRes</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_deb_7'))]"/>
+        </record>
+        <record id="pes_bloc_sad_deb_8" model="pes.bloc">
+            <field name="name">CodPays Debitteur</field>
+            <field name="code">CodPays</field>
+            <field name="description">CodPays</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sad_deb_8'))]"/>
+        </record>
+
+        <!-- Sous-Bloc InfoSupplTiers -->
+        <record id="pes_bloc_sinfsupptrc_1" model="pes.bloc">
+            <field name="name">NumTel2</field>
+            <field name="code">NumTel2</field>
+            <field name="description">Numéro de téléphone du Centre des finances publiques ou du service du Centre des finances publiques susceptible de renseigner le débiteur.</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sinfsupptrc_2" model="pes.bloc">
+            <field name="name">HorairesOuv2</field>
+            <field name="code">HorairesOuv2</field>
+            <field name="description">Horaires d'accueil du Centre des finances publiques.</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+
+        <!-- Sous-Bloc InfoTiers Emetteur-->
+        <record id="pes_bloc_sit_em_9" model="pes.bloc">
+            <field name="name">Nom Emetteur</field>
+            <field name="code">Nom</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Nom Emetteur</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_em_9'))]"/>
+        </record>
+        <record id="pes_bloc_sit_em_9" model="pes.bloc">
+            <field name="name">Nom Emetteur</field>
+            <field name="code">Nom</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Nom Emetteur</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_em_9'))]"/>
+        </record>
+
+        <!-- Sous-Bloc InfoTiers Tiers-->
+
+        <record id="pes_bloc_sit_7" model="pes.bloc">
+            <field name="name">TypTiers</field>
+            <field name="code">TypTiers</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">TypTiers</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_7'))]"/>
+        </record>
+        <record id="pes_bloc_sit_8" model="pes.bloc">
+            <field name="name">Civilite</field>
+            <field name="code">Civilite</field>
+            <field name="description">Civilite</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sit_9" model="pes.bloc">
+            <field name="name">Nom</field>
+            <field name="code">Nom</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Nom</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_9'))]"/>
+        </record>
+        <record id="pes_bloc_sit_10" model="pes.bloc">
+            <field name="name">ComplNom</field>
+            <field name="code">ComplNom</field>
+            <field name="description">ComplNom</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_10'))]"/>
+        </record>
+
+        <!-- Sous-Bloc InfoTiers Debiteur-->
+        <record id="pes_bloc_sit_deb_ref_tiers" model="pes.bloc">
+            <field name="name">RefTiers</field>
+            <field name="code">RefTiers</field>
+            <field name="sequence">5</field>
+            <field name="description">RefTiers</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_deb_ref_tiers'))]"/>
+        </record>
+        <record id="pes_bloc_sit_deb_cat_tiers" model="pes.bloc">
+            <field name="name">CatTiers</field>
+            <field name="code">CatTiers</field>
+            <field name="sequence">10</field>
+            <field name="description">CatTiers</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_deb_cat_tiers'))]"/>
+        </record>
+        <record id="pes_bloc_sit_deb_nat_jur" model="pes.bloc">
+            <field name="name">NatJur</field>
+            <field name="code">NatJur</field>
+            <field name="sequence">15</field>
+            <field name="description">NatJur</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_deb_nat_jur'))]"/>
+        </record>
+        <record id="pes_bloc_sit_deb_typ_tiers" model="pes.bloc">
+            <field name="name">TypTiers</field>
+            <field name="code">TypTiers</field>
+            <field name="sequence">20</field>
+            <field name="description">TypTiers</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_deb_typ_tiers'))]"/>
+        </record>
+        <record id="pes_bloc_sit_deb_civilite" model="pes.bloc">
+            <field name="name">Civilite</field>
+            <field name="code">Civilite</field>
+            <field name="sequence">25</field>
+            <field name="description">Civilite</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="conditionnal_attr_id" eval="ref('pes_bloc_attrs_sit_deb_civilite_to_add')"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_deb_civilite'))]"/>
+        </record>
+        <record id="pes_bloc_sit_deb_nom_part" model="pes.bloc">
+            <field name="name">Nom</field>
+            <field name="code">Nom</field>
+            <field name="sequence">30</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Nom</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="conditionnal_attr_id" eval="ref('pes_bloc_attrs_sit_deb_nom_part_to_add')"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_deb_nom_part'))]"/>
+        </record>
+        <record id="pes_bloc_sit_deb_nom_pro" model="pes.bloc">
+            <field name="name">Nom</field>
+            <field name="code">Nom</field>
+            <field name="sequence">35</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Nom</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="conditionnal_attr_id" eval="ref('pes_bloc_attrs_sit_deb_nom_pro_to_add')"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_deb_nom_pro'))]"/>
+        </record>
+        <record id="pes_bloc_sit_deb_prenom" model="pes.bloc">
+            <field name="name">Prenom</field>
+            <field name="code">Prenom</field>
+            <field name="sequence">40</field>
+            <field name="description">Prenom</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="conditionnal_attr_id" eval="ref('pes_bloc_attrs_sit_deb_prenom_to_add')"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sit_deb_prenom'))]"/>
+        </record>
+
+        <!-- Sous-Bloc PES Emetteur -->
+        <record id="pes_bloc_sem_1" model="pes.bloc">
+            <field name="name">InfoTiers</field>
+            <field name="code">InfoTiers</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Identification du tiers émetteur</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sit_em_9'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sem_2" model="pes.bloc">
+            <field name="name">Adresse</field>
+            <field name="code">Adresse</field>
+            <field name="description">Adresse du tiers émetteur.
+                Obligatoire pour un PES_Facture ASAP, à défaut rejet du PES_Facture ASAP
+            </field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sad_1')),(4,ref('pes_bloc_sad_2')),(4,ref('pes_bloc_sad_3')),
+            	(4,ref('pes_bloc_sad_5')),(4,ref('pes_bloc_sad_6')),
+            	(4,ref('pes_bloc_sad_7'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+
+
+        <record id="pes_bloc_sem_5" model="pes.bloc">
+            <field name="name">InfoTVAEmetteur</field>
+            <field name="code">InfoTVAEmetteur</field>
+            <field name="description">Informations concernant la TVA du Tiers l’émetteur.
+                Ne pas renseigner pour un PES_Facture ASAP.
+            </field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sitvae_1')),(4,ref('pes_bloc_sitvae_2'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sem_6" model="pes.bloc">
+            <field name="name">InfoSuppl</field>
+            <field name="code">InfoSuppl</field>
+            <field name="description">Informations pratiques de la collectivité (horaires, téléphone, et informations nécessaires dans le cadre de TIPI).
+                Ce bloc ne doit être utilisé que dans le cadre du PESFacture typé ASAP.
+            </field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sis_1')),(4,ref('pes_bloc_sis_2')),(4,ref('pes_bloc_sis_3')),
+            	(4,ref('pes_bloc_sis_4')),(4,ref('pes_bloc_sis_5')),(4,ref('pes_bloc_sis_6'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sem_7" model="pes.bloc">
+            <field name="name">Signataire</field>
+            <field name="code">Signataire</field>
+            <field name="description">Signataire de l’avis des sommes à payer.
+                A ne renseigner que dans le cadre du PES_Facture de type ASAP.
+                Attention, ce bloc est Obligatoire pour un PES_Facture ASAP, à défaut rejet du PES_Facture ASAP
+            </field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_ssig_1')),(4,ref('pes_bloc_ssig_2'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+
+        <!-- Sous-Bloc Tiers -->
+        <record id="pes_bloc_strc_2" model="pes.bloc">
+            <field name="name">InfoTiers Tiers</field>
+            <field name="code">InfoTiers</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Identification du tiers débiteur</field>
+            <field name="children_bloc_ids"
+                   eval="[
+                    (4,ref('pes_bloc_sit_7')),
+                    (4,ref('pes_bloc_sit_9')),
+                    (4,ref('pes_bloc_sit_10')),
+                   ]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+
+        <record id="pes_bloc_strc_3" model="pes.bloc">
+            <field name="name">Adresse</field>
+            <field name="code">Adresse</field>
+            <field name="description">Adresse du tiers débiteur.
+                Pour un PES_Facture ASAP : le bloc Adresse du Débiteur est obligatoire, à défaut rejet du PES_Facture ASAP.
+            </field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sad_1')),(4,ref('pes_bloc_sad_2')),(4,ref('pes_bloc_sad_3')),
+            	(4,ref('pes_bloc_sad_5')),(4,ref('pes_bloc_sad_6')),
+            	(4,ref('pes_bloc_sad_7'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <!-- Choix 1 -->
+        <record id="pes_bloc_strc_4" model="pes.bloc">
+            <field name="name">CpteBancaire Choix 1</field>
+            <field name="code">CpteBancaire</field>
+            <field name="description">Compte Bancaire du Tiers émetteur.
+                Ne pas renseigner pour un PES_Facture ASAP.
+            </field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_scb_1')),(4,ref('pes_bloc_scb_2')),(4,ref('pes_bloc_scb_3')),
+            	(4,ref('pes_bloc_scb_4')),(4,ref('pes_bloc_scb_5')),(4,ref('pes_bloc_scb_6')),
+            	(4,ref('pes_bloc_scb_9'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+
+        <!-- Choix 2 -->
+        <record id="pes_bloc_strc_5" model="pes.bloc">
+            <field name="sequence">15</field>
+            <field name="name">CpteBancaire Choix 2</field>
+            <field name="code">CpteBancaire</field>
+            <field name="description">Compte Bancaire du Tiers émetteur.
+                Ne pas renseigner pour un PES_Facture ASAP.
+            </field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_scb_7')),(4,ref('pes_bloc_scb_8')),(4,ref('pes_bloc_scb_9'))]"/>
+            <field name="conditionnal_attr_id" eval="ref('pes_bloc_attrs_bank_infos_to_add')"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+        <!-- Sous-Bloc Debitteur Facture -->
+        <record id="pes_bloc_strc_deb_1" model="pes.bloc">
+            <field name="sequence">5</field>
+            <field name="name">InfoTiers Debiteur</field>
+            <field name="code">InfoTiers</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Identification du tiers débiteur</field>
+            <field name="children_bloc_ids"
+                   eval="[
+                    (4,ref('pes_bloc_sit_deb_ref_tiers')),
+                    (4,ref('pes_bloc_sit_deb_cat_tiers')),
+                    (4,ref('pes_bloc_sit_deb_nat_jur')),
+                    (4,ref('pes_bloc_sit_deb_typ_tiers')),
+                    (4,ref('pes_bloc_sit_deb_civilite')),
+                    (4,ref('pes_bloc_sit_deb_nom_pro')),
+                    (4,ref('pes_bloc_sit_deb_nom_part')),
+                    (4,ref('pes_bloc_sit_deb_prenom')),
+                   ]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+        <record id="pes_bloc_strc_deb_2" model="pes.bloc">
+            <field name="sequence">10</field>
+            <field name="name">Adresse Debiteur</field>
+            <field name="code">Adresse</field>
+            <field name="description">Adresse du tiers débiteur.
+                Pour un PES_Facture ASAP : le bloc Adresse du Débiteur est obligatoire, à défaut rejet du PES_Facture ASAP.
+            </field>
+            <!-- <field name="children_bloc_ids"
+                eval="[(4,ref('pes_bloc_sad_deb_1')),(4,ref('pes_bloc_sad_deb_2')),
+                (4,ref('pes_bloc_sad_deb_3')),(4,ref('pes_bloc_sad_deb_5')),
+                (4,ref('pes_bloc_sad_deb_6')),(4,ref('pes_bloc_sad_deb_7')),
+                (4,ref('pes_bloc_sad_deb_8'))]"/> -->
+            <field name="children_bloc_ids"
+                   eval="[
+                    (4,ref('pes_bloc_sad_deb_1')),
+                    (4,ref('pes_bloc_sad_deb_2')),
+            	    (4,ref('pes_bloc_sad_deb_3')),
+                    (4,ref('pes_bloc_sad_deb_5')),
+            	    (4,ref('pes_bloc_sad_deb_6')),
+                    (4,ref('pes_bloc_sad_deb_7')),
+            	    (4,ref('pes_bloc_sad_deb_8'))
+                   ]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+
+        <!-- Sous-bloc LigneFacture -->
+        <record id="pes_bloc_sfind_LF_1" model="pes.bloc">
+            <field name="name">Libelle</field>
+            <field name="code">Libelle</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Libellé détaillé du produit.
+                PES_Facture ASAP : la zone Libellé est à renseigner de l’objet de la ligne de facture ;
+                Si la ligne de facture concerne une remise, indiquer « remise » dans cette zone libellé afin d’informer le débiteur (pas de contrôle sur le contenu de cette zone).
+            </field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_5"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sfind_LF_1'))]"/>
+        </record>
+        <record id="pes_bloc_sfind_LF_2" model="pes.bloc">
+            <field name="name">Quantite</field>
+            <field name="code">Quantite</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Quantité d'unité.
+                Pour un PES_Facture ASAP, la taille maximum autorisée est 5 caractères ( la virgule ne compte pas pour un caractère), à défaut rejet du PES_Facture ASAP.
+            </field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_5"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sfind_LF_2'))]"/>
+        </record>
+        <record id="pes_bloc_sfind_LF_3" model="pes.bloc">
+            <field name="name">MtHT</field>
+            <field name="code">MtHT</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Montant HT de la Ligne.
+                PES_Facture ASAP : le montant doit être strictement positif, à défaut rejet du PES_Facture ASAP.
+            </field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="pes_input_object_id" ref="pes_input_object_5"/>-->
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sfind_LF_3'))]"/>
+        </record>
+
+        <record id="pes_bloc_sfind_LF_4" model="pes.bloc">
+            <field name="name">MtTVA</field>
+            <field name="code">MtTVA</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Montant de la TVA appliquée à la ligne.
+                PES_Facture ASAP : le montant doit être positif, à défaut rejet du PES_Facture ASAP.
+            </field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_5"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sfind_LF_4'))]"/>
+        </record>
+
+        <record id="pes_bloc_sfind_LF_5" model="pes.bloc">
+            <field name="name">Ordre</field>
+            <field name="code">Ordre</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Numéro d'ordre de la ligne de prestation.
+                Cette balise permet de déterminer l’ordre d’affichage des lignes de facture sur l’édition ASAP.
+            </field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_5"/>
+        </record>
+
+        <record id="pes_bloc_sfind_LF_6" model="pes.bloc">
+            <field name="name">MtTTC</field>
+            <field name="code">MtTTC</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Montant TTC de la prestation de cette ligne.
+                PES_Facture ASAP : le montant doit être strictement positif, à défaut rejet du PES_Facture ASAP.
+            </field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_5"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sfind_LF_6'))]"/>
+        </record>
+
+        <!-- Sous-bloc TotalAPayer -->
+
+        <record id="pes_bloc_sfind_TAP_1" model="pes.bloc">
+            <field name="name">MtTotalTTC</field>
+            <field name="code">MtTotalTTC</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Montant total de la prestation TTC.
+                PES_Facture ASAP : le montant doit être strictement positif, à défaut rejet du PES_Facture ASAP.
+            </field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sfind_TAP_1'))]"/>
+        </record>
+
+        <!-- Sous-bloc RefTitre -->
+        <record id="pes_bloc_sfind_RT_1" model="pes.bloc">
+            <field name="name">Exercice</field>
+            <field name="code">Exercice</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">L’exercice du titre auquel se rattache la facture de recette ASAP</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sfind_RT_2" model="pes.bloc">
+            <field name="name">NumBordereau</field>
+            <field name="code">NumBordereau</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Le numéro du bordereau de titre</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sfind_RT_3" model="pes.bloc">
+            <field name="name">NumTitre</field>
+            <field name="code">NumTitre</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Le numéro de titre auquel se rattache la facture de recette ASAP.</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sfind_RT_4" model="pes.bloc">
+            <field name="name">NumLigne</field>
+            <field name="code">NumLigne</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">A valoriser obligatoirement à 1.</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+        <!-- Sous-Bloc FactureIndiv -->
+        <record id="pes_bloc_sfind_1" model="pes.bloc">
+            <field name="name">DateEmission</field>
+            <field name="code">DateEmission</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Date d’émission de la facture.
+                Pour PES_Facture ASAP, à renseigner de la date d’émission du titre de recette.
+            </field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sfind_1'))]"/>
+        </record>
+
+
+        <record id="pes_bloc_sfind_2" model="pes.bloc">
+            <field name="name">Debiteur</field>
+            <field name="code">Debiteur</field>
+            <field name="is_required" eval="True"/>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_strc_deb_1')),(4,ref('pes_bloc_strc_deb_2'))
+            	]"/>
+            <field name="description">Information sur le Débiteur</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+        <record id="pes_bloc_sfind_3" model="pes.bloc">
+            <field name="name">LigneFacture</field>
+            <field name="code">LigneFacture</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Détail de chaque ligne de facture.</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sfind_LF_1')),(4,ref('pes_bloc_sfind_LF_2')),(4,ref('pes_bloc_sfind_LF_3')),
+            	(4,ref('pes_bloc_sfind_LF_4')),(4,ref('pes_bloc_sfind_LF_5')),(4,ref('pes_bloc_sfind_LF_6'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_2"/>
+        </record>
+        <record id="pes_bloc_sfind_4" model="pes.bloc">
+            <field name="name">TotalAPayer</field>
+            <field name="code">TotalAPayer</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Montant total à payer.</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sfind_TAP_1'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sfind_5" model="pes.bloc">
+            <field name="name">RefTitre</field>
+            <field name="code">RefTitre</field>
+            <field name="description">Référence au titre lié à l’avis des sommes à payer.
+                Obligatoire pour un PES_Facture ASAP, à défaut rejet du PES_Facture ASAP.
+            </field>
+
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sfind_RT_1')),(4,ref('pes_bloc_sfind_RT_2')),
+            	(4,ref('pes_bloc_sfind_RT_3')),(4,ref('pes_bloc_sfind_RT_4'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+        <record id="pes_bloc_sfind_6" model="pes.bloc">
+            <field name="name">TalonOptique2Lignes</field>
+            <field name="code">TalonOptique2Lignes</field>
+            <field name="description">Talon Optique pour paiement via centre d’encaissement.
+                Obligatoire pour un PES_Facture ASAP, à défaut rejet du PES_Facture ASAP + respect de la norme HEL.
+            </field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sfind_7" model="pes.bloc">
+            <field name="name">ModalitesReglement</field>
+            <field name="code">ModalitesReglement</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Description des modalités de règlement.
+                Pour le PES_Facture ASAP : il s’agit de la description des modalités de prélèvement, pour assurer le prélèvement automatique des dettes à venir. Mention reprise au verso de l’édition.
+                Exemple : « Démarche non prévue par la collectivité », ou « Prendre contact avec le service de … ».
+            </field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sfind_8" model="pes.bloc">
+            <field name="name">ModalitesContestation</field>
+            <field name="code">ModalitesContestation</field>
+            <field name="description">Dans le cadre du PESFacture typé ASAP : Zone de texte libre permettant de renseigner les modalités de contestation de la dette (mention du tribunal compétent et du lieu notamment).</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_sfind_9" model="pes.bloc">
+            <field name="name">ModeRecouvrement</field>
+            <field name="code">ModeRecouvrement</field>
+            <field name="description">Obligatoire dans le cadre du PES facture typé ASAP, sinon rejet du PES_Facture ASAP.
+                PES_Facture ASAP :
+                Si Edition avec TIP : 0 ou False.
+                Si Edition sans TIP (avec Talon) : 1 ou True.
+                Si edition avec TIP, alors la balise MtTotalTTC doit être inférieure ou égale à 150 000,00 euros, à défaut rejet du PES_Facture ASAP.
+            </field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+
+
+        <!-- Sous-Blocs PES facture -->
+        <record id="pes_bloc_sf_1" model="pes.bloc">
+            <field name="name">IdVer</field>
+            <field name="code">IdVer</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IdVer</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!-- <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/> -->
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_prm_1'))]"/>
+        </record>
+        <record id="pes_bloc_sf_2" model="pes.bloc">
+            <field name="name">Annee</field>
+            <field name="code">Annee</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Annee</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sf_2'))]"/>
+        </record>
+        <record id="pes_bloc_sf_3" model="pes.bloc">
+            <field name="name">NumSequence</field>
+            <field name="code">NumSequence</field>
+            <field name="description">NumSequence</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sf_4" model="pes.bloc">
+            <field name="name">TypeFact</field>
+            <field name="code">TypeFact</field>
+            <field name="description">TypeFact</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_sf_4'))]"/>
+            <!-- <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/> -->
+        </record>
+        <record id="pes_bloc_sf_5" model="pes.bloc">
+            <field name="name">Date</field>
+            <field name="code">Date</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Date</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sf_6" model="pes.bloc">
+            <field name="name">Emetteur</field>
+            <field name="code">Emetteur</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Ce bloc définit l’émetteur de la facture</field>
+            <!--<field name="children_bloc_ids" -->
+            <!--eval="[(4,ref('pes_bloc_sem_1')),(4,ref('pes_bloc_sem_2')),(4,ref('pes_bloc_sem_7'))]" />-->
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sem_1')),(4,ref('pes_bloc_sem_2'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sf_7" model="pes.bloc">
+            <field name="name">Tiers</field>
+            <field name="code">Tiers</field>
+            <field name="description">Les tiers communs à l’ensemble de la facture ; utilisés dans le cadre du PES_Facture typé ASAP.
+                Pour un PES_Facture ASAP, bloc Tiers Obligatoire pour le Centre des Finances Publiques et le Centre d’encaissement.
+                Présence obligatoire d’un et un seul TypeTiers = 25 (centre d’encaissement) et d’un et un seul TypeTiers = 26 (Centre des Finances Publiques). A défaut, rejet du PES_Facture ASAP.
+            </field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_strc_2')),(4,ref('pes_bloc_strc_3')),(4,ref('pes_bloc_strc_4'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_1"/>
+        </record>
+        <record id="pes_bloc_sf_8" model="pes.bloc">
+            <field name="name">FactureIndiv</field>
+            <field name="code">FactureIndiv</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">FactureIndiv</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_sfind_1')),(4,ref('pes_bloc_sfind_2')),
+            	(4,ref('pes_bloc_sfind_3')),(4,ref('pes_bloc_sfind_4')),(4,ref('pes_bloc_sfind_5')),
+            	(4,ref('pes_bloc_sfind_6')),(4,ref('pes_bloc_sfind_7')),(4,ref('pes_bloc_sfind_8')),
+            	(4,ref('pes_bloc_sfind_9'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_1"/>
+        </record>
+
+    </data>
+</odoo>

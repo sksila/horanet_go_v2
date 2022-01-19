@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_subscription_line_view_form" model="ir.ui.view">
+        <field name="name">horanet subscription line form</field>
+        <field name="model">horanet.subscription.line</field>
+        <field name="arch" type="xml">
+            <form string="subscription line">
+                <header>
+                    <button string="Compute" name="action_compute_subscription_line" type="object"
+                            attrs="{'invisible': [('state', '=', 'done')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="display_progress_period" widget="progressbar"/>
+                        <newline/>
+                        <field name="display_opening_date"/>
+                        <field name="display_closing_date"/>
+                        <field name="subscription_id"/>
+                        <field name="sale_order_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_subscription_line_view_tree" model="ir.ui.view">
+        <field name="name">horanet subscription line tree</field>
+        <field name="model">horanet.subscription.line</field>
+        <field name="arch" type="xml">
+            <tree string="subscription line">
+                <field name="subscription_id"/>
+                <field name="display_progress_period" widget="progressbar"/>
+                <field name="display_opening_date"/>
+                <field name="display_closing_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_horanet_subscription_line" model="ir.actions.act_window">
+        <field name="name">Contract Period</field>
+        <field name="res_model">horanet.subscription.line</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_subscription_line_view_tree"/>
+    </record>
+</odoo>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="product_hide_default_text" inherit_id="website_sale.product">
+        <xpath expr="//div[@id='product_details']/p" position="replace">
+        </xpath>
+    </template>
+</odoo>

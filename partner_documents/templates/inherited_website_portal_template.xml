@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_portal_layout" inherit_id="portal.portal_layout"
+              name="My Portal: Documents menu button" customize_show="True">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li>
+                <a href="/my/documents">Documents</a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_documents" inherit_id="portal.portal_my_home" name="My Portal: Documents"
+              customize_show="True">
+        <!--<xpath expr="//div[contains(@class,'o_portal_my_home')]" position="inside">-->
+        <xpath expr="//div[hasclass('o_portal_my_home')]/h3" position="replace">
+            <h3 class="page-header">
+                <a href="/my/documents">Your Documents
+                    <small class="ml8">
+                        <t t-if="document_count">
+                            <span class='badge'>
+                                <t t-esc="document_count"/>
+                            </span>
+                        </t>
+                        <t t-if="not document_count">
+                            There are currently no documents attached to your account.
+                        </t>
+                    </small>
+                </a>
+            </h3>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- URL of Aquagliss backend -->
+        <record model="ir.config_parameter" id="backend_url_tpa_aquagliss">
+            <field name="key">tpa.aquagliss.backend_url</field>
+            <field name="value">/default/url/</field>
+        </record>
+        <!-- Activation of Aquagliss synchronization -->
+        <record model="ir.config_parameter" id="tpa_aquagliss_enable">
+            <field name="key">tpa.aquagliss.is_enable</field>
+            <field name="value">False</field>
+        </record>
+        <!-- Method of Aquagliss backend -->
+        <record model="ir.config_parameter" id="method_tpa_aquagliss_partner">
+            <field name="key">tpa.aquagliss.partner_method</field>
+            <field name="value">backendOdooPartner</field>
+        </record>
+
+        <!-- Activation of Aquagliss synchronization cards -->
+        <record model="ir.config_parameter" id="tpa_aquagliss_cards_enable">
+            <field name="key">tpa.aquagliss.cards_is_enable</field>
+            <field name="value">False</field>
+        </record>
+        <!-- Activation of Aquagliss synchronization cards in create assignation -->
+        <record model="ir.config_parameter" id="tpa_aquagliss_assignation_cards_enable">
+            <field name="key">tpa.aquagliss.assignation_cards_is_enable</field>
+            <field name="value">False</field>
+        </record>
+        <!-- Method Cards of Aquagliss backend -->
+        <record model="ir.config_parameter" id="method_tpa_aquagliss_card">
+            <field name="key">tpa.aquagliss.card_method</field>
+            <field name="value">backendOdooCard</field>
+        </record>
+        <!-- Match of technologies cards -->
+        <record model="ir.config_parameter" id="technologies_tpa_card">
+            <field name="key">tpa.aquagliss.card_technologies</field>
+            <field name="value">{'Mifare':1,'Barcode':8,'QR Code':8,'Calypso':10}</field>
+        </record>
+        <!-- Match of categories cards -->
+        <record model="ir.config_parameter" id="categories_tpa_card">
+            <field name="key">tpa.aquagliss.card_categories</field>
+            <field name="value">{'Card':1,'Carte':1,'Ticket':8, 'Smart card':1}</field>
+        </record>
+        <!-- Match of area Aquagliss -->
+        <record model="ir.config_parameter" id="aquagliss_area">
+            <field name="key">tpa.aquagliss.area</field>
+            <field name="value">1</field>
+        </record>
+    </data>
+</odoo>

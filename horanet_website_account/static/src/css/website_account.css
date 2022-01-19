@@ -1,0 +1,76 @@
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    /*margin: 10px;*/
+}
+.file-upload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+img.img_avatar{
+    max-height: 200px;
+}
+.no-border-top{border-top:none;}
+.no-border-left{border-top:left;}
+.no-border-bottom{border-top:bottom;}
+.no-border-right{border-top:right;}
+.no-border-all{border:none;}
+.ui-accordion .ui-accordion-content {padding:0px; font-size:1em;}
+.ui-accordion .ui-accordion-header {margin-top:4px;}
+
+.country-phone-group {
+    width: 40%;
+    padding-left: 0;
+    padding-right: 0;
+}
+.phone-group {
+    width: 40%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 25px;
+}
+
+.phone-code-group{
+    width: 20%;
+    margin-top: 25px;
+    padding-right: 0;
+}
+
+@media (max-width: 768px) {
+  .country-phone-group {
+     width: 100%;
+     padding-left: 0;
+     padding-right: 0;
+  }
+
+  .phone-group{
+     width: 100%;
+  }
+
+  .phone-code-group{
+     width: 100%;
+  }
+}
+
+.select-phone-code {
+    width: 100%;
+    height: 34px;
+    padding-right: 0;
+    padding-left: 0;
+    border: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+}
+
+/*remove the selection arrow of the select field for internet explorer*/
+.select-phone-code::-ms-expand{
+    display:none;
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="partner_image" name="Image field">
+        <img name="img_avatar" style="max-height:237px;"
+             class="img img-responsive img-thumbnail center-block mt16"
+             t-att-src="post and post.get('image_base64', image_base64 or '') or image_base64 or ''"/>
+        <div id="croppie-div"></div>
+
+        <input type="hidden" name="image_base64"
+               t-att-value="post and post.get('image_base64', '') or partner.image and image_base64 or ''"/>
+
+        <div class="file-upload btn btn-info center-block mt8" style="width:180px">
+            <span t-translation="False">Choose an image</span>
+            <input type="hidden" name="MAX_FILE_SIZE" value="10485760"/>
+            <input type="file" name="input_avatar" class="upload"/>
+        </div>
+        <div class="btn-croppie btn btn-info center-block mt8" style="width:180px;display:none;">
+            <span t-translation="False">Submit</span>
+        </div>
+    </template>
+
+</odoo>

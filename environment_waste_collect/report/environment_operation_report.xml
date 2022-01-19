@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<odoo>
+    <report id="_operation_report"
+            string="Environment operation report"
+            model="horanet_operation"
+            report_type="qweb-pdf"
+            name="environment_waste_collect.report_environment_operation"
+            file="environment_waste_collect.report_environment_operation"
+            menu="False"/>
+
+    <template id="report_environment_operation">
+        <t t-call="report.html_container">
+            <t t-call="report.external_layout">
+                <div class="page">
+                    <h3>Operations report</h3>
+                    <br/>
+                    <p>
+                        <i>Filters :
+                            <br/>
+                            <ul style="margin-left: 50px;">
+                                <t t-foreach="filters" t-as="i">
+                                    <li>
+                                        <t t-esc="i"/>
+                                    </li>
+                                </t>
+                            </ul>
+                        </i>
+                    </p>
+                    <br/>
+                    <h4>Edition of
+                        <t t-esc="today"/>
+                    </h4>
+                    <br/>
+                    <h4>Period: from
+                        <t t-esc="date_from"/>
+                        to
+                        <t t-esc="date_to"/>
+                    </h4>
+                    <br/>
+                    <div t-if="datas">
+                        <table class="table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="padding: 5px;" class="text-center">Name</th>
+                                    <th style="padding: 5px;" class="text-center">Profile</th>
+                                    <th style="padding: 5px;" class="text-center">Infrastructure</th>
+                                    <th style="padding: 5px;" class="text-center">Tag</th>
+                                    <th style="padding: 5px;" class="text-center">Activity</th>
+                                    <th style="padding: 5px;" class="text-center">Action number</th>
+                                    <th style="padding: 5px;" class="text-center">Unit of measure</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="datas" t-as="partner">
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['name']"/>
+                                    </td>
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['type']"/>
+                                    </td>
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['infrastructure']"/>
+                                    </td>
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['tag']"/>
+                                    </td>
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['activity']"/>
+                                    </td>
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['action_number']"/>
+                                    </td>
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['unit']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px;">
+                                        <strong>Total</strong>
+                                    </td>
+                                    <td colspan="5" style="padding: 5px 15px 5px 5px;" class="text-right">
+                                        <strong>
+                                            <t t-esc="nb_action"/>
+                                        </strong>
+                                    </td>
+                                    <td style="padding: 5px 15px 5px 5px;" class="text-right">
+                                        <strong>
+                                            <t t-esc="len(datas)"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                    </div>
+                    <div t-if="not datas">
+                        <p>No data to display.</p>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

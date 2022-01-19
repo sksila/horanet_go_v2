@@ -1,0 +1,981 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_contact_identification
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-21 14:54+0000\n"
+"PO-Revision-Date: 2018-11-21 14:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.wizard_create_medium_form
+msgid "<span>Assign and create new</span>"
+msgstr "<span>Assigner et créer un nouveau support</span>"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.wizard_create_medium_form
+msgid "<span>Assign the medium</span>"
+msgstr "<span>Assigner le support</span>"
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/medium_type.py:16
+#: sql_constraint:partner.contact.identification.medium.type:0
+#, python-format
+msgid "A medium type with this name already exists."
+msgstr "Un type de support avec ce nom existe déjà."
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/technology.py:21
+#: sql_constraint:partner.contact.identification.technology:0
+#, python-format
+msgid "A technology with this code already exists."
+msgstr "Une technologie avec ce code existe déjà."
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/technology.py:16
+#: sql_constraint:partner.contact.identification.technology:0
+#, python-format
+msgid "A technology with this name already exists."
+msgstr "Une technologie avec ce nom existe déjà."
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_active
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_partner_id
+msgid "Allocated to"
+msgstr "Affecté à"
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/area.py:20
+#: sql_constraint:partner.contact.identification.area:0
+#, python-format
+msgid "An area with this name already exists."
+msgstr "Un périmètre avec ce nom existe déjà."
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/tag.py:118
+#, python-format
+msgid "Anomaly detected: multiple active assignations found for tag %s"
+msgstr "Anomalie détectée : plusieurs assignations actives trouvées pour le tag %s"
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/medium.py:51
+#, python-format
+msgid "Anomaly detected: multiple partners found for tags of the medium %s"
+msgstr "Anomalie détectée : plusieurs usagers trouvés pour les identifiants du support %s"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:149
+#, python-format
+msgid "Are you sure you want to assign this medium?"
+msgstr "Êtes-vous sûr de vouloir assigner ce support ?"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.wizard_deactivate_medium_form
+msgid "Are you sure you want to deactivate the selected mediums?"
+msgstr "Êtes-vous sûr de vouloir désactiver les supports sélectionnés ?"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_medium
+msgid "Are you sure you want to deallocate this medium?"
+msgstr "Êtes-vous sûr de vouloir désaffecter ce support ?"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_assignation
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_tag
+msgid "Are you sure you want to deallocate this tag?"
+msgstr "Êtes-vous sûr de vouloir désaffecter cet identifiant ?"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_medium
+msgid "Are you sure you want to declare this medium as lost? The medium cannot be used anymore after this operation."
+msgstr "Êtes-vous sûr de vouloir déclarer ce support comme perdu ? Le support ne sera plus utilisable après cette opération."
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_assignation
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_tag
+msgid "Are you sure you want to declare this tag as lost? The tag cannot be used anymore after this operation."
+msgstr "Êtes-vous sûr de vouloir déclarer cet identifiant comme perdu ? L'identifiant ne sera plus utilisable après cette opération."
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:135
+#, python-format
+msgid "Are you sure you want to format this medium?"
+msgstr "Êtes-vous sûr de vouloir formatter ce support ?"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:142
+#, python-format
+msgid "Are you sure you want to write on this medium?"
+msgstr "Êtes-vous sûr de vouloir écrire sur ce support ?"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_mapping_area_id
+msgid "Area"
+msgstr "Périmètre"
+
+#. module: partner_contact_identification
+#: model:ir.actions.act_window,name:partner_contact_identification.action_identification_area
+#: model:ir.ui.menu,name:partner_contact_identification.menu_partner_contact_identification_area
+msgid "Areas"
+msgstr "Périmètres"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:126
+#, python-format
+msgid "Assign the medium"
+msgstr "Assigner le support"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_assignation_start_date
+msgid "Assignation start date"
+msgstr "Date d'affectation"
+
+#. module: partner_contact_identification
+#: model:ir.actions.act_window,name:partner_contact_identification.action_identification_assignation
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_assignation_ids
+#: model:ir.model.fields,field_description:partner_contact_identification.field_res_partner_assignation_ids
+#: model:ir.model.fields,field_description:partner_contact_identification.field_res_users_assignation_ids
+#: model:ir.ui.menu,name:partner_contact_identification.menu_partner_contact_identification_assignation
+msgid "Assignations"
+msgstr "Assignations"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_res_partner_active_assignation_count
+#: model:ir.model.fields,field_description:partner_contact_identification.field_res_users_active_assignation_count
+msgid "Assignations Count"
+msgstr "Nombre d'assignations"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_display_name_assignation
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_reference_id
+msgid "Assigned to"
+msgstr "Assigné à"
+
+#. module: partner_contact_identification
+#: selection:partner.contact.identification.mapping,mapping:0
+msgid "CSN"
+msgstr "CSN"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/max_length_csn.js:15
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_csn_number
+#, python-format
+msgid "CSN Number"
+msgstr "Numéro CSN"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.wizard_create_medium_form
+#: model:ir.ui.view,arch_db:partner_contact_identification.wizard_deactivate_medium_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: partner_contact_identification
+#: model:partner.contact.identification.medium.type,name:partner_contact_identification.demo_medium_type_card
+msgid "Card"
+msgstr "Carte"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:237
+#, python-format
+msgid "Click here to deactive the medium."
+msgstr "Cliquez ici pour désactiver le support."
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_technology_code
+msgid "Code"
+msgstr "Code"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.wizard_deactivate_medium_form
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: partner_contact_identification
+#: model:ir.actions.act_window,name:partner_contact_identification.launch_create_medium_wizard
+msgid "Create medium"
+msgstr "Créer support"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_partner_form
+msgid "Create new medium"
+msgstr "Créer un nouveau support"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_area_create_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_create_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_mapping_create_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_create_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_type_create_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_create_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_technology_create_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_create_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_deactivate_medium_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_area_create_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_create_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_mapping_create_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_create_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_type_create_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_create_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_technology_create_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_create_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_deactivate_medium_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: partner_contact_identification
+#: model:ir.actions.act_window,name:partner_contact_identification.launch_deactivate_mediums_wizard
+msgid "Deactivate mediums"
+msgstr "Désactiver les supports"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_deactivated_by
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_deactivated_by
+msgid "Deactivated by"
+msgstr "Désactivé par"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_deactivated_on
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_deactivated_on
+msgid "Deactivated on"
+msgstr "Désactivé le"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_assignation
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_medium
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_tag
+msgid "Deallocate"
+msgstr "Désaffecter"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_assignation
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_medium
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_tag
+msgid "Declare lost"
+msgstr "Déclarer perdu"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_area_display_name
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_display_name
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_mapping_display_name
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_display_name
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_type_display_name
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_display_name
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_technology_display_name
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_display_name
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_deactivate_medium_display_name
+#: model:ir.model.fields,field_description:partner_contact_identification.field_report_partner_contact_identification_medium_report_template_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: partner_contact_identification
+#: model:ir.actions.act_url,name:partner_contact_identification.action_download_windows_service
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_collectivity_config_settings
+msgid "Download windows service"
+msgstr "Télécharger le service windows"
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/assignation.py:220
+#, python-format
+msgid "Duplicate assignation ({duplicate_ids}) found for the tag id {tag_id} for the period {period}."
+msgstr "Doublons d'assignation ({duplicate_ids}) trouvées pour l'identifiant {tag_id} sur la période {period}."
+
+#. module: partner_contact_identification
+#: selection:partner.contact.identification.mapping,mapping:0
+msgid "EAN 13"
+msgstr "EAN 13"
+
+#. module: partner_contact_identification
+#: model:res.groups,comment:partner_contact_identification.group_partner_contact_identification_manage
+msgid "Enable the menus to manage identification mediums and tag assignations on partners."
+msgstr "Active les menus pour gérer les supports d'identification et les l'assignation des tags aux partenaires."
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/assignation.py:178
+#, python-format
+msgid "End date should be posterior or equal to start date."
+msgstr "La date de fin doit être supérieure ou égale à la date de début."
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/wizards/wizard_create_medium.py:41
+#, python-format
+msgid "Enter a valid CSN number"
+msgstr "Veuillez renseigner un numéro CSN valide"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_external_reference
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_external_reference
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_external_reference
+msgid "External reference"
+msgstr "Référence externe"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:124
+#, python-format
+msgid "Format the medium"
+msgstr "Formater le support"
+
+#. module: partner_contact_identification
+#: model:partner.contact.identification.area,name:partner_contact_identification.demo_area_gymnasium
+msgid "Gymnasium"
+msgstr "Gymnase"
+
+#. module: partner_contact_identification
+#: selection:partner.contact.identification.mapping,mapping:0
+msgid "H3"
+msgstr "H3"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_res_partner_has_active_medium
+#: model:ir.model.fields,field_description:partner_contact_identification.field_res_users_has_active_medium
+msgid "Has active medium"
+msgstr "Possède un support actif"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_partner_id
+msgid "Holder"
+msgstr "Détenteur"
+
+#. module: partner_contact_identification
+#: model:partner.contact.identification.area,name:partner_contact_identification.area_horanet
+msgid "Horanet"
+msgstr "Horanet"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_area_id
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_id
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_mapping_id
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_id
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_type_id_4499
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_id
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_technology_id
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_id
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_deactivate_medium_id
+#: model:ir.model.fields,field_description:partner_contact_identification.field_report_partner_contact_identification_medium_report_template_id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_contact_identification
+#: model:ir.ui.menu,name:partner_contact_identification.menu_settings_partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_collectivity_config_settings
+msgid "Identification"
+msgstr "Identification"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_collectivity_config_settings_medium_recto_image
+msgid "Image used as background for the recto side of the medium"
+msgstr "Image utilisée comme fond pour le côté recto du support"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_collectivity_config_settings_medium_verso_image
+msgid "Image used as background for the verso side of the medium"
+msgstr "Image utilisée comme fond pour le côté verso du support"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_is_active
+msgid "Is active"
+msgstr "Actif"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_is_assigned
+#: model:ir.ui.view,arch_db:partner_contact_identification.tag_search_view
+msgid "Is assigned"
+msgstr "Est assigné"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.tag_search_view
+msgid "Is available"
+msgstr "Est disponible"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_area___last_update
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation___last_update
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_mapping___last_update
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium___last_update
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_type___last_update
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag___last_update
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_technology___last_update
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium___last_update
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_deactivate_medium___last_update
+#: model:ir.model.fields,field_description:partner_contact_identification.field_report_partner_contact_identification_medium_report_template___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_area_write_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_write_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_mapping_write_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_type_write_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_write_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_write_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_technology_write_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_write_uid
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_deactivate_medium_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_area_write_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_write_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_mapping_write_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_type_write_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_write_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_write_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_technology_write_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_write_date
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_deactivate_medium_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_is_lost
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_is_lost
+msgid "Lost"
+msgstr "Perdu"
+
+#. module: partner_contact_identification
+#: model:res.groups,name:partner_contact_identification.group_partner_contact_identification_manage
+msgid "Manage Identification"
+msgstr "Gérer les supports d'identification"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_mapping_id
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_mapping_id
+msgid "Mapping"
+msgstr "Mapping"
+
+#. module: partner_contact_identification
+#: model:ir.actions.act_window,name:partner_contact_identification.action_identification_mapping
+#: model:ir.ui.menu,name:partner_contact_identification.menu_partner_contact_identification_mapping
+msgid "Mappings"
+msgstr "Mappings"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/max_length_csn.js:10
+#: code:addons/partner_contact_identification/static/src/js/max_length_csn.js:11
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_mapping_max_length
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_max_length
+#, python-format
+msgid "Max length"
+msgstr "Longueur maximale"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_medium_label
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_medium_id
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_medium_label
+msgid "Medium"
+msgstr "Support"
+
+#. module: partner_contact_identification
+#: model:ir.actions.act_window,name:partner_contact_identification.action_identification_medium_type
+#: model:ir.ui.menu,name:partner_contact_identification.menu_partner_contact_identification_medium_type
+msgid "Medium types"
+msgstr "Types de support"
+
+#. module: partner_contact_identification
+#: model:ir.actions.act_window,name:partner_contact_identification.action_identification_medium
+#: model:ir.model.fields,field_description:partner_contact_identification.field_res_partner_medium_ids
+#: model:ir.model.fields,field_description:partner_contact_identification.field_res_users_medium_ids
+#: model:ir.ui.menu,name:partner_contact_identification.menu_partner_contact_identification_medium
+#: model:ir.ui.view,arch_db:partner_contact_identification.portal_my_home_menu_mediums
+msgid "Mediums"
+msgstr "Supports"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_partner_form
+msgid "Mediums & tags"
+msgstr "Supports & identifiants"
+
+#. module: partner_contact_identification
+#: selection:partner.contact.identification.assignation,reference_id:0
+msgid "Move"
+msgstr "Eménagement"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_area_name
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_type_name
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_technology_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/area.py:46
+#: code:addons/partner_contact_identification/models/medium_type.py:42
+#: code:addons/partner_contact_identification/models/technology.py:48
+#, python-format
+msgid "Name cannot be empty"
+msgstr "Le nom ne peut pas être vide"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:191
+#, python-format
+msgid "No PCSC reader detected."
+msgstr "Pas de lecteur PCSC détecté."
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:195
+#, python-format
+msgid "No medium detected."
+msgstr "Pas de support détecté."
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_tag_number
+msgid "Number"
+msgstr "Numéro"
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/inherited_partner.py:59
+#, python-format
+msgid "Operator ({bad_operator}) not supported"
+msgstr "L'opérateur ({bad_operator}) n'est pas supporté"
+
+#. module: partner_contact_identification
+#: selection:partner.contact.identification.assignation,reference_id:0
+msgid "Package"
+msgstr "Forfait"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_res_partner
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.wizard_create_medium_form
+msgid "Place the medium you want to read on your medium reader then click on the button below."
+msgstr "Placez le support que vous voulez lire sur votre lecteur PCSC puis appuyez sur le boutton ci-dessous."
+
+#. module: partner_contact_identification
+#: model:ir.actions.report.xml,name:partner_contact_identification.medium_report
+msgid "Print medium"
+msgstr "Imprimer le support"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:123
+#, python-format
+msgid "Read the medium"
+msgstr "Lire le support"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.portal_my_mediums
+msgid "Holder"
+msgstr "Propriétaire"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_assignation
+msgid "Referenced object"
+msgstr "Objet référencé"
+
+#. module: partner_contact_identification
+#: model:partner.contact.identification.area,name:partner_contact_identification.demo_area_school
+msgid "School"
+msgstr "École"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.medium_view_filter
+msgid "Search medium"
+msgstr "Rechercher un support"
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/medium.py:64
+#, python-format
+msgid "Search partner on mediums: Expected integer or list of integer, found %s"
+msgstr "Recherche d'un usager sur les supports : Entier ou liste d'entiers attendu, trouvé %s"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,help:partner_contact_identification.field_collectivity_config_settings_mapping_id
+msgid "Set this value to use as default mapping value when launching the creation medium wizard."
+msgstr "Le mapping défini sera utilisé par défaut lors de l'utilisation de l'assistant d'assignation de badge."
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_assignation
+msgid "Settings"
+msgstr "Configuration"
+
+#. module: partner_contact_identification
+#: model:partner.contact.identification.medium.type,name:partner_contact_identification.medium_type_smartcard
+msgid "Smart card"
+msgstr "Carte à puce"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: partner_contact_identification
+#: model:partner.contact.identification.area,name:partner_contact_identification.demo_area_swimmingpool
+msgid "Swimming Pool"
+msgstr "Piscine"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_tag_id
+#: model:ir.ui.view,arch_db:partner_contact_identification.portal_my_mediums
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_tag
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_tree_partner_contact_identification_tag
+msgid "Tag"
+msgstr "Identifiant"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_tag_ids
+msgid "Tag list"
+msgstr "Liste des tags"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_partner_contact_identification_assignation_search
+msgid "Tag number"
+msgstr "Numéro du tag"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.medium_view_filter
+msgid "Tag numbers"
+msgstr "Numéros de tag"
+
+#. module: partner_contact_identification
+#: model:ir.actions.act_window,name:partner_contact_identification.action_identification_tag
+#: model:ir.model.fields,field_description:partner_contact_identification.field_res_partner_tag_ids
+#: model:ir.model.fields,field_description:partner_contact_identification.field_res_users_tag_ids
+#: model:ir.ui.menu,name:partner_contact_identification.menu_partner_contact_identification_tag
+msgid "Tags"
+msgstr "Identifiants"
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/medium.py:97
+#: code:addons/partner_contact_identification/models/tag.py:201
+#: code:addons/partner_contact_identification/models/tag.py:203
+#, python-format
+msgid "Tags on the same medium should be assigned to the same entity."
+msgstr "Les identifiants d'un même support doivent être affectés à la même entité."
+
+#. module: partner_contact_identification
+#: model:ir.actions.act_window,name:partner_contact_identification.action_identification_technology
+#: model:ir.ui.menu,name:partner_contact_identification.menu_partner_contact_identification_technology
+msgid "Technologies"
+msgstr "Technologies"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_mapping_technology_id
+msgid "Technology"
+msgstr "Technologie"
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/tag.py:191
+#, python-format
+msgid "The CSN tag number should be unique by mapping technology."
+msgstr "Le numéro d'un tag CSN doit être unique par technologie de mapping."
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:207
+#, python-format
+msgid "The medium contains the following informations:<br />"
+msgstr "Le support contient les informations suivantes:<br />"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:265
+#, python-format
+msgid "The medium has successfully been assigned."
+msgstr "Le support à bien été assigné."
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:186
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:222
+#, python-format
+msgid "The medium is empty."
+msgstr "Le support est vide."
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:171
+#, python-format
+msgid "The medium isn't formatted to HLFAT."
+msgstr "Le support n'est pas formatté en HLFAT."
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,help:partner_contact_identification.field_collectivity_config_settings_identification_windows_service_port
+msgid "The port to use is the one of the machine that run the windows service on your local network."
+msgstr "Le port à utiliser est celui de la machine exécutant le service windows sur votre réseau local."
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/tag.py:181
+#, python-format
+msgid "The tag number should be unique by mapping."
+msgstr "Le numéro du tag doit être unique par mapping."
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:29
+#, python-format
+msgid "The windows service is not reachable at this address: "
+msgstr "Le service windows n'est pas accessible à cette adresse : "
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:27
+#, python-format
+msgid "The windows service is not responding."
+msgstr "Le service windows ne répond pas."
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.portal_my_home_mediums
+#: model:ir.ui.view,arch_db:partner_contact_identification.portal_my_mediums
+msgid "There are currently no mediums for your account."
+msgstr "Il n'y a actuellement aucun support pour votre compte."
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/mapping.py:62
+#, python-format
+msgid "There is already an existing mapping with these properties."
+msgstr "Il existe déjà un mapping avec ces propriétés."
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,help:partner_contact_identification.field_collectivity_config_settings_medium_recto_image
+#: model:ir.model.fields,help:partner_contact_identification.field_collectivity_config_settings_medium_verso_image
+msgid "This image should have following dimensions: 325px width, 204px height"
+msgstr "L'image doit avoir les dimensions suivantes: 325px de largeur, 204px de hauteur"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:232
+#, python-format
+msgid "This medium already belongs to another partner."
+msgstr "Ce support appartient déjà à un partenaire."
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/wizards/wizard_create_medium.py:64
+#: code:addons/partner_contact_identification/wizards/wizard_create_medium.py:115
+#, python-format
+msgid "This medium was declared as lost and cannot be used anymore."
+msgstr "Ce support a été déclaré comme perdu et ne peut plus être utilisé."
+
+#. module: partner_contact_identification
+#: code:addons/partner_contact_identification/models/assignation.py:90
+#: code:addons/partner_contact_identification/wizards/wizard_create_medium.py:62
+#, python-format
+msgid "This tag is already assigned."
+msgstr "Cet identifiant est déjà assigné."
+
+#. module: partner_contact_identification
+#: model:partner.contact.identification.medium.type,name:partner_contact_identification.demo_medium_type_ticket
+msgid "Ticket"
+msgstr "Ticket"
+
+#. module: partner_contact_identification
+#: model:partner.contact.identification.area,name:partner_contact_identification.demo_area_transport
+msgid "Transport"
+msgstr "Transport"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_mapping_mapping
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_medium_type_id
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_mapping
+#: model:ir.ui.view,arch_db:partner_contact_identification.portal_my_mediums
+msgid "Type"
+msgstr "Type"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_partner_contact_identification_assignation_display_type_assignation
+msgid "Type assignation"
+msgstr "Type assignation"
+
+#. module: partner_contact_identification
+#: selection:partner.contact.identification.assignation,reference_id:0
+msgid "User"
+msgstr "Usager"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,help:partner_contact_identification.field_partner_contact_identification_mapping_max_length
+#: model:ir.model.fields,help:partner_contact_identification.field_partner_contact_identification_wizard_create_medium_max_length
+msgid "Value used when creating a tag to prevent its value to be too long"
+msgstr "Valeur utilisée lors de la création d'un identifiant pour prévenir si sa valeur est trop longue."
+
+#. module: partner_contact_identification
+#: model:partner.contact.identification.area,name:partner_contact_identification.demo_area_warehouse
+msgid "Warehouse"
+msgstr "Entrepôt"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_collectivity_config_settings_mapping_id
+msgid "Waste site support mapping"
+msgstr "Mapping"
+
+#. module: partner_contact_identification
+#: model:ir.model.fields,field_description:partner_contact_identification.field_collectivity_config_settings_identification_windows_service_port
+msgid "Windows service port"
+msgstr "Port du service windows"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:125
+#, python-format
+msgid "Write the medium"
+msgstr "Écrire le support"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:234
+#, python-format
+msgid "You have to deactivate the medium first to be able to write on it."
+msgstr "Vous devez d'abord désactiver le support pour pouvoir écrire dessus."
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.portal_my_home_mediums
+#: model:ir.ui.view,arch_db:partner_contact_identification.portal_my_mediums
+msgid "Your Mediums"
+msgstr "Vos Supports"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_area
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_tree_partner_contact_identification_area
+msgid "area"
+msgstr "périmètre"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_assignation
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_tree_partner_contact_identification_assignation
+msgid "assignation"
+msgstr "assignation"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:209
+#, python-format
+msgid "birthdate"
+msgstr "date de naissance"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.wizard_create_medium_form
+msgid "create medium"
+msgstr "créer support"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.wizard_deactivate_medium_form
+msgid "deactivate mediums"
+msgstr "désactiver les supports"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:210
+#, python-format
+msgid "firstname"
+msgstr "prénom"
+
+#. module: partner_contact_identification
+#. openerp-web
+#: code:addons/partner_contact_identification/static/src/js/medium_handler.js:211
+#, python-format
+msgid "lastname"
+msgstr "nom"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_mapping
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_tree_partner_contact_identification_mapping
+msgid "mapping"
+msgstr "mapping"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_medium
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_tree_partner_contact_identification_medium
+msgid "medium"
+msgstr "support"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_medium_type
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_tree_partner_contact_identification_medium_type
+msgid "medium type"
+msgstr "type de support"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_partner_contact_identification_area
+msgid "partner.contact.identification.area"
+msgstr "partner.contact.identification.area"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_partner_contact_identification_assignation
+msgid "partner.contact.identification.assignation"
+msgstr "partner.contact.identification.assignation"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_partner_contact_identification_mapping
+msgid "partner.contact.identification.mapping"
+msgstr "partner.contact.identification.mapping"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_partner_contact_identification_medium
+msgid "partner.contact.identification.medium"
+msgstr "partner.contact.identification.medium"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_partner_contact_identification_medium_type
+msgid "partner.contact.identification.medium.type"
+msgstr "partner.contact.identification.medium.type"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_partner_contact_identification_tag
+msgid "partner.contact.identification.tag"
+msgstr "partner.contact.identification.tag"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_partner_contact_identification_technology
+msgid "partner.contact.identification.technology"
+msgstr "partner.contact.identification.technology"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_partner_contact_identification_wizard_create_medium
+msgid "partner.contact.identification.wizard.create.medium"
+msgstr "partner.contact.identification.wizard.create.medium"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_partner_contact_identification_wizard_deactivate_medium
+msgid "partner.contact.identification.wizard.deactivate.medium"
+msgstr "partner.contact.identification.wizard.deactivate.medium"
+
+#. module: partner_contact_identification
+#: model:ir.model,name:partner_contact_identification.model_report_partner_contact_identification_medium_report_template
+msgid "report.partner_contact_identification.medium_report_template"
+msgstr "report.partner_contact_identification.medium_report_template"
+
+#. module: partner_contact_identification
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_form_partner_contact_identification_technology
+#: model:ir.ui.view,arch_db:partner_contact_identification.view_tree_partner_contact_identification_technology
+msgid "technology"
+msgstr "technologie"
+

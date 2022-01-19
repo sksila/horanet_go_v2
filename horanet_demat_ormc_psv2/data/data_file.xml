@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="pes_bloc_file_1" model="pes.file">
+            <field name="name">Constructeur du fichier PES Aller</field>
+            <field name="description">Constructeur du fichier PES Aller</field>
+            <field name="version">2</field>
+            <field name="file_type_id" ref="horanet_demat_ormc_psv2.pes_file_type_2"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="struct_fichier_id" ref="pes_bloc_1"/>
+        </record>
+    </data>
+</odoo>

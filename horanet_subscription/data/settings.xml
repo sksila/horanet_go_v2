@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="subscription_config_unknown_tag_message" model="ir.config_parameter">
+        <field name="key">subscription.unknown_tag_message</field>
+        <field name="value">Unkown tag</field>
+    </record>
+    <record id="subscription_config_unknown_tag_response" model="ir.config_parameter">
+        <field name="key">subscription.unknown_tag_response</field>
+        <field name="value">False</field>
+    </record>
+</odoo>

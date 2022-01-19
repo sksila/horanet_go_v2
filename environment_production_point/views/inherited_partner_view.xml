@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner_form_view" model="ir.ui.view">
+        <field name="name">Environment Partner Form View</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="environment_waste_collect.res_partner_form_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='environment']" position="inside">
+                <label for="partner_move_ids" colspan="2"/>
+                <field name="partner_move_ids" context="{'default_partner_id': id}"
+                       nolabel="1" colspan="2" readonly="1">
+                    <tree default_order="end_date desc">
+                        <field name="production_point_id"/>
+                        <field name="residence_type"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </tree>
+                </field>
+            </xpath>
+
+            <xpath expr="//page[@name='mediums_page']//group[@name='assignation_ids_footer']" position="after">
+                <br/>
+                <label for="move_assignation_ids"/>
+                <field name="move_assignation_ids" default_order="end_date desc">
+                    <tree>
+                        <field name="tag_id"/>
+                        <field name="medium_label"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </tree>
+                </field>
+            </xpath>
+        </field>
+    </record>
+</odoo>

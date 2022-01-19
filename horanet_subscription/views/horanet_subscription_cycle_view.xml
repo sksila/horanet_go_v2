@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_subscription_cycle_view_form" model="ir.ui.view">
+        <field name="name">horanet subscription_cycle form</field>
+        <field name="model">horanet.subscription.cycle</field>
+        <field name="arch" type="xml">
+            <form duplicate="false">
+                <sheet string="Subscription cycle">
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group></group>
+                    <group col="4">
+                        <field name="period_type"/>
+                        <field name="period_quantity" attrs="{'invisible':[('period_type','=','unlimited')]}"/>
+                        <separator/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_subscription_cycle_view_tree" model="ir.ui.view">
+        <field name="name">horanet subscription_cycle tree</field>
+        <field name="model">horanet.subscription.cycle</field>
+        <field name="arch" type="xml">
+            <tree string="Subscription cycle">
+                <field name="name"/>
+                <field name="period_quantity"/>
+                <field name="period_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_horanet_subscription_cycle" model="ir.actions.act_window">
+        <field name="name">Subscription cycle</field>
+        <field name="res_model">horanet.subscription.cycle</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_subscription_cycle_view_tree"/>
+    </record>
+</odoo>

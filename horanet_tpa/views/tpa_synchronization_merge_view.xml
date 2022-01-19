@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Form view of synchronization -->
+    <record id="view_form_tpa_synchronization_merge" model="ir.ui.view">
+        <field name="name">tpa synchronization merge form</field>
+        <field name="model">tpa.synchronization.merge</field>
+        <field name="arch" type="xml">
+            <form string="Synchronization merge TPA" create="false" edit="false">
+                <sheet>
+                    <header>
+                    </header>
+                    <group col="2">
+                        <group colspan="2" string="Synchronized partner">
+                            <field name="tpa_name"></field>
+                            <field name="ref_partner_dest"></field>
+                            <field name="external_id_dest"></field>
+                            <field name="external_id_src"></field>
+                            <field name="data"></field>
+                        </group>
+                        <group col="2" string="Synchronization informations">
+                            <group>
+                                <field name="create_uid" readonly="1"></field>
+                                <field name="create_date" readonly="1"></field>
+                                <field name="status" readonly="1"></field>
+                                <field name="status_date" readonly="1"></field>
+                                <field name="try_number"></field>
+                            </group>
+                        </group>
+                    </group>
+                    <label for="last_message_export"/>
+                    <field name="last_message_export" readonly="1"></field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view of synchronizations with color decoration by status -->
+    <record id="view_tree_tpa_synchronization_merge" model="ir.ui.view">
+        <field name="name">tpa synchronization merge tree</field>
+        <field name="model">tpa.synchronization.merge</field>
+        <field name="arch" type="xml">
+            <tree string="Synchronization informations"
+                  decoration-muted="status==0"
+                  decoration-success="status==1">
+                <field name="tpa_name"></field>
+                <field name="ref_partner_dest"></field>
+                <field name="external_id_dest"></field>
+                <field name="external_id_src"></field>
+                <field name="status"></field>
+                <field name="status_date"></field>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action to open tree view from menu button -->
+    <record id='action_tpa_synchronization_merge' model='ir.actions.act_window'>
+        <field name="name">tpa synchronization merge</field>
+        <field name="res_model">tpa.synchronization.merge</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_tpa_synchronization_merge"/>
+    </record>
+</odoo>

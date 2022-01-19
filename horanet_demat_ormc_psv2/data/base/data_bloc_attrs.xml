@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Données Namespaces -->
+        <record id="pes_bloc_attrs_ns_1" model="pes.bloc.attrs">
+            <field name="name">Schéma n</field>
+            <field name="code">n</field>
+            <field name="description">Schéma xmlns:n</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.minefi.gouv.fr/cp/helios/pes_v2/Rev0/aller</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_2" model="pes.bloc.attrs">
+            <field name="name">Schéma acta</field>
+            <field name="code">acta</field>
+            <field name="description">Schéma xmlns:acta</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.minefi.gouv.fr/cp/helios/pes_v2/etatactif/r0/aller</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_13" model="pes.bloc.attrs">
+            <field name="name">Schéma buda</field>
+            <field name="code">buda</field>
+            <field name="description">Schéma xmlns:buda</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.minefi.gouv.fr/cp/helios/pes_v2/budget/r0/aller</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_3" model="pes.bloc.attrs">
+            <field name="name">Schéma cm</field>
+            <field name="code">cm</field>
+            <field name="description">Schéma xmlns:cm</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.minefi.gouv.fr/cp/helios/pes_v2/commun</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_4" model="pes.bloc.attrs">
+            <field name="name">Schéma depa</field>
+            <field name="code">depa</field>
+            <field name="description">Schéma xmlns:depa</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.minefi.gouv.fr/cp/helios/pes_v2/depense/r0/aller</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_5" model="pes.bloc.attrs">
+            <field name="name">Schéma ds</field>
+            <field name="code">ds</field>
+            <field name="description">Schéma xmlns:ds</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.w3.org/2000/09/xmldsig#</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_6" model="pes.bloc.attrs">
+            <field name="name">Schéma empa</field>
+            <field name="code">empa</field>
+            <field name="description">Schéma xmlns:empa</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.minefi.gouv.fr/cp/helios/pes_v2/emprunt/r0/aller</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_7" model="pes.bloc.attrs">
+            <field name="name">Schéma fcta</field>
+            <field name="code">fcta</field>
+            <field name="description">Schéma xmlns:fcta</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.minefi.gouv.fr/cp/helios/pes_v2/facture/r0/aller</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_8" model="pes.bloc.attrs">
+            <field name="name">Schéma mara</field>
+            <field name="description">Schéma xmlns:mara</field>
+            <field name="code">mara</field>
+            <field name="description">Schéma xmlns:mara</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.minefi.gouv.fr/cp/helios/pes_v2/marche/r0/aller</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_9" model="pes.bloc.attrs">
+            <field name="name">Schéma reca</field>
+            <field name="code">reca</field>
+            <field name="description">Schéma xmlns:reca</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.minefi.gouv.fr/cp/helios/pes_v2/recette/r0/aller</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_10" model="pes.bloc.attrs">
+            <field name="name">Schéma rola</field>
+            <field name="code">rola</field>
+            <field name="description">Schéma xmlns:rola</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.minefi.gouv.fr/cp/helios/pes_v2/role/r0/aller</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_11" model="pes.bloc.attrs">
+            <field name="name">Schéma xad</field>
+            <field name="code">xad</field>
+            <field name="description">Schéma xmlns:xad</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://uri.etsi.org/01903/v1.1.1#</field>
+        </record>
+        <record id="pes_bloc_attrs_ns_12" model="pes.bloc.attrs">
+            <field name="name">Schéma xenc</field>
+            <field name="code">xenc</field>
+            <field name="description">Schéma xmlns:xenc</field>
+            <field name="attrs_type">namespace</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">http://www.w3.org/2001/04/xmlenc#</field>
+        </record>
+
+        <!-- Attributs pour Paramètres -->
+        <record id="pes_bloc_attrs_2_1_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Version</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Version</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value">pes_file_id.version</field>
+        </record>
+        <record id="pes_bloc_attrs_prm_2" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TypFic</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TypFic</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value">pes_file_id.file_type_id.code</field>
+        </record>
+        <record id="pes_bloc_attrs_prm_3" model="pes.bloc.attrs">
+            <field name="name">Attrs pour NomFic</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour NomFic</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_file_name</field>
+        </record>
+
+        <!-- Attributs pour Emetteur -->
+        <record id="pes_bloc_attrs_er_2_2_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Sigle emetteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Sigle emetteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_emetteur</field>
+        </record>
+        <record id="pes_bloc_attrs_er_2_2_2" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Adresse emetteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Adresse emetteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_emetteur_adresse</field>
+        </record>
+
+        <!-- Attributs pour Recepteur -->
+        <record id="pes_bloc_attrs_er_2_3_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Sigle recepteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Sigle recepteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_recepteur</field>
+        </record>
+        <record id="pes_bloc_attrs_er_2_3_2" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Adresse recepteur</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Adresse recepteur</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_recepteur_adresse</field>
+        </record>
+
+        <!-- Attributs pour Entete PES -->
+        <record id="pes_bloc_attrs_3_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour DteStr</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour DteStr</field>
+            <field name="attrs_type">simple</field>
+            <field name="value_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_date_jour</field>
+        </record>
+        <record id="pes_bloc_attrs_3_2" model="pes.bloc.attrs">
+            <field name="name">Attrs pour IdPost</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour IdPost</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value">company_id.ormc_id_post</field>
+        </record>
+        <record id="pes_bloc_attrs_3_3" model="pes.bloc.attrs">
+            <field name="name">Attrs pour LibellePoste</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour LibellePoste</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value"></field>
+        </record>
+        <record id="pes_bloc_attrs_3_4" model="pes.bloc.attrs">
+            <field name="name">Attrs pour IdColl</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour IdColl</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value">company_id.siret</field>
+        </record>
+        <record id="pes_bloc_attrs_3_5" model="pes.bloc.attrs">
+            <field name="name">Attrs pour CodCol</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour CodCol</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value">company_id.ormc_cod_col</field>
+        </record>
+        <record id="pes_bloc_attrs_3_6" model="pes.bloc.attrs">
+            <field name="name">Attrs pour CodBud</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour CodBud</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value">role_id.batch_id.campaign_id.budget_code_id.ormc_cod_bud</field>
+        </record>
+        <record id="pes_bloc_attrs_3_7" model="pes.bloc.attrs">
+            <field name="name">Attrs pour LibelleColBud</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour LibelleColBud</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value">role_id.batch_id.campaign_id.budget_code_id.ormc_libelle_cod_bud</field>
+        </record>
+    </data>
+</odoo>

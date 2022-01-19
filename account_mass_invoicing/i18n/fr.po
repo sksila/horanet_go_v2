@@ -1,0 +1,1049 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_mass_invoicing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-18 15:31+0000\n"
+"PO-Revision-Date: 2018-12-18 15:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_mass_invoicing
+#: selection:horanet.accounting.date.range,accounting_year:0
+msgid "2013"
+msgstr "2013"
+
+#. module: account_mass_invoicing
+#: selection:horanet.accounting.date.range,accounting_year:0
+msgid "2014"
+msgstr "2014"
+
+#. module: account_mass_invoicing
+#: selection:horanet.accounting.date.range,accounting_year:0
+msgid "2015"
+msgstr "2015"
+
+#. module: account_mass_invoicing
+#: selection:horanet.accounting.date.range,accounting_year:0
+msgid "2016"
+msgstr "2016"
+
+#. module: account_mass_invoicing
+#: selection:horanet.accounting.date.range,accounting_year:0
+msgid "2017"
+msgstr "2017"
+
+#. module: account_mass_invoicing
+#: selection:horanet.accounting.date.range,accounting_year:0
+msgid "2018"
+msgstr "2018"
+
+#. module: account_mass_invoicing
+#: selection:horanet.accounting.date.range,accounting_year:0
+msgid "2019"
+msgstr "2019"
+
+#. module: account_mass_invoicing
+#: selection:horanet.accounting.date.range,accounting_year:0
+msgid "2020"
+msgstr "2020"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+msgid "<strong>ID: </strong>"
+msgstr "<strong>ID: </strong>"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_role.py:17
+#: sql_constraint:horanet.role:0
+#, python-format
+msgid "A batch cannot be in multiple roles"
+msgstr "Un lot ne peut pas faire partie de plusieurs rôles"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_role.py:19
+#: sql_constraint:horanet.role:0
+#, python-format
+msgid "A role with the same number exists for this fiscal year"
+msgstr "Il existe déjà un rôle avec ce numéro pour cet exercice"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_role.py:21
+#: sql_constraint:horanet.role:0
+#, python-format
+msgid "A role with this recipe title already exists"
+msgstr "Il existe déjà un rôle avec ce titre de recette"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_account_invoice_account_move_line_ids
+msgid "Account move line ids"
+msgstr "Écritures comptables"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.menu,name:account_mass_invoicing.mass_invoicing_accounting_date_range
+msgid "Accounting Date Range"
+msgstr "Période de facturation"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.act_window,name:account_mass_invoicing.action_account_mass_invoicing_accounting_date_range
+msgid "Accounting date range"
+msgstr "Période de facturation"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,help:account_mass_invoicing.field_horanet_subscription_required_mandate
+#: model:ir.model.fields,help:account_mass_invoicing.field_partner_setup_wizard_bank_account_required
+msgid "Activate this option if this payment method requires you to know the bank account number of your customer or supplier."
+msgstr "Activez cette option si cette méthode de paiement vous demande de connaître le numéro de compte bancaire de votre client ou fournisseur."
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_account_invoice_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: account_mass_invoicing
+#: model:res.groups,name:account_mass_invoicing.group_admin_mass_invoicing
+msgid "Administrator"
+msgstr "Administateur"
+
+#. module: account_mass_invoicing
+#: model:res.groups,comment:account_mass_invoicing.group_browse_mass_invoicing
+msgid "Allow browsing records related to account mass invoicing"
+msgstr "Autorise à parcourir les enregistrements relatifs à la facturation de masse"
+
+#. module: account_mass_invoicing
+#: model:res.groups,comment:account_mass_invoicing.group_manage_mass_invoicing
+msgid "Allow editing records related to account mass invoicing"
+msgstr "Autorise à modifier les enregistrements relatifs à la facturation de masse"
+
+#. module: account_mass_invoicing
+#: model:res.groups,comment:account_mass_invoicing.group_admin_mass_invoicing
+msgid "Allow user to see and edit account mass invoicing related objects"
+msgstr "Autorise à voir et modifier les enregistrements relatifs à la facturation de masse"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.act_window,name:account_mass_invoicing.action_archive_min_invoices
+#: model:ir.ui.menu,name:account_mass_invoicing.invoice_archive
+msgid "Archived invoices"
+msgstr "Factures archivées"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_bic
+msgid "BIC code"
+msgstr "Code BIC"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.external_layout_header_batch
+msgid "BROUILLON"
+msgstr "BROUILLON"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_subscription_required_mandate
+msgid "Bank Account Required"
+msgstr "Compte bancaire requis"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,help:account_mass_invoicing.field_partner_setup_wizard_bic
+msgid "Bank Identifier Code, also know as SWIFT code"
+msgstr "Code Identifiant Bancaire, aussi connu sous le code SWIFT"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_subscription_bank_account_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_bank_account
+msgid "Bank account"
+msgstr "Compte bancaire"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/wizards/import_ordotip_wizard.py:92
+#, python-format
+msgid "Bank account of the invoice subscription already up to date."
+msgstr "Compte bancaire de l'abonnement de la facture déjà à jour."
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/wizards/import_ordotip_wizard.py:135
+#, python-format
+msgid "Bank account of the invoice subscription is up to date."
+msgstr "Compte bancaire de l'abonnement de la facture à jour."
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/wizards/import_ordotip_wizard.py:100
+#, python-format
+msgid "Bank account with this Account Number %s belong to another Customer."
+msgstr "Le compte bancaire avec ce numéro de compte %s appartient à un autre Client."
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/wizards/import_ordotip_wizard.py:108
+#, python-format
+msgid "Bank account with this Account Number %s does not belong to any Customer."
+msgstr "Le compte bancaire avec ce numéro de compte %s n'appartient à aucun Client."
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_bank_name
+msgid "Bank name"
+msgstr "Banque"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_banking_mandate
+msgid "Banking Mandate"
+msgstr "Mandat de prélèvement"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_subscription_banking_mandate
+msgid "Banking mandate"
+msgstr "Mandat de prélèvement"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/inherited_horanet_subscription.py:71
+#, python-format
+msgid "Banking mandate's account doesn't match bank account."
+msgstr "Le compte du mandat de prélèvement est différent du compte bancaire."
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_invoice_filter_form
+msgid "Batch"
+msgstr "Lot de factures"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.report.xml,name:account_mass_invoicing.batch_mass_invoice
+msgid "Batch Report"
+msgstr "Rapport de lot"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.act_window,name:account_mass_invoicing.action_account_mass_invoicing_invoice_batch_type
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_mass_invoicing_batch_type_ids
+#: model:ir.ui.menu,name:account_mass_invoicing.mass_invoicing_batch_types
+msgid "Batch types"
+msgstr "Types de lots"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.act_window,name:account_mass_invoicing.action_account_mass_invoicing_invoice_batch
+#: model:ir.ui.menu,name:account_mass_invoicing.mass_invoicing_invoice_batches
+msgid "Batches"
+msgstr "Lots"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_invoice_batch.py:296
+#, python-format
+msgid "Batches already in a role cannot be merged"
+msgstr "Les lots faisant déjà partie d'un rôle ne peuvent pas être fusionnés"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_invoice_batch.py:301
+#, python-format
+msgid "Batches that are not in state 'generated' cannot be merged."
+msgstr "Les lots qui ne sont pas à l'état 'généré' ne peuvent pas être fusionnés."
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_invoice_batch.py:292
+#, python-format
+msgid "Batches with different type or campaign cannot be merged"
+msgstr "Des lots ayant un type ou une campagne différents ne peuvent pas être fusionnés"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.external_layout_header_batch
+msgid "Bordereau de lot"
+msgstr "Bordereau de lot"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.external_layout_header_role
+msgid "Bordereau de rôle n°"
+msgstr "Bordereau de rôle n°"
+
+#. module: account_mass_invoicing
+#: model:res.groups,name:account_mass_invoicing.group_browse_mass_invoicing
+msgid "Browser"
+msgstr "Navigateur"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign_budget_code_id
+msgid "Budget"
+msgstr "Budget"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.act_window,name:account_mass_invoicing.action_account_mass_invoicing_budget_code
+msgid "Budget Code"
+msgstr "Code Budget"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.menu,name:account_mass_invoicing.mass_invoicing_budget_code
+msgid "Budget Codes"
+msgstr "Codes Budget"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_budget_code_budget_code
+msgid "Budget code"
+msgstr "Code budget"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_campaign_prestation_period_campaign_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_campaign_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_mass_invoicing_campaign_id
+msgid "Campaign"
+msgstr "Campagne"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.act_window,name:account_mass_invoicing.action_account_mass_invoicing_campaign_prestation_period
+msgid "Campaign prestation periods"
+msgstr "Périodes de prestation de campagne"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.act_window,name:account_mass_invoicing.action_account_mass_invoicing_invoice_campaign
+#: model:ir.ui.menu,name:account_mass_invoicing.mass_invoicing_campaigns
+msgid "Campaigns"
+msgstr "Campagnes"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.wizard_import_ordotip_form_view
+#: model:ir.ui.view,arch_db:account_mass_invoicing.wizard_mass_invoicing_form_view
+msgid "Close"
+msgstr "Fermer"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_budget_code_company_id
+msgid "Company id"
+msgstr "Société"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_create_or_select_iban
+msgid "Create or select iban"
+msgstr "Créer ou choisir un IBAN"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_create_or_select_mandate
+msgid "Create or select mandate"
+msgstr "Créer ou choisir un mandat"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range_create_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_budget_code_create_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_campaign_prestation_period_create_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_create_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_type_create_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign_create_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_create_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_import_ordotip_create_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_mass_invoicing_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range_create_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_budget_code_create_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_campaign_prestation_period_create_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_create_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_type_create_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign_create_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_create_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_import_ordotip_create_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_mass_invoicing_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_invoice_batch_form_view
+msgid "Customer"
+msgstr "Client"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "Date"
+msgstr "Date "
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range_display_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_budget_code_display_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_campaign_prestation_period_display_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_display_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_type_display_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign_display_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_display_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_import_ordotip_display_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_mass_invoicing_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+msgid "Document d'origine"
+msgstr "Document d'origine"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_domain
+msgid "Domain"
+msgstr "Domaine"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_account_config_settings_time_of_prestation_recovery
+msgid "Duration on which we are allowed to recover the valuation of old usages"
+msgstr "Durée sur laquelle on s'autorise à récupérer des valorisation d'anciens usages non facturés"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "Désignation"
+msgstr "Désignation"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "Emargement"
+msgstr "Émargement"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_campaign_prestation_period_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range_end_date
+msgid "End date of the fiscal year"
+msgstr "Date de fin de l'exercice"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_campaign_prestation_period.py:55
+#, python-format
+msgid "End date should be posterior or equal to start date."
+msgstr "La date de fin doit être supérieure ou égale à la date de début."
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_import_ordotip_file_name
+msgid "File name"
+msgstr "Nom du fichier"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_role_form_view
+msgid "Files"
+msgstr "Fichiers"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_role_search_view
+msgid "Fiscal Year"
+msgstr "Exercice"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_fiscal_year
+msgid "Fiscal year"
+msgstr "Exercice"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_invoice_batch_form_view
+msgid "Generate"
+msgstr "Générer"
+
+#. module: account_mass_invoicing
+#: selection:horanet.invoice.batch,state:0
+msgid "Generated"
+msgstr "Généré"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_role_search_view
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_has_mandate
+msgid "Has mandate"
+msgstr "A un mandat"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_iban
+msgid "IBAN"
+msgstr "IBAN"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_budget_code_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_campaign_prestation_period_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_type_id_7965
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_import_ordotip_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_mass_invoicing_id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+msgid "ID Facture"
+msgstr "ID Facture"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.wizard_import_ordotip_form_view
+msgid "IMPORT"
+msgstr "IMPORTER"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_iban_mandate
+msgid "Iban of the mandate"
+msgstr "IBAN du mandat"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_bank_account_required
+msgid "Iban required"
+msgstr "IBAN requis"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.act_window,name:account_mass_invoicing.action_Import_ordotip_menu
+msgid "Import ORDOTIP"
+msgstr "Importer ORDOTIP"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.menu,name:account_mass_invoicing.menu_import_ORDOTIP_file
+msgid "Import ORDOTIP file"
+msgstr "Importer le fichier ORDOTIP"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_message_amount_total_rejected
+msgid "Indicate the sum of invoices rejected because their amount are inferior to 15 euros"
+msgstr "Indique la somme des factures rejetées car elles sont inférieures à 15 euros"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_message_time_recover_valuation
+msgid "Indicate the time on which we are allowed to recover the valuation of old usages"
+msgstr "Indique la durée sur laquelle on s'autorise à récupérer des valorisation d'anciens usages non facturés"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,help:account_mass_invoicing.field_partner_setup_wizard_iban
+msgid "International Bank Account Number "
+msgstr "Numéro de Compte Bancaire International"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_account_invoice_batch_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_batch_id
+msgid "Invoice batch"
+msgstr "Lot de factures"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign_batch_ids
+msgid "Invoice batches"
+msgstr "Lots de factures"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_invoice_ids
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.menu,name:account_mass_invoicing.mass_invoicing_batches
+msgid "Invoicing batches"
+msgstr "Lots de facturation"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_account_move_line
+msgid "Journal Item"
+msgstr "Écriture comptable"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range___last_update
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_budget_code___last_update
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_campaign_prestation_period___last_update
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch___last_update
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_type___last_update
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign___last_update
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role___last_update
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_import_ordotip___last_update
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_mass_invoicing___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range_write_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_budget_code_write_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_campaign_prestation_period_write_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_type_write_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_write_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign_write_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_write_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_import_ordotip_write_uid
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_mass_invoicing_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range_write_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_budget_code_write_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_campaign_prestation_period_write_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_type_write_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_write_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign_write_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_write_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_import_ordotip_write_date
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_mass_invoicing_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.wizard_mass_invoicing_form_view
+msgid "Launch"
+msgstr "Lancer"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_role_form_view
+msgid "Lock"
+msgstr "Vérouiller"
+
+#. module: account_mass_invoicing
+#: selection:horanet.invoice.batch,state:0
+#: selection:horanet.role,state:0
+msgid "Locked"
+msgstr "Verrouillé"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.wizard_import_ordotip_form_view
+msgid "Log"
+msgstr "Journal"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_import_ordotip_log_text
+msgid "Log text"
+msgstr "Log text"
+
+#. module: account_mass_invoicing
+#: model:res.groups,name:account_mass_invoicing.group_manage_mass_invoicing
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_mandate_signature_date
+msgid "Mandate signature date"
+msgstr "Date de signature du mandat"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.wizard_mass_invoicing_form_view
+msgid "Mass Invoicing Wizard"
+msgstr "Assistant facturation de masse"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.act_window,name:account_mass_invoicing.action_account_mass_invoicing_wizard_mass_invoicing
+#: model:ir.ui.menu,name:account_mass_invoicing.mass_invoicing_wizard
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_config_settings_view_form
+msgid "Mass invoicing"
+msgstr "Facturation de masse"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/wizards/wizard_mass_invoicing.py:56
+#, python-format
+msgid "Mass invoicing for bacth type %s"
+msgstr "Facturation de masse pour le type de lot %s"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.server,name:account_mass_invoicing.batches_merge_action_server
+msgid "Merge"
+msgstr "Fusionner"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "Montant TTC"
+msgstr "Montant TTC"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_type_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign_name
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: account_mass_invoicing
+#: selection:horanet.role,state:0
+msgid "New"
+msgstr "Nouveau"
+
+#. module: account_mass_invoicing
+#: selection:partner.setup.wizard,create_or_select_iban:0
+msgid "New IBAN"
+msgstr "Nouvel IBAN"
+
+#. module: account_mass_invoicing
+#: selection:partner.setup.wizard,create_or_select_mandate:0
+msgid "New Mandate"
+msgstr "Nouveau mandat"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/wizards/import_ordotip_wizard.py:82
+#, python-format
+msgid "No invoice found for unique mandate reference :  %s."
+msgstr "Pas de facture trouvée pour la référence unique de mandat :  %s."
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/wizards/import_ordotip_wizard.py:76
+#, python-format
+msgid "No mandate found for unique mandate reference : %s."
+msgstr "Pas de Mandat trouvé  pour la référence unique de mandat : %s."
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_invoice_batch.py:187
+#, python-format
+msgid "Nombre de contrats à facturer : %d"
+msgstr "Nombre de contrats à facturer : %d"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_invoice_batch.py:271
+#, python-format
+msgid "Nombre de factures créées : {nb_invoice_created}"
+msgstr "Nombre de factures créées : {nb_invoice_created}"
+
+#. module: account_mass_invoicing
+#: model:account.payment.method,name:account_mass_invoicing.payment_method_not_withdrawn
+msgid "Not withdrawn"
+msgstr "Non prélevé"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_number
+msgid "Number"
+msgstr "Numéro"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_invoice_number
+msgid "Number of invoices"
+msgstr "Nombre de factures"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "N°Facture"
+msgstr "N°Facture"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "PU TTC"
+msgstr "PU TTC"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_type_partner_category_id
+msgid "Partner category"
+msgstr "Catégorie d'usagers"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "Payeurs - Clients"
+msgstr "Payeurs - Clients"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_account_payment_method
+msgid "Payment Methods"
+msgstr "Modes de règlement"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_type_payment_mode_id
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_subscription_payment_mode
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_payment_mode
+msgid "Payment mode"
+msgstr "Mode de paiement"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_partner_setup_wizard_payment_term_id
+msgid "Payment term"
+msgstr "Échéance de paiement"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign_prestation_period_ids
+msgid "Prestation periods"
+msgstr "Périodes de prestation"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_campaign_prestation_period_prestation_ids
+msgid "Prestations"
+msgstr "Prestations"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_campaign_product_ids
+msgid "Products"
+msgstr "Articles"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "Période"
+msgstr "Période"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.external_layout_header_role
+msgid "Période du"
+msgstr "Période du"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "Quantité"
+msgstr "Quantité"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_recipe_title
+msgid "Recipe title"
+msgstr "Titre de recette"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_invoice_form
+msgid "Remove from batch"
+msgstr "Sortir du lot"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_mass_invoicing_result
+msgid "Result"
+msgstr "Résultat"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.report.xml,name:account_mass_invoicing.role_mass_invoice
+msgid "Role Report"
+msgstr "Rapport de rôle"
+
+#. module: account_mass_invoicing
+#: model:ir.actions.act_window,name:account_mass_invoicing.action_account_mass_invoicing_role
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_role_ids
+#: model:ir.ui.menu,name:account_mass_invoicing.mass_invoicing_roles
+#: model:ir.ui.menu,name:account_mass_invoicing.mass_invoicing_roles_roles
+msgid "Roles"
+msgstr "Rôles"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_role_search_view
+msgid "Search role"
+msgstr "Rechercher un rôle"
+
+#. module: account_mass_invoicing
+#: selection:partner.setup.wizard,create_or_select_iban:0
+msgid "Select IBAN"
+msgstr "Sélectionner un IBAN"
+
+#. module: account_mass_invoicing
+#: selection:partner.setup.wizard,create_or_select_mandate:0
+msgid "Select Mandate"
+msgstr "Sélectionner un mandat"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_campaign_prestation_period_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range_start_date
+msgid "Start date of the fiscal year"
+msgstr "Date de début de l'exercice"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_state
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_role_state
+msgid "State"
+msgstr "État"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_account_invoice_subscription_id
+msgid "Subscription"
+msgstr "Abonnement"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/wizards/import_ordotip_wizard.py:115
+#, python-format
+msgid "Successful creation of a bank account with IBAN %s for Customer %s "
+msgstr "Création réussie du compte bancaire avec l'IBAN %s pour l'usager %s "
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "TOTAL"
+msgstr "TOTAL"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_invoice_batch_type.py:21
+#: sql_constraint:horanet.invoice.batch.type:0
+#, python-format
+msgid "The association mode / category must be unique"
+msgstr "L'association mode / catégorie doit être unique"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_budget_code.py:18
+#: sql_constraint:horanet.budget.code:0
+#, python-format
+msgid "The budget code cannot be twice on the same application type"
+msgstr "Le code budget doit être unique par type d'application"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_invoice_batch.py:150
+#, python-format
+msgid "The campaign and the batch must have the same application type"
+msgstr "La campagne et le lot doivent avoir le même type d'application"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_invoice_batch.py:262
+#, python-format
+msgid "The sum total of invoices rejected because they are inferior or equal to 15 euros is {total} ({nb_invoices} invoices). {nb_month} month(s) were used to recover the valuation of old usages."
+msgstr "La somme totale des factures rejetées car elles sont inférieures ou égales à 15 euros est {total} ({nb_invoices} factures). {nb_month} mois sont utilisés pour récupérer les anciens usages non facturés."
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_invoice_batch.py:26
+#: sql_constraint:horanet.invoice.batch:0
+#, python-format
+msgid "The type cannot be twice on the same campaign"
+msgstr "Le type ne peut pas être deux fois sur la même campagne"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.wizard_mass_invoicing_form_view
+msgid "This operation could take time. Are you sure to proceed ?"
+msgstr "Cette opération peut prendre du temps et est irréversible, êtes-vous sûr de vouloir continuer ?"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_campaign_prestation_period.py:71
+#, python-format
+msgid "This prestation is already on this campaign for the provided dates"
+msgstr "Cette prestation est déjà sur cette campagne aux dates fournies"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_config_settings_view_form
+msgid "Time allowed to search old usages (in months)"
+msgstr "Durée sur laquelle on s'autorise à récupérer d'anciens usages non facturés (en mois)"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_invoice_form
+msgid "Time table"
+msgstr "Échéancier"
+
+#. module: account_mass_invoicing
+#: selection:horanet.invoice.batch,state:0
+msgid "To generate"
+msgstr "A générer"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+msgid "Tolal du lot"
+msgstr "Tolal du lot"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "Tolal du rôle"
+msgstr "Tolal du rôle"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_amount_total
+#: model:ir.ui.view,arch_db:account_mass_invoicing.mass_invoicing_invoice_batch_form_view
+msgid "Total"
+msgstr "Total"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_invoice_batch_type_id
+msgid "Type"
+msgstr "Type"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_wizard_import_ordotip_upload_file
+msgid "Upload File"
+msgstr "Charger un fichier"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_invoice_batch.py:119
+#, python-format
+msgid "Warning: if you generate this batch, {nb_month} month(s) are allowed to recover the valuation of old usages."
+msgstr "Attention: Si vous générez ce lot, {nb_month} mois seront utilisés pour récupérer des valorisations d'anciens usages non facturés."
+
+#. module: account_mass_invoicing
+#: model:account.payment.method,name:account_mass_invoicing.payment_method_withdrawn
+msgid "Withdrawn"
+msgstr "Prélevé"
+
+#. module: account_mass_invoicing
+#: model:ir.model.fields,field_description:account_mass_invoicing.field_horanet_accounting_date_range_accounting_year
+msgid "Year of the fiscal year"
+msgstr "Année de l'exercice"
+
+#. module: account_mass_invoicing
+#: code:addons/account_mass_invoicing/models/horanet_invoice_batch.py:288
+#, python-format
+msgid "You must select at least two batches to merge them"
+msgstr "Vous devez sélectionner au moins deux lots pour les fusionner"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_account_config_settings
+msgid "account.config.settings"
+msgstr "account.config.settings"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.external_layout_header_role
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "au"
+msgstr "au"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_batch_invoice_document
+#: model:ir.ui.view,arch_db:account_mass_invoicing.report_role_invoice_document
+msgid "factures"
+msgstr "factures"
+
+#. module: account_mass_invoicing
+#: model:ir.ui.view,arch_db:account_mass_invoicing.external_layout_header_batch
+msgid "fait le"
+msgstr "fait le"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_horanet_accounting_date_range
+msgid "horanet.accounting.date.range"
+msgstr "horanet.accounting.date.range"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_horanet_budget_code
+msgid "horanet.budget.code"
+msgstr "horanet.budget.code"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_horanet_campaign_prestation_period
+msgid "horanet.campaign.prestation.period"
+msgstr "horanet.campaign.prestation.period"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_horanet_invoice_batch
+msgid "horanet.invoice.batch"
+msgstr "horanet.invoice.batch"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_horanet_invoice_batch_type
+msgid "horanet.invoice.batch.type"
+msgstr "horanet.invoice.batch.type"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_horanet_invoice_campaign
+msgid "horanet.invoice.campaign"
+msgstr "horanet.invoice.campaign"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_horanet_role
+msgid "horanet.role"
+msgstr "horanet.role"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_horanet_subscription
+msgid "horanet.subscription"
+msgstr "horanet.subscription"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_partner_setup_wizard
+msgid "partner.setup.wizard"
+msgstr "partner.setup.wizard"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_wizard_import_ordotip
+msgid "wizard.import.ordotip"
+msgstr "wizard.import.ordotip"
+
+#. module: account_mass_invoicing
+#: model:ir.model,name:account_mass_invoicing.model_wizard_mass_invoicing
+msgid "wizard.mass.invoicing"
+msgstr "wizard.mass.invoicing"
+

@@ -1,0 +1,6 @@
+<odoo>
+        <!-- Add TPA Aquagliss group -->
+		<record id="group_tpa_aquagliss" model="res.groups">
+            <field name="name">Auto sync with Aquagliss</field>
+        </record>
+</odoo>

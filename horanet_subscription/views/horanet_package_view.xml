@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_package_view_form" model="ir.ui.view">
+        <field name="name">horanet package form</field>
+        <field name="model">horanet.package</field>
+        <field name="arch" type="xml">
+            <form string="Contract line">
+                <header attrs="{'invisible':[('on_create','=',True)]}">
+                    <button string="Compute" name="action_compute_package" type="object"
+                            help="An opening date is required in order to compute the periods"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <field name="id" invisible="1"/>
+                    <field name="opening_date" invisible="1"/>
+                    <field name="cycle_id_period_type" invisible="1"/>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name" attrs="{'invisible':[('id','=',False)]}"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Contract name"
+                                   attrs="{ 'readonly': [('id','=',False)],
+                                            'invisible':[('on_create','=',True)]}"/>
+                        </h1>
+                        <label for="code"/>
+                        <field name="code" attrs="{'readonly':[('id','!=',False)]}"/>
+                    </div>
+                    <div class="oe_right" attrs="{'invisible':[('on_create','!=',True)]}">
+                        <label for="on_create" groups="horanet_subscription.group_subscription_admin"/>
+                        <field name="on_create" widget="toggle_button"
+                               groups="horanet_subscription.group_subscription_admin"/>
+                    </div>
+                    <group col="4" name="on_create_view" string="Quick creation"
+                           attrs="{'invisible':[('on_create','!=',True)]}">
+                        <group col="4" colspan="4">
+                            <field name="on_create_recipient_id" attrs="{'required':[('on_create','=',True)]}"/>
+                            <field name="on_create_prestation_id" attrs="{'required':[('on_create','=',True)]}"
+                                   options="{'no_create': True}"/>
+                            <field name="on_create_subscription_id" attrs="{'required':[('on_create','=',True)]}"
+                                   options="{'no_create': True}"/>
+                        </group>
+                        <group col="4" colspan="4">
+                            <group colspan="2">
+                                <field name="on_create_immediate_opening"/>
+                                <field name="on_create_prorata_temporis"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="on_create_start_date"
+                                       attrs="{ 'required':[('on_create','=',True)],
+                                        'invisible':[('on_create_immediate_opening','=',True)]}"/>
+                                <field name="on_create_end_date"/>
+                            </group>
+                        </group>
+
+                    </group>
+
+                    <group col="4" attrs="{'invisible':[('on_create','=',True)]}" string="Settings">
+                        <field name="recipient_id" can_create="true" can_write="true"
+                               attrs="{ 'readonly':[('state','!=','draft')],
+                                        'required':[('on_create','=',False)]}"/>
+
+                        <field name="prestation_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        <field name="subscription_id"/>
+                        <newline/>
+                        <field name="cycle_id"
+                               attrs="{'required':[('on_create','=',False)], 'readonly':[('id', '=', True)]}"/>
+                        <field name="is_renewable" attrs="{'invisible':[('cycle_id_period_type','=','unlimited')]}"/>
+                        <newline/>
+
+                        <separator string="Prestation dependant informations" colspan="4"/>
+                        <newline/>
+
+                        <field name="service_id" attrs="{'required':[('on_create','=',False)]}"/>
+                        <newline/>
+                        <field name="is_blocked"/>
+                        <field name="balance" attrs="{'invisible': [('is_blocked', '=', False)]}"/>
+                        <newline/>
+                        <field name="is_salable"/>
+                        <field name="invoice_type"/>
+                        <newline/>
+                        <field name="use_product"/>
+                        <field name="product_id" attrs="{'invisible': [('use_product', '=', False)]}"/>
+                        <newline/>
+                        <field name="is_derogation"/>
+                    </group>
+
+                    <group col="5" attrs="{'invisible':[('on_create','=',True)]}" string="Dates">
+                        <field name="display_opening_date" readonly="1"/>
+                        <field name="start_date" readonly="1" groups="base.group_no_one" required="0"/>
+                        <button string="Change dates" type="action"
+                                name="%(horanet_subscription.action_wizard_package_update_date)d"
+                                class="oe_button oe_form_button center-block"
+                                attrs="{'invisible':[('state','=','done')]}"/>
+                        <newline/>
+                        <field name="display_closing_date" readonly="1"/>
+                        <field name="end_date" readonly="1" groups="base.group_no_one"/>
+                        <newline/>
+                    </group>
+                    <notebook colspan="4" attrs="{'invisible':[('on_create','=',True)]}">
+                        <page name="periods" string="Periods">
+                            <field name="line_ids">
+                            </field>
+                        </page>
+                        <page name="activities" string="Activities">
+                            <newline/>
+                            <field name="activity_ids" nolabel="1">
+                                <tree>
+                                    <field name="reference"/>
+                                    <field name="name"/>
+                                    <field name="product_uom_id"/>
+                                    <field name="product_uom_categ_id"/>
+                                    <field name="product_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_package_view_tree" model="ir.ui.view">
+        <field name="name">horanet package tree</field>
+        <field name="model">horanet.package</field>
+        <field name="arch" type="xml">
+            <tree string="Contract line"
+                  decoration-muted="state=='done'"
+                  decoration-bf="state=='draft'"
+                  decoration-success="state=='active'"
+                  decoration-warning="state=='draft'"
+                  decoration-info="state=='pending'">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="recipient_id"/>
+                <field name="display_progress_period" widget="progressbar"/>
+                <field name="display_opening_date"/>
+                <field name="display_closing_date"/>
+                <field name="is_blocked"/>
+                <field name="is_salable"/>
+                <field name="is_derogation"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="package_search_view" model="ir.ui.view">
+        <field name="name">Package search view</field>
+        <field name="model">horanet.package</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="recipient_id" string="Recipient" filter_domain="[('recipient_id.name', 'ilike', self)]"/>
+                <field name="code" string="Code" operator="ilike"/>
+                <field name="prestation_id" string="Prestation"
+                       filter_domain="[('prestation_id.name','ilike',self)]"/>
+                <filter string="Derogation" name="filter_is_derogation"
+                        domain="[('is_derogation', '=', True)]"/>
+                <newline/>
+                <filter string="Active" name="filter_state_active"
+                        domain="[('state', '=', 'active')]"/>
+                <filter string="Draft" name="filter_state_draft"
+                        domain="[('state', '=', 'draft')]"/>
+                <filter string="Pending" name="filter_state_pending"
+                        domain="[('state', '=', 'pending')]"/>
+                <filter string="Closed" name="filter_state_closed"
+                        domain="[('state', '=', 'closed')]"/>
+                <filter string="Done" name="filter_state_done"
+                        domain="[('state', '=', 'done')]"/>
+                <filter string="To compute" name="filter_state_to_compute"
+                        domain="[('state', '=', 'to_compute')]"/>
+                <newline/>
+                <filter string="Has closing date" name="filter_has_closing_date"
+                        domain="[('closing_date', '!=', False)]"/>
+                <group expand="1" string="Group By">
+                    <filter name="group_by_recipient" string="Group by recipient"
+                            context="{'group_by': 'recipient_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_horanet_package" model="ir.actions.act_window">
+        <field name="name">Contract line</field>
+        <field name="res_model">horanet.package</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_package_view_tree"/>
+        <field name="search_view_id" ref="package_search_view"/>
+    </record>
+</odoo>

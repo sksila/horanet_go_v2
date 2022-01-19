@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="custom_partner_citizen_form_view" model="ir.ui.view">
+        <field name="name">Custom partner citizen form view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_citizen.view_citizen_form"/>
+        <field name="priority">64</field>
+        <field name="arch" type="xml">
+            <!--Warning, the modification of this view will change all views of partner.-->
+            <data>
+                <field name="name"/>
+                <!--Exemple of modification-->
+                <!-- <field name="firstname2" position="attributes"> -->
+                <!--    <attribute name="required">1</attribute> -->
+                <!-- </field> -->
+            </data>
+        </field>
+    </record>
+</odoo>

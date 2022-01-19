@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="transport_main" name="School transport"
+              web_icon="horanet_transport,static/description/icon.png"/>
+
+    <!--Requests menu-->
+    <menuitem id="transport_requests_menu" name="Requests"
+              parent="horanet_transport.transport_main" sequence="10"
+              groups="horanet_transport.group_manage_transport"
+              action="action_transport_website_application"/>
+
+    <!--Requests-->
+    <menuitem id="transport_website_application_menu" name="Requests"
+              parent="horanet_transport.transport_requests_menu"
+              action="action_transport_website_application" sequence="12"
+              groups="horanet_transport.group_manage_transport"/>
+
+    <menuitem id="transport_citizen_menu"
+              name="Citizen"
+              parent="horanet_transport.transport_main"
+              groups="partner_contact_citizen.group_citizen_manage"
+              sequence="15"/>
+
+    <menuitem id="transport_citizen_citizens_menu"
+              name="Citizens"
+              parent="horanet_transport.transport_citizen_menu"
+              groups="partner_contact_citizen.group_citizen_manage"
+              action="horanet_transport.partner_transport_action"
+              sequence="10"/>
+
+    <menuitem id="transport_configuration"
+              name="Configuration"
+              parent="horanet_transport.transport_main"
+              groups="horanet_transport.group_manage_transport"
+              sequence="100"/>
+
+    <menuitem id="transport_configuration_general_settings" name="Settings"
+              parent="transport_configuration"
+              groups="base.group_erp_manager"
+              action="action_horanet_transport_settings" sequence="0"/>
+
+    <!--Request templates-->
+    <menuitem id="transport_website_application_template_menu" name="Request templates"
+              parent="transport_configuration" sequence="30"
+              groups="website_application.group_website_application_template_manager"
+              action="action_website_application_template_transport"/>
+
+</odoo>

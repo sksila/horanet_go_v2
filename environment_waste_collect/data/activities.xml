@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Safe wastes -->
+        <record id="activity_ameublement" model="horanet.activity">
+            <field name="name">Ameublement</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/ameublement.gif"/>
+        </record>
+        <record id="activity_bois" model="horanet.activity">
+            <field name="name">Bois</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/bois.gif"/>
+        </record>
+        <record id="activity_encombrant" model="horanet.activity">
+            <field name="name">Encombrant</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/encombrant.gif"/>
+        </record>
+        <record id="activity_film_agricole" model="horanet.activity">
+            <field name="name">Film agricole</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/film-agricole.gif"/>
+        </record>
+        <record id="activity_gravat" model="horanet.activity">
+            <field name="name">Gravat</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/gravat.gif"/>
+        </record>
+        <record id="activity_journaux_revues" model="horanet.activity">
+            <field name="name">Journaux-Revues</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/journaux-revues.gif"/>
+        </record>
+        <record id="activity_metaux" model="horanet.activity">
+            <field name="name">Métaux</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/metaux.gif"/>
+        </record>
+        <record id="activity_papiers_cartons" model="horanet.activity">
+            <field name="name">Papiers-Cartons</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/papiers-cartons.gif"/>
+        </record>
+        <record id="activity_papier" model="horanet.activity">
+            <field name="name">Papier</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/papier.gif"/>
+        </record>
+        <record id="activity_pelouse" model="horanet.activity">
+            <field name="name">Pelouse</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/pelouse.gif"/>
+        </record>
+        <record id="activity_plastique" model="horanet.activity">
+            <field name="name">Plastique</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/plastique.gif"/>
+        </record>
+        <record id="activity_platre" model="horanet.activity">
+            <field name="name">Platre</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64" file="environment_waste_collect/static/src/img/wastes/platre.gif"/>
+        </record>
+        <record id="activity_pneumatique" model="horanet.activity">
+            <field name="name">Pneumatique</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/pneumatique.gif"/>
+        </record>
+        <record id="activity_polystyrene" model="horanet.activity">
+            <field name="name">Polystyrene</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/polystyrene.gif"/>
+        </record>
+        <record id="activity_reutilisation_reemploi" model="horanet.activity">
+            <field name="name">Réutilisation-Réemploi</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/reutilisation-reemploi.gif"/>
+        </record>
+        <record id="activity_taille" model="horanet.activity">
+            <field name="name">Taille</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/taille.gif"/>
+        </record>
+        <record id="activity_textile" model="horanet.activity">
+            <field name="name">Textile</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/textile.gif"/>
+        </record>
+        <record id="activity_tout_venant_incinerable" model="horanet.activity">
+            <field name="name">Tout Venant Incinérable</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/tout-venant-incinerable.gif"/>
+        </record>
+        <record id="activity_tout_venant_non_incinerable" model="horanet.activity">
+            <field name="name">Tout Venant Non Incinérable</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/tout-venant-non-incinerable.gif"/>
+        </record>
+        <record id="activity_verre" model="horanet.activity">
+            <field name="name">Verre</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/verre.gif"/>
+        </record>
+        <record id="activity_vert" model="horanet.activity">
+            <field name="name">Vert</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/vert.gif"/>
+        </record>
+
+        <!-- Dangerous wastes -->
+        <record id="activity_amiante_ciment" model="horanet.activity">
+            <field name="name">Amiante-Ciment</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/amiante-ciment.gif"/>
+        </record>
+        <record id="activity_batterie" model="horanet.activity">
+            <field name="name">Batterie</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/batterie.gif"/>
+        </record>
+        <record id="activity_bois_traite" model="horanet.activity">
+            <field name="name">Bois traité</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/bois-traite.gif"/>
+        </record>
+        <record id="activity_bouteille_gaz" model="horanet.activity">
+            <field name="name">Bouteille de gaz</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/bouteille-gaz.gif"/>
+        </record>
+        <record id="activity_cartouche_encre" model="horanet.activity">
+            <field name="name">Cartouche d'encre</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/cartouche-encre.gif"/>
+        </record>
+        <record id="activity_dds" model="horanet.activity">
+            <field name="name">DDS</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64" file="environment_waste_collect/static/src/img/wastes/dds.gif"/>
+        </record>
+        <record id="activity_activite_soin" model="horanet.activity">
+            <field name="name">Activité de soin</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/activite-soin.gif"/>
+        </record>
+        <record id="activity_deee" model="horanet.activity">
+            <field name="name">DEEE</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64" file="environment_waste_collect/static/src/img/wastes/deee.gif"/>
+        </record>
+        <record id="activity_ecran" model="horanet.activity">
+            <field name="name">Écran</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64" file="environment_waste_collect/static/src/img/wastes/ecran.gif"/>
+        </record>
+        <record id="activity_extincteur" model="horanet.activity">
+            <field name="name">Extincteur</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/extincteur.gif"/>
+        </record>
+        <record id="activity_gros_electromenager" model="horanet.activity">
+            <field name="name">Gros électroménager</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/gros-electromenager.gif"/>
+        </record>
+        <record id="activity_huile_friture" model="horanet.activity">
+            <field name="name">Huile de friture</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/huile-friture.gif"/>
+        </record>
+        <record id="activity_huile_vidange" model="horanet.activity">
+            <field name="name">Huile de vidange</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/huile-vidange.gif"/>
+        </record>
+        <record id="activity_lampe" model="horanet.activity">
+            <field name="name">Lampe</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64" file="environment_waste_collect/static/src/img/wastes/lampe.gif"/>
+        </record>
+        <record id="activity_liquide_freins" model="horanet.activity">
+            <field name="name">Liquide de freins</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/liquide-freins.gif"/>
+        </record>
+        <record id="activity_liquide_refroidissement" model="horanet.activity">
+            <field name="name">Liquide de refroidissement</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/liquide-refroidissement.gif"/>
+        </record>
+        <record id="activity_medicament" model="horanet.activity">
+            <field name="name">Médicament</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/medicament.gif"/>
+        </record>
+        <record id="activity_petit_appareil_menager" model="horanet.activity">
+            <field name="name">Petit appareil ménager</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/petit-appareil-menager.gif"/>
+        </record>
+        <record id="activity_piles_accumulateurs" model="horanet.activity">
+            <field name="name">Piles-Accumulateurs</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/piles-accumulateurs.gif"/>
+        </record>
+        <record id="activity_piles_boutons" model="horanet.activity">
+            <field name="name">Piles boutons</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/piles-boutons.gif"/>
+        </record>
+        <record id="activity_radiographie" model="horanet.activity">
+            <field name="name">Radiographie</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/radiographie.gif"/>
+        </record>
+        <record id="activity_refrigerateur_congelateur" model="horanet.activity">
+            <field name="name">Réfrigérateur-Congélateur</field>
+            <field name="application_type">environment</field>
+            <field name="default_action_id" ref="horanet_action_depot"/>
+            <field name="product_uom_id" ref="m3_product_uom"/>
+            <field name="image" type="base64"
+                   file="environment_waste_collect/static/src/img/wastes/refrigerateur-congelateur.gif"/>
+        </record>
+    </data>
+</odoo>

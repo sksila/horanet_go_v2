@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_setup_wizard_stage_accounting_data" model="ir.ui.view">
+        <field name="name">inherited.partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_base"/>
+        <field name="mode">primary</field>
+        <field name="priority">70</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='view_partner_setup_wizard_content']" position="inside">
+                <field name="bank_account_required" invisible="1"/>
+                <field name="has_mandate" invisible="1"/>
+                <group>
+                    <field name="subscription_id" invisible="1"/>
+                    <field name="payment_mode" options="{'no_open': True, 'no_create': True}"/>
+                    <field name="payment_term_id" options="{'no_open': True, 'no_create': True}"/>
+                </group>
+                <group name="Mandate" string="Mandate" attrs="{'invisible': [('bank_account_required', '=', False)]}">
+                    <field name="create_or_select_mandate" widget="radio" nolabel="1" options="{'horizontal': true}"/>
+                    <newline/>
+                    <p attrs="{'invisible': ['|', ('has_mandate', '=', False), ('create_or_select_mandate', '=', 'select')]}">
+                        <strong class="text-danger" t-translation="on">
+                            Warnings, there is already a mandate for this subscription
+                        </strong>
+                    </p>
+                </group>
+                <group attrs="{'invisible': [('bank_account_required', '=', False)]}">
+                    <group>
+                        <field name="banking_mandate"
+                               attrs="{'invisible': [('create_or_select_mandate', '=', 'new')]}"/>
+                        <field name="iban_mandate" attrs="{'invisible': [('create_or_select_mandate', '=', 'new')]}"/>
+                        <field name="mandate_signature_date"
+                               attrs="{'invisible': [('create_or_select_mandate', '=', 'select')]}"/>
+                    </group>
+                    <group attrs="{'invisible': [('create_or_select_mandate', '=', 'select')]}">
+                        <label string=""/>
+                        <field name="create_or_select_iban" widget="radio" nolabel="1" options="{'horizontal': true}"/>
+                        <newline/>
+                        <field name="bank_account" options="{'no_open': True, 'no_create': True}"
+                               attrs="{'invisible': [('create_or_select_iban', '=', 'new')]}"/>
+                        <field name="iban" attrs="{'invisible': [('create_or_select_iban', '=', 'select')],
+                                                    'required': [('bank_account_required', '=', True),
+                                                                 ('create_or_select_iban', '=', 'new'),
+                                                                 ('create_or_select_mandate', '=', 'new')]}"/>
+                        <field name="bank_name" attrs="{'invisible': [('create_or_select_iban', '=', 'select')]}"/>
+                        <field name="bic" attrs="{'invisible': [('create_or_select_iban', '=', 'select')]}"/>
+                    </group>
+                </group>
+                <button string="Create mandate" name="action_create_mandate" type="object" class="btn-info"
+                        attrs="{'invisible': ['|', ('create_or_select_mandate', '=', 'select'), ('bank_account_required', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherited_view_partner_setup_wizard_summary_accounting_data" model="ir.ui.view">
+        <field name="name">inherited.partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_summary"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='subscription_data']" position="inside">
+                <field name="bank_account_required" invisible="1"/>
+                <field colspan="2" name="payment_mode" nolabel="1" readonly="1" options="{'no_open': True}"/>
+                <field colspan="2" name="payment_term_id" nolabel="1" readonly="1" options="{'no_open': True}"/>
+                <field colspan="2" name="banking_mandate" nolabel="1" readonly="1" options="{'no_open': True}"
+                       attrs="{'invisible': [('bank_account_required', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="demo_category_professional" model="subscription.category.partner">
+        <field name="name">Demo Category Professionals</field>
+        <field name="domain">[[u'is_company', u'=', 1]]</field>
+        <field name="code">DEMO_PRO</field>
+    </record>
+
+    <record id="demo_category_individual" model="subscription.category.partner">
+        <field name="name">Demo Category Individuals</field>
+        <field name="domain">[[u'is_company', u'=', 0]]</field>
+        <field name="code">DEMO_PART</field>
+    </record>
+</odoo>

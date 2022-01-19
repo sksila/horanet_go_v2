@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Partenaires -->
+    <record id="demo_partner_1" model="res.partner">
+        <field name="lastname">AMIDALA</field>
+        <field name="firstname">Padmé</field>
+        <field name="is_company">True</field>
+        <field name="customer" eval="False"/>
+        <field name="email">demo_partner_1@demo.example.com</field>
+        <field name="street_id" ref="better_address.demo_street_hotel_ville"/>
+        <field name="city_id" ref="better_address.demo_city_la_rochelle"/>
+        <field name="zip_id" ref="better_address.demo_zip_17000"/>
+        <field name="country_id" ref="base.fr"/>
+        <field name="street_number_id" ref="better_address.demo_street_number_1"/>
+        <field name="state_id" ref="better_address.state_fr_17"/>
+        <field name="title" ref="horanet_go.company_title_SA"/>
+    </record>
+
+    <record id="demo_partner_2" model="res.partner">
+        <field name="lastname">SKYWALKER</field>
+        <field name="firstname">Anakin</field>
+        <field name="is_company">True</field>
+        <field name="customer" eval="False"/>
+        <field name="email">demo_partner_2@demo.example.com</field>
+        <field name="street_id" ref="better_address.demo_street_puits"/>
+        <field name="city_id" ref="better_address.demo_city_fontenay_le_comte"/>
+        <field name="zip_id" ref="better_address.demo_zip_85200"/>
+        <field name="country_id" ref="base.fr"/>
+        <field name="street_number_id" ref="better_address.demo_street_number_2"/>
+        <field name="state_id" ref="better_address.state_fr_85"/>
+        <field name="title" ref="horanet_go.company_title_SARL"/>
+    </record>
+
+    <record id="demo_partner_3" model="res.partner">
+        <field name="lastname">SKYWALKER</field>
+        <field name="firstname">Luke</field>
+        <field name="is_company">False</field>
+        <field name="customer" eval="False"/>
+        <field name="email">demo_partner_3@demo.example.com</field>
+        <field name="street_id" ref="better_address.demo_street_puits"/>
+        <field name="city_id" ref="better_address.demo_city_fontenay_le_comte"/>
+        <field name="zip_id" ref="better_address.demo_zip_85200"/>
+        <field name="country_id" ref="base.fr"/>
+        <field name="street_number_id" ref="better_address.demo_street_number_3"/>
+        <field name="state_id" ref="better_address.state_fr_85"/>
+        <field name="title" ref="base.res_partner_title_mister"/>
+    </record>
+
+    <record id="demo_partner_4" model="res.partner">
+        <field name="lastname">ORGANA</field>
+        <field name="firstname">Leia</field>
+        <field name="is_company">False</field>
+        <field name="customer" eval="False"/>
+        <field name="email">demo_partner_4@demo.example.com</field>
+        <field name="street_id" ref="better_address.demo_street_cordiers"/>
+        <field name="city_id" ref="better_address.demo_city_fontenay_le_comte"/>
+        <field name="zip_id" ref="better_address.demo_zip_85206"/>
+        <field name="country_id" ref="base.fr"/>
+        <field name="street_number_id" ref="better_address.demo_street_number_4"/>
+        <field name="state_id" ref="better_address.state_fr_85"/>
+        <field name="title" ref="base.res_partner_title_miss"/>
+    </record>
+</odoo>

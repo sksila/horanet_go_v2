@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Modification de la vue form pour y ajouter les champs de mapping d'inscription TCO -->
+    <record id="view_pricelist_form" model="ir.ui.view">
+        <field name="name">horanet add quotient in price-list</field>
+        <field name="model">product.pricelist</field>
+        <field name="inherit_id" ref="product.product_pricelist_view"/>
+        <field name="arch" type="xml">
+            <!-- Ajout des champ de quotient familiaux -->
+            <field name="country_group_ids" position="before">
+                <field name="activate_tco"/>
+                <field name="no_family_quotient" attrs="{'invisible':[('activate_tco','=',False)]}"/>
+                <field name="family_quotient_min"
+                       attrs="{'invisible':['|',('no_family_quotient','=',True),('activate_tco','=',False)]}"/>
+                <field name="family_quotient_max"
+                       attrs="{'invisible':['|',('no_family_quotient','=',True),('activate_tco','=',False)]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

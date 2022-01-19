@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_horanet_relation_foyer_default,access_horanet_relation_foyer_default,model_horanet_relation_foyer,,1,0,0,0
+
+access_horanet_relation_foyer_group_manage,access_horanet_relation_foyer_group_manage,model_horanet_relation_foyer,partner_contact_citizen.group_citizen_manage,1,1,1,1

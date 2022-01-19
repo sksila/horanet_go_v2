@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="landholding_prop_view_form" model="ir.ui.view">
+        <field name="name">Freeholder base form view</field>
+        <field name="model">landholding.prop</field>
+        <field name="arch" type="xml">
+            <form string="Freeholder">
+                <sheet>
+                    <separator string="Denomination"/>
+                    <group>
+                        <field name="name"/>
+                        <field name="majic_person_number"/>
+                    </group>
+                    <separator string="Adress"/>
+                    <group>
+                        <div class="o_address_format">
+                            <field name="address_line_1" class="o_address_street"/>
+                            <field name="address_line_2" class="o_address_street"/>
+                            <field name="address_line_3" class="o_address_street"/>
+                            <field name="address_line_4" class="o_address_street"/>
+                        </div>
+                    </group>
+                    <notebook>
+                        <page name="communal accounts" string="Communal accounts">
+                            <field name="communal_account_line_ids">
+                                <tree string="Communal accounts">
+                                    <field name="city_id"/>
+                                    <field name="communal_account_id"/>
+                                    <field name="partial_label_number"/>
+                                    <field name="real_part_right_code"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="built domains" string="Built domains">
+                            <field name="landholding_bati_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="landholding_prop_view_tree" model="ir.ui.view">
+        <field name="name">Freeholder base tree view</field>
+        <field name="model">landholding.prop</field>
+        <field name="arch" type="xml">
+            <tree string="Freeholder">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="landholding_prop_action" model="ir.actions.act_window">
+        <field name="name">Freeholders action</field>
+        <field name="res_model">landholding.prop</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="landholding_prop_view_tree"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_close_contrat_wizard" model="ir.ui.view">
+        <field name="name">partner.close.contract.wizard.form</field>
+        <field name="model">partner.wizard.close.contract</field>
+        <field name="arch" type="xml">
+            <form string="Close contract">
+                <field name="partner_id" invisible="True"/>
+                <field name="has_active_subscriptions" invisible="True"/>
+                <field name="has_active_tags" invisible="True"/>
+                <field name="hide_subscription_block" invisible="True"/>
+
+                <div name="tags" attrs="{'invisible': [('has_active_tags', '=', False)]}">
+                    <group string="Mediums &amp; Tags">
+                        <field name="tag_id" options="{'no_open': True, 'no_create': True}"/>
+                    </group>
+                    <button name="action_deallocate_tag" string="Deallocate tag" type="object" class="btn-primary"
+                            attrs="{'invisible': [('tag_id', '=', False)]}"
+                            confirm="This operation cannot be undone, are you sure you want to deallocate this tag?"/>
+                    <hr/>
+                </div>
+
+                <div name="subscription">
+                    <group string="Subscription">
+                        <field name="subscription_id" options="{'no_open': True, 'no_create': True}"/>
+                        <field name="subscription_end_date" widget="date"/>
+
+                        <field name="close_type" widget="radio" attrs="{'invisible': [('hide_subscription_block', '=', True)]}"/>
+                        <field name="date_close"
+                               widget="date"
+                               attrs="{'invisible': ['|',('close_type', '!=', 'date'),('hide_subscription_block', '=', True)],
+                                       'required': [('close_type', '=', 'date')]}"/>
+                        <field name="prorata_temporis" attrs="{'invisible': ['|',('close_type', '!=', 'date'),('hide_subscription_block', '=', True)]}"/>
+                        <span class="text-warning" attrs="{'invisible': [('hide_subscription_block', '=', False)]}" t-translation="on">
+                            (You must end all elements above before closing subscription)
+                        </span>
+                    </group>
+                    <button name="action_close_contract" string="Close contract" type="object" class="btn-primary"
+                            attrs="{'invisible': ['|',('subscription_id', '=', False),('hide_subscription_block', '=', True)]}"
+                            confirm="This operation cannot be undone, are you sure you want to end this contract?"/>
+                </div>
+                <footer>
+                    <button string="Cancel" special="cancel" class="btn-default"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_partner_close_contract" model="ir.actions.act_window">
+        <field name="name">Close contract</field>
+        <field name="res_model">partner.wizard.close.contract</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

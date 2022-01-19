@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width:100%">
+        <h2 class="oe_slogan" style="color:#04445D;">FullCalendar</h2>
+        <h3 class="oe_slogan">Import FullCalendar jQuery library into Odoo module</h3>
+    </div>
+
+    <h3 class="oe_slogan" style="text-align: left; border-bottom: 1px solid #eee; opacity: 1;">Description</h3>
+    <p>FullCalendar version 2.9.1</p>
+    <p>To get all documentation about this library, visit the <a href="https://fullcalendar.io" title="FullCalendar">FullCalendar site</a></p>
+
+    <h3 class="oe_slogan" style="text-align: left; border-bottom: 1px solid #eee; opacity: 1;">Use</h3>
+    <p>To use it, just declare an html div element as:</p>
+    <pre><code>&lt;div id="my_custom_calendar"&gt;&lt;/div&gt;</code></pre>
+    <p class="mt16">And declare it at calendar widget container as:</p>
+    <pre><code>&lt;script type="text/javascript"&gt;
+odoo.define('mymodule.myservice', function (require) {
+    'use strict';
+
+    var calendar = $('#my_custom_calendar');
+    var params = {}; // my FullCalendar parameters
+    calendar.fullCalendar(params);
+});
+&lt;/script&gt;</code></pre>
+
+    <h3 class="oe_slogan" style="text-align: left; border-bottom: 1px solid #eee; opacity: 1;">Installation</h3>
+    <p>Just have to install module and use it.</p>
+
+    <h3 class="oe_slogan" style="text-align: left; border-bottom: 1px solid #eee; opacity: 1;">Credits</h3>
+    <p>The credited persons can be contacted for any questions related to this module</p>
+    <ul>
+        <li>Maximilien TANTIN &lt;<a href="mailto:maximilien.tantin@horanet.com">mailto:maximilien.tantin@horanet.com</a>&gt;</li>
+    </ul>
+    <div class="oe_row oe_spaced" style="width:100%">
+        <h4 class="oe_slogan">Maintainer</h4>
+        <a href="http://horanet.com" style="display: block;text-align: center">
+            <img alt="Horanet"
+                 src="https://cdn.horanet.com/horanet_collectivity/logos/LOGO_HORANET_2017.png"
+                 class="oe_screenshot"
+                 style="max-width: 60%;">
+        </a>
+        <div class="oe_row oe_spaced" style="width:100%; text-align: center">
+            <p>This module is maintained by Horanet</p>
+            <p>Horanet is a editor specialized in providing solutions for collectivities</p>
+        </div>
+    </div>
+</section>

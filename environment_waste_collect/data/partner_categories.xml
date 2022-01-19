@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="partner_category_guardian" model="res.partner.category">
+        <field name="name">Guardian</field>
+    </record>
+    <record id="partner_category_operator" model="res.partner.category">
+        <field name="name">Operator</field>
+    </record>
+    <record id="partner_category_service_provider" model="res.partner.category">
+        <field name="name">Service provider</field>
+    </record>
+</odoo>

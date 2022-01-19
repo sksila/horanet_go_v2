@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="device_check_point_view_form" model="ir.ui.view">
+        <field name="name">add private IP field</field>
+        <field name="model">device.check.point</field>
+        <field name="inherit_id" ref="horanet_subscription.device_check_point_view_form"/>
+        <field name="arch" type="xml">
+            <field name="code" position="after">
+                <field name="ip_address"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="terminal_checkpoint_view_form" model="ir.ui.view">
+        <field name="name">terminal check point form</field>
+        <field name="model">device.check.point</field>
+        <field name="arch" type="xml">
+            <form string="Terminal check point">
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" placeholder="terminal name"/>
+                        </h1>
+                    </div>
+                    <group></group>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="device_unique_id"/>
+                            <field name="environment_waste_site_id"/>
+                        </group>
+                        <group>
+                            <field name="input_activity_sector_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="terminal_checkpoint_view_tree" model="ir.ui.view">
+        <field name="name">terminal check point tree</field>
+        <field name="model">device.check.point</field>
+        <field name="arch" type="xml">
+            <tree string="Terminal check point">
+                <field name="name"/>
+                <field name="device_unique_id"/>
+                <field name="input_activity_sector_id"/>
+                <field name="environment_waste_site_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="terminal_checkpoint_search_view" model="ir.ui.view">
+        <field name="name">terminal check point Search View</field>
+        <field name="model">device.check.point</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="environment_waste_site_id"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>

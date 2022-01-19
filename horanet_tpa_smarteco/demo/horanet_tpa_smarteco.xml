@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- PARTNER -->
+    <record id="horanet_tpa.demo_partner_dupond" model="res.partner">
+        <field name="tpa_membership_smarteco" eval="True"/>
+    </record>
+    <record id="horanet_tpa.demo_partner_dupont" model="res.partner">
+        <field name="tpa_membership_smarteco" eval="False"/>
+    </record>
+
+</odoo>

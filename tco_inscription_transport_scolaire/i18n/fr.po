@@ -1,0 +1,2440 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tco_inscription_transport_scolaire
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-22 09:50+0000\n"
+"PO-Revision-Date: 2018-06-22 09:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:181
+#, python-format
+msgid " and {nb_month} {month_txt}"
+msgstr " et {nb_month} {month_txt}"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "(voir tarifs)"
+msgstr "(voir tarifs)"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid ",\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                Vous avez souhaité inscrire"
+msgstr ",\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                Vous avez souhaité inscrire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid ",\n"
+"                                correspondant à"
+msgstr ",\n"
+"                                correspondant à"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid ",\n"
+"                                le TCO financera sur ses fonds propres environ"
+msgstr ",\n"
+"                                le TCO financera sur ses fonds propres environ"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid ", l'expression de nos\n"
+"                                salutations distinguées.\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                <strong>Joseph Sinimalé<br/>\n"
+"                                    Président du TCO</strong>"
+msgstr ", l'expression de nos\n"
+"                                salutations distinguées.\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                <strong>Joseph Sinimalé<br/>\n"
+"                                    Président du TCO</strong>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid ", tel"
+msgstr ", tel"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid ", tel:"
+msgstr ", tel:"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid ".\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                Pour finaliser l’inscription, nous vous invitons à procéder au règlement sur le site\n"
+"                                <strong>www.viequotidienne.re</strong>\n"
+"                                à l’aide de vos identifiant et mot de passe. Le paiement en agence Kar’Ouest est également\n"
+"                                possible.\n"
+"                                <br/>\n"
+"                                Si vous réglez par chèque bancaire en agence Kar’Ouest, nous vous remercions de le libeller\n"
+"                                à l’ordre de « Monsieur le Régisseur des transports scolaires du TCO » et de présenter\n"
+"                                une pièce d’identité du signataire du chèque.\n"
+"                                <br/>\n"
+"                                <br/>"
+msgstr ".\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                Pour finaliser l’inscription, nous vous invitons à procéder au règlement sur le site\n"
+"                                <strong>www.viequotidienne.re</strong>\n"
+"                                à l’aide de vos identifiant et mot de passe. Le paiement en agence Kar’Ouest est également\n"
+"                                possible.\n"
+"                                <br/>\n"
+"                                Si vous réglez par chèque bancaire en agence Kar’Ouest, nous vous remercions de le libeller\n"
+"                                à l’ordre de « Monsieur le Régisseur des transports scolaires du TCO » et de présenter\n"
+"                                une pièce d’identité du signataire du chèque.\n"
+"                                <br/>\n"
+"                                <br/>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "<b>Assist(s)</b>"
+msgstr "<b>Personne(s) mandatée(s)</b>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+msgid "<b>Backward line</b>"
+msgstr "<b>Ligne retour</b>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "<b>Beneficiary</b>"
+msgstr "<b>Beneficiaire</b>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+msgid "<b>Forward line</b>"
+msgstr "<b>Ligne aller</b>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "<b>Invoice period</b>"
+msgstr "<b>Période de facture</b>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "<b>Period</b>"
+msgstr "<b>Période:</b>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "<b>Responsible</b>"
+msgstr "<b>Responsable</b>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "<b>School attended</b>"
+msgstr "<b>Etablissement scolaire:</b>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "<b>Transport type</b>"
+msgstr "<b>Type de transport</b>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "<br/>\n"
+"                                En complément de vos"
+msgstr "<br/>\n"
+"                                En complément de vos"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "<br/>\n"
+"                                Vous avez choisi de régler votre abonnement"
+msgstr "<br/>\n"
+"                                Vous avez choisi de régler votre abonnement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:website.application.template,description:tco_inscription_transport_scolaire.application_template_tco_path_modification
+msgid "<p class=\"col-md-offset-2\">\n"
+"            To ask a path modification for an inscription, simply fill the form below :\n"
+"        </p>\n"
+"        <p class=\"col-md-offset-2\">Some documents are required in order to fill the request depending on the reason:\n"
+"            <ul class=\"col-md-offset-2\">\n"
+"                <li>School certificate in case of a new establishment</li>\n"
+"                <li>Proof of moving in case of a move</li>\n"
+"            </ul>\n"
+"        </p>"
+msgstr "<p class=\"col-md-offset-2\">\n"
+"            Pour demander une modification de trajet, remplissez le formulaire ci-dessous :\n"
+"        </p>\n"
+"        <p class=\"col-md-offset-2\">Certains documents sont nécessaires en fonction du motif:\n"
+"            <ul class=\"col-md-offset-2\">\n"
+"                <li>Certificat d'inscription scolaire en cas de changement d'établissement</li>\n"
+"                <li>Justificatif de déménagement en cas de déménagement</li>\n"
+"            </ul>\n"
+"        </p>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:website.application.template,description:tco_inscription_transport_scolaire.application_template_tco_refund
+msgid "<p class=\"col-md-offset-2\">\n"
+"            To ask a refund or an exoneration for an inscription, simply fill the form below :\n"
+"        </p>\n"
+"        <p class=\"col-md-offset-2\">Some documents are required in order to fill the request depending on the reason:\n"
+"            <ul class=\"col-md-offset-2\">\n"
+"                <li>School certificate in case of a new establishment</li>\n"
+"                <li>Proof of an internship in case of an internship</li>\n"
+"                <li>Proof of sickness in case of sickness</li>\n"
+"                <li>Proof of moving in case of a move</li>\n"
+"            </ul>\n"
+"        </p>"
+msgstr "<p class=\"col-md-offset-2\">\n"
+"            Pour demander un remboursement ou une exonération, remplissez le formulaire ci-dessous :\n"
+"        </p>\n"
+"        <p class=\"col-md-offset-2\">Certains documents sont nécessaires en fonction du motif:\n"
+"            <ul class=\"col-md-offset-2\">\n"
+"                <li>Certificat d'inscription scolaire en cas de changement d'établissement</li>\n"
+"                <li>Justificatif de stage en cas de stage</li>\n"
+"                <li>Justificatif d'un médecin en cas de maladie</li>\n"
+"                <li>Justificatif de déménagement en cas de déménagement</li>\n"
+"            </ul>\n"
+"        </p>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:website.application.template,description:tco_inscription_transport_scolaire.application_template_tco_removal
+msgid "<p class=\"col-md-offset-2\">\n"
+"            To ask a removal from an inscription, simply fill the form below :\n"
+"        </p>\n"
+"        <p class=\"col-md-offset-2\">Some documents are required in order to fill the request depending on the reason:\n"
+"            <ul class=\"col-md-offset-2\">\n"
+"                <li>School certificate in case of a new establishment</li>\n"
+"                <li>Proof of an internship in case of an internship</li>\n"
+"                <li>Proof of sickness in case of sickness</li>\n"
+"                <li>Proof of moving in case of a move</li>\n"
+"            </ul>\n"
+"        </p>"
+msgstr "<p class=\"col-md-offset-2\">\n"
+"            Pour demander une radiation d'inscription, remplissez le formulaire ci-dessous:\n"
+"        </p>\n"
+"        <p class=\"col-md-offset-2\">Certains documents sont nécessaires en fonction du motif:\n"
+"            <ul class=\"col-md-offset-2\">\n"
+"                <li>Certificat d'inscription scolaire en cas de changement d'établissement</li>\n"
+"                <li>Justificatif de stage en cas de stage</li>\n"
+"                <li>Justificatif d'un médecin en cas de maladie</li>\n"
+"                <li>Justificatif de déménagement en cas de déménagement</li>\n"
+"            </ul>\n"
+"        </p>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:mail.template,body_html:tco_inscription_transport_scolaire.email_template_inscription_cancelled
+msgid "<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>\n"
+"Le statut de votre inscription n°${object.id} pour ${object.recipient_id.firstname} ${object.recipient_id.lastname} a été annulée.<br/>\n"
+"Vous pouvez prendre contact avec le service au 0810 45 65 20 (appel gratuit) pour plus de détails.</p>"
+msgstr "<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>\n"
+"Le statut de votre inscription n°${object.id} pour ${object.recipient_id.firstname} ${object.recipient_id.lastname} a été annulée.<br/>\n"
+"Vous pouvez prendre contact avec le service au 0810 45 65 20 (appel gratuit) pour plus de détails.</p>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:mail.template,body_html:tco_inscription_transport_scolaire.email_template_inscription_validated
+msgid "<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>\n"
+"Le statut de votre inscription n°${object.id} pour ${object.recipient_id.firstname} ${object.recipient_id.lastname} a été validée.\n"
+"Vous pouvez vous rendre sur <a href=\"/my/home\">le site internet du TCO</a> pour imprimer un récapitulatif de l'inscription et votre facture, à partir de votre compte.<br/>\n"
+"Pour toute demande complémentaire, vous pouvez contacter le service au 0810 45 65 20\n"
+"</p>"
+msgstr "<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>\n"
+"Le statut de votre inscription n°${object.id} pour ${object.recipient_id.firstname} ${object.recipient_id.lastname} a été validée.\n"
+"Vous pouvez vous rendre sur <a href=\"/my/home\">le site internet du TCO</a> pour imprimer un récapitulatif de l'inscription et votre facture, à partir de votre compte.<br/>\n"
+"Pour toute demande complémentaire, vous pouvez contacter le service au 0810 45 65 20\n"
+"</p>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:mail.template,body_html:tco_inscription_transport_scolaire.email_template_inscription_refused
+msgid "<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>\n"
+"Votre inscription n°${object.id} pour ${object.recipient_id.firstname} ${object.recipient_id.lastname} a été refusée\n"
+"pour la raison suivante :<br/>\n"
+"<br/>\n"
+"<i>${object.refuse_reason}</i><br/>\n"
+"<br/>\n"
+"Vous pouvez prendre contact avec le service au 0810 45 65 20 (appel gratuit) pour plus de détails.</p>"
+msgstr "<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>\n"
+"Votre inscription n°${object.id} pour ${object.recipient_id.firstname} ${object.recipient_id.lastname} a été refusée\n"
+"pour la raison suivante :<br/>\n"
+"<br/>\n"
+"<i>${object.refuse_reason}</i><br/>\n"
+"<br/>\n"
+"Vous pouvez prendre contact avec le service au 0810 45 65 20 (appel gratuit) pour plus de détails.</p>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:mail.template,body_html:tco_inscription_transport_scolaire.email_template_inscription_draft
+msgid "<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>\n"
+"Vous avez récemment enregistré une inscription au transport scolaire pour ${object.recipient_id.firstname} ${object.recipient_id.lastname}.\n"
+"Votre inscription n°${object.id} est en cours d'étude. Vous serez informé prochainement de son acceptation ou de son refus.\n"
+"Vous pouvez vous rendre sur <a href=\"/my/home\">le site internet du TCO</a> pour pouvoir imprimer un récapitulatif de cette demande au format pdf, à partir de votre compte.</p>"
+msgstr "<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>\n"
+"Vous avez récemment enregistré une inscription au transport scolaire pour ${object.recipient_id.firstname} ${object.recipient_id.lastname}.\n"
+"Votre inscription n°${object.id} est en cours d'étude. Vous serez informé prochainement de son acceptation ou de son refus.\n"
+"Vous pouvez vous rendre sur <a href=\"/my/home\">le site internet du TCO</a> pour pouvoir imprimer un récapitulatif de cette demande au format pdf, à partir de votre compte.</p>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Acceptation d'hospitalisation</small>"
+msgstr "<small class=\"form-text text-muted\">Acceptation d'hospitalisation</small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Acceptation de la prise de vue de votre enfant pour le droit à l'image</small>"
+msgstr "<small class=\"form-text text-muted\">Acceptation de la prise de vue de votre enfant pour le droit à l'image</small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Choisir la case correspondante\n"
+"                                        <br/>\n"
+"                                        Fournir une photocopie de l'attestation de placement et l'original de l'attestation des frais de transport.\n"
+"                                    </small>"
+msgstr "<small class=\"form-text text-muted\">Choisir la case correspondante\n"
+"                                        <br/>\n"
+"                                        Fournir une photocopie de l'attestation de placement et l'original de l'attestation des frais de transport.\n"
+"                                    </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Choisir la modalité du règlement\n"
+"                                    </small>"
+msgstr "<small class=\"form-text text-muted\">Choisir la modalité du règlement\n"
+"                                    </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Choisir le type de forfait:\n"
+"                                        <br/>\n"
+"                                        Cool (transports scolaires uniquement)\n"
+"                                        <br/>\n"
+"                                        Cool+ (transports scolaires + lignes régulières)\n"
+"                                    </small>"
+msgstr "<small class=\"form-text text-muted\">Choisir le type de forfait:\n"
+"                                        <br/>\n"
+"                                        Cool (transports scolaires uniquement)\n"
+"                                        <br/>\n"
+"                                        Cool+ (transports scolaires + lignes régulières)\n"
+"                                    </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Cocher le type d'établissement\n"
+"                                    </small>"
+msgstr "<small class=\"form-text text-muted\">Cocher le type d'établissement\n"
+"                                    </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Cycle scolaire de l'inscription\n"
+"                                    </small>"
+msgstr "<small class=\"form-text text-muted\">Cycle scolaire de l'inscription\n"
+"                                    </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Entrez le nom d'une personne mandatée. Obligatoire pour\n"
+"                                    les élèves de maternelle: nom et téléphone des adultes mandatés pour la prise en charge\n"
+"                                    des élèves à la montée et à la descente du car. Ces personnes devront avoir sur\n"
+"                                    eux une pièce d'identité.\n"
+"                                </small>"
+msgstr "<small class=\"form-text text-muted\">Entrez le nom d'une personne mandatée. Obligatoire pour\n"
+"                                    les élèves de maternelle: nom et téléphone des adultes mandatés pour la prise en charge\n"
+"                                    des élèves à la montée et à la descente du car. Ces personnes devront avoir sur\n"
+"                                    eux une pièce d'identité.\n"
+"                                </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Etablissement fréquenté par l'élève.\n"
+"                                        <br/>\n"
+"                                        Pour les élèves fréquentant les établissements du Nord et de l'Est, vous devez obligatoirement\n"
+"                                        fournir une attestation d'hébergement et un justificatif de domicile de la famille d'accueil.\n"
+"                                    </small>"
+msgstr "<small class=\"form-text text-muted\">Etablissement fréquenté par l'élève.\n"
+"                                        <br/>\n"
+"                                        Pour les élèves fréquentant les établissements du Nord et de l'Est, vous devez obligatoirement\n"
+"                                        fournir une attestation d'hébergement et un justificatif de domicile de la famille d'accueil.\n"
+"                                    </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Indiquer si l'élève est étudiant (BTS, DUT...)\n"
+"                                    </small>"
+msgstr "<small class=\"form-text text-muted\">Indiquer si l'élève est étudiant (BTS, DUT...)\n"
+"                                    </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Niveau scolaire de l'inscription\n"
+"                                    </small>"
+msgstr "<small class=\"form-text text-muted\">Niveau scolaire de l'inscription\n"
+"                                    </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Responsable de l'inscription</small>"
+msgstr "<small class=\"form-text text-muted\">Responsable de l'inscription</small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Régime externe et demi-pensionnaire: 1 trajet\n"
+"                                        aller le matin et 1 trajet retour le soir.\n"
+"                                        <br/>\n"
+"                                        Régime interne: 1 trajet aller en début de semaine et 1 trajet retour en fin de semaine.\n"
+"                                    </small>"
+msgstr "<small class=\"form-text text-muted\">Régime externe et demi-pensionnaire: 1 trajet\n"
+"                                        aller le matin et 1 trajet retour le soir.\n"
+"                                        <br/>\n"
+"                                        Régime interne: 1 trajet aller en début de semaine et 1 trajet retour en fin de semaine.\n"
+"                                    </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Souhaitez-vous opter pour le prélèvement automatique\n"
+"                                    </small>"
+msgstr "<small class=\"form-text text-muted\">Souhaitez-vous opter pour le prélèvement automatique\n"
+"                                    </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Sélectionner la personne qui doit être inscrite\n"
+"                                </small>"
+msgstr "<small class=\"form-text text-muted\">Sélectionner la personne qui doit être inscrite\n"
+"                                </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Sélectionner la période d'inscription\n"
+"                                        </small>"
+msgstr "<small class=\"form-text text-muted\">Sélectionner la période d'inscription\n"
+"                                        </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<small class=\"form-text text-muted\">Votre quotient familial définit le tarif du titre. Si le quotient familial n'est pas renseigné, c'est le tarif le plus élevé qui sera appliqué\n"
+"                                    </small>"
+msgstr "<small class=\"form-text text-muted\">Votre quotient familial définit le tarif du titre. Si le quotient familial n'est pas renseigné, c'est le tarif le plus élevé qui sera appliqué\n"
+"                                    </small>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<span class=\"custom-control-description\">Non</span>"
+msgstr "<span class=\"custom-control-description\">Non</span>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<span class=\"custom-control-description\">Oui</span>"
+msgstr "<span class=\"custom-control-description\">Oui</span>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<span class=\"custom-control-description\">Privé</span>"
+msgstr "<span class=\"custom-control-description\">Privé</span>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "<span class=\"custom-control-description\">Public</span>"
+msgstr "<span class=\"custom-control-description\">Public</span>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_website_application_requests
+msgid "<span>Inscription transport</span>"
+msgstr "<span>Inscription transport</span>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report
+msgid "<strong>\n"
+"                                        A défaut de disposer du formulaire attestant l’inscription de votre enfant dans\n"
+"                                        l’établissement scolaire retenu, vous avez la possibilité d’utiliser ce document pour\n"
+"                                        attester de son inscription après l’avoir remis au responsable d’établissement pour visa\n"
+"                                        (date, cachet et signature).\n"
+"                                    </strong>"
+msgstr "<strong>\n"
+"                                        A défaut de disposer du formulaire attestant l’inscription de votre enfant dans\n"
+"                                        l’établissement scolaire retenu, vous avez la possibilité d’utiliser ce document pour\n"
+"                                        attester de son inscription après l’avoir remis au responsable d’établissement pour visa\n"
+"                                        (date, cachet et signature).\n"
+"                                    </strong>"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:331
+#, python-format
+msgid "A document that validates the QF is required."
+msgstr "Un document attestant du quotient familial est requis."
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:333
+#, python-format
+msgid "A document that validates the school inscription is required."
+msgstr "Un document attestant de l'inscription scolaire est requis."
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription_period.py:17
+#: sql_constraint:tco.inscription.period:0
+#, python-format
+msgid "A period with the same name already exist"
+msgstr "Une période avec le même nom existe déjà"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_res_partner_is_als
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_res_users_is_als
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_is_als
+msgid "ALS"
+msgstr "ALS"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_account_payment_term_activate_tco
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_product_pricelist_activate_tco
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_product_product_activate_tco
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_product_template_activate_tco
+msgid "Activate tco inscription"
+msgstr "Activer l'inscription TCO"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_recipient_address
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_responsable_address
+msgid "Address"
+msgstr "Adresse"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "Adress :"
+msgstr "Adresse :"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/controllers/main.py:191
+#, python-format
+msgid "A document that validates the QF is required if your QF is inferior to 1000."
+msgstr "Un document attestant du quotient familial est requis si celui-ci est inférieur à 1000."
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_display_recipient_age
+msgid "Age"
+msgstr "Âge"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:345
+#, python-format
+msgid "A document that validates the address is required."
+msgstr "Un document validant l'adresse du responsable est requis."
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_sale_order_total_price
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Amount"
+msgstr "Montant"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:20
+#: sql_constraint:tco.inscription.transport.scolaire:0
+#, python-format
+msgid "An inscription already exist for the same period, recipient, responsable"
+msgstr "Une inscription existe déjà pour cette période, bénéficiaire, responsable"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/controllers/foyer.py:21
+#, python-format
+msgid "A picture of the recipient is necessary for an inscription."
+msgstr "Une photo du bénéficiaire est nécessaire pour une inscription."
+
+#. module: tco_inscription_transport_scolaire
+#: selection:account.payment.term,tco_inscription_invoice_period:0
+#: selection:product.product,tco_inscription_invoice_period:0
+#: selection:tco.inscription.transport.scolaire,invoice_period:0
+msgid "Annually"
+msgstr "Annuelle"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Annuler"
+msgstr "Annuler"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Année scolaire du"
+msgstr "Année scolaire du"
+
+#. module: tco_inscription_transport_scolaire
+#. openerp-web
+#: code:addons/tco_inscription_transport_scolaire/static/src/js/page_inscription.js:161
+#, python-format
+msgid "Are you sure ?"
+msgstr "Etes-vous sûr ?"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_address_certificate
+msgid "Address certificate"
+msgstr "Justificatif de domicile"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.wizard_create_so_invoice
+msgid "Are you sure ? This may take some time."
+msgstr "Etes-vous sure ? Cela peut prendre du temps."
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_assist
+msgid "Assist"
+msgstr "Personne mandatée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_assist_phone
+msgid "Assist phone number"
+msgstr "Téléphone personne mandatée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Attention, ce bénéficaire ne possède pas d'addresse valide\n"
+"                                    <br/>Cliquez ce message pour éditer l'adresse"
+msgstr "Attention, ce bénéficaire ne possède pas d'addresse valide\n"
+"                                    <br/>Cliquez ce message pour éditer l'adresse"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_website_application_requests
+msgid "Aucune inscription"
+msgstr "Aucune inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_is_automatic_payment
+msgid "Automatic payment"
+msgstr "Paiement automatique"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Autorisations"
+msgstr "Autorisations"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_line_backward_id
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Backward line"
+msgstr "Ligne retour"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_station_retour_id
+msgid "Backward station"
+msgstr "Station retour"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_badge_id
+msgid "Badge"
+msgstr "Badge"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_compte_id
+msgid "Bank account"
+msgstr "Compte bancaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_bank_details
+msgid "Bank details"
+msgstr "Relevé d'identité bancaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_bank_details_status
+msgid "Bank details status"
+msgstr "Statut du RIB"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription_period.py:40
+#, python-format
+msgid "Beginning date must be inferior to ending date"
+msgstr "La date de début doit être inférieure à la date de fin"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "Beneficiary"
+msgstr "Bénéficiaire"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:account.payment.term,tco_inscription_invoice_period:0
+#: selection:product.product,tco_inscription_invoice_period:0
+#: selection:tco.inscription.transport.scolaire,invoice_period:0
+msgid "Biannually"
+msgstr "Semestriel"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_recipient_birthdate
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_cru_foyer_member
+msgid "Birthdate"
+msgstr "Date de naissance"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation_content
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "Birthdate :"
+msgstr "Date de naissance :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_website_application_requests
+msgid "Bénéficiaire"
+msgstr "Bénéficiaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.refuse_inscription_form
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.wizard_create_so_invoice
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,status:0
+msgid "Cancelled"
+msgstr "Annulée"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/inherited_partner.py:28
+#, python-format
+msgid "Cannot contact geolocation servers. Please make sure that your Internet connection is up and running (%s)."
+msgstr "Cannot contact geolocation servers. Please make sure that your Internet connection is up and running (%s)."
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_view_form_transport_line
+msgid "Capacity"
+msgstr "Capacité"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Ce formulaire vous permet d'exprimer vos souhaits d'inscription pour votre enfant au transport scolaire du TCO. L'inscription définitive sera confirmée ultérieurement."
+msgstr "Ce formulaire vous permet d'exprimer vos souhaits d'inscription pour votre enfant au transport scolaire du TCO. L'inscription définitive sera confirmée ultérieurement."
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_address_certificate_status
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_qf_certificate_status
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_school_enrollment_certificate_status
+msgid "Certificate status"
+msgstr "Statut du certificat"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Choix du titre de transport et du mode de règlement"
+msgstr "Choix du titre de transport et du mode de règlement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_responsible_city
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "City"
+msgstr "Ville"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Complément"
+msgstr "Complément"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Condition de règlement"
+msgstr "Condition de règlement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Confirmation d'inscription aux transports scolaires"
+msgstr "Confirmation d'inscription aux transports scolaires"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:product.template,tco_transport_titre:0
+#: selection:tco.inscription.transport.scolaire,transport_titre:0
+msgid "Cool"
+msgstr "Cool"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:product.template,tco_transport_titre:0
+#: selection:tco.inscription.transport.scolaire,transport_titre:0
+msgid "Cool +"
+msgstr "Cool +"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "Create sale order"
+msgstr "Créer le bon de commande"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.actions.act_window,name:tco_inscription_transport_scolaire.action_inscriptions_create_so_invoice
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.wizard_create_so_invoice
+msgid "Create sale order or invoice"
+msgstr "Créer les bons de commandes ou factures"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "Create user"
+msgstr "Créer l'utilisateur"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard_create_uid
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_period_create_uid
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_refuse_create_uid
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard_create_date
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_period_create_date
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_refuse_create_date
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_currency_id
+msgid "Currency id"
+msgstr "Currency id"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Cycle scolaire"
+msgstr "Cycle scolaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "DU"
+msgstr "DU"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "Data"
+msgstr "Données"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.information,name:tco_inscription_transport_scolaire.application_information_on_date
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Date"
+msgstr "Date "
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "Date :"
+msgstr "Date :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_period_date_end
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_date_end
+msgid "Date end"
+msgstr "Date de fin"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "Date end :"
+msgstr "Date de fin :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_period_date_start
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_date_start
+msgid "Date start"
+msgstr "Date de début"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "Date start :"
+msgstr "Date de début :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_account_invoice_date_payment_term_start
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_sale_order_date_payment_term_start
+msgid "Delayed payment term"
+msgstr "Date de période de règlement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Demande de pré-inscription"
+msgstr "Demande de pré-inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard_display_name
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_report_tco_inscription_transport_scolaire_global_report_view_display_name
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_period_display_name
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_refuse_display_name
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,status:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: tco_inscription_transport_scolaire
+#. openerp-web
+#: code:addons/tco_inscription_transport_scolaire/static/src/js/page_inscription.js:185
+#, python-format
+msgid "Draft saved"
+msgstr "Brouillon sauvegardé"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Eleve"
+msgstr "Eleve"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,help:tco_inscription_transport_scolaire.field_invoicing_wizard_ignore_emails
+msgid "Emails won't be sent at the validation of inscriptions"
+msgstr "Aucun emails ne sera envoyés à la validation des inscriptions."
+
+#. module: tco_inscription_transport_scolaire
+#: model:res.groups,comment:tco_inscription_transport_scolaire.group_tco_inscription_manage
+msgid "Enable the menus to manage scholar transport inscriptions."
+msgstr "Active les menus pour gérer les inscriptions au transport scolaire."
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Enfant confié aux services d'aide sociale à l'enfance"
+msgstr "Enfant confié aux services d'aide sociale à l'enfance"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Enregistrer le brouillon"
+msgstr "Enregistrer le brouillon"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "Enroll a medium"
+msgstr "Enroller un badge"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/controllers/main.py:207
+#, python-format
+msgid "Enter a valid assist phone number."
+msgstr "Entrez un numéro de téléphone pour l'accompagnant valide."
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/controllers/main.py:177
+#, python-format
+msgid "Enter a valid family quotient"
+msgstr "Entrez un quotient familial valide"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Enter period"
+msgstr "Choisir la période"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_school_establishment_id
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Establishment"
+msgstr "Établissement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.actions.act_window,name:tco_inscription_transport_scolaire.action_tco_inscription_transport_scolaire_establishment_assignation
+#: model:ir.ui.menu,name:tco_inscription_transport_scolaire.tco_inscription_transport_scolaire_menu_establishment_assignation
+msgid "Establishment assignations by city"
+msgstr "Assignation des établissements par ville"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Establishment city"
+msgstr "Ville de l'établissement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Etablissement"
+msgstr "Établissement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Etudiant"
+msgstr "Étudiant"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_horanet_school_establishment_line_exclusive
+msgid "Exclusive lines"
+msgstr "Lignes exclusives"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_is_derogation
+msgid "Exemption"
+msgstr "Dérogation"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_derogation_type
+msgid "Exemption type"
+msgstr "Type de dérogation"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,regime:0
+msgid "Extern"
+msgstr "Externe"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "FACTURE"
+msgstr "FACTURE"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Facture Editée le"
+msgstr "Facture Editée le"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Fait le"
+msgstr "Fait le"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_family_quotient
+msgid "Family quotient"
+msgstr "Quotient familiale"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/inherited_pricelist.py:57
+#, python-format
+msgid "Family quotient cannot overlap with another price-list"
+msgstr "Le quotient familial chevauche une autre liste de prix"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "Firstname :"
+msgstr "Prénom :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_line_forward_id
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Forward line"
+msgstr "Ligne aller"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_station_aller_id
+msgid "Forward station"
+msgstr "Station aller"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "General informations"
+msgstr "Informations générales"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.actions.server,name:tco_inscription_transport_scolaire.mass_geolocalize_partners_action_server
+msgid "Geolocalize partners"
+msgstr "Géolocaliser les partenaires"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,regime:0
+msgid "Half boarder"
+msgstr "Demi pensionnaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_has_badge
+msgid "Has badge"
+msgstr "Possède un badge"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_res_partner_has_custom_image
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_res_users_has_custom_image
+msgid "Has custom avatar"
+msgstr "Possède un avatar personnalisé"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+msgid "Hour :"
+msgstr "Horaire :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard_id
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_report_tco_inscription_transport_scolaire_global_report_view_id
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_period_id
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_refuse_id
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_id
+msgid "ID"
+msgstr "ID"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,help:tco_inscription_transport_scolaire.field_invoicing_wizard_ignore_documents
+msgid "If activated, do not raise an error for missing documents"
+msgstr "Si cochée, ne génèrera pas d'erreur pour les documents manquants"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:445
+#, python-format
+msgid "If the recipient is a student, you can't select a monthly invoice period"
+msgstr "Si le bénéficiaire est un étudiant, vous ne pouvez sélectionner une période de règlement mensuelle"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,help:tco_inscription_transport_scolaire.field_horanet_school_establishment_line_exclusive
+msgid "If you check this box, only lines with the same school cycles will be selected when creating an inscription."
+msgstr "Si vous cochez cette case, seules les lignes avec les cycles scolaires correspondants à celles de l'établissement seront sélectionnées."
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_ignore_derogation
+msgid "Ignore derogation"
+msgstr "Ignorer la dérogation"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard_ignore_documents
+msgid "Ignore documents"
+msgstr "Ignorer les documents justificatifs"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard_ignore_emails
+msgid "Ignore emails"
+msgstr "Ignorer les emails"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/controllers/main.py:188
+#, python-format
+msgid "Il existe déjà une inscription pour {recipient_name} sur la période {period_name}.\n"
+"                     Responsable : {responsable_name}"
+msgstr "Il existe déjà une inscription pour {recipient_name} sur la période {period_name}.\n"
+"                     Responsable : {responsable_name}"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_horanet_transport_config_cheque_background_image
+msgid "Image used as background for the cheque"
+msgstr "Image utilisée en fond pour le chèque transport"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.functionality,name:tco_inscription_transport_scolaire.application_functionality_inscription
+#: model:ir.actions.act_window,name:tco_inscription_transport_scolaire.action_tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_refuse_inscription_id
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "Inscription"
+msgstr "Inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.actions.act_window,name:tco_inscription_transport_scolaire.action_tco_inscription_transport_scolaire_followup
+msgid "Inscription Followup"
+msgstr "Suivi des inscriptions"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "Inscription n°"
+msgstr "Inscription n°"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.functionality,name:tco_inscription_transport_scolaire.application_functionality_inscription_path_changing
+msgid "Inscription path changing"
+msgstr "Changement de trajet inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:website.application.template,name:tco_inscription_transport_scolaire.application_template_tco_path_modification
+msgid "Inscription path changing request"
+msgstr "Demande de changement de trajet"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.actions.act_window,name:tco_inscription_transport_scolaire.action_tco_inscription_transport_scolaire_period
+msgid "Inscription period"
+msgstr "Période d'inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_name
+msgid "Inscription reference"
+msgstr "Référence de l'inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.functionality,name:tco_inscription_transport_scolaire.application_functionality_inscription_refund
+msgid "Inscription refund"
+msgstr "Remboursement inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:website.application.template,name:tco_inscription_transport_scolaire.application_template_tco_refund
+msgid "Inscription refund/exoneration request"
+msgstr "Demande de remboursement/exonération"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.actions.act_window,name:tco_inscription_transport_scolaire.action_wizard_refuse_inscription
+msgid "Inscription refuse wizard"
+msgstr "Assistant refus d'inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.functionality,name:tco_inscription_transport_scolaire.application_functionality_inscription_removal
+msgid "Inscription removal"
+msgstr "Radiation inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:website.application.template,name:tco_inscription_transport_scolaire.application_template_tco_removal
+msgid "Inscription removal request"
+msgstr "Demande de radiation"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.actions.report.xml,name:tco_inscription_transport_scolaire.tco_inscription_transport_scolaire_report
+msgid "Inscription report"
+msgstr "Résumé d'inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.actions.report.xml,name:tco_inscription_transport_scolaire.tco_inscription_transport_scolaire_report_affectation
+msgid "Inscription report with affectations"
+msgstr "Résumé d'inscription avec affectation"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard_inscription_ids
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_res_partner_inscription_ids
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_res_users_inscription_ids
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_website_application_requests
+msgid "Inscriptions"
+msgstr "Inscriptions"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Inscriptions draft"
+msgstr "Inscriptions brouillons"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Inscriptions in progress"
+msgstr "Inscriptions en cours"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Inscriptions to validate"
+msgstr "Inscriptions à valider"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Inscriptions validated"
+msgstr "Inscriptions validées"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,regime:0
+msgid "Intern"
+msgstr "Interne"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_invoice_period
+msgid "Invoice period"
+msgstr "Période de règlement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_invoice_validated
+msgid "Invoice validated"
+msgstr "Facture validée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_radier_aller_id
+msgid "Inward radier"
+msgstr "Radier aller"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_transport_stop_aller_id
+msgid "Inward stop"
+msgstr "Arrêt aller"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_res_partner_is_als_organism
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_res_users_is_als_organism
+msgid "Is a social service organism"
+msgstr "Est un organisme des services sociaux"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_period_active
+msgid "Is active"
+msgstr "Actif"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_is_allowing_hospitalization
+msgid "Is allowing hospitalization"
+msgstr "Autorise l'hospitalisation"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_is_allowing_picture
+msgid "Is allowing pictures"
+msgstr "Autorise les prises de vue"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_is_student
+msgid "Is student"
+msgstr "Est étudiant"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+#: model:website.application.template,terms_checkbox_label:tco_inscription_transport_scolaire.application_template_tco_path_modification
+#: model:website.application.template,terms_checkbox_label:tco_inscription_transport_scolaire.application_template_tco_refund
+#: model:website.application.template,terms_checkbox_label:tco_inscription_transport_scolaire.application_template_tco_removal
+msgid "J'ai lu et accepté les"
+msgstr "J'ai lu et accepté les"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "La carte de"
+msgstr "La carte de"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard___last_update
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_report_tco_inscription_transport_scolaire_global_report_view___last_update
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_period___last_update
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_refuse___last_update
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard_write_uid
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_period_write_uid
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_refuse_write_uid
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard_write_date
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_period_write_date
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_refuse_write_date
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "Lastname :"
+msgstr "Nom :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.actions.report.xml,name:tco_inscription_transport_scolaire.tco_inscription_transport_scolaire_global_report
+msgid "Letter with invoice"
+msgstr "Lettre avec facture"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Libellé"
+msgstr "Libellé"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+msgid "Line name :"
+msgstr "Ligne :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:res.groups,name:tco_inscription_transport_scolaire.group_tco_inscription_manage
+msgid "Manage Inscription"
+msgstr "Gérer les inscriptions"
+
+#. module: tco_inscription_transport_scolaire
+#. openerp-web
+#: code:addons/tco_inscription_transport_scolaire/static/src/js/page_inscription.js:251
+#, python-format
+msgid "Missing field"
+msgstr "Champ manquant"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Modalité de règlement"
+msgstr "Modalité de règlement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_website_application_requests
+msgid "Modifier"
+msgstr "Modifier"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:account.payment.term,tco_inscription_invoice_period:0
+#: selection:product.product,tco_inscription_invoice_period:0
+#: selection:tco.inscription.transport.scolaire,invoice_period:0
+msgid "Monthly"
+msgstr "Mensuelle"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.information,text_choices:tco_inscription_transport_scolaire.application_information_removal_reason
+msgid "Move, Swithing school, Prolonged absence for internship, Prolonged absence for sickness, Other"
+msgstr "Déménagement, Changement d'établissement scolaire, Absence prolongée pour stage, Absence prolongée pour maladie, Autres"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:663
+#, python-format
+msgid "Multiple payment term found : {ids}"
+msgstr "Plusieurs échéanciers trouvé : {ids}"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:624
+#, python-format
+msgid "Multiple price-lists found : {ids}"
+msgstr "Plusieurs listes de prix trouvées : {ids}"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:650
+#, python-format
+msgid "Multiple product found : {ids}"
+msgstr "Plusieurs variantes d'article trouvés : {ids}"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:635
+#, python-format
+msgid "Multiple product template found : {ids}"
+msgstr "Plusieurs articles trouvés : {ids}"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "My Account"
+msgstr "Mon compte"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_period_name
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_period
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Name"
+msgstr "Nom"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Niveau scolaire"
+msgstr "Niveau scolaire"
+
+#. module: tco_inscription_transport_scolaire
+#. openerp-web
+#: code:addons/tco_inscription_transport_scolaire/static/src/js/page_inscription.js:167
+#, python-format
+msgid "No"
+msgstr "Non"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_product_pricelist_no_family_quotient
+msgid "No family quotient"
+msgstr "Sans quotient familial"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:660
+#, python-format
+msgid "No payment term found"
+msgstr "Pas de conditions de règlement trouvé"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:622
+#, python-format
+msgid "No price-list found"
+msgstr "Pas de liste de prix trouvé"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:647
+#, python-format
+msgid "No product found"
+msgstr "Pas de variante d'article trouvé"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:632
+#, python-format
+msgid "No product template found"
+msgstr "Pas de catégorie d'article trouvé"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Nouvelle pré-inscription"
+msgstr "Nouvelle pré-inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,help:tco_inscription_transport_scolaire.field_tco_transport_line_vehicle_occupation
+msgid "Occupation is computed based on the latest school period."
+msgstr "Le remplissage est calculé en fonction de la dernière période scolaire."
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,derogation_type:0
+msgid "Other"
+msgstr "Autres"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "Other informations"
+msgstr "Autres informations"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_radier_retour_id
+msgid "Outward radier"
+msgstr "Radier retour"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_transport_stop_retour_id
+msgid "Outward stop"
+msgstr "Arrêt retour"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_website_application_requests
+msgid "PDF"
+msgstr "PDF"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_account_payment_term
+msgid "Payment Term"
+msgstr "Conditions de paiement"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/inherited_account_payment_term.py:56
+#, python-format
+msgid "Payment term {name} has the same tco inscription configuration"
+msgstr "La condition de règlement {name} possède le même paramétrage d'inscription TCO"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Payment terms"
+msgstr "Echéancier"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_period_id
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_period
+msgid "Period"
+msgstr "Période"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_period
+msgid "Period dates"
+msgstr "Dates de la période"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Personne mandatée"
+msgstr "Personne mandatée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_pivot_tco_inscription_transport_scolaire
+msgid "Pivot view"
+msgstr "Vue pivot"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Please Choose..."
+msgstr "Choisissez..."
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:283
+#, python-format
+msgid "Please proceed to make all the requirements before accepting the inscription"
+msgstr "Veuillez procéder à tous les prérequis avant de valider l'inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_product_pricelist
+msgid "Pricelist"
+msgstr "Liste de prix"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/inherited_product_template.py:51
+#, python-format
+msgid "Product template {name} has the same tco inscription configuration"
+msgstr "Le modèle d'article {name} possède le même paramétrage d'inscription TCO"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/inherited_product.py:57
+#, python-format
+msgid "Product {name} has the same tco inscription configuration"
+msgstr "L'article {name} possède le même paramétrage d'inscription TCO"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.attachment.type,name:tco_inscription_transport_scolaire.attachment_type_proof
+msgid "Proof document(s)"
+msgstr "Document(s) justificatif(s)"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Prélèvement automatique"
+msgstr "Prélèvement automatique"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_website_application_requests
+msgid "Période"
+msgstr "Période"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_qf_certificate
+msgid "QF certificate"
+msgstr "Certificat du quotient familial"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:account.payment.term,tco_inscription_invoice_period:0
+#: selection:product.product,tco_inscription_invoice_period:0
+#: selection:tco.inscription.transport.scolaire,invoice_period:0
+msgid "Quarterly"
+msgstr "Trimestrielle"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Quotient familial"
+msgstr "Quotient familial"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+msgid "Radier :"
+msgstr "Radier :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_refuse_reason
+msgid "Reason"
+msgstr "Motif"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.information,name:tco_inscription_transport_scolaire.application_information_removal_reason
+msgid "Reason of the request"
+msgstr "Motif de la demande"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_recipient_id
+msgid "Recipient"
+msgstr "Destinataire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_recipient_age
+msgid "Recipient age"
+msgstr "Age du bénéficiaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.information,text_choices:tco_inscription_transport_scolaire.application_information_refund_type
+msgid "Refund, Exoneration"
+msgstr "Avoir, Exonération"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "Refuse"
+msgstr "Refuser"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.refuse_inscription_form
+msgid "Refuse inscription"
+msgstr "Refuser l'inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_refuse_reason
+msgid "Refuse reason"
+msgstr "Raison du refus"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,status:0
+msgid "Refused"
+msgstr "Refusée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_regime
+msgid "Regime"
+msgstr "Régime"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "Regime :"
+msgstr "Régime :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.information,name:tco_inscription_transport_scolaire.application_information_inscription_id
+msgid "Related inscription"
+msgstr "Inscription reliée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.attachment.type,name:tco_inscription_transport_scolaire.attachment_type_rib
+msgid "Relevé d'identité bancaire"
+msgstr "Relevé d'identité bancaire"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,derogation_type:0
+msgid "Relocation during the past year"
+msgstr "Relogement au cours de l'année dernière"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_transport_line_remaining_places
+msgid "Remaining places"
+msgstr "Places disponibles"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,derogation_type:0
+msgid "Requested speciality do not exist in the establishment"
+msgstr "La spécialité demandée n'existe pas dans cet établissement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_website_application_requests
+msgid "Responsable"
+msgstr "Responsable"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_als_responsible_id
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_responsible_id
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "Responsible"
+msgstr "Organisme responsable"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_responsible_user_id
+msgid "Responsible user"
+msgstr "Responsable utilisateur"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Régime"
+msgstr "Régime"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Saisir la valeur"
+msgstr "Saisir la valeur"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:invoicing.wizard,action_type:0
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_sale_order_ref
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,status:0
+msgid "Sale order"
+msgstr "Bon de commande"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:invoicing.wizard,action_type:0
+msgid "Sale order and invoice"
+msgstr "Bon de commande et facture"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_establishment_city_id
+msgid "School city"
+msgstr "Ville de l'école"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_school_cycle
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "School cycle"
+msgstr "Cycle scolaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_transport_line_school_cycle_ids
+msgid "School cycles"
+msgstr "Cycles scolaires"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_school_enrollment_certificate
+msgid "School enrollment certificate"
+msgstr "Certificat d'inscription scolaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_school_grade_id
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "School grade"
+msgstr "Niveau scolaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "School transport inscription report"
+msgstr "Résumé d'inscription au transport scolaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_assist2
+msgid "Second assist"
+msgstr "Deuxième personne mandatée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_assist_phone2
+msgid "Second assist phone number"
+msgstr "Téléphone deuxième personne mandatée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "See user"
+msgstr "Voir l'utilisateur"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "Show sale order"
+msgstr "Voir le bon de commande"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/controllers/main.py:172
+#, python-format
+msgid "Some required fields are empty."
+msgstr "Certains champs requis sont vides"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_horanet_school_establishment_station_ids
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_horanet_school_establishment_view_form
+msgid "Stations"
+msgstr "Stations"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_status
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Status"
+msgstr "État"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_website_application_requests
+msgid "Statut"
+msgstr "Statut"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "Statut :"
+msgstr "Statut :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+msgid "Stop name :"
+msgstr "Nom de l'arrêt :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_horanet_school_establishment_stop_ids
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_horanet_school_establishment_view_form
+msgid "Stops"
+msgstr "Stops"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,derogation_type:0
+msgid "Student was in the establishment last year"
+msgstr "L'étudiant était dans cet établissement l'année dernière"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.menu,name:tco_inscription_transport_scolaire.tco_inscription_transport_scolaire_menu
+msgid "TCO Inscriptions"
+msgstr "Inscriptions TCO"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.menu,name:tco_inscription_transport_scolaire.tco_inscription_transport_scolaire_menu_followup
+msgid "TCO Inscriptions Followup"
+msgstr "Suivi des inscriptions TCO"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_product_product_form
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_product_template_form
+msgid "TCO inscription"
+msgstr "Inscription TCO"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.menu,name:tco_inscription_transport_scolaire.tco_inscription_transport_scolaire_period_menu
+msgid "TCO inscription periods"
+msgstr "Périodes inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Tarif"
+msgstr "Tarif"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Tel 02 62 45 72 30"
+msgstr "Tel 02 62 45 72 30"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription_period.py:48
+#, python-format
+msgid "The period dates overlap with period {name}"
+msgstr "Les dates de la période chevauche la période {name}"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.information,name:tco_inscription_transport_scolaire.application_information_date_changing_establishment
+msgid "The student is changing establishment on"
+msgstr "L'étudiant change d'établissement le"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.information,name:tco_inscription_transport_scolaire.application_information_date_changing_residence
+msgid "The student is changing residence on"
+msgstr "L'étudiant change de résidence le"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,help:tco_inscription_transport_scolaire.field_horanet_transport_config_cheque_background_image
+msgid "This image should have following dimensions: 800px width, 310px height"
+msgstr "L'image doit avoir les dimensions suivantes: 800x310px"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "This inscription has been refused for the following reason :"
+msgstr "Cette inscription a été refusée pour le motif suivant :"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:365
+#, python-format
+msgid "This inscription is a duplicate of '{0}'"
+msgstr "Cette inscription est un duplicata de '{0}'"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_affectation
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report_content
+msgid "Title :"
+msgstr "Civilité :"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Titre de transport"
+msgstr "Titre de transport"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,status:0
+msgid "To validate"
+msgstr "A valider"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.custom_view_form_partner
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_collectivity_config_settings
+msgid "Transport"
+msgstr "Transport"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_form_tco_inscription_transport_scolaire
+msgid "Transport informations"
+msgstr "Informations sur le transport"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_transport_titre
+msgid "Transport title"
+msgstr "Titre de transport"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.view_search_tco_inscription_transport_scolaire
+msgid "Transport titre"
+msgstr "Titre de transport"
+
+#. module: tco_inscription_transport_scolaire
+#: model:application.information,name:tco_inscription_transport_scolaire.application_information_refund_type
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard_action_type
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.inherited_website_application_requests
+msgid "Type"
+msgstr "Type"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Type établissement"
+msgstr "Type établissement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Téléphone"
+msgstr "Téléphone"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Téléservices"
+msgstr "Téléservices"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/controllers/foyer.py:25
+#, python-format
+msgid "The birthdate of the recipient is necessary for an inscription"
+msgstr "Une date de naissance est nécessaire pour une inscription."
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.wizard_create_so_invoice
+msgid "Validate"
+msgstr "Valider"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_invoicing_wizard_validate_invoice
+msgid "Validate invoice"
+msgstr "Valider les factures"
+
+#. module: tco_inscription_transport_scolaire
+#: selection:tco.inscription.transport.scolaire,status:0
+msgid "Validated"
+msgstr "Validée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Valider la pré-inscription"
+msgstr "Valider la pré-inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "Validité\n"
+"                                        <br/>"
+msgstr "Validité\n"
+"                                        <br/>"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_tco_transport_line_vehicle_occupation
+msgid "Vehicle occupation"
+msgstr "Remplissage du véhicule"
+
+#. module: tco_inscription_transport_scolaire
+#: model:mail.template,subject:tco_inscription_transport_scolaire.email_template_inscription_validated
+msgid "Votre inscription n°${object.id} au transport scolaire a été acceptée"
+msgstr "Votre inscription n°${object.id} aux transports scolaires a été acceptée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:mail.template,subject:tco_inscription_transport_scolaire.email_template_inscription_cancelled
+msgid "Votre inscription n°${object.id} au transport scolaire a été annulée"
+msgstr "Votre inscription n°${object.id} au transport scolaire a été annulée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:mail.template,subject:tco_inscription_transport_scolaire.email_template_inscription_refused
+msgid "Votre inscription n°${object.id} au transport scolaire a été refusée"
+msgstr "Votre inscription n°${object.id} au transport scolaire a été refusée"
+
+#. module: tco_inscription_transport_scolaire
+#: model:mail.template,subject:tco_inscription_transport_scolaire.email_template_inscription_draft
+msgid "Vous avez enregistré une inscription aux transports scolaires"
+msgstr "Votre inscription aux transports scolaires en cours d’étude"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:444
+#, python-format
+msgid "Warning"
+msgstr "Attention"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:266
+#, python-format
+msgid "When recipient is a student, you can't select a COOL transport title"
+msgstr "Si le bénéficiaire est un étudiant, vous ne pouvez sélectionner un titre de transport COOL"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:262
+#, python-format
+msgid "When recipient is a student, you can't select a monthly invoice period"
+msgstr "Si le bénéficiaire est un étudiant, vous ne pouvez sélectionner une période de règlement mensuelle"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:264
+#, python-format
+msgid "When recipient is a student, you can't set derogation"
+msgstr "Si le bénéficiaire est un étudiant, vous ne pouvez pas mettre de dérogation"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:179
+#, python-format
+msgid "Year"
+msgstr "Année"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:179
+#, python-format
+msgid "Years"
+msgstr "Années"
+
+#. module: tco_inscription_transport_scolaire
+#. openerp-web
+#: code:addons/tco_inscription_transport_scolaire/static/src/js/page_inscription.js:166
+#, python-format
+msgid "Yes, validate the inscription"
+msgstr "Oui, valider la pré-inscription"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.refuse_inscription_form
+msgid "You are going to refuse a school transport inscription. Please provide a reason for the refusal."
+msgstr "Vous êtes sur le point de refuser une inscription au transport scolaire. Veuillez s'il vous plait fournir un motif."
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.wizard_create_so_invoice
+msgid "You can generate the sale orders and invoices from here.\n"
+"                If you choose \"sale order and invoice\", already processed inscriptions (those who have already a\n"
+"                sale order and invoice for exemple) won't have duplicate data."
+msgstr "Vous pouvez générer les bons de commandes et factures d'ici.\n"
+"                Si vous choisissez \"bon de commande et facture\", les inscriptions déjà traitées (celles qui ont déjà un\n"
+"                bon de commande et une facture par exemple) n'auront pas de données dupliquées."
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:522
+#, python-format
+msgid "You can remove a draft inscription only"
+msgstr "Vous pouvez supprimer une inscription en brouillon seulement"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:479
+#, python-format
+msgid "You cannot modify a validated or a cancelled inscription"
+msgstr "Vous ne pouvez modifier une inscription validée ou annulé"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/controllers/account.py:32
+#, python-format
+msgid "You have to justify the inscription to school transport for {person_name} with a school enrollment certificate."
+msgstr "Vous devez justifier l'inscription scolaire pour {person_name} avec un certificat d'inscription scolaire."
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/controllers/account.py:42
+#, python-format
+msgid "You have to provide an identity picture of {person_name} for the school transport inscription."
+msgstr "Vous devez fournir une photo d'identité de {person_name} pour l'inscription au transport scolaire."
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/controllers/account.py:59
+#, python-format
+msgid "You have to provide your bank details as one of your inscriptions is using direct debit mode."
+msgstr "Vous devez fournir un relevé d'identité bancaire car une de vos inscriptions utilise le prélèvement automatique."
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:324
+#, python-format
+msgid "You must choose a partner with portal access for an inscription"
+msgstr "Vous devez choisir un partenaire avec accès au portail"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:301
+#, python-format
+msgid "You must select a school grade"
+msgstr "Vous devez sélectionner un niveau scolaire"
+
+#. module: tco_inscription_transport_scolaire
+#. openerp-web
+#: code:addons/tco_inscription_transport_scolaire/static/src/js/page_inscription.js:252
+#, python-format
+msgid "You need to complete the required fields to proceed"
+msgstr "Vous devez compléter les champs requis pour continuer"
+
+#. module: tco_inscription_transport_scolaire
+#. openerp-web
+#: code:addons/tco_inscription_transport_scolaire/static/src/js/page_inscription.js:186
+#, python-format
+msgid "You need to saved the inscription for it to be accepted "
+msgstr "Vous devez enregistrer l'inscription pour qu'elle soit acceptée "
+
+#. module: tco_inscription_transport_scolaire
+#. openerp-web
+#: code:addons/tco_inscription_transport_scolaire/static/src/js/page_inscription.js:162
+#, python-format
+msgid "You will not be able to edit the inscription afterward !"
+msgstr "Vous ne serez plus en mesure de modifier la pré-inscription après la sauvegarde !"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "au"
+msgstr "au"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "aux transports scolaires organisés par le TCO et\n"
+"                                nous sommes heureux que notre service public puisse répondre à votre besoin.\n"
+"                                <br/>\n"
+"                                Nous avons le plaisir de vous informer que <strong>votre demande d’inscription est validée.</strong>\n"
+"                                <br/>\n"
+"                                Le prix de votre abonnement a été calculé en fonction de votre quotient familial. Compte\n"
+"                                tenu de votre situation,"
+msgstr "aux transports scolaires organisés par le TCO et\n"
+"                                nous sommes heureux que notre service public puisse répondre à votre besoin.\n"
+"                                <br/>\n"
+"                                Nous avons le plaisir de vous informer que <strong>votre demande d’inscription est validée.</strong>\n"
+"                                <br/>\n"
+"                                Le prix de votre abonnement a été calculé en fonction de votre quotient familial. Compte\n"
+"                                tenu de votre situation,"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "celui-ci permettra à"
+msgstr "celui-ci permettra à"
+
+#. module: tco_inscription_transport_scolaire
+#: model:website.application.template,terms_link_label:tco_inscription_transport_scolaire.application_template_tco_path_modification
+#: model:website.application.template,terms_link_label:tco_inscription_transport_scolaire.application_template_tco_refund
+#: model:website.application.template,terms_link_label:tco_inscription_transport_scolaire.application_template_tco_removal
+msgid "conditions générales"
+msgstr "conditions générales"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "de\n"
+"                                bénéficier de tarifs réduits sur l'ensemble du réseau Kar'Ouest, pendant toute cette année\n"
+"                                scolaire."
+msgstr "de\n"
+"                                bénéficier de tarifs réduits sur l'ensemble du réseau Kar'Ouest, pendant toute cette année\n"
+"                                scolaire."
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "de voyager librement sur le réseau Kar'Ouest pendant toute cette année scolaire,\n"
+"                                    y compris en dehors de ses déplacements domicile-école"
+msgstr "de voyager librement sur le réseau Kar'Ouest pendant toute cette année scolaire,\n"
+"                                    y compris en dehors de ses déplacements domicile-école"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:278
+#, python-format
+msgid "derogation type missing"
+msgstr "Type de dérogation manquant"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "en deux fois. Il s’agit là d’une facilité de\n"
+"                                    paiement offerte par le TCO, en rappelant que l’abonnement est toujours annuel et que\n"
+"                                    le deuxième paiement sera donc obligatoire."
+msgstr "en deux fois. Il s’agit là d’une facilité de\n"
+"                                    paiement offerte par le TCO, en rappelant que l’abonnement est toujours annuel et que\n"
+"                                    le deuxième paiement sera donc obligatoire."
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "en une fois"
+msgstr "en une fois"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:305
+#, python-format
+msgid "establishment missing"
+msgstr "Établissement manquant"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "et règlement de l'abonnement"
+msgstr "et règlement de l'abonnement"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "et son coupon transport vous seront remis :<br/>\n"
+"                                - Par voie postale (si paiement en ligne)<br/>\n"
+"                                - Ou en agence (si paiement en agence).\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                Nous vous invitons à prendre connaissance avec votre enfant du règlement des transports\n"
+"                                scolaires, en particulier concernant les règles de sécurité et de bon comportement des\n"
+"                                élèves à bord du car, et des responsabilités qui incombent aux familles. Le règlement est\n"
+"                                téléchargeable sur www.karouest.re.\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                Nous vous prions d'agréer,"
+msgstr "et son coupon transport vous seront remis :<br/>\n"
+"                                - Par voie postale (si paiement en ligne)<br/>\n"
+"                                - Ou en agence (si paiement en agence).\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                Nous vous invitons à prendre connaissance avec votre enfant du règlement des transports\n"
+"                                scolaires, en particulier concernant les règles de sécurité et de bon comportement des\n"
+"                                élèves à bord du car, et des responsabilités qui incombent aux familles. Le règlement est\n"
+"                                téléchargeable sur www.karouest.re.\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                Nous vous prions d'agréer,"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_product_pricelist_family_quotient_max
+msgid "family quotient max"
+msgstr "Quotient familial maximum"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_product_pricelist_family_quotient_min
+msgid "family quotient min"
+msgstr "Quotient familial minimum"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_horanet_school_establishment
+msgid "horanet.school.establishment"
+msgstr "horanet.school.establishment"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_horanet_transport_config
+msgid "horanet.transport.config"
+msgstr "horanet.transport.config"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:321
+#, python-format
+msgid "invoice period missing"
+msgstr "Période de règlement manquante"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_invoicing_wizard
+msgid "invoicing.wizard"
+msgstr "invoicing.wizard"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "le prix de votre abonnement pour la campagne scolaire du"
+msgstr "le prix de votre abonnement pour la campagne scolaire du"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:183
+#, python-format
+msgid "month"
+msgstr "mois"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:183
+#, python-format
+msgid "months"
+msgstr "mois"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "par"
+msgstr "par"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_partner_contact_identification_wizard_create_medium
+msgid "partner.contact.identification.wizard.create.medium"
+msgstr "partner.contact.identification.wizard.create.medium"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:326
+#, python-format
+msgid "recipient missing"
+msgstr "Bénéficiaire manquant"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:303
+#, python-format
+msgid "regime missing"
+msgstr "Régime manquant"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_report_tco_inscription_transport_scolaire_global_report_view
+msgid "report.tco_inscription_transport_scolaire.global_report_view"
+msgstr "report.tco_inscription_transport_scolaire.global_report_view"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "s'élève à"
+msgstr "s'élève à"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:307
+#, python-format
+msgid "school cycle missing"
+msgstr "Cycle scolaire manquant"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,help:tco_inscription_transport_scolaire.field_tco_inscription_transport_scolaire_responsible_city
+msgid "select the city"
+msgstr "sélectionnez la ville"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_product_product_tco_inscription_is_derogation
+msgid "tco incription derogation"
+msgstr "Inscription TCO en dérogation"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_account_payment_term_tco_period_id
+msgid "tco inscription period"
+msgstr "Période d'inscription TCO"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_product_product_tco_inscription_is_student
+msgid "tco inscription student"
+msgstr "Inscription TCO étudiante"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_account_payment_term_tco_inscription_invoice_period
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_product_product_tco_inscription_invoice_period
+msgid "tco invoice period"
+msgstr "Période de règlement d'inscripton TCO"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_product_product_tco_transport_titre
+#: model:ir.model.fields,field_description:tco_inscription_transport_scolaire.field_product_template_tco_transport_titre
+msgid "tco transport titre"
+msgstr "Titre de transport d'inscription TCO"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_tco_inscription_period
+msgid "tco.inscription.period"
+msgstr "tco.inscription.period"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_tco_inscription_refuse
+msgid "tco.inscription.refuse"
+msgstr "tco.inscription.refuse"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_tco_inscription_transport_scolaire
+msgid "tco.inscription.transport.scolaire"
+msgstr "tco.inscription.transport.scolaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_tco_terminal
+msgid "tco.terminal"
+msgstr "tco.terminal"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_tco_transport_line
+msgid "tco.transport.line"
+msgstr "tco.transport.line"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_tco_transport_station
+msgid "tco.transport.station"
+msgstr "tco.transport.station"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.model,name:tco_inscription_transport_scolaire.model_tco_transport_stop
+msgid "tco.transport.stop"
+msgstr "tco.transport.stop"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "terms and conditions"
+msgstr "termes et conditions"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:348
+#, python-format
+msgid "the establishment is not in the selected school cycle"
+msgstr "l'établissement n'est pas dans le cycle scolaire sélectionné"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:319
+#, python-format
+msgid "transport titre missing"
+msgstr "Titre de transport manquant"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "votre choix d’un abonnement"
+msgstr "votre choix d’un abonnement"
+
+#. module: tco_inscription_transport_scolaire
+#: code:addons/tco_inscription_transport_scolaire/models/tco_inscription.py:177
+#, python-format
+msgid "{nb_year} {year_txt}"
+msgstr "{nb_year} {year_txt}"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.create_inscription
+msgid "Établissement scolaire"
+msgstr "Établissement scolaire"
+
+#. module: tco_inscription_transport_scolaire
+#: model:ir.ui.view,arch_db:tco_inscription_transport_scolaire.global_report_view
+msgid "€\n"
+"                                pour assurer le transport de votre enfant.\n"
+"                                En effet, le TCO attache une grande importance au principe de solidarité qui vise à indexer\n"
+"                                les tarifs sur\n"
+"                                les revenus de la famille. Plus de 15 millions d’euros sont investis chaque année par le TCO\n"
+"                                pour\n"
+"                                l’organisation des transports scolaires. La communauté d’agglomération prend à sa charge\n"
+"                                environ 85 %\n"
+"                                du coût réel du transport et les familles ne contribuent par leur abonnement qu’à hauteur\n"
+"                                d’environ 15 %.\n"
+"                                <br/>\n"
+"                                Vous avez choisi l'abonnement"
+msgstr "€\n"
+"                                pour assurer le transport de votre enfant.\n"
+"                                En effet, le TCO attache une grande importance au principe de solidarité qui vise à indexer\n"
+"                                les tarifs sur\n"
+"                                les revenus de la famille. Plus de 15 millions d’euros sont investis chaque année par le TCO\n"
+"                                pour\n"
+"                                l’organisation des transports scolaires. La communauté d’agglomération prend à sa charge\n"
+"                                environ 85 %\n"
+"                                du coût réel du transport et les familles ne contribuent par leur abonnement qu’à hauteur\n"
+"                                d’environ 15 %.\n"
+"                                <br/>\n"
+"                                Vous avez choisi l'abonnement"
+

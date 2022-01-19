@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="mail_template_summary_pickup_request_notification" model="mail.template">
+        <field name="name">Pickup request daily notification</field>
+        <field name="email_from">${user.company_id.email}</field>
+        <field name="subject">Pickup request summary</field>
+        <field name="email_to">${object.email}</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="lang">${object.lang or ''}</field>
+        <field name="auto_delete" eval="True"/>
+        <field name="body_html"><![CDATA[
+            <html lang="fr">
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <title>
+                    Notification de relèves de bennes
+                </title>
+                <style>
+                    table {
+                        color:rgb(76, 76, 76);
+                        font-size: 1em;
+                        border-collapse: collapse;
+                        border: 1px solid rgb(221, 221, 221);
+                    }
+                    table thead tr {
+                        background-color: rgb(203, 212, 255);
+                    }
+                    table thead th{
+                        font-size:inherit;
+                        color:rgb(76, 76, 76);
+                        border: 1px solid rgb(221, 221, 221);
+                        padding: 6px; vertical-align:middle;
+                    }
+                    table tbody td{
+                        font-size:inherit;
+                        color:rgb(76, 76, 76);
+                        border: 1px solid rgb(221, 221, 221);
+                        padding: 8px;
+                        vertical-align:middle;
+                        font-weight: normal;
+                    }
+                </style>
+            </head>
+            <body>
+                <div style="max-width:800px;
+                    font-size:13px;
+                    font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;
+                    color:rgb(76, 76, 76);">
+                    <p>
+                        <span>
+                            Bonjour,
+                        </span>
+                    </p>
+
+                    <p>
+                        <span>
+                            Ci dessous le résumé des demandes des relèves de bennes
+                            % if 'current_time' in ctx
+                                (état au ${format_tz(ctx.current_time)})
+                            % endif
+                        </span>
+                    </p>
+                    <br/>
+                    % for contract in object.environment_pickup_contract_ids:
+                        <p style="font-weight: bold;">
+                            Contrat n° ${contract.name|e} de la déchetterie "${contract.waste_site_id.name|e}" :
+                        </p>
+                        % if contract.active_environment_pickup_request_ids:
+                            <table width="800px">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: left;">
+                                            Emplacement
+                                        </th>
+                                        <th style="text-align: left;">
+                                            Déchet
+                                        </th>
+                                        <th style="width:15em;">
+                                            Date d'enlèvement souhaitée
+                                        </th>
+                                        <th style="width:8em;">
+                                            Priorité
+                                        </th>
+                                        <th style="width:4em;">
+                                            ID
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    % for pickup in contract.active_environment_pickup_request_ids:
+                                        <tr style="background-color:${loop.cycle('inherit', 'rgb(238, 240, 251)')};">
+                                            <td>
+                                                ${pickup.emplacement_id.name|e}
+                                            </td>
+                                            <td>
+                                                % if pickup.emplacement_id.activity_id:
+                                                    ${pickup.emplacement_id.activity_id.name|e}
+                                                % else
+                                                    ---
+                                                % endif
+                                            </td>
+                                            <td style="text-align:center;">
+                                                ${format_tz(pickup.schedule_date) or '-&#45;&#45;'}
+                                            </td>
+                                            <td style="$text-align:center;color:${{'0':'green', '2':'orange', '3':'red'}.get(pickup.priority,'inherit')};">
+                                                ${{'0':'faible', '2':'haute', '3':'très haute'}.get(pickup.priority, 'normal')}
+                                            </td>
+                                            <td style="text-align:center;">
+                                                ${pickup.id}
+                                            </td>
+                                        </tr>
+                                    % endfor
+                                </tbody>
+                            </table>
+                        % else
+                            <p>Aucune relève en attente</p>
+                        % endif
+                        <br/>
+                    % endfor
+
+                    <br/>
+
+                    <p style="font-style: italic;">
+                        Ce courriel à été généré automatiquement, merci de ne pas y répondre.
+                    </p>
+                </div>
+            </body>
+            </html>
+            ]]>
+        </field>
+    </record>
+
+    <record id="mail_template_pickup_request_cancel_notification" model="mail.template">
+        <field name="name">Pickup request canceled notification</field>
+        <field name="email_from">${user.company_id.email}</field>
+        <field name="subject">Pickup request canceled (id : ${object.id})</field>
+        <field name="email_to">${object.service_provider_id.email}</field>
+        <field name="model_id" ref="model_environment_pickup_request"/>
+        <field name="lang">${object.lang or ''}</field>
+        <field name="auto_delete" eval="False"/>
+        <field name="body_html"><![CDATA[
+            <html lang="fr">
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <title>
+                    Notification de relèves de bennes
+                </title>
+                <style>
+                    table {
+                        color:rgb(76, 76, 76);
+                        font-size: 1em;
+                        border-collapse: collapse;
+                        border: 1px solid rgb(221, 221, 221);
+                    }
+                    table thead tr {
+                        background-color: rgb(255, 209, 204);
+                    }
+                    table thead th{
+                        font-size:inherit;
+                        color:rgb(76, 76, 76);
+                        border: 1px solid rgb(221, 221, 221);
+                        padding: 6px; vertical-align:middle;
+                    }
+                    table tbody td{
+                        font-size:inherit;
+                        color:rgb(76, 76, 76);
+                        border: 1px solid rgb(221, 221, 221);
+                        padding: 8px;
+                        vertical-align:middle;
+                        font-weight: normal;
+                    }
+                </style>
+            </head>
+            <body>
+                <div style="max-width:800px;
+                    font-size:13px;
+                    font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;
+                    color:rgb(76, 76, 76);">
+                    <p>
+                        <span>
+                            Bonjour,
+                        </span>
+                    </p>
+
+                    <p>
+                        <span>
+                            La demande de relève de benne suivante à été annulée
+                            % if object.close_date:
+                                (au ${format_tz(object.close_date)})
+                            % endif
+                        </span>
+                    </p>
+                    <br/>
+                    <p style="font-weight: bold;">
+                        Contrat n° ${object.contract_id.name|e} de la déchetterie "${object.contract_id.waste_site_id.name|e}" :
+                    </p>
+                    <table width="800px">
+                        <thead>
+                            <tr>
+                                <th style="text-align: left;">
+                                    Emplacement
+                                </th>
+                                <th style="text-align: left;">
+                                    Déchet
+                                </th>
+                                <th style="width:15em;">
+                                    Date d'enlèvement d'origine
+                                </th>
+                                <th style="width:8em;">
+                                    Priorité
+                                </th>
+                                <th style="width:4em;">
+                                    ID
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    ${object.emplacement_id.name|e}
+                                </td>
+                                <td>
+                                    % if object.emplacement_id.activity_id:
+                                        ${object.emplacement_id.activity_id.name|e}
+                                    % else
+                                        ---
+                                    % endif
+                                </td>
+                                <td style="text-align:center;text-decoration: line-through;">
+                                    ${format_tz(object.schedule_date) or '---'}
+                                </td>
+                                <td style="$text-align:center;text-decoration: line-through;
+                                    color:${{'0':'green', '2':'orange', '3':'red'}.get(object.priority,'inherit')};">
+                                    ${{'0':'faible', '2':'haute', '3':'très haute'}.get(object.priority, 'normal')}
+                                </td>
+                                <td style="text-align:center;">
+                                    ${object.id}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br/>
+
+                    <p style="font-style: italic;">
+                        Ce courriel à été généré automatiquement, merci de ne pas y répondre.
+                    </p>
+                </div>
+            </body>
+            </html>
+            ]]>
+        </field>
+    </record>
+
+    <template id="mail_emplacement_layout" name="Mail emplacement layout">
+        <html>
+            <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+                <title>
+                    Notification de relèves de bennes
+                </title>
+                <style>
+                    table {
+                    color:rgb(76, 76, 76);
+                    font-size: 1em;
+                    border-collapse: collapse;
+                    border: 1px solid rgb(221, 221, 221);
+                    }
+                    table thead tr {
+                    background-color: rgb(203, 212, 255);
+                    }
+                    table thead th{
+                    font-size:inherit;
+                    color:rgb(76, 76, 76);
+                    border: 1px solid rgb(221, 221, 221);
+                    padding: 6px; vertical-align:middle;
+                    }
+                    table tbody td{
+                    font-size:inherit;
+                    color:rgb(76, 76, 76);
+                    border: 1px solid rgb(221, 221, 221);
+                    padding: 8px;
+                    vertical-align:middle;
+                    font-weight: normal;
+                    }
+                    div.container {
+                    max-width:800px;
+                    font-size:13px;
+                    font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;
+                    color:rgb(76, 76, 76);
+                    }
+                </style>
+
+                <div class="container">
+                    <t t-raw="0"/>
+                </div>
+            </head>
+        </html>
+    </template>
+
+    <template id="mail_summary_emplacement_filling_level_notification" name="Emplacement filling level notification">
+        <t t-set="has_required_context_value"
+           t-value="env and env.context and 'emplacements_by_wastesite' in env.context"/>
+        <t t-if="not has_required_context_value">
+            <span t-translation="off" style="color:red;">
+                Mail error : missing 'emplacements_by_wastesite' context value
+            </span>
+        </t>
+        <t t-if="has_required_context_value">
+            <t t-set="emplacements_by_wastesite" t-value="env.context.get('emplacements_by_wastesite', None)"/>
+
+            <t t-call="environment_waste_collect.mail_emplacement_layout">
+                <p>
+                    <span t-translation="on">
+                        Bonjour,
+                    </span>
+                </p>
+                <p>
+                    <span t-translation="on">
+                        Ci dessous le résumé des taux de remplissage de bennes.
+                        <t t-if="env.context.get('minimum_filling_level', 0) > 0">
+                            Seul les emplacements remplis à <t
+                                t-esc="str(env.context.get('minimum_filling_level'))"/>% ou plus sont affichés.
+                        </t>
+                        <t t-if="env.context.get('user_time', None)">
+                            <br/>
+                            <span style="font-style: italic;">
+                                État au
+                                <t t-esc="env.context.get('user_time')"/>
+                            </span>
+                        </t>
+
+                    </span>
+                </p>
+                <br/>
+                <t t-if="not emplacements_by_wastesite">
+                    Il n'y a aucun emplacement à afficher.
+                </t>
+                <t t-foreach="emplacements_by_wastesite" t-as="e_by_ws">
+                    <t t-set="waste_site" t-value="e_by_ws[0]"/>
+                    <t t-set="emplacements" t-value="e_by_ws[1]"/>
+                    <div style="font-weight: bold; margin-top:1em;">
+                        <t t-esc="waste_site.name"/>
+                    </div>
+                    <table width="800px">
+                        <thead>
+                            <tr>
+                                <th style="width:6em; text-align: left; padding-left:1em;">
+                                    Code
+                                </th>
+                                <th style="text-align: left; padding-left:1em;">
+                                    Déchet
+                                </th>
+                                <th style="width:200px;">
+                                    Niveau de remplissage
+                                </th>
+                                <th style="width:12em;">
+                                    Date de mise à jour
+                                </th>
+                                <th style="width:4em; text-align: center;">
+                                    ID
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="emplacements" t-as="emplacement">
+                                <tr t-attf-style="background-color:{{'inherit' if emplacement_even else 'rgb(238, 240, 251)'}};">
+                                    <td style="padding-left:1em;">
+                                        <t t-esc="emplacement.code or '---'"/>
+                                    </td>
+                                    <td style="padding-left:1em;">
+                                        <t t-esc="emplacement.activity_id.name"/>
+                                    </td>
+                                    <td style="text-align:center; padding:4px;">
+                                        <t t-set="filling_level"
+                                           t-value="max(0,min(100, emplacement.filling_level or 0))"/>
+                                        <!--
+                                        Code custom de "widget" progress bar coloré
+                                        PS : le hsl() ne fonctionne pas en mail, il faut donc du rgb()
+                                        -->
+                                        <table style="width: 100%; border-collapse: collapse;
+                                                      background-color: white; border: 1px solid rgb(221, 221, 221);">
+                                            <tbody>
+                                                <tr style="font-weight: bolder; padding: 0px;">
+                                                    <td t-attf-style="border: none; padding: 0.2em; text-align: center; color: inherit; font-weight: inherit;
+                                                        background-color: rgb({{str(93 + (min(filling_level,40) * (137/40.)))}},{{str(230 - max(filling_level-40,0) * (205/60.))}},25);
+                                                        width: {{str(max(filling_level,5))}}%;">
+                                                        <t t-esc="str(filling_level) + '%'"/>
+                                                    </td>
+                                                    <td t-attf-style="border: none; padding:0px; width: {{str(100-filling_level)}}%;">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <span t-field="emplacement.filling_update_date"/>
+                                    </td>
+                                    <td style="text-align:center;">
+                                        <t t-esc="emplacement.id"/>
+                                    </td>
+                                </tr>
+
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+                <br/>
+                <p>
+                    -----------------------------
+                </p>
+
+                <p style="font-style: italic;">
+                    Ce courriel à été généré automatiquement, merci de ne pas y répondre.
+                </p>
+            </t>
+        </t>
+    </template>
+
+    <record id="mail_template_summary_emplacement_filling_level_notification" model="mail.template">
+        <field name="name">Emplacement filling level notification</field>
+        <field name="email_from">${user.company_id.email}</field>
+        <field name="subject">Emplacement filling level summary</field>
+        <field name="email_to">${object.email}</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="lang">${object.lang or ''}</field>
+        <field name="body_type">qweb</field>
+        <field name="body_view_id" ref="mail_summary_emplacement_filling_level_notification"/>
+        <field name="auto_delete" eval="True"/>
+        <field name="body_html" eval="False"/>
+    </record>
+</odoo>
+

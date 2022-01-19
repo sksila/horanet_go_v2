@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Attributs pour PES_PJ -->
+        <record id="pes_attrs_pj_1_2_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Fichier</field>
+            <field name="code">MIMEType</field>
+            <field name="description">Attribut pour Fichier</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">application/pdf</field>
+        </record>
+        <record id="pes_attrs_pj_1_2_3" model="pes.bloc.attrs">
+            <field name="name">Attrs pour NomPJ</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour NomPJ</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value_type">simple</field>
+            <field name="value">get_pdf_name</field>
+        </record>
+        <record id="pes_attrs_pj_1_2_4" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TypePJ</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TypePJ</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value_type">reference</field>
+            <field name="reference_id" ref="horanet_demat_ormc_psv2.pes_ref_4"/>
+            <field name="value">PES Facture</field>
+        </record>
+        <record id="pes_attrs_pj_1_2_5" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Description</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Description</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">name</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_contact_personal_information" model="res.groups">
+        <field name="name">Contact personal information</field>
+        <field name="category_id" ref="horanet_go.horanet_go_category"/>
+        <field name="comment">Used to restrict access to personal information page on contact form</field>
+    </record>
+
+    <record id="group_contact_information_gender" model="res.groups">
+        <field name="name">Access gender information</field>
+        <field name="category_id" ref="horanet_go.horanet_go_category"/>
+        <field name="comment">Used to restrict access to sensible information (gender)</field>
+        <field name="share">1</field>
+    </record>
+
+    <record id="group_contact_information_birth_date" model="res.groups">
+        <field name="name">Access birth date information</field>
+        <field name="category_id" ref="horanet_go.horanet_go_category"/>
+        <field name="comment">Used to restrict access to sensible information (birth date)</field>
+        <field name="share">1</field>
+    </record>
+    <record id="group_contact_information_birth_place" model="res.groups">
+        <field name="name">Access birth place information</field>
+        <field name="category_id" ref="horanet_go.horanet_go_category"/>
+        <field name="comment">Used to restrict access to sensible information (birth place)</field>
+        <field name="share">1</field>
+    </record>
+    <record id="group_contact_information_quotient_fam" model="res.groups">
+        <field name="name">Access family quotient information</field>
+        <field name="category_id" ref="horanet_go.horanet_go_category"/>
+        <field name="comment">Used to restrict access to sensible information (family quotient)</field>
+        <field name="share">1</field>
+    </record>
+
+    <record id="horanet_go.group_horanet_go_citizen" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_contact_personal_information'))]"/>
+    </record>
+</odoo>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_terminal_software" model="ir.ui.view">
+        <field name="name">tco.terminal.software.form</field>
+        <field name="model">tco.terminal.software</field>
+        <field name="arch" type="xml">
+            <form string="Terminal software">
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="version_id"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_terminal_software" model="ir.ui.view">
+        <field name="name">tco.terminal.software.tree</field>
+        <field name="model">tco.terminal.software</field>
+        <field name="arch" type="xml">
+            <tree string="Terminal software">
+                <field name="name"/>
+                <field name="version_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_terminal_software" model="ir.actions.act_window">
+        <field name="name">Terminal software</field>
+        <field name="res_model">tco.terminal.software</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_terminal_software"/>
+    </record>
+</odoo>

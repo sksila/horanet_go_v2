@@ -1,0 +1,532 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* environment_production_point
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-03 14:33+0000\n"
+"PO-Revision-Date: 2018-09-03 14:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_street2
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_street3
+msgid "Additional address"
+msgstr "Complément d'adresse"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_form_view
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "Additional address (floor, stairs, apartment number) ..."
+msgstr "Complément d'adresse (n° appartement, étage, escalier) ..."
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_street2
+msgid "Additional address 2"
+msgstr "Complément d'adresse 2"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_street3
+msgid "Additional address 3"
+msgstr "Complément d'adresse 3"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_display_address
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_form_view
+msgid "Address"
+msgstr "Adresse"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_horanet_environment_config_allow_multiple_moves_on_same_production_point
+msgid "Allow multiple moves on same production point"
+msgstr "Autoriser plusieurs emménagements sur le même point de production"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_assignation_ids
+msgid "Assignations"
+msgstr "Assignations"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_search_view
+msgid "Assigned partner"
+msgstr "Usager assigné"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_attribution_partner_ids
+msgid "Attribution partners"
+msgstr "Attribution des usagers"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "By validating this stage, you will create partner's move"
+msgstr "En validant cette étape, vous allez créer l'emménagement du producteur"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "By validating this stage, you will end the old partner's move and create the new one"
+msgstr "En validant cette étape, vous allez mettre fin à l'ancien emménagement du producteur et lui en créer un nouveau"
+
+#. module: environment_production_point
+#: code:addons/environment_production_point/models/production_point.py:24
+#, python-format
+msgid "Cannot contact geolocation servers. Please make sure that your Internet connection is up and running (%s)."
+msgstr "Impossible de contacter les serveurs de géolocalisation. Veuillez vous assurer que votre connexion internet fonction (%s)."
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "Change residence type"
+msgstr "Changer le type de résidence"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_city_id
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_city_id
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_form_view
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "City"
+msgstr "Ville (odoo)"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_city_country_id
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_country_id
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_form_view
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "Country ..."
+msgstr "Pays ..."
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_city_state_id
+msgid "Country state id"
+msgstr "Département"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.inherited_view_partner_setup_wizard_summary_production_point
+msgid "Create another production point"
+msgstr "Créer un autre point de production"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_create_or_select_production_point
+msgid "Create or select production point"
+msgstr "Créer ou sélectionner un point de production"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_create_uid
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_create_date
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "Current production point"
+msgstr "Point de production actuel"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_display_name
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: environment_production_point
+#: code:addons/environment_production_point/models/partner_move.py:145
+#, python-format
+msgid "End date should be posterior or equal to start date."
+msgstr "La date de fin doit être supérieure ou égale à la date de début."
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_close_contrat_wizard
+msgid "End move"
+msgstr "Mettre fin à l'emménagement"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_wizard_close_contract_has_active_moves
+msgid "Has active moves"
+msgstr "Possède des emménagements actifs"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_id
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_id
+msgid "ID"
+msgstr "ID"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_is_active
+msgid "Is active"
+msgstr "Actif"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move___last_update
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_write_uid
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_write_date
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_shown_production_point_move_ids
+msgid "Last moves"
+msgstr "Derniers emménagements"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_localisation_map
+msgid "Localisation"
+msgstr "Localisation"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_form_view
+msgid "Localize"
+msgstr "Localiser"
+
+#. module: environment_production_point
+#: selection:partner.move,residence_type:0
+#: selection:partner.setup.wizard,new_residence_type:0
+#: selection:partner.setup.wizard,old_residence_type:0
+msgid "Main residence"
+msgstr "Résidence principale"
+
+#. module: environment_production_point
+#: selection:partner.setup.wizard,create_or_select_production_point:0
+msgid "Modification"
+msgstr "Modification"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_contact_identification_assignation_move_id
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_wizard_close_contract_move_id
+msgid "Move"
+msgstr "Emménagement"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_wizard_close_contract_move_end_date
+msgid "Move end date"
+msgstr "Date de fin d'emménagement"
+
+#. module: environment_production_point
+#: selection:partner.setup.wizard,create_or_select_production_point:0
+msgid "Move in"
+msgstr "Emménagement"
+
+#. module: environment_production_point
+#: selection:partner.setup.wizard,create_or_select_production_point:0
+msgid "Move in the collectivity"
+msgstr "Déménage dans la collectivité"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.partner_move_form_view
+msgid "Move name"
+msgstr "Nom de l'emménagement"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_partner_move_ids
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_production_point_move_ids
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_partner_move_ids
+#: model:ir.model.fields,field_description:environment_production_point.field_res_partner_partner_move_ids
+#: model:ir.model.fields,field_description:environment_production_point.field_res_users_partner_move_ids
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_close_contrat_wizard
+msgid "Moves"
+msgstr "Emménagements"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_res_partner_move_assignation_ids
+#: model:ir.model.fields,field_description:environment_production_point.field_res_users_move_assignation_ids
+msgid "Moves related assignations"
+msgstr "Assignations liées aux emménagements"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_name
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_new_production_point_id
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "New production point"
+msgstr "Nouveau point de production"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_new_production_point_ids
+msgid "New production points"
+msgstr "Nouveaux points de production"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_count_new_production_points
+msgid "New production points count"
+msgstr "New production points count"
+
+#. module: environment_production_point
+#: code:addons/environment_production_point/models/inherited_partner.py:65
+#, python-format
+msgid "Operator ({bad_operator}) not supported"
+msgstr "L'opérateur ({bad_operator}) n'est pas supporté"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_partner_id
+msgid "Owner"
+msgstr "Propriétaire"
+
+#. module: environment_production_point
+#: model:ir.model,name:environment_production_point.model_res_partner
+msgid "Partner"
+msgstr "Producteur"
+
+#. module: environment_production_point
+#: model:ir.actions.act_window,name:environment_production_point.action_partner_move
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_old_partner_move_id
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_partner_move_id
+#: model:ir.ui.menu,name:environment_production_point.partner_move_menu
+msgid "Partner move"
+msgstr "Emménagement"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.inherited_view_partner_setup_wizard_summary_production_point
+msgid "Partner moves"
+msgstr "Emménagements"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_partners_production_point_ids
+msgid "Partner production points"
+msgstr "Points de production du producteur"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.inherited_res_partner_form_view
+msgid "Partner setup"
+msgstr "Assistant création"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_partner_id
+msgid "Producer"
+msgstr "Producteur"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_production_point_id
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_old_production_point_id
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_form_view
+msgid "Production point"
+msgstr "Point de production"
+
+#. module: environment_production_point
+#: model:partner.setup.wizard.stage,name:environment_production_point.wizard_stage_production_point_attribution
+msgid "Production point attribution"
+msgstr "Gestion des points de production"
+
+#. module: environment_production_point
+#: model:ir.actions.act_window,name:environment_production_point.production_point_action
+#: model:ir.ui.menu,name:environment_production_point.production_point_menu
+#: model:ir.ui.view,arch_db:environment_production_point.config_settings_form_view
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_tree_view
+msgid "Production points"
+msgstr "Points de production"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_count_production_points
+msgid "Production points count"
+msgstr "Nombre de points de production"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_residence_type
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_new_residence_type
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_old_residence_type
+msgid "Residence type"
+msgstr "Type de résidence"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_search_view
+msgid "Search production point"
+msgstr "Rechercher un point de production"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_form_view
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "Second additional address (building, access) ..."
+msgstr "Deuxième complément d'adresse (bâtiment, porte) ..."
+
+#. module: environment_production_point
+#: selection:partner.move,residence_type:0
+#: selection:partner.setup.wizard,new_residence_type:0
+#: selection:partner.setup.wizard,old_residence_type:0
+msgid "Secondary residence"
+msgstr "Résidence secondaire"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.partner_move_form_view
+msgid "Settings"
+msgstr "Configuration"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_state_id
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_state_id
+msgid "State"
+msgstr "État"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_form_view
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "State..."
+msgstr "Département..."
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_street_id
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_street_id
+msgid "Street"
+msgstr "Rue"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_form_view
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "Street number..."
+msgstr "N°..."
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_form_view
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "Street..."
+msgstr "Rue..."
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_subscription_id
+msgid "Subscription"
+msgstr "Abonnement"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_move_tag_ids
+msgid "Tags"
+msgstr "Étiquettes"
+
+#. module: environment_production_point
+#: code:addons/environment_production_point/models/production_point.py:46
+#: sql_constraint:production.point:0
+#, python-format
+msgid "The address must be unique"
+msgstr "L'adresse doit être unique"
+
+#. module: environment_production_point
+#: code:addons/environment_production_point/wizards/inherited_partner_setup_wizard.py:298
+#, python-format
+msgid "There is a current move on this production point"
+msgstr "Il y a un emménagement en cours sur ce point de production"
+
+#. module: environment_production_point
+#: code:addons/environment_production_point/models/partner_move.py:170
+#, python-format
+msgid "There is already a partner at this production point for the provided dates"
+msgstr "Un producteur est déjà présent sur ce point de production durant cette période"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_close_contrat_wizard
+msgid "This operation cannot be undone, are you sure you want to end this move?"
+msgstr "Cette opération est irréversible, êtes-vous sûr de vouloir mettre fin à cet emménagement ?"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "Validate new production point"
+msgstr "Valider le nouveau point de production"
+
+#. module: environment_production_point
+#: code:addons/environment_production_point/wizards/inherited_partner_setup_wizard.py:275
+#, python-format
+msgid "You must select or create a production point to continue"
+msgstr "Vous devez sélectionner ou créer un point de production pour continuer"
+
+#. module: environment_production_point
+#: code:addons/environment_production_point/wizards/inherited_partner_setup_wizard.py:280
+#, python-format
+msgid "You must select residence type"
+msgstr "Vous devez séléctionner un type de résidence"
+
+#. module: environment_production_point
+#: model:ir.ui.view,arch_db:environment_production_point.production_point_form_view
+#: model:ir.ui.view,arch_db:environment_production_point.view_partner_setup_wizard_stage_production_point_attribution
+msgid "ZIP"
+msgstr "Code postal"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_zip
+msgid "Zip"
+msgstr "Code postal"
+
+#. module: environment_production_point
+#: model:ir.model.fields,field_description:environment_production_point.field_partner_setup_wizard_zip_id
+#: model:ir.model.fields,field_description:environment_production_point.field_production_point_zip_id
+msgid "Zip code"
+msgstr "Code postal"
+
+#. module: environment_production_point
+#: model:ir.model,name:environment_production_point.model_device_query
+msgid "device.query"
+msgstr "device.query"
+
+#. module: environment_production_point
+#: model:ir.model,name:environment_production_point.model_horanet_environment_config
+msgid "horanet.environment.config"
+msgstr "horanet.environment.config"
+
+#. module: environment_production_point
+#: model:ir.model,name:environment_production_point.model_horanet_operation
+msgid "horanet.operation"
+msgstr "horanet.operation"
+
+#. module: environment_production_point
+#: model:ir.model,name:environment_production_point.model_partner_contact_identification_assignation
+msgid "partner.contact.identification.assignation"
+msgstr "partner.contact.identification.assignation"
+
+#. module: environment_production_point
+#: model:ir.model,name:environment_production_point.model_partner_contact_identification_tag
+msgid "partner.contact.identification.tag"
+msgstr "partner.contact.identification.tag"
+
+#. module: environment_production_point
+#: model:ir.model,name:environment_production_point.model_partner_move
+msgid "partner.move"
+msgstr "partner.move"
+
+#. module: environment_production_point
+#: model:ir.model,name:environment_production_point.model_partner_setup_wizard
+msgid "partner.setup.wizard"
+msgstr "partner.setup.wizard"
+
+#. module: environment_production_point
+#: model:ir.model,name:environment_production_point.model_partner_wizard_close_contract
+msgid "partner.wizard.close.contract"
+msgstr "partner.wizard.close.contract"
+
+#. module: environment_production_point
+#: model:ir.model,name:environment_production_point.model_production_point
+msgid "production.point"
+msgstr "production.point"

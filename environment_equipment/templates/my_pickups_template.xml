@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="my_pickups" name="Your Pickups">
+        <t t-call="website_portal.portal_layout">
+            <h3 class="page-header">Your pickups</h3>
+            <div>
+                <p>Here is the list of all pickups related to your equipments.</p>
+                <table class="table table-hover" t-if="pickups">
+                    <thead>
+                        <tr>
+                            <th style="vertical-align: middle">Equipment</th>
+                            <th style="vertical-align: middle">Category</th>
+                            <th style="vertical-align: middle">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="pickups" t-as="pickup">
+                            <td>
+                                <span t-field="pickup.maintenance_equipment_id"/>
+                            </td>
+                            <td>
+                                <span t-field="pickup.maintenance_equipment_id.category_id"/>
+                            </td>
+                            <td>
+                                <span t-field="pickup.time"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p t-if="not pickups">
+                    <b>You dont have pickups.</b>
+                </p>
+            </div>
+        </t>
+    </template>
+</odoo>

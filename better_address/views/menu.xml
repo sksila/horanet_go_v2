@@ -1,0 +1,49 @@
+<odoo>
+    <!--Menu Location (in collectivity>settings)-->
+    <menuitem id="menu_horanet_address" name="Location"
+              parent="horanet_go.menu_base_collectivity" sequence="90"
+              groups="base.group_system,better_address.group_address_manage"/>
+
+    <!--Street numbers-->
+    <menuitem id="res_street_number_menu" name="Street numbers"
+              parent="menu_horanet_address"
+              action="better_address.res_street_number_action" sequence="10"
+              groups="better_address.group_address_manage"/>
+    <!--Street-->
+    <menuitem id="res_street_menu" name="Streets"
+              parent="menu_horanet_address"
+              action="better_address.res_street_action" sequence="15"
+              groups="better_address.group_address_manage"/>
+    <!--Cities-->
+    <menuitem id="menu_res_city" name="Cities"
+              parent="menu_horanet_address"
+              action="action_res_city" sequence="20"
+              groups="better_address.group_address_manage"/>
+    <!--ZIP-->
+    <menuitem id="res_zip_menu" name="ZIP"
+              parent="menu_horanet_address"
+              action="action_res_zip" sequence="25"
+              groups="better_address.group_address_manage"/>
+    <!--Country states-->
+    <menuitem id="menu_country_state_partner" name="Country states"
+              parent="menu_horanet_address"
+              action="action_res_country_state" sequence="30"
+              groups="base.group_system"/>
+    <!--Countries-->
+    <menuitem id="menu_country_partner"
+              parent="menu_horanet_address"
+              action="base.action_country" sequence="35"
+              groups="base.group_no_one"/>
+    <!--Country group-->
+    <menuitem id="menu_country_group" name="Country Group"
+              parent="menu_horanet_address"
+              action="base.action_country_group" sequence="40"
+              groups="base.group_no_one"/>
+
+    <!--Wizard import address data-->
+    <menuitem id="wizard_import_data_fr_menu"
+              action="wizard_import_data_fr_action"
+              parent="menu_horanet_address"
+              sequence="50"
+              groups="base.group_system"/>
+</odoo>

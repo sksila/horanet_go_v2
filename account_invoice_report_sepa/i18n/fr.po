@@ -1,0 +1,712 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_invoice_report_sepa
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-11 11:02+0000\n"
+"PO-Revision-Date: 2018-12-11 11:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "&amp;nbsp;"
+msgstr "&amp;nbsp;"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Titulaire du compte:"
+msgstr "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Titulaire du compte:"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Montant :"
+msgstr "&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Montant :"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "* 12 vidages inclus ou 52 accès badge magnétique sauf personnes incontinentes 18 vidages inclus et surdotation possible. <br/>\n"
+"            ** 6 vidages inclus ou 26 accès badge magnétique."
+msgstr "* 12 vidages inclus ou 52 accès badge magnétique sauf personnes incontinentes 18 vidages inclus et surdotation possible. <br/>\n"
+"            ** 6 vidages inclus ou 26 accès badge magnétique."
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "- DECHETS"
+msgstr "- DECHETS"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "23"
+msgstr "23"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "49"
+msgstr "49"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "706"
+msgstr "706"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "941133000175"
+msgstr "941133000175"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_payment_methods
+msgid "<br/>\n"
+"                <strong><span>www.questembert-communaute.fr</span></strong><br/>"
+msgstr "<br/>\n"
+"                <strong><span>www.questembert-communaute.fr</span></strong><br/>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<em>Pour les usagers ayant refusé de s'inscrire au service Déchets, application d'un tarif forfaitaire équivalent à un bac 180 litres vidé 18 fois (conformément au règlement de facturation).</em>"
+msgstr "<em>Pour les usagers ayant refusé de s'inscrire au service Déchets, application d'un tarif forfaitaire équivalent à un bac 180 litres vidé 18 fois (conformément au règlement de facturation).</em>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "<span style=\"position: absolute;left: -10px;\">DATE et LIEU</span>\n"
+"                                                <span style=\"position: absolute; float: right; right: -10px;\">SIGNATURE</span>"
+msgstr "<span style=\"position: absolute;left: -10px;\">DATE et LIEU</span>\n"
+"                                                <span style=\"position: absolute; float: right; right: -10px;\">SIGNATURE</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span>107.94 €</span>"
+msgstr "<span>107.94 €</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span>121.55 €</span>"
+msgstr "<span>121.55 €</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span>151.61 €</span>"
+msgstr "<span>151.61 €</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span>156.78 €</span>"
+msgstr "<span>156.78 €</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span>195.54 €</span>"
+msgstr "<span>195.54 €</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span>2.00 €</span>"
+msgstr "<span>2.00 €</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span>215.41 €</span>"
+msgstr "<span>215.41 €</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span>268.69 €</span>"
+msgstr "<span>268.69 €</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span>467.58 €</span>"
+msgstr "<span>467.58 €</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span>583.20 €</span>"
+msgstr "<span>583.20 €</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span>86.58 €</span>"
+msgstr "<span>86.58 €</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><em>0.89 €</em></span>"
+msgstr "<span><em>0.89 €</em></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><em>19.27 €</em></span>"
+msgstr "<span><em>19.27 €</em></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><em>3.56 €</em></span>"
+msgstr "<span><em>3.56 €</em></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><em>5.01 €</em></span>"
+msgstr "<span><em>5.01 €</em></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><em>6.46 €</em></span>"
+msgstr "<span><em>6.46 €</em></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><em>8.88 €</em></span>"
+msgstr "<span><em>8.88 €</em></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><em>Inclus</em></span>"
+msgstr "<span><em>Inclus</em></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><strong>120 l</strong></span>"
+msgstr "<span><strong>120 l</strong></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><strong>180 l</strong></span>"
+msgstr "<span><strong>180 l</strong></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><strong>240 l</strong></span>"
+msgstr "<span><strong>240 l</strong></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><strong>30 l (badge)</strong></span>"
+msgstr "<span><strong>30 l (badge)</strong></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><strong>340 l</strong></span>"
+msgstr "<span><strong>340 l</strong></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><strong>50 l (sac rouge)</strong></span>"
+msgstr "<span><strong>50 l (sac rouge)</strong></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<span><strong>770 l</strong></span>"
+msgstr "<span><strong>770 l</strong></span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_sepa_enforceable_title
+msgid "<span><strong>TITRE EXECUTOIRE</strong> en application de l’article L.\n"
+"            252 A du livre des procédures fiscales,\n"
+"            émis et rendu exécutoire conformément aux dispositions des articles L.1617-5, D.1617-23, R.2342-4 du code général des collectivités territoriales par Marie Claude COSTA RIBEIRO GOMES,\n"
+"            Présidente de Questembert Communauté ou son représentant dûment habilité par délégation.\n"
+"            Les montants sont fixés annuellement par délibération du Conseil Communautaire.\n"
+"            Cette redevance est non soumise à TVA.</span>\n"
+"            <br/><br/>\n"
+"\n"
+"            <span><strong>VOIE DE RECOURS :</strong> dans un délai de deux mois suivant la réception de la facture,\n"
+"             vous pouvez contester la somme indiquée au recto en saisissant le tribunal judiciaire\n"
+"             (instance ou grande instance selon la somme et le seuil défini à l’article R321-1 du Code de l’Organisation Judicaire)\n"
+"             conformément à l’article L1617-5 du Code Général des Collectivités Territoriales.\n"
+"             Questembert Communauté dispose de moyens informatiques destinés à gérer plus facilement la redevance incitative.\n"
+"             Les informations enregistrées sont réservées à l'usage du service concerné et ne peuvent être communiquées qu’aux\n"
+"             destinataires suivants : Trésoreries. Conformément à la loi informatique et libertés du 6 janvier 1978,\n"
+"             vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent en vous adressant aux\n"
+"             services de Questembert Communauté.</span>\n"
+"            <br/><br/>"
+msgstr "<span><strong>TITRE EXECUTOIRE</strong> en application de l’article L.\n"
+"            252 A du livre des procédures fiscales,\n"
+"            émis et rendu exécutoire conformément aux dispositions des articles L.1617-5, D.1617-23, R.2342-4 du code général des collectivités territoriales par Marie Claude COSTA RIBEIRO GOMES,\n"
+"            Présidente de Questembert Communauté ou son représentant dûment habilité par délégation.\n"
+"            Les montants sont fixés annuellement par délibération du Conseil Communautaire.\n"
+"            Cette redevance est non soumise à TVA.</span>\n"
+"            <br/><br/>\n"
+"\n"
+"            <span><strong>VOIE DE RECOURS :</strong> dans un délai de deux mois suivant la réception de la facture,\n"
+"             vous pouvez contester la somme indiquée au recto en saisissant le tribunal judiciaire\n"
+"             (instance ou grande instance selon la somme et le seuil défini à l’article R321-1 du Code de l’Organisation Judicaire)\n"
+"             conformément à l’article L1617-5 du Code Général des Collectivités Territoriales.\n"
+"             Questembert Communauté dispose de moyens informatiques destinés à gérer plus facilement la redevance incitative.\n"
+"             Les informations enregistrées sont réservées à l'usage du service concerné et ne peuvent être communiquées qu’aux\n"
+"             destinataires suivants : Trésoreries. Conformément à la loi informatique et libertés du 6 janvier 1978,\n"
+"             vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent en vous adressant aux\n"
+"             services de Questembert Communauté.</span>\n"
+"            <br/><br/>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_opening_hours
+msgid "<span>Du lundi au vendredi, de 9h à 12h et de 14h à 17h (fermé le mardi après-midi)</span>"
+msgstr "<span>Du lundi au vendredi, de 9h à 12h et de 14h à 17h (fermé le mardi après-midi)</span>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "<span>Mandat de prélèvement SEPA ponctuel : en signant ce formulaire de mandat,\n"
+"                                    vous autorisez le créancier à envoyer des instructions à votre banque pour débiter\n"
+"                                    votre compte, et votre banque à débiter votre compte conformément aux instructions du créancier.\n"
+"                                    Vous bénéficiez du droit d'être remboursé par votre banque selon les conditions décrites dans\n"
+"                                    la convention que vous avez passée avec elle. Une demande de remboursement doit être présentée\n"
+"                                    dans les 8 semaines suivant la date de débit de votre compte pour un prélèvement autorisé.\n"
+"                                    Vos droits concernant le présent mandat sont expliqués dans un document que vous pouvez obtenir\n"
+"                                    auprès de votre banque.<br/>\n"
+"                                     Le présent document a valeur de mandat de prélèvement SEPA ponctuel.\n"
+"                                     <strong>Votre signature vaut autorisation pour débiter, à réception, votre compte pour le montant indiqué. </strong></span>\n"
+"                                    <br/><br/>"
+msgstr "<span>Mandat de prélèvement SEPA ponctuel : en signant ce formulaire de mandat,\n"
+"                                    vous autorisez le créancier à envoyer des instructions à votre banque pour débiter\n"
+"                                    votre compte, et votre banque à débiter votre compte conformément aux instructions du créancier.\n"
+"                                    Vous bénéficiez du droit d'être remboursé par votre banque selon les conditions décrites dans\n"
+"                                    la convention que vous avez passée avec elle. Une demande de remboursement doit être présentée\n"
+"                                    dans les 8 semaines suivant la date de débit de votre compte pour un prélèvement autorisé.\n"
+"                                    Vos droits concernant le présent mandat sont expliqués dans un document que vous pouvez obtenir\n"
+"                                    auprès de votre banque.<br/>\n"
+"                                     Le présent document a valeur de mandat de prélèvement SEPA ponctuel.\n"
+"                                     <strong>Votre signature vaut autorisation pour débiter, à réception, votre compte pour le montant indiqué. </strong></span>\n"
+"                                    <br/><br/>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_finance_center_info
+msgid "<strong style=\"text-decoration: underline;\">\n"
+"              Comptable en charge du recouvrement :<br/>\n"
+"            </strong>\n"
+"            <span>Centre des finances publiques de Questembert 13, boulevard Saint Pierre 56 230 QUESTEMBERT<br/>\n"
+"            Accueil de 8h45 à 12H et de 13h30 à 16H,<br/>fermeture les mercredi et vendredi après midi</span>\n"
+"            <br/><br/>"
+msgstr "<strong style=\"text-decoration: underline;\">\n"
+"              Comptable en charge du recouvrement :<br/>\n"
+"            </strong>\n"
+"            <span>Centre des finances publiques de Questembert 13, boulevard Saint Pierre 56 230 QUESTEMBERT<br/>\n"
+"            Accueil de 8h45 à 12H et de 13h30 à 16H,<br/>fermeture les mercredi et vendredi après midi</span>\n"
+"            <br/><br/>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "<strong>\n"
+"                               <span>Remboursement par virement bancaire sous réserve d'avoir fourni votre RIB au service déchets</span>\n"
+"                           </strong>"
+msgstr "<strong>\n"
+"                               <span>Remboursement par virement bancaire sous réserve d'avoir fourni votre RIB au service déchets</span>\n"
+"                           </strong>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_sepa_collection_center_address
+msgid "<strong>\n"
+"                 <span style=\"text-transform: uppercase;font-size:11px\">CENTRE D'ENCAISSEMENT DE RENNES</span><br/>\n"
+"                 <span style=\"text-transform: uppercase;font-size:11px\">35908 RENNES CEDEX 9</span>\n"
+"            </strong>"
+msgstr "<strong>\n"
+"                 <span style=\"text-transform: uppercase;font-size:11px\">CENTRE D'ENCAISSEMENT DE RENNES</span><br/>\n"
+"                 <span style=\"text-transform: uppercase;font-size:11px\">35908 RENNES CEDEX 9</span>\n"
+"            </strong>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "<strong> <span style=\"color: white;font-size: 14px;\">Grilles tarifaires suivant délibération n°2017.12.19 du conseil communautaire du 11 décembre 2017</span> </strong>"
+msgstr "<strong> <span style=\"color: white;font-size: 14px;\">Grilles tarifaires suivant délibération n°2017.12.19 du conseil communautaire du 11 décembre 2017</span> </strong>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "<strong><span style=\"font-size:14px;\">TIP SEPA</span></strong><br/>"
+msgstr "<strong><span style=\"font-size:14px;\">TIP SEPA</span></strong><br/>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "<strong><span style=\"font-size:9px\">En cas de modification, joindre un relevé d'identité bancaire</span></strong><br/>"
+msgstr "<strong><span style=\"font-size:9px\">En cas de modification, joindre un relevé d'identité bancaire</span></strong><br/>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "<strong><span style=\"font-size:9px\">Joindre un relevé d'identité bancaire</span></strong>"
+msgstr "<strong><span style=\"font-size:9px\">Joindre un relevé d'identité bancaire</span></strong>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "<strong><span style=\"text-decoration: underline;font-size: 16px;\">NE PAS REGLER CETTE FACTURE - ELLE SERA PAYEE PAR PRELEVEMENT AUTOMATIQUE</span> </strong>"
+msgstr "<strong><span style=\"text-decoration: underline;font-size: 16px;\">NE PAS REGLER CETTE FACTURE - ELLE SERA PAYEE PAR PRELEVEMENT AUTOMATIQUE</span> </strong>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_payment_methods
+msgid "<strong><span>- Tip</span></strong><span> à signer</span><br/>\n"
+"                <strong><span>- Cheque</span></strong><span> à l'ordre du Trésor Public</span><br/>\n"
+"                <strong><span>- Prélèvement en 3 fois (nous contacter)</span></strong><br/>"
+msgstr "<strong><span>- Tip</span></strong><span> à signer</span><br/>\n"
+"                <strong><span>- Cheque</span></strong><span> à l'ordre du Trésor Public</span><br/>\n"
+"                <strong><span>- Prélèvement en 3 fois (nous contacter)</span></strong><br/>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_payment_methods
+msgid "<strong><span>MODES DE REGLEMENT :</span></strong><br/>\n"
+"                <strong><span>- @Paiement par internet</span></strong><br/>\n"
+"                <strong><span>Identifiant collectivité : 000811</span></strong><br/>"
+msgstr "<strong><span>MODES DE REGLEMENT :</span></strong><br/>\n"
+"                <strong><span>- @Paiement par internet</span></strong><br/>\n"
+"                <strong><span>Identifiant collectivité : 000811</span></strong><br/>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "<strong><span>Pour toute explication sur votre facture, déclaration d’un changement contacter le service Déchets de :</span> </strong>\n"
+"                                <br/>   <br/>"
+msgstr "<strong><span>Pour toute explication sur votre facture, déclaration d’un changement contacter le service Déchets de :</span> </strong>\n"
+"                                <br/>   <br/>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "<strong>Solde</strong>"
+msgstr "<strong>Solde</strong>"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "A PAYER POUR LE :"
+msgstr "A PAYER POUR LE :"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Above partner adress"
+msgstr "Au dessus de l'adresse du partenaire"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "After usages list"
+msgstr "Après la liste des usages"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Before usages list"
+msgstr "Avant la liste des usages"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Bellow collectivity data"
+msgstr "Sous les données de la collectivité"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Bellow invoice lines"
+msgstr "Sous les lignes de facture"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Bellow partner adress"
+msgstr "Sous l'adresse du partenaire"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Beside partner informations"
+msgstr "A côté des informations du partenaire"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Code usager :"
+msgstr "Code usager :"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Compte bancaire:"
+msgstr "Compte bancaire:"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.routeur_file_settings_view
+msgid "Configure invoice report SEPA dynamic elements"
+msgstr "Configurer les éléments dynamiques de la facture SEPA"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_report_sepa_dynamic_element_container
+msgid "Container"
+msgstr "Emplacement"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "Coût unitaire du vidage"
+msgstr "Coût unitaire du vidage"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_report_sepa_dynamic_element_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_report_sepa_dynamic_element_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Créancier :"
+msgstr "Créancier :"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Date de la facture :"
+msgstr "Date de la facture :"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_report_sepa_dynamic_element_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_account_config_settings_report_sepa_dynamic_elements
+msgid "Dynamic elements"
+msgstr "Éléments dynamiques"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Echéancier prévisionnel des prélèvements"
+msgstr "Echéancier prévisionnel des prélèvements"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.ormc_export_role_form_view
+msgid "Edit routeur file"
+msgstr "Éditer le fichier routeur"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_report_sepa_dynamic_element_view_template_id
+msgid "Element"
+msgstr "Élément"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,help:account_invoice_report_sepa.field_account_config_settings_report_sepa_dynamic_elements
+msgid "Elements to add dynamically in invoice report SEPA"
+msgstr "Éléments à ajouter dynamiquement dans le rapport de facture SEPA"
+
+#. module: account_invoice_report_sepa
+#: model:ir.attachment.type,name:account_invoice_report_sepa.attachment_type_routeur_file
+msgid "Fichier routeur"
+msgstr "Fichier routeur"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "IBAN :"
+msgstr "IBAN :"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "ICS :"
+msgstr "ICS :"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_report_sepa_dynamic_element_id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Informations de prélèvement"
+msgstr "Informations de prélèvement"
+
+#. module: account_invoice_report_sepa
+#: code:addons/account_invoice_report_sepa/models/report_sepa_dynamic_element.py:79
+#, python-format
+msgid "Inherited report invoice SEPA - Add template {} {}"
+msgstr "Héritage rapport de facture SEPA - Ajout du modèle {} dans {}"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model,name:account_invoice_report_sepa.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.routeur_file_settings_view
+msgid "Invoice Template"
+msgstr "Modèle de Facture"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_account_config_settings_routeur_file_invoice_template
+msgid "Invoice template for routeur file"
+msgstr "Modèle de facture pour le fichier routeur"
+
+#. module: account_invoice_report_sepa
+#: model:ir.actions.report.xml,name:account_invoice_report_sepa.account_invoices_sepa
+msgid "Invoices SEPA"
+msgstr "Invoices SEPA"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,help:account_invoice_report_sepa.field_account_config_settings_routeur_file_invoice_template
+msgid "Just the report with 'report_invoice', not 'document' in the name and mode is primary can be selected"
+msgstr "Seul les modèles en mode Vue de base comprenant 'report_invoice' et non 'document' dans leurs nom peuvent être sélectionnés"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_report_sepa_dynamic_element___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_report_sepa_dynamic_element_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_report_sepa_dynamic_element_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "N° de facture :"
+msgstr "N° de facture :"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "Part fixe résidences principale*"
+msgstr "Part fixe résidences principale*"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "Part fixe résidences secondaires **"
+msgstr "Part fixe résidences secondaires **"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Periode: du"
+msgstr "Periode: du"
+
+#. module: account_invoice_report_sepa
+#: code:addons/account_invoice_report_sepa/models/inherited_horanet_role.py:53
+#, python-format
+msgid "Please Select a invoice template in the account settings"
+msgstr "Veuillez sélectionner un modèle de facture dans le menu Comptabilité/Configuration"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Prix unitaire"
+msgstr "Prix unitaire"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Période de service"
+msgstr "Période de service"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Quantité"
+msgstr "Quantité"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "REDEVANCE INCITATIVE"
+msgstr "REDEVANCE INCITATIVE"
+
+#. module: account_invoice_report_sepa
+#: model:ir.actions.act_window,name:account_invoice_report_sepa.action_report_sepa_dynamic_elements
+msgid "Report SEPA Dynamic Elements"
+msgstr "Éléments Dynamiques Rapport SEPA"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.routeur_file_settings_view
+msgid "Routeur File"
+msgstr "Fichier Routeur"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_horanet_role_routeur_file_ids
+msgid "Routeur files"
+msgstr "Routeur files"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_payment_methods
+msgid "Référence :"
+msgstr "Référence :"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Référence Unique de Mandat:"
+msgstr "Référence Unique de Mandat:"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_report_sepa_dynamic_element_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Service"
+msgstr "Service"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa_collection_price_list
+msgid "Taille du bac"
+msgstr "Taille du bac"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Titulaire du compte :"
+msgstr "Titulaire du compte :"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Total"
+msgstr "Total"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Type d'usager :"
+msgstr "Type d'usager :"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Tél:"
+msgstr "Tél:"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "Usages list"
+msgstr "Liste des usages"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model.fields,field_description:account_invoice_report_sepa.field_report_sepa_dynamic_element_xpath_view_id
+msgid "Xpath view"
+msgstr "Vue Xpath"
+
+#. module: account_invoice_report_sepa
+#: code:addons/account_invoice_report_sepa/models/report_sepa_dynamic_element.py:28
+#: sql_constraint:report.sepa.dynamic.element:0
+#, python-format
+msgid "You can't add same template twice on invoice report"
+msgstr "Vous ne pouvez pas ajouter deux fois le même modèle sur le rapport de facture"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model,name:account_invoice_report_sepa.model_account_config_settings
+msgid "account.config.settings"
+msgstr "account.config.settings"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "au"
+msgstr "au"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "de"
+msgstr "de"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "du"
+msgstr "du"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model,name:account_invoice_report_sepa.model_horanet_role
+msgid "horanet.role"
+msgstr "horanet.role"
+
+#. module: account_invoice_report_sepa
+#: model:ir.ui.view,arch_db:account_invoice_report_sepa.report_invoice_document_sepa
+msgid "le"
+msgstr "le"
+
+#. module: account_invoice_report_sepa
+#: model:ir.model,name:account_invoice_report_sepa.model_report_sepa_dynamic_element
+msgid "report.sepa.dynamic.element"
+msgstr "report.sepa.dynamic.element"
+

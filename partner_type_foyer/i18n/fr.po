@@ -1,0 +1,552 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_type_foyer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-18 10:55+0000\n"
+"PO-Revision-Date: 2018-01-18 10:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.my_foyers
+msgid "(It's you)"
+msgstr "(C'est vous)"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_partner_abridged_display_name
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_users_abridged_display_name
+msgid "Abridged foyer name"
+msgstr "Nom réduit de foyer"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_partner_active_member_count
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_users_active_member_count
+msgid "Active member count"
+msgstr "Nombre de membres actifs"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.cru_foyer_member
+msgid "Add a member"
+msgstr "Ajouter un membre"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.view_partner_form
+msgid "Add a new foyer"
+msgstr "Ajouter un nouveau foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.modal_dialog_create_foyer_member_template
+msgid "Add a new foyer member"
+msgstr "Ajouter un nouveau membre de foyer"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_begin_date
+msgid "Begin date"
+msgstr "Date de début"
+
+#. module: partner_type_foyer
+#: code:addons/partner_type_foyer/models/relation_foyer.py:104
+#, python-format
+msgid "Beginning date must be inferior to ending date"
+msgstr "La date de début doit être inférieure à la date de fin"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.cru_foyer_member
+#: model:ir.ui.view,arch_db:partner_type_foyer.modal_dialog_create_foyer_member_template
+msgid "Birthdate"
+msgstr "Date de naissance"
+
+#. module: partner_type_foyer
+#: selection:horanet.citizen.wizard.import.partner,import_method:0
+msgid "By SQL (experimental)"
+msgstr "Par SQL (experimental)"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.wizard_import_data_partner_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_import_method
+msgid "Choose import method"
+msgstr "Choisissez la méthode d'importation"
+
+#. module: partner_type_foyer
+#: model:ir.ui.menu,name:partner_type_foyer.horanet_settings_menu_citizen
+msgid "Citizen"
+msgstr "Citoyen"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.modal_dialog_create_foyer_member_template
+msgid "Close"
+msgstr "Fermer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.view_res_partner_filter
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.view_res_partner_filter
+msgid "Companies type foyer"
+msgstr "Sociétés type foyer"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_datafile
+msgid "Compressed file containing data"
+msgstr "Archive contenant les données"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.cru_foyer_member
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_conserve_uploaded_file
+msgid "Conserve uploaded file"
+msgstr "Conserver les fichiers importés"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.cru_foyer_member
+msgid "Contact Details"
+msgstr "Détails du contact"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.cru_foyer_member
+#: model:ir.ui.view,arch_db:partner_type_foyer.modal_dialog_create_foyer_member_template
+msgid "Contact address"
+msgstr "Adresse de contact"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.my_foyers
+msgid "Create a foyer"
+msgstr "Créer un foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.my_foyers
+msgid "Create new member"
+msgstr "Créer un nouveau membre"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_create_uid
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_create_date
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_foyer_active_partners
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_partner_active_foyer_member_ids
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_users_active_foyer_member_ids
+msgid "Current members"
+msgstr "Membres actuels"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_delete_all_before_import
+msgid "Delete all previous external id"
+msgstr "Supprimer tous les id externes précédents"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_display_name
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.cru_foyer_member
+msgid "Edit a member"
+msgstr "Modifier un membre"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.my_foyers
+msgid "Edit member informations"
+msgstr "Modifier les informations du membre"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.my_foyers
+msgid "Edit your informations"
+msgstr "Modifier vos informations"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: partner_type_foyer
+#: code:addons/partner_type_foyer/models/inherited_partner.py:251
+#, python-format
+msgid "Error a foyer or need to be flagged as a company"
+msgstr "Erreur, un foyer doit être de type société"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.modal_dialog_create_foyer_member_template
+msgid "Firstname"
+msgstr "Prénom"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_partner_fixed_name
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_users_fixed_name
+msgid "Fixed name"
+msgstr "Nom fixe"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_foyer_id
+#: model:ir.ui.view,arch_db:partner_type_foyer.horanet_foyer_view_form
+#: model:ir.ui.view,arch_db:partner_type_foyer.horanet_foyer_view_tree
+msgid "Foyer"
+msgstr "Foyer"
+
+#. module: partner_type_foyer
+#: model:ir.actions.act_window,name:partner_type_foyer.horanet_foyer_action
+msgid "Foyer Management"
+msgstr "Foyers"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.horanet_relation_foyer_view_form
+msgid "Foyer current active members"
+msgstr "Membres actifs du foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.view_partner_form
+msgid "Foyer current members"
+msgstr "Membre actifs du foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.my_foyers
+msgid "Foyer details"
+msgstr "Détails du foyer"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_partner_foyer_name
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_users_foyer_name
+msgid "Foyer full name"
+msgstr "Nom complet du foyer"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_partner_foyer_member_ids
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_users_foyer_member_ids
+msgid "Foyer members"
+msgstr "Membres du foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.horanet_foyer_view_form
+msgid "Foyer properties"
+msgstr "Propriétés du foyer"
+
+#. module: partner_type_foyer
+#: model:ir.actions.act_window,name:partner_type_foyer.horanet_relation_foyer_action
+msgid "Foyer relation Management"
+msgstr "Relations Citoyens/Foyers"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_partner_foyer_relation_ids
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_users_foyer_relation_ids
+#: model:ir.ui.menu,name:partner_type_foyer.horanet_menu_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.cru_foyer_member
+#: model:ir.ui.view,arch_db:partner_type_foyer.custom_portal_layout
+#: model:ir.ui.view,arch_db:partner_type_foyer.horanet_relation_foyer_view_tree
+#: model:ir.ui.view,arch_db:partner_type_foyer.my_foyers
+msgid "Foyers"
+msgstr "Foyers"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_id
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.wizard_import_data_partner_form
+msgid "Import"
+msgstr "Importer"
+
+#. module: partner_type_foyer
+#: model:ir.actions.act_window,name:partner_type_foyer.wizard_import_data_partner_action
+msgid "Import Partner"
+msgstr "Import de partenaire"
+
+#. module: partner_type_foyer
+#: model:ir.model,name:partner_type_foyer.model_horanet_citizen_wizard_import_partner
+msgid "Import data location "
+msgstr "Localisation des données à importer "
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.wizard_import_data_partner_form
+msgid "Import french address referential"
+msgstr "Importer les données d'adresse française"
+
+#. module: partner_type_foyer
+#: model:ir.ui.menu,name:partner_type_foyer.menu_import_partner
+msgid "Import partners"
+msgstr "Import de partenaires"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.wizard_import_data_partner_form
+msgid "Imports base parameters"
+msgstr "Paramètres de base de l'import"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.wizard_import_data_partner_form
+msgid "Imports data file"
+msgstr "Import des données"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.wizard_import_data_partner_form
+msgid "Imports performance parameters"
+msgstr "Paramètres de performance de l'import"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.view_partner_form
+msgid "Information du foyer"
+msgstr "Information du foyer"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_is_responsible
+msgid "Is responsible"
+msgstr "Est responsable"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_is_valid
+msgid "Is valid"
+msgstr "Est actif"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.my_foyers
+msgid "It seems that you do not belong to any foyer."
+msgstr "Il semblerait que vous ne fassiez partie d'aucun foyer."
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner___last_update
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_write_uid
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_write_date
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.modal_dialog_create_foyer_member_template
+msgid "Lastname"
+msgstr "Nom"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_computed_list_name_foyer_members
+msgid "List foyer members name"
+msgstr "Nom(s) des membres de foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.horanet_foyer_view_form
+#: model:ir.ui.view,arch_db:partner_type_foyer.view_partner_form
+msgid "List of related partners"
+msgstr "Liste des citoyens associés"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.my_foyers
+msgid "Member list"
+msgstr "Liste des membres"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_module_name
+msgid "Module name for external id"
+msgstr "Nom du module pour la création des ID externes"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.cru_foyer_member
+#: model:ir.ui.view,arch_db:partner_type_foyer.my_foyers
+msgid "My Account"
+msgstr "Mon compte"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.view_partner_form
+msgid "My foyers"
+msgstr "Mes foyers"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.horanet_relation_foyer_view_form
+msgid "Optional"
+msgstr "Optionnel"
+
+#. module: partner_type_foyer
+#: model:ir.model,name:partner_type_foyer.model_res_partner
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_relation_foyer_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.view_res_partner_filter
+msgid "Persons"
+msgstr "Personnes"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_partner_search_field_all_foyers_members
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_users_search_field_all_foyers_members
+msgid "Related partners from foyer"
+msgstr "Personnes relatives au foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.horanet_relation_foyer_view_form
+msgid "Relation between"
+msgstr "Relation entre"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.horanet_relation_foyer_view_form
+msgid "Relation options"
+msgstr "Options de la relation"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.horanet_relation_foyer_view_form
+msgid "Relation partner <-> foyer"
+msgstr "Relation partenaire <-> foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.menu,name:partner_type_foyer.horanet_menu_foyer_relation
+msgid "Relations Partner/Foyer"
+msgstr "Relations Citoyen/Foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.cru_foyer_member
+msgid "Return"
+msgstr "Retour"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.view_partner_form
+msgid "Save and add a new foyer"
+msgstr "Sauvegarder et ajouter un nouveau foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.modal_dialog_create_foyer_member_template
+msgid "Save changes"
+msgstr "Sauvegarder"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_partner_search_field_foyer_address
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_users_search_field_foyer_address
+msgid "Search foyer by member address"
+msgstr "Adresse d'un membre"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_partner_search_field_foyer_member
+#: model:ir.model.fields,field_description:partner_type_foyer.field_res_users_search_field_foyer_member
+msgid "Search foyer by member name"
+msgstr "Foyer par nom de membre"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.modal_dialog_create_foyer_member_template
+msgid "Second Firstname"
+msgstr "Deuxième prénom"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.modal_dialog_create_foyer_member_template
+msgid "Second Lastname"
+msgstr "Deuxième nom"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.horanet_relation_foyer_view_form
+msgid "Select a foyer"
+msgstr "Sélectionnez un foyer"
+
+#. module: partner_type_foyer
+#: code:addons/partner_type_foyer/models/relation_foyer.py:117
+#, python-format
+msgid "The beginning date must be inferior to the ending date"
+msgstr "La date de début doit être inférieure à la date de fin"
+
+#. module: partner_type_foyer
+#: code:addons/partner_type_foyer/wizards/wizard_import_data_partner.py:80
+#, python-format
+msgid "The data file is mandatory"
+msgstr "Le fichier de données est obligatoire"
+
+#. module: partner_type_foyer
+#: code:addons/partner_type_foyer/models/relation_foyer.py:132
+#, python-format
+msgid "The ending date must be superior to the beginning date"
+msgstr "La date de fin doit être supérieure à la date de début"
+
+#. module: partner_type_foyer
+#: code:addons/partner_type_foyer/wizards/wizard_import_data_partner.py:82
+#, python-format
+msgid "The module name seems to be invalide (< 5 char)"
+msgstr "Le nom du module n'est pas valide (< 5 char)"
+
+#. module: partner_type_foyer
+#: code:addons/partner_type_foyer/models/relation_foyer.py:16
+#: sql_constraint:horanet.relation.foyer:0
+#, python-format
+msgid "The relation between a partner and a foyer must be unique"
+msgstr "La relation entre un foyer et un citoyen doit être unique"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.my_foyers
+msgid "There is no foyer"
+msgstr "Il n'y a aucun foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.wizard_import_data_partner_form
+msgid "This operation could take time and is irreversible, are you sure to proceed ?"
+msgstr "Cette opération peut prendre du temps et est irréversible, êtes-vous sur de vouloir continuer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.modal_dialog_create_foyer_member_template
+msgid "Title"
+msgstr "Civilité"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_track_history
+msgid "Track history during import"
+msgstr "Suivre l'historique pendant l'importation"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,help:partner_type_foyer.field_horanet_citizen_wizard_import_partner_conserve_uploaded_file
+msgid "Uploaded archive content is save on the server in a temporary directory, if set to true, the folder will be conserved after the import, otherwise it will be regarding of the import result. (consult the log for the path)"
+msgstr "L'archive est sauvegardée dans un répertoire temporaire, si cette case est cochée, le dossier sera conservé après l'import, autrement cela dépendra du résultat de l'importation. (consultez les logs pour le chemin)"
+
+#. module: partner_type_foyer
+#: selection:horanet.citizen.wizard.import.partner,import_method:0
+msgid "Using ORM"
+msgstr "Avec l'ORM"
+
+#. module: partner_type_foyer
+#: code:addons/partner_type_foyer/models/relation_foyer.py:116
+#: code:addons/partner_type_foyer/models/relation_foyer.py:131
+#, python-format
+msgid "Warning : wrong value"
+msgstr "Attention : mauvaise valeur"
+
+#. module: partner_type_foyer
+#: model:ir.model.fields,field_description:partner_type_foyer.field_horanet_citizen_wizard_import_partner_datafile_file_name
+msgid "hidden file name"
+msgstr "nom de fichier caché"
+
+#. module: partner_type_foyer
+#: model:ir.model,name:partner_type_foyer.model_horanet_relation_foyer
+msgid "horanet.relation.foyer"
+msgstr "horanet.relation.foyer"
+
+#. module: partner_type_foyer
+#: model:ir.ui.view,arch_db:partner_type_foyer.modal_dialog_create_foyer_member_template
+msgid "select title"
+msgstr "choisir une civilité"
+

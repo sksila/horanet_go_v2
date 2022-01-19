@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Service providers -->
+    <record id="demo_environment_provider_coved" model="res.partner">
+        <field name="name">COVED</field>
+        <field name="category_id" eval="[(4, ref('environment_waste_collect.partner_category_service_provider'))]"/>
+        <field name="company_type">company</field>
+    </record>
+    <record id="demo_environment_provider_envie2e" model="res.partner">
+        <field name="name">ENVIE2E</field>
+        <field name="category_id" eval="[(4, ref('environment_waste_collect.partner_category_service_provider'))]"/>
+        <field name="company_type">company</field>
+    </record>
+
+    <!-- Container types -->
+    <record id="demo_environment_container_type_benne" model="environment.container.type">
+        <field name="name">BENNE</field>
+        <field name="volume">30</field>
+    </record>
+    <record id="demo_environment_container_type_bac_vidable" model="environment.container.type">
+        <field name="name">BAC VIDABLE</field>
+        <field name="volume">20</field>
+    </record>
+    <record id="demo_environment_container_type_bac_grillage" model="environment.container.type">
+        <field name="name">BAC GRILLAGE</field>
+        <field name="volume">20</field>
+    </record>
+    <record id="demo_environment_container_type_compacteur" model="environment.container.type">
+        <field name="name">COMPACTEUR</field>
+        <field name="volume">15</field>
+    </record>
+
+    <!-- Waste Sites -->
+    <record id="demo_environment_waste_site_caudry" model="environment.waste.site">
+        <field name="name">Déchèterie Caudry</field>
+        <field name="email">test@example.fr</field>
+    </record>
+    <record id="demo_environment_waste_site_aniche" model="environment.waste.site">
+        <field name="name">Déchèterie Aniche</field>
+        <field name="email">test@example.fr</field>
+        <field name="control_timetable">True</field>
+        <field name="date_winter">20171221</field>
+        <field name="date_summer">20170621</field>
+    </record>
+
+    <!-- Pickup contracts -->
+    <record id="demo_environment_pickup_contract_coved_aniche" model="environment.pickup.contract">
+        <field name="service_provider_id" ref="demo_environment_provider_coved"/>
+        <field name="waste_site_id" ref="demo_environment_waste_site_aniche"/>
+        <field name="activity_ids" search="[('name', '=', 'Pneumatique')]"/>
+    </record>
+    <record id="demo_environment_pickup_contract_coved_caudry" model="environment.pickup.contract">
+        <field name="service_provider_id" ref="demo_environment_provider_coved"/>
+        <field name="waste_site_id" ref="demo_environment_waste_site_caudry"/>
+        <field name="activity_ids"
+               search="[('name', 'in', [
+                'Bois',
+                'Encombrant',
+                'Gravat',
+                'Métaux',
+                'Papiers-Cartons',
+                'Amiante-Ciment'])]"/>
+    </record>
+    <record id="demo_environment_pickup_contract_envie2e_aniche" model="environment.pickup.contract">
+        <field name="service_provider_id" ref="demo_environment_provider_envie2e"/>
+        <field name="waste_site_id" ref="demo_environment_waste_site_aniche"/>
+        <field name="activity_ids" search="[('name', '=', 'DEEE')]"/>
+    </record>
+    <record id="demo_environment_pickup_contract_envie2e_caudry" model="environment.pickup.contract">
+        <field name="service_provider_id" ref="demo_environment_provider_envie2e"/>
+        <field name="waste_site_id" ref="demo_environment_waste_site_caudry"/>
+        <field name="activity_ids" search="[('name', '=', 'DEEE')]"/>
+    </record>
+
+    <!-- Emplacements -->
+    <record id="demo_environment_emplacement_aniche_pneumatique" model="stock.emplacement">
+        <field name="name">ANICHE-PNEUS-COVED</field>
+        <field name="activity_id" search="[('name', '=', 'Pneumatique')]"/>
+        <field name="filling_level">50</field>
+        <field name="waste_site_id" ref="demo_environment_waste_site_aniche"/>
+        <field name="code">PNEUS</field>
+    </record>
+    <record id="demo_environment_emplacement_caudry_bois" model="stock.emplacement">
+        <field name="name">CAUDRY-BOIS-COVED</field>
+        <field name="activity_id" search="[('name', '=', 'Bois')]"/>
+        <field name="filling_level">50</field>
+        <field name="waste_site_id" ref="demo_environment_waste_site_caudry"/>
+        <field name="code">BOIS</field>
+    </record>
+    <record id="demo_environment_emplacement_caudry_encombrant" model="stock.emplacement">
+        <field name="name">CAUDRY-ENCOMBRANT-COVED</field>
+        <field name="activity_id" search="[('name', '=', 'Encombrant')]"/>
+        <field name="filling_level">50</field>
+        <field name="waste_site_id" ref="demo_environment_waste_site_caudry"/>
+        <field name="code">ENCOMBRANT</field>
+    </record>
+    <record id="demo_environment_emplacement_caudry_metaux" model="stock.emplacement">
+        <field name="name">CAUDRY-METAUX-COVED</field>
+        <field name="activity_id" search="[('name', '=', 'Métaux')]"/>
+        <field name="filling_level">50</field>
+        <field name="waste_site_id" ref="demo_environment_waste_site_caudry"/>
+        <field name="code">METAUX</field>
+    </record>
+    <record id="demo_environment_emplacement_caudry_papiers_cartons" model="stock.emplacement">
+        <field name="name">CAUDRY-PAPIERS-CARTONS-COVED</field>
+        <field name="activity_id" search="[('name', '=', 'Papiers-Cartons')]"/>
+        <field name="filling_level">50</field>
+        <field name="waste_site_id" ref="demo_environment_waste_site_caudry"/>
+        <field name="code">PAPIERS-CARTONS</field>
+    </record>
+    <record id="demo_environment_emplacement_caudry_amiante_ciment" model="stock.emplacement">
+        <field name="name">CAUDRY-AMIANTE-CIMENT-COVED</field>
+        <field name="activity_id" search="[('name', '=', 'Amiante-Ciment')]"/>
+        <field name="filling_level">50</field>
+        <field name="waste_site_id" ref="demo_environment_waste_site_caudry"/>
+        <field name="code">AMIANTE-CIMENT</field>
+    </record>
+    <record id="demo_environment_emplacement_aniche_deee" model="stock.emplacement">
+        <field name="name">ANICHE-DEEE-ENVIE2E</field>
+        <field name="activity_id" search="[('name', '=', 'Amiante-Ciment')]"/>
+        <field name="filling_level">50</field>
+        <field name="waste_site_id" ref="demo_environment_waste_site_aniche"/>
+        <field name="code">DEEE</field>
+    </record>
+    <record id="demo_environment_emplacement_caudry_deee" model="stock.emplacement">
+        <field name="name">CAUDRY-DEEE-ENVIE2E</field>
+        <field name="activity_id" search="[('name', '=', 'Amiante-Ciment')]"/>
+        <field name="filling_level">50</field>
+        <field name="waste_site_id" ref="demo_environment_waste_site_caudry"/>
+        <field name="code">DEEE</field>
+    </record>
+
+    <!-- Articles -->
+    <record id="demo_product_deposit" model="product.product">
+        <field name="name">Demo Product Deposit</field>
+        <field name="standard_price">5.0</field>
+        <field name="list_price">5.0</field>
+        <field name="type">service</field>
+        <field name="uom_id" ref="m3_product_uom"/>
+        <field name="uom_po_id" ref="m3_product_uom"/>
+        <field name="taxes_id">False</field>
+        <field name="supplier_taxes_id">False</field>
+    </record>
+
+    <!-- Activités -->
+    <record id="activity_ameublement" model="horanet.activity">
+        <field name="product_id" ref="demo_product_deposit"/>
+    </record>
+    <record id="activity_bois" model="horanet.activity">
+        <field name="product_id" ref="demo_product_deposit"/>
+    </record>
+    <record id="activity_encombrant" model="horanet.activity">
+        <field name="product_id" ref="demo_product_deposit"/>
+    </record>
+    <record id="activity_gravat" model="horanet.activity">
+        <field name="product_id" ref="demo_product_deposit"/>
+    </record>
+    <record id="activity_metaux" model="horanet.activity">
+        <field name="product_id" ref="demo_product_deposit"/>
+    </record>
+    <record id="activity_papiers_cartons" model="horanet.activity">
+        <field name="product_id" ref="demo_product_deposit"/>
+    </record>
+    <record id="activity_pelouse" model="horanet.activity">
+        <field name="product_id" ref="demo_product_deposit"/>
+    </record>
+    <record id="activity_polystyrene" model="horanet.activity">
+        <field name="product_id" ref="demo_product_deposit"/>
+    </record>
+
+    <!-- Partenaires -->
+    <record id="partner_contact_citizen.demo_partner_2" model="res.partner">
+        <field name="lastname2">VADOR</field>
+        <field name="firstname2">Dark</field>
+    </record>
+
+    <record id="demo_partner_guardian" model="res.partner">
+        <field name="lastname">GUARDIAN</field>
+        <field name="firstname">Daniel</field>
+        <field name="is_company">False</field>
+        <field name="customer" eval="False"/>
+        <field name="email">demo_partner_guardian@demo.example.com</field>
+        <field name="street_id" ref="better_address.demo_street_hotel_ville"/>
+        <field name="city_id" ref="better_address.demo_city_la_rochelle"/>
+        <field name="zip_id" ref="better_address.demo_zip_17000"/>
+        <field name="country_id" ref="base.fr"/>
+    </record>
+
+    <!-- Catégories d'usagers-->
+    <record id="horanet_environment.environment_category_professional" model="subscription.category.partner">
+        <field name="is_environment_producer">True</field>
+    </record>
+
+    <record id="horanet_environment.environment_category_particulier" model="subscription.category.partner">
+        <field name="is_environment_producer">True</field>
+    </record>
+
+    <record id="environment_waste_collect.environment_category_guardian" model="subscription.category.partner">
+        <field name="is_environment_staff">True</field>
+    </record>
+
+    <!-- Supports -->
+    <record id="demo_medium_guardian" model="partner.contact.identification.medium">
+        <field name="type_id" ref="partner_contact_identification.demo_medium_type_card"/>
+        <field name="partner_id" ref="demo_partner_guardian"/>
+    </record>
+    <record id="demo_env_medium_1" model="partner.contact.identification.medium">
+        <field name="type_id" ref="partner_contact_identification.demo_medium_type_card"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_1"/>
+    </record>
+    <record id="demo_env_medium_2" model="partner.contact.identification.medium">
+        <field name="type_id" ref="partner_contact_identification.demo_medium_type_card"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_2"/>
+    </record>
+    <record id="demo_env_medium_3" model="partner.contact.identification.medium">
+        <field name="type_id" ref="partner_contact_identification.demo_medium_type_card"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_3"/>
+    </record>
+    <record id="demo_env_medium_4" model="partner.contact.identification.medium">
+        <field name="type_id" ref="partner_contact_identification.medium_type_smartcard"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_3"/>
+    </record>
+
+    <!-- Identifiants -->
+    <record id="demo_tag_guardian" model="partner.contact.identification.tag">
+        <field name="number">1234567890</field>
+        <field name="mapping_id" ref="partner_contact_identification.mapping_mifare_csn_horanet"/>
+        <field name="medium_id" ref="demo_medium_guardian"/>
+    </record>
+    <record id="demo_env_tag_1" model="partner.contact.identification.tag">
+        <field name="number">A1B2C3D4E5</field>
+        <field name="mapping_id" ref="partner_contact_identification.mapping_mifare_csn_horanet"/>
+        <field name="medium_id" ref="demo_env_medium_1"/>
+    </record>
+    <record id="demo_env_tag_2" model="partner.contact.identification.tag">
+        <field name="number">1Z2Y3X4W5V</field>
+        <field name="mapping_id" ref="partner_contact_identification.mapping_mifare_csn_horanet"/>
+        <field name="medium_id" ref="demo_env_medium_2"/>
+    </record>
+    <record id="demo_env_tag_3" model="partner.contact.identification.tag">
+        <field name="number">AZERTYUIOP</field>
+        <field name="mapping_id" ref="partner_contact_identification.mapping_mifare_csn_horanet"/>
+        <field name="medium_id" ref="demo_env_medium_3"/>
+    </record>
+    <record id="demo_env_tag_4" model="partner.contact.identification.tag">
+        <field name="number">MLKJH09876</field>
+        <field name="mapping_id" ref="partner_contact_identification.mapping_mifare_csn_horanet"/>
+        <field name="medium_id" ref="demo_env_medium_4"/>
+    </record>
+
+    <!-- Assignations -->
+    <record id="demo_assignation_guardian" model="partner.contact.identification.assignation">
+        <field name="reference_id" ref="demo_partner_guardian"/>
+        <field name="tag_id" ref="demo_tag_guardian"/>
+        <field name="start_date" eval="time.strftime('%Y-%m-01 00:00:00')"/>
+    </record>
+    <record id="demo_env_assignation_1" model="partner.contact.identification.assignation">
+        <field name="reference_id" ref="partner_contact_citizen.demo_partner_1"/>
+        <field name="tag_id" ref="demo_env_tag_1"/>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=6)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+    <record id="demo_env_assignation_2" model="partner.contact.identification.assignation">
+        <field name="reference_id" ref="partner_contact_citizen.demo_partner_2"/>
+        <field name="tag_id" ref="demo_env_tag_2"/>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=12)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="end_date" eval="(datetime.now() - relativedelta(days=30)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+    <record id="demo_env_assignation_3" model="partner.contact.identification.assignation">
+        <field name="reference_id" ref="partner_contact_citizen.demo_partner_3"/>
+        <field name="tag_id" ref="demo_env_tag_3"/>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=12)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="end_date" eval="(datetime.now() - relativedelta(months=6)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+    <record id="demo_env_assignation_4" model="partner.contact.identification.assignation">
+        <field name="reference_id" ref="partner_contact_citizen.demo_partner_3"/>
+        <field name="tag_id" ref="demo_env_tag_4"/>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=6)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+
+    <!-- Cycle de contrat -->
+    <record id="demo_subscription_cycle_civilweek" model="horanet.subscription.cycle">
+        <field name="period_type">civil_week</field>
+        <field name="period_quantity">1</field>
+    </record>
+
+    <!-- Activités -->
+    <record id="demo_activity_environment_access" model="horanet.activity">
+        <field name="name">Demo Environment Activity Access</field>
+        <field name="reference">DEMO_ENV_ACCES_ACTIVITY</field>
+        <field name="application_type">environment</field>
+        <field name="default_action_id" ref="horanet_subscription.action_access"/>
+        <field name="product_uom_id" ref="product.product_uom_unit"/>
+    </record>
+
+    <!-- Services -->
+    <record id="demo_service_environment_access" model="horanet.service">
+        <field name="name">Demo Waste Site Access</field>
+        <field name="product_uom_categ_id" ref="product.product_uom_categ_unit"/>
+        <field name="activity_ids" eval="[(6,0,[ref('demo_activity_environment_access')])]"/>
+    </record>
+
+    <record id="demo_service_environment_volume_deposit" model="horanet.service">
+        <field name="name">Demo Waste Site Volume Deposit</field>
+        <field name="product_uom_categ_id" ref="product.product_uom_categ_vol"/>
+        <field name="activity_ids" eval="[(6,0,[ref('activity_ameublement'),
+                                                ref('activity_bois'),
+                                                ref('activity_encombrant'),
+                                                ref('activity_gravat'),
+                                                ref('activity_metaux'),
+                                                ref('activity_papiers_cartons'),
+                                                ref('activity_pelouse'),
+                                                ref('activity_polystyrene'),
+                                                ])]"/>
+    </record>
+
+    <!-- Prestations -->
+    <record id="demo_prestation_environment_access" model="horanet.prestation">
+        <field name="device_label">ACCESS</field>
+        <field name="reference">DEMO_ENV_ACCESS</field>
+        <field name="name">Demo Environment Prestation Access</field>
+        <field name="impact_fmi">True</field>
+        <field name="need_recipient">True</field>
+        <field name="use_product">False</field>
+        <field name="cycle_id" ref="horanet_subscription.demo_subscription_cycle_civilyear"/>
+        <field name="is_salable">False</field>
+        <field name="service_id" ref="demo_service_environment_access"/>
+        <field name="is_blocked">False</field>
+        <field name="balance">0</field>
+        <field name="subscription_category_ids" eval="[(6,0,[ref('horanet_environment.environment_category_professional'),
+                                                             ref('horanet_environment.environment_category_particulier')])]"/>
+    </record>
+
+    <record id="demo_prestation_environment_deposit_free" model="horanet.prestation">
+        <field name="device_label">DEPOSIT FREE</field>
+        <field name="reference">DEMO_ENV_DEPOSIT_FREE</field>
+        <field name="name">Demo Environment Prestation Deposit Free</field>
+        <field name="description">Partners have one free m3 deposit per week. Extra deposits are paid by professionnals and forbidden to individuals.</field>
+        <field name="impact_fmi">True</field>
+        <field name="need_recipient">True</field>
+        <field name="use_product">False</field>
+        <field name="cycle_id" ref="demo_subscription_cycle_civilweek"/>
+        <field name="is_salable">False</field>
+        <field name="service_id" ref="demo_service_environment_volume_deposit"/>
+        <field name="is_blocked">True</field>
+        <field name="balance">1</field>
+        <field name="subscription_category_ids" eval="[(6,0,[ref('horanet_environment.environment_category_professional'),
+                                                             ref('horanet_environment.environment_category_particulier')])]"/>
+    </record>
+
+    <record id="demo_prestation_environment_deposit_salable" model="horanet.prestation">
+        <field name="device_label">DEPOSIT SALABLE</field>
+        <field name="reference">DEMO_ENV_DEPOSIT_SALABLE</field>
+        <field name="name">Demo Environment Prestation Deposit Salable</field>
+        <field name="impact_fmi">True</field>
+        <field name="need_recipient">True</field>
+        <field name="use_product">False</field>
+        <field name="cycle_id" ref="demo_subscription_cycle_civilweek"/>
+        <field name="is_salable">True</field>
+        <field name="service_id" ref="demo_service_environment_volume_deposit"/>
+        <field name="is_blocked">False</field>
+        <field name="balance">0</field>
+        <field name="subscription_category_ids" eval="[(6,0,[ref('horanet_environment.environment_category_professional')])]"/>
+    </record>
+
+    <!-- Modèles de contrats -->
+    <record id="demo_subscription_environment_template_pro" model="horanet.subscription.template">
+        <field name="name">Demo Environment Subscription Template Pro</field>
+        <field name="subscription_category_ids" eval="[(6,0,[ref('horanet_environment.environment_category_professional')])]"/>
+        <field name="payment_type">after</field>
+        <field name="is_renewable">True</field>
+        <field name="application_type">environment</field>
+        <field name="cycle_id" eval="ref('horanet_subscription.demo_subscription_cycle_civilyear')"/>
+        <field name="prestation_ids" eval="[(6,0,[ref('demo_prestation_environment_access'),
+                                                  ref('demo_prestation_environment_deposit_free'),
+                                                  ref('demo_prestation_environment_deposit_salable')])]"/>
+    </record>
+    <record id="demo_subscription_environment_template_part" model="horanet.subscription.template">
+        <field name="name">Demo Environment Subscription Template Part</field>
+        <field name="subscription_category_ids" eval="[(6,0,[ref('horanet_environment.environment_category_particulier')])]"/>
+        <field name="payment_type">after</field>
+        <field name="is_renewable">True</field>
+        <field name="application_type">environment</field>
+        <field name="cycle_id" eval="ref('horanet_subscription.demo_subscription_cycle_civilyear')"/>
+        <field name="prestation_ids" eval="[(6,0,[ref('demo_prestation_environment_access'),
+                                                  ref('demo_prestation_environment_deposit_free')])]"/>
+    </record>
+
+    <!-- Contrats -->
+    <record id="demo_env_subscription_1" model="horanet.subscription">
+        <field name="client_id" ref="partner_contact_citizen.demo_partner_1"/>
+        <field name="cycle_id" ref="horanet_subscription.demo_subscription_cycle_civilyear"/>
+        <field name="subscription_template_id" ref="demo_subscription_environment_template_pro"/>
+        <field name="is_renewable">True</field>
+        <field name="payment_type">after</field>
+        <field name="application_type">environment</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=19)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="opening_date" eval="(datetime.now() - relativedelta(months=19)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="confirmation_date" eval="(datetime.now() - relativedelta(months=19)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+
+    <record id="demo_env_subscription_2" model="horanet.subscription">
+        <field name="client_id" ref="partner_contact_citizen.demo_partner_2"/>
+        <field name="cycle_id" ref="horanet_subscription.demo_subscription_cycle_civilyear"/>
+        <field name="subscription_template_id" ref="demo_subscription_environment_template_pro"/>
+        <field name="is_renewable">True</field>
+        <field name="payment_type">after</field>
+        <field name="application_type">environment</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=9)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="opening_date" eval="(datetime.now() - relativedelta(months=9)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="confirmation_date" eval="(datetime.now() - relativedelta(months=9)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+
+    <record id="demo_env_subscription_3" model="horanet.subscription">
+        <field name="client_id" ref="partner_contact_citizen.demo_partner_3"/>
+        <field name="cycle_id" ref="horanet_subscription.demo_subscription_cycle_civilyear"/>
+        <field name="subscription_template_id" ref="demo_subscription_environment_template_part"/>
+        <field name="is_renewable">True</field>
+        <field name="payment_type">after</field>
+        <field name="application_type">environment</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=18)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="opening_date" eval="(datetime.now() - relativedelta(months=18)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="confirmation_date" eval="(datetime.now() - relativedelta(months=18)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+
+    <record id="demo_env_subscription_4" model="horanet.subscription">
+        <field name="client_id" ref="partner_contact_citizen.demo_partner_4"/>
+        <field name="cycle_id" ref="horanet_subscription.demo_subscription_cycle_civilyear"/>
+        <field name="subscription_template_id" ref="demo_subscription_environment_template_part"/>
+        <field name="is_renewable">True</field>
+        <field name="payment_type">after</field>
+        <field name="application_type">environment</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=17)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="opening_date" eval="(datetime.now() - relativedelta(months=17)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="confirmation_date" eval="(datetime.now() - relativedelta(months=17)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+
+    <function model="horanet.package" name="_create_packages_from_template" eval="([ref('demo_env_subscription_1'),
+                                                                                   ref('demo_env_subscription_2'),
+                                                                                   ref('demo_env_subscription_3'),
+                                                                                   ref('demo_env_subscription_4'),], True)"/>
+
+    <function model="horanet.subscription" name="action_compute_subscription" eval="[[ref('demo_env_subscription_1'),
+                                                                                      ref('demo_env_subscription_2'),
+                                                                                      ref('demo_env_subscription_3'),
+                                                                                      ref('demo_env_subscription_4'),]]"/>
+
+    <!-- Appareils communicants -->
+    <record id="demo_device_ecopad" model="horanet.device">
+        <field name="name">Demo Device Ecopad</field>
+        <field name="unique_id">ABCDEFGH1234567890</field>
+        <field name="is_ecopad">True</field>
+    </record>
+
+    <record id="demo_waste_site_terminal_1" model="horanet.device">
+        <field name="name">Demo Terminal Caudry PL</field>
+        <field name="unique_id">CAUDRY123PL</field>
+    </record>
+
+    <record id="demo_waste_site_terminal_2" model="horanet.device">
+        <field name="name">Demo Terminal Caudry VL</field>
+        <field name="unique_id">CAUDRY456VL</field>
+    </record>
+
+    <record id="demo_waste_site_terminal_3" model="horanet.device">
+        <field name="name">Demo Terminal Aniche</field>
+        <field name="unique_id">ANICHE789</field>
+    </record>
+
+    <!-- Secteurs d'activités -->
+    <record id="demo_environment_activity_sector_access" model="activity.sector">
+        <field name="name">Demo Environment Access Sector</field>
+        <field name="code">DEMO_SECT_ENV_ACCESS</field>
+        <field name="is_counting">True</field>
+        <field name="custom_activity_ids" eval="[(6,0,[ref('demo_activity_environment_access')])]"/>
+    </record>
+    <record id="demo_environment_activity_sector_deposit" model="activity.sector">
+        <field name="name">Demo Waste Site Deposit Sector</field>
+        <field name="code">DEMO_SECT_ENV_DEPOSIT</field>
+        <field name="custom_activity_ids" eval="[(6,0,[ref('activity_ameublement'),
+                                                       ref('activity_bois'),
+                                                       ref('activity_encombrant'),
+                                                       ref('activity_gravat'),
+                                                       ref('activity_metaux'),
+                                                       ref('activity_papiers_cartons'),
+                                                       ref('activity_pelouse'),
+                                                       ref('activity_polystyrene'),
+                                                       ])]"/>
+    </record>
+
+    <!-- Points de contrôle -->
+    <record id="demo_check_point_terminal_1" model="device.check.point">
+        <field name="name">Demo Checkpoint Terminal 1</field>
+        <field name="device_id" ref="demo_waste_site_terminal_1"/>
+        <field name="code">DEMO_CP_TERMINAL_1</field>
+        <field name="input_activity_sector_id" ref="demo_environment_activity_sector_access"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_caudry_horanet_infrastructure"/>
+    </record>
+    <record id="demo_check_point_terminal_2" model="device.check.point">
+        <field name="name">Demo Checkpoint Terminal 2</field>
+        <field name="device_id" ref="demo_waste_site_terminal_2"/>
+        <field name="code">DEMO_CP_TERMINAL_2</field>
+        <field name="input_activity_sector_id" ref="demo_environment_activity_sector_access"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_caudry_horanet_infrastructure"/>
+    </record>
+    <record id="demo_check_point_terminal_3" model="device.check.point">
+        <field name="name">Demo Checkpoint Terminal 3</field>
+        <field name="device_id" ref="demo_waste_site_terminal_3"/>
+        <field name="code">DEMO_CP_TERMINAL_3</field>
+        <field name="input_activity_sector_id" ref="demo_environment_activity_sector_access"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_aniche_horanet_infrastructure"/>
+    </record>
+
+    <!-- Activity rule -->
+    <record id="demo_env_activity_rule_1" model="activity.rule">
+        <field name="name">Environment access rule</field>
+        <field name="beginning_date" eval="(datetime.now() - relativedelta(years=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="activity_sector_id" ref="demo_environment_activity_sector_access"/>
+        <field name="use_sector_activity">True</field>
+        <field name="rule_code">
+if QUERY:
+    waste_site = False
+    if QUERY.check_point_id:
+        waste_site = env['environment.waste.site'].sudo().search(
+        [('infrastructure_id','=',QUERY.check_point_id.infrastructure_id.id)])
+        if not waste_site:
+            log('no waste_site found for ' + str(QUERY.check_point_id.infrastructure_id.id))
+    if waste_site and not waste_site.is_open_hour():
+        response(False, '  DECHETTERIE       FERMEE')
+        return
+    elif waste_site and not waste_site.can_attend():
+        response(False, 'ATTENDEZ SVP    PLUS DE PLACES')
+        return
+    is_pro = False
+    partner_rec = QUERY.tag_id and QUERY.tag_id.partner_id
+    if not partner_rec:
+        assignation_rec = QUERY.tag_id.assignation_ids.filtered('is_active')
+        assignation_move = assignation_rec.filtered(lambda a: a.move_id)
+        move_rec = assignation_move and assignation_move[0].move_id
+        if move_rec:
+            partner_rec = move_rec.partner_id
+
+    is_pro = partner_rec and partner_rec.is_company
+
+    if not contractlines:
+        response(False,"  AUCUN CONTRAT    VALIDE")
+    else:
+        if contractlines.can_use(1):
+            response(True,' FAITES AVANCER  VOTRE VEHICULE 1' if is_pro else ' AVANCEZ VOTRE   VEHICULE SVP >>0')
+        else:
+            response(False,'VOTRE CARTE DOIT  ETRE RECHARGER' if is_pro else '  VOTRE SOLDE   EST INSUFFISANT 0')
+
+if OPERATION:
+    active_line = contractlines.get_active_line(OPERATION.time)
+    if active_line and active_line.can_use(1):
+        usage(1,activity)
+        log("OK, solde de :" + str(active_line.get_balance()))
+    else:
+        log("Solde épuisé")
+        </field>
+    </record>
+    <record id="demo_env_activity_rule_2" model="activity.rule">
+        <field name="name">Environment deposit rule</field>
+        <field name="beginning_date" eval="(datetime.now() - relativedelta(years=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="activity_sector_id" ref="demo_environment_activity_sector_deposit"/>
+        <field name="use_sector_activity">True</field>
+        <field name="rule_code">
+if OPERATION:
+    if contractlines:
+        usage(OPERATION.quantity, activity)
+    else:
+        log('AUCUN CONTRAT VALIDE')
+        </field>
+    </record>
+
+    <!-- Opérations -->
+    <record id="demo_env_operation_01" model="horanet.operation">
+        <field name="action_id" ref="horanet_action_depot"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_caudry_horanet_infrastructure"/>
+        <field name="activity_sector_id" ref="demo_environment_activity_sector_deposit"/>
+        <field name="device_id" ref="demo_device_ecopad"/>
+        <field name="activity_id" ref="activity_ameublement"/>
+        <field name="quantity">1</field>
+        <field name="tag_id" ref="demo_env_tag_1"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=90)).strftime('%Y-%m-%d 10:%M:%S')"/>
+    </record>
+    <record id="demo_env_operation_02" model="horanet.operation">
+        <field name="action_id" ref="horanet_action_depot"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_caudry_horanet_infrastructure"/>
+        <field name="activity_sector_id" ref="demo_environment_activity_sector_deposit"/>
+        <field name="device_id" ref="demo_device_ecopad"/>
+        <field name="activity_id" ref="activity_gravat"/>
+        <field name="quantity">3</field>
+        <field name="tag_id" ref="demo_env_tag_1"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=80)).strftime('%Y-%m-%d 10:%M:%S')"/>
+    </record>
+    <record id="demo_env_operation_03" model="horanet.operation">
+        <field name="action_id" ref="horanet_action_depot"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_caudry_horanet_infrastructure"/>
+        <field name="activity_sector_id" ref="demo_environment_activity_sector_deposit"/>
+        <field name="device_id" ref="demo_device_ecopad"/>
+        <field name="activity_id" ref="activity_pelouse"/>
+        <field name="quantity">4</field>
+        <field name="tag_id" ref="demo_env_tag_2"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=70)).strftime('%Y-%m-%d 10:%M:%S')"/>
+    </record>
+    <record id="demo_env_operation_04" model="horanet.operation">
+        <field name="action_id" ref="horanet_action_depot"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_caudry_horanet_infrastructure"/>
+        <field name="activity_sector_id" ref="demo_environment_activity_sector_deposit"/>
+        <field name="device_id" ref="demo_device_ecopad"/>
+        <field name="activity_id" ref="activity_gravat"/>
+        <field name="quantity">1</field>
+        <field name="tag_id" ref="demo_env_tag_2"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=60)).strftime('%Y-%m-%d 10:%M:%S')"/>
+    </record>
+    <record id="demo_env_operation_05" model="horanet.operation">
+        <field name="action_id" ref="horanet_action_depot"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_caudry_horanet_infrastructure"/>
+        <field name="activity_sector_id" ref="demo_environment_activity_sector_deposit"/>
+        <field name="device_id" ref="demo_device_ecopad"/>
+        <field name="activity_id" ref="activity_metaux"/>
+        <field name="quantity">3</field>
+        <field name="tag_id" ref="demo_env_tag_2"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=40)).strftime('%Y-%m-%d 10:%M:%S')"/>
+    </record>
+    <record id="demo_env_operation_06" model="horanet.operation">
+        <field name="action_id" ref="horanet_action_depot"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_caudry_horanet_infrastructure"/>
+        <field name="activity_sector_id" ref="demo_environment_activity_sector_deposit"/>
+        <field name="device_id" ref="demo_device_ecopad"/>
+        <field name="activity_id" ref="activity_metaux"/>
+        <field name="quantity">1</field>
+        <field name="tag_id" ref="demo_env_tag_3"/>
+        <field name="time" eval="(datetime.now() - relativedelta(months=9)).strftime('%Y-%m-%d 10:%M:%S')"/>
+    </record>
+    <record id="demo_env_operation_07" model="horanet.operation">
+        <field name="action_id" ref="horanet_action_depot"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_caudry_horanet_infrastructure"/>
+        <field name="activity_sector_id" ref="demo_environment_activity_sector_deposit"/>
+        <field name="device_id" ref="demo_device_ecopad"/>
+        <field name="activity_id" ref="activity_batterie"/>
+        <field name="quantity">1</field>
+        <field name="tag_id" ref="demo_env_tag_3"/>
+        <field name="time" eval="(datetime.now() - relativedelta(months=8)).strftime('%Y-%m-%d 10:%M:%S')"/>
+    </record>
+    <record id="demo_env_operation_08" model="horanet.operation">
+        <field name="action_id" ref="horanet_action_depot"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_caudry_horanet_infrastructure"/>
+        <field name="activity_sector_id" ref="demo_environment_activity_sector_deposit"/>
+        <field name="device_id" ref="demo_device_ecopad"/>
+        <field name="activity_id" ref="activity_polystyrene"/>
+        <field name="quantity">1</field>
+        <field name="tag_id" ref="demo_env_tag_4"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=50)).strftime('%Y-%m-%d 10:%M:%S')"/>
+    </record>
+    <record id="demo_env_operation_09" model="horanet.operation">
+        <field name="action_id" ref="horanet_action_depot"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_caudry_horanet_infrastructure"/>
+        <field name="activity_sector_id" ref="demo_environment_activity_sector_deposit"/>
+        <field name="device_id" ref="demo_device_ecopad"/>
+        <field name="activity_id" ref="activity_polystyrene"/>
+        <field name="quantity">1</field>
+        <field name="tag_id" ref="demo_env_tag_4"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=49)).strftime('%Y-%m-%d 10:%M:%S')"/>
+    </record>
+    <record id="demo_env_operation_10" model="horanet.operation">
+        <field name="action_id" ref="horanet_subscription.action_access"/>
+        <field name="infrastructure_id" ref="demo_environment_waste_site_aniche_horanet_infrastructure"/>
+        <field name="device_id" ref="demo_waste_site_terminal_3"/>
+        <field name="check_point_id" ref="demo_check_point_terminal_3"/>
+        <field name="activity_id" ref="demo_activity_environment_access"/>
+        <field name="quantity">1</field>
+        <field name="tag_id" ref="demo_env_tag_4"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=10)).strftime('%Y-%m-%d 10:%M:%S')"/>
+    </record>
+
+
+
+</odoo>

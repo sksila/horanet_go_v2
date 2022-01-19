@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_create_contract_form_view" model="ir.ui.view">
+        <field name="name">Create Contract Form View</field>
+        <field name="model">subscription.wizard.create.contract</field>
+        <field name="arch" type="xml">
+            <form>
+                <group string="Existing subscriptions with this subscription template for partners choice"
+                       name="existing_subscription" col="1"
+                       attrs="{'invisible': [('message_box', '=', False)]}">
+
+                    <field name="existing_subscription_ids" readonly="0" nolabel="1">
+                        <tree limit="10" default_oder="opening_date" options="{'no_create' : True}"
+                              decoration-warning="state=='draft'"
+                              decoration-bf="state=='done'"
+                              decoration-danger="state=='done'">
+                            <field name="opening_date" invisible="1"/>
+                            <field name="code"/>
+                            <field name="client_id"/>
+                            <field name="subscription_template_id"/>
+                            <field name="display_opening_date"/>
+                            <field name="display_closing_date"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </group>
+
+                <group string="Subscription parameters" name="subscription_parameters">
+                    <field name="subscription_template_id"/>
+                    <field name="start_date"/>
+                    <field name="prorata_temporis"/>
+                </group>
+
+                <separator string="Information" attrs="{'invisible': [('message_box', '=', False)]}"/>
+                <field name="message_box" nolabel="1" widget="html" readonly="1"/>
+                <footer>
+                    <button type="object" name="create_contract"
+                            string="Create contract"/>
+                    <button type="object" name="create_contract_unique"
+                            string="Create contract for partner without active contract"
+                            attrs="{'invisible': [('message_box', '=', False)]}"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <act_window id="action_wizard_create_contract"
+                name="Contract Creation Wizard"
+                src_model="res.partner"
+                res_model="subscription.wizard.create.contract"
+                view_mode="form"
+                view_id="wizard_create_contract_form_view"
+                target="new"
+                multi="True"
+                key2="client_action_multi"/>
+</odoo>
+
+

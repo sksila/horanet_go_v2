@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_portal_layout_deposits" inherit_id="portal.portal_layout"
+              customize_show="True" active="False" name="Environment waste site deposit menu" priority="30">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li>
+                <a href="/my/waste-site-deposits">Waste sites deposits</a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="custom_portal_layout_access" inherit_id="portal.portal_layout"
+              customize_show="True" active="False" name="Environment waste site access menu" priority="30">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li>
+                <a href="/my/waste-site-deposits">Waste sites access</a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_your_deposit" name="Portal My Home : your waste site deposits"
+              inherit_id="portal.portal_my_home"
+              customize_show="True" active="False" priority="30">
+        <xpath expr="//div[hasclass('o_my_home_content')]" position="inside">
+            <h3 class="page-header">
+                <a href="/my/waste-site-deposits">Your waste sites deposits
+                    <small class="ml8">
+                        <span class='badge'>
+                            <t t-esc="waste_site_deposit_count"/>
+                        </span>
+                    </small>
+                </a>
+            </h3>
+        </xpath>
+    </template>
+
+    <template id="portal_your_access" name="Portal My Home : your waste site access"
+              inherit_id="portal.portal_my_home"
+              customize_show="True" active="False" priority="30">
+        <xpath expr="//div[hasclass('o_my_home_content')]" position="inside">
+            <h3 class="page-header">
+                <a href="/my/waste-site-access">Your waste sites access
+                    <small class="ml8">
+                        <span class='badge'>
+                            <t t-esc="waste_site_access_count"/>
+                        </span>
+                    </small>
+                </a>
+            </h3>
+        </xpath>
+    </template>
+</odoo>

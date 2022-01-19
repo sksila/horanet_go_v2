@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="partner_category_action" model="ir.actions.act_window">
+        <field name="name">Partner categories</field>
+        <field name="res_model">subscription.category.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain" eval="[('application_type', '=', 'environment')]"/>
+        <field name="context">{"default_application_type": "environment"}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create a partner category
+            </p>
+        </field>
+    </record>
+
+</odoo>

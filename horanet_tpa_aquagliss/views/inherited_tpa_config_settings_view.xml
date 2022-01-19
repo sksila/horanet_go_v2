@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Add Aquagliss TPA Settings view in horanet_go settings -->
+        <record id="view_form_collectivity_config_settings" model="ir.ui.view">
+            <field name="name">Aquagliss TPA Settings</field>
+            <field name="model">collectivity.config.settings</field>
+            <field name="inherit_id" ref="horanet_go.view_form_collectivity_config_settings"/>
+
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='tpa_settings']" position="inside">
+                    <group colspan="2">
+                        <h3>Aquagliss TPA Settings</h3>
+                        <newline/>
+                        <group name="tpa_aquagliss">
+                            <field name="tpa_aquagliss_url"/>
+                            <field name="tpa_aquagliss_name_method_partner"/>
+                            <field name="tpa_aquagliss_is_enable"/>
+                            <field name="tpa_aquagliss_area"/>
+                        </group>
+                        <group name="tpa_aquagliss_cards">
+                            <field name="tpa_aquagliss_cards_is_enable"/>
+                            <field name="tpa_aquagliss_assignation_cards_enable"/>
+                            <field name="tpa_aquagliss_name_method_card"/>
+                            <field name="tpa_aquagliss_technologies_card"/>
+                            <field name="tpa_aquagliss_categories_card"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

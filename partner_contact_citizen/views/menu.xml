@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="horanet_menu_citizen"
+              name="Citizen"
+              parent="horanet_go.menu_base_collectivity"
+              groups="partner_contact_citizen.group_citizen_manage"
+              sequence="5"/>
+
+    <menuitem id="horanet_menu_citizen_citizens"
+              name="Citizens"
+              parent="partner_contact_citizen.horanet_menu_citizen"
+              groups="partner_contact_citizen.group_citizen_manage"
+              action="partner_contact_citizen.partner_horanet_go_action"
+              sequence="10"/>
+</odoo>

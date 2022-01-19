@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mass_invoicing_invoice_form" model="ir.ui.view">
+        <field name="name">Add button to view time table</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group" position="before">
+                <field name="invoice_comment" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

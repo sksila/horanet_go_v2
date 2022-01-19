@@ -1,0 +1,286 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* user_unsubscribe
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-02 09:25+0000\n"
+"PO-Revision-Date: 2017-10-02 09:25+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: user_unsubscribe
+#: model:mail.template,body_html:user_unsubscribe.unsubscribe_accepted
+msgid "<p>${object.partner_id.title.name or ''} ${object.partner_id.name},<br/>\n"
+"Your unsubscription request has been accepted. You can no longer access your portal.</p>"
+msgstr "<p>${object.partner_id.title.name or ''} ${object.partner_id.name},<br/>\n"
+"Votre demande de désinscription a été acceptée. Vous ne pouvez dorénavant plus accéder à votre portail.</p>"
+
+#. module: user_unsubscribe
+#: model:mail.template,body_html:user_unsubscribe.unsubscribe_pending
+msgid "<p>${object.partner_id.title.name or ''} ${object.partner_id.name},<br/>\n"
+"Your unsubscription request has been created. We are currently studying your request to see if everything is valid.</p>\n"
+"<p>You will soon receive a mail about the evolution of your request.</p>"
+msgstr "<p>${object.partner_id.title.name or ''} ${object.partner_id.name},<br/>\n"
+"Votre demande de désinscription a été créée. Nous sommes actuellement en train de l'étudier pour nous assurer que tout est en ordre.</p>\n"
+"<p>Vous recevrez bientôt un email quant à l'évolution de votre demande.</p>"
+
+#. module: user_unsubscribe
+#: model:mail.template,body_html:user_unsubscribe.unsubscribe_refused
+msgid "<p>${object.partner_id.title.name or ''} ${object.partner_id.name},<br/>\n"
+"Your unsubscription request has been refused for the following reason:<br/>\n"
+"<br/>\n"
+"<i>${object.refuse_reason}</i><br/>\n"
+"<br/>\n"
+"You can contact our services any time you want for further informations.</p>"
+msgstr "<p>${object.partner_id.title.name or ''} ${object.partner_id.name},<br/>\n"
+"Votre demande de désinscription a été refusée pour la raison suivante:<br/>\n"
+"<br/>\n"
+"<i>${object.refuse_reason}</i><br/>\n"
+"<br/>\n"
+"Vous pouvez contacter nos services à tout moment pour plus d'informations.</p>"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.user_unsubscribe_page
+msgid "A mail will be send and your request will be studied.\n"
+"                                    <br/>\n"
+"                                    You will not be able to access to your account after your request is accepted."
+msgstr "Un email vous sera envoyé et votre demande étudiée.\n"
+"                                    <br/>\n"
+"                                    Vous ne serez plus en mesure de vous connecter une fois votre demande acceptée."
+
+#. module: user_unsubscribe
+#: code:addons/user_unsubscribe/models/user_unsubscribe.py:51
+#, python-format
+msgid "A request for this user has already been fulfilled"
+msgstr "Une demande pour cette utilisateur a déjà été effectuée"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.view_unsubscribe_user_form
+msgid "Accept unsubscription"
+msgstr "Accepter la désinscription"
+
+#. module: user_unsubscribe
+#: selection:user.unsubscribe,status:0
+msgid "Accepted"
+msgstr "Acceptée"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.view_search_unsubscribe_user
+msgid "Accepted requests"
+msgstr "Demandes acceptées"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.view_unsubscribe_user_form
+msgid "Are you sure you want to unsubscribe the user ?                             He won't be able to connect afterward."
+msgstr "Etes-vous sûr de vouloir désinscrire l'utilisateur ?                             Il ne sera plus capable d'accéder à son compte par la suite."
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.refuse_unsubscription_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: user_unsubscribe
+#: selection:user.unsubscribe,status:0
+msgid "Cancelled"
+msgstr "Annulée"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_create_uid
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_refuse_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_create_date
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_refuse_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_date
+msgid "Date of request"
+msgstr "Date de la demande"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_display_name
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_refuse_display_name
+msgid "Display Name"
+msgstr "Nom"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_id
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_refuse_id
+msgid "ID"
+msgstr "ID"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.user_unsubscribe_page
+msgid "If you want to unsubscribe to our services, you have to click on the button below :"
+msgstr "Si vous voulez vous désinscrire de nos services, cliquez sur le bouton ci-dessous :"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.view_unsubscribe_user_form
+msgid "Informations"
+msgstr "Informations"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_refuse_request_id
+msgid "Inscription"
+msgstr "Inscription"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe___last_update
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_refuse___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_refuse_write_uid
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_refuse_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_write_date
+msgid "Last action on"
+msgstr "Dernière modification le"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,help:user_unsubscribe.field_user_unsubscribe_partner_id
+msgid "Partner-related data of the user"
+msgstr "Données du partenaire lié à l'utilisateur"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.view_unsubscribe_user_form
+#: selection:user.unsubscribe,status:0
+msgid "Pending"
+msgstr "En attente"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.view_search_unsubscribe_user
+msgid "Pending requests"
+msgstr "Demandes en attente"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_refuse_reason_2126
+msgid "Reason"
+msgstr "Motif"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_refuse_reason
+msgid "Refuse reason"
+msgstr "Motif du refus"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.refuse_unsubscription_form
+#: model:ir.ui.view,arch_db:user_unsubscribe.view_unsubscribe_user_form
+msgid "Refuse unsubscription"
+msgstr "Refuser la désinscription"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.view_search_unsubscribe_user
+msgid "Refused requests"
+msgstr "Demandes refusées"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_partner_id
+msgid "Related partner"
+msgstr "Partenaire"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_status
+msgid "Status"
+msgstr "État"
+
+#. module: user_unsubscribe
+#: code:addons/user_unsubscribe/models/user_unsubscribe.py:55
+#, python-format
+msgid "The admin cannot unsubscribe."
+msgstr "L'administrateur ne peut se désinscrire."
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.view_unsubscribe_user_form
+msgid "This unsubscription has been refused for the following reason :"
+msgstr "Cette désinscription a été refusée pour la raison suivante :"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.custom_footer_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.user_unsubscribe_page
+msgid "Unsubscribe"
+msgstr "Se désinscrire"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.view_unsubscribe_user_form
+msgid "Unsubscription"
+msgstr "Désinscription"
+
+#. module: user_unsubscribe
+#: model:ir.actions.act_window,name:user_unsubscribe.action_wizard_refuse_unsubscription
+msgid "Unsubscription refuse wizard"
+msgstr "Wizard refus de désinscription"
+
+#. module: user_unsubscribe
+#: model:ir.actions.act_window,name:user_unsubscribe.action_unsubscribe_users
+#: model:ir.ui.menu,name:user_unsubscribe.menu_user_unsubscribe
+msgid "Unsubscriptions"
+msgstr "Désinscriptions"
+
+#. module: user_unsubscribe
+#: model:ir.model.fields,field_description:user_unsubscribe.field_user_unsubscribe_user_id
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.refuse_unsubscription_form
+msgid "You are going to refuse an unsubscription. Please provide a reason for the refusal."
+msgstr "Vous êtes sur le point de refuser une désinscription. Veuillez fournir une raison."
+
+#. module: user_unsubscribe
+#: model:ir.ui.view,arch_db:user_unsubscribe.user_unsubscribe_accepted
+msgid "You request has been saved. You will soon receive an email with the details of the\n"
+"                                    procedure."
+msgstr "Votre demande a été enregistrée. Vous recevrez bienôt un mail avec les détails de la\n"
+"                                    procédure."
+
+#. module: user_unsubscribe
+#: model:mail.template,subject:user_unsubscribe.unsubscribe_accepted
+msgid "Your unsubscription request has been accepted"
+msgstr "Votre désinscription a été acceptée"
+
+#. module: user_unsubscribe
+#: model:mail.template,subject:user_unsubscribe.unsubscribe_pending
+msgid "Your unsubscription request has been created"
+msgstr "Votre désinscription a été créée"
+
+#. module: user_unsubscribe
+#: model:mail.template,subject:user_unsubscribe.unsubscribe_refused
+msgid "Your unsubscription request has been refused"
+msgstr "Votre désinscription a été refusée"
+
+#. module: user_unsubscribe
+#: model:ir.model,name:user_unsubscribe.model_user_unsubscribe
+msgid "user.unsubscribe"
+msgstr "user.unsubscribe"
+
+#. module: user_unsubscribe
+#: model:ir.model,name:user_unsubscribe.model_user_unsubscribe_refuse
+msgid "user.unsubscribe.refuse"
+msgstr "user.unsubscribe.refuse"
+

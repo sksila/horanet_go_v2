@@ -1,0 +1,562 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_go
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-08 14:19+0000\n"
+"PO-Revision-Date: 2018-06-08 14:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_go
+#: model:ir.actions.act_window,help:horanet_go.open_module_horanet
+msgid "<b>No module found!</b>"
+msgstr "<b>Pas de module trouvé !</b>"
+
+#. module: horanet_go
+#: code:addons/horanet_go/models/inherited_partner.py:100
+#, python-format
+msgid "A partner with this internal reference: '{ref}' already exits."
+msgstr "Un partenaire avec cette référence interne: '{ref}' existe déjà."
+
+#. module: horanet_go
+#: model:res.partner.title,shortcut:horanet_go.company_title_AE
+msgid "AE"
+msgstr "AE"
+
+#. module: horanet_go
+#: model:res.groups,comment:horanet_go.group_horanet_go_admin
+msgid "Access to the configuration menu of Horanet GO."
+msgstr "Accès au menu de configuration d'Horanet GO."
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_res_partner_title_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.display_module_version
+msgid "Active branch"
+msgstr "Branche active"
+
+#. module: horanet_go
+#: model:res.groups,name:horanet_go.group_horanet_go_agent
+msgid "Agent"
+msgstr "Agent"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_application_type_application_type
+#: model:ir.model.fields,field_description:horanet_go.field_horanet_activity_application_type
+#: model:ir.model.fields,field_description:horanet_go.field_horanet_subscription_application_type
+#: model:ir.model.fields,field_description:horanet_go.field_horanet_subscription_template_application_type
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_application_type
+msgid "Application type"
+msgstr "Type d'application"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.view_form_collectivity_config_settings
+msgid "Apply"
+msgstr "Appliquer"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_collectivity_config_settings_unicity_on_partner_internal_ref
+msgid "Apply a unicity on the field internal reference on partner"
+msgstr "Appliquer l'unicité sur le champ référence interne du partenaire."
+
+#. module: horanet_go
+#: model:res.partner.category,name:horanet_go.partner_category_association
+msgid "Association"
+msgstr "Association"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.display_module_version
+msgid "Backend"
+msgstr "Backend"
+
+#. module: horanet_go
+#: model:res.partner.title,shortcut:horanet_go.company_title_CESU
+msgid "CESU"
+msgstr "CESU"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.view_form_collectivity_config_settings
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: horanet_go
+#: model:res.groups,name:horanet_go.group_horanet_go_citizen
+msgid "Citizen"
+msgstr "Citoyen"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_code
+msgid "Code"
+msgstr "Code"
+
+#. module: horanet_go
+#: model:res.partner.title,name:horanet_go.company_title_GAEC
+msgid "Collective farming grouping"
+msgstr "Groupement agricole d’exploitation en commun"
+
+#. module: horanet_go
+#: model:ir.module.category,name:horanet_go.horanet_go_category
+#: model:res.partner.category,name:horanet_go.partner_category_collectivity
+msgid "Collectivity"
+msgstr "Collectivité"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_color
+msgid "Color Index"
+msgstr "Couleur"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.res_partner_form_view
+msgid "Company type"
+msgstr "Type d'entreprise"
+
+#. module: horanet_go
+#: model:ir.ui.menu,name:horanet_go.menu_collectivity_config
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.view_form_collectivity_config_settings
+msgid "Configure Collectivity"
+msgstr "Configurer Collectivity"
+
+#. module: horanet_go
+#: model:ir.actions.act_window,name:horanet_go.action_collectivity_generic_settings
+msgid "Configure collectivity action"
+msgstr "Configure collectivity action"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.view_form_collectivity_config_settings
+msgid "Contact"
+msgstr "Contact"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.display_module_version
+msgid "Contact Details"
+msgstr "Détails du contact"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_collectivity_config_settings_create_uid
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_collectivity_config_settings_create_date
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_application_type_display_name
+#: model:ir.model.fields,field_description:horanet_go.field_collectivity_config_settings_display_name
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_domain
+#: model:ir.ui.view,arch_db:horanet_go.partner_category_view_form
+msgid "Domain"
+msgstr "Domaine"
+
+#. module: horanet_go
+#: model:res.partner.title,shortcut:horanet_go.company_title_EI
+msgid "EI"
+msgstr "EI"
+
+#. module: horanet_go
+#: model:res.partner.title,shortcut:horanet_go.company_title_EURL
+msgid "EOOD"
+msgstr "EURL"
+
+#. module: horanet_go
+#: selection:application.type,application_type:0
+#: selection:horanet.activity,application_type:0
+#: selection:horanet.subscription,application_type:0
+#: selection:horanet.subscription.template,application_type:0
+#: selection:subscription.category.partner,application_type:0
+msgid "Environment"
+msgstr "Environnement"
+
+#. module: horanet_go
+#: model:res.partner.title,shortcut:horanet_go.company_title_GAEC
+msgid "GAEC"
+msgstr "GAEC"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.display_module_version
+msgid "Home"
+msgstr "Accueil"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.view_module_filter
+msgid "Horanet"
+msgstr "Horanet"
+
+#. module: horanet_go
+#: model:ir.ui.menu,name:horanet_go.menu_base_collectivity
+msgid "Horanet GO"
+msgstr "Horanet GO"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.display_module_version
+msgid "Horanet GO version"
+msgstr "Version d'Horanet GO"
+
+#. module: horanet_go
+#: model:ir.actions.act_window,name:horanet_go.open_module_horanet
+#: model:ir.ui.menu,name:horanet_go.menu_module_horanet
+msgid "Horanet modules"
+msgstr "Modules Horanet"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_application_type_id
+#: model:ir.model.fields,field_description:horanet_go.field_collectivity_config_settings_id
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_id
+msgid "ID"
+msgstr "ID"
+
+#. module: horanet_go
+#: model:res.partner.title,name:horanet_go.company_title_EI
+msgid "Individual company"
+msgstr "Entreprise individuelle"
+
+#. module: horanet_go
+#: model:ir.model.fields,help:horanet_go.field_collectivity_config_settings_module_partner_contact_personal_information
+msgid "Install the module partner_contact_personal_information which add new personal field on partner"
+msgstr "Installe le module partner_contact_personal_information qui ajoute de nouveaux champs d'information personnel au contacts"
+
+#. module: horanet_go
+#: model:ir.model.fields,help:horanet_go.field_collectivity_config_settings_module_partner_merge
+msgid "Install the module partner_merge which allow merge of partners"
+msgstr "Installe le module partner_merge qui permet de fusionner des partenaires"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.display_module_version
+msgid "Is detached"
+msgstr "Est détachée"
+
+#. module: horanet_go
+#: model:res.partner.title,shortcut:horanet_go.company_title_SARL
+msgid "LLC"
+msgstr "SARL"
+
+#. module: horanet_go
+#: model:ir.model,name:horanet_go.model_res_lang
+msgid "Languages"
+msgstr "Langues"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_application_type___last_update
+#: model:ir.model.fields,field_description:horanet_go.field_collectivity_config_settings___last_update
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_collectivity_config_settings_write_uid
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_collectivity_config_settings_write_date
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: horanet_go
+#: model:res.partner.title,name:horanet_go.company_title_SARL
+msgid "Limited Liability Company"
+msgstr "Société à responsabilité limitée"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.display_module_version
+msgid "Log"
+msgstr "Journal"
+
+#. module: horanet_go
+#: model:res.partner.title,name:horanet_go.company_title_commercant
+#: model:res.partner.title,shortcut:horanet_go.company_title_commercant
+msgid "Merchant"
+msgstr "Commerçant"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_collectivity_config_settings_module_partner_merge
+msgid "Merge partners to avoid duplicate"
+msgstr "Fusionner les partenaires pour éviter les doublons"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: horanet_go
+#: code:addons/horanet_go/models/subscription_category_partner.py:72
+#, python-format
+msgid "Name cannot be empty."
+msgstr "Le nom ne peut être vide."
+
+#. module: horanet_go
+#: model:res.partner.title,name:horanet_go.company_title_SCI
+msgid "Non trading company"
+msgstr "Société civile immobilière"
+
+#. module: horanet_go
+#: model:res.partner.title,name:horanet_go.company_title_EURL
+msgid "One-person limited liability companie"
+msgstr "Entreprise unipersonnelle à responsabilité limitée"
+
+#. module: horanet_go
+#: code:addons/horanet_go/models/inherited_res_users.py:31
+#, python-format
+msgid "Only user in group {group_name} can grant this access right."
+msgstr "Seul un utilisateur du groupe {group_name} peut attribuer ce droit d'accès."
+
+#. module: horanet_go
+#: code:addons/horanet_go/models/inherited_res_users.py:26
+#, python-format
+msgid "Only your system administrator can grant this access right."
+msgstr "Seul votre administrateur système peut attribuer ce droit d'accès."
+
+#. module: horanet_go
+#: model:res.partner.title,shortcut:horanet_go.company_title_SA
+msgid "PLC"
+msgstr "SA"
+
+#. module: horanet_go
+#: model:ir.model,name:horanet_go.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: horanet_go
+#: model:ir.ui.menu,name:horanet_go.menu_subscription_partner_category
+msgid "Partner categories"
+msgstr "Catégories d'usagers"
+
+#. module: horanet_go
+#: model:ir.actions.act_window,help:horanet_go.open_module_horanet
+msgid "Please check if the addon folder horanet_go is added to the odoo addon-path"
+msgstr "Pensez à ajouter le module horanet_go dans le path d'odoo"
+
+#. module: horanet_go
+#: model:res.partner.title,name:horanet_go.company_title_SA
+msgid "Public limited company"
+msgstr "Société anonyme"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.display_module_version
+msgid "Remote branch"
+msgstr "Branche serveur"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.display_module_version
+msgid "Remote tag"
+msgstr "Tag serveur"
+
+#. module: horanet_go
+#: model:res.partner.title,shortcut:horanet_go.company_title_SAS
+msgid "SAS"
+msgstr "SAS"
+
+#. module: horanet_go
+#: model:res.partner.title,shortcut:horanet_go.company_title_SCI
+msgid "SCI"
+msgstr "SCI"
+
+#. module: horanet_go
+#: model:res.partner.title,name:horanet_go.company_title_AE
+msgid "Self-employed"
+msgstr "Auto-entrepreneur"
+
+#. module: horanet_go
+#: model:ir.ui.menu,name:horanet_go.menu_collectivity_general_settings
+#: model:res.groups,name:horanet_go.group_horanet_go_admin
+msgid "Settings"
+msgstr "Configuration"
+
+#. module: horanet_go
+#: model:res.partner.title,name:horanet_go.company_title_SAS
+msgid "Simplified joint-stock company"
+msgstr "Société par actions simplifiée"
+
+#. module: horanet_go
+#: model:res.groups,comment:horanet_go.group_horanet_go_citizen
+msgid "Standard group for citizens who will register on the website."
+msgstr "Groupe standard pour les citoyens qui s'enregistrent sur le site web."
+
+#. module: horanet_go
+#: model:res.groups,comment:horanet_go.group_horanet_go_agent
+msgid "Standard group for user who will manage citizens of the collectivity."
+msgstr "Groupe standard pour l'utilisateur qui gère les citoyens de la collectivité."
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.display_module_version
+msgid "Status"
+msgstr "État"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_res_partner_subscription_category_ids
+#: model:ir.model.fields,field_description:horanet_go.field_res_users_subscription_category_ids
+msgid "Subscription categories"
+msgstr "Catégories d'usagers"
+
+#. module: horanet_go
+#: code:addons/horanet_go/models/subscription_category_partner.py:14
+#: sql_constraint:subscription.category.partner:0
+#, python-format
+msgid "The code must be unique"
+msgstr "Le code doit être unique"
+
+#. module: horanet_go
+#: code:addons/horanet_go/models/subscription_category_partner.py:16
+#: sql_constraint:subscription.category.partner:0
+#, python-format
+msgid "The domain must be unique per application type"
+msgstr "Le domaine doit être unique par type d'application"
+
+#. module: horanet_go
+#: model:ir.model.fields,help:horanet_go.field_collectivity_config_settings_use_sequence_partner_internal_ref
+msgid "This sequence is used when a partner is create"
+msgstr "Cette séquence est utilisé lors de la création d'un partner."
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.res_partner_form_view
+msgid "Title"
+msgstr "Civilité"
+
+#. module: horanet_go
+#: model:res.partner.title,name:horanet_go.company_title_craftsman
+#: model:res.partner.title,shortcut:horanet_go.company_title_craftsman
+msgid "Trader"
+msgstr "Artisan"
+
+#. module: horanet_go
+#: model:res.partner.title,name:horanet_go.company_title_CESU
+msgid "Universal services employment voucher"
+msgstr "Chèque Emploi Service Universel"
+
+#. module: horanet_go
+#: code:addons/horanet_go/models/subscription_category_partner.py:83
+#, python-format
+msgid "Unvalid domain expression : malformed string"
+msgstr "Domain invalide : chaîne malformée"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_collectivity_config_settings_module_partner_contact_personal_information
+msgid "Use personal information"
+msgstr "Ajouter les informations personnelles de contact"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_collectivity_config_settings_use_sequence_partner_internal_ref
+msgid "Use sequence for the partner internal reference"
+msgstr "Utiliser la séquence pour le champs référence interne du partenaire."
+
+#. module: horanet_go
+#: model:ir.model,name:horanet_go.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.display_module_version
+msgid "Version"
+msgstr "Version"
+
+#. module: horanet_go
+#: model:ir.model,name:horanet_go.model_application_type
+msgid "application.type"
+msgstr "application.type"
+
+#. module: horanet_go
+#: model:ir.actions.act_window,name:horanet_go.action_partner_category
+#: model:ir.ui.view,arch_db:horanet_go.partner_category_view_form
+#: model:ir.ui.view,arch_db:horanet_go.partner_category_view_tree
+msgid "category"
+msgstr "catégorie"
+
+#. module: horanet_go
+#: model:ir.ui.view,arch_db:horanet_go.partner_category_view_form
+msgid "category name"
+msgstr "nom de la catégorie"
+
+#. module: horanet_go
+#: model:ir.model,name:horanet_go.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_res_partner_title_is_company_title
+msgid "is Company Title"
+msgstr "Est une dénomination de société"
+
+#. module: horanet_go
+#: model:ir.model.fields,field_description:horanet_go.field_subscription_category_partner_partner_ids
+msgid "partner"
+msgstr "partenaire"
+
+#. module: horanet_go
+#: model:ir.model,name:horanet_go.model_res_partner_title
+msgid "res.partner.title"
+msgstr "res.partner.title"
+
+#. module: horanet_go
+#: model:ir.model,name:horanet_go.model_subscription_category_partner
+msgid "subscription.category.partner"
+msgstr "subscription.category.partner"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_res_partner_contract_ids
+msgid "Contracts"
+msgstr "Contrats employé"
+
+#. module: sale
+#: model:ir.model.fields,field_description:sale.field_res_partner_sale_warn
+msgid "Sales Order"
+msgstr "Bon de commande avertissement"
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_bank_zip
+#: model:ir.model.fields,field_description:base.field_res_company_zip
+#: model:ir.model.fields,field_description:base.field_res_partner_zip
+#: model:ir.model.fields,field_description:base.field_res_users_zip
+msgid "Zip"
+msgstr "Code postal (odoo)"
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_bank_street
+#: model:ir.model.fields,field_description:base.field_res_company_street
+#: model:ir.model.fields,field_description:base.field_res_partner_street
+#: model:ir.model.fields,field_description:base.field_res_users_street
+msgid "Street"
+msgstr "Rue (odoo)"
+
+#. module: base
+#: model:ir.model.fields,field_description:base.field_res_bank_city
+#: model:ir.model.fields,field_description:base.field_res_company_city
+#: model:ir.model.fields,field_description:base.field_res_partner_city
+#: model:ir.model.fields,field_description:base.field_res_users_city
+#: model:ir.ui.view,arch_db:base.view_company_form
+#: model:ir.ui.view,arch_db:base.view_partner_address_form
+#: model:ir.ui.view,arch_db:base.view_partner_form
+#: model:ir.ui.view,arch_db:base.view_res_bank_form
+msgid "City"
+msgstr "Ville (odoo)"
+
+#. module: account
+#: model:ir.model.fields,field_description:account.field_res_partner_invoice_warn
+#: model:ir.model.fields,field_description:account.field_res_users_invoice_warn
+msgid "Invoice"
+msgstr "Facture avertissement"
+

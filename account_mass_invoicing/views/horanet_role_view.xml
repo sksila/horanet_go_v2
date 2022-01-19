@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="mass_invoicing_role_form_view" model="ir.ui.view">
+        <field name="name">Roles Form View</field>
+        <field name="model">horanet.role</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_change_state_role" type="object"
+                            class="oe_read_only"
+                            string="Lock"
+                            attrs="{'invisible': [('state', '=', 'locked')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="batch_id" attrs="{'readonly': [('state','=','locked')]}"/>
+                        <field name="fiscal_year" attrs="{'readonly': [('state','=','locked')]}"/>
+                        <field name="number" attrs="{'readonly': [('state','=','locked')]}"/>
+                        <field name="recipe_title"/>
+                    </group>
+                    <notebook>
+                        <page name="role_files" string="Files">
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mass_invoicing_role_tree_view" model="ir.ui.view">
+        <field name="name">Roles Tree View</field>
+        <field name="model">horanet.role</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="number"/>
+                <field name="recipe_title"/>
+                <field name="batch_id"/>
+                <field name="fiscal_year"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mass_invoicing_role_search_view" model="ir.ui.view">
+        <field name="name">Roles search view</field>
+        <field name="model">horanet.role</field>
+        <field name="arch" type="xml">
+            <search string="Search role">
+                <group string="Group By">
+                    <filter name="group_by_fiscal_year" string="Fiscal Year"
+                            context="{'group_by': 'fiscal_year'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_account_mass_invoicing_role" model="ir.actions.act_window">
+        <field name="name">Roles</field>
+        <field name="res_model">horanet.role</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="account_mass_invoicing.mass_invoicing_role_tree_view"/>
+    </record>
+</odoo>

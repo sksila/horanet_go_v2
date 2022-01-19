@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_zip_view_form" model="ir.ui.view">
+        <field name="name">res.zip.form</field>
+        <field name="model">res.zip</field>
+        <field name="arch" type="xml">
+            <form string="ZIP">
+                <header groups="better_address.group_address_manage">
+                    <button name="action_draft" type="object"
+                            string="Reset to draft"
+                            states="confirmed,done"/>
+                    <button name="action_confirm" type="object"
+                            string="Confirm" states="draft,invalidated"
+                            class="oe_highlight"/>
+                    <button name="action_invalidate" type="object"
+                            string="Invalidate" states="confirmed"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+
+                    <group></group>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Name"/>
+                        </h1>
+                    </div>
+                    <group></group>
+                    <group string="Cities list">
+                        <field name="city_ids" nolabel="1" placeholder="Add or Remove cities ..."/>
+                        <!--context="{'default_zip_ids':[active_id]}"-->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_zip_view_tree" model="ir.ui.view">
+        <field name="name">res.zip.tree</field>
+        <field name="model">res.zip</field>
+        <field name="arch" type="xml">
+            <tree string="ZIP">
+                <field name="name"/>
+                <field name="city_ids"/>
+                <field name="state"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_zip_view_filter" model="ir.ui.view">
+        <field name="name">res.zip.filter</field>
+        <field name="model">res.zip</field>
+        <field name="arch" type="xml">
+            <search string="Search zip">
+                <field name="name"/>
+                <field name="city_ids"/>
+                <filter string="Is draft" name="message_needaction" domain="[('state', '=', 'draft')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="State" domain="[]" context="{'group_by':'country_state_id'}"/>
+                    <filter string="Country" domain="[]" context="{'group_by':'country_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_res_zip" model="ir.actions.act_window">
+        <field name="name">ZIP Management</field>
+        <field name="res_model">res.zip</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="res_zip_view_tree"/>
+        <field name="search_view_id" ref="res_zip_view_filter"/>
+    </record>
+</odoo>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pes_ref_1" model="pes.referential">
+            <field name="name">TypeFacture</field>
+            <field name="description">Type de Facturation</field>
+            <field name="default_value">01</field>
+            <field name="ref_value_ids" eval="[(4,ref('pes_ref_val_1')),(4,ref('pes_ref_val_2')),
+            	(4,ref('pes_ref_val_3')),(4,ref('pes_ref_val_4')),(4,ref('pes_ref_val_5')),
+            	(4,ref('pes_ref_val_6')),(4,ref('pes_ref_val_7')),(4,ref('pes_ref_val_8')),
+            	(4,ref('pes_ref_val_9'))]"/>
+        </record>
+
+        <record id="pes_ref_2" model="pes.referential">
+            <field name="name">CodRes</field>
+            <field name="description">CodRes</field>
+            <field name="default_value">1</field>
+            <field name="ref_value_ids" eval="[(4,ref('pes_ref_cod_res_1'))]"/>
+        </record>
+
+        <record id="pes_ref_3" model="pes.referential">
+            <field name="name">TypTiersFacture</field>
+            <field name="description">TypTiersFacture</field>
+            <field name="default_value">01</field>
+            <field name="ref_value_ids" eval="[(4,ref('pes_ref_tpf_1')),(4,ref('pes_ref_tpf_1')),
+            	(4,ref('pes_ref_tpf_2')),(4,ref('pes_ref_tpf_3')),(4,ref('pes_ref_tpf_4')),
+            	(4,ref('pes_ref_tpf_5')),(4,ref('pes_ref_tpf_6')),(4,ref('pes_ref_tpf_7')),
+            	(4,ref('pes_ref_tpf_8')),(4,ref('pes_ref_tpf_9')),(4,ref('pes_ref_tpf_10')),
+            	(4,ref('pes_ref_tpf_11')),(4,ref('pes_ref_tpf_12')),(4,ref('pes_ref_tpf_13')),
+            	(4,ref('pes_ref_tpf_14')),(4,ref('pes_ref_tpf_15')),(4,ref('pes_ref_tpf_16')),
+            	(4,ref('pes_ref_tpf_17')),(4,ref('pes_ref_tpf_18')),(4,ref('pes_ref_tpf_19')),
+            	(4,ref('pes_ref_tpf_20')),(4,ref('pes_ref_tpf_21'))]"/>
+        </record>
+
+        <record id="pes_ref_4" model="pes.referential">
+            <field name="name">TypePJ</field>
+            <field name="description">TYPE TPJ</field>
+            <field name="default_value">01</field>
+            <field name="ref_value_ids" eval="[(4,ref('pes_ref_4_v_1')),(4,ref('pes_ref_4_v_2')),
+            	(4,ref('pes_ref_4_v_3')),(4,ref('pes_ref_4_v_4')),(4,ref('pes_ref_4_v_5')),
+            	(4,ref('pes_ref_4_v_6')),(4,ref('pes_ref_4_v_7')),(4,ref('pes_ref_4_v_8'))]"/>
+        </record>
+
+        <record id="pes_ref_5" model="pes.referential">
+            <field name="name">TypBordAller</field>
+            <field name="description">Type Bord Aller</field>
+            <field name="default_value">01</field>
+            <field name="ref_value_ids" eval="[(4,ref('pes_ref_5_v_1')),(4,ref('pes_ref_5_v_2')),
+            	(4,ref('pes_ref_5_v_3')),(4,ref('pes_ref_5_v_6'))]"/>
+        </record>
+
+        <record id="pes_ref_6" model="pes.referential">
+            <field name="name">TypPce</field>
+            <field name="description">Type de pièce</field>
+            <field name="default_value">01</field>
+            <field name="ref_value_ids" eval="[(4,ref('pes_ref_6_v_1')),(4,ref('pes_ref_6_v_2')),
+            	(4,ref('pes_ref_6_v_3')),(4,ref('pes_ref_6_v_4')),(4,ref('pes_ref_6_v_5')),
+            	(4,ref('pes_ref_6_v_6')),(4,ref('pes_ref_6_v_7')),(4,ref('pes_ref_6_v_9')),
+            	(4,ref('pes_ref_6_v_10')),(4,ref('pes_ref_6_v_11')),(4,ref('pes_ref_6_v_12')),
+            	(4,ref('pes_ref_6_v_14')),(4,ref('pes_ref_6_v_15'))]"/>
+        </record>
+
+        <record id="pes_ref_7" model="pes.referential">
+            <field name="name">NatPce</field>
+            <field name="description">TNatPce</field>
+            <field name="default_value">01</field>
+            <field name="ref_value_ids" eval="[(4,ref('pes_ref_7_v_1')),(4,ref('pes_ref_7_v_2')),
+            	(4,ref('pes_ref_7_v_3')),(4,ref('pes_ref_7_v_4')),(4,ref('pes_ref_7_v_5')),
+            	(4,ref('pes_ref_7_v_6')),(4,ref('pes_ref_7_v_7')),(4,ref('pes_ref_7_v_8')),
+            	(4,ref('pes_ref_7_v_9')),(4,ref('pes_ref_7_v_10')),(4,ref('pes_ref_7_v_11')),
+            	(4,ref('pes_ref_7_v_18'))]"/>
+        </record>
+
+        <record id="pes_ref_8" model="pes.referential">
+            <field name="name">Edition</field>
+            <field name="description">Edition</field>
+            <field name="default_value">01</field>
+            <field name="ref_value_ids" eval="[(4,ref('pes_ref_8_v_1')),(4,ref('pes_ref_8_v_2')),
+            	(4,ref('pes_ref_8_v_3')),(4,ref('pes_ref_8_v_4'))]"/>
+        </record>
+
+        <record id="pes_ref_cat_tiers" model="pes.referential">
+            <field name="name">CatTiers</field>
+            <field name="description">CatTiers</field>
+            <field name="default_value">01</field>
+            <field name="ref_value_ids"
+                   eval="[
+                    (4,ref('pes_ref_cat_tiers_01')),
+                    (4,ref('pes_ref_cat_tiers_20')),
+                    (4,ref('pes_ref_cat_tiers_21')),
+                    (4,ref('pes_ref_cat_tiers_22')),
+                    (4,ref('pes_ref_cat_tiers_23')),
+                    (4,ref('pes_ref_cat_tiers_24')),
+                    (4,ref('pes_ref_cat_tiers_25')),
+                    (4,ref('pes_ref_cat_tiers_26')),
+                    (4,ref('pes_ref_cat_tiers_27')),
+                    (4,ref('pes_ref_cat_tiers_28')),
+                    (4,ref('pes_ref_cat_tiers_29')),
+                    (4,ref('pes_ref_cat_tiers_50')),
+                    (4,ref('pes_ref_cat_tiers_60')),
+                    (4,ref('pes_ref_cat_tiers_61')),
+                    (4,ref('pes_ref_cat_tiers_62')),
+                    (4,ref('pes_ref_cat_tiers_63')),
+                    (4,ref('pes_ref_cat_tiers_64')),
+                    (4,ref('pes_ref_cat_tiers_65')),
+                    (4,ref('pes_ref_cat_tiers_70')),
+                    (4,ref('pes_ref_cat_tiers_71')),
+                    (4,ref('pes_ref_cat_tiers_72')),
+                    (4,ref('pes_ref_cat_tiers_73')),
+                    (4,ref('pes_ref_cat_tiers_74'))
+                   ]"/>
+        </record>
+
+        <record id="pes_ref_nat_jur" model="pes.referential">
+            <field name="name">NatJur</field>
+            <field name="description">NatJur</field>
+            <field name="default_value">01</field>
+            <field name="ref_value_ids"
+                   eval="[
+                    (4,ref('pes_ref_nat_jur_01')),
+                    (4,ref('pes_ref_nat_jur_02')),
+                    (4,ref('pes_ref_nat_jur_03')),
+                    (4,ref('pes_ref_nat_jur_04')),
+                    (4,ref('pes_ref_nat_jur_04')),
+                    (4,ref('pes_ref_nat_jur_05')),
+                    (4,ref('pes_ref_nat_jur_06')),
+                    (4,ref('pes_ref_nat_jur_07')),
+                    (4,ref('pes_ref_nat_jur_08')),
+                    (4,ref('pes_ref_nat_jur_09')),
+                    (4,ref('pes_ref_nat_jur_10')),
+                    (4,ref('pes_ref_nat_jur_11'))
+                   ]"/>
+        </record>
+    </data>
+</odoo>

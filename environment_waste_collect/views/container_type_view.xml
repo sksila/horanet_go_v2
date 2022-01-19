@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="container_type_form_view" model="ir.ui.view">
+        <field name="name">Container Type Form View</field>
+        <field name="model">environment.container.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="volume"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="container_type_tree_view" model="ir.ui.view">
+        <field name="name">Container Type List View</field>
+        <field name="model">environment.container.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="volume"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="container_type_action" model="ir.actions.act_window">
+        <field name="name">Container Types</field>
+        <field name="res_model">environment.container.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

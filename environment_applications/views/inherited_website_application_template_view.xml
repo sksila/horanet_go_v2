@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_website_application_template_env" model="ir.actions.act_window">
+        <field name="name">Website application templates</field>
+        <field name="res_model">website.application.template</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="website_application.website_application_template_view_tree"/>
+        <field name="search_view_id" ref="website_application.website_application_template_view_filter"/>
+        <field name="context">{'default_application_type': 'environment'}</field>
+        <field name="domain" eval="[('application_type', '=', 'environment')]"/>
+    </record>
+</odoo>

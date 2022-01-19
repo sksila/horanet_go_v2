@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wizard_import_data_fr_form" model="ir.ui.view">
+            <field name="name">Landholding import wizard base form view</field>
+            <field name="model">landholding.wizard.import.fr</field>
+            <field name="arch" type="xml">
+                <form string="Import landholdings (admin)">
+                    <group col="4" name="main" string="Imports base parameters">
+                        <field name="delete_all_before_import"/>
+
+                        <field name="conserve_uploaded_file"/>
+                    </group>
+                    <group string="Imports performance parameters">
+                        <field name="multi_transaction"/>
+                        <field name="chunk_size"/>
+                    </group>
+                    <group string="Imports data file">
+                        <field name="datafile" widget="bigfile_binary" filename="datafile_file_name"/>
+                    </group>
+                    <field name="datafile_file_name" invisible="1"/>
+                    <footer>
+                        <button name="run_import" type="object"
+                                class="oe_highlight" string="Import"
+                                confirm="This operation could take time and is irreversible, are you sure to proceed ?"/>
+                        <button special="cancel" string="Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="wizard_import_landholding_data_fr_action" model="ir.actions.act_window">
+            <field name="name">Import landholding action</field>
+            <field name="res_model">landholding.wizard.import.fr</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

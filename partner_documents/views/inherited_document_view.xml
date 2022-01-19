@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_attachment_form" model="ir.ui.view">
+        <field name="name">Partner docuemnts form view with workflow buttons and childs</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet" position="replace">
+                <header>
+                    <button name="change_status" args="['to_check']" type="object" string="To check"
+                            invisible="context.get('validation_wizard')"
+                            attrs="{'invisible': [('status', '=', 'to_check')]}"/>
+                    <button name="change_status" args="['rejected']" type="object" string="Reject"
+                            invisible="context.get('validation_wizard')"
+                            attrs="{'invisible': [('status', '=', 'rejected')]}"/>
+                    <button name="change_status" args="['valid']" type="object" string="Validate"
+                            invisible="context.get('validation_wizard')"
+                            attrs="{'invisible': [('status', '=', 'valid')]}" class="oe_highlight"/>
+
+                    <field name="status" widget="statusbar"
+                           statusbar_visible="to_check,valid,rejected"
+                           statusbar_colors='{"valid":"blue","rejected":"blue"}'/>
+                </header>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="type" invisible="1"/>
+                            <field name="document_type_id" widget="selection"/>
+                            <field name="document_date"/>
+                            <field name="expiry_date"/>
+                            <field name="is_expired"/>
+                            <field name="archived"/>
+                        </group>
+
+                        <group>
+                            <field name="parent_doc_id" attrs="{'invisible':[('parent_doc_id','=',False)]}"/>
+                            <field name="res_model" attrs="{'invisible':[('document_type_id','!=',False)]}"/>
+                            <field name="res_field" attrs="{'invisible':[('document_type_id','!=',False)]}"/>
+                            <field name="res_id" attrs="{'invisible':[('document_type_id','!=',False)]}"/>
+                            <field name="res_name" attrs="{'invisible':[('document_type_id','!=',False)]}"/>
+                            <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                            <field name="public"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group col="2" colspan="2">
+                            <label for="datas"/>
+                            <div class="o_row">
+                                <field name="datas" filename="datas_fname" attrs="{'invisible':[('type','=','url')]}"/>
+                                <button name="action_see_doc" type="object" help="See document"
+                                        icon="fa-external-link"/>
+                            </div>
+                            <field name="datas_fname" invisible="1"/>
+                            <field name="child_ids" widget="many2many_binary"
+                                   attrs="{'invisible': [('datas', '=', False)]}"/>
+                            <field name="url" widget="url" attrs="{'invisible':[('type','=','binary')]}"/>
+                            <field name="mimetype" groups="base.group_no_one"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Attached To">
+                            <field name="user_id"/>
+                            <field name="partner_id"/>
+                        </group>
+                        <group string="Checked">
+                            <field name="checked_by"/>
+                            <field name="checked_on"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Additional informations">
+                            <group groups="partner_documents.group_manage_document" string="History">
+                                <label for="create_uid" string="Creation"/>
+                                <div name="creation_div">
+                                    <field name="create_uid" readonly="1" class="oe_inline"/>
+                                    on
+                                    <field name="create_date" readonly="1" class="oe_inline"/>
+                                </div>
+                                <label for="write_uid" string="Modification"/>
+                                <div>
+                                    <field name="write_uid" readonly="1" class="oe_inline"/>
+                                    on
+                                    <field name="write_date" readonly="1" class="oe_inline"/>
+                                </div>
+                            </group>
+                            <group name="description_group" string="Description" colspan="4">
+                                <field name="description" nolabel="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_document_search" model="ir.ui.view">
+        <field name="name">partner.documents.model.form</field>
+        <field name="model">ir.attachment</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" filter_domain="['|', ('name','ilike',self), ('datas_fname','ilike',self)]"
+                       string="Document"/>
+                <field name="create_date"/>
+                <field name="type"/>
+                <field name="index_content"/>
+                <field name="document_type_id"/>
+                <field name="status"/>
+                <filter name="no_admin_doc"
+                        string="Non admin documents"
+                        domain="[('user_id','!=',1)]"/>
+                <filter name="valid"
+                        string="Valid"
+                        domain="[('status','=','valid'), ('is_expired', '=', False)]"/>
+                <filter name="message_needaction"
+                        string="To check"
+                        domain="[('status', '=', 'to_check')]"/>
+                <filter name="rejected"
+                        string="Rejected"
+                        domain="[('status','=','rejected')]"/>
+                <filter name="expired"
+                        string="Expired"
+                        domain="[('is_expired', '=', True)]"/>
+                <filter name="archived"
+                        string="Archived"
+                        domain="[('archived', '=', True)]"/>
+                <filter name="typed_document"
+                        string="Typed documents"
+                        domain="[('document_type_id', '!=', None)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Document Type" name="type" domain="[]" context="{'group_by':'document_type_id'}"/>
+                    <filter string="Status" name="status" domain="[]" context="{'group_by':'status'}"/>
+                    <filter string="Expiration Month" name="expired_month" domain="[]"
+                            context="{'group_by':'expiry_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Display additional files in tree view -->
+    <record id="view_document_tree" model="ir.ui.view">
+        <field name="name">partner.documents.model.tree</field>
+        <field name="model">ir.attachment</field>
+        <field name="arch" type="xml">
+            <tree string="Documents">
+                <field name="document_type_id"/>
+                <field name="user_id"/>
+                <field name="partner_id"/>
+                <!--<field name="child_ids"/>-->
+                <field name="create_date"/>
+                <field name="write_date" string="Write Date"/>
+                <field name="document_date"/>
+                <field name="expiry_date"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_document" model="ir.actions.act_window">
+        <field name="name">Documents</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ir.attachment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_document_search"/>
+        <!-- Do not show documents who have a parent -->
+        <field name="domain">[('parent_doc_id', '=', False)]</field>
+        <field name="context">{"search_default_no_admin_doc":1}</field>
+    </record>
+
+    <record id="action_document_tree" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_document_tree"/>
+        <field name="act_window_id" ref="action_document"/>
+    </record>
+    <record id="action_document_form" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="base.view_attachment_form"/>
+        <field name="act_window_id" ref="action_document"/>
+    </record>
+</odoo>

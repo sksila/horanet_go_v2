@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="horanet_action_depot" model="horanet.action">
+            <field name="name">Dépot</field>
+            <field name="code">DEPOT</field>
+            <field name="type">operation</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="environment_equipment_category_form_view" model="ir.ui.view">
+        <field name="name">environment.equipment.categories.form</field>
+        <field name="model">maintenance.equipment.category</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_category_view_form"/>
+        <field name="mode">primary</field>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@class='oe_title']" position="before">
+                <field name="image" widget="image" class="oe_avatar" options="{'size': [90, 90]}"/>
+            </xpath>
+            <div name="button_box" position="inside">
+                <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                    <field name="active" widget="boolean_button" options="{'terminology': 'archive'}"/>
+                </button>
+            </div>
+            <xpath expr="//sheet/group[1]" position="after">
+                <group col="2">
+                    <field name="activity_id"/>
+                    <field name="equipment_follows_producer"/>
+                    <label for="use_product" string="Linked to product"/>
+                    <div class="o_row">
+                        <field name="use_product"/>
+                        <field name="product_id" attrs="{'invisible': [('use_product', '=', False)]}"/>
+                    </div>
+                    <label for="capacity" string="Capacity"/>
+                    <div class="o_row">
+                        <field name="capacity"/>
+                        <field name="capacity_unit_id"/>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="environment_equipment_category_tree_view" model="ir.ui.view">
+        <field name="name">environment.equipment.categories.tree</field>
+        <field name="model">maintenance.equipment</field>
+        <field name="inherit_id" ref="maintenance.hr_equipment_category_view_tree"/>
+        <field name="mode">primary</field>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="replace">
+                <tree string="Container categories">
+                    <field name="name" string="Name"/>
+                    <field name="technician_user_id"/>
+                    <field name="capacity"/>
+                </tree>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="environment_equipment_category_action" model="ir.actions.act_window">
+        <field name="name">Container categories</field>
+        <field name="res_model">maintenance.equipment.category</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context" eval="{'equipment_environment': True}"/>
+    </record>
+
+    <record id="action_environment_equipment_category_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="environment_equipment_category_tree_view"/>
+        <field name="act_window_id" ref="environment_equipment_category_action"/>
+    </record>
+
+    <record id="action_environment_equipment_category_view_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="environment_equipment_category_form_view"/>
+        <field name="act_window_id" ref="environment_equipment_category_action"/>
+    </record>
+</odoo>

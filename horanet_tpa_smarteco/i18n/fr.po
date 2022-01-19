@@ -1,0 +1,111 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_tpa_smarteco
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-30 14:06+0000\n"
+"PO-Revision-Date: 2017-10-30 14:06+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_tpa_smarteco
+#: model:res.groups,name:horanet_tpa_smarteco.group_tpa_smarteco
+msgid "Auto sync with SmartEco"
+msgstr "Synchronisation automatique avec SmartEco"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.ui.view,arch_db:horanet_tpa_smarteco.view_form_tpa_synchronization_merge
+#: model:ir.ui.view,arch_db:horanet_tpa_smarteco.view_form_tpa_synchronization_status
+msgid "Force export"
+msgstr "Forcer l'exportation"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.model.fields,field_description:horanet_tpa_smarteco.field_collectivity_config_settings_tpa_smarteco_force_membership
+#: model:ir.model.fields,field_description:horanet_tpa_smarteco.field_tpa_config_settings_tpa_smarteco_force_membership
+msgid "Force membership"
+msgstr "Forcer la synchronisation SmartEco de tous les acteurs"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.model.fields,help:horanet_tpa_smarteco.field_collectivity_config_settings_tpa_smarteco_force_membership
+#: model:ir.model.fields,help:horanet_tpa_smarteco.field_tpa_config_settings_tpa_smarteco_force_membership
+msgid "Force membership to all new partners"
+msgstr "Forcer la synchronisation SmartEco de tous les nouveaux acteurs"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.model.fields,field_description:horanet_tpa_smarteco.field_collectivity_config_settings_tpa_smarteco_is_enable
+#: model:ir.model.fields,field_description:horanet_tpa_smarteco.field_tpa_config_settings_tpa_smarteco_is_enable
+msgid "Is TPA smarteco enable"
+msgstr "TPA SmartEco activé"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.model.fields,field_description:horanet_tpa_smarteco.field_collectivity_config_settings_tpa_smarteco_name_method_partner
+#: model:ir.model.fields,field_description:horanet_tpa_smarteco.field_tpa_config_settings_tpa_smarteco_name_method_partner
+msgid "Method TPA smarteco partner"
+msgstr "Méthode du service web de SmartEco"
+
+#. module: horanet_tpa_smarteco
+#: code:addons/horanet_tpa_smarteco/models/inherited_tpa_synchronization_merge.py:142
+#, python-format
+msgid "No answer from the service, the made supposed treatment."
+msgstr "Pas de réponse du service web, on suppose que le traitement est validé."
+
+#. module: horanet_tpa_smarteco
+#: code:addons/horanet_tpa_smarteco/models/inherited_tpa_synchronization_status.py:154
+#, python-format
+msgid "No answer of the service, the made supposed treatment."
+msgstr "Pas de réponse du service, traitement supposé effectué."
+
+#. module: horanet_tpa_smarteco
+#: model:ir.model,name:horanet_tpa_smarteco.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.ui.view,arch_db:horanet_tpa_smarteco.view_partner_form
+msgid "SmartEco"
+msgstr "SmartEco"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.ui.view,arch_db:horanet_tpa_smarteco.view_form_collectivity_config_settings
+msgid "SmartEco TPA Settings"
+msgstr "SmartEco TPA Settings"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.model.fields,field_description:horanet_tpa_smarteco.field_res_partner_tpa_membership_smarteco
+#: model:ir.model.fields,field_description:horanet_tpa_smarteco.field_res_users_tpa_membership_smarteco
+msgid "Synchronize with SmartEco"
+msgstr "Synchroniser avec SmartEco"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.model.fields,field_description:horanet_tpa_smarteco.field_collectivity_config_settings_tpa_smarteco_url
+#: model:ir.model.fields,field_description:horanet_tpa_smarteco.field_tpa_config_settings_tpa_smarteco_url
+msgid "URL backend Smarteco"
+msgstr "URL du service web de Smarteco"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.model,name:horanet_tpa_smarteco.model_base_partner_merge_automatic_wizard
+msgid "base.partner.merge.automatic.wizard"
+msgstr "base.partner.merge.automatic.wizard"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.model,name:horanet_tpa_smarteco.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.model,name:horanet_tpa_smarteco.model_tpa_synchronization_merge
+msgid "tpa.synchronization.merge"
+msgstr "tpa.synchronization.merge"
+
+#. module: horanet_tpa_smarteco
+#: model:ir.model,name:horanet_tpa_smarteco.model_tpa_synchronization_status
+msgid "tpa.synchronization.status"
+msgstr "tpa.synchronization.status"
+

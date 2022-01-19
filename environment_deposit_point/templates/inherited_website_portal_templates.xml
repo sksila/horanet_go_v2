@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_portal_layout" inherit_id="website_portal.portal_layout"
+              customize_show="True" active="False" name="Environment PAV deposit menu" priority="30">
+        <xpath expr="//ul[contains(@class,'o_portal_submenu')]" position="inside">
+            <li>
+                <a href="/my/pav-deposits">Your PAV Deposits</a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_your_pav_deposit" name="Portal My Home : your PAV deposits"
+              inherit_id="website_portal.portal_my_home"
+              customize_show="True" active="False" priority="30">
+        <xpath expr="//div[contains(@class,'o_my_home_content')]" position="inside">
+            <h3 class="page-header">
+                <a href="/my/pav-deposits">Your PAV deposits
+                    <small class="ml8">
+                        <span class='badge'>
+                            <t t-esc="deposit_count"/>
+                        </span>
+                    </small>
+                </a>
+            </h3>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="horanet_relation_residence_view_form" model="ir.ui.view">
+            <field name="name">horanet.relation.residence.form</field>
+            <field name="model">horanet.relation.residence</field>
+            <field name="arch" type="xml">
+                <form string="Residence">
+                    <sheet>
+                        <group string="Relation between" col="5">
+                            <group colspan="4">
+                                <field name="partner_id"
+                                       context="{'default_partner_id': active_id}"
+                                       placeholder="Select a partner"/>
+                                <field name="residence_id" placeholder="Select a residence"
+                                       context="{'default_is_company': True, 'default_name': 'Residence',
+                                       'form_view_ref':'horanet_citizen.horanet_residence_view_form',}"
+                                />
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                        <group string="Relation options">
+                            <group>
+                                <field name="begin_date" placeholder="Optional" widget="date"/>
+                                <field name="end_date" placeholder="Optional" widget="date"/>
+                            </group>
+                            <group>
+                                <field name="is_valid"/>
+                                <field name="is_principal"/>
+                            </group>
+                        </group>
+                        <group string="Residence current active members">
+                            <field name="residence_active_partners" widget="many2many_tags"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="horanet_relation_residence_view_tree" model="ir.ui.view">
+            <field name="name">horanet.relation.residence.tree</field>
+            <field name="model">horanet.relation.residence</field>
+            <field name="arch" type="xml">
+                <tree string="Foyers">
+                    <field name="residence_id"/>
+                    <field name="partner_id"/>
+                    <field name="is_valid"/>
+                    <field name="is_principal"/>
+                    <field name="begin_date"/>
+                    <field name="end_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="horanet_relation_residence_action" model="ir.actions.act_window">
+            <field name="name">Inhabit relation Management</field>
+            <field name="res_model">horanet.relation.residence</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="horanet_relation_residence_view_tree"/>
+        </record>
+
+    </data>
+</openerp>
+

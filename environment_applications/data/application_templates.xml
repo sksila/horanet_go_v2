@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="application_template_support_request_pro" model="website.application.template">
+            <field name="name">Waste site support request</field>
+            <field name="description">To ask a support to access waste sites, simply fill the form below with the following requirements :</field>
+            <field name="application_informations" eval="[(6, 0, [ref('application_information_number_of_badges')])]"/>
+            <field name="beginning_date" eval="datetime.now()"/>
+            <field name="functionality_id" eval="ref('website_application.application_functionality_support_request')"/>
+            <field name="application_type">environment</field>
+            <field name="multiple_requests_allowed">True</field>
+            <field name="ask_partner_informations">True</field>
+            <field name="subscription_category_partner_ids" eval="[(6, 0, [ref('horanet_environment.environment_category_professional')])]"/>
+        </record>
+        <record id="application_template_support_request_part" model="website.application.template">
+            <field name="name">Waste site support request</field>
+            <field name="description">To ask a support to access waste sites, simply fill the form below with the following requirements :</field>
+            <field name="application_informations" eval="[(6, 0, [
+            ref('application_information_foyer_members_count'),
+            ref('application_information_home_type'),
+            ref('application_information_residence_type'),
+            ref('application_information_owner_type')
+            ])]"/>
+            <field name="beginning_date" eval="datetime.now()"/>
+            <field name="functionality_id" eval="ref('website_application.application_functionality_support_request')"/>
+            <field name="application_type">environment</field>
+            <field name="multiple_requests_allowed">False</field>
+            <field name="ask_partner_informations">True</field>
+            <field name="subscription_category_partner_ids" eval="[(6, 0, [ref('horanet_environment.environment_category_particulier'),])]"/>
+        </record>
+        <record id="application_template_support_loss" model="website.application.template">
+            <field name="name">Waste site support loss</field>
+            <field name="description">To declare the lose of a waste site support, simply fill the form below :</field>
+            <field name="application_informations" eval="[(6, 0, [ref('application_information_lost_type')])]"/>
+            <field name="beginning_date" eval="datetime.now()"/>
+            <field name="functionality_id" eval="ref('website_application.application_functionality_support_loss')"/>
+            <field name="application_type">environment</field>
+            <field name="multiple_requests_allowed">True</field>
+            <field name="ask_partner_informations">True</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Add the main menu for the application horanet Subscription -->
+    <menuitem id="menu_base_subscription" name="Subscription"
+              web_icon="horanet_subscription,static/description/icon.png"
+              groups="group_subscription_user"
+              sequence="5"/>
+
+
+    <!-- CONTRACT menu -->
+    <menuitem id="menu_subscription" name="Contracts" parent="menu_base_subscription" sequence="20"/>
+    <!-- menu Subscription -->
+    <menuitem id="menu_horanet_subscription" name="Contracts"
+              parent="menu_subscription"
+              action='action_horanet_subscription'
+              sequence="10"/>
+    <!-- menu Subscription line -->
+    <menuitem id="menu_horanet_subscription_line" name="Contract Periods"
+              parent="menu_subscription"
+              action='action_horanet_subscription_line'
+              sequence="20"/>
+    <!-- menu Contract Templates-->
+    <menuitem id="menu_contract_template" name="Contract Templates"
+              parent="menu_subscription"
+              action='action_contract_template'
+              sequence="30"/>
+
+
+    <!-- PACKAGE menu -->
+    <menuitem id="menu_package" name="Packages" parent="menu_base_subscription" sequence="40"/>
+    <!-- menu package -->
+    <menuitem id="menu_horanet_package" name="Packages"
+              parent="menu_package"
+              action='action_horanet_package'
+              sequence="10"/>
+    <!-- menu package line -->
+    <menuitem id="menu_horanet_package_line" name="Package lines"
+              parent="menu_package"
+              action='action_horanet_package_line'
+              sequence="20"/>
+    <!-- menu Prestation -->
+    <menuitem id="menu_horanet_prestation" name="Prestations"
+              parent="menu_package"
+              action='action_horanet_prestation'
+              sequence="30"/>
+
+    <!-- USAGE menu -->
+    <menuitem id="menu_usage" name="Usages" parent="menu_base_subscription" sequence="60"/>
+    <!-- menu device query -->
+    <menuitem id="menu_horanet_device_query" name="Device query"
+              parent="menu_usage"
+              action='action_device_query'
+              sequence="10"/>
+    <!-- menu operation -->
+    <menuitem id="menu_horanet_operation" name="Operations"
+              parent="menu_usage"
+              action='action_horanet_operation'
+              sequence="20"/>
+    <!-- menu Usage -->
+    <menuitem id="menu_horanet_usage" name="Usages"
+              parent="menu_usage"
+              action='action_horanet_usage'
+              sequence="30"/>
+    <!-- menu device response -->
+    <menuitem id="menu_horanet_device_response" name="Device response"
+              parent="menu_usage"
+              action='action_device_response'
+              sequence="40"/>
+
+
+    <!-- ACTIVITY menu -->
+    <menuitem id="menu_horanet_activity" name="Activity and Prestation" parent="menu_base_subscription"
+              groups="group_subscription_manager"
+              sequence="80"/>
+    <!-- menu Activity -->
+    <menuitem id="menu_horanet_activite" name="Activities"
+              parent="menu_horanet_activity"
+              action='action_horanet_activity'
+              sequence="10"/>
+    <!--Services-->
+    <menuitem id="menu_horanet_service" name="Services"
+              parent="menu_horanet_activity"
+              action='action_horanet_service'
+              sequence="20"/>
+    <!-- menu Activity sector -->
+    <menuitem id="menu_activity_sector" name="Activity sectors"
+              parent="menu_horanet_activity"
+              action='action_activity_sector'
+              sequence="30"/>
+
+
+    <!-- GENERIC CONFIGURATION menu -->
+    <menuitem id="menu_subscription_config" name="Configuration"
+              parent="menu_base_subscription"
+              sequence="100"/>
+
+    <!-- Add the subscription general settings menu -->
+    <menuitem id="menu_subscription_generic_settings" name="Settings"
+              parent="menu_subscription_config"
+              action='action_subscription_generic_settings'
+              sequence="10"
+              groups="base.group_system"/>
+
+    <!-- ACCESS menu -->
+    <menuitem id="menu_access_configuration" name="Access"
+              parent="menu_subscription_config"
+              sequence="20"/>
+    <!-- menu Activity rule -->
+    <menuitem id="menu_horanet_activity_rule" name="Activity rules"
+              parent="menu_access_configuration"
+              action='action_activity_rule'
+              sequence="10"/>
+    <!-- menu Activity rule version -->
+    <menuitem id="menu_horanet_activity_rule_version" name="Activity rule versions"
+              parent="menu_access_configuration"
+              groups="base.group_no_one"
+              action='action_activity_rule_version'
+              sequence="20"/>
+    <!-- menu Action -->
+    <menuitem id="menu_partner_action" name="Actions"
+              parent="menu_access_configuration"
+              action='action_horanet_action'
+              sequence="30"/>
+
+    <!-- CONTRACT config menu -->
+    <menuitem id="menu_subscription_configuration" name="Contract"
+              parent="menu_subscription_config"
+              sequence="30"/>
+    <!-- menu Subscription cycle -->
+    <menuitem id="menu_horanet_subscription_cycle" name="Subscription cycles"
+              parent="menu_subscription_configuration"
+              action='action_horanet_subscription_cycle'
+              sequence="10"/>
+
+    <!-- EQUIPMENT config menu-->
+    <menuitem id="menu_equipment_configuration" name="Equipments"
+              parent="menu_subscription_config"
+              groups="group_subscription_admin"
+              sequence="40"/>
+    <!-- menu Communicating device -->
+    <!--<menuitem id="menu_devices" name="Communicating devices"-->
+              <!--parent="menu_equipment_configuration"-->
+              <!--action='action_horanet_device'-->
+              <!--sequence="10"/>-->
+    <!-- menu Infrastructure -->
+    <menuitem id="menu_horanet_infrastructure" name="Infrastructures"
+              parent="menu_equipment_configuration"
+              action='action_horanet_infrastructure'
+              sequence="20"/>
+    <!-- menu Check point -->
+    <menuitem id="menu_device_check_point" name="Check point"
+              parent="menu_equipment_configuration"
+              action='action_device_check_point'
+              sequence="30"/>
+
+    <!-- Add the rule sandbox menu -->
+    <menuitem id="menu_wizard_rule_sandbox" name="Rule SandBox"
+              parent="menu_subscription_config"
+              sequence="50"
+              action='wizard_activity_rule_sandbox_action'/>
+
+    <!-- Add the exploitation engine result menu -->
+    <menuitem id="menu_engine_exploitation_result" name="Engine result"
+              parent="menu_subscription_config"
+              groups="base.group_no_one"
+              sequence="60"
+              action='action_exploitation_engine_result'/>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Modification de la vue form pour y ajouter les champs de mapping d'inscription TCO -->
+    <record id="view_payment_term_form" model="ir.ui.view">
+        <field name="name">horanet add quotient in payment term</field>
+        <field name="model">account.payment.term</field>
+        <field name="inherit_id" ref="account.view_payment_term_form"/>
+        <field name="arch" type="xml">
+            <!-- Ajout des champs de mapping tco inscription -->
+            <field name="active" position="after">
+                <newline/>
+                <field name="activate_tco"/>
+                <newline/>
+                <field name="tco_inscription_invoice_period"
+                       attrs="{'invisible':[('activate_tco','=',False)]}"/>
+                <field name="tco_period_id"
+                       attrs="{'invisible':[('activate_tco','=',False)],'required':[('activate_tco','=',True)]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

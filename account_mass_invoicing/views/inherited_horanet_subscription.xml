@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_subscription_form_view" model="ir.ui.view">
+        <field name="name">Add Payment mode in horanet.subscription</field>
+        <field name="model">horanet.subscription</field>
+        <field name="inherit_id" ref="horanet_subscription.horanet_subscription_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='payment_term_id']" position="before">
+                <field name="payment_mode"/>
+            </xpath>
+            <xpath expr="//field[@name='client_id']" position="after">
+                <field name="banking_mandate" attrs="{'required': [('required_mandate', '=', True)]}"/>
+                <field name="bank_account_id"
+                       context="{'default_partner_id': client_id}"/>
+                <field name="required_mandate" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='application_type']" position="after">
+                <field name="required_mandate" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

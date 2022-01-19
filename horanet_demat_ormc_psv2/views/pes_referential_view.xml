@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_pes_ref_form" model="ir.ui.view">
+            <field name="name">PES referential form</field>
+            <field name="model">pes.referential</field>
+            <field name="arch" type="xml">
+                <form string="Reference">
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="description"/>
+                                <field name="default_value"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="Values" string="Block children">
+                                <field name="ref_value_ids" nolabel="1"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_pes_ref_tree" model="ir.ui.view">
+            <field name="name">PES referential tree</field>
+            <field name="model">pes.referential</field>
+            <field name="arch" type="xml">
+                <tree string="Reference">
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="default_value"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="pes_ref_action">
+            <field name="name">Reference</field>
+            <field name="res_model">pes.referential</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

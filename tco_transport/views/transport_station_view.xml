@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_transport_station" model="ir.ui.view">
+        <field name="name">tco.transport.station.form</field>
+        <field name="model">tco.transport.station</field>
+        <field name="arch" type="xml">
+            <form string="Station">
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                    </group>
+                    <group>
+                        <field name="station_number"></field>
+                    </group>
+                    <group string="Properties">
+                        <field name="latitude"></field>
+                        <field name="longitude"></field>
+                        <field name="type_id"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_transport_station" model="ir.ui.view">
+        <field name="name">tco.transport.station.tree</field>
+        <field name="model">tco.transport.station</field>
+        <field name="arch" type="xml">
+            <tree string="Station">
+                <field name="name"/>
+                <field name="station_number"></field>
+                <field name="type_id"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_transport_station" model="ir.actions.act_window">
+        <field name="name">Station</field>
+        <field name="res_model">tco.transport.station</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_transport_station"/>
+    </record>
+</odoo>

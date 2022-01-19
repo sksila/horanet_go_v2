@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Set terms checkbox checked with checkbox_checked value from overrided controller WebsiteSale -->
+    <template id="payment_sale_note" inherit_id="website_sale.payment_sale_note" name="Accept Terms &amp; Conditions">
+        <xpath expr="//input[@id='checkbox_cgv']" position="replace">
+            <input type="checkbox" id="checkbox_cgv" t-att-checked="checkbox_checked"/>
+            I agree to the
+        </xpath>
+    </template>
+</odoo>

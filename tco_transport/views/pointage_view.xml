@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Form view -->
+    <record id="view_form_tco_transport_pointage" model="ir.ui.view">
+        <field name="name">Pointage form</field>
+        <field name="model">tco.transport.pointage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Status">
+                        <field name="is_valid"/>
+                        <field name="status"/>
+                    </group>
+                    <group string="Properties">
+                        <field name="date_time"/>
+                        <field name="vehicle_id"/>
+                        <field name="line_id"/>
+                        <field name="terminal_id"/>
+                        <field name="tag_id"/>
+                        <field name="partner_id"/>
+                    </group>
+                    <group string="Other information">
+                        <field name="transaction_number"/>
+                        <field name="comment"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view -->
+    <record id="view_tree_tco_transport_pointage" model="ir.ui.view">
+        <field name="name">Pointage list</field>
+        <field name="model">tco.transport.pointage</field>
+        <field name="arch" type="xml">
+            <tree decoration-success="is_valid==True and status=='0'"
+                  decoration-danger="is_valid!=True and status!='0'"
+                  decoration-warning="is_valid==True and status!='0' or is_valid!=True and status=='0'"
+                  default_order="date_time desc">
+                <field name="is_valid"/>
+                <field name="status"/>
+                <field name="date_time"/>
+                <field name="vehicle_id"/>
+                <field name="line_id"/>
+                <field name="terminal_id"/>
+                <field name="tag_id"/>
+                <field name="partner_id"/>
+                <field name="transaction_number"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search view -->
+    <record id="view_search_tco_transport_pointage" model="ir.ui.view">
+        <field name="name">Search pointage</field>
+        <field name="model">tco.transport.pointage</field>
+        <field name="arch" type="xml">
+            <search string="Search pointage">
+                <field name="status"/>
+                <field name="is_valid"/>
+                <filter string="Status is Ok" name="status_is_ok" domain="[('status', '=', '0')]"/>
+                <filter string="Status is not Ok" name="status_is_not_ok" domain="[('status', '!=', '0')]"/>
+                <filter string="Is valid" name="is_valid" domain="[('is_valid', '=', True)]"/>
+                <filter string="Is not valid" name="is_not_valid" domain="[('is_valid', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_tco_transport_pointage" model="ir.actions.act_window">
+        <field name="name">Pointages</field>
+        <field name="res_model">tco.transport.pointage</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_tco_transport_pointage"/>
+        <field name="search_view_id" ref="view_search_tco_transport_pointage"/>
+    </record>
+</odoo>

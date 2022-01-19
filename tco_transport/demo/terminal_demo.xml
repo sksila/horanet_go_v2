@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- TERMINAL BIOS VERSION -->
+    <record id="demo_terminal_bios_version_1" model="tco.terminal.bios.version">
+        <field name="name">v1.0</field>
+    </record>
+    <record id="demo_terminal_bios_version_2" model="tco.terminal.bios.version">
+        <field name="name">v2.0</field>
+    </record>
+
+    <!-- TERMINAL SOFTWARE VERSION -->
+    <record id="demo_terminal_software_version_1" model="tco.terminal.software.version">
+        <field name="name">v1.0</field>
+    </record>
+    <record id="demo_terminal_software_version_2" model="tco.terminal.software.version">
+        <field name="name">v2.0</field>
+    </record>
+
+    <!-- TERMINAL SOFTWARE -->
+    <record id="demo_terminal_software_1" model="tco.terminal.software">
+        <field name="name">My software 1</field>
+        <field name="version_id" ref="tco_transport.demo_terminal_software_version_1"/>
+    </record>
+    <record id="demo_terminal_software_2" model="tco.terminal.software">
+        <field name="name">My software 2</field>
+        <field name="version_id" ref="tco_transport.demo_terminal_software_version_2"/>
+    </record>
+
+    <!-- TERMINAL -->
+    <record id="demo_terminal_1" model="tco.terminal">
+        <field name="identification_number" eval="1"/>
+        <field name="model">lb7</field>
+        <field name="software_id" ref="tco_transport.demo_terminal_software_1"/>
+        <field name="bios_version_id" ref="tco_transport.demo_terminal_bios_version_2"/>
+        <field name="serial_number">VFKGBKBFD8785e7f6zse47fr</field>
+        <field name="vehicle_id" ref="demo_vehicle_1" />
+    </record>
+    <record id="demo_terminal_2" model="tco.terminal">
+        <field name="identification_number" eval="2"/>
+        <field name="model">lb7</field>
+        <field name="software_id" ref="tco_transport.demo_terminal_software_2"/>
+        <field name="bios_version_id" ref="tco_transport.demo_terminal_bios_version_2"/>
+        <field name="serial_number">NIUFZH8HS9DHF9SDF7GD</field>
+        <field name="vehicle_id" ref="demo_vehicle_2" />
+    </record>
+    <record id="demo_terminal_3" model="tco.terminal">
+        <field name="identification_number" eval="3"/>
+        <field name="model">lb7</field>
+        <field name="software_id" ref="tco_transport.demo_terminal_software_2"/>
+        <field name="bios_version_id" ref="tco_transport.demo_terminal_bios_version_2"/>
+        <field name="serial_number">87IGGUYVKYVYK5</field>
+        <field name="vehicle_id" ref="demo_vehicle_1" />
+    </record>
+    <record id="demo_terminal_4" model="tco.terminal">
+        <field name="identification_number" eval="20"/>
+        <field name="model">lb7</field>
+        <field name="software_id" ref="tco_transport.demo_terminal_software_2"/>
+        <field name="bios_version_id" ref="tco_transport.demo_terminal_bios_version_2"/>
+        <field name="serial_number">IKHBO7G7BO8VI76V5V7</field>
+        <field name="vehicle_id" ref="demo_vehicle_2" />
+    </record>
+    <record id="demo_terminal_5" model="tco.terminal">
+        <field name="identification_number" eval="5"/>
+        <field name="model">lb7</field>
+        <field name="software_id" ref="tco_transport.demo_terminal_software_2"/>
+        <field name="bios_version_id" ref="tco_transport.demo_terminal_bios_version_2"/>
+        <field name="serial_number">UT7B5GY09YHT76F45D3</field>
+    </record>
+    <record id="demo_terminal_6" model="tco.terminal">
+        <field name="identification_number" eval="6"/>
+        <field name="model">lb7</field>
+        <field name="software_id" ref="tco_transport.demo_terminal_software_2"/>
+        <field name="bios_version_id" ref="tco_transport.demo_terminal_bios_version_2"/>
+        <field name="serial_number">0GH8O7GITV5D35V</field>
+    </record>
+
+    <!-- POINTAGE -->
+    <record id="demo_pointage_1" model="tco.transport.pointage">
+        <field name="status">0</field>
+        <field name="date_time" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_1"/>
+        <field name="partner_id" ref="base.partner_demo"/>
+        <field name="transaction_number" eval="1"/>
+        <field name="vehicle_id" ref="tco_transport.demo_vehicle_1"/>
+        <field name="line_id" ref="tco_transport.demo_line_outward_1"/>
+        <field name="terminal_id" ref="tco_transport.demo_terminal_1"/>
+    </record>
+    <record id="demo_pointage_2" model="tco.transport.pointage">
+        <field name="status">1</field>
+        <field name="date_time" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_2"/>
+        <field name="partner_id" ref="base.partner_demo"/>
+        <field name="transaction_number" eval="2"/>
+        <field name="vehicle_id" ref="tco_transport.demo_vehicle_2"/>
+        <field name="line_id" ref="tco_transport.demo_line_outward_2"/>
+        <field name="terminal_id" ref="tco_transport.demo_terminal_2"/>
+    </record>
+    <!--<record id="demo_pointage_3" model="tco.transport.pointage">-->
+        <!--<field name="status">2</field>-->
+        <!--<field name="date_time" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>-->
+        <!--<field name="tag_id" ref="partner_contact_identification.demo_tag_3"/>-->
+        <!--<field name="partner_id" ref="base.partner_demo"/>-->
+        <!--<field name="transaction_number" eval="3"/>-->
+        <!--<field name="vehicle_id" ref="tco_transport.demo_vehicle_1"/>-->
+        <!--<field name="line_id" ref="tco_transport.demo_line_outward_1"/>-->
+        <!--<field name="terminal_id" ref="tco_transport.demo_terminal_3"/>-->
+    <!--</record>-->
+    <record id="demo_pointage_4" model="tco.transport.pointage">
+        <field name="status">3</field>
+        <field name="date_time" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_2"/>
+        <field name="partner_id" ref="base.partner_demo"/>
+        <field name="transaction_number" eval="4"/>
+        <field name="vehicle_id" ref="tco_transport.demo_vehicle_2"/>
+        <field name="line_id" ref="tco_transport.demo_line_return_2"/>
+        <field name="terminal_id" ref="tco_transport.demo_terminal_4"/>
+    </record>
+    <!--<record id="demo_pointage_5" model="tco.transport.pointage">-->
+        <!--<field name="status">4</field>-->
+        <!--<field name="date_time" eval="time.strftime('%Y-%m-%d %H:%M:%S')"/>-->
+        <!--<field name="tag_id" ref="partner_contact_identification.demo_tag_3"/>-->
+        <!--<field name="partner_id" ref="base.partner_demo"/>-->
+        <!--<field name="transaction_number" eval="5"/>-->
+        <!--<field name="vehicle_id" ref="tco_transport.demo_vehicle_1"/>-->
+        <!--<field name="line_id" ref="tco_transport.demo_line_outward_1"/>-->
+        <!--<field name="terminal_id" ref="tco_transport.demo_terminal_5"/>-->
+    <!--</record>-->
+</odoo>

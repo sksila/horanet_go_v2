@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tpa_synchronization_status,manage_tpa_synchronization_status,model_tpa_synchronization_status,horanet_go.group_horanet_go_agent,1,1,1,1
+access_tpa_synchronization_merge,manage_tpa_synchronization_merge,model_tpa_synchronization_merge,horanet_go.group_horanet_go_agent,1,1,1,1

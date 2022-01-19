@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Sous-Blocs de l'element Entete PES -->
+        <record id="pes_bloc_3_1" model="pes.bloc">
+            <field name="name">DteStr</field>
+            <field name="code">DteStr</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">DteStr</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_3_1'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_3_2" model="pes.bloc">
+            <field name="name">IdPost</field>
+            <field name="code">IdPost</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IdPost</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_3_2'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_3_3" model="pes.bloc">
+            <field name="name">LibellePoste</field>
+            <field name="code">LibellePoste</field>
+            <field name="description">LibellePoste</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_3_3'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_3_4" model="pes.bloc">
+            <field name="name">IdColl</field>
+            <field name="code">IdColl</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IdColl</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_3_4'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_3_5" model="pes.bloc">
+            <field name="name">CodCol</field>
+            <field name="code">CodCol</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">CodCol</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_3_5'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_3_6" model="pes.bloc">
+            <field name="name">CodBud</field>
+            <field name="code">CodBud</field>
+            <field name="description">CodBud</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_3_6'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_3_7" model="pes.bloc">
+            <field name="name">LibelleColBud</field>
+            <field name="code">LibelleColBud</field>
+            <field name="description">LibelleColBud</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_3_7'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+
+        <!-- Sous-Blocs de l'element Emetteur -->
+        <record id="pes_bloc_2_2_1" model="pes.bloc">
+            <field name="name">Sigle Emetteur</field>
+            <field name="code">Sigle</field>
+            <field name="description">Sigle Emetteur</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_er_2_2_1'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_2_2_2" model="pes.bloc">
+            <field name="name">Sigle Recepteur</field>
+            <field name="code">Adresse</field>
+            <field name="description">Adresse physique du Recepteur</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_er_2_2_2'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+
+        <!-- Sous-Blocs de l'element Emetteur -->
+        <record id="pes_bloc_2_3_1" model="pes.bloc">
+            <field name="name">Sigle Recepteur</field>
+            <field name="code">Sigle</field>
+            <field name="description">Sigle Recepteur</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_er_2_3_1'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_2_3_2" model="pes.bloc">
+            <field name="name">Sigle Recepteur</field>
+            <field name="code">Adresse</field>
+            <field name="description">Adresse physique de Recepteur</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_er_2_3_2'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+
+        <!-- Sous-Blocs de l'element parametres -->
+        <record id="pes_bloc_2_1_1" model="pes.bloc">
+            <field name="name">Version</field>
+            <field name="code">Version</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Version de Paramétres</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_2_1_1'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_2_1_2" model="pes.bloc">
+            <field name="name">TypFic</field>
+            <field name="code">TypFic</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Version de Paramétres</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_prm_2'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_2_1_3" model="pes.bloc">
+            <field name="name">NomFic</field>
+            <field name="code">NomFic</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Version de Paramétres</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_bloc_attrs_prm_3'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+
+        <!-- Sous-Blocs de l'enveloppe -->
+        <record id="pes_bloc_2_1" model="pes.bloc">
+            <field name="name">Parametres</field>
+            <field name="code">Parametres</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Parametres de l'élément Enveloppe</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_2_1_1')),(4,ref('pes_bloc_2_1_2')),(4,ref('pes_bloc_2_1_3'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_2_2" model="pes.bloc">
+            <field name="name">Emetteur</field>
+            <field name="code">Emetteur</field>
+            <field name="description">Emetteur de l'élément Enveloppe</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="children_bloc_ids" eval="[(4,ref('pes_bloc_2_2_1')),(4,ref('pes_bloc_2_2_2'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_2_3" model="pes.bloc">
+            <field name="name">Recepteur</field>
+            <field name="code">Recepteur</field>
+            <field name="description">Emetteur de l'élément Enveloppe</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!-- <field name="children_bloc_ids" eval="[(4,ref('pes_bloc_2_3_1')),(4,ref('pes_bloc_2_3_2'))]"/> -->
+            <field name="children_bloc_ids"
+                   eval="[
+                    (4,ref('pes_bloc_2_3_1')),
+                   ]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+
+        <!-- Sous-Blocs de le Racine -->
+        <record id="pes_bloc_2" model="pes.bloc">
+            <field name="name">Enveloppe</field>
+            <field name="code">Enveloppe</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Enveloppe de l'élément racine</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="children_bloc_ids" eval="[(4,ref('pes_bloc_2_1')),(4,ref('pes_bloc_2_2')),(4,ref('pes_bloc_2_3'))]"/>-->
+            <field name="children_bloc_ids" eval="[(4,ref('pes_bloc_2_1')),(4,ref('pes_bloc_2_2'))]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_3" model="pes.bloc">
+            <field name="name">Entete PES</field>
+            <field name="code">EnTetePES</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Entete PES de l'élément racine</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--<field name="children_bloc_ids" eval="[(4,ref('pes_bloc_3_1')),(4,ref('pes_bloc_3_2'))-->
+            <!--   ,(4,ref('pes_bloc_3_3')),(4,ref('pes_bloc_3_4')),(4,ref('pes_bloc_3_5'))-->
+            <!--   ,(4,ref('pes_bloc_3_6')),(4,ref('pes_bloc_3_7'))]"/>-->
+            <field name="children_bloc_ids"
+                   eval="[
+                    (4,ref('pes_bloc_3_1')),
+                    (4,ref('pes_bloc_3_2')),
+                    (4,ref('pes_bloc_3_4')),
+                    (4,ref('pes_bloc_3_5')),
+                    (4,ref('pes_bloc_3_6')),
+                    (4,ref('pes_bloc_3_7'))
+                   ]"/>
+            <field name="pes_input_object_id" ref="pes_input_object_0"/>
+        </record>
+
+
+    </data>
+</odoo>

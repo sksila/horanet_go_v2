@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_tco_inscription_transport_scolaire" model="ir.ui.view">
+        <field name="name">horanet.tco.inscription.form</field>
+        <field name="model">tco.inscription.transport.scolaire</field>
+        <field name="arch" type="xml">
+            <form string="Inscription">
+                <header>
+                    <button name="action_create_saleorder" string="Create sale order" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('status','in',['validated', 'cancelled', 'progress', 'refused'])]}"
+                            context="{'force':True}"/>
+                    <button name="action_cancel" string="Cancel" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('status','in',['cancelled', 'draft', 'to_validate', 'refused'])]}"
+                            context="{'force':True}"/>
+                    <button name="%(action_wizard_refuse_inscription)d" string="Refuse" type="action"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('status','in',['cancelled', 'draft', 'progress', 'validated', 'refused'])]}"
+                            context="{'default_inscription_id':active_id}"/>
+                    <button name="action_show_sale_order" string="Show sale order" type="object"
+                            attrs="{'invisible': [('sale_order_ref','=',False)]}"
+                            context="{'force':True}"/>
+                    <field name="invoice_validated" invisible="1"/>
+                    <field name="status" widget="statusbar" statusbar_visible="draft,to_validate,progress,validated"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <div style="text-align: center;" attrs="{'invisible': [('status','!=','refused')]}">
+                        <label for="refuse_reason"
+                               string="This inscription has been refused for the following reason :"/>
+                        <field name="refuse_reason" nolabel="1" readonly="1"/>
+                    </div>
+                    <group col="4">
+                        <group string="General informations" col="4" colspan="4">
+                            <field name="period_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="date_start"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="date_end"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                        </group>
+                        <group string="Responsible" col="4" colspan="4">
+                            <field name="responsible_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"
+                                   context="{'form_view_ref' : 'tco_inscription_transport_scolaire.view_partner_custom_form_create'}"/>
+                            <button name="action_see_user" string="See user" type="object"
+                                    attrs="{'invisible': [('responsible_user_id', '=', False)]}"/>
+                            <button name="action_create_user" string="Create user" type="object"
+                                    attrs="{'invisible': [('responsible_user_id', '!=', False)]}"/>
+                            <newline/>
+                            <field name="responsable_address"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="family_quotient"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <newline/>
+                            <field name="qf_certificate"
+                                   context="{'default_user_id': responsible_user_id, 'default_partner_id': responsible_id, 'no_reload': True}"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="qf_certificate_status"/>
+                            <field name="address_certificate"
+                                   context="{'default_user_id': responsible_user_id, 'default_partner_id': responsible_id, 'no_reload': True}"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="address_certificate_status"/>
+                            <field name="responsible_user_id" invisible="1"/>
+                        </group>
+                        <group string="Beneficiary" col="4" colspan="4">
+                            <field name="recipient_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="recipient_birthdate"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <newline/>
+                            <field name="is_student"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="display_recipient_age"/>
+                            <field name="assist" attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="assist_phone"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="assist2" attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="assist_phone2"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <newline/>
+                            <field name="school_enrollment_certificate"
+                                   context="{'default_user_id': responsible_user_id, 'default_partner_id': recipient_id, 'no_reload': True}"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="school_enrollment_certificate_status"/>
+                        </group>
+                        <group string="Data" col="4" colspan="4">
+                            <field name="school_establishment_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                            <field name="school_cycle"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                            <field name="school_grade_id"/>
+                            <newline/>
+                            <field name="ignore_derogation"
+                                   attrs="{'readonly': ['|', ('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                            <newline/>
+                            <field name="is_derogation"
+                                   attrs="{'invisible': [('ignore_derogation', '=', True)], 'readonly': ['|', ('status','not in',['draft', 'to_validate', 'validated']), ('is_student', '=', True)]}"/>
+                            <field name="derogation_type"
+                                   attrs="{'invisible': ['|', ('is_derogation','=',False),('ignore_derogation', '=', True)], 'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                            <field name="transport_titre"
+                                   attrs="{'readonly': ['|', ('status','not in',['draft', 'to_validate']), ('is_student', '=', True)]}"/>
+                            <field name="invoice_period"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="is_automatic_payment"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="compte_id"
+                                   attrs="{'invisible': [('is_automatic_payment','=',False)], 'readonly': [('status','not in',['draft', 'to_validate'])]}"/>
+                            <field name="bank_details"
+                                   context="{'default_user_id': responsible_user_id, 'default_partner_id': responsible_id, 'no_reload': True}"
+                                   attrs="{'invisible': [('is_automatic_payment', '=', False)], 'readonly': [('status', 'not in', ['draft', 'to_validate'])]}"/>
+                            <field name="bank_details_status"
+                                   attrs="{'invisible': [('is_automatic_payment', '=', False)]}"/>
+                        </group>
+                        <group string="Transport informations" col="4" colspan="4">
+                            <field name="station_aller_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"
+                                   context="{'special_search': True, 'partner_id': recipient_id,
+                                   'establishment_id': school_establishment_id}"
+                                   options="{'no_create': True}"/>
+                            <field name="station_retour_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"
+                                   context="{'special_search': True, 'partner_id': recipient_id,
+                                   'establishment_id': school_establishment_id, 'return': True}"
+                                   options="{'no_create': True}"/>
+
+                            <field name="transport_stop_aller_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"
+                                   context="{'special_search': True, 'establishment_id': school_establishment_id}"
+                                   options="{'no_create': True}"/>
+                            <field name="transport_stop_retour_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"
+                                   context="{'special_search': True, 'establishment_id': school_establishment_id,
+                                             'order': 'desc', 'return': True}"
+                                   options="{'no_create': True}"/>
+
+                            <field name="line_forward_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"
+                                   options="{'no_create': True}"/>
+                            <field name="line_backward_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"
+                                   options="{'no_create': True}"/>
+
+                            <field name="radier_aller_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                            <field name="radier_retour_id"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                        </group>
+                        <group string="Other informations" col="4" colspan="4">
+                            <field name="has_badge"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                            <newline/>
+                            <field name="badge_id" options="{'no_create': True}"
+                                   attrs="{'invisible': [('has_badge', '=', False)],
+                                               'readonly': [('status', 'not in', ['draft', 'to_validate', 'validated'])]}"/>
+                            <button type="action" name="partner_contact_identification.launch_create_medium_wizard"
+                                    context="{'default_reference_id': recipient_id}"
+                                    attrs="{'invisible': ['|', ('has_badge', '=', True), ('recipient_id', '=', False)]}"
+                                    string="Enroll a medium"></button>
+                            <newline/>
+                            <field name="regime"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                            <newline/>
+                            <field name="is_als"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                            <field name="als_responsible_id" domain="[('is_als_organism','=', True)]"
+                                   attrs="{'invisible': [('is_als', '=', False)], 'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                            <field name="is_allowing_picture"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                            <field name="is_allowing_hospitalization"
+                                   attrs="{'readonly': [('status','not in',['draft', 'to_validate', 'validated'])]}"/>
+                        </group>
+                        <group string="Sale order" col="2" colspan="4">
+                            <field name="sale_order_ref"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_custom_form_create" model="ir.ui.view">
+        <field name="name">view.partner.custom.form.create</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="(//field[@name='email'])" position="replace">
+                <field name="email" widget="email" required="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_tree_tco_inscription_transport_scolaire" model="ir.ui.view">
+        <field name="name">horanet.tco.inscription.transport.scolaire.tree</field>
+        <field name="model">tco.inscription.transport.scolaire</field>
+        <field name="arch" type="xml">
+            <tree default_order="create_date" colors="#190066:status=='to_validate';#005108:status=='validated'">
+                <field name="name"/>
+                <field name="create_date"/>
+                <field name="recipient_id"/>
+                <field name="recipient_address"/>
+                <field name="responsible_id"/>
+                <field name="period_id"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_graph_tco_inscription_transport_scolaire" model="ir.ui.view">
+        <field name="name">horanet.tco.inscription.transport.scolaire.graph</field>
+        <field name="model">tco.inscription.transport.scolaire</field>
+        <field name="arch" type="xml">
+            <graph>
+                <field name="recipient_id"/>
+                <field name="period_id"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_pivot_tco_inscription_transport_scolaire" model="ir.ui.view">
+        <field name="name">horanet.tco.inscription.transport.scolaire.pivot</field>
+        <field name="model">tco.inscription.transport.scolaire</field>
+        <field name="arch" type="xml">
+            <pivot string="Pivot view">
+                <field name="recipient_id"/>
+                <field name="period_id" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_search_tco_inscription_transport_scolaire" model="ir.ui.view">
+        <field name="name">view.search.tco.inscription.transport.scolaire</field>
+        <field name="model">tco.inscription.transport.scolaire</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="responsible_id"/>
+                <field name="recipient_id"/>
+                <filter name="to_validate_inscriptions" string="Inscriptions to validate"
+                        domain="[('status','=','to_validate')]"/>
+                <filter name="progress_inscriptions" string="Inscriptions in progress"
+                        domain="[('status','=','progress')]"/>
+                <filter name="validate_inscriptions" string="Inscriptions validated"
+                        domain="[('status','=','validated')]"/>
+                <filter name="draft_inscriptions" string="Inscriptions draft"
+                        domain="[('status','=','draft')]"/>
+                <group string="Group By">
+                    <filter name="group_by_name" string="Name"
+                            context="{'group_by': 'recipient_id'}"/>
+                    <filter name="group_by_establishment_city" string="Establishment city"
+                            context="{'group_by': 'establishment_city_id'}"/>
+                    <filter name="group_by_city" string="City"
+                            context="{'group_by': 'responsible_city'}"/>
+                    <filter name="group_by_establishment" string="Establishment"
+                            context="{'group_by': 'school_establishment_id'}"/>
+                    <filter name="group_by_line_forward_id" string="Forward line"
+                            context="{'group_by': 'line_forward_id'}"/>
+                    <filter name="group_by_line_backward_id" string="Backward line"
+                            context="{'group_by': 'line_backward_id'}"/>
+                    <filter name="group_by_school_cycle" string="School cycle"
+                            context="{'group_by': 'school_cycle'}"/>
+                    <filter name="group_by_school_grade_id" string="School grade"
+                            context="{'group_by': 'school_grade_id'}"/>
+                    <filter name="group_by_transport_titre" string="Transport titre"
+                            context="{'group_by': 'transport_titre'}"/>
+                    <filter name="group_by_status" string="Status"
+                            context="{'group_by': 'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_tco_inscription_transport_scolaire" model="ir.actions.act_window">
+        <field name="name">Inscription</field>
+        <field name="res_model">tco.inscription.transport.scolaire</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="view_id" ref="view_tree_tco_inscription_transport_scolaire"/>
+    </record>
+
+    <record id="action_tco_inscription_transport_scolaire_followup" model="ir.actions.act_window">
+        <field name="name">Inscription Followup</field>
+        <field name="res_model">tco.inscription.transport.scolaire</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="context">{'search_default_group_by_establishment_city': 1,
+            'search_default_group_by_establishment': 1, 'search_default_group_by_school_grade_id': 1}</field>
+        <field name="view_id" ref="view_tree_tco_inscription_transport_scolaire"/>
+    </record>
+
+    <act_window
+            id="action_inscriptions_create_so_invoice"
+            res_model="invoicing.wizard"
+            src_model="tco.inscription.transport.scolaire"
+            target="new"
+            multi="True"
+            key2="client_action_multi"
+            view_mode="form"
+            name="Create sale order or invoice"/>
+</odoo>

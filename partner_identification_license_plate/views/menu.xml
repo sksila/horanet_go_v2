@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- sequence 35 = mediums menu -->
+        <menuitem id="menu_horanet_vehicle_parent"
+                  parent="partner_contact_identification.menu_settings_partner_contact_identification"
+                  name="Vehicles"
+                  sequence="36"
+                  groups="group_horanet_vehicle_manage"
+                  action="action_horanet_vehicle"/>
+
+        <menuitem id="menu_horanet_vehicle_type"
+                  parent="partner_contact_identification.menu_settings_partner_contact_identification"
+                  name="Vehicles types"
+                  sequence="37"
+                  groups="group_horanet_vehicle_manage"
+                  action="action_horanet_vehicle_type"/>
+    </data>
+</odoo>

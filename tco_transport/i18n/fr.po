@@ -1,0 +1,1138 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tco_transport
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-13 07:12+0000\n"
+"PO-Revision-Date: 2018-06-13 07:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/transport_line.py:17
+#: sql_constraint:tco.transport.line:0
+#, python-format
+msgid "A line with this name already exists."
+msgstr "Une ligne possédant ce nom existe déjà."
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/pointage.py:30
+#: sql_constraint:tco.transport.pointage:0
+#, python-format
+msgid "A pointage with this datetime, transaction number and terminal id already exists."
+msgstr "Un pointage avec cette date/heure, ce numéro de transaction et ce terminal existe déjà."
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/transport_service.py:15
+#: sql_constraint:tco.transport.service:0
+#, python-format
+msgid "A service with this name already exists."
+msgstr "Un service avec ce nom est déjà existant."
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/transport_station.py:16
+#: sql_constraint:tco.transport.station:0
+#, python-format
+msgid "A station with this number already exists."
+msgstr "Une station possédant ce numéro existe déjà."
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/terminal.py:35
+#: sql_constraint:tco.terminal:0
+#, python-format
+msgid "A terminal with this serial number already exists."
+msgstr "Un terminal avec ce numéro de série est déjà existant."
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_acquisition_date
+msgid "Acquisition date"
+msgstr "Date d'acquisition"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_arrival_time
+msgid "Arrival time"
+msgstr "Heure d'arrivée"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_vehicle_assignment_ids
+msgid "Assignments"
+msgstr "Assignations"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_search_transport_line
+msgid "Backward lines"
+msgstr "Lignes retour"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_begin_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment_begin_date
+msgid "Begin date"
+msgstr "Date de début"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_bios_version_id
+msgid "Bios version"
+msgstr "Version du BIOS"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_model_vehicle_brand_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_vehicle_brand
+msgid "Brand"
+msgstr "Marque"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_line
+msgid "Calendar"
+msgstr "Calendrier"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.terminal_lb7_configure_form_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_capacity
+msgid "Capacity"
+msgstr "Capacité"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_model_vehicle_category_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_vehicle_category
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_radier_city_id
+msgid "City"
+msgstr "Ville"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_comment
+msgid "Comment"
+msgstr "Commentaires"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_communication_type
+msgid "Communication type"
+msgstr "Type de communication"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_company_owner_id
+msgid "Company owner"
+msgstr "Entreprise propriétaire"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.terminal_lb7_configure_form_view
+msgid "Configure"
+msgstr "Configurer"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_terminal_lb7_configure
+#: model:ir.ui.view,arch_db:tco_transport.terminal_lb7_configure_form_view
+msgid "Configure LB7 terminals"
+msgstr "Configurer les terminaux LB7"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_bios_version_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_configure_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_version_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_radier_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_service_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_type_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_brand_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_category_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_create_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_model_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_bios_version_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_configure_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_version_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_radier_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_service_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_type_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_brand_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_category_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_create_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_model_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_current_service_id
+msgid "Current service"
+msgstr "Service actuel"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_dns_name
+msgid "DNS name"
+msgstr "Nom DNS"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_date_time
+msgid "Date time"
+msgstr "Date/Heure"
+
+#. module: tco_transport
+#: selection:tco.transport.pointage,status:0
+msgid "Degraded"
+msgstr "Dégradé"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_departure_time
+msgid "Departure time"
+msgstr "Heure de départ"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_bios_version_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_configure_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_version_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_radier_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_service_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_type_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_brand_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_category_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_display_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_model_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_distance_from_previous_station
+msgid "Distance from previous station (in meters)"
+msgstr "Distance depuis la station précédente (en mètres)"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_driver_id
+msgid "Driver"
+msgstr "Conducteur"
+
+#. module: tco_transport
+#: selection:tco.transport.pointage,status:0
+msgid "Duplicate"
+msgstr "Dupliqué"
+
+#. module: tco_transport
+#: model:res.groups,comment:tco_transport.group_tco_transport_manage
+msgid "Enable the menus to manage transport lines and stops as well as vehicles and terminals."
+msgstr "Active les menus pour gérer les lignes et arrêts ainsi que les véhicules et les terminaux."
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_end_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_line_ids
+msgid "Fields updated"
+msgstr "Champs modifiés"
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_transport_pointage_comment
+msgid "Fill this field in case there are missing information."
+msgstr "Remplir ce champ s'il manque des informations."
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_search_transport_line
+msgid "Forward lines"
+msgstr "Lignes aller"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_search_tco_terminal_lb7_log
+#: model:ir.ui.view,arch_db:tco_transport.view_search_transport_line
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_http_request_id
+msgid "HTTP Request"
+msgstr "Requête HTTP"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_bios_version_id_5332
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_configure_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_id_5341
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_version_id_5349
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_radier_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_service_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_type_id_5409
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_brand_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_category_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_model_id
+msgid "ID"
+msgstr "ID"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_ip_address
+msgid "IP address"
+msgstr "Adresse IP"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_identification_number
+msgid "Identification number"
+msgstr "Numéro d'identification"
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/terminal.py:99
+#, python-format
+msgid "Identification number cannot be equal to 0"
+msgstr "Le numéro d'identification ne peut pas être égal à 0"
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_transport_pointage_transaction_number
+msgid "Identifier of the pointage."
+msgstr "Identifiant du pointage."
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_image
+msgid "Image"
+msgstr "Image"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_configure_message
+msgid "Information message"
+msgstr "Message d'information"
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/inherited_horanet_transport_config.py:41
+#, python-format
+msgid "Invalid absolute path"
+msgstr "Chemin absolu invalide"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_is_active
+msgid "Is active"
+msgstr "Actif"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_is_active_on_friday
+msgid "Is active on friday"
+msgstr "Est actif le vendredi"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_is_active_on_monday
+msgid "Is active on monday"
+msgstr "Est actif le lundi"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_is_active_on_saturday
+msgid "Is active on saturday"
+msgstr "Est actif le samedi"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_is_active_on_sunday
+msgid "Is active on sunday"
+msgstr "Est actif le dimanche"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_is_active_on_thursday
+msgid "Is active on thursday"
+msgstr "Est actif le jeudi"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_is_active_on_tuesday
+msgid "Is active on tuesday"
+msgstr "Est actif le mardi"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_is_active_on_wednesday
+msgid "Is active on wednesday"
+msgstr "Est actif le mercredi"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_is_error
+#: model:ir.ui.view,arch_db:tco_transport.view_search_tco_terminal_lb7_log
+msgid "Is error"
+msgstr "Est en erreur"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_search_tco_transport_pointage
+msgid "Is not valid"
+msgstr "N'est pas valide"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment_is_valid
+#: model:ir.ui.view,arch_db:tco_transport.view_search_tco_transport_pointage
+msgid "Is valid"
+msgstr "Est actif"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_issuance_date
+msgid "Issuance date"
+msgstr "Date d'émission"
+
+#. module: tco_transport
+#: selection:tco.terminal,model:0
+msgid "LB7"
+msgstr "LB7"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_form_tco_terminal_lb7_log
+msgid "LB7 log"
+msgstr "Log d'un terminal LB7"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_tco_terminal_lb7_log
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_tco_terminal_lb7_log
+msgid "LB7 logs"
+msgstr "Logs des terminaux LB7"
+
+#. module: tco_transport
+#: model:ir.ui.menu,name:tco_transport.menu_horanet_terminal_lb7_log
+msgid "LB7 terminal logs"
+msgstr "Logs des terminaux LB7"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_bios_version___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_configure___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_version___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_radier___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_service___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_type___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_brand___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_category___last_update
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_model___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_bios_version_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_configure_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_version_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_radier_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_service_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_type_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_brand_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_category_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_model_write_uid
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_bios_version_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_configure_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_version_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_radier_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_service_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_type_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_brand_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_category_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_model_write_date
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_last_configuration_date
+msgid "Last configuration"
+msgstr "Dernière configuration"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_last_synchronisation_date
+msgid "Last synchronisation"
+msgstr "Dernière synchronisation"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_latitude
+msgid "Latitude"
+msgstr "Latitude"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_horanet_transport_config_lb7_time_offset
+msgid "Lb7 time offset"
+msgstr "Décalage Lb7"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_license_plate
+msgid "License plate"
+msgstr "Plaque d'immatriculation"
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/transport_vehicle.py:101
+#, python-format
+msgid "License plate cannot be empty"
+msgstr "La plaque d'immatriculation ne peut pas être vide"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_transport_line
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_line_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_line_id
+#: model:ir.ui.menu,name:tco_transport.menu_tco_transport_line
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_line
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_transport_line
+msgid "Line"
+msgstr "Ligne"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_line_stop_ids
+msgid "Line stops"
+msgstr "Arrêts de la ligne"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_line_type
+msgid "Line type"
+msgstr "Type de ligne"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_service_line_ids
+msgid "Lines"
+msgstr "Lignes"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_is_locked
+msgid "Locked"
+msgstr "Locked"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_log_id
+#: model:ir.ui.view,arch_db:tco_transport.view_form_tco_terminal_lb7_log
+msgid "Log"
+msgstr "Log"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_longitude
+msgid "Longitude"
+msgstr "Longitude"
+
+#. module: tco_transport
+#: selection:tco.terminal,communication_type:0
+msgid "MODEM"
+msgstr "MODEM"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_mac_address
+msgid "Mac address"
+msgstr "Adresse MAC"
+
+#. module: tco_transport
+#: model:res.groups,name:tco_transport.group_tco_transport_manage
+msgid "Manage Transport"
+msgstr "Gérer le transport scolaire"
+
+#. module: tco_transport
+#: selection:tco.transport.pointage,status:0
+msgid "Manual"
+msgstr "Manuel"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_message
+#: model:ir.ui.view,arch_db:tco_transport.view_form_tco_terminal_lb7_log
+msgid "Message"
+msgstr "Message"
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_terminal_lb7_log_message
+msgid "Message from process"
+msgstr "Message du traitement"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_method
+#: model:ir.ui.view,arch_db:tco_transport.view_search_tco_terminal_lb7_log
+msgid "Method"
+msgstr "Méthode"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_model_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_model
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_vehicle_model_id
+msgid "Model"
+msgstr "Modèle"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_radier_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_service_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_type_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_brand_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_category_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_model_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/terminal_software.py:42
+#: code:addons/tco_transport/models/transport_line.py:85
+#: code:addons/tco_transport/models/transport_service.py:46
+#: code:addons/tco_transport/models/transport_station.py:49
+#: code:addons/tco_transport/models/transport_station_type.py:37
+#: code:addons/tco_transport/models/transport_vehicle_brand.py:33
+#: code:addons/tco_transport/models/transport_vehicle_category.py:33
+#: code:addons/tco_transport/models/transport_vehicle_model.py:42
+#, python-format
+msgid "Name cannot be empty"
+msgstr "Name cannot be empty"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_next_stops_ids
+msgid "Next stops"
+msgstr "Arrêts suivants"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_bios_version_name
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_configure_nb_element
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_version_name
+msgid "Number"
+msgstr "Numéro"
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/terminal_bios_version.py:39
+#: code:addons/tco_transport/models/terminal_software_version.py:37
+#, python-format
+msgid "Number cannot be empty"
+msgstr "Le numéro ne peut pas être vide"
+
+#. module: tco_transport
+#: selection:tco.transport.pointage,status:0
+msgid "Ok"
+msgstr "Ok"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_form_tco_transport_pointage
+msgid "Other information"
+msgstr "Autre information"
+
+#. module: tco_transport
+#: selection:tco.transport.line,line_type:0
+msgid "Outward"
+msgstr "Aller"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_owner_id
+msgid "Owner"
+msgstr "Propriétaire"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_tco_transport_pointage
+#: model:ir.ui.menu,name:tco_transport.menu_horanet_pointage
+msgid "Pointages"
+msgstr "Pointages"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_port_number
+msgid "Port number"
+msgstr "Numéro de port"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_previous_stops_ids
+msgid "Previous stops"
+msgstr "Arrêts précédents"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_form_tco_transport_pointage
+#: model:ir.ui.view,arch_db:tco_transport.view_form_terminal
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_station
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_stop
+msgid "Properties"
+msgstr "Propriétés"
+
+#. module: tco_transport
+#: selection:tco.transport.pointage,status:0
+msgid "RFU"
+msgstr "RFU"
+
+#. module: tco_transport
+#: selection:tco.transport.pointage,status:0
+msgid "Rejected"
+msgstr "Rejeté"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_res_id
+msgid "Resource ID"
+msgstr "ID de l'enregistrement"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_name
+msgid "Resource Name"
+msgstr "Nom de l'enregistrement"
+
+#. module: tco_transport
+#: selection:tco.transport.line,line_type:0
+msgid "Return"
+msgstr "Retour"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_search_tco_terminal_lb7_log
+msgid "Search LB7 log"
+msgstr "Recherche de log LB7"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_search_tco_transport_pointage
+msgid "Search pointage"
+msgstr "Recherche de pointage"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_serial_number
+msgid "Serial number"
+msgstr "Numéro de série"
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/terminal.py:108
+#, python-format
+msgid "Serial number cannot be empty"
+msgstr "Le numéro de série ne peut pas être vide"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_transport_service
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_line_service_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment_service_id
+#: model:ir.ui.menu,name:tco_transport.menu_tco_transport_service
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_service
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_transport_service
+msgid "Service"
+msgstr "Service"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_service_ids
+msgid "Services"
+msgstr "Services"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_http_session_id
+msgid "Session"
+msgstr "Session"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_id
+msgid "Software"
+msgstr "Logiciel"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_transport_station
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_station_id
+#: model:ir.ui.menu,name:tco_transport.menu_tco_transport_station
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_station
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_transport_station
+msgid "Station"
+msgstr "Station"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_station_number
+msgid "Station Number"
+msgstr "Numéro de station"
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/transport_station.py:59
+#, python-format
+msgid "Station number cannot be empty"
+msgstr "Le numéro de station ne peut pas être vide"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_transport_station_type
+#: model:ir.ui.menu,name:tco_transport.menu_tco_transport_station_type
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_station_type
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_transport_station_type
+msgid "Station type"
+msgstr "Type de station"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_status
+#: model:ir.ui.view,arch_db:tco_transport.view_form_tco_transport_pointage
+msgid "Status"
+msgstr "État"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_search_tco_transport_pointage
+msgid "Status is Ok"
+msgstr "État Ok"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_search_tco_transport_pointage
+msgid "Status is not Ok"
+msgstr "État pas Ok"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_transport_stop
+#: model:ir.ui.menu,name:tco_transport.menu_tco_transports_stop
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_stop
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_transport_stop
+msgid "Stop"
+msgstr "Arrêt"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_stop_distance
+msgid "Stop distance (in meters)"
+msgstr "Distance d'arrêt (en mètres)"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_stop_stop_time
+msgid "Stop time"
+msgstr "Heure d'arrêt"
+
+#. module: tco_transport
+#: model:ir.ui.view,arch_db:tco_transport.view_form_collectivity_config_settings
+msgid "TCO Transport Terminals Settings"
+msgstr "TCO Transport - Configuration des terminaux"
+
+#. module: tco_transport
+#: selection:tco.terminal,communication_type:0
+msgid "TCP/IP"
+msgstr "TCP/IP"
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/transport_stop.py:16
+#: sql_constraint:tco.transport.stop:0
+#, python-format
+msgid "TODO"
+msgstr "TODO"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_tag_id
+msgid "Tag"
+msgstr "Tag"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_terminal
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_terminal_id
+#: model:ir.ui.menu,name:tco_transport.menu_horanet_terminal
+#: model:ir.ui.view,arch_db:tco_transport.view_form_terminal
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_terminal
+msgid "Terminal"
+msgstr "Terminal"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_horanet_transport_config_terminal_lb7_directory_path
+msgid "Terminal LB7 directory path"
+msgstr "Répertoire des terminaux LB7"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_terminal_software
+#: model:ir.ui.menu,name:tco_transport.menu_horanet_terminal_software
+#: model:ir.ui.view,arch_db:tco_transport.view_form_terminal_software
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_terminal_software
+msgid "Terminal software"
+msgstr "Logiciel du terminal"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_terminal_time
+msgid "Terminal time"
+msgstr "Heure du terminal"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_terminal_ids
+#: model:ir.ui.menu,name:tco_transport.menu_horanet_terminals_main
+msgid "Terminals"
+msgstr "Terminaux"
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_transport_pointage_date_time
+msgid "The date and time the pointage as been made."
+msgstr "La date et l'heure à laquelle le pointage a été fait."
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_transport_pointage_line_id
+msgid "The line on which the pointage as been made."
+msgstr "La ligne sur laquelle le pointage a été fait."
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_transport_pointage_is_locked
+msgid "The lock is activated when a billing process is associated. When the pointage is locked, no modification is possible"
+msgstr "Le bloquage est activé quand le mode facturation est associé. Quand le pointage est bloqué, aucune modification n'est possible"
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_transport_pointage_partner_id
+msgid "The partner who made the pointage."
+msgstr "Le partenaire qui a fait le pointage."
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_horanet_transport_config_terminal_lb7_directory_path
+msgid "The path to use to access LB7 terminal files."
+msgstr "Répertoire pour accéder aux fichiers des terminaux LB7."
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_transport_pointage_is_valid
+msgid "The pointage is considered as valid when a minimum amount of information is provided."
+msgstr "Le pointage est considéré comme valide tant qu'un minimum d'informations sont renseignées."
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_transport_pointage_status
+msgid "The status of the pointage."
+msgstr "Le statut du pointage."
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_transport_pointage_tag_id
+msgid "The tag used to identify who made the pointage."
+msgstr "Le tag utilisé pour le pointage."
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_transport_pointage_terminal_id
+msgid "The terminal which received the pointage."
+msgstr "Le terminal qui a reçu le pointage."
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_tco_transport_pointage_vehicle_id
+msgid "The vehicule on which the pointage as been made."
+msgstr "Le véhicule sur lequel a été fait le pointage."
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_transaction_number
+msgid "Transaction number"
+msgstr "Numéro de transaction"
+
+#. module: tco_transport
+#: model:ir.ui.menu,name:tco_transport.menu_settings_tco_transport
+msgid "Transport"
+msgstr "Transport"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_log_type
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_station_type_id
+#: model:ir.ui.view,arch_db:tco_transport.view_search_transport_line
+msgid "Type"
+msgstr "Type"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_lb7_log_user_id
+#: model:ir.ui.view,arch_db:tco_transport.view_search_tco_terminal_lb7_log
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_is_valid
+msgid "Valid"
+msgstr "Validé"
+
+#. module: tco_transport
+#: model:ir.model.fields,help:tco_transport.field_horanet_transport_config_lb7_time_offset
+msgid "Value in seconds defined in timezone file of the lb7"
+msgstr "Valeur en secondes définie dans le fueau horaire du lb7"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_transport_vehicle
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_license_plate
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_vehicle_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_pointage_vehicle_id
+#: model:ir.model.fields,field_description:tco_transport.field_tco_transport_vehicle_assignment_vehicle_id
+#: model:ir.ui.menu,name:tco_transport.menu_tco_transport_vehicle
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_vehicle
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_transport_vehicle
+msgid "Vehicle"
+msgstr "Vehicule"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_transport_vehicle_assignment
+#: model:ir.ui.menu,name:tco_transport.menu_tco_transport_vehicle_assignment
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_vehicle_assignment
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_transport_vehicle_assignment
+msgid "Vehicle assignment"
+msgstr "Assignation du véhicule"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_transport_vehicle_brand
+#: model:ir.ui.menu,name:tco_transport.menu_tco_transport_vehicle_brand
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_vehicle_brand
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_transport_vehicle_brand
+msgid "Vehicle brand"
+msgstr "Marque du véhicule"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_transport_vehicle_category
+#: model:ir.ui.menu,name:tco_transport.menu_tco_transport_vehicle_category
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_vehicle_category
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_transport_vehicle_category
+msgid "Vehicle category"
+msgstr "Catégorie du véhicule"
+
+#. module: tco_transport
+#: model:ir.actions.act_window,name:tco_transport.action_transport_vehicle_model
+#: model:ir.ui.menu,name:tco_transport.menu_tco_transport_vehicle_model
+#: model:ir.ui.view,arch_db:tco_transport.view_form_transport_vehicle_model
+#: model:ir.ui.view,arch_db:tco_transport.view_tree_transport_vehicle_model
+msgid "Vehicle model"
+msgstr "Modèle du véhicule"
+
+#. module: tco_transport
+#: model:ir.ui.menu,name:tco_transport.menu_tco_transport_vehicles_main
+msgid "Vehicles"
+msgstr "Vehicules"
+
+#. module: tco_transport
+#: model:ir.model.fields,field_description:tco_transport.field_tco_terminal_software_version_id
+msgid "Version"
+msgstr "Version"
+
+#. module: tco_transport
+#: code:addons/tco_transport/models/transport_vehicle.py:109
+#, python-format
+msgid "You can't add an assignment if there is already an active one."
+msgstr "Vous ne pouvez ajouter une nouvelle assignation si il y en a déjà une d'active."
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_horanet_transport_config
+msgid "horanet.transport.config"
+msgstr "horanet.transport.config"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_terminal
+msgid "tco.terminal"
+msgstr "tco.terminal"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_terminal_bios_version
+msgid "tco.terminal.bios.version"
+msgstr "tco.terminal.bios.version"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_terminal_lb7_configure
+msgid "tco.terminal.lb7.configure"
+msgstr "tco.terminal.lb7.configure"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_terminal_lb7_log
+msgid "tco.terminal.lb7.log"
+msgstr "tco.terminal.lb7.log"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_terminal_software
+msgid "tco.terminal.software"
+msgstr "tco.terminal.software"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_terminal_software_version
+msgid "tco.terminal.software.version"
+msgstr "tco.terminal.software.version"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_line
+msgid "tco.transport.line"
+msgstr "tco.transport.line"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_pointage
+msgid "tco.transport.pointage"
+msgstr "tco.transport.pointage"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_radier
+msgid "tco.transport.radier"
+msgstr "tco.transport.radier"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_service
+msgid "tco.transport.service"
+msgstr "tco.transport.service"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_station
+msgid "tco.transport.station"
+msgstr "tco.transport.station"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_station_type
+msgid "tco.transport.station.type"
+msgstr "tco.transport.station.type"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_stop
+msgid "tco.transport.stop"
+msgstr "tco.transport.stop"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_vehicle
+msgid "tco.transport.vehicle"
+msgstr "tco.transport.vehicle"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_vehicle_assignment
+msgid "tco.transport.vehicle.assignment"
+msgstr "tco.transport.vehicle.assignment"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_vehicle_brand
+msgid "tco.transport.vehicle.brand"
+msgstr "tco.transport.vehicle.brand"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_vehicle_category
+msgid "tco.transport.vehicle.category"
+msgstr "tco.transport.vehicle.category"
+
+#. module: tco_transport
+#: model:ir.model,name:tco_transport.model_tco_transport_vehicle_model
+msgid "tco.transport.vehicle.model"
+msgstr "tco.transport.vehicle.model"
+

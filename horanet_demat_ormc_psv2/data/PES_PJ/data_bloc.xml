@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Sous-Bloc de la Racine : EnTetePES_PJ -->
+        <record id="pes_bloc_pj_1_2_1_1" model="pes.bloc">
+            <field name="name">Fichier</field>
+            <field name="code">Fichier</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Fichier</field>
+            <field name="children_bloc_ids"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="element_value_type">text</field>
+            <field name="field_type">function</field>
+            <field name="value">get_invoice_encoded_pdf</field>
+            <field name="attrs_ids" eval="[(4,ref('pes_attrs_pj_1_2_1'))]"/>
+        </record>
+
+        <!-- Sous-Bloc de la Racine : EnTetePES_PJ -->
+        <record id="pes_bloc_pj_1_2_1" model="pes.bloc">
+            <field name="name">Contenu</field>
+            <field name="code">Contenu</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Contenu</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_pj_1_2_1_1'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_pj_1_2_2" model="pes.bloc">
+            <field name="name">IdUnique</field>
+            <field name="code">IdUnique</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IdUnique</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+        </record>
+        <record id="pes_bloc_pj_1_2_3" model="pes.bloc">
+            <field name="name">NomPJ</field>
+            <field name="code">NomPJ</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">NomPJ</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_attrs_pj_1_2_3'))]"/>
+        </record>
+        <record id="pes_bloc_pj_1_2_4" model="pes.bloc">
+            <field name="name">TypePJ</field>
+            <field name="code">TypePJ</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">TypePJ</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_attrs_pj_1_2_4'))]"/>
+        </record>
+        <record id="pes_bloc_pj_1_2_5" model="pes.bloc">
+            <field name="name">Description</field>
+            <field name="code">Description</field>
+            <field name="is_required" eval="False"/>
+            <field name="description">Description</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_3"/>
+            <field name="attrs_ids" eval="[(4,ref('pes_attrs_pj_1_2_5'))]"/>
+        </record>
+
+        <!-- Sous-Bloc de la Racine : EnTetePES_PJ -->
+        <record id="pes_bloc_pj_1_1_1" model="pes.bloc">
+            <field name="name">IdVer</field>
+            <field name="code">IdVer</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">IdVer</field>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="attrs_ids" eval="[(4,ref('horanet_demat_ormc_psv2.pes_bloc_attrs_2_1_1'))]"/>
+        </record>
+
+        <!-- Sous-Bloc de la Racine : PES_PJ -->
+        <record id="pes_bloc_pj_1_1" model="pes.bloc">
+            <field name="name">EnTetePES_PJ</field>
+            <field name="code">EnTetePES_PJ</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">EnTetePES_PJ</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_pj_1_1_1'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+        <record id="pes_bloc_pj_1_2" model="pes.bloc">
+            <field name="name">PJ</field>
+            <field name="code">PJ</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">PJ</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_pj_1_2_1')),(4,ref('pes_bloc_pj_1_2_2')),
+            	(4,ref('pes_bloc_pj_1_2_3')),(4,ref('pes_bloc_pj_1_2_4')),
+            	(4,ref('pes_bloc_pj_1_2_5'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="pes_input_object_1"/>
+        </record>
+
+
+    </data>
+</odoo>

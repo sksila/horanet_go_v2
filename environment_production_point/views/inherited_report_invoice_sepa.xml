@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_invoice_document_sepa_production_point" name="Production point">
+            <t t-set="production_point" t-value="o.get_production_point()"/>
+            <span>Adresse de production :
+                <t t-if="production_point.street_number_id">
+                    <span t-field="production_point.street_number_id"/>
+                </t>
+                <span t-field="production_point.street_id"/>
+                <span t-field="production_point.zip_id"/>
+                <span t-field="production_point.city_id.name"/>
+            </span>
+        </template>
+    </data>
+</odoo>

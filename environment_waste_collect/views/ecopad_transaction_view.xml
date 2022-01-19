@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="ecopad_transaction_form" model="ir.ui.view">
+        <field name="name">Ecopad transaction Form View</field>
+        <field name="model">environment.ecopad.transaction</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="ecopad_session_id"/>
+                        <field name="operation_ids"/>
+                        <field name="number"/>
+                        <field name="ecopad_signature" widget="image" options="{'size': [120, 70]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

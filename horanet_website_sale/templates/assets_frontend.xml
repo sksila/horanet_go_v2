@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Set assets on frontend -->
+    <template id="assets_frontend" inherit_id="website_sale.assets_frontend" name="Shop">
+        <xpath expr="." position="inside">
+            <script type="text/javascript"
+                    src="/horanet_website_sale/static/src/js/inherited_website_sale_payment.js"></script>
+            <script type="text/javascript"
+                    src="/horanet_website_sale/static/src/js/inherited_horanet_website_account.js"></script>
+            <script type="text/javascript" src="/horanet_website_account/static/src/js/partner_address.js"></script>
+        </xpath>
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/horanet_website_sale/static/src/css/website_sale.css"
+                  type="text/css"/>
+        </xpath>
+    </template>
+</odoo>

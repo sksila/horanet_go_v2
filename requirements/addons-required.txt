@@ -1,0 +1,20 @@
+odoo11-addon-auth_signup_verify_email>=11.0.1<12.0.0 # odoo11-addon-auth-signup-verify-email 11.0.1.0.0.99.dev4
+odoo11-addon-partner_contact_personal_information_page==11.0.1.0.0
+odoo11-addon-partner_firstname==11.0.1.0.1
+odoo11-addon-account_payment_term_extension==11.0.1.0.0
+odoo11-addon-web_search_with_and==11.0.1.0.0
+odoo11-addon-auditlog>=11.0.1<11.0.2 # odoo11-addon-auditlog 11.0.1.0.0.99.dev11
+odoo11_addon-auth_user_case_insensitive>=11.0.1<11.0.2 # odoo11-addon-auth-user-case-insensitive 11.0.1.0.0.99.dev6
+odoo11-addon-base-user-role==11.0.1.0.1
+odoo11-addon-disable-odoo-online>=11.0.1<11.0.2
+odoo11-addon-web-widget-many2many-tags-multi-selection>=11.0.1<12.0.0
+odoo11-addon-partner-identification>=11.0.1<11.0.2 # odoo11-addon-partner-identification 11.0.1.0.0.99.dev2
+odoo11-addon-web_advanced_search>=11.0.1<11.0.2 # odoo11-addon-web-advanced-search-11.0.1.0.0.99.dev9
+
+# git+https://github.com/Horanet/payment_payzen.git@10.0.1.0.2 TODO : MIG V11
+# git+https://github.com/Horanet/payment_tipiregie.git@10.0.1.0.2 TODO : MIG V11
+
+--extra-index-url=https://wheelhouse.odoo-community.org/oca-simple
+# odoo10-addon-web-widget-domain-v11>=10.0.1<11.0.0  # native in v11
+# odoo10-addon-web-advanced-search-x2x>=10.0.1<11.0.0  # in migration
+odoo11-addon-account-banking-sepa-direct-debit>=11.0.1<11.0.2

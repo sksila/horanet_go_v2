@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="horanet_menu_foyer"
+              name="Foyers"
+              parent="partner_contact_citizen.horanet_menu_citizen"
+              action="horanet_foyer_action"
+              groups="partner_contact_citizen.group_citizen_manage"
+              sequence="20"/>
+
+    <menuitem id="horanet_settings_menu_citizen"
+              name="Citizen"
+              parent="horanet_go.menu_collectivity_config"
+              groups="base.group_system"/>
+    <menuitem id="horanet_menu_foyer_relation"
+              name="Relations Partner/Foyer"
+              parent="horanet_settings_menu_citizen"
+              action="horanet_relation_foyer_action"
+              groups="base.group_system"/>
+    <menuitem id="menu_import_partner" name="Import partners"
+              parent="horanet_settings_menu_citizen"
+              action="wizard_import_data_partner_action" sequence="0"
+              groups="base.group_no_one"/>
+</odoo>

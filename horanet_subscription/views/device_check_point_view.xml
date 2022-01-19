@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="device_check_point_view_form" model="ir.ui.view">
+        <field name="name">device check point form</field>
+        <field name="model">device.check.point</field>
+        <field name="arch" type="xml">
+            <form string="Device check point">
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="activity name"/>
+                        </h1>
+                    </div>
+                    <group></group>
+                    <group>
+                        <group>
+                            <field name="device_id"/>
+                            <field name="code"/>
+                            <field name="infrastructure_id"/>
+                        </group>
+                        <group>
+                            <field name="input_activity_sector_id"/>
+                            <field name="output_activity_sector_id"/>
+                        </group>
+                    </group>
+                    <separator string="Inherited activities"/>
+                    <field name="activity_ids" nolabel="1">
+                        <tree>
+                            <field name="name"/>
+                            <field name="reference"/>
+                            <field name="product_uom_id"/>
+                            <field name="product_uom_categ_id"/>
+                            <field name="product_id"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="device_check_point_view_tree" model="ir.ui.view">
+        <field name="name">device check point tree</field>
+        <field name="model">device.check.point</field>
+        <field name="arch" type="xml">
+            <tree string="Device check point">
+                <field name="name"/>
+                <field name="device_id"/>
+                <field name="input_activity_sector_id"/>
+                <field name="activity_ids_dummy"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_device_check_point" model="ir.actions.act_window">
+        <field name="name">Device check point</field>
+        <field name="res_model">device.check.point</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="device_check_point_view_tree"/>
+    </record>
+</odoo>

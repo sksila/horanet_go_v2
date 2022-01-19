@@ -1,0 +1,286 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_auth_signup
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-13 12:51+0000\n"
+"PO-Revision-Date: 2018-11-13 12:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_auth_signup
+#: model:ir.model.fields,field_description:horanet_auth_signup.field_base_config_settings_auth_signup_allow_title_person
+msgid "Allow individuals to signup on portal"
+msgstr "Autoriser les particuliers à s'enregistrer sur le portail"
+
+#. module: horanet_auth_signup
+#: model:ir.model.fields,field_description:horanet_auth_signup.field_base_config_settings_auth_signup_allow_title_company
+msgid "Allow legal entities to signup on portal"
+msgstr "Autoriser les entités morales à s'enregistrer sur le portail"
+
+#. module: horanet_auth_signup
+#: code:addons/horanet_auth_signup/models/inherited_base_config.py:47
+#, python-format
+msgid "Allowing external users to sign up required at least one of the following options:\n"
+" - Allow individuals to signup on portal\n"
+" - Allow legal entities to signup on portal\n"
+"If neither, no one could signup!"
+msgstr "Autoriser les utilisateurs externes à se connecter nécessite au moins l'une des options suivantes:\n"
+" - Autoriser les particuliers à s'enregistrer sur le portail\n"
+" - Autoriser les entités morales à s'enregistrer sur le portail\n"
+"Si aucune de ces deux option n'est activée, aucun utilisateur ne peux s'inscrire !"
+
+#. module: horanet_auth_signup
+#: code:addons/horanet_auth_signup/models/inherited_base_config.py:66
+#, python-format
+msgid "Allowing individuals to signup on portal option is active, but no person titles found on the system."
+msgstr "L'option autoriser les personnes à s'inscrire est active, mais aucune civilités (titre) n'existe sur le système."
+
+#. module: horanet_auth_signup
+#: code:addons/horanet_auth_signup/models/inherited_base_config.py:58
+#, python-format
+msgid "Allowing legal entities to signup on portal option is active, but no company titles found on the system."
+msgstr "L'option autoriser les entités morales à s'inscrire est active, mais aucun titre d'entreprise n'existe sur le système."
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.custom_reset_password
+msgid "An email has been send to"
+msgstr "Un email a été envoyé à "
+
+#. module: horanet_auth_signup
+#: code:addons/horanet_auth_signup/controllers/controllers.py:124
+#, python-format
+msgid "Another user is already registered using this email address."
+msgstr "Cette adresse email est déjà utilisée."
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.custom_reset_password
+msgid "Back to Login"
+msgstr "Retour à la page d'authentification"
+
+#. module: horanet_auth_signup
+#: code:addons/horanet_auth_signup/controllers/controllers.py:131
+#, python-format
+msgid "Check your email to activate your account!"
+msgstr "Un email vous à été envoyé pour activer votre compte."
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.signup_view
+msgid "Company"
+msgstr "Société"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.signup_view
+msgid "Company type"
+msgstr "Type d'entreprise"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.signup_view
+msgid "Confirm Email"
+msgstr "Confirmer le courriel"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.view_form_partner
+msgid "Create Portal Access"
+msgstr "Créer un accès au portail"
+
+#. module: horanet_auth_signup
+#. openerp-web
+#: code:addons/horanet_auth_signup/static/src/js/auth_signup.js:81
+#: model:ir.ui.view,arch_db:horanet_auth_signup.signup_view
+#, python-format
+msgid "Email"
+msgstr "Courriel"
+
+#. module: horanet_auth_signup
+#: code:addons/horanet_auth_signup/controllers/controllers.py:78
+#, python-format
+msgid "Email do not match, please retype them."
+msgstr "Les courriels sont différents, veuillez les vérifier"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.signup_view
+msgid "Firstname"
+msgstr "Prénom"
+
+#. module: horanet_auth_signup
+#: model:ir.model.fields,field_description:horanet_auth_signup.field_res_partner_has_default_portal_group
+#: model:ir.model.fields,field_description:horanet_auth_signup.field_res_users_has_default_portal_group
+msgid "Has default portal group"
+msgstr "Fait parti du group d'accès au portail"
+
+#. module: horanet_auth_signup
+#. openerp-web
+#: code:addons/horanet_auth_signup/static/src/js/auth_signup.js:61
+#, python-format
+msgid "Information"
+msgstr "Information"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.signup_view
+msgid "Lastname"
+msgstr "Nom"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.signup_view
+msgid "Name"
+msgstr "Nom"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.view_users_search
+msgid "Never connected"
+msgstr "Jamais connecté"
+
+#. module: horanet_auth_signup
+#: model:ir.model,name:horanet_auth_signup.model_res_partner
+msgid "Partner"
+msgstr "Producteur"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.signup_view
+msgid "Person"
+msgstr "Particulier"
+
+#. module: horanet_auth_signup
+#: code:addons/horanet_auth_signup/controllers/controllers.py:92
+#, python-format
+msgid "Please select a company title."
+msgstr "Veuillez renseigner le type d'entreprise."
+
+#. module: horanet_auth_signup
+#: model:ir.model,name:horanet_auth_signup.model_portal_wizard
+msgid "Portal Access Management"
+msgstr "Gestion de l'accès au portail"
+
+#. module: horanet_auth_signup
+#: model:ir.model.fields,field_description:horanet_auth_signup.field_collectivity_config_settings_access_portal_group_default
+msgid "Quick access portal group"
+msgstr "Groupe d'accès au portal"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.custom_reset_password
+msgid "Reset password"
+msgstr "Réinitialiser le mot de passe"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.signup_view
+msgid "Select..."
+msgstr "Sélectionnez..."
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.custom_reset_password
+msgid "Set password"
+msgstr "Enregistrer le mot de passe"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.tpa_configuration_form
+msgid "Settings auth signup"
+msgstr "Paramètres de connexion"
+
+#. module: horanet_auth_signup
+#: code:addons/horanet_auth_signup/controllers/controllers.py:127
+#, python-format
+msgid "Something went wrong, please try again later or contact us."
+msgstr "Une erreur est survenue, veuillez essayer plus tard ou contactez nous."
+
+#. module: horanet_auth_signup
+#: code:addons/horanet_auth_signup/controllers/controllers.py:71
+#, python-format
+msgid "That does not seem to be an email address."
+msgstr "Cela ne semble pas être une adresse email valide."
+
+#. module: horanet_auth_signup
+#: code:addons/horanet_auth_signup/controllers/exceptions.py:10
+#, python-format
+msgid "The form was not properly filled in."
+msgstr "Le formulaire n'est pas correctement rempli."
+
+#. module: horanet_auth_signup
+#: model:ir.model.fields,help:horanet_auth_signup.field_collectivity_config_settings_access_portal_group_default
+msgid "The group used to give a user a portal access, if the user isn't in this group, a button on the partner form will be visible in order to add the group to the partner"
+msgstr "Le groupe à utiliser pour donner un accès au portail a un contact. Si un contact n'appartient pas à ce groupe, une bouton visible en vue formulaire permet d'ajouter ce group a l'utilisateur lié au contact (l'utilisateur sera crée si il n'existe pas)"
+
+#. module: horanet_auth_signup
+#: model:ir.model.fields,help:horanet_auth_signup.field_base_config_settings_auth_signup_allow_title_company
+msgid "The user could signup as a company, and could choose it's title and company name(for exemple ETS. AwesomeCompany)"
+msgstr "L'utilisateur peux s'enregistrer comme une entité morale, et pourra choisir un type d'entreprise (ex : SARL. Fameuse Entreprise)"
+
+#. module: horanet_auth_signup
+#: model:ir.model.fields,help:horanet_auth_signup.field_base_config_settings_auth_signup_allow_title_person
+msgid "The user could signup as a person, and could choose it's title and lastname/firstname(for exemple Mr. Smith)"
+msgstr "L'utilisateur peux s'enregistrer comme une personne, et pourra choisir une civilité ainsi qu'un nom/prénom (ex: Mr. DUPONT Dupond)"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.signup_view
+msgid "Title"
+msgstr "Civilité"
+
+#. module: horanet_auth_signup
+#: model:ir.model.fields,help:horanet_auth_signup.field_portal_wizard_toggle_portal
+msgid "Toggle all partner, to remove or grant a portal access the the entire list"
+msgstr "Sélectionner dé-sélectionner tout, Pour enlever ou ajouter l'accès sur la liste complète"
+
+#. module: horanet_auth_signup
+#: model:ir.model.fields,field_description:horanet_auth_signup.field_portal_wizard_toggle_portal
+msgid "Toogle all \"in portal\""
+msgstr "Sélectionner tout \"dans le portail\""
+
+#. module: horanet_auth_signup
+#: model:ir.model,name:horanet_auth_signup.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: horanet_auth_signup
+#: code:addons/horanet_auth_signup/models/inherited_base_config.py:46
+#: code:addons/horanet_auth_signup/models/inherited_base_config.py:57
+#: code:addons/horanet_auth_signup/models/inherited_base_config.py:65
+#, python-format
+msgid "Warning!"
+msgstr "Attention !"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.signup_view
+msgid "You are"
+msgstr "Vous êtes"
+
+#. module: horanet_auth_signup
+#. openerp-web
+#: code:addons/horanet_auth_signup/static/src/js/auth_signup.js:63
+#, python-format
+msgid "You cannot copy text in this field!"
+msgstr "Vous ne pouvez pas copier de texte dans ce champ !"
+
+#. module: horanet_auth_signup
+#. openerp-web
+#: code:addons/horanet_auth_signup/static/src/js/auth_signup.js:92
+#, python-format
+msgid "Your Email"
+msgstr "Votre Courriel"
+
+#. module: horanet_auth_signup
+#: model:ir.model,name:horanet_auth_signup.model_base_config_settings
+msgid "base.config.settings"
+msgstr "base.config.settings"
+
+#. module: horanet_auth_signup
+#: model:ir.model,name:horanet_auth_signup.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.custom_reset_password
+msgid "to reset your password."
+msgstr "pour réinitialiser votre mot de passe."
+
+#. module: horanet_auth_signup
+#: model:ir.ui.view,arch_db:horanet_auth_signup.custom_reset_password
+msgid "to set your password."
+msgstr "pour définir votre mot de passe."
+

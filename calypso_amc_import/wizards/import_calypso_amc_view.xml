@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_import_calypso_amc" model="ir.ui.view">
+        <field name="name">Import Calypso AMC</field>
+        <field name="model">partner.contact.identification.wizard.import.calypso.amc</field>
+        <field name="arch" type="xml">
+            <form>
+                <group name="mapping">
+                    <field name="imported_file"/>
+                </group>
+                <footer>
+                    <button name="action_import_mediums_and_tags" type="object"
+                            attrs="{'invisible': [('imported_file', '=', False)]}" class="btn-primary">
+                        <span>Import</span>
+                    </button>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_import_calypso_amc"
+                name="Import Calypso AMC"
+                res_model="partner.contact.identification.wizard.import.calypso.amc"
+                view_mode="form"
+                view_id="wizard_import_calypso_amc"
+                target="new"/>
+</odoo>
+
+

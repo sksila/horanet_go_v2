@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="activity_sector_view_tree_arborescent" model="ir.ui.view">
+        <field name="name">activity sector hierarchy</field>
+        <field name="model">activity.sector</field>
+        <field name="field_parent">child_ids</field>
+        <field name="arch" type="xml">
+            <tree string="sector">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="parent_id"/>
+                <field name="activity_ids"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_arborescent_activity_sector" model="ir.actions.act_window">
+        <field name="name">Activity sector</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="domain">[('parent_id','=',False)]</field>
+        <field name="res_model">activity.sector</field>
+        <field name="view_type">tree</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="activity_sector_view_tree_arborescent"/>
+    </record>
+
+    <record id="activity_sector_view_form" model="ir.ui.view">
+        <field name="name">activity sector form</field>
+        <field name="model">activity.sector</field>
+        <field name="arch" type="xml">
+            <form string="sector" duplicate="false">
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="sector name"/>
+                        </h1>
+                    </div>
+                    <group></group>
+                    <label for="description"/>
+                    <field name="description"/>
+                    <group string="Configuration">
+                        <group>
+                            <field name="code"/>
+                            <field name="parent_id"/>
+                        </group>
+                        <group col="4">
+                            <field name="is_counting"/>
+                            <!--<field name="anti_passback"/>-->
+                            <!--<field name="anti_passbadge"/>-->
+                            <button string="Show arborescent view"
+                                    name="%(action_arborescent_activity_sector)d"
+                                    type="action" class="oe_read_only"/>
+                            <newline/>
+                            <field name="use_parent_activity"
+                                   attrs="{'readonly':[('parent_id','=',False)]}"/>
+                            <button string="Show diagram view"
+                                    name="action_show_diagram" type="object"
+                                    class="oe_read_only"/>
+                        </group>
+                    </group>
+                    <separator string="Activities (inherited)"
+                               attrs="{'invisible':[('use_parent_activity','=',False)]}"/>
+                    <separator string="Activities (custom)"
+                               attrs="{'invisible':[('use_parent_activity','=',True)]}"/>
+                    <field name="custom_activity_ids" nolabel="1" widget="many2many_tags" class="oe_edit_only"
+                           attrs="{'invisible':[('use_parent_activity','=',True)]}"/>
+                    <field name="parent_activity_ids" nolabel="1"
+                           attrs="{'invisible':[('use_parent_activity','=',False)]}"
+                           class="oe_edit_only"/>
+                    <field name="activity_ids" nolabel="1" class="oe_read_only"/>
+                    <separator string="Child sector"/>
+                    <field name="child_ids" nolabel="1"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="activity_sector_view_tree" model="ir.ui.view">
+        <field name="name">activity sector tree</field>
+        <field name="model">activity.sector</field>
+        <field name="arch" type="xml">
+            <tree string="sector">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="parent_id"/>
+                <field name="activity_ids"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_activity_sector" model="ir.actions.act_window">
+        <field name="name">Activity sector</field>
+        <field name="res_model">activity.sector</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="activity_sector_view_tree"/>
+    </record>
+
+</odoo>

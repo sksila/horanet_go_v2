@@ -1,0 +1,48 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* environment_wizard_accounting_data
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-29 16:21+0000\n"
+"PO-Revision-Date: 2018-11-29 16:21+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: environment_wizard_accounting_data
+#: model:partner.setup.wizard.stage,name:environment_wizard_accounting_data.wizard_stage_accounting_data
+msgid "Accounting data"
+msgstr "Données de facturation"
+
+#. module: environment_wizard_accounting_data
+#: model:ir.ui.view,arch_db:environment_wizard_accounting_data.view_partner_setup_wizard_stage_accounting_data
+msgid "Create mandate"
+msgstr "Créer le mandat"
+
+#. module: environment_wizard_accounting_data
+#: model:ir.ui.view,arch_db:environment_wizard_accounting_data.view_partner_setup_wizard_stage_accounting_data
+msgid "Mandate"
+msgstr "Mandat"
+
+#. module: environment_wizard_accounting_data
+#: code:addons/environment_wizard_accounting_data/wizards/inherited_partner_setup_wizard.py:120
+#, python-format
+msgid "The BIC code must have 8 or 11 characters"
+msgstr "Le code BIC doit avoir 8 ou 11 caractères"
+
+#. module: environment_wizard_accounting_data
+#: model:ir.ui.view,arch_db:environment_wizard_accounting_data.view_partner_setup_wizard_stage_accounting_data
+msgid "Warnings, there is already a mandate for this subscription"
+msgstr "Attention, il y a déjà un mandat pour cet abonnement"
+
+#. module: environment_wizard_accounting_data
+#: model:ir.model,name:environment_wizard_accounting_data.model_partner_setup_wizard
+msgid "partner.setup.wizard"
+msgstr "partner.setup.wizard"
+

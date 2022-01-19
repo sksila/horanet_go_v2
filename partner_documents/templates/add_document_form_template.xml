@@ -1,0 +1,63 @@
+<odoo>
+    <template id="add_document_form" name="Add document form">
+        <div class="col-md-6 document-types horanet_add_document">
+            <div class="form-group">
+                <label for="document_type">Document type</label>
+                <span t-if="err_doc_type" class="error label label-danger">
+                    <t t-esc="err_doc_type"/>
+                </span>
+                <select class="form-control" name="document_type" required="required">
+                    <t t-foreach="document_types" t-as="type">
+                        <!-- If there is an error about the file uploaded, the user already selected a type so use it -->
+                        <option t-att-value="type.technical_name"
+                                t-att-selected="document_type == type.technical_name">
+                            <t t-esc="type.name"/>
+                        </option>
+                    </t>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="document_src">File inputs</label>
+                <p class="help-block">
+                    File types allowed:
+                    bmp, jpeg, png, pdf
+                    <!--<t t-esc="', '.join(valid_mime_types)"/>-->
+                    <br/>
+                    Max size allowed:
+                    <t t-esc="max_file_size"/>
+                    MB
+                </p>
+                <span t-if="err_no_doc" class="error label label-danger">
+                    <t t-esc="err_no_doc"/>
+                </span>
+                <t t-if="uploaded_files">
+                    <t t-foreach="uploaded_files" t-as="uploaded_file">
+                        <t t-set="key" t-value="'err_doc_{}'.format(uploaded_file_index)"/>
+                        <t t-if="errors_docs and errors_docs.get(key)">
+                            <span class="error label label-danger">
+                                <t t-esc="errors_docs.get(key)"/>
+                            </span>
+                            <br/>
+                            <br/>
+                        </t>
+                    </t>
+                </t>
+                <input type="file" name="uploaded_files" class="file_input"
+                       t-att-accept="', '.join(valid_mime_types)" required="required"/>
+            </div>
+            <div class="form-group">
+                <br/>
+
+                <button type="button" class="btn btn-default horanet_add_document_btn">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Add a document
+                </button>
+            </div>
+        </div>
+        <script src="/partner_documents/static/src/js/page_add_document.js?v=1"
+                type="text/javascript"></script>
+    </template>
+</odoo>

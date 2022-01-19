@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="vehicle_type_vp" model="partner.contact.identification.vehicle.type">
+            <field name="name">VP</field>
+            <field name="code">vp</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_ctte" model="partner.contact.identification.vehicle.type">
+            <field name="name">CTTE</field>
+            <field name="code">ctte</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_deriv_vp" model="partner.contact.identification.vehicle.type">
+            <field name="name">Deriv-VP</field>
+            <field name="code">deriv_vp</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_vtsu" model="partner.contact.identification.vehicle.type">
+            <field name="name">VTSU</field>
+            <field name="code">vtsu</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_cam" model="partner.contact.identification.vehicle.type">
+            <field name="name">CAM</field>
+            <field name="code">cam</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_tcp" model="partner.contact.identification.vehicle.type">
+            <field name="name">TCP</field>
+            <field name="code">tcp</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_trr" model="partner.contact.identification.vehicle.type">
+            <field name="name">TRR</field>
+            <field name="code">trr</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_mtl" model="partner.contact.identification.vehicle.type">
+            <field name="name">MTL</field>
+            <field name="code">mtl</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_mtt1" model="partner.contact.identification.vehicle.type">
+            <field name="name">MTT1</field>
+            <field name="code">mtt1</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_mtt2" model="partner.contact.identification.vehicle.type">
+            <field name="name">MTT2</field>
+            <field name="code">mtt2</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_cl" model="partner.contact.identification.vehicle.type">
+            <field name="name">CL</field>
+            <field name="code">cl</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_qm" model="partner.contact.identification.vehicle.type">
+            <field name="name">QM</field>
+            <field name="code">qm</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_tra" model="partner.contact.identification.vehicle.type">
+            <field name="name">TRA</field>
+            <field name="code">tra</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_quad" model="partner.contact.identification.vehicle.type">
+            <field name="name">Quad</field>
+            <field name="code">quad</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_maga" model="partner.contact.identification.vehicle.type">
+            <field name="name">MAGA</field>
+            <field name="code">maga</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_rem" model="partner.contact.identification.vehicle.type">
+            <field name="name">REM</field>
+            <field name="code">rem</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_srem" model="partner.contact.identification.vehicle.type">
+            <field name="name">SREM</field>
+            <field name="code">srem</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_resp" model="partner.contact.identification.vehicle.type">
+            <field name="name">RESP</field>
+            <field name="code">resp</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_tm" model="partner.contact.identification.vehicle.type">
+            <field name="name">TM</field>
+            <field name="code">tm</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_voiturette" model="partner.contact.identification.vehicle.type">
+            <field name="name">voiturette</field>
+            <field name="code">voiturette</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_cycl" model="partner.contact.identification.vehicle.type">
+            <field name="name">CYCL</field>
+            <field name="code">cycl</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record id="vehicle_type_vasp" model="partner.contact.identification.vehicle.type">
+            <field name="name">VASP</field>
+            <field name="code">vasp</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Horanet Portal Sale Assets">
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript"
+                    src="/horanet_website_portal_sale/static/src/js/horanet_website_portal_sale.js"/>
+        </xpath>
+    </template>
+</odoo>

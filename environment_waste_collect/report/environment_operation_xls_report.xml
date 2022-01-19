@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<odoo>
+    <report
+            id="_operation_xls_report"
+            string="Environment operation xls report"
+            model="horanet.operation"
+            report_type="xlsx"
+            name="environment_waste_collect.xlsx_report_environment_operation.xlsx"
+            file="environment_waste_collect.xlsx_report_environment_operation.xlsx"
+            menu="False"/>
+</odoo>

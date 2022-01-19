@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="rule_editor_action" model="ir.actions.act_window">
+        <field name="name">Rule editor</field>
+        <field name="res_model">activity.rule.wizard.sandbox</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

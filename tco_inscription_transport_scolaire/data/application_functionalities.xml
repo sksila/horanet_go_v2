@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="application_functionality_inscription" model="application.functionality">
+            <field name="name">Inscription</field>
+        </record>
+        <record id="application_functionality_inscription_removal" model="application.functionality">
+            <field name="name">Inscription removal</field>
+        </record>
+        <record id="application_functionality_inscription_refund" model="application.functionality">
+            <field name="name">Inscription refund</field>
+        </record>
+        <record id="application_functionality_inscription_path_changing" model="application.functionality">
+            <field name="name">Inscription path changing</field>
+        </record>
+    </data>
+</odoo>

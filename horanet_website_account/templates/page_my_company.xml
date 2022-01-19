@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="my_company" name="My Company">
+        <t t-call="website.layout">
+            <div class="horanet_blockui horanet_spinner" style="display:inline-block"/>
+            <div class="container mt16 mb32 view_company">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="/my/home">My Account</a>
+                            </li>
+                            <li>My Company</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="page-header">My Company details</h3>
+                        <div class="col-md-8" style="font-size: 1.1em;" t-field="partner.self"
+                             t-field-options='{"widget": "contact", "fields": ["email", "phone", "address", "name"]}'/>
+
+                        <div class="col-md-12 mt32 clearfix">
+                            <a href="/my/company/create/employee"
+                               class="btn btn-default btn-primary pull-left a-submit">
+                                <i class="fa fa-user-plus" aria-hidden="true" t-translation="off"/>
+                                Create new employee
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="page-header">Employees list</h3>
+                        <div class="employee_accordion base">
+                            <t t-foreach="partner.child_ids.filtered(lambda r: r.type == 'contact').sorted(key=lambda b: b.id)"
+                               t-as="employee">
+                                <h3>
+                                    <t t-esc="employee.name"/>
+                                    (<t t-esc="employee.function"/>)
+                                </h3>
+                                <div class="portlet-content">
+                                    <div class="row mt8">
+                                        <span class="col-md-3" style="text-align: center;"
+                                              t-field="employee.image"
+                                              t-field-options='{"widget": "image", "class": "img-thumbnail"}'/>
+                                        <div class="col-md-9" t-field="employee.self"
+                                             t-field-options='{"widget": "contact", "fields": ["email", "phone", "mobile", "name"]}'/>
+                                    </div>
+
+                                    <hr class="separator"/>
+                                    <div class="row">
+                                        <div t-if="employee.id != partner.id" class="col-md-12 mt8 mb8">
+                                            <a t-attf-href="/my/company/delete/{{ employee.id }}"
+                                               class="btn btn-danger pull-right a-submit">
+                                                <i class="fa fa-user-times" aria-hidden="true"
+                                                   t-translation="off"/>
+                                                Remove employee
+                                            </a>
+                                            <a t-attf-href="/my/company/edit/employee/{{ employee.id }}"
+                                               class="btn btn-default btn-primary pull-left a-submit"
+                                               style="color:#fff;">
+                                                <i class="fa fa-pencil-square-o" aria-hidden="true"
+                                                   t-translation="off"/>
+                                                Edit employee informations
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

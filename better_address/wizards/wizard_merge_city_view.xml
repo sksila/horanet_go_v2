@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <record id="wizard_merge_city_form_view" model="ir.ui.view">
+        <field name="name">Wizard to help merging city</field>
+        <field name="model">horanet.wizard.merge.city</field>
+        <field name="arch" type="xml">
+            <form string="Title">
+
+                <group name="City to merge" col="4" string="City merge utility" style="margin:0px">
+                    <field name="city_to_merge_id"/>
+                    <div colspan="2">
+                        <label for="number_partner_with_city_id"/>
+                        <field name="number_partner_with_city_id" nolabel="1"/>
+                        <button name="action_open_qwant_query"
+                                type="object"
+                                class="pull-right mr16" string="Ask Qwant"/>
+                    </div>
+                </group>
+
+                <group name="main" string="Duplicate city search" col="4" style="margin:0px">
+                    <label for="city_renamed"/>
+                    <div style="display:flex;">
+                        <field name="city_renamed" readonly="False" nolabel="1"
+                               style="margin-bottom:0px;"/>
+                        <div class="btn btn-light" style="background-color: #dddddd;">
+                            <span class="fa fa-search" aria-hidden="true"/>
+                        </div>
+                    </div>
+
+                    <field name="similarity_threshold" widget="priority"/>
+                    <field name="city_to_merge_code"/>
+                    <field name="use_code"/>
+
+                    <field name="city_to_merge_state_id"/>
+                    <field name="use_state_id"/>
+
+                    <field name="city_to_merge_country_id"/>
+                    <field name="use_country_id"/>
+                    <field name="city_to_merge_zip_ids" invisible="1" colspan="2"/>
+
+                    <field name="use_zip_ids" widget="many2many_checkboxes"/>
+                </group>
+
+                <group string="Similar cities" name="search_result" style="margin:0px">
+                    <field name="similar_city_ids" nolabel="1" widget="one2many" readonly="0">
+                        <tree limit="10"
+                              default_order='state'
+                              options="{'no_create' : True}"
+                              decoration-muted="state=='draft'"
+                              decoration-warning="state=='invalidated'"
+                              decoration-bf="state=='confirmed'"
+                              decoration-success="state=='confirmed'">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="country_id"/>
+                            <field name="country_state_id"/>
+                            <field name="zip_ids"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </group>
+                <group style="margin:0px">
+                    <group string="Merge" style="padding-right: 3em; display: inherit;">
+                        <label for="city_merge_destination_id" style="padding-bottom: 18px;"/>
+                        <field name="city_merge_destination_id" nolabel="1"/>
+
+                        <label for="old_code" style="padding-bottom: 18px;"/>
+                        <field name="old_code" nolabel="1"/>
+
+                        <label for="old_country_id" style="padding-bottom: 18px;"/>
+                        <field name="old_country_id" nolabel="1"/>
+
+                        <label for="old_country_state_id" style="padding-bottom: 18px;"/>
+                        <field name="old_country_state_id" nolabel="1"/>
+
+                        <label for="old_zip_ids" style="padding-bottom: 18px;"/>
+                        <field name="old_zip_ids" widget="many2many_tags" nolabel="1"/>
+
+                        <button name="action_merge_city" type="object" colspan="2"
+                                attrs="{'invisible':[('city_merge_destination_id','=', False)]}"
+                                class="center-block mt16" string="Merge to selected city"/>
+                        <button name="action_merge_city" type="object" colspan="2"
+                                attrs="{'invisible':[('city_merge_destination_id','!=', False)]}"
+                                class="center-block mt16"
+                                style="cursor: not-allowed;"
+                                string="Merge to selected city"/>
+                    </group>
+
+                    <group string="Add to referential">
+                        <field name="new_name"/>
+                        <field name="new_code"/>
+                        <field name="new_country_id"/>
+                        <field name="new_country_state_id"/>
+                        <field name="new_zip_ids" widget="many2many_tags" options="{'no_open': False}"/>
+                        <button name="action_add_city_to_referential" type="object" colspan="2"
+                                class="center-block mt16" string="Confirm and add to referential"/>
+                    </group>
+                </group>
+                <footer>
+                    <button special="cancel" string="Cancel" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wizard_merge_city_action" model="ir.actions.act_window">
+        <field name="name">Wizard to help merging city</field>
+        <field name="res_model">horanet.wizard.merge.city</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <act_window id="action_wizard_merge_city_action_multi"
+                name="Manage draft city"
+                src_model="res.city"
+                res_model="horanet.wizard.merge.city"
+                view_mode="form"
+                view_id="wizard_merge_city_form_view"
+                target="new"
+                multi="True"
+                key2="client_action_multi"/>
+</openerp>

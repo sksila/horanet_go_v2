@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="published_categories_recursive" name="Published category list"
+              inherit_id="website_sale.categories_recursive">
+        <xpath expr="//li" position="attributes">
+            <attribute name="t-if">c.website_published</attribute>
+        </xpath>
+    </template>
+
+    <template id="published_option_collapse_categories_recursive" name="Published Collapse Category Recursive"
+              inherit_id="website_sale.option_collapse_categories_recursive">
+        <xpath expr="//li" position="attributes">
+            <attribute name="t-if">categ.website_published</attribute>
+        </xpath>
+    </template>
+</odoo>

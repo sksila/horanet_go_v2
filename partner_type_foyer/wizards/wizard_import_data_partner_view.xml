@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wizard_import_data_partner_form" model="ir.ui.view">
+            <field name="name">horanet.citizen.wizard.import.partner</field>
+            <field name="model">horanet.citizen.wizard.import.partner</field>
+            <field name="arch" type="xml">
+                <form string="Import french address referential">
+                    <group col="4" name="main" string="Imports base parameters">
+                        <field name="delete_all_before_import"/>
+
+                        <field name="module_name"/>
+                        <field name="conserve_uploaded_file"/>
+                    </group>
+                    <group string="Imports performance parameters">
+                        <field name="import_method"/>
+                        <field name='track_history' attrs="{'invisible': [('import_method','=', 'sql')]}"/>
+                    </group>
+                    <group string="Imports data file">
+                        <field name="datafile" widget="bigfile_binary" filename="datafile_file_name"/>
+                    </group>
+                    <field name="datafile_file_name" invisible="1"/>
+                    <footer>
+                        <button name="run_import" type="object"
+                                class="oe_highlight" string="Import"
+                                confirm="This operation could take time and is irreversible, are you sure to proceed ?"/>
+                        <button special="cancel" string="Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="wizard_import_data_partner_action" model="ir.actions.act_window">
+            <field name="name">Import Partner</field>
+            <field name="res_model">horanet.citizen.wizard.import.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

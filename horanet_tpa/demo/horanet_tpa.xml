@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- PARTNER -->
+    <record id="demo_partner_dupond" model="res.partner">
+        <field name="company_type">person</field>
+        <field name="lastname">Dupond</field>
+        <field name="city_id" ref="better_address.demo_city_fontenay_le_comte"/>
+        <field name="street_id" ref="better_address.demo_street_puits"/>
+        <field name="zip_id" ref="better_address.demo_zip_85200"/>
+        <field name="street_number_id" ref="better_address.demo_street_number_6"/>
+        <field name="state_id" ref="better_address.state_fr_85"/>
+        <field name="country_id" ref="base.fr"/>
+    </record>
+    <record id="demo_partner_dupont" model="res.partner">
+        <field name="company_type">person</field>
+        <field name="lastname">Dupont</field>
+        <field name="city_id" ref="better_address.demo_city_la_rochelle"/>
+        <field name="street_id" ref="better_address.demo_street_hotel_ville"/>
+        <field name="zip_id" ref="better_address.demo_zip_17000"/>
+        <field name="street_number_id" ref="better_address.demo_street_number_1"/>
+        <field name="state_id" ref="better_address.state_fr_17"/>
+        <field name="country_id" ref="base.fr"/>
+    </record>
+
+    <!-- FOYER -->
+    <record id="demo_partner_foyer" model="res.partner">
+        <field name="lastname">Foyer 1</field>
+        <field name="is_company" eval="True"/>
+        <field name="company_type">company</field>
+    </record>
+    <record id="demo_partner_foyer" model="res.partner">
+        <field name="fixed_name">Foyer 1</field>
+        <field name="company_type">foyer</field>
+    </record>
+
+    <!-- RELATION -->
+    <record id="demo_partner_relation_foyer_1" model="horanet.relation.foyer">
+        <field name="foyer_id" ref="demo_partner_foyer"/>
+        <field name="partner_id" ref="demo_partner_dupond"/>
+    </record>
+    <record id="demo_partner_relation_foyer_2" model="horanet.relation.foyer">
+        <field name="foyer_id" ref="demo_partner_foyer"/>
+        <field name="partner_id" ref="demo_partner_dupont"/>
+    </record>
+</odoo>

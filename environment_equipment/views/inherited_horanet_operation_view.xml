@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="environment_equipment_horanet_operation_view_form" model="ir.ui.view">
+        <field name="name">Add equipment information</field>
+        <field name="model">horanet.operation</field>
+        <field name="inherit_id" ref="horanet_subscription.horanet_operation_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//group[@name='op_information']" position="inside">
+                <field name="maintenance_equipment_id"/>
+                <field name="production_point_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="environment_equipment_operation_pickups_form_view" model="ir.ui.view">
+        <field name="name">environment.equipment.operation.pickups.form</field>
+        <field name="model">horanet.operation</field>
+        <field name="inherit_id" ref="horanet_subscription.horanet_operation_view_form"/>
+        <field name="mode">primary</field>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group[1]" position="replace">
+                <group string="Parameters">
+                    <label for="quantity"/>
+                    <div class="o_row">
+                        <field name="quantity"/>
+                        <field name="activity_uom_id"/>
+                    </div>
+                    <field name="action_id"/>
+
+                    <field name="device_id" invisible="1"/>
+                    <field name="time"/>
+                    <field name="activity_id"/>
+                    <newline/>
+                    <field name="is_offline" invisible="1"/>
+                    <field name="disable_computation" invisible="1"/>
+                    <field name="chip_read"/>
+                    <field name="equipment_allowed"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//form/sheet/group/group[2]" position="replace">
+                <group string="Informations">
+                    <field name="tag_id" invisible="1"/>
+                    <field name="partner_id"/>
+                    <field name="maintenance_equipment_id"
+                           context="{'form_view_ref': 'environment_equipment.environment_equipment_form_view'}"/>
+                    <field name="query_id" invisible="1"/>
+                    <newline/>
+                    <field name="check_point_id" invisible="1"/>
+                    <field name="infrastructure_id" invisible="1"/>
+                    <field name="activity_sector_id"/>
+                    <newline/>
+                    <field name="origin_operation_id" invisible="1"/>
+                    <newline/>
+                    <field name="equipment_emptied"/>
+                    <field name="equipment_broken"/>
+                    <field name="sorting_problem"/>
+                    <field name="size_exceeding"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="environment_equipment_operation_pickups_pivot_view" model="ir.ui.view">
+        <field name="name">environment.equipment.operation.pickups.pivot</field>
+        <field name="model">horanet.operation</field>
+        <field name="arch" type="xml">
+            <pivot string="environment equipment operation pickups">
+                <field name="activity_id"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="environment_equipment_operation_pickups_tree_view" model="ir.ui.view">
+        <field name="name">environment.equipment.operation.pickups.tree</field>
+        <field name="model">horanet.operation</field>
+        <field name="inherit_id" ref="horanet_subscription.horanet_operation_view_tree"/>
+        <field name="mode">primary</field>
+        <field name="priority">1000</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='action_id']" position="replace">
+                <field name="maintenance_equipment_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="environment_equipment_operation_pickups_search_view" model="ir.ui.view">
+        <field name="name">Pickup Search View</field>
+        <field name="model">horanet.operation</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="horanet_subscription.view_filter_horanet_operation"/>
+        <field name="arch" type="xml">
+            <search>
+                 <group expand="0" string="Group By">
+                    <filter name="group_by_activity_id" string="Activity"
+                            context="{'group_by': 'activity_id'}"/>
+                    <filter name="group_by_chip_read" string="Chip read"
+                            context="{'group_by': 'chip_read'}"/>
+                    <filter name="group_by_equipment_allowed" string="Equipment allowed"
+                            context="{'group_by': 'equipment_allowed'}"/>
+                    <filter name="group_by_equipment_broken" string="Equipment broken"
+                            context="{'group_by': 'equipment_broken'}"/>
+                    <filter name="group_by_size_exceeding" string="Size exceeding"
+                            context="{'group_by': 'size_exceeding'}"/>
+                    <filter name="group_by_sorting_problem" string="Sorting problem"
+                            context="{'group_by': 'sorting_problem'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="environment_equipment_operation_pickups_action" model="ir.actions.act_window">
+        <field name="name">Pickups</field>
+        <field name="res_model">horanet.operation</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,pivot</field>
+        <field name="search_view_id" ref="environment_equipment_operation_pickups_search_view"/>
+        <field name="context" eval="{'equipment_environment': True}"/>
+        <field name="domain" eval="[('activity_id.application_type', '=', 'environment'),
+                                    ('action_id', '=', ref('environment_equipment.horanet_action_container_pickup'))]"/>
+    </record>
+
+    <record id="action_environment_equipment_operation_pickups_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="environment_equipment_operation_pickups_tree_view"/>
+        <field name="act_window_id" ref="environment_equipment_operation_pickups_action"/>
+    </record>
+
+    <record id="action_environment_equipment_operation_pickups_view_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="environment_equipment_operation_pickups_form_view"/>
+        <field name="act_window_id" ref="environment_equipment_operation_pickups_action"/>
+    </record>
+
+    <record id="action_environment_equipment_operation_pickups_pivot_view" model="ir.actions.act_window.view">
+        <field name="sequence" eval="3"/>
+        <field name="view_mode">pivot</field>
+        <field name="view_id" ref="environment_equipment_operation_pickups_pivot_view"/>
+        <field name="act_window_id" ref="environment_equipment_operation_pickups_action"/>
+    </record>
+</odoo>

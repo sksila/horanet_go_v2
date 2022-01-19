@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_frontend" name="Horanet frontend assets" inherit_id="website.assets_frontend">
+
+        <!-- Frontend javascript sources -->
+        <xpath expr="//script[last()]" position="after">
+            <!-- Full jQuery UI lib -->
+            <script src="/horanet_website/static/src/lib/jquery-ui/jquery-ui.js"
+                    type="text/javascript"/>
+
+            <!-- Ajout du framework sweetalert -->
+            <script src="/horanet_website/static/src/lib/sweetalert/sweetalert.min.js"
+                    type="text/javascript"/>
+
+            <!-- Ajout widget toggle button (bootstrap-toggle -->
+            <script src="/horanet_website/static/src/lib/bootstrap-toggle/bootstrap2-toggle.js"
+                    type="text/javascript"/>
+
+            <script src="/horanet_website/static/src/js/horanet_common.js"
+                    type="text/javascript"/>
+            <script src="/horanet_website/static/src/js/portlet.js"
+                    type="text/javascript"/>
+
+            <!-- Pack de langue pour datepicker -->
+            <script src="/horanet_website/static/src/js/datepicker_load_localisation.js"
+                    type="text/javascript"/>
+
+            <script src="/horanet_website/static/src/lib/croppie/croppie.js"
+                    type="text/javascript"/>
+        </xpath>
+
+        <!-- Frontend CSS sources -->
+        <xpath expr="." position="inside">
+            <!-- Full jQuery UI lib -->
+            <link rel="stylesheet" href="/horanet_website/static/src/lib/jquery-ui/jquery-ui.css"
+                  type="text/css"/>
+            <link rel="stylesheet" href="/horanet_website/static/src/lib/jquery-ui/jquery-ui.custom-horanet-theme.css"
+                  type="text/css"/>
+
+            <!-- Ajout du framework sweetalert -->
+            <link rel='stylesheet' href='/horanet_website/static/src/lib/sweetalert/sweetalert.css'
+                  type="text/css"/>
+
+            <!-- Ajout widget toggle button (bootstrap-toggle -->
+            <link rel='stylesheet' href='/horanet_website/static/src/lib/bootstrap-toggle/bootstrap2-toggle.css'
+                  type="text/css"/>
+            <link rel='stylesheet' href='/horanet_website/static/src/css/horanet_common.css'
+                  type="text/css"/>
+            <link rel='stylesheet' href='/horanet_website/static/src/css/portlet.css'
+                  type="text/css"/>
+
+            <link rel="stylesheet" href="/horanet_website/static/src/lib/croppie/croppie.css"
+                  type="text/css"/>
+        </xpath>
+    </template>
+</odoo>

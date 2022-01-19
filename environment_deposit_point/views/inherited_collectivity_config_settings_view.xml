@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_collectivity_config_settings_deposit_point" model="ir.ui.view">
+        <field name="name">Partner Contact Identification Setting for Deposi points</field>
+        <field name="model">collectivity.config.settings</field>
+        <field name="inherit_id" ref="horanet_go.view_form_collectivity_config_settings"/>
+
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='identification_windows_service_port']" position="before">
+                <field name="deposit_point_mapping_id" style="width:159px"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

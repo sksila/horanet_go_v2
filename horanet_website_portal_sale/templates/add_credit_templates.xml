@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="add_credit" name="Add credits">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container mt32 mb32">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="/my/home">
+                                <i class="fa fa-home"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/my/deposit">My Deposit Account</a>
+                        </li>
+                        <li>Add credits</li>
+                    </ol>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            How much credit do you want to add to the account
+                            <t t-esc="user.partner_id.property_account_customer_advance.name"/>
+                            ?
+                            <form id="add-credit-form" action="/my/payment" method="post">
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <div class="input-group">
+                                    <input type="text" name="deposit_amount" class="form-control" placeholder="0.0"/>
+                                    <span class="input-group-addon">
+                                        <t t-esc="user.partner_id.company_id.currency_id.name"/>
+                                    </span>
+                                </div>
+                                <br/>
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <button class="btn btn-primary">Add credits</button>
+                            </form>
+                            <br/>
+                            <p style="color: red;" t-if="alert_error">You have entered a null value</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

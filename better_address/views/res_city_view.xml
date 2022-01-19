@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_city_view_form" model="ir.ui.view">
+        <field name="name">Res city base form</field>
+        <field name="model">res.city</field>
+        <field name="arch" type="xml">
+            <form string="City">
+                <header groups="better_address.group_address_manage">
+                    <button name="action_open_merge_city_wizard" type="object"
+                            groups="better_address.group_address_manage"
+                            string="Manage draft city"
+                            states="draft"/>
+                    <button name="action_draft" type="object"
+                            string="Reset to draft"
+                            groups="base.group_no_one"
+                            states="confirmed,invalidated"/>
+                    <button name="action_confirm" type="object"
+                            string="Confirm" states="draft,invalidated"
+                            groups="base.group_no_one"
+                            class="oe_highlight"/>
+                    <button name="action_invalidate" type="object"
+                            groups="base.group_no_one"
+                            string="Invalidate" states="confirmed"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="City name"/>
+                        </h1>
+                    </div>
+                    <group>
+                    </group>
+                    <group col="4" string="City properties">
+                        <field name="code"/>
+                        <newline/>
+                        <field name="country_state_id" placeholder="Select a state ..."
+                               context="{'default_name': country_state_id, 'default_country_id': country_id}">
+                        </field>
+                        <field name="country_id" placeholder="Select a country ..."
+                               context="{'default_name': country_id}">
+                        </field>
+                    </group>
+                    <group string="List ZIP codes">
+                        <field name="zip_ids" widget="many2many_tags" options="{'no_open': False}" nolabel="1"
+                               placeholder="Add or remove ZIP code ...">
+                            <!--context="{'default_city_ids':[active_id]}"-->
+                        </field>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_city_view_tree" model="ir.ui.view">
+        <field name="name">res.city.tree</field>
+        <field name="model">res.city</field>
+        <field name="arch" type="xml">
+            <tree string="City">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_state_id"/>
+                <field name="zip_ids" widget="many2many_tags"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_city_view_filter" model="ir.ui.view">
+        <field name="name">res.city.filter</field>
+        <field name="model">res.city</field>
+        <field name="arch" type="xml">
+            <search string="Search city">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_id"/>
+                <field name="country_state_id"/>
+                <filter string="Is draft" name="message_needaction" domain="[('state', '=', 'draft')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Country state" domain="[]" context="{'group_by':'country_state_id'}"/>
+                    <filter string="Country" domain="[]" context="{'group_by':'country_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_res_city" model="ir.actions.act_window">
+        <field name="name">Cities Management</field>
+        <field name="res_model">res.city</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="res_city_view_tree"/>
+        <field name="search_view_id" ref="res_city_view_filter"/>
+        <!--<field name="context">{"search_default_filter_is_draft":0}</field>-->
+    </record>
+
+    <act_window id="action_wizard_delete_all_cities"
+                name="Delete All"
+                src_model="res.city"
+                res_model="horanet.wizard.deletion"
+                view_mode="form"
+                target="new"
+                key2="client_action_multi"
+                groups="base.group_system"/>
+    <!--groups="base.group_no_one"-->
+    <!--key2 est utilisé pour faire apparaitre l'action dans le menu "more"-->
+
+</odoo>

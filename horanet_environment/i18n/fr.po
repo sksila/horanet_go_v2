@@ -1,0 +1,148 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_environment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-03 15:02+0000\n"
+"PO-Revision-Date: 2017-10-03 15:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_environment
+#: model:res.groups,name:horanet_environment.group_admin_environment
+msgid "Administrator"
+msgstr "Administateur"
+
+#. module: horanet_environment
+#: model:res.groups,comment:horanet_environment.group_browse_environment
+msgid "Allow browsing records related to environment management"
+msgstr "Autorise à parcourir les enregistrements relatifs à la gestion de l'environement"
+
+#. module: horanet_environment
+#: model:res.groups,comment:horanet_environment.group_manage_environment
+msgid "Allow editing records related to environment management"
+msgstr "Autorise à éditer les enregistrements relatifs à la gestion de l'environement"
+
+#. module: horanet_environment
+#: model:res.groups,comment:horanet_environment.group_admin_environment
+msgid "Allow user to see and edit subscription related objects"
+msgstr "Permet à l'utilisateur de modifier les objets liés aux contrats"
+
+#. module: horanet_environment
+#: model:ir.ui.view,arch_db:horanet_environment.view_form_horanet_environment_config_settings
+msgid "Apply"
+msgstr "Appliquer"
+
+#. module: horanet_environment
+#: model:subscription.category.partner,name:horanet_environment.environment_category_association
+msgid "Associations"
+msgstr "Associations"
+
+#. module: horanet_environment
+#: model:res.groups,name:horanet_environment.group_browse_environment
+msgid "Browser"
+msgstr "Navigateur"
+
+#. module: horanet_environment
+#: model:ir.ui.view,arch_db:horanet_environment.view_form_horanet_environment_config_settings
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: horanet_environment
+#: model:subscription.category.partner,name:horanet_environment.environment_category_collectivity
+msgid "Collectivities"
+msgstr "Collectivités"
+
+#. module: horanet_environment
+#: model:ir.ui.menu,name:horanet_environment.environment_configuration
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: horanet_environment
+#: model:ir.ui.view,arch_db:horanet_environment.view_form_horanet_environment_config_settings
+msgid "Configure Horanet Environment"
+msgstr "Configurer Horanet Environment"
+
+#. module: horanet_environment
+#: model:ir.actions.act_window,name:horanet_environment.action_horanet_environment_settings
+msgid "Configure Horanet Environment settings"
+msgstr "Configurer les paramètres d'Horanet Environment"
+
+#. module: horanet_environment
+#: model:ir.model.fields,field_description:horanet_environment.field_horanet_environment_config_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: horanet_environment
+#: model:ir.model.fields,field_description:horanet_environment.field_horanet_environment_config_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: horanet_environment
+#: model:ir.model.fields,field_description:horanet_environment.field_horanet_environment_config_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: horanet_environment
+#: model:ir.module.category,name:horanet_environment.horanet_environment_category
+#: model:ir.ui.menu,name:horanet_environment.environment_main
+msgid "Environment"
+msgstr "Environnement"
+
+#. module: horanet_environment
+#: model:ir.model.fields,field_description:horanet_environment.field_horanet_environment_config_id
+msgid "ID"
+msgstr "ID"
+
+#. module: horanet_environment
+#: model:subscription.category.partner,name:horanet_environment.environment_category_particulier
+msgid "Invididuals"
+msgstr "Particuliers"
+
+#. module: horanet_environment
+#: model:ir.model.fields,field_description:horanet_environment.field_horanet_environment_config___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: horanet_environment
+#: model:ir.model.fields,field_description:horanet_environment.field_horanet_environment_config_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: horanet_environment
+#: model:ir.model.fields,field_description:horanet_environment.field_horanet_environment_config_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: horanet_environment
+#: model:res.groups,name:horanet_environment.group_manage_environment
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: horanet_environment
+#: model:subscription.category.partner,name:horanet_environment.environment_category_professional
+msgid "Professionals"
+msgstr "Professionels"
+
+#. module: horanet_environment
+#: model:ir.ui.menu,name:horanet_environment.environment_configuration_general_settings
+msgid "Settings"
+msgstr "Configuration"
+
+#. module: horanet_environment
+#: model:ir.model,name:horanet_environment.model_application_type
+msgid "application.type"
+msgstr "application.type"
+
+#. module: horanet_environment
+#: model:ir.model,name:horanet_environment.model_horanet_environment_config
+msgid "horanet.environment.config"
+msgstr "horanet.environment.config"
+

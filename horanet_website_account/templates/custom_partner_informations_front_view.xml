@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="custom_partner_informations_front_view" model="ir.ui.view">
+            <field name="name">inherit partner informations for customization</field>
+            <!--No model because we inherit a template to set a noupdate at 1 -->
+            <field name="model"></field>
+            <field name="inherit_id" ref="horanet_website_account.partner_informations"/>
+            <field name="priority">64</field>
+            <field name="active">False</field>
+            <field name="arch" type="xml">
+
+                <!-- TITLE -->
+                <xpath expr="//div/div/select[@name = 'title']/../.." position="replace">
+                    <div class="row" t-if="not partner.is_company">
+                        <div t-attf-class="form-group col-md-12 required {{error.get('title') and 'has-error' or ''}}">
+                            <label class="control-label" for="title">Title</label>
+                            <select class="form-control" name="title">
+                                <t t-foreach="partner_titles or []" t-as="title">
+                                    <option t-if="title_index == 0 and not post.get('title', partner.title and partner.title.id)"
+                                            value="" selected="" hidden="">select title
+                                    </option>
+                                    <option t-att-value="title.id"
+                                            t-att-selected="title.id == int(post.get('title') or partner.title and partner.title.id)">
+                                        <t t-esc="title.name"/>
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                    </div>
+                </xpath>
+
+                 <!--Company type -->
+                <xpath expr="//div[2]/div/select[@name = 'title']/../.." position="replace">
+                    <div class="row" t-if="partner.is_company and not partner.category_id">
+                        <div t-attf-class="form-group col-md-12 required {{error.get('title') and 'has-error' or ''}}">
+                            <label class="control-label" for="title">Company type</label>
+                            <select class="form-control" name="title">
+                                <t t-foreach="company_titles or []" t-as="title">
+                                    <option t-if="title_index == 0 and not post.get('title', partner.title and partner.title.id)"
+                                            value="" selected="" hidden="">Select a type
+                                    </option>
+                                    <option t-att-value="title.id"
+                                            t-att-selected="title.id == int(post.get('title') or partner.title and partner.title.id)">
+                                        <t t-esc="title.name"/>
+                                    </option>
+                                </t>
+                            </select>
+                        </div>
+                    </div>
+                </xpath>
+
+                <!--firstname du contact-->
+                <xpath expr="//div/div/input[@name = 'firstname']/../.." position="replace">
+                    <div class="row" t-if="not partner.is_company">
+                        <div t-attf-class="form-group col-md-12 required {{error.get('firstname') and 'has-error' or ''}}">
+                            <label class="control-label" for="firstname">Firstname
+                            </label>
+                            <input type="text" name="firstname" class="form-control"
+                                   t-att-value="post.get('firstname', partner.firstname)"/>
+                        </div>
+                    </div>
+                </xpath>
+
+                <!--firstname2 du contact-->
+                <xpath expr="//div/div/input[@name = 'firstname2']/../.." position="replace">
+                    <div class="row" t-if="not partner.is_company">
+                        <div t-attf-class="form-group col-md-12">
+                            <label class="control-label" for="firstname2">Second Firstname
+                            </label>
+                            <input type="text" name="firstname2" class="form-control"
+                                   t-att-value="post.get('firstname2', partner.firstname2)"/>
+                        </div>
+                    </div>
+                </xpath>
+
+                <!--lastname du contact-->
+                <xpath expr="//div/div/input[@name = 'lastname']/../.." position="replace">
+                    <div class="row" t-if="not partner.is_company">
+                        <div t-attf-class="form-group col-md-12 required #{error.get('lastname') and 'has-error' or ''}">
+                            <label class="control-label" for="lastname">Lastname
+                            </label>
+                            <input type="text" name="lastname" class="form-control"
+                                   t-att-value="post.get('lastname',partner.lastname)"/>
+                        </div>
+                    </div>
+                </xpath>
+
+                 <!--Name du contact-->
+                <xpath expr="//div/div/input[@name = 'name']/../.." position="replace">
+                    <div class="row" t-if="partner.is_company">
+                        <div t-attf-class="form-group col-md-12 required #{error.get('name') and 'has-error' or ''}">
+                            <label class="control-label" for="lastname">Name
+                            </label>
+                            <input type="text" name="name" class="form-control"
+                                   t-att-value="post.get('name',partner.name)"/>
+                        </div>
+                    </div>
+                </xpath>
+
+                <!-- N° TVA intracommunautaire -->
+                <xpath expr="//div/div/input[@name = 'vat_number']/../.." position="replace">
+                    <div class="row" t-if="partner.is_company">
+                        <div t-attf-class="form-group col-md-12 #{error.get('vat_number') and 'has-error' or ''}">
+                            <label class="control-label" for="vat_number">VAT number
+                            </label>
+                            <input type="text" name="vat_number" class="form-control"
+                                   t-att-value="post.get('vat_number',partner.vat_number)"/>
+                        </div>
+                    </div>
+                </xpath>
+
+                <!-- Code APE -->
+                <xpath expr="//div/div/input[@name = 'ape_code']/../.." position="replace">
+                    <div class="row" t-if="partner.is_company">
+                        <div t-attf-class="form-group col-md-12 #{error.get('ape_code') and 'has-error' or ''}">
+                            <label class="control-label" for="ape_code">APE number
+                            </label>
+                            <input type="text" name="ape_code" class="form-control"
+                                   t-att-value="post.get('ape_code',partner.ape_code)"/>
+                        </div>
+                    </div>
+                </xpath>
+
+                <!-- SIREN / SIRET -->
+                <xpath expr="//div/div/input[@name = 'siret_code']/../.." position="replace">
+                    <div class="row" t-if="partner.is_company">
+                        <div t-attf-class="form-group col-md-12 #{error.get('siret_code') and 'has-error' or ''}">
+                            <label class="control-label" for="siret_code">SIREN / SIRET
+                            </label>
+                            <input type="text" name="siret_code" class="form-control"
+                                   t-att-value="post.get('siret_code',partner.siret_code)"/>
+                        </div>
+                    </div>
+                </xpath>
+
+                <!--lastname2 du contact-->
+                <xpath expr="//div/div/input[@name = 'lastname2']/../.." position="replace">
+                    <div class="row" t-if="not partner.is_company">
+                        <div t-attf-class="form-group col-md-12">
+                            <label class="control-label" for="lastname2">Second Lastname
+                            </label>
+                            <input type="text" name="lastname2" class="form-control"
+                                   t-att-value="post.get('lastname2',partner.lastname2)"/>
+                        </div>
+                    </div>
+                </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

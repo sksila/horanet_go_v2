@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="horanet_activity_sector_pav" model="activity.sector">
+            <field name="name">Dépôt PAV</field>
+            <field name="description">Deposit points activity sector</field>
+            <field name="code">ZPAV</field>
+            <field name="custom_activity_ids" eval="[(6,0,[ref('environment_deposit_point.activity_papier_pav'),
+                                                           ref('environment_deposit_point.activity_emballages_pav'),
+                                                           ref('environment_deposit_point.activity_ordures_menageres_pav'),
+                                                           ref('environment_deposit_point.activity_verre_pav'),
+                                                           ref('environment_deposit_point.activity_textile_pav'),
+                                                           ])]"/>
+        </record>
+    </data>
+</odoo>

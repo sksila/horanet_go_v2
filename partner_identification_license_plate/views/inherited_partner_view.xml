@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="partner_form_vehicle_view" model="ir.ui.view">
+        <field name="name">vehicle page</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_citizen.view_citizen_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='mediums_page']" position="after">
+                <page name="vehicle_page" string="Vehicles">
+                    <br/>
+                    <label for="vehicle_ids" class="oe_inline"/>
+                    <field name="vehicle_ids">
+                        <tree>
+                            <field name="license_plate"/>
+                            <field name="vehicle_type_id"/>
+                            <field name="ptac"/>
+                            <field name="documentation_id"/>
+                        </tree>
+                    </field>
+                    <button type="action" name="partner_identification_license_plate.action_wizard_create_vehicle"
+                            context="{'default_partner_id': active_id}"
+                            groups="partner_contact_identification.group_partner_contact_identification_manage,
+                                    partner_identification_license_plate.partner_identification_license_plate,
+                                    horanet_go.group_horanet_go_agent"
+                            string="Create new vehicle" class="btn-primary pull-right">
+                    </button>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="custom_view_form_partner" model="ir.ui.view">
+        <field name="name">custom.view.form.partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[last()]" position="after">
+                <page name="transport" string="Transport"
+                      attrs="{'invisible': ['|', ('is_company','=', True), ('inscription_ids', '=', [])]}">
+                    <label for="inscription_ids"/>
+                    <field name="inscription_ids">
+                        <tree>
+                            <field name="period_id"/>
+                            <field name="name"/>
+                            <field name="status"/>
+                        </tree>
+                    </field>
+                    <group>
+                        <field name="is_als_organism"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mass_geolocalize_partners_action_server" model="ir.actions.server">
+        <field name="name">Geolocalize partners</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="state">code</field>
+        <field name="code">
+        if records:
+            action = records.geo_localize()
+        </field>
+    </record>
+
+    <record id="mass_geolocalize_partners_menu" model="ir.values">
+        <field name="model">res.partner</field>
+        <field name="name">Geolocalize partners</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.server,' + str(ref('mass_geolocalize_partners_action_server'))" />
+    </record>
+</odoo>

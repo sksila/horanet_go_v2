@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="partner_informations" name="Information fields">
+        <!-- TITLE -->
+        <div class="row" t-if="not partner.is_company">
+            <div t-attf-class="form-group col-md-12 required {{error.get('title') and 'has-error' or ''}}">
+                <label class="control-label" for="title">Title</label>
+                <select class="form-control" name="title">
+                    <t t-foreach="partner_titles or []" t-as="title">
+                        <option t-if="title_index == 0 and not post.get('title', partner.title and partner.title.id)"
+                                value="" selected="" hidden="">select title
+                        </option>
+                        <option t-att-value="title.id"
+                                t-att-selected="title.id == int(post.get('title') or partner.title and partner.title.id)">
+                            <t t-esc="title.name"/>
+                        </option>
+                    </t>
+                </select>
+            </div>
+        </div>
+
+        <!-- Company type -->
+        <div class="row" t-if="partner.is_company and not partner.category_id">
+            <div t-attf-class="form-group col-md-12 required {{error.get('title') and 'has-error' or ''}}">
+                <label class="control-label" for="title">Company type</label>
+                <select class="form-control" name="title">
+                    <t t-foreach="company_titles or []" t-as="title">
+                        <option t-if="title_index == 0 and not post.get('title', partner.title and partner.title.id)"
+                                value="" selected="" hidden="">Select a type
+                        </option>
+                        <option t-att-value="title.id"
+                                t-att-selected="title.id == int(post.get('title') or partner.title and partner.title.id)">
+                            <t t-esc="title.name"/>
+                        </option>
+                    </t>
+                </select>
+            </div>
+        </div>
+
+        <!--firstname du contact-->
+        <div class="row" t-if="not partner.is_company">
+            <div t-attf-class="form-group col-md-12 required {{error.get('firstname') and 'has-error' or ''}}">
+                <label class="control-label" for="firstname">Firstname
+                </label>
+                <input type="text" name="firstname" class="form-control"
+                       t-att-value="post.get('firstname', partner.firstname)"/>
+            </div>
+        </div>
+
+        <!--firstname2 du contact-->
+        <div class="row" t-if="not partner.is_company">
+            <div t-attf-class="form-group col-md-12">
+                <label class="control-label" for="firstname2">Second Firstname
+                </label>
+                <input type="text" name="firstname2" class="form-control"
+                       t-att-value="post.get('firstname2', partner.firstname2)"/>
+            </div>
+        </div>
+
+        <!--lastname du contact-->
+        <div class="row" t-if="not partner.is_company">
+            <div t-attf-class="form-group col-md-12 required #{error.get('lastname') and 'has-error' or ''}">
+                <label class="control-label" for="lastname">Lastname
+                </label>
+                <input type="text" name="lastname" class="form-control"
+                       t-att-value="post.get('lastname',partner.lastname)"/>
+            </div>
+        </div>
+
+        <!--Name du contact-->
+        <div class="row" t-if="partner.is_company">
+            <div t-attf-class="form-group col-md-12 required #{error.get('name') and 'has-error' or ''}">
+                <label class="control-label" for="lastname">Name
+                </label>
+                <input type="text" name="name" class="form-control"
+                       t-att-value="post.get('name',partner.name)"/>
+            </div>
+        </div>
+
+        <!-- N° TVA intracommunautaire -->
+        <div class="row" t-if="partner.is_company">
+            <div t-attf-class="form-group col-md-12 #{error.get('vat_number') and 'has-error' or ''}">
+                <label class="control-label" for="vat_number">VAT number
+                </label>
+                <input type="text" name="vat_number" class="form-control"
+                       t-att-value="post.get('vat_number',partner.vat_number)"/>
+            </div>
+        </div>
+
+        <!-- Code APE -->
+        <div class="row" t-if="partner.is_company">
+            <div t-attf-class="form-group col-md-12 #{error.get('ape_code') and 'has-error' or ''}">
+                <label class="control-label" for="ape_code">APE number
+                </label>
+                <input type="text" name="ape_code" class="form-control"
+                       t-att-value="post.get('ape_code',partner.ape_code)"/>
+            </div>
+        </div>
+
+        <!-- SIREN / SIRET -->
+        <div class="row" t-if="partner.is_company">
+            <div t-attf-class="form-group col-md-12 #{error.get('siret_code') and 'has-error' or ''}">
+                <label class="control-label" for="siret_code">SIREN / SIRET
+                </label>
+                <input type="text" name="siret_code" class="form-control"
+                       t-att-value="post.get('siret_code',partner.siret_code)"/>
+            </div>
+        </div>
+
+        <!--lastname2 du contact-->
+        <div class="row" t-if="not partner.is_company">
+            <div t-attf-class="form-group col-md-12">
+                <label class="control-label" for="lastname2">Second Lastname
+                </label>
+                <input type="text" name="lastname2" class="form-control"
+                       t-att-value="post.get('lastname2',partner.lastname2)"/>
+            </div>
+        </div>
+    </template>
+
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_document_type_form" model="ir.ui.view">
+        <field name="name">partner.documents.type.model.form</field>
+        <field name="model">ir.attachment.type</field>
+        <field name="arch" type="xml">
+            <form string="Document type">
+                <sheet>
+                    <group name="data" colspan="4" col="4">
+                        <field name="name"/>
+                        <field name="validity_period"/>
+                        <field name="technical_name" required="True"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_document_type_tree" model="ir.ui.view">
+        <field name="name">ir.attachment.type.tree</field>
+        <field name="model">ir.attachment.type</field>
+        <field name="arch" type="xml">
+            <tree string="Documents types">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_document_type_search" model="ir.ui.view">
+        <field name="name">ir.attachment.type.search</field>
+        <field name="model">ir.attachment.type</field>
+        <field name="arch" type="xml">
+            <search string="Document type">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_document_type" model="ir.actions.act_window">
+        <field name="name">Documents types</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ir.attachment.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_document_type_search"/>
+    </record>
+</odoo>

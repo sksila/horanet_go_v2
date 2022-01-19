@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_prestation_view_form" model="ir.ui.view">
+        <field name="name">horanet prestation form</field>
+        <field name="model">horanet.prestation</field>
+        <field name="arch" type="xml">
+            <form string="prestation">
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="prestation name"/>
+                        </h1>
+                    </div>
+                    <group>
+                    </group>
+                    <label for="description"/>
+                    <field name="description"/>
+                    <group>
+                        <group>
+                            <field name="reference"/>
+                            <field name="cycle_id"/>
+                            <field name="invoice_type"/>
+                            <field name="device_label" attrs="{'invisible': [('service_id', '=', False)]}"/>
+                            <field name="is_derogation"/>
+                        </group>
+                        <group>
+                            <label for="use_product"/>
+                            <div class="o_row">
+                                <field name="use_product"/>
+                                <field name="product_id" attrs="{'invisible': [('use_product', '=', False)]}"/>
+                            </div>
+                            <field name="need_recipient"/>
+                            <field name="is_blocked" attrs="{'invisible': [('service_id', '=', False)]}"/>
+                            <field name="balance"
+                                   attrs="{'invisible': ['|', ('is_blocked', '=', False), ('service_id', '=', False)],
+                                           'required': [('is_blocked', '=', True)]}"/>
+                            <field name="is_salable" attrs="{'invisible': [('service_id', '=', False)]}"/>
+                            <field name="impact_fmi" attrs="{'invisible': [('service_id', '=', False)]}"/>
+                        </group>
+                        <group colspan="2">
+                            <field name="subscription_category_ids" widget='many2many_tags'/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Service" autofocus="autofocus" name="service">
+                            <group>
+                                <field name="service_id"
+                                       attrs="{'required': [('use_product', '=', False), ('product_id', '=', False)]}"/>
+                            </group>
+                            <group string="Activities" attrs="{'invisible': [('service_id', '=', False)]}">
+                                <field name="activity_ids" nolabel="1">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="reference"/>
+                                        <field name="subscription_category_ids" widget="many2many_tags"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Prorata" name="prorata">
+                            <separator string="Code"/>
+                            <field name="prorata_rule_code" nolabel="1" widget="ace" options="{'mode': 'python'}"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_prestation_view_tree" model="ir.ui.view">
+        <field name="name">horanet prestation tree</field>
+        <field name="model">horanet.prestation</field>
+        <field name="arch" type="xml">
+            <tree string="prestation">
+                <field name="reference"/>
+                <field name="name"/>
+                <field name="activity_ids"/>
+                <field name="subscription_category_ids" widget="many2many_tags"/>
+                <field name="is_derogation"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="prestation_search_view" model="ir.ui.view">
+        <field name="name">Prestation search view</field>
+        <field name="model">horanet.prestation</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="reference" string="Reference" operator="ilike"/>
+                <filter string="Derogation" name="filter_is_derogation"
+                        domain="[('is_derogation', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_horanet_prestation" model="ir.actions.act_window">
+        <field name="name">prestation</field>
+        <field name="res_model">horanet.prestation</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_prestation_view_tree"/>
+        <field name="search_view_id" ref="prestation_search_view"/>
+    </record>
+</odoo>

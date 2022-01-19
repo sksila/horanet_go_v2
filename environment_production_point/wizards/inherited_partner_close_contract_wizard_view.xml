@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_close_contrat_wizard" model="ir.ui.view">
+        <field name="name">partner.close.contract.wizard.form</field>
+        <field name="model">partner.wizard.close.contract</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_close_contrat_wizard"/>
+        <field name="arch" type="xml">
+            <field name="has_active_tags" position="after">
+                <field name="has_active_moves" invisible="True"/>
+            </field>
+            <div name="tags" position="before">
+                <div name="moves" attrs="{'invisible': [('has_active_moves', '=', False)]}">
+                    <group string="Moves">
+                        <field name="move_id" options="{'no_open': True, 'no_create': True}"/>
+                        <field name="move_end_date" attrs="{'required': [('move_id', '!=', False)]}"/>
+                    </group>
+                    <button name="action_end_move" string="End move" type="object" class="btn-primary"
+                            attrs="{'invisible': [('move_id', '=', False)]}"
+                            confirm="This operation cannot be undone, are you sure you want to end this move?"/>
+                    <hr/>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>
+

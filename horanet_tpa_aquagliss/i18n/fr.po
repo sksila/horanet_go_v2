@@ -1,0 +1,157 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_tpa_aquagliss
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-28 15:37+0000\n"
+"PO-Revision-Date: 2017-11-28 15:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.actions.server,name:horanet_tpa_aquagliss.action_server_activate_job_aquagliss
+msgid "Activate Job Aquagliss"
+msgstr "Activation Service Sports"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_collectivity_config_settings_tpa_aquagliss_area
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_tpa_config_settings_tpa_aquagliss_area
+msgid "Aera Aquagliss"
+msgstr "Périmètre Aquagliss"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.ui.view,arch_db:horanet_tpa_aquagliss.view_partner_form
+msgid "Aquagliss"
+msgstr "Aquagliss"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.ui.view,arch_db:horanet_tpa_aquagliss.view_form_collectivity_config_settings
+msgid "Aquagliss TPA Settings"
+msgstr "Configuration du TPA Aquagliss"
+
+#. module: horanet_tpa_aquagliss
+#: model:res.groups,name:horanet_tpa_aquagliss.group_tpa_aquagliss
+msgid "Auto sync with Aquagliss"
+msgstr "Synchronisation automatique avec Aquagliss"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.ui.view,arch_db:horanet_tpa_aquagliss.view_form_tpa_synchronization_merge
+#: model:ir.ui.view,arch_db:horanet_tpa_aquagliss.view_form_tpa_synchronization_status
+msgid "Force export"
+msgstr "Forcer l'exportation"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_collectivity_config_settings_tpa_aquagliss_force_membership
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_tpa_config_settings_tpa_aquagliss_force_membership
+msgid "Force membership"
+msgstr "Forcer la synchronisation SmartEco de tous les acteurs"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,help:horanet_tpa_aquagliss.field_collectivity_config_settings_tpa_aquagliss_force_membership
+#: model:ir.model.fields,help:horanet_tpa_aquagliss.field_tpa_config_settings_tpa_aquagliss_force_membership
+msgid "Force membership to all new partners"
+msgstr "Forcer la synchronisation SmartEco de tous les nouveaux acteurs"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_collectivity_config_settings_tpa_aquagliss_is_enable
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_tpa_config_settings_tpa_aquagliss_is_enable
+msgid "Is TPA Aquagliss enable"
+msgstr "TPA Aquagliss activé"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_collectivity_config_settings_tpa_aquagliss_categories_card
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_tpa_config_settings_tpa_aquagliss_categories_card
+msgid "Match categories cards Aquagliss"
+msgstr "Correspondance des catégories de supports"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_collectivity_config_settings_tpa_aquagliss_technologies_card
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_tpa_config_settings_tpa_aquagliss_technologies_card
+msgid "Match technologies cards Aquagliss"
+msgstr "Correspondance des technologies de supports"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_collectivity_config_settings_tpa_aquagliss_name_method_partner
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_tpa_config_settings_tpa_aquagliss_name_method_partner
+msgid "Method backend Aquagliss"
+msgstr "Méthode du service web d'Aquagliss"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_collectivity_config_settings_tpa_aquagliss_name_method_card
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_tpa_config_settings_tpa_aquagliss_name_method_card
+msgid "Method backend cards Aquagliss"
+msgstr "Méthode du service web des Supports Aquagliss"
+
+#. module: horanet_tpa_aquagliss
+#: code:addons/horanet_tpa_aquagliss/models/inherited_partner_contact_identification_assignation.py:171
+#: code:addons/horanet_tpa_aquagliss/models/inherited_tpa_synchronization_merge.py:140
+#: code:addons/horanet_tpa_aquagliss/models/inherited_tpa_synchronization_status.py:152
+#, python-format
+msgid "No answer from the service, the made supposed treatment."
+msgstr "Pas de réponse du service web, Le traitement est considéré comme terminé."
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model,name:horanet_tpa_aquagliss.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_collectivity_config_settings_tpa_aquagliss_cards_is_enable
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_tpa_config_settings_tpa_aquagliss_cards_is_enable
+msgid "Send Card Cards to Aquagliss"
+msgstr "Envoyer les supports vers Aquagliss"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_collectivity_config_settings_tpa_aquagliss_assignation_cards_enable
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_tpa_config_settings_tpa_aquagliss_assignation_cards_enable
+msgid "Send Cards to Aquagliss with assignation"
+msgstr "Envoyer les supports par une assignation vers Aquagliss"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_res_partner_tpa_membership_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_res_users_tpa_membership_aquagliss
+msgid "Synchronize with Aquagliss"
+msgstr "Synchroniser avec Aquagliss"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_collectivity_config_settings_tpa_aquagliss_url
+#: model:ir.model.fields,field_description:horanet_tpa_aquagliss.field_tpa_config_settings_tpa_aquagliss_url
+msgid "URL backend Aquagliss"
+msgstr "URL du service web d'Aquagliss"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model,name:horanet_tpa_aquagliss.model_base_partner_merge_automatic_wizard
+msgid "base.partner.merge.automatic.wizard"
+msgstr "base.partner.merge.automatic.wizard"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model,name:horanet_tpa_aquagliss.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model,name:horanet_tpa_aquagliss.model_partner_contact_identification_assignation
+msgid "partner.contact.identification.assignation"
+msgstr "partner.contact.identification.assignation"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model,name:horanet_tpa_aquagliss.model_tpa_synchronization_merge
+msgid "tpa.synchronization.merge"
+msgstr "tpa.synchronization.merge"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model,name:horanet_tpa_aquagliss.model_tpa_synchronization_status
+msgid "tpa.synchronization.status"
+msgstr "tpa.synchronization.status"
+
+#. module: horanet_tpa_aquagliss
+#: model:ir.model,name:horanet_tpa_aquagliss.model_website_application
+msgid "website.application"
+msgstr "website.application"

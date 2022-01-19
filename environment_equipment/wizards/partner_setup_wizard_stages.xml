@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="wizard_stage_equipment_attribution" model="partner.setup.wizard.stage">
+            <field name="name">Equipment attribution</field>
+            <field name="order">20</field>
+            <field name="view_id" ref="view_partner_setup_wizard_stage_equipment_attribution"/>
+        </record>
+    </data>
+</odoo>

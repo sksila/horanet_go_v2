@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="deposit_account" name="Deposit Account">
+        <t t-call="website_portal.portal_layout">
+            <h3 class="page-header">Your deposit account</h3>
+            <div class="col-md-8 col-md-offset-2">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="active">
+                            <th>Account</th>
+                            <th>Balance</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <t t-esc="user.partner_id.property_account_customer_advance.name"/>
+                            </td>
+                            <td>
+                                <t t-esc="advance_account_balance * -1"
+                                   t-esc-options='{"widget": "monetary", "display_currency": user.partner_id.company_id.currency_id}'/>
+                            </td>
+                            <td>
+                                <form id="add-credit-form" action="/my/deposit/add-credit" method="get">
+                                    <button class="btn btn-primary">Add credits</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+</odoo>

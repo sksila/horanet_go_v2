@@ -1,0 +1,62 @@
+<odoo>
+    <data noupdate="1">
+        <record id="email_template_inscription_draft" model="mail.template">
+            <field name="name">TCO inscription brouillon</field>
+            <field name="email_from">${object.responsible_id.company_id.email}</field>
+            <field name="subject">Vous avez enregistré une inscription aux transports scolaires</field>
+            <field name="email_to">${object.responsible_id.email}</field>
+            <field name="model_id" ref="tco_inscription_transport_scolaire.model_tco_inscription_transport_scolaire"/>
+            <field name="lang">${object.responsible_id.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>
+Vous avez récemment enregistré une inscription au transport scolaire pour ${object.recipient_id.firstname} ${object.recipient_id.lastname}.
+Votre inscription n°${object.name} est en cours d'étude. Vous serez informé prochainement de son acceptation ou de son refus.
+Vous pouvez vous rendre sur <a href="/my/home">le site internet du TCO</a> pour pouvoir imprimer un récapitulatif de cette demande au format pdf, à partir de votre compte.</p>]]></field>
+        </record>
+
+        <record id="email_template_inscription_validated" model="mail.template">
+            <field name="name">TCO inscription validée</field>
+            <field name="email_from">${object.responsible_id.company_id.email}</field>
+            <field name="subject">Votre inscription n°${object.name} au transport scolaire a été acceptée</field>
+            <field name="email_to">${object.responsible_id.email}</field>
+            <field name="model_id" ref="tco_inscription_transport_scolaire.model_tco_inscription_transport_scolaire"/>
+            <field name="lang">${object.responsible_id.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>
+Le statut de votre inscription n°${object.name} pour ${object.recipient_id.firstname} ${object.recipient_id.lastname} a été validée.
+Vous pouvez vous rendre sur <a href="/my/home">le site internet du TCO</a> pour imprimer un récapitulatif de l'inscription et votre facture, à partir de votre compte.<br/>
+Pour toute demande complémentaire, vous pouvez contacter le service au 0810 45 65 20
+</p>]]></field>
+        </record>
+
+        <record id="email_template_inscription_cancelled" model="mail.template">
+            <field name="name">TCO inscription annulée</field>
+            <field name="email_from">${object.responsible_id.company_id.email}</field>
+            <field name="subject">Votre inscription n°${object.name} au transport scolaire a été annulée</field>
+            <field name="email_to">${object.responsible_id.email}</field>
+            <field name="model_id" ref="tco_inscription_transport_scolaire.model_tco_inscription_transport_scolaire"/>
+            <field name="lang">${object.responsible_id.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>
+Le statut de votre inscription n°${object.name} pour ${object.recipient_id.firstname} ${object.recipient_id.lastname} a été annulée.<br/>
+Vous pouvez prendre contact avec le service au 0810 45 65 20 (appel gratuit) pour plus de détails.</p>]]></field>
+        </record>
+
+        <record id="email_template_inscription_refused" model="mail.template">
+            <field name="name">TCO inscription refusée</field>
+            <field name="email_from">${object.responsible_id.company_id.email}</field>
+            <field name="subject">Votre inscription n°${object.name} au transport scolaire a été refusée</field>
+            <field name="email_to">${object.responsible_id.email}</field>
+            <field name="model_id" ref="tco_inscription_transport_scolaire.model_tco_inscription_transport_scolaire"/>
+            <field name="lang">${object.responsible_id.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[<p>${object.responsible_id.title.name} ${object.responsible_id.lastname},<br/>
+Votre inscription n°${object.name} pour ${object.recipient_id.firstname} ${object.recipient_id.lastname} a été refusée
+pour la raison suivante :<br/>
+<br/>
+<i>${object.refuse_reason}</i><br/>
+<br/>
+Vous pouvez prendre contact avec le service au 0810 45 65 20 (appel gratuit) pour plus de détails.</p>]]></field>
+        </record>
+    </data>
+</odoo>

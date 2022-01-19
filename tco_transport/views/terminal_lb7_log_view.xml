@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_tree_tco_terminal_lb7_log" model="ir.ui.view">
+        <field name="name">Tree view of LB7 logs</field>
+        <field name="type">tree</field>
+        <field name="model">tco.terminal.lb7.log</field>
+        <field name="arch" type="xml">
+            <tree string="LB7 logs"
+                  create="false"
+                  decoration-danger="is_error"
+                  default_order="create_date desc">
+                <field name="create_date"/>
+                <field name="name"/>
+                <field name="method"/>
+                <field name="user_id"/>
+                <field name="message"/>
+                <field name="is_error" invisible="True"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_form_tco_terminal_lb7_log" model="ir.ui.view">
+        <field name="name">Form view of LB7 logs</field>
+        <field name="type">form</field>
+        <field name="model">tco.terminal.lb7.log</field>
+        <field name="arch" type="xml">
+            <form string="LB7 log">
+                <sheet>
+                    <group string="Log">
+                        <group colspan="1">
+                            <field name="create_date" readonly="1"/>
+                            <field name="user_id" readonly="1"/>
+                            <field name="method" readonly="1"/>
+                            <field name="log_type" readonly="1"/>
+                        </group>
+                        <group colspan="1">
+                            <field name="model_id" readonly="1"/>
+                            <field name="res_id" readonly="1"/>
+                            <field name="name" readonly="1"/>
+                            <field name="is_error" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Message">
+                        <field name="message" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_search_tco_terminal_lb7_log" model="ir.ui.view">
+        <field name="name">Search view of LB7 logs</field>
+        <field name="type">search</field>
+        <field name="model">tco.terminal.lb7.log</field>
+        <field name="arch" type="xml">
+            <search string="Search LB7 log">
+                <field name="name"/>
+                <field name="message"/>
+                <field name="is_error"/>
+                <field name="model_id"/>
+                <field name="user_id"/>
+                <filter string="Is error" name="log_is_error" domain="[('is_error', '=', True)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Method" domain="[]" context="{'group_by':'method'}"/>
+                    <filter string="User" domain="[]" context="{'group_by':'user_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_tco_terminal_lb7_log" model="ir.actions.act_window">
+        <field name="name">LB7 logs</field>
+        <field name="res_model">tco.terminal.lb7.log</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

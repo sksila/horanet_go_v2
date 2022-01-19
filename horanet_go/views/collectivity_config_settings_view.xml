@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Collectivity config wizard -->
+    <record id="view_form_collectivity_config_settings" model="ir.ui.view">
+        <field name="name">Collectivity settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="1"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Horanet GO" string="Horanet GO" data-key="horanet_go">
+                    <h2>Contact</h2>
+                    <div class="row mt16 o_settings_container" name='group_settings_contact'>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_partner_contact_personal_information"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_partner_contact_personal_information"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_partner_merge"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_partner_merge"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="use_sequence_partner_internal_ref"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="use_sequence_partner_internal_ref"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="unicity_on_partner_internal_ref"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="unicity_on_partner_internal_ref"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt16 o_settings_container" name='group_settings_contact_detail'>
+                    </div>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!--action to call the collectivity config wizard-->
+    <record id="action_collectivity_generic_settings" model="ir.actions.act_window">
+        <field name="name">Configure collectivity action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="view_form_collectivity_config_settings"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'horanet_go'}</field>
+    </record>
+</odoo>
+

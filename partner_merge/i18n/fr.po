@@ -1,0 +1,218 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_merge
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-23 12:10+0000\n"
+"PO-Revision-Date: 2018-07-23 12:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_merge
+#: model:ir.model.fields,field_description:partner_merge.field_base_partner_merge_automatic_wizard_can_use_birthdate
+msgid "Can use birthdate"
+msgstr "Peut utiliser la date de naissance"
+
+#. module: partner_merge
+#: model:ir.ui.view,arch_db:partner_merge.res_partner_duplicate_tree_view
+msgid "Duplicate partner tree view"
+msgstr "Vue liste des doublons"
+
+#. module: partner_merge
+#: model:ir.actions.act_window,name:partner_merge.action_duplicate_partner_view
+msgid "Duplicate partner view"
+msgstr "Vue des doublons de partenaire"
+
+#. module: partner_merge
+#: selection:collectivity.config.settings,param_group_contact_merge:0
+msgid "For users in 'Contact creation' group"
+msgstr "Utilisateurs ayant le groupe 'Création de contact'"
+
+#. module: partner_merge
+#: model:ir.ui.view,arch_db:partner_merge.merge_search_view
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: partner_merge
+#: code:addons/partner_merge/models/inherited_partner.py:92
+#, python-format
+msgid "Is"
+msgstr "Est"
+
+#. module: partner_merge
+#: model:ir.ui.view,arch_db:partner_merge.view_res_partner_filter
+msgid "Is a duplicate"
+msgstr "Est un doublon"
+
+#. module: partner_merge
+#: model:ir.model.fields,field_description:partner_merge.field_res_partner_is_duplicated
+#: model:ir.model.fields,field_description:partner_merge.field_res_users_is_duplicated
+msgid "Is duplicated"
+msgstr "Est dupliqué"
+
+#. module: partner_merge
+#: code:addons/partner_merge/models/inherited_partner.py:92
+#, python-format
+msgid "Is not"
+msgstr "N’est pas"
+
+#. module: partner_merge
+#: model:ir.ui.view,arch_db:partner_merge.view_partner_form
+msgid "Is not a duplicate partner"
+msgstr "N'est pas un doublon"
+
+#. module: partner_merge
+#: model:ir.model.fields,field_description:partner_merge.field_res_partner_is_a_duplicate_partner
+#: model:ir.model.fields,field_description:partner_merge.field_res_users_is_a_duplicate_partner
+msgid "Is potentially a duplicate partner"
+msgstr "Est potentiellement un doublon"
+
+#. module: partner_merge
+#: model:ir.model.fields,field_description:partner_merge.field_collectivity_config_settings_group_contact_merge
+#: model:res.groups,name:partner_merge.group_contact_merge
+msgid "Merge contacts"
+msgstr "Fusionner les contacts"
+
+#. module: partner_merge
+#: model:ir.ui.menu,name:partner_merge.horanet_merge_partner
+msgid "Merge duplicate partner"
+msgstr "Fusionner les doublons"
+
+#. module: partner_merge
+#: model:ir.model.fields,field_description:partner_merge.field_res_partner_not_a_duplicate
+#: model:ir.model.fields,field_description:partner_merge.field_res_users_not_a_duplicate
+#: model:ir.ui.view,arch_db:partner_merge.view_partner_form
+#: selection:res.partner,is_a_duplicate_partner:0
+msgid "Not a duplicate partner"
+msgstr "N'est pas un doublon"
+
+#. module: partner_merge
+#: selection:collectivity.config.settings,group_contact_merge:0
+msgid "Only for users in 'Merge contacts' group"
+msgstr "Utilisateurs ayant le groupe 'Fusionner les contacts'"
+
+#. module: partner_merge
+#: model:ir.model.fields,help:partner_merge.field_collectivity_config_settings_group_contact_merge
+msgid "Only for users in 'Merge contacts' group or Only for users in 'Contact creation' group"
+msgstr "Seulement pour les utilisateurs ayant le groupe 'Fusionner les contacts ou pour les utilisateurs ayant le groupe 'Création de contact"
+
+#. module: partner_merge
+#: model:ir.model,name:partner_merge.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: partner_merge
+#: model:ir.model.fields,field_description:partner_merge.field_base_partner_merge_automatic_wizard_group_by_birthdate_date
+msgid "Partner age"
+msgstr "Age"
+
+#. module: partner_merge
+#: model:ir.model.fields,field_description:partner_merge.field_res_partner_partner_name_button
+#: model:ir.model.fields,field_description:partner_merge.field_res_users_partner_name_button
+msgid "Partner name for button"
+msgstr "Nom du partenaire pour le bouton"
+
+#. module: partner_merge
+#: model:ir.ui.menu,name:partner_merge.horanet_settings_menu_list_duplicate_partner
+msgid "Potentially duplicate partner"
+msgstr "Doublons potentiels"
+
+#. module: partner_merge
+#: selection:res.partner,is_a_duplicate_partner:0
+msgid "Same name and same birthdate"
+msgstr "Même nom et même date de naissance"
+
+#. module: partner_merge
+#: selection:res.partner,is_a_duplicate_partner:0
+msgid "Same name only"
+msgstr "Même nom uniquement"
+
+#. module: partner_merge
+#: code:addons/partner_merge/models/inherited_partner.py:177
+#, python-format
+msgid "There must be at least 2 records flagged as duplicate for the merge to work"
+msgstr "Il doit y avoir au moins 2 contacts marqués comme dupliqué pour que la fusion fonctionne"
+
+#. module: partner_merge
+#: model:ir.model.fields,field_description:partner_merge.field_res_partner_duplication_count
+#: model:ir.model.fields,field_description:partner_merge.field_res_users_duplication_count
+msgid "To merge"
+msgstr "À fusionner"
+
+#. module: partner_merge
+#: model:res.groups,comment:partner_merge.group_contact_merge
+msgid "Used to restrict merge feature to allowed users"
+msgstr "Utilisé pour limiter la fusion de contact aux utilisateurs autorisés"
+
+#. module: partner_merge
+#: code:addons/partner_merge/models/inherited_partner.py:157
+#, python-format
+msgid "Warning"
+msgstr "Attention"
+
+#. module: partner_merge
+#: code:addons/partner_merge/models/inherited_partner.py:158
+#, python-format
+msgid "Warning is potentially a duplicate partner ({explanation})."
+msgstr "Attention, il s'agit potentiellement d'un doublon ({explanation})."
+
+#. module: partner_merge
+#: model:ir.model.fields,field_description:partner_merge.field_res_partner_text_duplicated
+#: model:ir.model.fields,field_description:partner_merge.field_res_users_text_duplicated
+msgid "a duplicate"
+msgstr "un doublon"
+
+#. module: partner_merge
+#: model:ir.model,name:partner_merge.model_base_partner_merge_automatic_wizard
+msgid "base.partner.merge.automatic.wizard"
+msgstr "base.partner.merge.automatic.wizard"
+
+#. module: partner_merge
+#: model:ir.model,name:partner_merge.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: partner_merge
+#: model:ir.ui.view,arch_db:partner_merge.merge_search_view
+msgid "display name"
+msgstr "Nom affiché"
+
+#. module: partner_merge
+#: model:ir.ui.view,arch_db:partner_merge.view_partner_form
+msgid "is potentially a duplicate partner (same name and same birthdate)."
+msgstr "est potentiellement un doublon (même nom et même date de naissance)."
+
+#. module: partner_merge
+#: model:ir.ui.view,arch_db:partner_merge.view_partner_form
+msgid "is potentially a duplicate partner (same name)."
+msgstr "est potentiellement un doublon (même nom)."
+
+#. module: partner_merge
+#: model:ir.ui.menu,name:partner_merge.horanet_settings_menu_duplicate_partner
+msgid "launch merge wizard"
+msgstr "Lancer la fusion des doublons"
+
+#. module: partner_merge
+#: code:addons/partner_merge/models/inherited_partner.py:159
+#, python-format
+msgid "same name"
+msgstr "même nom"
+
+#. module: partner_merge
+#: code:addons/partner_merge/models/inherited_partner.py:159
+#, python-format
+msgid "same name and same birthdate"
+msgstr "même nom et même date de naissance"
+
+#. module: partner_merge
+#: model:ir.actions.act_window,name:partner_merge.action_open_wizard_merge
+msgid "wizard merge all partner"
+msgstr "Wizard de fusion des doublons"
+

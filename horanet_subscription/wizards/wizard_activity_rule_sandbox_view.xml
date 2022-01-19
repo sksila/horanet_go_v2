@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_activity_rule_sandbox_form" model="ir.ui.view">
+        <field name="name">Sandbox rule execution</field>
+        <field name="model">activity.rule.wizard.sandbox</field>
+        <field name="arch" type="xml">
+            <form string="Import data synchronization" class="o-form-sheet-width-wider">
+                <sheet style="overflow-x: hidden;">
+                    <div class="text-center">
+                        <h1>Rule execution sandbox</h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <legend>Rule code</legend>
+                            <div class="row">
+                                <div class="col-md-6" style="display:table">
+                                    <label for="activity_rule_id"
+                                           style="display:table-cell;vertical-align:middle;"/>
+
+                                    <field name="activity_rule_id" style="display:flex;margin: auto;"/>
+                                </div>
+                                <div class="col-md-6" style="height:2em;"
+                                     attrs="{'invisible': [('activity_rule_id', '=', False)]}">
+                                    <label for="execute_custom_rule_code" style="vertical-align: middle;"/>
+
+                                    <field name="execute_custom_rule_code" widget="radio"
+                                           style="vertical-align: middle;margin:0px"
+                                           options="{'horizontal': true}"/>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="custom_rule_code"
+                                       attrs="{'invisible': [('activity_rule_id', '=', False)]}"/>
+                            </div>
+                            <newline/>
+                            <field name="custom_rule_code" colspan="2" nolabel="1"
+                                   attrs="{'invisible': [('activity_rule_id', '=', False)]}"
+                                   widget="ace" options="{'mode': 'python'}"/>
+                            <newline/>
+                            <button string="Save code" name="action_save_code" type="object"
+                                    attrs="{'invisible': [('activity_rule_id', '=', False)]}"
+                                    confirm="Are you sure to saved the edited rule code ?"
+                                    class="center-block"/>
+                        </div>
+                        <div class="col-md-4">
+                            <legend>Rule context</legend>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="input_mode" style="vertical-align: middle; margin-right:2em;"/>
+                                </div>
+                                <div class="col-md-8">
+                                    <field name="input_mode" nolabel="1" style="margin: 0px;vertical-align: middle;"
+                                           widget="radio" options="{'horizontal': true}"/>
+                                </div>
+                            </div>
+                            <div class="row mt8">
+                                <div class="col-md-6">
+                                    <label for="query_time" style="maring-right:2em;"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <field name="query_time" nolabel="1"/>
+                                </div>
+                            </div>
+                            <div class="row" attrs="{'invisible': [('input_mode', '!=', 'operation')]}">
+                                <div class="col-md-6">
+                                    <label for="operation_quantity"/>
+                                    <field name="operation_quantity" nolabel="1"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="operation_is_offline"/>
+                                    <field name="operation_is_offline" style="width:100%;" nolabel="1"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="action_id"/>
+                                    <field name="action_id" nolabel="1"
+                                           attrs="{'required': [('input_mode', 'in', ['query','operation'])]}"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="custom_action_code"/>
+                                    <field name="custom_action_code" nolabel="1"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="tag_id"/>
+                                    <field name="tag_id" nolabel="1"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="partner_id"/>
+                                    <field name="partner_id" nolabel="1"/>
+                                </div>
+                            </div>
+
+                            <div class="row" attrs="{'invisible': [('input_mode', '!=', 'operation')]}">
+                                <div class="col-md-6">
+                                    <label for="operation_activity_id"/>
+                                    <field name="operation_activity_id" nolabel="1"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="custom_activity_id"/>
+                                    <field name="custom_activity_id" nolabel="1"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="device_id"/>
+                                    <field name="device_id" nolabel="1"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <!--<label for="custom_device_id"/>-->
+                                    <!--<field name="custom_device_id" nolabel="1"/>-->
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="check_point_id"/>
+                                    <field name="check_point_id" nolabel="1"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <!--<label for="custom_check_point"/>-->
+                                    <!--<field name="custom_check_point" nolabel="1"/>-->
+                                </div>
+                            </div>
+                            <div class="row" attrs="{'invisible': [('input_mode', '!=', 'operation')]}">
+                                <div class="col-md-6">
+                                    <label for="operation_sector_id"/>
+                                    <field name="operation_sector_id" nolabel="1"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="custom_sector_code"/>
+                                    <field name="custom_sector_code" nolabel="1"/>
+                                </div>
+                            </div>
+                            <div class="row" attrs="{'invisible': [('input_mode', '!=', 'operation')]}">
+                                <div class="col-md-6">
+                                    <label for="operation_query_id"/>
+                                    <field name="operation_query_id" nolabel="1"/>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="raise_exception"/>
+                                    <field name="raise_exception" nolabel="1"/>
+                                </div>
+                            </div>
+                            <div class="row" attrs="{'invisible': [('execute_custom_rule_code', '=', 'no')]}">
+                                <div class="col-md-12" attrs="{'invisible': [('input_mode', '!=', 'query')]}">
+                                    <label for="sandbox_query_json"/>
+                                    <div style="border: 1px solid #cccccc;border-radius: 4px;padding: 2px 4px;
+                                        color: #1f1f1f;width: 100%;outline: none;display: block;max-height:250px;overflow-y:auto;">
+                                        <field name="sandbox_query_json" readonly="1"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" attrs="{'invisible': [('input_mode', '!=', 'operation')]}">
+                                    <label for="sandbox_operation_json"/>
+                                    <div style="border: 1px solid #cccccc;border-radius: 4px;padding: 2px 4px;
+                                        color: #1f1f1f;width: 100%;outline: none;display: block;max-height:250px;overflow-y:auto;">
+                                        <field name="sandbox_operation_json" readonly="1"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" attrs="{'invisible': [('result_message', '=', False)]}">
+                        <div class="col-md-12">
+                            <legend>Execution result</legend>
+                            <label for="result_message"/>
+                            <div style="border: 1px solid #cccccc;border-radius: 4px;padding: 2px 4px;
+                                        color: #1f1f1f;width: 100%;outline: none;display: block;">
+                                <field name="result_message" widget="html"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6" attrs="{'invisible':[('input_mode', '!=', 'query')]}">
+                            <label for="result_response_json"/>
+                            <field name="result_response_json"/>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="result_operation_json"/>
+                            <field name="result_operation_json"/>
+                        </div>
+                        <div class="col-md-6" attrs="{'invisible':[('input_mode', '=', 'query')]}">
+                            <label for="result_usage_json"/>
+                            <field name="result_usage_json"/>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <button name="action_simulate_execution" type="object"
+                                attrs="{'invisible': ['!',('execute_custom_rule_code', '=', 'no')]}"
+                                string="Execute engine" class="oe_highlight"/>
+                        <button name="action_simulate_execution" type="object"
+                                attrs="{'invisible': [('execute_custom_rule_code', '=', 'no')]}"
+                                string="Execute custom rule" class="oe_highlight"/>
+                        <button name="action_clear_execution" type="object"
+                                string="Clear Execution" class="oe_link"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="wizard_activity_rule_sandbox_action" model="ir.actions.act_window">
+        <field name="name">Action Sandbox rule execution</field>
+        <field name="res_model">activity.rule.wizard.sandbox</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

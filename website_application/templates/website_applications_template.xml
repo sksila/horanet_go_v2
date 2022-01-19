@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="applications_portal_layout" inherit_id="portal.portal_layout" name="My Portal: requests menu"
+              customize_show="True">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li>
+                <a href="/my/requests">Requests</a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_application" name="My Portal: requests" customize_show="True"
+              inherit_id="portal.portal_my_home">
+        <xpath expr="//div[hasclass('o_portal_my_home')]" position="inside">
+            <h3 class="page-header">
+                <a href="/my/requests">Your Requests
+                    <small class="ml8">
+                        <t t-if="request_count">
+                            <span class='badge'>
+                                <t t-esc="request_count"/>
+                            </span>
+                        </t>
+                    </small>
+                </a>
+            </h3>
+        </xpath>
+    </template>
+
+    <template id="requests" name="My Requests">
+        <t t-call="portal.portal_layout">
+            <h3 class="page-header">Requests</h3>
+            <div id="request_options">
+                <!-- Insert code here -->
+
+                <!--Pour chaque template-->
+                <t t-if="request_templates">
+                    <t t-set="application_type" t-value="none"/>
+                    <t t-set="functionality_name" t-value="none"/>
+                    <t t-set="nb_requests" t-value="0"/>
+                    <t t-foreach="request_templates.sorted(key=lambda r: (r.application_type or '', r.functionality_id.name))"
+                       t-as="request_template">
+                        <!--On affiche le metier en titre s'il est différent du précédent-->
+                        <t t-if="request_template.application_type != application_type">
+                            <t t-set="application_type" t-value="request_template.application_type"/>
+                            <t t-if="not application_type">
+                                <h4 class="page-header col-md-offset-1">General</h4>
+                            </t>
+                            <t t-if="application_type">
+                                <h4 class="page-header col-md-offset-1">
+                                    <t t-esc="dict(request_templates._fields['application_type'].selection)[application_type]"></t>
+                                </h4>
+                            </t>
+                        </t>
+                        <!--On affiche les templates correspondant au metier-->
+                        <t t-if="request_template.functionality_id.name != functionality_name">
+                            <t t-set="functionality_name" t-value="request_template.functionality_id.name"/>
+                            <t t-set="nb_requests"
+                               t-value="len(request_templates.filtered(lambda r: r.application_type == application_type and r.functionality_id.name == functionality_name))"/>
+                            <t t-if="nb_requests > 1">
+                                <div class="col-md-offset-1">
+                                    <h5>
+                                        <t t-esc="functionality_name"/>
+                                    </h5>
+                                </div>
+                            </t>
+                        </t>
+                        <div t-att-class="'col-md-offset-1' if nb_requests == 1 else 'col-md-offset-2'">
+                            <li style="list-style: none;">
+                                <a t-attf-href="/my/requests/create?request_type={{ request_template.id }}">
+                                    <t t-if="request_template.application_front_image">
+                                        <img t-attf-src="data:image/png;base64,{{request_template.application_front_image}}" style="width:50px; height:100%"/>
+                                    </t>
+                                    <t t-esc="request_template.name"/>
+                                </a>
+                            </li>
+                        </div>
+                    </t>
+                </t>
+            </div>
+
+            <div class="col-md-12 mt32 clearfix">
+            </div>
+
+            <h3 id="request_list" class="page-header">My requests</h3>
+            <table class="table table-hover table_requests" t-if="website_requests">
+                <thead>
+                    <tr>
+                        <th>Ref</th>
+                        <th>Type</th>
+                        <th>Date</th>
+                        <th>Destinataire</th>
+                        <th>Statut</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="website_requests" t-as="web_request">
+                        <tr t-att-onclick="'window.location=\'/my/requests/' + str(web_request.id) + '\';'"
+                            t-att-class="'cursor-pointer'">
+                            <td>
+                                <span t-field="web_request.name"/>
+                            </td>
+                            <td>
+                                <span t-field="web_request.website_application_template_id"/>
+                            </td>
+                            <td>
+                                <span t-field="web_request.date"/>
+                            </td>
+                            <td>
+                                <span t-field="web_request.recipient_id.name"/>
+                            </td>
+                            <td>
+                                <span t-field="web_request.state"/>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+            <p t-if="not website_requests">You don't have any request.</p>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="centre_finance_france2" model="res.partner">
+            <field name="name">CENTRE DES FINANCES PUBLIQUES</field>
+            <field name="company_id" eval="None"/>
+            <field name="customer" eval="False"/>
+            <field name="is_company" eval="True"/>
+            <field name="street"></field>
+            <field name="city"></field>
+            <field name="zip"></field>
+            <field name="phone"></field>
+            <field name="ormc_id_post">030054</field>
+            <field name="email">contact@helios.com</field>
+            <field name="website">www.helios.com</field>
+        </record>
+    </data>
+</odoo>

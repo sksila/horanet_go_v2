@@ -1,0 +1,28 @@
+<odoo noupdate="1">
+     <record id="attachment_type_proof_of_address" model="ir.attachment.type">
+            <field name="name">Justificatif de domicile</field>
+            <field name="technical_name">proof_of_address</field>
+            <field name="validity_period">90</field>
+        </record>
+        <record id="attachment_type_family_record_book" model="ir.attachment.type">
+            <field name="name">Livret de famille</field>
+            <field name="technical_name">family_record_book</field>
+        </record>
+        <record id="attachment_type_caf_certificate" model="ir.attachment.type">
+            <field name="name">Attestation CAF</field>
+            <field name="technical_name">caf_certificate</field>
+            <field name="validity_period">90</field>
+        </record>
+        <record id="attachment_type_tax_notice" model="ir.attachment.type">
+            <field name="name">Avis d'imposition</field>
+            <field name="technical_name">tax_notice</field>
+        </record>
+        <record id="attachment_type_pay_slip" model="ir.attachment.type">
+            <field name="name">Bulletin de salaire</field>
+            <field name="technical_name">pay_slip</field>
+        </record>
+        <record id="attachment_type_school_enrollment_certificate" model="ir.attachment.type">
+            <field name="name">Attestation d'inscription scolaire</field>
+            <field name="technical_name">school_enrollment_certificate</field>
+        </record>
+</odoo>

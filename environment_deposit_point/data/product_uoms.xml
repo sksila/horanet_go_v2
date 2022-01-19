@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data noupdate="1">
+    <record id="deposit_unit_product_uom" model="product.uom">
+      <field name="name">deposit(s)</field>
+      <field name="category_id" ref="product.product_uom_categ_unit"/>
+      <field name="uom_type">bigger</field>
+      <field name="factor_inv" eval="1"/>
+    </record>
+  </data>
+</odoo>

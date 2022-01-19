@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="partner_transport_form_view" model="ir.ui.view">
+        <field name="name">Partner transport form view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_citizen.view_citizen_form"/>
+        <field name="mode">primary</field>
+        <field name="priority">32</field>
+        <field name="arch" type="xml">
+            <!--Partner form view of module Transport-->
+            <field name="name"/>
+        </field>
+    </record>
+
+
+    <record id="partner_transport_action" model="ir.actions.act_window">
+        <field name="name">Citizen of transport</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('is_company','=',False),('company_type','=','person'),('type', '=', 'contact')]</field>
+        <field name="context">{'default_customer':1, 'search_default_customer':0 ,'partner_view_mode' : 'citizen'}
+        </field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Message à personaliser.
+            </p>
+            <p>
+                TODO text Odoo helps you easily track all activities related to
+                a customer; discussions, history of business opportunities,
+                documents, etc.
+            </p>
+        </field>
+    </record>
+
+    <record id="act_transport_kanban_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="partner_contact_citizen.citizen_kanban_view"/>
+        <field name="act_window_id" ref="partner_transport_action"/>
+    </record>
+    <record id="act_transport_form_view" model="ir.actions.act_window.view">
+        <field eval="3" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="partner_transport_form_view"/>
+        <field name="act_window_id" ref="partner_transport_action"/>
+    </record>
+    <!--Appel de la forme de base afin de garder la main sur l'ordonnancement des vue-->
+    <record id="act_transport_tree_view" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="base.view_partner_tree"/>
+        <field name="act_window_id" ref="partner_transport_action"/>
+    </record>
+
+</odoo>

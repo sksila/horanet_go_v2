@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="module_view_kanban_inherit" model="ir.ui.view">
+        <field name="name">Modules Kanban</field>
+        <field name="model">ir.module.module</field>
+        <field name="inherit_id" ref="base.module_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="edit">false</attribute>
+                <attribute name="quick_create">false</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Ajout d'un filtre pour les modules horanet -->
+    <record id="view_module_filter" model="ir.ui.view">
+        <field name="name">ir.module.module.list.select</field>
+        <field name="model">ir.module.module</field>
+        <field name="inherit_id" ref="base.view_module_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="/search/group[1]/filter[last()]" position="before">
+                <separator/>
+                <filter string="Horanet" name="filter_horanet"
+                        domain="[('author','ilike','horanet')]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!--Ajout d'un menu de présentation des modules horanet-->
+    <record id="open_module_horanet" model="ir.actions.act_window">
+        <field name="name">Horanet modules</field>
+        <field name="res_model">ir.module.module</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{'search_default_filter_horanet':1}</field>
+        <field name="search_view_id" ref="view_module_filter"/>
+        <field name="help" type="html">
+            <p>
+                <b>No module found!</b>
+            </p>
+            <p>
+                Please check if the addon folder horanet_go is added to the odoo addon-path
+            </p>
+        </field>
+    </record>
+
+    <!--Add a menu to quickly select the horanet module suite-->
+    <menuitem id="menu_module_horanet"
+              parent="base.menu_management"
+              name="Horanet modules"
+              sequence="6"
+              action="open_module_horanet"/>
+</odoo>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="cart_hide_policy" inherit_id="website_sale.cart">
+        <xpath expr="//div[@id='right_column']" position="replace"/>
+        <xpath expr="//div[contains(@class, 'oe_cart')]" position="attributes">
+            <attribute name="class">col-xs-12 oe_cart</attribute>
+        </xpath>
+    </template>
+</odoo>

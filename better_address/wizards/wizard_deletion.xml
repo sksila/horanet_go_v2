@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="wizard_form_view">
+        <field name="name">horanet.wizard.deletion.form</field>
+        <field name="model">horanet.wizard.deletion</field>
+        <field name="arch" type="xml">
+            <form string="Wizard city">
+                <div class="oe_inline o_form_field">There is currently :&#160;</div>
+                <field name="nb_element" class="oe_inline" string=" " attrs="{'readonly': True}">
+                </field>
+                <div style="width:0.4em !important" class="oe_inline o_form_field"></div>
+                <field name="type_element" class="oe_inline" attrs="{'readonly': True}"></field>
+                <separator/>
+                <footer>
+                    <button name="delete_all"
+                            confirm="Do you really want to delete everything ? this operation can't be undone"
+                            type="object"
+                            class="oe_highlight"
+                            string="Delete All"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

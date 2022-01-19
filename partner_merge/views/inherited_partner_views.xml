@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.duplication</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!--Ajout de boutons de gestion des doublons et d'appel du service de merge-->
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button class="oe_stat_button" type="object" name="action_wizard_duplication" icon="fa-files-o"
+                        groups="partner_merge.group_contact_merge">
+                    <field name="duplication_count" widget="statinfo"/>
+                </button>
+                <field name="is_duplicated" invisible="1"/>
+                <button class="oe_stat_button" type="object" name="action_toggle_is_duplicate"
+                        groups="partner_merge.group_contact_merge">
+                    <div class="o_button_icon fa fa-flag-o fa-fw"
+                         attrs="{'invisible': [('is_duplicated', '=', True)]}"></div>
+                    <div class="o_button_icon fa fa-flag fa-fw"
+                         attrs="{'invisible': [('is_duplicated', '!=', True)]}"></div>
+                    <field name="text_duplicated" widget="statinfo"/>
+                </button>
+            </xpath>
+
+            <!--Ajout de champs informant qu'il s'agit potentiellement d'un doublon-->
+            <xpath expr="//div[@class='oe_title']" position="after">
+                <group>
+                    <div>
+                        <field name="is_a_duplicate_partner" invisible="1"/>
+                        <div>
+                            <field name="not_a_duplicate" class="oe_edit_only"
+                                   attrs="{'invisible' : [('is_a_duplicate_partner', '=', 'no_duplicate')]}"/>
+                            <label string="Is not a duplicate partner" class="oe_edit_only"
+                                   attrs="{'invisible' : [('is_a_duplicate_partner', '=', 'no_duplicate')]}"/>
+                            <label string="Not a duplicate partner" class="oe_read_only"
+                                   attrs="{'invisible' : ['|', ('is_a_duplicate_partner', '=', 'no_duplicate'), ('not_a_duplicate', '!=', True)]}"/>
+                        </div>
+                        <button class="oe_link"
+                                type="object"
+                                context="{'search_default_partner_id': active_id}"
+                                name="action_display_duplicate_partner"
+                                attrs="{'invisible' : ['|', ('is_a_duplicate_partner', '=', 'no_duplicate'), ('not_a_duplicate', '=', True)]}">
+
+                            <strong>
+                                <field name="partner_name_button"/>
+                            </strong>
+                        </button>
+                        <strong class="text-warning"
+                                attrs="{'invisible' : ['|', ('is_a_duplicate_partner', '!=', 'same_name'), ('not_a_duplicate', '=', True)]}">
+                            <span t-translation="on">is potentially a duplicate partner (same name).</span>
+                        </strong>
+                        <strong class="text-danger"
+                                attrs="{'invisible' : ['|', ('is_a_duplicate_partner', '!=', 'duplicate_partner'), ('not_a_duplicate', '=', True)]}">
+                            <span t-translation="on">is potentially a duplicate partner (same name and same birthdate).</span>
+                        </strong>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.filter.duplication</field>
+        <field name="model">res.partner</field>
+        <field name="type">search</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter name="inactive" position="after">
+                <separator/>
+                <filter name="is_duplicated" string="Is a duplicate"
+                        domain="[('is_duplicated', '=', 'True')]"
+                        groups="partner_merge.group_contact_merge"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="res_partner_duplicate_tree_view" model="ir.ui.view">
+        <field name="name">Duplicate Partner tree view</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree string="Duplicate partner tree view" create="false">
+                <field name="name"/>
+                <field name="not_a_duplicate"/>
+                <field name="birthdate_date"/>
+                <field name="better_contact_address"/>
+                <field name="phone"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_open_wizard_merge" model="ir.actions.act_window">
+        <field name="name">wizard merge all partner</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">base.partner.merge.automatic.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context" eval="{'active_ids': None, 'duplicate': True}"/>
+    </record>
+
+    <!-- Disallow merge features for users not in the corresponding group -->
+    <record id="crm.base_partner_merge_automatic_wizard_form" model="ir.ui.view">
+        <field name="groups_id" eval="[(4, ref('partner_merge.group_contact_merge'))]"/>
+    </record>
+
+    <record id="crm.action_partner_merge" model="ir.actions.act_window">
+        <field name="groups_id" eval="[(4, ref('partner_merge.group_contact_merge'))]"/>
+    </record>
+</odoo>

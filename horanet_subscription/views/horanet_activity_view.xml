@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_activity_view_form" model="ir.ui.view">
+        <field name="name">horanet activity form</field>
+        <field name="model">horanet.activity</field>
+        <field name="arch" type="xml">
+            <form string="activity">
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="activity name"/>
+                        </h1>
+                    </div>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{'terminology': 'active'}"/>
+                        </button>
+                    </div>
+                    <group></group>
+                    <label for="description"/>
+                    <field name="description"/>
+                    <group col="4" string="Parameters" name="parameters">
+                        <field name="reference"/>
+                        <field name="device_label"/>
+                        <newline/>
+                        <field name="product_uom_id"/>
+                        <field name="product_uom_categ_id"/>
+                        <newline/>
+                        <field name="default_action_id"/>
+                        <field name="application_type"/>
+                        <newline/>
+                        <field name="product_id"/>
+                        <newline/>
+                        <field name="subscription_category_ids" widget='many2many_tags'/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_activity_view_tree" model="ir.ui.view">
+        <field name="name">horanet activity tree</field>
+        <field name="model">horanet.activity</field>
+        <field name="arch" type="xml">
+            <tree string="activity">
+                <field name="reference"/>
+                <field name="name"/>
+                <field name="product_uom_id"/>
+                <field name="product_uom_categ_id"/>
+                <field name="product_id"/>
+                <field name="subscription_category_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="activity_search_view" model="ir.ui.view">
+        <field name="name">Activity Search View</field>
+        <field name="model">horanet.activity</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="reference"/>
+                <filter name="group_by_action" string="Group by action" context="{'group_by': 'default_action_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_horanet_activity" model="ir.actions.act_window">
+        <field name="name">activity</field>
+        <field name="res_model">horanet.activity</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_activity_view_tree"/>
+    </record>
+</odoo>

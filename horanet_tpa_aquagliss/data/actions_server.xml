@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Action server : Activate Job for TPA Aquagliss -->
+        <record model="ir.actions.server" id="action_server_activate_job_aquagliss">
+            <field name="name">Activate Job Aquagliss</field>
+            <field name="model_id" ref="website_application.model_website_application"/>
+            <field name="state">code</field>
+            <field name="code">
+if record:
+    rec_partner = record.recipient_id
+if not rec_partner.tpa_membership_aquagliss:
+    rec_partner.write({'tpa_membership_aquagliss': True})
+
+    partner_tpa_aquagliss = env['tpa.synchronization.status'].search(
+        [('ref_partner.id', '=', rec_partner.id), ('tpa_name', '=', 'horanet_tpa_aquagliss')])
+
+    if partner_tpa_aquagliss and not partner_tpa_aquagliss['is_up_to_date']:
+        partner_tpa_aquagliss.aquagliss_synchronization()
+
+    partner_tpa_aquagliss = env['tpa.synchronization.status'].search(
+        [('ref_partner.id', '=', rec_partner.id), ('tpa_name', '=', 'horanet_tpa_aquagliss')])
+    if partner_tpa_aquagliss and partner_tpa_aquagliss['is_up_to_date']:
+        if env['collectivity.config.settings'].get_tpa_aquagliss_cards_is_enable():
+            aquagliss_area = env['collectivity.config.settings'].get_tpa_aquagliss_area()
+    assignations = env['partner.contact.identification.assignation'].search(
+        [('reference_id', '=', 'res.partner,%s' % rec_partner.id)])
+    for assignation in assignations:
+        if assignation.tag_id.mapping_id.area_id.id == int(aquagliss_area):
+            synchro_card_tpa = env['collectivity.config.settings'].get_tpa_aquagliss_cards_is_enable()
+    if synchro_card_tpa:
+        if not assignation.is_up_to_date:
+            assignation.aquagliss_synchronization_card()
+            </field>
+        </record>
+    </data>
+</odoo>

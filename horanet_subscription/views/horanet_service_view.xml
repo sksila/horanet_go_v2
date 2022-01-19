@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_service_view_form" model="ir.ui.view">
+        <field name="name">horanet service form</field>
+        <field name="model">horanet.service</field>
+        <field name="arch" type="xml">
+            <form string="service">
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="product_uom_categ_id"/>
+                    </group>
+                    <group col="4" string="Activities"
+                           attrs="{'invisible': [('product_uom_categ_id', '=', False)]}">
+                        <field colspan="4" name="activity_ids" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_service_view_tree" model="ir.ui.view">
+        <field name="name">horanet service tree</field>
+        <field name="model">horanet.service</field>
+        <field name="arch" type="xml">
+            <tree string="service">
+                <field name="name"/>
+                <field name="activity_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_horanet_service" model="ir.actions.act_window">
+        <field name="name">service</field>
+        <field name="res_model">horanet.service</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_service_view_tree"/>
+    </record>
+</odoo>

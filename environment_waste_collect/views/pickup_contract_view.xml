@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="pickup_contract_form_view" model="ir.ui.view">
+        <field name="name">pickup.contract.form</field>
+        <field name="model">environment.pickup.contract</field>
+        <field name="arch" type="xml">
+            <form string="Contract">
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="service_provider_id"/>
+                        <h1>
+                            <field name="service_provider_id" options="{'no_create': True}"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="name"/>
+                        <field name="begin_date"/>
+                        <field name="end_date"/>
+                        <field name="is_valid" invisible="1"/>
+                        <field name="waste_site_id" required="1"/>
+                        <field name="pickup_delay" widget="float_time"/>
+                        <field name="contract_attachment"/>
+                    </group>
+                    <notebook>
+                        <page string="Wastes" name="page_activity">
+                                <label for="activity_ids"/>
+                                <field name="activity_ids" nolabel="1"
+                                       context="{'tree_view_ref': 'environment_waste_collect.activity_tree_view'}">
+                                    <tree>
+                                        <field name="reference"/>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                        </page>
+                        <page string="Active pickup requests" name="pickup_requests">
+                                <label for="active_environment_pickup_request_ids"/>
+                                <field name="active_environment_pickup_request_ids" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pickup_contract_tree_view" model="ir.ui.view">
+        <field name="name">pickup.contract.tree</field>
+        <field name="model">environment.pickup.contract</field>
+        <field name="arch" type="xml">
+            <tree string="Contracts">
+                <field name="name"/>
+                <field name="begin_date"/>
+                <field name="end_date"/>
+                <field name="service_provider_id"/>
+                <field name="is_valid"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="pickup_contract_search_view" model="ir.ui.view">
+        <field name="name">pickup.contract.search</field>
+        <field name="model">environment.pickup.contract</field>
+        <field name="arch" type="xml">
+            <search string="Search pickup contract">
+                <field name="service_provider_id"/>
+                <field name="name"/>
+                <field name="begin_date"/>
+                <field name="end_date"/>
+                <filter string="Valid contracts" domain="[('is_valid', '=', 'True')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="pickup_contract_action" model="ir.actions.act_window">
+        <field name="name">Pickup Contracts</field>
+        <field name="res_model">environment.pickup.contract</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

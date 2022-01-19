@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="horanet_my_details">
+        <t t-call="website.layout">
+            <div class="horanet_blockui horanet_spinner" style="display:inline-block"/>
+            <t t-set="additional_title">Contact Details</t>
+            <div id="wrap" name="horanet_my_account">
+                <div class="container mt16 mb32">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="/my/home">My Account</a>
+                                </li>
+                                <li>Your details</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1>My informations</h1>
+                        <form t-attf-action="/my/account?redirect={{ redirect }}" method="post" class="form-group"
+                              enctype="multipart/form-data">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="row o_portal_details">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div t-if="error_message" class="alert alert-danger">
+                                                <t t-foreach="error_message" t-as="err">
+                                                    <t t-esc="err"/>
+                                                    <br/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"/>
+                                        <fieldset>
+                                            <div id="partner_image" class="col-md-5">
+                                                <t t-call="horanet_website_account.partner_image"/>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <t t-call="horanet_website_account.partner_informations"/>
+                                                <!--BIRTHDATE_DATE-->
+                                                <div id="partner_birthdate" t-if="not partner.is_company">
+                                                    <t t-set="lang_model" t-value="request.env['res.lang']"/>
+                                                    <t t-set="date_format"
+                                                       t-value="lang_model.get_universal_date_format()"/>
+                                                    <div t-attf-class="form-group {{error.get('birthdate_date') and 'has-error' or ''}}">
+                                                        <label class="control-label horanet_textfill"
+                                                               for="birthdate_date"
+                                                               style="font-size:auto">Birthdate
+                                                        </label>
+                                                        <input type="text" name="birthdate_date" class="form-control"
+                                                               size="10"
+                                                               t-att-data_date_format="date_format"
+                                                               t-att-value="post.get('birthdate_date') or partner.birthdate_date and lang_model.format_date(partner.birthdate_date)"/>
+                                                        <!--style="text-align: center;padding: 0px;width: auto;"-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset>
+                                            <legend>Contact informations</legend>
+                                            <!--Email-->
+                                            <div t-attf-class="form-group col-md-6 col-sm-12 required {{error.get('email') and 'has-error' or ''}}">
+                                                <label class="control-label" for="contact_name">
+                                                    <t t-esc="partner.fields_get('email')['email']['string']"/>
+                                                </label>
+                                                <input type="email" name="email" class="form-control"
+                                                       t-att-value="post.get('email', user.partner_id.email)"/>
+                                            </div>
+
+                                            <!-- PHONE -->
+                                            <div t-attf-class="form-group col-md-6 col-sm-12 required">
+                                                <div t-attf-class="form-group country-phone-group col-md-6 col-sm-12">
+                                                    <label class="control-label" for="phone">
+                                                        <t t-esc="partner.fields_get('phone')['phone']['string']"/>
+                                                    </label>
+                                                    <select name="country_phone" id="country_phone"
+                                                            class="form-control ">
+                                                        <t t-set='selected_id'
+                                                           t-value="int(post.get('country_phone') or partner.country_phone and partner.country_phone.id or default_country_phone or False)"/>
+                                                        <t t-foreach="partner.country_phone.search([])" t-as="country">
+                                                            <option t-if="country_index == 0 and not selected_id"
+                                                                    value="" selected="" hidden="">select...
+                                                            </option>
+                                                            <option t-att-value="country.id"
+                                                                    t-att-selected="country.id == selected_id">
+                                                                <t t-esc="country.name"/>
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+
+                                                <div t-attf-class="phone-code-group col-md-1 col-sm-1">
+                                                    <select name="country_phone_code" disabled="1"
+                                                            id="country_phone_code"
+                                                            class="select-phone-code col-md-2 col-sm-2">
+                                                        <t t-set='selected_id'
+                                                           t-value="int(post.get('country_phone_code') or  default_country_phone_code or False)"/>
+                                                        <t t-foreach="partner.country_phone.search([])" t-as="country">
+                                                            <option t-if="country_index == 0 and not selected_id"
+                                                                    value="" selected="" hidden="">select...
+                                                            </option>
+                                                            <option t-att-value="country.id"
+                                                                    t-att-selected="country.id == selected_id">
+                                                                <t t-esc="'+' + str(country.phone_code)"/>
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+
+                                                <div t-attf-class="form-group phone-group #{error.get('phone') and 'has-error' or ''} col-md-6 col-sm-6 required">
+                                                    <input type="tel" name="phone" id="phone_test" class="form-control"
+                                                           size="10"
+                                                           t-att-value="post.get('phone', partner.phone)"/>
+                                                </div>
+                                            </div>
+
+                                            <!-- MOBILE -->
+                                            <div class="clearfix"/>
+                                            <div t-attf-class="form-group col-md-offset-6 col-md-6 col-sm-12">
+                                                <div t-attf-class="country-phone-group col-md-6 col-sm-12">
+                                                    <label class="control-label" for="phone">
+                                                        <t t-esc="partner.fields_get('mobile')['mobile']['string']"/>
+                                                    </label>
+                                                    <select name="country_mobile" id="country_mobile"
+                                                            class="form-control">
+                                                        <t t-set='selected_id'
+                                                           t-value="int(post.get('country_mobile') or partner.country_mobile and partner.country_mobile.id or default_country_mobile or False)"/>
+                                                        <t t-foreach="partner.country_mobile.search([])" t-as="country">
+                                                            <option t-if="country_index == 0 and not selected_id"
+                                                                    value="" selected="" hidden="">select...
+                                                            </option>
+                                                            <option t-att-value="country.id"
+                                                                    t-att-selected="country.id == selected_id">
+                                                                <t t-esc="country.name"/>
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                                <div t-attf-class="phone-code-group col-md-1 col-sm-1">
+                                                    <select name="country_mobile_code" disabled="1"
+                                                            id="country_mobile_code"
+                                                            class="select-phone-code col-md-2 col-sm-2">
+                                                        <t t-set='selected_id'
+                                                           t-value="int(post.get('country_mobile_code') or default_country_mobile_code or False)"/>
+                                                        <t t-foreach="partner.country_mobile.search([])" t-as="country">
+                                                            <option t-if="country_index == 0 and not selected_id"
+                                                                    value="" selected="" hidden="">select...
+                                                            </option>
+                                                            <option t-att-value="country.id"
+                                                                    t-att-selected="country.id == selected_id">
+                                                                <t t-esc="'+' + str(country.phone_code)"/>
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                                <div t-attf-class="form-group phone-group #{error.get('mobile') and 'has-error' or ''} col-md-6 col-sm-6">
+                                                    <input type="tel" name="mobile" id="mobile_test"
+                                                           class="form-control"
+                                                           t-att-value="post.get('mobile', partner.mobile)"/>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <div id="partner_address">
+                                            <fieldset>
+                                                <legend>Contact address</legend>
+                                                <t t-call="horanet_website_account.partner_address"/>
+                                            </fieldset>
+                                        </div>
+                                        <div id="invoice_partner_address">
+                                            <fieldset>
+                                                <legend>Invoice address</legend>
+                                                <div class="form-inline">
+                                                    <input type="checkbox"
+                                                           name="has_invoice_address" value="True"
+                                                           t-att-checked="post.get('has_invoice_address', bool(invoice_address) or False)"
+                                                           onchange="$('div[id=invoice_partner_address_form]').fadeToggle()"/>
+                                                    <b>Invoice address (if different)</b>
+                                                    <br/>
+                                                    <br/>
+                                                </div>
+                                                <div id="invoice_partner_address_form" style="display: none;">
+                                                    <t t-call="horanet_website_account.invoice_partner_address"/>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <div id="shipping_partner_address">
+                                            <fieldset>
+                                                <legend>Shipping address</legend>
+                                                <div class="form-inline">
+                                                    <input type="checkbox"
+                                                           name="has_shipping_address" value="True"
+                                                           t-att-checked="post.get('has_shipping_address', bool(shipping_address) or False)"
+                                                           onchange="$('div[id=shipping_partner_address_form]').fadeToggle()"/>
+                                                    <b>Shipping address (if different)</b>
+                                                    <br/>
+                                                    <br/>
+                                                </div>
+                                                <div id="shipping_partner_address_form" style="display: none;">
+                                                    <t t-call="horanet_website_account.shipping_partner_address"/>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                        <fieldset t-if="not partner.is_company and additional_informations">
+                                            <legend>Other informations</legend>
+                                            <div t-if="use_family_quotient"
+                                                 t-attf-class="form-group #{error.get('quotient_fam') and 'has-error'
+                                                               or ''} col-lg-6">
+                                                <label class="control-label" for="quotient_fam">Family quotient</label>
+                                                <input type="number" name="quotient_fam" class="form-control"
+                                                       t-att-value="post.get('quotient_fam', False) or partner.quotient_fam"/>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="clearfix">
+                                        <button id="ButtonConfirm" type="submit" class="btn btn-default btn-primary pull-right mb32 ">
+                                            Confirm
+                                            <span class="fa fa-long-arrow-right"/>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo  noupdate="1">
+        <record forcecreate="1" id="state_fr_01" model="res.country.state">
+            <field name="name">AIN</field>
+            <field name="code">01</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_02" model="res.country.state">
+            <field name="name">AISNE</field>
+            <field name="code">02</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_03" model="res.country.state">
+            <field name="name">ALLIER</field>
+            <field name="code">03</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_04" model="res.country.state">
+            <field name="name">ALPES-DE-HAUTE-PROVENCE</field>
+            <field name="code">04</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_05" model="res.country.state">
+            <field name="name">HAUTES-ALPES</field>
+            <field name="code">05</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_06" model="res.country.state">
+            <field name="name">ALPES-MARITIMES</field>
+            <field name="code">06</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_07" model="res.country.state">
+            <field name="name">ARDECHE</field>
+            <field name="code">07</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_08" model="res.country.state">
+            <field name="name">ARDENNES</field>
+            <field name="code">08</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_09" model="res.country.state">
+            <field name="name">ARIEGE</field>
+            <field name="code">09</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_10" model="res.country.state">
+            <field name="name">AUBE</field>
+            <field name="code">10</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_11" model="res.country.state">
+            <field name="name">AUDE</field>
+            <field name="code">11</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_12" model="res.country.state">
+            <field name="name">AVEYRON</field>
+            <field name="code">12</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_13" model="res.country.state">
+            <field name="name">BOUCHES-DU-RHONE</field>
+            <field name="code">13</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_14" model="res.country.state">
+            <field name="name">CALVADOS</field>
+            <field name="code">14</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_15" model="res.country.state">
+            <field name="name">CANTAL</field>
+            <field name="code">15</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_16" model="res.country.state">
+            <field name="name">CHARENTE</field>
+            <field name="code">16</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_17" model="res.country.state">
+            <field name="name">CHARENTE-MARITIME</field>
+            <field name="code">17</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_18" model="res.country.state">
+            <field name="name">CHER</field>
+            <field name="code">18</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_19" model="res.country.state">
+            <field name="name">CORREZE</field>
+            <field name="code">19</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_21" model="res.country.state">
+            <field name="name">COTE-D'OR</field>
+            <field name="code">21</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_22" model="res.country.state">
+            <field name="name">COTES-D'ARMOR</field>
+            <field name="code">22</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_23" model="res.country.state">
+            <field name="name">CREUSE</field>
+            <field name="code">23</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_24" model="res.country.state">
+            <field name="name">DORDOGNE</field>
+            <field name="code">24</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_25" model="res.country.state">
+            <field name="name">DOUBS</field>
+            <field name="code">25</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_26" model="res.country.state">
+            <field name="name">DROME</field>
+            <field name="code">26</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_27" model="res.country.state">
+            <field name="name">EURE</field>
+            <field name="code">27</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_28" model="res.country.state">
+            <field name="name">EURE-ET-LOIR</field>
+            <field name="code">28</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_29" model="res.country.state">
+            <field name="name">FINISTERE</field>
+            <field name="code">29</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_2A" model="res.country.state">
+            <field name="name">CORSE-DU-SUD</field>
+            <field name="code">2A</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_2B" model="res.country.state">
+            <field name="name">HAUTE-CORSE</field>
+            <field name="code">2B</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_30" model="res.country.state">
+            <field name="name">GARD</field>
+            <field name="code">30</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_31" model="res.country.state">
+            <field name="name">HAUTE-GARONNE</field>
+            <field name="code">31</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_32" model="res.country.state">
+            <field name="name">GERS</field>
+            <field name="code">32</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_33" model="res.country.state">
+            <field name="name">GIRONDE</field>
+            <field name="code">33</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_34" model="res.country.state">
+            <field name="name">HERAULT</field>
+            <field name="code">34</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_35" model="res.country.state">
+            <field name="name">ILLE-ET-VILAINE</field>
+            <field name="code">35</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_36" model="res.country.state">
+            <field name="name">INDRE</field>
+            <field name="code">36</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_37" model="res.country.state">
+            <field name="name">INDRE-ET-LOIRE</field>
+            <field name="code">37</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_38" model="res.country.state">
+            <field name="name">ISERE</field>
+            <field name="code">38</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_39" model="res.country.state">
+            <field name="name">JURA</field>
+            <field name="code">39</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_40" model="res.country.state">
+            <field name="name">LANDES</field>
+            <field name="code">40</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_41" model="res.country.state">
+            <field name="name">LOIR-ET-CHER</field>
+            <field name="code">41</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_42" model="res.country.state">
+            <field name="name">LOIRE</field>
+            <field name="code">42</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_43" model="res.country.state">
+            <field name="name">HAUTE-LOIRE</field>
+            <field name="code">43</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_44" model="res.country.state">
+            <field name="name">LOIRE-ATLANTIQUE</field>
+            <field name="code">44</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_45" model="res.country.state">
+            <field name="name">LOIRET</field>
+            <field name="code">45</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_46" model="res.country.state">
+            <field name="name">LOT</field>
+            <field name="code">46</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_47" model="res.country.state">
+            <field name="name">LOT-ET-GARONNE</field>
+            <field name="code">47</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_48" model="res.country.state">
+            <field name="name">LOZERE</field>
+            <field name="code">48</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_49" model="res.country.state">
+            <field name="name">MAINE-ET-LOIRE</field>
+            <field name="code">49</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_50" model="res.country.state">
+            <field name="name">MANCHE</field>
+            <field name="code">50</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_51" model="res.country.state">
+            <field name="name">MARNE</field>
+            <field name="code">51</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_52" model="res.country.state">
+            <field name="name">HAUTE-MARNE</field>
+            <field name="code">52</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_53" model="res.country.state">
+            <field name="name">MAYENNE</field>
+            <field name="code">53</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_54" model="res.country.state">
+            <field name="name">MEURTHE-ET-MOSELLE</field>
+            <field name="code">54</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_55" model="res.country.state">
+            <field name="name">MEUSE</field>
+            <field name="code">55</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_56" model="res.country.state">
+            <field name="name">MORBIHAN</field>
+            <field name="code">56</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_57" model="res.country.state">
+            <field name="name">MOSELLE</field>
+            <field name="code">57</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_58" model="res.country.state">
+            <field name="name">NIEVRE</field>
+            <field name="code">58</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_59" model="res.country.state">
+            <field name="name">NORD</field>
+            <field name="code">59</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_60" model="res.country.state">
+            <field name="name">OISE</field>
+            <field name="code">60</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_61" model="res.country.state">
+            <field name="name">ORNE</field>
+            <field name="code">61</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_62" model="res.country.state">
+            <field name="name">PAS-DE-CALAIS</field>
+            <field name="code">62</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_63" model="res.country.state">
+            <field name="name">PUY-DE-DOME</field>
+            <field name="code">63</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_64" model="res.country.state">
+            <field name="name">PYRENEES-ATLANTIQUES</field>
+            <field name="code">64</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_65" model="res.country.state">
+            <field name="name">HAUTES-PYRENEES</field>
+            <field name="code">65</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_66" model="res.country.state">
+            <field name="name">PYRENEES-ORIENTALES</field>
+            <field name="code">66</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_67" model="res.country.state">
+            <field name="name">BAS-RHIN</field>
+            <field name="code">67</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_68" model="res.country.state">
+            <field name="name">HAUT-RHIN</field>
+            <field name="code">68</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_69" model="res.country.state">
+            <field name="name">RHONE</field>
+            <field name="code">69</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_70" model="res.country.state">
+            <field name="name">HAUTE-SAONE</field>
+            <field name="code">70</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_71" model="res.country.state">
+            <field name="name">SAONE-ET-LOIRE</field>
+            <field name="code">71</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_72" model="res.country.state">
+            <field name="name">SARTHE</field>
+            <field name="code">72</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_73" model="res.country.state">
+            <field name="name">SAVOIE</field>
+            <field name="code">73</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_74" model="res.country.state">
+            <field name="name">HAUTE-SAVOIE</field>
+            <field name="code">74</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_75" model="res.country.state">
+            <field name="name">PARIS</field>
+            <field name="code">75</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_76" model="res.country.state">
+            <field name="name">SEINE-MARITIME</field>
+            <field name="code">76</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_77" model="res.country.state">
+            <field name="name">SEINE-ET-MARNE</field>
+            <field name="code">77</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_78" model="res.country.state">
+            <field name="name">YVELINES</field>
+            <field name="code">78</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_79" model="res.country.state">
+            <field name="name">DEUX-SEVRES</field>
+            <field name="code">79</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_80" model="res.country.state">
+            <field name="name">SOMME</field>
+            <field name="code">80</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_81" model="res.country.state">
+            <field name="name">TARN</field>
+            <field name="code">81</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_82" model="res.country.state">
+            <field name="name">TARN-ET-GARONNE</field>
+            <field name="code">82</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_83" model="res.country.state">
+            <field name="name">VAR</field>
+            <field name="code">83</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_84" model="res.country.state">
+            <field name="name">VAUCLUSE</field>
+            <field name="code">84</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_85" model="res.country.state">
+            <field name="name">VENDEE</field>
+            <field name="code">85</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_86" model="res.country.state">
+            <field name="name">VIENNE</field>
+            <field name="code">86</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_87" model="res.country.state">
+            <field name="name">HAUTE-VIENNE</field>
+            <field name="code">87</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_88" model="res.country.state">
+            <field name="name">VOSGES</field>
+            <field name="code">88</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_89" model="res.country.state">
+            <field name="name">YONNE</field>
+            <field name="code">89</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_90" model="res.country.state">
+            <field name="name">TERRITOIRE DE BELFORT</field>
+            <field name="code">90</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_91" model="res.country.state">
+            <field name="name">ESSONNE</field>
+            <field name="code">91</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_92" model="res.country.state">
+            <field name="name">HAUTS-DE-SEINE</field>
+            <field name="code">92</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_93" model="res.country.state">
+            <field name="name">SEINE-SAINT-DENIS</field>
+            <field name="code">93</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_94" model="res.country.state">
+            <field name="name">VAL-DE-MARNE</field>
+            <field name="code">94</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_95" model="res.country.state">
+            <field name="name">VAL-D'OISE</field>
+            <field name="code">95</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+        <record forcecreate="1" id="state_fr_971" model="res.country.state">
+            <field name="name">GUADELOUPE</field>
+            <field name="code">971</field>
+            <field name="country_id" ref="base.gp"/>
+        </record>
+        <record forcecreate="1" id="state_fr_972" model="res.country.state">
+            <field name="name">MARTINIQUE</field>
+            <field name="code">972</field>
+            <field name="country_id" ref="base.mq"/>
+        </record>
+        <record forcecreate="1" id="state_fr_973" model="res.country.state">
+            <field name="name">GUYANE</field>
+            <field name="code">973</field>
+            <field name="country_id" ref="base.gf"/>
+        </record>
+        <record forcecreate="1" id="state_fr_974" model="res.country.state">
+            <field name="name">REUNION</field>
+            <field name="code">974</field>
+            <field name="country_id" ref="base.re"/>
+        </record>
+        <record forcecreate="1" id="state_fr_976" model="res.country.state">
+            <field name="name">MAYOTTE</field>
+            <field name="code">976</field>
+            <field name="country_id" ref="base.yt"/>
+        </record>
+</odoo>

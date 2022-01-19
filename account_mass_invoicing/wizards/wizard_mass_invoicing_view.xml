@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wizard_mass_invoicing_form_view" model="ir.ui.view">
+            <field name="name">Wizard Mass Invoicing Form View</field>
+            <field name="model">wizard.mass.invoicing</field>
+            <field name="arch" type="xml">
+                <form string="Mass Invoicing Wizard">
+                    <group>
+                        <field name="batch_type_ids"
+                               widget="many2many_checkboxes"/>
+                        <field name="campaign_id"
+                               options="{'no_open': True, 'no_create': True}"/>
+                        <field name="result"
+                               attrs="{'invisible': [('result', '=', False)]}"
+                               readonly="1"/>
+                    </group>
+                    <footer>
+                        <button name="action_mass_invoicing" type="object"
+                                class="oe_highlight" string="Launch"
+                                attrs="{'invisible': [('result', '!=', False)]}"
+                                confirm="This operation could take time. Are you sure to proceed ?"/>
+                        <button special="cancel" string="Close" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_account_mass_invoicing_wizard_mass_invoicing" model="ir.actions.act_window">
+            <field name="name">Mass invoicing</field>
+            <field name="res_model">wizard.mass.invoicing</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</openerp>

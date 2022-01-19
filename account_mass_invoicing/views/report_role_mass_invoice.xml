@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_role_invoice_document">
+            <t t-call="account_mass_invoicing.external_layout_role">
+                <div class="page">
+                    <style type="text/css">
+                        table {
+                        border-collapse: collapse;
+                        font-size: 10px;
+                        }
+
+                        table, th, td {
+                        border: 3px solid black;
+                        }
+
+                    </style>
+
+                    <table class="table table-condensed">
+
+                        <tr style="background-color:#dddddd;">
+                            <td>
+                                <strong t-translation="on">N°Facture</strong>
+                            </td>
+                            <td>
+                                <strong t-translation="on">Date</strong>
+                            </td>
+                            <td style='border-right:none;'>
+                                <strong t-translation="on">Période</strong>
+                            </td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;'>
+                                <strong t-translation="on">Payeurs - Clients</strong>
+                            </td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td>
+                                <strong t-translation="on">Emargement</strong>
+                            </td>
+                        </tr>
+                        <tr style="background-color:#dddddd;">
+                            <td style='border-right:none;'>
+                                <strong t-translation="on">Désignation</strong>
+                            </td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td style='border-right:none;border-left:none;'></td>
+
+                            <td style='border-right:none;border-left:none;'></td>
+                            <td>
+                                <strong t-translation="on">Quantité</strong>
+                            </td>
+                            <td>
+                                <strong t-translation="on">PU TTC</strong>
+                            </td>
+                            <td>
+                                <strong t-translation="on">Montant TTC</strong>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <t t-set="role_amount_total" t-value="0"/>
+                        <tbody class="invoice_tbody">
+
+                            <!-- forEach for invoices   -->
+                            <t t-as="item" t-foreach="o.batch_id.invoice_ids">
+                                <tr>
+                                    <td>
+                                        <span t-field="item.number"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="item.date_invoice"/>
+                                    </td>
+                                    <td colspan="3">
+                                        <span t-field="o.fiscal_year.start_date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                        au
+                                        <span t-field="o.fiscal_year.end_date" t-options='{"format": "dd/MM/yyyy"}'/>
+                                    </td>
+                                    <td colspan="4">
+                                         <span t-field="item.partner_id"/>
+                                    </td>
+                                    <td style='border-right:none;border-left:none;border-bottom:none;border-top:none'></td>
+                                </tr>
+                                <!-- move_line '(move_line.date_maturity  > role.date_declaration)' -->
+                                <t t-set="line"
+                                   t-value="item.move_id.line_ids.search([('id', 'in', item.account_move_line_ids.ids),('date_maturity', '>=', o.date_declaration),('debit', '>', 0)], order='date_maturity asc', limit=1)"/>
+                                    <tr t-foreach="item.invoice_line_ids" t-as="invoice_line">
+                                    <td colspan="6">
+                                        <span t-field="invoice_line.product_id"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="invoice_line.quantity"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="invoice_line.price_unit"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="invoice_line.price_subtotal"/>
+                                    </td>
+                                    <td style='border-right:none;border-left:none;border-bottom:none;border-top:none'></td>
+
+                                </tr>
+
+                                <tr>
+                                    <td colspan="8">
+                                        <strong t-translation="on">TOTAL</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="item.amount_total"/>
+                                    </td>
+                                    <td class="text-center" style='border-right:none;border-left:none;border-top:none'>
+                                        <span t-esc="line.get_balance()"/>
+                                    </td>
+
+                                </tr>
+                                <t t-set="role_amount_total" t-value="role_amount_total+line.get_balance()"/>
+                            </t>
+                        </tbody>
+                        <tr style="background-color:#dddddd;">
+                            <td colspan="8" class="text-left">
+                                <strong>
+                                    <strong>
+                                        <span t-esc="len(o.batch_id.invoice_ids)"></span>
+                                        factures
+                                    </strong>
+                                </strong>
+                            </td>
+                            <td class="text-right">
+                                <strong t-translation="on">Tolal du rôle</strong>
+                            </td>
+                            <td class="text-center">
+                                <strong>
+                                    <t t-esc="role_amount_total"/>
+                                </strong>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+            </t>
+        </template>
+        <template id="report_role_mass_invoice">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="account_mass_invoicing.report_role_invoice_document"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="cru_foyer_member">
+        <t t-call="website.layout">
+            <div class="horanet_blockui horanet_spinner" style="display:inline-block"/>
+            <t t-set="additional_title">Contact Details</t>
+            <div id="wrap" name="horanet_contact_details">
+
+                <div class="container mt16 mb32">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="/my/home">My Account</a>
+                                </li>
+                                <li>
+                                    <a href="/my/foyers">Foyers</a>
+                                </li>
+                                <li t-if="mode_creation" class="active">Add a member</li>
+                                <li t-if="not mode_creation" class="active">Edit a member</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="row">
+                            <h3>
+                                <t t-esc="foyer.foyer_name"/>
+                            </h3>
+                        </div>
+
+                        <form method="post" name="form_foyer_member" class="form-group" enctype="multipart/form-data">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="row mt16" t-if="error_message">
+                                <div class="col-md-12">
+                                    <div class="alert alert-danger">
+                                        <t t-foreach="error_message" t-as="err">
+                                            <t t-esc="err"/>
+                                            <br/>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt8">
+                                <div id="partner_image" class="col-md-5">
+                                    <t t-call="horanet_website_account.partner_image">
+                                        <t t-set="partner" t-value="member"/>
+                                    </t>
+                                </div>
+                                <div class="col-md-7">
+                                    <t t-call="horanet_website_account.partner_informations">
+                                        <t t-set="partner" t-value="member"/>
+                                    </t>
+                                </div>
+                            </div>
+                            <div class="row mt8">
+                                <!--Email-->
+                                <div t-attf-class="form-group col-lg-7 {{error.get('email') and 'has-error' or ''}}">
+                                    <label class="control-label" for="contact_name">
+                                        <t t-esc="member.fields_get('email')['email']['string']"/>
+                                    </label>
+                                    <input type="email" name="email" class="form-control"
+                                           t-att-value="post.get('email', member.email or user.partner_id.email)"/>
+                                </div>
+
+                                <!-- PHONE -->
+                                <div t-attf-class="form-group col-md-3 required {{error.get('phone') and 'has-error' or ''}}">
+                                    <label class="control-label" for="phone">
+                                        <t t-esc="member.fields_get('phone')['phone']['string']"/>
+                                    </label>
+                                    <input type="tel" name="phone" class="form-control" size="10"
+                                           t-att-value="post.get('phone', member.phone)"/>
+                                </div>
+                                <!--BIRTHDATE_DATE-->
+                                <div id="partner_birthdate">
+                                    <t t-set="lang_model" t-value="request.env['res.lang']"/>
+                                    <t t-set="date_format" t-value="lang_model.get_universal_date_format()"/>
+                                    <div t-attf-class="form-group col-md-2 {{error.get('birthdate_date') and 'has-error' or ''}}">
+                                        <label class="control-label horanet_textfill" for="birthdate_date"
+                                               style="font-size:auto">Birthdate
+                                        </label>
+                                        <input type="text" name="birthdate_date" class="form-control" size="10"
+                                               t-att-data_date_format="date_format"
+                                               t-att-value="post.get('birthdate_date') or member.birthdate_date and lang_model.format_date(member.birthdate_date)"/>
+                                        <!--style="text-align: center;padding: 0px;width: auto;"-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="partner_address" class="row">
+                                <fieldset>
+                                    <legend>Contact address</legend>
+                                    <t t-call="horanet_website_account.partner_address">
+                                        <t t-set="partner" t-value="member"/>
+                                    </t>
+                                </fieldset>
+                            </div>
+                            <div class="row mt16 mb32">
+                                <div class="col-md-12">
+
+                                    <a href="/my/foyers" class="btn btn-default">
+                                        <i class="fa fa-long-arrow-left" aria-hidden="true" t-translation="off"/>
+                                        Return
+                                    </a>
+                                    <button id="ButtonConfirm" type="submit" class="btn btn-default btn-primary pull-right">
+                                        Confirm
+                                        <i class="fa fa-long-arrow-right" aria-hidden="true" t-translation="off"/>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="modal_dialog_create_foyer_member_template">
+        <div class="modal fade" id="ModalCreateFoyerMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Add a new foyer member</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row" name="modal_horanet_contact_details">
+                            <div class="col-md-12">
+                                <div class="col-md-12">
+                                    <div class="row mt8">
+                                        <div id="partner_image" class="col-md-5">
+                                            <t t-call="horanet_website_account.partner_image"/>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <!-- TITLE -->
+                                            <div class="row">
+                                                <div t-attf-class="form-group col-md-12 required {{error.get('title') and 'has-error' or ''}}">
+                                                    <label class="control-label" for="title">Title</label>
+                                                    <select class="form-control" name="title">
+                                                        <t t-foreach="partner_titles or []" t-as="title">
+                                                            <option t-if="title_index == 0 and not post.get('title', partner.title and partner.title.id)"
+                                                                    value="" selected="" hidden="">select title
+                                                            </option>
+                                                            <option t-att-value="title.id"
+                                                                    t-att-selected="title.id == int(post.get('title') or partner.title and partner.title.id)">
+                                                                <t t-esc="title.name"/>
+                                                            </option>
+                                                        </t>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!--firstname du contact-->
+                                            <div class="row">
+                                                <div t-attf-class="form-group col-md-12 required {{error.get('firstname') and 'has-error' or ''}}">
+                                                    <label class="control-label" for="firstname">Firstname
+                                                    </label>
+                                                    <input type="text" name="firstname" class="form-control"
+                                                           t-att-value="post.get('firstname', partner.firstname)"
+                                                           onchange="$('select[name=recipient_id]').prop('disabled', $(this).val().length != 0)"/>
+                                                </div>
+                                            </div>
+
+                                            <!--firstname2 du contact-->
+                                            <div class="row">
+                                                <div t-attf-class="form-group col-md-12">
+                                                    <label class="control-label" for="firstname2">Second Firstname
+                                                    </label>
+                                                    <input type="text" name="firstname2" class="form-control"
+                                                           t-att-value="post.get('firstname2', partner.firstname2)"/>
+                                                </div>
+                                            </div>
+
+                                            <!--lastname du contact-->
+                                            <div class="row">
+                                                <div t-attf-class="form-group col-md-12 required #{error.get('lastname') and 'has-error' or ''}">
+                                                    <label class="control-label" for="lastname">Lastname
+                                                    </label>
+                                                    <input type="text" name="lastname" class="form-control"
+                                                           t-att-value="post.get('lastname',partner.lastname)"/>
+                                                </div>
+                                            </div>
+
+                                            <!--lastname2 du contact-->
+                                            <div class="row" t-if="not partner.is_company">
+                                                <div t-attf-class="form-group col-md-12">
+                                                    <label class="control-label" for="lastname2">Second Lastname
+                                                    </label>
+                                                    <input type="text" name="lastname2" class="form-control"
+                                                           t-att-value="post.get('lastname2',partner.lastname2)"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt8">
+                                        <!--Email-->
+                                        <div t-attf-class="form-group col-lg-7 {{error.get('email') and 'has-error' or ''}}">
+                                            <label class="control-label" for="contact_name">
+                                                <t t-esc="partner.fields_get('email')['email']['string']"/>
+                                            </label>
+                                            <input type="email" name="email" class="form-control"
+                                                   t-att-value="post.get('email', user.partner_id.email)"/>
+                                        </div>
+
+                                        <!-- PHONE -->
+                                        <div t-attf-class="form-group col-md-3 required {{error.get('phone') and 'has-error' or ''}}">
+                                            <label class="control-label" for="phone">
+                                                <t t-esc="partner.fields_get('phone')['phone']['string']"/>
+                                            </label>
+                                            <input type="tel" name="phone" class="form-control" size="10"
+                                                   t-att-value="post.get('phone', partner.phone)"/>
+                                        </div>
+                                        <!--BIRTHDATE_DATE-->
+                                        <div id="partner_birthdate">
+                                            <t t-set="lang_model" t-value="request.env['res.lang']"/>
+                                            <t t-set="date_format" t-value="lang_model.get_universal_date_format()"/>
+                                            <div t-attf-class="form-group col-md-3 {{error.get('birthdate_date') and 'has-error' or ''}}">
+                                                <label class="control-label horanet_textfill" for="birthdate_date"
+                                                       style="font-size:auto">Birthdate
+                                                </label>
+                                                <input type="text" name="birthdate_date" class="form-control" size="10"
+                                                       t-att-data_date_format="date_format"
+                                                       t-att-value="post.get('birthdate_date') or partner.birthdate_date and lang_model.format_date(partner.birthdate_date)"/>
+                                                <!--style="text-align: center;padding: 0px;width: auto;"-->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="partner_address" class="row">
+                                        <fieldset>
+                                            <legend>Contact address</legend>
+                                            <t t-call="horanet_website_account.partner_address"/>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" id="btnCreateFoyerMember" class="btn btn-primary"
+                                data-dismiss="modal">Save changes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/horanet_website_account/static/src/js/modal_partner_address.js"
+                type="text/javascript"></script>
+    </template>
+</odoo>

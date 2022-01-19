@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="landholding_bati_view_form" model="ir.ui.view">
+        <field name="name">Built domain base form view</field>
+        <field name="model">landholding.bati</field>
+        <field name="arch" type="xml">
+            <form string="Built domain">
+                <sheet>
+                    <separator string="Denomination"/>
+                    <group>
+                        <field name="unique_id" default_focus="1"/>
+                        <field name="communal_account_id"/>
+                        <field name="local_type"/>
+                    </group>
+                    <separator string="Adress"/>
+                    <group>
+                        <field name="zip_id"/>
+                        <field name="city_id"/>
+                        <field name="street_number_id"/>
+                        <field name="street_id"/>
+                        <field name="street2"/>
+                        <field name="street3"/>
+                        <field name="country_id"/>
+                        <field name="state_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="landholding_bati_view_tree" model="ir.ui.view">
+        <field name="name">Built domains base tree view</field>
+        <field name="model">landholding.bati</field>
+        <field name="arch" type="xml">
+            <tree string="Built domain">
+                <field name="unique_id"/>
+                <field name="display_address"/>
+                <field name="local_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="landholding_bati_action" model="ir.actions.act_window">
+        <field name="name">Built domains action</field>
+        <field name="res_model">landholding.bati</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="landholding_bati_view_tree"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Overwrite customer dashboard to add alerts about missing informations -->
+    <template id="portal_my_company_menu" name="My company menu" inherit_id="portal.portal_layout">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="user_id.partner_id.is_company and manage_employees">
+                <a href="/my/company">My Company</a>
+            </li>
+        </xpath>
+
+        <xpath expr="//div[@class='o_portal_my_details']" position="after">
+            <div class="o_my_messages" t-if="alerts">
+                <h3 class="page-header">Alerts</h3>
+                <foreach t-foreach="alerts or []" t-as="alert">
+                    <a t-attf-href="{{ alert.get('target', False) }}">
+                        <div t-attf-class="alert {{ alert.get('type', False) }}" role="alert">
+                            <p>
+                                <t t-esc="alert.get('text', False)"/>
+                            </p>
+                        </div>
+                    </a>
+                </foreach>
+            </div>
+        </xpath>
+    </template>
+
+    <!-- Overwrite customer dashboard to replace phone number by the display of the international phone number in My details -->
+    <template id="phone_on_contact" name="Add international phone on contact" inherit_id="base.contact">
+        <xpath expr="//address/div/div[contains(@t-if,'phone')]" position="after">
+            <div t-if="object.display_international_phone and 'display_international_phone' in fields">
+                <i t-if="not options.get('no_marker') or options.get('phone_icons')" class='fa fa-phone'/>
+                <span itemprop="display_international_phone" t-esc="object.display_international_phone"/>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="mobile_on_contact" name="Add international mobile on contact" inherit_id="base.contact">
+        <xpath expr="//address/div/div[contains(@t-if,'mobile')]" position="after">
+            <div t-if="object.display_international_mobile and 'display_international_mobile' in fields">
+                <i t-if="not options.get('no_marker') or options.get('phone_icons')" class='fa fa-mobile'/>
+                <span itemprop="display_international_mobile" t-esc="object.display_international_mobile"/>
+            </div>
+        </xpath>
+    </template>
+
+
+    <template id="portal_details_menu" name="Add international phone on my details overview"
+              inherit_id="portal.portal_layout">
+        <xpath expr="//div[contains(@t-field,'user_id.partner_id')]" position="replace">
+            <t t-if="user_id.phone">
+                <div t-field="user_id.partner_id"
+                     t-options='{"widget": "contact", "fields": ["email", "display_international_phone", "address", "name"]}'/>
+            </t>
+            <t t-if="user_id.mobile and not user_id.phone">
+                <div t-field="user_id.partner_id"
+                     t-options='{"widget": "contact", "fields": ["email", "display_international_mobile", "address", "name"]}'/>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

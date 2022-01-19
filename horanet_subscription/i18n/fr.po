@@ -1,0 +1,3647 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_subscription
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-09 09:53+0000\n"
+"PO-Revision-Date: 2018-08-09 09:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_activity_rule_state
+msgid "'active': this rule can be executed\n"
+"\n"
+"        'inactive': this rule period doesn't match the current date\n"
+"\n"
+"        'disabled': this rule is flagged to be ignored for execution"
+msgstr "'actif': Cette règle peus être exécutée\n"
+"\n"
+"        'inactive': La période de la règle ne correspond pas à la date du jour\n"
+"\n"
+"        'désactivée': Cette règle à été désactivée et ne sera plus exécutée"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.res_partner_form_view
+msgid "<span class=\"o_stat_text\">Subscription</span>"
+msgstr "<span class=\"o_stat_text\">Contrat</span>"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription_cycle.py:229
+#: code:addons/horanet_subscription/models/horanet_subscription_cycle.py:250
+#, python-format
+msgid "A date (string) is required, not %s"
+msgstr "Une date (chaîne) est requise, pas %s"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/exploitation_engine_result.py:32
+#: sql_constraint:exploitation.engine.result:0
+#, python-format
+msgid "A result already exists for this operation"
+msgstr "A result already exists for this operation"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/exploitation_engine_result.py:31
+#: sql_constraint:exploitation.engine.result:0
+#, python-format
+msgid "A result already exists for this query"
+msgstr "A result already exists for this query"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/activity_sector.py:119
+#, python-format
+msgid "A sector cannot be it's own parent"
+msgstr "Une zone d'activités ne peux pas être son propre parent"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_access_configuration
+msgid "Access"
+msgstr "Accès"
+
+#. module: horanet_subscription
+#: model:horanet.action,name:horanet_subscription.action_access
+msgid "Accès"
+msgstr "Accès"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_action_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_action_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_action_id
+msgid "Action"
+msgstr "Action"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.wizard_activity_rule_sandbox_action
+msgid "Action Sandbox rule execution"
+msgstr "Exécution de la règle de l'action en bac à sable"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_custom_action_code
+msgid "Action code"
+msgstr "Code action"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_action_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_action_ids
+#: model:ir.ui.menu,name:horanet_subscription.menu_partner_action
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_version_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+msgid "Actions"
+msgstr "Actions"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+msgid "Activate"
+msgstr "Activer"
+
+#. module: horanet_subscription
+#: selection:activity.rule,state:0
+#: selection:horanet.package,state:0
+#: selection:horanet.package.line,state:0
+#: selection:horanet.subscription,state:0
+#: selection:horanet.subscription.line,state:0
+#: selection:horanet.subscription.shared,state:0
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_active
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_active
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_active
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+msgid "Active"
+msgstr "Actif"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_active_line_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_active_line_id
+msgid "Active period"
+msgstr "Période active"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_activity_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_activity_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_activity_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_activity_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_activity_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_activity_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_service_activity_ids
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_activite
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_prestation_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_service_view_form
+msgid "Activities"
+msgstr "Activités"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_version_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_sector_view_form
+msgid "Activities (custom)"
+msgstr "Activitiés (personnalisées)"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_version_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_sector_view_form
+msgid "Activities (inherited)"
+msgstr "Activitiés (héritées)"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_operation_activity_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_activity_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_activity_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_activity_id
+#: model:ir.ui.view,arch_db:horanet_subscription.inherited_report_invoice_document
+msgid "Activity"
+msgstr "Activité"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.view_form_subscription_config_settings
+msgid "Activity Rules"
+msgstr "Règles d'activité"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_activity
+msgid "Activity and Prestation"
+msgstr "Activité et Prestation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_custom_activity_id
+msgid "Activity code"
+msgstr "Code d'activité"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_view_form
+msgid "Activity configuration"
+msgstr "Activité configuration"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.wizard_activity_diagram_action
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_diagram
+msgid "Activity diagram"
+msgstr "Diagram d'activité"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/activity_rule_version.py:236
+#, python-format
+msgid "Activity rule version edition is forbidden. rule id {rule_id}"
+msgstr "L'édition de version de règle d'activité est interdite. règle id {rule_id}"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_activity_rule_version
+msgid "Activity rule versions"
+msgstr "Versions des règles d'activité"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_activity_rule
+msgid "Activity rules"
+msgstr "Règles d'activité"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_activity_sector
+#: model:ir.actions.act_window,name:horanet_subscription.action_arborescent_activity_sector
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_activity_sector_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_activity_sector_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_activity_sector_id
+msgid "Activity sector"
+msgstr "Zone d'activité"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_activity_sector
+msgid "Activity sectors"
+msgstr "Zones d'activité"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_street2
+msgid "Additional address"
+msgstr "Complément d'adresse"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_display_address
+msgid "Address"
+msgstr "Adresse"
+
+#. module: horanet_subscription
+#: selection:horanet.subscription,payment_type:0
+#: selection:horanet.subscription.template,payment_type:0
+msgid "After"
+msgstr "Post-facturation"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/create_contract.py:77
+#, python-format
+msgid "All"
+msgstr "Tous les"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_service.py:53
+#, python-format
+msgid "All activities must have the same unit category."
+msgstr "Toutes les activités doivent être de la même catégorie d'unité."
+
+#. module: horanet_subscription
+#: model:res.groups,comment:horanet_subscription.group_activity_rule_manager
+msgid "Allow user to edit activity rules"
+msgstr "Autoriser l'édition des règles d'activité"
+
+#. module: horanet_subscription
+#: model:res.groups,comment:horanet_subscription.group_activity_device_manager
+msgid "Allow user to manage device and checkpoint"
+msgstr "Autoriser la gestion des bornes et point de contrôle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_action_type
+msgid "An action typed query is an action that require a response"
+msgstr "Une action de type requête nécessite une réponse"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_form
+msgid "An opening date is required in order to compute the periods"
+msgstr "Une date d'ouverture est requise afin de pouvoir calculer les périodes"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/horanet_operation.py:282
+#, python-format
+msgid "An operation can only have a partner OR a tag, not both"
+msgstr "Une opération ne peux avoir qu'un partenaire OU une étiquette, mais pas les deux"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/horanet_operation.py:313
+#, python-format
+msgid "An operation flagged a 'no computation' cannot be computed"
+msgstr "Une opération marqué comme 'non calculable' ne peux être calculée"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:301
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:312
+#, python-format
+msgid "And update prorata."
+msgstr "Et mettre à jour le prorata."
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_anti_passback
+msgid "Anti passback"
+msgstr "Anti passback"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_anti_passbadge
+msgid "Anti passbadge"
+msgstr "Anti passbadge"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.view_form_subscription_config_settings
+msgid "Apply"
+msgstr "Appliquer"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_on_create_prorata_temporis
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_on_create_prorata_temporis
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_prorata_temporis
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_prorata_temporis
+msgid "Apply prorata"
+msgstr "Appliquer un prorata"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+msgid "Are you sure to activate this rule ?"
+msgstr "Êtes vous sûr d'activer cette règle ?"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+msgid "Are you sure to deactivate this rule ?"
+msgstr "Êtes vous sûr de vouloir désactiver cette règle ?"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_rule_sandbox_form
+msgid "Are you sure to saved the edited rule code ?"
+msgstr "Êtes vous sûr de sauvegarder les modifications ?"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_res_partner_available_subscription_template_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_res_users_available_subscription_template_ids
+msgid "Available contract templates"
+msgstr "Modèles de contrat disponibles"
+
+#. module: horanet_subscription
+#: model:horanet.action,name:horanet_subscription.action_badgeage
+msgid "Badgeage"
+msgstr "Badgeage"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_balance
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_balance
+msgid "Balance"
+msgstr "Solde"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_prestation.py:172
+#, python-format
+msgid "Balance must be positive"
+msgstr "Le solde doit être positif"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_package_price_prorata
+msgid "Balance prorata"
+msgstr "Solde prorata"
+
+#. module: horanet_subscription
+#: selection:horanet.subscription,payment_type:0
+#: selection:horanet.subscription.template,payment_type:0
+msgid "Before"
+msgstr "Pré-facturation"
+
+#. module: horanet_subscription
+#: selection:horanet.subscription,payment_type:0
+#: selection:horanet.subscription.template,payment_type:0
+msgid "Before and after"
+msgstr "Pré-facturation et régularisation"
+
+#. module: horanet_subscription
+#: selection:horanet.package,invoice_type:0
+#: selection:horanet.prestation,invoice_type:0
+msgid "Beginning"
+msgstr "Début"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_beginning_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_beginning_date
+msgid "Beginning date"
+msgstr "Date de début"
+
+#. module: horanet_subscription
+#: model:horanet.action,name:horanet_subscription.action_calibrate_fmi
+msgid "Calibrate FMI"
+msgstr "Calibration FMI"
+
+#. module: horanet_subscription
+#: model:res.groups,comment:horanet_subscription.group_subscription_manager
+msgid "Can edit contract and add contract to user"
+msgstr "Autoriser l'édition de contrat et affectation aux utilisateurs"
+
+#. module: horanet_subscription
+#: model:res.groups,comment:horanet_subscription.group_subscription_user
+msgid "Can see all contract in subscription application"
+msgstr "Peux consulter les contrat"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_package.py:421
+#, python-format
+msgid "Can't change the cycle of an existing package"
+msgstr "Impossible de modifier le cycle d'une ligne de contrat existante"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_package.py:291
+#, python-format
+msgid "Can't change the renewable option of a 'done' package"
+msgstr "Impossible de modifier l'option renouvelable d'une ligne de contrat à l'état 'terminé'"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription.py:183
+#, python-format
+msgid "Can't change the renewable option of a 'done' subscription"
+msgstr "Impossible de modifier l'option renouvelable d'un contrat à l'état 'terminé'"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription.py:171
+#, python-format
+msgid "Can't change the renewable option of a subscription with an unlimited cycle"
+msgstr "Impossible de modifier l'option renouvelable d'un contrat avec un cycle illimité"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.view_form_subscription_config_settings
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_operation_recompute_form
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_package_update_date_form_view
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_subscription_update_date_form_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_package_line_detail.py:81
+#, python-format
+msgid "Cannot delete a line bound to a sale order line."
+msgstr "Impossible de supprimer une période liée à une ligne d'encours de facturation."
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_activity_required_category_domain
+msgid "Categories needed for a partner to use this activity. Not for display, just for search"
+msgstr "Categories needed for a partner to use this activity. Not for display, just for search"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_prestation_required_category_domain
+msgid "Categories needed for a partner to use this prestation. Not for display, just for search"
+msgstr "Categories needed for a partner to use this prestation. Not for display, just for search"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_template_required_category_domain
+msgid "Categories needed for a partner to use this template. Not for display, just for search"
+msgstr "Categories needed for a partner to use this template. Not for display, just for search"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:198
+#, python-format
+msgid "Certain ({number}) of the selected packages are 'done'.\n"
+"                         The modifications of their dates are restricted"
+msgstr "Certains ({number}) des forfaits sélectionnés sont à l'état 'terminé'.\n"
+"                         La modification de leurs dates est limitée"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:212
+#, python-format
+msgid "Certain ({number}) of the selected packages are 'draft'.\n"
+"                         An opening date must be specified"
+msgstr "Certains ({number}) es forfaits sélectionnés sont à l'état 'Brouillon'.\n"
+"                         Une date d'ouverture doit être définie"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:217
+#, python-format
+msgid "Certain ({number}) of the selected subscriptions are 'done'.\n"
+"                         The modifications of their dates are restricted"
+msgstr "Certains ({number}) des contrats sélectionnés sont à l'état 'terminé'.\n"
+"                         La modification de leurs dates est limitée"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_view_form
+msgid "Change dates"
+msgstr "Changer les dates"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_infrastructure_view_form
+msgid "Check Points"
+msgstr "Points de contrôle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_check_point_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_check_point_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_check_point_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_check_point_id
+#: model:ir.ui.menu,name:horanet_subscription.menu_device_check_point
+msgid "Check point"
+msgstr "Point de contrôle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_custom_check_point
+msgid "Check point code"
+msgstr "Code du point de contrôle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_check_point_ids
+msgid "Check points"
+msgstr "Points de contrôle"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_sector_view_form
+msgid "Child sector"
+msgstr "Zone enfant"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_city_id
+msgid "City"
+msgstr "Ville"
+
+#. module: horanet_subscription
+#: selection:horanet.subscription.cycle,period_type:0
+msgid "Civil Month(s)"
+msgstr "Mois civil"
+
+#. module: horanet_subscription
+#: selection:horanet.subscription.cycle,period_type:0
+msgid "Civil Week(s)"
+msgstr "Semaine(s) civile"
+
+#. module: horanet_subscription
+#: selection:horanet.subscription.cycle,period_type:0
+msgid "Civil Year(s)"
+msgstr "Année(s) civile"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_rule_sandbox_form
+msgid "Clear Execution"
+msgstr "Clear Execution"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_version_view_form
+msgid "Clear error"
+msgstr "Clear error"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+msgid "Client"
+msgstr "Client"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_closing_at_cycle_end
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_closing_at_cycle_end
+msgid "Close at cycle end"
+msgstr "Fermer à la fin du cycle"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+msgid "Closed"
+msgstr "Fermé"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_display_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_display_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_display_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_display_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_shared_display_closing_date
+msgid "Closing date"
+msgstr "Date de clôture"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_rule_code
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_rule_code
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_code
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_code
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_version_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_prestation_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+msgid "Code"
+msgstr "Code"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_embedded_rule_code
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_embedded_rule_code
+msgid "Code in function"
+msgstr "Code encapsulé"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_prestation_prorata_rule_code
+msgid "Code used to fractionate the balance and the optional fixed price of the package"
+msgstr "Code utilisé pour fractionner le solde et le prix fixe optionnel de la ligne de contrat"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_account_invoice_invoice_comment
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_device_view_search
+msgid "Communicate Today"
+msgstr "A communiqué aujourd'hui"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_devices
+msgid "Communicating devices"
+msgstr "Appareils communicants"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_detail_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_line_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_view_form
+msgid "Compute"
+msgstr "Calculer"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_subscription_config
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_sector_view_form
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.view_form_subscription_config_settings
+msgid "Configure Subscription"
+msgstr "Configurer le contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_view_form
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_confirmation_date
+msgid "Confirmation Date"
+msgstr "Date de confirmation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_subscription_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_subscription_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_on_create_subscription_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_subscription_id
+#: model:ir.ui.menu,name:horanet_subscription.menu_subscription_configuration
+#: model:ir.ui.view,arch_db:horanet_subscription.contract_template_view_tree
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_view_tree
+msgid "Contract"
+msgstr "Contrat"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_wizard_create_contract
+msgid "Contract Creation Wizard"
+msgstr "Wizard de création de contrat"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_package_ids
+msgid "Contract Lines"
+msgstr "Lignes de contrat"
+
+#. module: horanet_subscription
+#: model:res.groups,name:horanet_subscription.group_subscription_manager
+msgid "Contract Manager"
+msgstr "Manager de contrat"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_subscription_line
+msgid "Contract Period"
+msgstr "Période de contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_subscription_line
+msgid "Contract Periods"
+msgstr "Périodes de contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.contract_template_view_form
+msgid "Contract Template"
+msgstr "Modèle de contrat"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_contract_template
+#: model:ir.ui.menu,name:horanet_subscription.menu_contract_template
+msgid "Contract Templates"
+msgstr "Modèles de contrat"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_package
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_package_line
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_package_line_id
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_tree
+msgid "Contract line"
+msgstr "Ligne de contrat"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_package_line_detail
+msgid "Contract line detail"
+msgstr "Détail de ligne de contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_view_tree
+msgid "Contract line period"
+msgstr "Période de ligne de contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_view_form
+msgid "Contract lines"
+msgstr "Lignes de contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.contract_template_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_view_form
+msgid "Contract name"
+msgstr "Nom du contrat"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_on_create_template_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_subscription_template_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract_subscription_template_id
+msgid "Contract template"
+msgstr "Modèle de contrat"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_subscription
+msgid "Contracts"
+msgstr "Contrats"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_create_contract_form_view
+msgid "Create contract"
+msgstr "Créer un contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_create_contract_form_view
+msgid "Create contract for partner without active contract"
+msgstr "Créer un contrat pour les partenaires sans contrat"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_action_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_service_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_config_settings_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_arrow_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_operation_recompute_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_create_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_action_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_service_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_config_settings_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_arrow_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_operation_recompute_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_create_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_current_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_current_closing_date
+msgid "Current closing date"
+msgstr "Date de clôture actuelle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_current_opening_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_current_opening_date
+msgid "Current opening date"
+msgstr "Date d'ouverture actuelle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_display_progress_period
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_display_progress_period
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_display_progress_period
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_display_progress_period
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_shared_display_progress_period
+msgid "Current period"
+msgstr "Période actuelle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_custom_activity_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_custom_activity_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_custom_activity_ids
+msgid "Custom activities"
+msgstr "Activités personnalisées"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_client_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_on_create_client_id
+msgid "Customer"
+msgstr "Client"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_cycle_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_cycle_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_cycle_id
+msgid "Cycle"
+msgstr "Cycle d'utilisation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_end_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_end_date
+msgid "Cycle end date"
+msgstr "Date de fin du cycle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_cycle_id_period_type
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle_id_period_type
+msgid "Cycle period"
+msgstr "Période du cycle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_start_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_start_date
+msgid "Cycle start date"
+msgstr "Date de début du cycle"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.inherited_report_invoice_document
+#: model:ir.ui.view,arch_db:horanet_subscription.view_filter_horanet_operation
+msgid "Date"
+msgstr "Date "
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_display_opening_date
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_opening_date
+#: model:ir.model.fields,help:horanet_subscription.field_wizard_package_update_date_current_opening_date
+#: model:ir.model.fields,help:horanet_subscription.field_wizard_package_update_date_new_opening_date
+msgid "Date at which the package is active"
+msgstr "Date à laquelle la ligne de contrat est active"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_display_closing_date
+#: model:ir.model.fields,help:horanet_subscription.field_wizard_package_update_date_current_closing_date
+#: model:ir.model.fields,help:horanet_subscription.field_wizard_package_update_date_new_closing_date
+msgid "Date at which the package is inactive"
+msgstr "Date à laquelle la ligne de contrat est inactive"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_line_display_opening_date
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_line_opening_date
+msgid "Date at which the package line is active"
+msgstr "Date à laquelle la période ligne de contrat est active"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_line_closing_date
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_line_display_closing_date
+msgid "Date at which the package line is inactive"
+msgstr "Date à laquelle la période ligne de contrat est inactive"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_display_opening_date
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_opening_date
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_shared_display_opening_date
+#: model:ir.model.fields,help:horanet_subscription.field_wizard_subscription_update_date_current_opening_date
+#: model:ir.model.fields,help:horanet_subscription.field_wizard_subscription_update_date_new_opening_date
+msgid "Date at which the subscription is active"
+msgstr "Date à laquelle le contrat est actif"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_closing_date
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_closing_date
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_display_closing_date
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_shared_display_closing_date
+#: model:ir.model.fields,help:horanet_subscription.field_wizard_subscription_update_date_current_closing_date
+#: model:ir.model.fields,help:horanet_subscription.field_wizard_subscription_update_date_new_closing_date
+msgid "Date at which the subscription is inactive"
+msgstr "Date à laquelle le contrat est inactif"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_line_display_opening_date
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_line_opening_date
+msgid "Date at which the subscription line is active"
+msgstr "Date à laquelle la période de contrat est active"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_line_closing_date
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_line_display_closing_date
+msgid "Date at which the subscription line is inactive"
+msgstr "Date à laquelle la période de contrat est inactive"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:267
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:278
+#, python-format
+msgid "Date update:"
+msgstr "Date de mise à jour :"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_usage_date
+msgid "Date usage"
+msgstr "Date d'utilisation"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_view_form
+msgid "Dates"
+msgstr "Dates"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_package_update_date_form_view
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_subscription_update_date_form_view
+msgid "Dates to change"
+msgstr "Dates à changer"
+
+#. module: horanet_subscription
+#: selection:horanet.subscription.cycle,period_type:0
+msgid "Day(s)"
+msgstr "Jour(s)"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+msgid "Deactivate"
+msgstr "Désactiver"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_default_action_id
+msgid "Default action"
+msgstr "Action par défaut"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_default_usage
+msgid "Default usage"
+msgstr "Débit par défaut"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_define_new_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_define_new_closing_date
+msgid "Define new closing date"
+msgstr "Définir la nouvelle date de clôture"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_define_new_opening_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_define_new_opening_date
+msgid "Define new opening date"
+msgstr "Définir la nouvelle date de d'ouverture"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.prestation_search_view
+msgid "Derogation"
+msgstr "Dérogation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_child_ids
+msgid "Descendant sector"
+msgstr "Zone enfant"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_description
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_description
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_description
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_action_description
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_description
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_description
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_description
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_description
+msgid "Description"
+msgstr "Description"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_arrow_destination
+msgid "Destination"
+msgstr "Destination"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_device_detail
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_view_form
+msgid "Details"
+msgstr "Détails"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_device_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_device_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_device_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_device_id
+msgid "Device"
+msgstr "Terminal"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_device_check_point
+#: model:ir.ui.view,arch_db:horanet_subscription.device_check_point_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.device_check_point_view_tree
+msgid "Device check point"
+msgstr "Point de contrôle du terminal"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_custom_device_id
+msgid "Device id"
+msgstr "Identifiant du terminal"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_device_label
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_device_label
+msgid "Device label"
+msgstr "Libellé sur terminal"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_device_query
+msgid "Device query"
+msgstr "Requête du terminal"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_device_response
+msgid "Device response"
+msgstr "Réponse au terminal"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node_diagram
+msgid "Diagram"
+msgstr "Diagramme"
+
+#. module: horanet_subscription
+#: model:horanet.action,name:horanet_subscription.action_disable_fmi
+msgid "Disable FMI"
+msgstr "Désactivation FMI"
+
+#. module: horanet_subscription
+#: selection:activity.rule,state:0
+msgid "Disabled"
+msgstr "Désactivé"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_disable_computation
+msgid "Disabled computation"
+msgstr "Désactivation du calcul"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_execution_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_action_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_service_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_shared_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_config_settings_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_arrow_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_operation_recompute_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract_message_box
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_message_box
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_message_box
+msgid "Display message"
+msgstr "Message affiché"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_operation_recompute_form
+msgid "Do you really want to recompute those operations ? this operation can't be undone"
+msgstr "Voulez vous vraiment recalculer ces opérations ? Cette action est irréversible"
+
+#. module: horanet_subscription
+#: selection:device.query,state:0
+#: selection:exploitation.engine.result,state:0
+#: selection:horanet.package,state:0
+#: selection:horanet.package.line,state:0
+#: selection:horanet.subscription,state:0
+#: selection:horanet.subscription.line,state:0
+#: selection:horanet.subscription.shared,state:0
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_filter
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_filter
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+msgid "Done"
+msgstr "Terminé"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription.py:362
+#, python-format
+msgid "Draft subscription should not be computed"
+msgstr "Un contrat brouillon ne devrait pas être calculé"
+
+#. module: horanet_subscription
+#: selection:device.query,state:0
+#: selection:exploitation.engine.result,state:0
+#: selection:horanet.operation,state:0
+msgid "Empty"
+msgstr "Vide"
+
+#. module: horanet_subscription
+#: model:horanet.action,name:horanet_subscription.action_enable_fmi
+msgid "Enable FMI"
+msgstr "Activation FMI"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_enabled
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_enabled
+msgid "Enabled"
+msgstr "Activée"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_on_create_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/inherited_product_pricelist_item.py:24
+#, python-format
+msgid "End date should be posterior to begin date."
+msgstr "La date de fin doit être supérieure à la date de début."
+
+#. module: horanet_subscription
+#: selection:horanet.package,invoice_type:0
+#: selection:horanet.prestation,invoice_type:0
+msgid "Ending"
+msgstr "Fin"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_ending_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_ending_date
+msgid "Ending date"
+msgstr "Date de fin"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_usage_view_form
+msgid "Engine origin"
+msgstr "Engine origin"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_engine_exploitation_result
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.device_response_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_form
+msgid "Engine result"
+msgstr "Engine result"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_equipment_configuration
+msgid "Equipments"
+msgstr "Équipements"
+
+#. module: horanet_subscription
+#: selection:device.query,state:0
+#: selection:exploitation.engine.result,state:0
+#: selection:horanet.operation,state:0
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_filter
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_filter
+msgid "Error"
+msgstr "Erreur"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_error_log
+msgid "Error log"
+msgstr "Error log"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_version_view_form
+msgid "Execute"
+msgstr "Exécuter"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_execute_custom_rule_code
+msgid "Execute custom code"
+msgstr "Éxécuter le code personnalisé"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_rule_sandbox_form
+msgid "Execute custom rule"
+msgstr "Éxécuter la règle personnalisée"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_rule_sandbox_form
+msgid "Execute engine"
+msgstr "Lancement du moteur d'exploitation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_execution_date
+msgid "Execution datetime"
+msgstr "Execution datetime"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_execution_execution_log
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_resulting_execution_log
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response_origin_execution_log
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_execution_log
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_execution_log
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_origin_execution_log
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_resulting_execution_log
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_origin_execution_log
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.device_response_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_usage_view_form
+msgid "Execution log"
+msgstr "Journal d'éxécution"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_result_message
+msgid "Execution message"
+msgstr "Message d'exécution"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_rule_sandbox_form
+msgid "Execution result"
+msgstr "Résultat d'exécution"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_create_contract_form_view
+msgid "Existing subscriptions with this subscription template for partners choice"
+msgstr "Liste des contrats existant avec ce modèle de contrat pour les partenaires sélectionnés"
+
+#. module: horanet_subscription
+#: model:horanet.action,name:horanet_subscription.action_exit
+msgid "Exit"
+msgstr "Sortie"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_on_create
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_on_create
+msgid "Expert creation"
+msgstr "Création expert"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_exploitation_engine_result
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_resulting_engine_result_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_resulting_engine_result_id
+msgid "Exploitation engine result"
+msgstr "Exploitation engine result"
+
+#. module: horanet_subscription
+#: selection:horanet.usage,state:0
+msgid "Floating"
+msgstr "Flottant"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_form
+msgid "Force recompute"
+msgstr "Forcer le recalcul"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_filter
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_filter
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.view_filter_horanet_operation
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_search_view
+msgid "Group by action"
+msgstr "Grouper par action"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+msgid "Group by client"
+msgstr "Grouper par client"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+msgid "Group by recipient"
+msgstr "Grouper par bénéficaires"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+msgid "Has closing date"
+msgstr "A une date de clôture"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_has_error
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_has_error
+msgid "Has error"
+msgstr "A une erreur"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_execution_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_action_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_service_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle_id_4883
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_shared_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_config_settings_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_arrow_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_operation_recompute_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_id
+msgid "ID"
+msgstr "ID"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_identification_technology_ids
+msgid "Identification technologies"
+msgstr "Technologies acceptées"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_image
+msgid "Image"
+msgstr "Image"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_immediate_closing
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_immediate_closing
+msgid "Immediate closing"
+msgstr "Clôture immédiate"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_on_create_immediate_opening
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_on_create_immediate_opening
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_immediate_opening
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_immediate_opening
+msgid "Immediate opening"
+msgstr "Ouverture immédiate"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_impact_fmi
+msgid "Impact FMI"
+msgstr "Impacte la FMI"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_rule_sandbox_form
+msgid "Import data synchronization"
+msgstr "Import des données de synchronisation"
+
+#. module: horanet_subscription
+#: selection:activity.rule,state:0
+msgid "Inactive"
+msgstr "Inactif"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node_incoming_arrow
+msgid "Incoming arrow"
+msgstr "Flèche de départ"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_create_contract_form_view
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_package_update_date_form_view
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_subscription_update_date_form_view
+msgid "Information"
+msgstr "Information"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_device_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_form
+msgid "Informations"
+msgstr "Informations"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_device_device_detail
+msgid "Informations send by the device, the content depends on the device type and software version"
+msgstr "Informations envoyées par l'appareil, le contenu dépend du type d'appareil ainsi que de la version de son logiciel"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_infrastructure_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_infrastructure_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_infrastructure_id
+msgid "Infrastructure"
+msgstr "Infrastructure"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_infrastructure_view_form
+msgid "Infrastructure name"
+msgstr "Nom de l'infrastructure"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_infrastructure
+msgid "Infrastructures"
+msgstr "Infrastructures"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.device_check_point_view_form
+msgid "Inherited activities"
+msgstr "Activités héritées"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_activity_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_activity_ids_dummy
+msgid "Inherited activity"
+msgstr "Activités héritées"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_balance_initial
+msgid "Initial balance"
+msgstr "Solde initial"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_input_activity_sector_id
+msgid "Input activity sector"
+msgstr "Zone d'activité accédée"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/exploitation_engine_result.py:78
+#, python-format
+msgid "Invalid exploitation engine result : must have a reference to a trigger (operation or query)"
+msgstr "Invalid exploitation engine result : must have a reference to a trigger (operation or query)"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: horanet_subscription
+#: model:ir.actions.server,name:horanet_subscription.sale_order_line_make_invoice_action_server
+msgid "Invoice Orders lines"
+msgstr "Lignes d'encours de facturation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_invoice_line_ids
+msgid "Invoice lines"
+msgstr "Ligne de facture"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_invoice_type
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_invoice_type
+msgid "Invoice type"
+msgstr "Type de facture"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.inherited_report_invoice_document
+msgid "Invoiced"
+msgstr "Facturé"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_invoice_ids
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_is_blocked
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_is_blocked
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_is_blocked
+msgid "Is blocked"
+msgstr "Gestion d'un solde"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_is_counting
+msgid "Is counting"
+msgstr "Comptage FMI"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_is_delivered
+msgid "Is delivered"
+msgstr "Est livré"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_is_derogation
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_is_derogation
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_is_derogation
+msgid "Is derogation"
+msgstr "Est une dérogation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_is_error
+#: model:ir.ui.view,arch_db:horanet_subscription.view_filter_horanet_operation
+msgid "Is error"
+msgstr "Est en erreur"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_is_invoiced
+msgid "Is invoiced"
+msgstr "Est facturé"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_is_multiple_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_is_multiple_update
+msgid "Is multiple update"
+msgstr "Is multiple update"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_operation_is_offline
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_is_offline
+msgid "Is offline"
+msgstr "A été réalisée en mode autonome"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_is_processed
+msgid "Is processed"
+msgstr "Traité"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_is_renewable
+msgid "Is renewable?"
+msgstr "Est renouvelable"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_is_salable
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_is_salable
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_is_salable
+msgid "Is salable"
+msgstr "Activités facturables"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_arrow_label
+msgid "Label"
+msgstr "Libellé"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_execution___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_action___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_service___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_shared___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_config_settings___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_arrow___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_operation_recompute___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date___last_update
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_action_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_service_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_config_settings_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_arrow_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_operation_recompute_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_write_uid
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_action_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_service_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_config_settings_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_arrow_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_operation_recompute_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_write_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_last_communication_time
+msgid "Last communication"
+msgstr "Dernière communication"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_last_error_message
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_last_error_message
+msgid "Last error message"
+msgstr "Dernier message d'erreur"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_last_execution_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_last_execution_date
+msgid "Last execution date"
+msgstr "Dernière date d'exécution"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_latitude
+msgid "Latitude"
+msgstr "Latitude"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_linked_operation_ids
+msgid "Linked operations"
+msgstr "Opérations liées"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_filter
+#: model:ir.ui.view,arch_db:horanet_subscription.view_filter_horanet_operation
+msgid "Linked partner"
+msgstr "Partenaire lié"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract_existing_subscription_ids
+msgid "List of subscriptions that already exist"
+msgstr "Liste des contrats qui existent déjà"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_localisation_map
+msgid "Localisation"
+msgstr "Localisation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_longitude
+msgid "Longitude"
+msgstr "Longitude"
+
+#. module: horanet_subscription
+#: model:res.groups,name:horanet_subscription.group_activity_rule_manager
+msgid "Manage activity rules"
+msgstr "Manager les règles d'activté"
+
+#. module: horanet_subscription
+#: model:res.groups,name:horanet_subscription.group_activity_device_manager
+msgid "Manage communicating devices"
+msgstr "Manager les appareils communiquant"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:34
+#, python-format
+msgid "Manage packages periods"
+msgstr "Gérer les périodes de forfait"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:33
+#, python-format
+msgid "Manage subscriptions periods"
+msgstr "Gérer les périodes d'abonnement"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_activity_rule_execution
+msgid "Management of activity rule execution"
+msgstr "Management of activity rule execution"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_activity_uom_id
+msgid "Measure unit"
+msgstr "Unité de mesure"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_tag_id
+msgid "Medium used"
+msgstr "Support utilisé"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_exploitation_engine
+#: model:ir.model,name:horanet_subscription.model_exploitation_engine_result
+msgid "Memory record management"
+msgstr "Memory record management"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_resulting_message
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response_message
+msgid "Message"
+msgstr "Message"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_config_settings_rule_exception_unknown_tag_message
+msgid "Message if unknown tag"
+msgstr "Message si tag inconnu"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_subscription_config_settings_rule_exception_unknown_tag_message
+msgid "Message to respond to a query with an unknown tag"
+msgstr "Message en réponse à une requête avec un tag inconnu"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_input_mode
+msgid "Mode"
+msgstr "Mode"
+
+#. module: horanet_subscription
+#: selection:horanet.subscription.cycle,period_type:0
+msgid "Month(s)"
+msgstr "Mois"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_action_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_display_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_service_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_name
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node_name
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_device_view_search
+msgid "Name"
+msgstr "Nom"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_product_product_nb_pricelist_items
+#: model:ir.model.fields,field_description:horanet_subscription.field_product_template_nb_pricelist_items
+msgid "Nb pricelist items"
+msgstr "Nb pricelist items"
+
+#. module: horanet_subscription
+#: selection:horanet.package,state:0
+#: selection:horanet.package.line,state:0
+#: selection:horanet.subscription,state:0
+#: selection:horanet.subscription.line,state:0
+#: selection:horanet.subscription.shared,state:0
+msgid "Need computation"
+msgstr "À calculer"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_need_recipient
+msgid "Need recipient"
+msgstr "Nominatif"
+
+#. module: horanet_subscription
+#: selection:horanet.operation,state:0
+#: selection:horanet.package,state:0
+#: selection:horanet.package.line,state:0
+#: selection:horanet.subscription,state:0
+#: selection:horanet.subscription.line,state:0
+#: selection:horanet.subscription.shared,state:0
+msgid "New"
+msgstr "Nouveau"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_new_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_new_closing_date
+msgid "New closing date"
+msgstr "Nouvelle date de clôture"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:290
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:301
+#, python-format
+msgid "New closing date (immediate closing): {closing_date}."
+msgstr "Nouvelle date de clôture (clôture immédiate) : {closing_date}."
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:296
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:307
+#, python-format
+msgid "New closing date set at cycle end."
+msgstr "Nouvelle date de clôture à la fin du cycle."
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:293
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:304
+#, python-format
+msgid "New closing date: {closing_date}."
+msgstr "Nouvelle date de clôture : {closing_date}."
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:177
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:186
+#, python-format
+msgid "New ending date should be posterior or equal to opening date."
+msgstr "La nouvelle date de clôture doit être suprieure ou égale à la date d'ouverture."
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_new_opening_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_new_opening_date
+msgid "New opening date"
+msgstr "Nouvelle date d'ouverture"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:283
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:294
+#, python-format
+msgid "New opening date (immediate opening): {opening_date}."
+msgstr "Nouvelle date d'ouverture (ouverture immédiate) : {opening_date}."
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:286
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:297
+#, python-format
+msgid "New opening date: {opening_date}."
+msgstr "Nouvelle date d'ouverture : {opening_date}."
+
+#. module: horanet_subscription
+#: selection:activity.rule.wizard.sandbox,execute_custom_rule_code:0
+#: code:addons/horanet_subscription/models/exploitation_engine/device_query.py:153
+#: selection:subscription.config.settings,rule_exception_unknown_tag_response:0
+#: selection:wizard.package.update.date,prorata_temporis:0
+#: selection:wizard.package.update.date,remove_closing_date:0
+#: selection:wizard.subscription.update.date,prorata_temporis:0
+#: selection:wizard.subscription.update.date,remove_closing_date:0
+#, python-format
+msgid "No"
+msgstr "Non"
+
+#. module: horanet_subscription
+#: selection:horanet.operation,state:0
+msgid "No compute"
+msgstr "Pas de calcul"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_nodes
+msgid "Nodes"
+msgstr "Noeuds"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:187
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:196
+#, python-format
+msgid "Nothing to do, use the cancel button or select a parameter to update"
+msgstr "Aucune action à effectuer, cliquer sur Annuler ou saisir un paramètre à mettre à jour"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_filter
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_filter
+msgid "Null"
+msgstr "Null"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:269
+#, python-format
+msgid "On this record only (code {package_code})"
+msgstr "Sur cet enregistrement seulement (code {package_code})"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:280
+#, python-format
+msgid "On this record only (code {subscription_code})"
+msgstr "Sur cet enregistrement seulement (code {subscription_code})"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:276
+#, python-format
+msgid "On {record_number} packages (id : {first_id_in_list})"
+msgstr "Sur {record_number} forfaits (id : {first_id_in_list})"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:287
+#, python-format
+msgid "On {record_number} subscriptions (id : {first_id_in_list})"
+msgstr "Sur {record_number} contrats (id : {first_id_in_list})"
+
+#. module: horanet_subscription
+#: selection:horanet.usage,state:0
+msgid "Open"
+msgstr "Ouvert"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_form
+msgid "Open in sandBox"
+msgstr "Ouvrir dans l'éditeur de règles"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_display_opening_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_display_opening_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_opening_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_opening_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_display_opening_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_display_opening_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_opening_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_opening_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_shared_display_opening_date
+msgid "Opening date"
+msgstr "Date d'ouverture"
+
+#. module: horanet_subscription
+#: selection:activity.rule.execution,trigger_id:0
+#: selection:activity.rule.wizard.sandbox,input_mode:0
+#: selection:horanet.action,type:0
+msgid "Operation"
+msgstr "Opération"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_operation_recompute_form
+msgid "Operation recompute"
+msgstr "Operation recompute"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:279
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:290
+#, python-format
+msgid "Operation: "
+msgstr "Opération : "
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_operation
+msgid "Operations"
+msgstr "Opérations"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_operation_recompute_operation_ids
+msgid "Operations to recompute"
+msgstr "Opérations à recalculer"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_origin_operation_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_origin_operation_id
+msgid "Origin operation"
+msgstr "Opération d'origine"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response_origin_query_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_origin_query_id
+msgid "Origin query"
+msgstr "Query d'origine"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_execution_trigger_id
+msgid "Origin trigger"
+msgstr "Déclencheur d'origine"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response_origin_engine_result_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_origin_engine_result_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_origin_engine_result_id
+msgid "Origine exploitation engine result"
+msgstr "Résultat d'exploitation d'origine"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_output_activity_sector_id
+msgid "Ouput activity sector"
+msgstr "Zone d'activité en sortie"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node_outgoing_arrow
+msgid "Outgoing arrow"
+msgstr "Flèche d'arrivée"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_package_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_package_line_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_partner_contact_identification_assignation_package_id
+msgid "Package"
+msgstr "Ligne de contrat"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_package_line_detail_ids
+msgid "Package line details"
+msgstr "Détail de période de ligne de contrat"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_line_state
+msgid "Package line state"
+msgstr "État de la période de ligne de contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_package_line
+msgid "Package lines"
+msgstr "Périodes de lignes de contrat"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_state
+msgid "Package state"
+msgstr "État de la ligne de contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_package
+#: model:ir.ui.menu,name:horanet_subscription.menu_package
+msgid "Packages"
+msgstr "Lignes de contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.device_response_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_activity_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_form
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_parent_id
+msgid "Parent sector"
+msgstr "Zone parente"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_res_partner
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_partner_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_partner_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_product_pricelist_item_partner_category_ids
+msgid "Partner categories"
+msgstr "Catégories d'usagers"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_subscription_category_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_subscription_category_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_subscription_category_ids
+msgid "Partner subscription categories"
+msgstr "Catégories d'usagers"
+
+#. module: horanet_subscription
+#: model:horanet.action,name:horanet_subscription.action_passage
+msgid "Passage"
+msgstr "Passage"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_payment_term_id
+msgid "Payment Terms"
+msgstr "Conditions de règlement"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_payment_type
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_payment_type
+msgid "Payment type"
+msgstr "Type de paiement"
+
+#. module: horanet_subscription
+#: selection:horanet.operation,state:0
+#: selection:horanet.package,state:0
+#: selection:horanet.package.line,state:0
+#: selection:horanet.subscription,state:0
+#: selection:horanet.subscription.line,state:0
+#: selection:horanet.subscription.shared,state:0
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+msgid "Pending"
+msgstr "En attente"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle_period_type
+msgid "Period type"
+msgstr "Type de période"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_ids
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_view_form
+msgid "Periods"
+msgstr "Périodes"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_pivot
+msgid "Pivot Operations"
+msgstr "Opérations Pivot"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_service.py:72
+#, python-format
+msgid "Please add at least one activity to the service."
+msgstr "Veuillez ajouter au moins une activité sur le service."
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription_template.py:104
+#, python-format
+msgid "Please add at least one prestation to the subscription template."
+msgstr "Veuillez ajouter au moins une prestation au modèle de contrat."
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_prestation_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_on_create_prestation_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_prestation_id
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+msgid "Prestation"
+msgstr "Prestation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_prestation_ids
+msgid "Prestation config"
+msgstr "Configuration de la prestation"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_form
+msgid "Prestation dependant informations"
+msgstr "Informations liées à la prestation"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_prestation
+#: model:ir.ui.view,arch_db:horanet_subscription.contract_template_view_form
+msgid "Prestations"
+msgstr "Prestations"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_previous_version_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_previous_version_ids
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_version_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+msgid "Previous versions"
+msgstr "Versions précédentes"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.product_template_kanban_view
+msgid "Price:"
+msgstr "Prix :"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_product_pricelist_item
+msgid "Pricelist item"
+msgstr "Élément de la liste de prix"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_sale_order_line_pricelist_item_id
+msgid "Pricelist item id"
+msgstr "Pricelist item id"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_product_product_pricelist_item_price
+#: model:ir.model.fields,field_description:horanet_subscription.field_product_template_pricelist_item_price
+msgid "Pricelist item price"
+msgstr "Prix de l'élément de la liste de prix"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_priority
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_priority
+msgid "Priority"
+msgstr "Priorité"
+
+#. module: horanet_subscription
+#: selection:horanet.operation,state:0
+msgid "Processed"
+msgstr "Intégré"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_product_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_product_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_product_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_product_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_product_id
+msgid "Product"
+msgstr "Article"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_prestation_view_form
+msgid "Prorata"
+msgstr "Prorata"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_prorata_rule_code
+msgid "Prorata code"
+msgstr "Code prorata"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract_prorata_temporis
+msgid "Prorata temporis"
+msgstr "Prorata temporis"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_operation_quantity
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_quantity
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_cycle_period_quantity
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_quantity
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.inherited_report_invoice_document
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: horanet_subscription
+#: selection:activity.rule.execution,trigger_id:0
+#: selection:activity.rule.wizard.sandbox,input_mode:0
+#: selection:horanet.action,type:0
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_operation_query_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_trigger_operation
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_trigger_query
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_query_id
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_form
+msgid "Query"
+msgstr "Requête"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_view_form
+msgid "Quick creation"
+msgstr "Création rapide"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_raise_exception
+msgid "Raise exception"
+msgstr "Lever l'exception"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_recipient_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_on_create_recipient_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_recipient_id
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+msgid "Recipient"
+msgstr "Destinataire"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_operation_recompute_form
+msgid "Recompute"
+msgstr "Recalculer"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_multi_wizard_recompute_operation
+msgid "Recompute operation"
+msgstr "Recompute operation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_code
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_code
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_code
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_check_point_code
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_action_code
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_reference
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_reference
+#: model:ir.ui.view,arch_db:horanet_subscription.prestation_search_view
+msgid "Reference"
+msgstr "Référence"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_package_line.py:236
+#, python-format
+msgid "Refund "
+msgstr "Remboursement "
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_balance_remaining
+msgid "Remaining balance"
+msgstr "Solde restant"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/create_contract.py:66
+#: code:addons/horanet_subscription/wizards/create_contract.py:76
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:116
+#, python-format
+msgid "Remark"
+msgstr "Remarque"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_remove_closing_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_remove_closing_date
+msgid "Remove closing date"
+msgstr "Supprimer la date de clôture"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:298
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:309
+#, python-format
+msgid "Remove closing date."
+msgstr "Supprimer la date de clôture."
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_is_renewable
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_is_renewable
+msgid "Renewable"
+msgstr "Renouvelable"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_required_category_domain
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_required_category_domain
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_template_required_category_domain
+msgid "Required subscription categories"
+msgstr "Catégories d'usagers requises"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_query_partner_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_operation_partner_id
+msgid "Resolved partner"
+msgstr "Partenaire résolu"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_resulting_response
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_response_response
+#: model:ir.ui.view,arch_db:horanet_subscription.device_response_view_form
+msgid "Response"
+msgstr "Réponse"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_config_settings_rule_exception_unknown_tag_response
+msgid "Response if unknown tag"
+msgstr "Réponse si tag inconnu"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_subscription_config_settings_rule_exception_unknown_tag_response
+msgid "Response value to a query with an unknown tag"
+msgstr "Réponse à  une requête pour tag inconnu"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_result_operation_json
+msgid "Result operation"
+msgstr "Résultat de l'opération"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_result_response_json
+msgid "Result response"
+msgstr "Résultat de la réponse"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_result_usage_json
+msgid "Result usage"
+msgstr "Résultat de l'usage"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_form
+msgid "Resulting objects"
+msgstr "Resulting objects"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_execution_operation_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_resulting_operation_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_operation_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_resulting_operation_ids
+msgid "Resulting operations"
+msgstr "Opérations résultantes"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_resulting_response_id
+msgid "Resulting response"
+msgstr "Resulting response"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_execution_response_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_response_id
+msgid "Resulting responses"
+msgstr "Resulting responses"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_execution_usage_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_usage_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_resulting_usage_ids
+msgid "Resulting usages"
+msgstr "Consommations résultantes"
+
+#. module: horanet_subscription
+#: selection:wizard.activity.diagram.node,type:0
+msgid "Rule"
+msgstr "Règle"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_wizard_rule_sandbox
+msgid "Rule SandBox"
+msgstr "Éditeur de règle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_custom_rule_code
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_rule_sandbox_form
+msgid "Rule code"
+msgstr "Code de règle"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_rule_sandbox_form
+msgid "Rule context"
+msgstr "Context de règle"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_rule_sandbox_form
+msgid "Rule execution sandbox"
+msgstr "Éditeur de règle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_activity_rule_id
+msgid "Rule to test"
+msgstr "Règle à tester"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_rule_version_id
+msgid "Rule version"
+msgstr "Version de règle"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/activity_rule.py:163
+#, python-format
+msgid "Rules Diagram"
+msgstr "Diagramme des règles"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_sale_order_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_sale_order_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_sale_order_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_sale_order_id
+msgid "Sale order"
+msgstr "Encours de facturation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_sale_order_line_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_sale_order_line_id
+msgid "Sale order line"
+msgstr "Ligne d'encours de facturation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_sale_order_line_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_package_order_line_ids
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_view_form
+msgid "Sale order lines"
+msgstr "Lignes d'encours de facturation"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne de bons de commande"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_sandbox_operation_json
+msgid "Sandbox operation"
+msgstr "Sandbox operation"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_sandbox_query_json
+msgid "Sandbox query"
+msgstr "Requête de Sandbox"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_rule_sandbox_form
+msgid "Save code"
+msgstr "Sauvegarder le code"
+
+#. module: horanet_subscription
+#: selection:horanet.usage,state:0
+msgid "Sealed"
+msgstr "Verrouillé"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.view_filter_horanet_operation
+msgid "Search Operation"
+msgstr "Search Operation"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_filter
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_filter
+msgid "Search result"
+msgstr "Search result"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/device_query.py:102
+#: code:addons/horanet_subscription/models/exploitation_engine/horanet_operation.py:193
+#, python-format
+msgid "Search terms are too large. Please be more specific."
+msgstr "La recherche est trop vaste. Veuillez être plus précis."
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_operation_sector_id
+#: selection:wizard.activity.diagram.node,type:0
+msgid "Sector"
+msgstr "Secteur"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_custom_sector_code
+msgid "Sector Code"
+msgstr "code du secteur"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/activity_sector.py:148
+#: code:addons/horanet_subscription/wizards/wizard_activity_diagram.py:88
+#, python-format
+msgid "Sector Diagram"
+msgstr "Diagramme de zone d'activité"
+
+#. module: horanet_subscription
+#: model:res.groups,name:horanet_subscription.group_subscription_user
+msgid "See contract"
+msgstr "Voir les contrats"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_package_update_date_form_view
+msgid "Selected package"
+msgstr "Forfait sélectionné"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_package_update_date_form_view
+msgid "Selected packages"
+msgstr "Forfaits sélectionnés"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_subscription_update_date_form_view
+msgid "Selected subscription"
+msgstr "Contrat sélectionné"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_subscription_update_date_form_view
+msgid "Selected subscriptions"
+msgstr "Contrats sélectionnés"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_service_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_service_id
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_prestation_view_form
+msgid "Service"
+msgstr "Service"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_service_ids
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_service
+msgid "Services"
+msgstr "Services"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_use_product
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_use_product
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_prestation_use_product
+msgid "Set a price"
+msgstr "Prix forfaitaire"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_subscription_generic_settings
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_view_form
+msgid "Settings"
+msgstr "Configuration"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_sector_view_form
+msgid "Show arborescent view"
+msgstr "Voir la vue arborescente"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_sector_view_form
+msgid "Show diagram view"
+msgstr "Voir la vue diagramme"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.inherited_report_invoice_document
+msgid "Site"
+msgstr "Site"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/create_contract.py:67
+#, python-format
+msgid "Some"
+msgstr "Certains"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:118
+#, python-format
+msgid "Some of the selected package are 'done'. The modification of their dates are restricted"
+msgstr "Certains des forfaits sélectionnés sont à l'état 'terminé'. La modification de leurs dates est limitée"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:127
+#, python-format
+msgid "Some of the selected subscription are 'done'. The modification of their dates are restricted"
+msgstr "Certains des contrats sélectionnés sont à l'état 'terminé'. La modification de leurs dates est limitée"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:117
+#, python-format
+msgid "Some of the selected subscription are not confirmed, any date modification will automatically confirm these records"
+msgstr "Certains des contrats sélectionnés ne sont pas confirmés, toute modification de date confirmera automatiquement ces enregistrements"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:202
+#, python-format
+msgid "Some subscriptions are not confirmed, in this case, the opening date must be defined"
+msgstr "Certains contrats ne sont pas confirmés, dans ce cas, la date d'ouverture doit être définie"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_arrow_source
+msgid "Source"
+msgstr "Origine"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_on_create_start_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_on_create_start_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_subscription_wizard_create_contract_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_state
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_state
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_state
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_state_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_state
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_state
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_state
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_state
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_shared_state
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_state
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_state
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_filter
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_filter
+#: model:ir.ui.view,arch_db:horanet_subscription.view_filter_horanet_operation
+msgid "State"
+msgstr "État"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_street_id
+msgid "Street"
+msgstr "Rue"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_line_subscription_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_package_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_subscription_id
+#: model:ir.module.category,name:horanet_subscription.module_category_group_subscription_role
+#: model:ir.ui.menu,name:horanet_subscription.menu_base_subscription
+msgid "Subscription"
+msgstr "Abonnement"
+
+#. module: horanet_subscription
+#: model:res.groups,name:horanet_subscription.group_subscription_admin
+msgid "Subscription Administrator"
+msgstr "Abonnement administrateur"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_partner_sub_category_ids
+msgid "Subscription categories"
+msgstr "Catégories d'usagers"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_subscription_generic_settings
+msgid "Subscription config action"
+msgstr "Subscription config action"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_res_partner_subscription_count
+#: model:ir.model.fields,field_description:horanet_subscription.field_res_users_subscription_count
+msgid "Subscription count"
+msgstr "Nombre de contrats"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_subscription_cycle
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_cycle_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_cycle_view_tree
+msgid "Subscription cycle"
+msgstr "Cycle contractuel"
+
+#. module: horanet_subscription
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_subscription_cycle
+msgid "Subscription cycles"
+msgstr "Cycles de contrat"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_line_state
+msgid "Subscription line state"
+msgstr "État de la période de contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_create_contract_form_view
+msgid "Subscription parameters"
+msgstr "Paramètres du contrat"
+
+#. module: horanet_subscription
+#: model:ir.module.category,description:horanet_subscription.module_category_group_subscription_role
+msgid "Subscription rôle"
+msgstr "Droits d'abonnement"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_subscription_state
+msgid "Subscription state"
+msgstr "État du contrat"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_partner_subscription_tree
+#: model:ir.model.fields,field_description:horanet_subscription.field_res_partner_subscription_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_res_users_subscription_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_package_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_subscription_ids
+msgid "Subscriptions"
+msgstr "Contrats"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_tag_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_tag_id
+#: model:ir.ui.view,arch_db:horanet_subscription.view_filter_horanet_operation
+msgid "Tag"
+msgstr "Identifiant"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_end_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_end_date
+msgid "Technical end date"
+msgstr "Date de fin technique"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_start_date
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_subscription_start_date
+msgid "Technical start date"
+msgstr "Date de début technique"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+msgid "Template"
+msgstr "Modèle"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription_template.py:90
+#, python-format
+msgid "Template name cannot be empty"
+msgstr "Le nom du modèle ne peut pas être vide"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_action.py:56
+#, python-format
+msgid "The (custom) action code must start with an underscore"
+msgstr "The (custom) action code must start with an underscore"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_action.py:10
+#: sql_constraint:horanet.action:0
+#, python-format
+msgid "The action code must be unique"
+msgstr "Le code de l'action doit être unique"
+
+#. module: horanet_subscription
+#: sql_constraint:activity.sector:0
+#: code:addons/horanet_subscription/models/activity_sector.py:11
+#, python-format
+msgid "The activity sector code must be unique if not null"
+msgstr "Le code de la zone d'activités doit être unique ou null"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/inherited_product_template.py:39
+#, python-format
+msgid "The category %s is in multiple pricelist with dates that overlap."
+msgstr "La catégorie %s est dans plusieurs listes de prix qui se chevauchent."
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_package.py:333
+#, python-format
+msgid "The closing_date must be superior to the opening date"
+msgstr "La date de fin doit être supérieure à la date d'ouverture"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_package.py:18
+#: sql_constraint:horanet.package:0
+#, python-format
+msgid "The code must be unique"
+msgstr "Le code doit être unique"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription_cycle.py:26
+#: sql_constraint:horanet.subscription.cycle:0
+#, python-format
+msgid "The cycle must be unique"
+msgstr "Le cycle doit être unique"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_package_line_detail.py:12
+#: sql_constraint:horanet.package.line.detail:0
+#, python-format
+msgid "The line must be unique by activity/contract"
+msgstr "La ligne doit être unique par activité/contrat"
+
+#. module: horanet_subscription
+#: sql_constraint:activity.rule.version:0
+#: code:addons/horanet_subscription/models/exploitation_engine/activity_rule_version.py:28
+#, python-format
+msgid "The priority must positive"
+msgstr "La priorité doit être positive"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_is_derogation
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_line_is_derogation
+msgid "The property derogation is inherent to the free packages without balance control and no cycle"
+msgstr "The property derogation is inherent to the free packages without balance control and no cycle"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_prestation_is_derogation
+msgid "The property derogation is inherent to the free prestation without balance control and no cycle"
+msgstr "La propriété 'dérogation' est inhérente aux prestations gratuite sans limite de solde en cycle illimité"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription_cycle.py:74
+#, python-format
+msgid "The quantity is mandatory for this cycle"
+msgstr "La quantité est obligatoire pour ce cycle"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription_cycle.py:70
+#, python-format
+msgid "The quantity must be null for this type"
+msgstr "La quantité doit être nulle pour ce type"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription_cycle.py:72
+#, python-format
+msgid "The quantity must be set to 1 for this type"
+msgstr "La quantité doit être à 1 pour ce type"
+
+#. module: horanet_subscription
+#: sql_constraint:horanet.prestation:0
+msgid "The reference must be unique per prestation"
+msgstr "La référence doit être unique par prestation"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_activity.py:13
+#: sql_constraint:horanet.activity:0
+#, python-format
+msgid "The reference should be unique per activity"
+msgstr "La référence doit être unique par activité"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/activity_rule_version.py:172
+#, python-format
+msgid "The rule must have a sector in order to use it's activities"
+msgstr "La règle doit être rattaché à un secteur pour pouvoir utiliser ses activités"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/activity_rule_version.py:179
+#, python-format
+msgid "The rule must use sector activities if no custom activities are set"
+msgstr "La règle doit être rattaché à une zone d'activités si aucune activité n'est défini"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/activity_sector.py:105
+#, python-format
+msgid "The sector must have a parent in order to use it's activities"
+msgstr "Le secteur doit avoir un parent pour pouvoir utiliser ses activités"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/activity_sector.py:112
+#, python-format
+msgid "The sector use parent activities if no custom activities are set"
+msgstr "Le secteur doit avoir un parent si aucune activité n'est défini"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:121
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:195
+#, python-format
+msgid "The selected package is 'done'. The modifications of it's dates are restricted"
+msgstr "Le forfait sélectionné est à l'état 'terminé'. Les modifications de ses dates sont limitées"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:209
+#, python-format
+msgid "The selected package is 'draft'. An opening date must be specified"
+msgstr "Le forfait sélectionné est à l'état brouillon. Une date d'ouverture doit être définie"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:130
+#, python-format
+msgid "The selected subscription is 'done'. The modification of it's dates are restricted"
+msgstr "Le contrat sélectionné est à l'état 'terminé'. La modification de ses dates est limitée"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:214
+#, python-format
+msgid "The selected subscription is 'done'. The modification of it's dates is restricted"
+msgstr "Le contrat sélectionné est à l'état 'terminé'. La modification de ses dates est limitée"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:120
+#, python-format
+msgid "The selected subscription is not confirmed, any date modification will automatically confirm the subscription"
+msgstr "Le contrat sélectionné n'est pas confirmé, toute modification de date confirmera automatiquement le contrat"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:205
+#, python-format
+msgid "The selected subscription is not confirmed, in this case, the opening date must be defined"
+msgstr "Le contrat sélectionné n'est pas confirmé, dans ce cas, la date d'ouverture doit être définie"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_service.py:56
+#, python-format
+msgid "The service must have same unit category as activities."
+msgstr "La catégorie d'unités du service et de ses activités doit être identique."
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_device.py:11
+#: sql_constraint:horanet.device:0
+#, python-format
+msgid "The unique_id must be unique !"
+msgstr "The unique_id must be unique !"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_activity.py:106
+#, python-format
+msgid "The unit category must be the same between the product and the activity"
+msgstr "La catégorie de l'unité doit être la même entre le produit et l'activité"
+
+#. module: horanet_subscription
+#: model:res.groups,comment:horanet_subscription.group_subscription_admin
+msgid "The user will have access to contract template and activities"
+msgstr "Autoriser l'accès au modèles de contrat et aux activités"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/inherited_sale_order_line.py:102
+#: code:addons/horanet_subscription/models/inherited_sale_order_line.py:123
+#, python-format
+msgid "There is no invoicable line."
+msgstr "Il n'y a pas de ligne facturable."
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_usage_view_search
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.view_filter_horanet_operation
+msgid "This Year"
+msgstr "Cette année"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_activity_diagram
+msgid "This diagram represent the relations between activity rules and sectors"
+msgstr "Ce diagramme représente les relations entre les secteurs d'activité et les règles d'activité"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_package_line_package_price_prorata
+msgid "This is the quantity, by default 1, set when we need to set a fraction of the package line."
+msgstr "C'est la quantité, par défaut 1, mise lorsque nous devons définir une fraction de la période de ligne de contrat."
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_usage_view_search
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.view_filter_horanet_operation
+msgid "This month"
+msgstr "Ce mois"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_usage_view_search
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.view_filter_horanet_operation
+msgid "This week"
+msgstr "Cette semaine"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_device_query_time
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_time
+msgid "Time"
+msgstr "Date"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_device_last_communication_time
+msgid "Time at which the device communicated with the server for the last time (with the web API)"
+msgstr "Heure à laquelle l'appareil à contacté le serveur pour la dernière fois (via l'API web)"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_wizard_sandbox_query_time
+msgid "Time context"
+msgstr "Date contextuelle"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.package_line_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.package_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+msgid "To compute"
+msgstr "À calculer"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_filter
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_usage_view_search
+#: model:ir.ui.view,arch_db:horanet_subscription.subscription_search_view
+#: model:ir.ui.view,arch_db:horanet_subscription.view_filter_horanet_operation
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_balance_total
+msgid "Total balance"
+msgstr "Solde total"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_trigger_operation_id
+msgid "Trigger operation"
+msgstr "Trigger operation"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_form
+msgid "Trigger origin"
+msgstr "Trigger origin"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_exploitation_engine_result_trigger_query_id
+msgid "Trigger query"
+msgstr "Trigger query"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_action_type
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_activity_diagram_node_type
+msgid "Type"
+msgstr "Type"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/device_query.py:155
+#, python-format
+msgid "Undefined"
+msgstr "Undefined"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_device_unique_id
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_device_view_search
+msgid "Unique ID"
+msgstr "ID unique"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_product_uom_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_usage_unit_id
+#: model:ir.ui.view,arch_db:horanet_subscription.inherited_report_invoice_document
+msgid "Unit"
+msgstr "Unité"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_activity_product_uom_categ_id
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_service_product_uom_categ_id
+msgid "Unit category"
+msgstr "Catégorie d'unité"
+
+#. module: horanet_subscription
+#: selection:horanet.subscription.cycle,period_type:0
+msgid "Unlimited"
+msgstr "Illimité"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_wizard_package_update_date
+msgid "Update package date"
+msgstr "Changer les dates"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_package_update_date_form_view
+msgid "Update package period"
+msgstr "Mettre à jour la période de forfait"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:301
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:312
+#, python-format
+msgid "Update prorata."
+msgstr "Mettre à jour le prorata."
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_wizard_subscription_update_date
+msgid "Update subscription date"
+msgstr "Mettre à jour la date de contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.wizard_subscription_update_date_form_view
+msgid "Update subscription period"
+msgstr "Mettre à jour la période de contrat"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_usage
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_version_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_version_view_tree
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_tree
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.exploitation_engine_result_view_tree
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_usage_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_usage_view_tree
+msgid "Usage"
+msgstr "Transaction"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_usage_ids
+msgid "Usage line"
+msgstr "Ligne de transaction"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_usage_quantity
+msgid "Usage quantity"
+msgstr "Quantité"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_account_invoice_usage_ids
+#: model:ir.model.fields,field_description:horanet_subscription.field_sale_order_usage_ids
+#: model:ir.ui.menu,name:horanet_subscription.menu_horanet_usage
+#: model:ir.ui.menu,name:horanet_subscription.menu_usage
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_detail_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.inherited_view_account_invoice
+#: model:ir.ui.view,arch_db:horanet_subscription.inherited_view_order_form
+msgid "Usages"
+msgstr "Usages"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_package_line_detail_usage_line_ids
+msgid "Usages lines"
+msgstr "Lignes des transactions"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_activity_rule_rule_code
+#: model:ir.model.fields,help:horanet_subscription.field_activity_rule_version_rule_code
+msgid "Use method response(authorize<bool>,message<string optional>)"
+msgstr "Use method response(authorize<bool>,message<string optional>)"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_use_parent_activity
+msgid "Use parent activities"
+msgstr "Utiliser les activités du parent"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_use_sector_activity
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_use_sector_activity
+msgid "Use sector activities"
+msgstr "Utiliser les activités de la zone"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_rule_version_version
+msgid "Version"
+msgstr "Version"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_package_update_date_display_form_title
+#: model:ir.model.fields,field_description:horanet_subscription.field_wizard_subscription_update_date_display_form_title
+msgid "View form title"
+msgstr "Titre du formulaire"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:117
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:126
+#, python-format
+msgid "Warning"
+msgstr "Attention"
+
+#. module: horanet_subscription
+#: selection:horanet.subscription.cycle,period_type:0
+msgid "Week(s)"
+msgstr "Semaine(s)"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/wizard_package_update_date.py:303
+#: code:addons/horanet_subscription/wizards/wizard_subscription_update_date.py:314
+#, python-format
+msgid "Without update prorata."
+msgstr "Sans mise à jour du prorata."
+
+#. module: horanet_subscription
+#: selection:horanet.subscription.cycle,period_type:0
+msgid "Year(s)"
+msgstr "Année(s)"
+
+#. module: horanet_subscription
+#: selection:activity.rule.wizard.sandbox,execute_custom_rule_code:0
+#: code:addons/horanet_subscription/models/exploitation_engine/device_query.py:153
+#: selection:subscription.config.settings,rule_exception_unknown_tag_response:0
+#: selection:wizard.package.update.date,prorata_temporis:0
+#: selection:wizard.package.update.date,remove_closing_date:0
+#: selection:wizard.subscription.update.date,prorata_temporis:0
+#: selection:wizard.subscription.update.date,remove_closing_date:0
+#, python-format
+msgid "Yes"
+msgstr "Oui"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/inherited_account.py:41
+#, python-format
+msgid "You can remove a draft invoice only"
+msgstr "Vous ne pouvez supprimer que les factures en état brouillon"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_infrastructure_zip_id
+msgid "ZIP code"
+msgstr "Code postal"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_action
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_action_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_action_view_tree
+msgid "action"
+msgstr "action"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_action_view_form
+msgid "action name"
+msgstr "nom de l'action"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_activity
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_activity_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_activity_view_tree
+msgid "activity"
+msgstr "activité"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.device_check_point_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_activity_view_form
+msgid "activity name"
+msgstr "nom de l'activité"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_activity_rule
+msgid "activity rule"
+msgstr "règle d'activité"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_activity_rule_version
+msgid "activity rule version"
+msgstr "Version de règle d'activité"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_activity_rule
+msgid "activity.rule"
+msgstr "activity.rule"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_activity_rule_version
+msgid "activity.rule.version"
+msgstr "activity.rule.version"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_activity_sector
+msgid "activity.sector"
+msgstr "activity.sector"
+
+#. module: horanet_subscription
+#: selection:horanet.package,state:0
+#: selection:horanet.package.line,state:0
+#: selection:horanet.subscription,state:0
+#: selection:horanet.subscription.line,state:0
+#: selection:horanet.subscription.shared,state:0
+msgid "closed"
+msgstr "fermé"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_device
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_device_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_device_view_tree
+msgid "device"
+msgstr "terminal"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_device_view_form
+msgid "device name"
+msgstr "Nom du terminal"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_device_query
+#: model:ir.ui.view,arch_db:horanet_subscription.device_query_view_tree
+msgid "device query"
+msgstr "requête du terminal"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_device_response
+#: model:ir.ui.view,arch_db:horanet_subscription.device_response_view_tree
+msgid "device response"
+msgstr "réponse au terminal"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_device_check_point
+msgid "device.check.point"
+msgstr "device.check.point"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_device_query
+msgid "device.query"
+msgstr "device.query"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_device_response
+msgid "device.response"
+msgstr "device.response"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_activity_rule_wizard_sandbox
+#: model:ir.model.fields,help:horanet_subscription.field_activity_rule_wizard_sandbox_activity_rule_id
+msgid "go figure"
+msgstr "go figure"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_action
+msgid "horanet.action"
+msgstr "horanet.action"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_activity
+msgid "horanet.activity"
+msgstr "horanet.activity"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_device
+msgid "horanet.device"
+msgstr "horanet.device"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_infrastructure
+msgid "horanet.infrastructure"
+msgstr "horanet.infrastructure"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_operation
+msgid "horanet.operation"
+msgstr "horanet.operation"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_package_line
+msgid "horanet.package.line"
+msgstr "horanet.package.line"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_package_line_detail
+msgid "horanet.package.line.detail"
+msgstr "horanet.package.line.detail"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_prestation
+msgid "horanet.prestation"
+msgstr "horanet.prestation"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_service
+msgid "horanet.service"
+msgstr "horanet.service"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_subscription
+msgid "horanet.subscription"
+msgstr "horanet.subscription"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_subscription_cycle
+msgid "horanet.subscription.cycle"
+msgstr "horanet.subscription.cycle"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_subscription_date
+msgid "horanet.subscription.date"
+msgstr "horanet.subscription.date"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_subscription_line
+msgid "horanet.subscription.line"
+msgstr "horanet.subscription.line"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_subscription_shared
+msgid "horanet.subscription.shared"
+msgstr "horanet.subscription.shared"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_subscription_template
+msgid "horanet.subscription.template"
+msgstr "horanet.subscription.template"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_usage
+msgid "horanet.usage"
+msgstr "horanet.usage"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_infrastructure
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_infrastructure_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_infrastructure_view_tree
+msgid "infrastructure"
+msgstr "infrastructure"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_horanet_operation_number
+msgid "number"
+msgstr "numéro"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_operation
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_operation_view_tree
+msgid "operation"
+msgstr "operation"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_horanet_package
+msgid "package"
+msgstr "ligne de contrat"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_detail_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_package_line_detail_view_tree
+msgid "package_line_detail"
+msgstr "package_line_detail"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,field_description:horanet_subscription.field_activity_sector_parent_activity_ids
+msgid "parent activities"
+msgstr "parent activities"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_partner_contact_identification_assignation
+msgid "partner.contact.identification.assignation"
+msgstr "partner.contact.identification.assignation"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_partner_contact_identification_tag
+msgid "partner.contact.identification.tag"
+msgstr "partner.contact.identification.tag"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription.py:245
+#, python-format
+msgid "partner_ids: expected list or tuple type, got %s"
+msgstr "partner_ids: expected list or tuple type, got %s"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/wizards/create_contract.py:70
+#: code:addons/horanet_subscription/wizards/create_contract.py:80
+#, python-format
+msgid "partners already have an active, a pending or a new subscription for this subscription template. If you don't want to attribute another contract use the button 'Create contract for partner without contract'."
+msgstr "partenaires ont déjà un contrat actif, nouveau, en attente ou à calculer pour ce modèle de contrat. Si vous ne voulez pas attribuer un autre contrat pour ces partenaires, vous pouvez utiliser le bouton : 'Créer un contrat pour les partenaires sans contrat'."
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_prestation
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_prestation_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_prestation_view_tree
+msgid "prestation"
+msgstr "prestation"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_prestation_view_form
+msgid "prestation name"
+msgstr "nom de la prestation"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.product_template_kanban_view
+msgid "prices defined"
+msgstr "tarifs sont définis"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_version_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_rule_view_form
+msgid "rule name"
+msgstr "nom de la règle"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_sector_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_sector_view_tree
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_sector_view_tree_arborescent
+msgid "sector"
+msgstr "zone"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.activity_sector_view_form
+msgid "sector name"
+msgstr "nom de la zone"
+
+#. module: horanet_subscription
+#: model:ir.model.fields,help:horanet_subscription.field_horanet_infrastructure_city_id
+msgid "select the city"
+msgstr "sélectionnez la ville"
+
+#. module: horanet_subscription
+#: model:ir.actions.act_window,name:horanet_subscription.action_horanet_service
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_service_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_service_view_tree
+msgid "service"
+msgstr "service"
+
+#. module: horanet_subscription
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_line_view_form
+#: model:ir.ui.view,arch_db:horanet_subscription.horanet_subscription_line_view_tree
+msgid "subscription line"
+msgstr "période de contrat"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_subscription_config_settings
+msgid "subscription.config.settings"
+msgstr "subscription.config.settings"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_subscription_wizard_create_contract
+msgid "subscription.wizard.create.contract"
+msgstr "subscription.wizard.create.contract"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/horanet_subscription.py:238
+#, python-format
+msgid "template_id: expected int type, got %s"
+msgstr "template_id: expected int type, got %s"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_wizard_operation_recompute
+msgid "wizard to recompute multiple operation"
+msgstr "wizard to recompute multiple operation"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_wizard_activity_diagram
+msgid "wizard.activity.diagram"
+msgstr "wizard.activity.diagram"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_wizard_activity_diagram_arrow
+msgid "wizard.activity.diagram.arrow"
+msgstr "wizard.activity.diagram.arrow"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_wizard_activity_diagram_node
+msgid "wizard.activity.diagram.node"
+msgstr "wizard.activity.diagram.node"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_wizard_package_update_date
+msgid "wizard.package.update.date"
+msgstr "wizard.package.update.date"
+
+#. module: horanet_subscription
+#: model:ir.model,name:horanet_subscription.model_wizard_subscription_update_date
+msgid "wizard.subscription.update.date"
+msgstr "wizard.subscription.update.date"
+
+#. module: horanet_subscription
+#: code:addons/horanet_subscription/models/exploitation_engine/device_query.py:143
+#, python-format
+msgid "{action} - id:{id} at:{time}"
+msgstr "{action} - id:{id} à:{time}"
+

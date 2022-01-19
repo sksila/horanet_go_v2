@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Subscription config wizard -->
+    <record id="view_form_subscription_config_settings" model="ir.ui.view">
+        <field name="name">Subscription settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="1"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="Horanet Subscription" string="Horanet Subscription"
+                     data-key="horanet_subscription">
+                    <h2>Activity Rules</h2>
+                    <div class="row mt16 o_settings_container" name='group_settings_activity_rule'>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <label for="rule_exception_unknown_tag_message"/>
+                                    <field name="rule_exception_unknown_tag_message"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <div class="content-group">
+                                    <label for="rule_exception_unknown_tag_response"/>
+                                    <field name="rule_exception_unknown_tag_response" widget="radio"
+                                           style="vertical-align: middle;margin:0px"
+                                           options="{'horizontal': true}"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="action_subscription_generic_settings" model="ir.actions.act_window">
+        <field name="name">Subscription config action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_id" ref="view_form_subscription_config_settings"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'horanet_subscription'}</field>
+    </record>
+</odoo>

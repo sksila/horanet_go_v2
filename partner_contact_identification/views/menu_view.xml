@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_settings_partner_contact_identification"
+              parent="horanet_go.menu_base_collectivity"
+              name="Identification"
+              groups="group_partner_contact_identification_manage,horanet_go.group_horanet_go_agent"
+              sequence="25"/>
+
+    <menuitem id="menu_partner_contact_identification_area"
+              parent="menu_settings_partner_contact_identification"
+              name="Areas"
+              sequence="15"
+              groups="group_partner_contact_identification_manage"
+              action="action_identification_area"/>
+
+    <menuitem id="menu_partner_contact_identification_technology"
+              parent="menu_settings_partner_contact_identification"
+              name="Technologies"
+              sequence="20"
+              groups="group_partner_contact_identification_manage"
+              action="action_identification_technology"/>
+
+    <menuitem id="menu_partner_contact_identification_mapping"
+              parent="menu_settings_partner_contact_identification"
+              name="Mappings"
+              sequence="25"
+              groups="group_partner_contact_identification_manage"
+              action="action_identification_mapping"/>
+
+    <menuitem id="menu_partner_contact_identification_medium_type"
+              parent="menu_settings_partner_contact_identification"
+              name="Medium types"
+              sequence="30"
+              groups="group_partner_contact_identification_manage"
+              action="action_identification_medium_type"/>
+
+    <menuitem id="menu_partner_contact_identification_medium"
+              parent="menu_settings_partner_contact_identification"
+              name="Mediums"
+              sequence="35"
+              groups="group_partner_contact_identification_manage,horanet_go.group_horanet_go_agent"
+              action="action_identification_medium"/>
+
+    <menuitem id="menu_partner_contact_identification_assignation"
+              parent="menu_settings_partner_contact_identification"
+              name="Assignations"
+              sequence="40"
+              groups="group_partner_contact_identification_manage,horanet_go.group_horanet_go_agent"
+              action="action_identification_assignation"/>
+
+    <menuitem id="menu_partner_contact_identification_tag"
+              parent="menu_settings_partner_contact_identification"
+              name="Tags"
+              sequence="40"
+              groups="group_partner_contact_identification_manage,horanet_go.group_horanet_go_agent"
+              action="action_identification_tag"/>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--Ajout de menu dans le module collectivity pour accéder aux modèles school-->
+    <menuitem id="horanet_menu_school"
+              name="School"
+              parent="horanet_transport.transport_main"
+              groups="horanet_school.group_horanet_school_manage"
+              sequence="30"/>
+
+    <menuitem id="horanet_school_establishment_menu"
+              name="School Establishments"
+              parent="horanet_menu_school"
+              action="horanet_school_establishment_action"
+              groups="horanet_school.group_horanet_school_manage"
+              sequence="10"/>
+    <menuitem id="horanet_school_classroom_menu"
+              name="School Classrooms"
+              parent="horanet_menu_school"
+              action="horanet_school_classroom_action"
+              groups="horanet_school.group_horanet_school_manage"
+              sequence="15"/>
+    <menuitem id="horanet_school_cycle_menu"
+              name="School Cycles"
+              parent="horanet_menu_school"
+              action="horanet_school_cycle_action"
+              groups="horanet_school.group_horanet_school_manage"
+              sequence="20"/>
+    <menuitem id="horanet_school_grade_menu"
+              name="School Grades"
+              parent="horanet_menu_school"
+              action="horanet_school_grade_action"
+              groups="horanet_school.group_horanet_school_manage"
+              sequence="25"/>
+
+
+    <menuitem id="horanet_settings_menu_school"
+              name="School sector"
+              parent="horanet_transport.transport_configuration"
+              groups="horanet_school.group_horanet_school_manage"
+              sequence="40"/>
+
+    <menuitem id="horanet_school_sector_menu"
+              name="School Sectors"
+              parent="horanet_settings_menu_school"
+              action="horanet_school_sector_action"
+              groups="horanet_school.group_horanet_school_manage"
+              sequence="30"/>
+    <menuitem id="res_street_sector_menu"
+              name="Street Sectors"
+              parent="horanet_settings_menu_school"
+              action="res_street_sector_action"
+              groups="horanet_school.group_horanet_school_manage"
+              sequence="35"/>
+</odoo>

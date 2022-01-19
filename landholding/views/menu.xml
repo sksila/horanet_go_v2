@@ -1,0 +1,38 @@
+<odoo>
+    <!--Menu Landholding (in collectivity>settings)-->
+    <menuitem id="menu_landholding"
+              name="Landholding"
+              parent="horanet_go.menu_base_collectivity"
+              sequence="95"
+              groups="base.group_system,better_address.group_address_manage"/>
+
+    <menuitem id="landholding_bati_menu"
+              name="Built domains"
+              parent="menu_landholding"
+              sequence="10"
+              action="landholding_bati_action"
+              groups="base.group_system"/>
+
+    <menuitem id="landholding_prop_menu"
+              name="Freeholders"
+              parent="menu_landholding"
+              sequence="10"
+              action="landholding_prop_action"
+              groups="base.group_system"/>
+
+    <menuitem id="communal_account_menu"
+              name="Communal accounts"
+              parent="menu_landholding"
+              sequence="10"
+              action="communal_account_action"
+              groups="base.group_system"/>
+
+    <!--Wizard import landholding data-->
+    <menuitem id="wizard_import_landholding_data_fr_menu"
+              name="Import landholding (admin)"
+              parent="menu_landholding"
+              sequence="100"
+              action="wizard_import_landholding_data_fr_action"
+              groups="landholding.group_landholding_manage"/>
+
+</odoo>

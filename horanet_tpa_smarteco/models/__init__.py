@@ -1,0 +1,6 @@
+import inherited_base_partner_merge
+import inherited_partner
+import inherited_tpa_config_settings
+import inherited_tpa_synchronization_merge
+import inherited_tpa_synchronization_status
+import inherited_user

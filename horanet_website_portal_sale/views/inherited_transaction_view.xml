@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+    <!-- Override the view to add invoice_ids field -->
+    <record id="transaction_form" model="ir.ui.view">
+        <field name="name">horanet transaction form with invoices</field>
+        <field name="model">payment.transaction</field>
+        <field name="inherit_id" ref="payment.transaction_form"/>
+        <field name="arch" type="xml">
+            <!-- Add title to the group -->
+            <xpath expr="//group[./field[@name='reference']]" position="attributes">
+                <attribute name="string">Parameters</attribute>
+            </xpath>
+
+            <!-- Add the invoice_ids field to the view -->
+            <xpath expr="//field[@name='reference']" position="after">
+                <field name="invoice_id"/>
+            </xpath>
+
+            <!-- Force the group to use full width -->
+            <xpath expr="//group[./field[@name='acquirer_id']]" position="attributes">
+                <attribute name="string">Transaction state</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

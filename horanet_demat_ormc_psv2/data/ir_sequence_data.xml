@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Sequences for pes file -->
+        <record id="seq_pes_file" model="ir.sequence">
+            <field name="name">Pes File</field>
+            <field name="code">pes.file</field>
+            <field name="padding">6</field>
+        </record>
+
+        <!-- Sequences for pes declaration -->
+        <record id="seq_pes_dec" model="ir.sequence">
+            <field name="name">Declaration</field>
+            <field name="code">pes.declaration</field>
+            <field name="prefix">DEC/</field>
+            <field name="padding">10</field>
+        </record>
+    </data>
+</odoo>

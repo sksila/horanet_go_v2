@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Add scheduler on SmartBambi synchronization -->
+        <record id="scheduler_synchronization_smartbambi" model="ir.cron">
+            <field name="name">Scheduler synchronization SmartBambi</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <!--Repeat Missed : ‘doall’ has two options: True or False. When the field is set to False you’re telling
+            Odoo that missed automated actions should be executed when the server restarts if they where missed
+            (for example when a server has been down for 24 hours then the planner would need to run the scheduler
+             for every time it was missed in those 24 hours).-->
+            <field name="args" eval="({'force':False,'max_retry':10,'limit':10},)"/>
+            <field name="model" eval="'tpa.synchronization.status'"/>
+            <field name="function" eval="'cron_action_synchronization_smartbambi'"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- Add scheduler on Aquagliss merge partner -->
+        <record id="scheduler_merge_partner_smartbambi" model="ir.cron">
+            <field name="name">Scheduler merge SmartBambi</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <!--Repeat Missed : ‘doall’ has two options: True or False. When the field is set to False you’re telling
+            Odoo that missed automated actions should be executed when the server restarts if they where missed
+            (for example when a server has been down for 24 hours then the planner would need to run the scheduler
+             for every time it was missed in those 24 hours).-->
+            <field name="args" eval="({'max_retry':10,'limit':10},)"/>
+            <field name="model" eval="'tpa.synchronization.merge'"/>
+            <field name="function" eval="'cron_action_merge_smartbambi'"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

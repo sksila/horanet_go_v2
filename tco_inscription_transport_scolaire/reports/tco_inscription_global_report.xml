@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+            id="tco_inscription_transport_scolaire_global_report"
+            model="tco.inscription.transport.scolaire"
+            string="Letter with invoice"
+            name="tco_inscription_transport_scolaire.global_report_view"
+            file="tco_inscription_transport_scolaire.tco_inscription_transport_scolaire_global_report"
+            report_type="qweb-pdf"/>
+
+    <record id="tco_inscription_transport_scolaire_global_report" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="tco_inscription_transport_scolaire.custom_paperformat_nomargin"/>
+    </record>
+
+    <template id="custom_external_layout_header" inherit_id="report.external_layout_header">
+        <xpath expr="(//div[@class='header']//div[@class='row'][1])" position="replace">
+            <div class="row">
+                <div class="col-xs-3">
+                    <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo"
+                         style="max-height: 50px;"/>
+                </div>
+                <img src="/tco_inscription_transport_scolaire/static/src/img/Karouest-1.png"
+                     style="float: right;max-height: 45px;"/>
+            </div>
+        </xpath>
+        <div name="company_address" position="replace">
+            <div name="company_address" class="col-xs-4">
+                <div t-field="company.partner_id"
+                     t-field-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: true}"
+                     style="border-bottom: 1px solid black;"/>
+            </div>
+        </div>
+    </template>
+
+    <template id="global_report_view">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                    <div class="page" t-if="doc.sale_order_ref.invoice_ids">
+                        <style type="text/css">
+                            #first-page{
+                            padding: 25px;
+                            }
+                            #letter{
+                            font-size: 15px;
+                            line-height: 24px;
+                            }
+                            #inscription_resume li{
+                            margin-left: 20px;
+                            }
+                            #table_invoice th
+                            {
+                            text-align: center;
+                            border: 1px solid black;
+                            background-color: #BCBCBC;
+                            }
+                            #table_invoice td
+                            {
+                            border: 1px solid black;
+                            }
+                            #echeancier{
+                            margin-top: 500px;
+                            }
+                        </style>
+
+
+                        <!-- FIRST PAGE -->
+                        <div id="first-page">
+                            <!-- HEADER -->
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <img t-if="user.company_id.logo" t-att-src="'data:image/png;base64,%s' % user.company_id.logo"
+                                         style="max-height: 50px;"/>
+                                </div>
+                                <img src="/tco_inscription_transport_scolaire/static/src/img/Karouest-1.png"
+                                     style="float: right;max-height: 45px;"/>
+                            </div>
+                            <div class="row zero_min_height">
+                                <div class="col-xs-12">
+                                    <div style="border-bottom: 1px solid black;"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div name="company_address" class="col-xs-4">
+                                    <div t-field="user.company_id.partner_id"
+                                         t-field-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': true}"
+                                         style="border-bottom: 1px solid black;"/>
+                                    </div>
+                            </div>
+
+                            <!-- LETTER -->
+                            <t t-set="invoice" t-value="False"/>
+                            <t t-foreach="doc.sale_order_ref.invoice_ids" t-as="invoices">
+                                <t t-if="invoices.state in ['open', 'paid'] ">
+                                    <t t-set="invoice" t-value="invoices"/>
+                                </t>
+                            </t>
+                            <div style="float: right;">
+                                <span t-field="doc.responsible_id.title"/>
+                                <span t-field="doc.responsible_id.lastname"/>
+                                <span t-field="doc.responsible_id.firstname"/>
+                                <br/>
+                                <span t-field="doc.responsible_id.street_number_id.name"/>
+                                <span t-field="doc.responsible_id.street_id.name"/>
+                                <br/>
+                                <div t-if="doc.responsible_id.street2">
+                                    <span t-field="doc.responsible_id.street2"/>
+                                    <br/>
+                                </div>
+                                <div t-if="doc.responsible_id.street3">
+                                    <span t-field="doc.responsible_id.street3"/>
+                                    <br/>
+                                </div>
+                                <span t-field="doc.responsible_id.zip_id.name"/>
+                                <span t-field="doc.responsible_id.city_id.name"/>
+                            </div>
+                            <div style="margin-bottom: 80px;">
+                                <br/>
+                            </div>
+
+                            Fait le <span t-field="doc.recipient_id.create_date"/>
+                            <h3>Confirmation d'inscription aux transports scolaires <span t-field="doc.period_id.name"/>
+                                et règlement de l'abonnement</h3>
+                            <br/>
+
+                            <p id="letter">
+                                <span t-field="doc.responsible_id.title"/>,
+                                <br/>
+                                <br/>
+                                Vous avez souhaité inscrire <span t-field="doc.recipient_id.firstname"/>
+                                <span t-field="doc.recipient_id.lastname"/> aux transports scolaires organisés par le TCO et
+                                nous sommes heureux que notre service public puisse répondre à votre besoin.
+                                <br/>
+                                Nous avons le plaisir de vous informer que <strong>votre demande d’inscription est validée.</strong>
+                                <br/>
+                                Le prix de votre abonnement a été calculé en fonction de votre quotient familial. Compte
+                                tenu de votre situation, <strong>le prix de votre abonnement pour la campagne scolaire du
+                                <span t-field="doc.period_id.date_start"/> au <span t-field="doc.period_id.date_end"/>
+                                s'élève à <span t-field="invoice.amount_total"/></strong>,
+                                correspondant à <strong>votre choix d’un abonnement <span t-field="doc.transport_titre"/>.</strong>
+                                <br/>
+                                En complément de vos <strong><span t-field="invoice.amount_total"/></strong>,
+                                le TCO financera sur ses fonds propres environ
+                                <t t-esc="'%.2f' %(invoice.invoice_line_ids[0].price_unit - invoice.amount_total)"/>€
+                                pour assurer le transport de votre enfant.
+                                En effet, le TCO attache une grande importance au principe de solidarité qui vise à indexer
+                                les tarifs sur
+                                les revenus de la famille. Plus de 15 millions d’euros sont investis chaque année par le TCO
+                                pour
+                                l’organisation des transports scolaires. La communauté d’agglomération prend à sa charge
+                                environ 85 %
+                                du coût réel du transport et les familles ne contribuent par leur abonnement qu’à hauteur
+                                d’environ 15 %.
+                                <br/>
+                                Vous avez choisi l'abonnement <span t-field="doc.transport_titre"/> :
+                                <t t-if="doc.transport_titre == 'cool'">celui-ci permettra à
+                                <span t-field="doc.recipient_id.firstname"/> <span t-field="doc.recipient_id.lastname"/> de
+                                bénéficier de tarifs réduits sur l'ensemble du réseau Kar'Ouest, pendant toute cette année
+                                scolaire.
+                                </t>
+                                <t t-elif="doc.transport_titre == 'cool_plus'">celui-ci permettra à
+                                    <span t-field="doc.recipient_id.firstname"/> <span t-field="doc.recipient_id.lastname"/>
+                                    de voyager librement sur le réseau Kar'Ouest pendant toute cette année scolaire,
+                                    y compris en dehors de ses déplacements domicile-école
+                                </t>
+                                <br/>
+                                Vous avez choisi de régler votre abonnement
+                                <t t-if="doc.invoice_period == 'annually'">en une fois</t>
+                                <t t-elif="doc.invoice_period == 'biannually'">en deux fois. Il s’agit là d’une facilité de
+                                    paiement offerte par le TCO, en rappelant que l’abonnement est toujours annuel et que
+                                    le deuxième paiement sera donc obligatoire.</t>.
+                                <br/>
+                                <br/>
+                                Pour finaliser l’inscription, nous vous invitons à procéder au règlement sur le site
+                                <strong>www.viequotidienne.re</strong>
+                                à l’aide de vos identifiant et mot de passe. Le paiement en agence Kar’Ouest est également
+                                possible.
+                                <br/>
+                                Si vous réglez par chèque bancaire en agence Kar’Ouest, nous vous remercions de le libeller
+                                à l’ordre de « Monsieur le Régisseur des transports scolaires du TCO » et de présenter
+                                une pièce d’identité du signataire du chèque.
+                                <br/>
+                                <br/>
+                                <div id="pass-ouest" style="float: right; margin-top: -30px;">
+                                    <img src="tco_inscription_transport_scolaire/static/src/img/pass_ouest.png"/>
+                                </div>
+                                La carte de <span t-field="doc.recipient_id.firstname"/> <span t-field="doc.recipient_id.lastname"/>
+                                et son coupon transport vous seront remis :<br/>
+                                - Par voie postale (si paiement en ligne)<br/>
+                                - Ou en agence (si paiement en agence).
+                                <br/>
+                                <br/>
+                                Nous vous invitons à prendre connaissance avec votre enfant du règlement des transports
+                                scolaires, en particulier concernant les règles de sécurité et de bon comportement des
+                                élèves à bord du car, et des responsabilités qui incombent aux familles. Le règlement est
+                                téléchargeable sur www.karouest.re.
+                                <br/>
+                                <br/>
+                                Nous vous prions d'agréer, <span t-field="doc.responsible_id.title"/>, l'expression de nos
+                                salutations distinguées.
+                                <br/>
+                                <br/>
+                                <strong>Joseph Sinimalé<br/>
+                                    Président du TCO</strong>
+                            </p>
+                        </div>
+
+                        <!-- SECOND PAGE -->
+                        <!-- FACTURE -->
+                        <div id="invoice" style="page-break-before:always;">
+                            <div class="row">
+                                <br/>
+                            </div>
+                            <div class="row" style="margin-top: 150px;">
+                                <div class="col-xs-1"></div>
+                                <div class="col-xs-3" style="text-align: center; border: 1px solid black;">
+                                    <strong>
+                                        Année scolaire du <span t-field="doc.period_id.date_start"/> au
+                                        <span t-field="doc.period_id.date_end"/>
+                                    </strong>
+                                </div>
+                                <div class="col-xs-3"></div>
+                                <div class="col-xs-4" style="border: 1px solid black;">
+                                    <strong>
+                                        <div style="font-size: 20px;">
+                                            <span t-field="doc.responsible_id.title"/>
+                                            <span t-field="doc.responsible_id.lastname"/>
+                                            <span t-field="doc.responsible_id.firstname"/>
+                                        </div>
+                                    </strong>
+                                    <span t-field="doc.responsible_id.street_number_id.name"/>
+                                    <span t-field="doc.responsible_id.street_id.name"/>
+                                    <br/>
+                                    <div t-if="doc.responsible_id.street2">
+                                        <span t-field="doc.responsible_id.street2"/>
+                                        <br/>
+                                    </div>
+                                    <div t-if="doc.responsible_id.street3">
+                                        <span t-field="doc.responsible_id.street3"/>
+                                        <br/>
+                                    </div>
+                                    <span t-field="doc.responsible_id.zip_id.name"/>
+                                    <span t-field="doc.responsible_id.city_id.name"/>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 60px;">
+                                <br/>
+                            </div>
+
+                            <div class="row" style="text-align: center;">
+                                <div class="col-xs-3"></div>
+                                <div class="col-xs-6" style="border: 1px solid black;">
+                                    FACTURE
+                                    <strong>
+                                        <span t-field="invoice.number"/>
+                                    </strong>
+                                    DU
+                                    <strong>
+                                        <span t-field="invoice.date_invoice"/>
+                                    </strong>
+                                </div>
+                                <div class="col-xs-3"></div>
+                            </div>
+
+                            <div class="row" style="margin-top: 10px;">
+                                <table id="table_invoice" style="margin: auto;">
+                                    <thead>
+                                        <tr>
+                                            <th>Eleve</th>
+                                            <th>Libellé</th>
+                                            <th>Tarif</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 250px;">
+                                                <strong>
+                                                    <span t-field="doc.recipient_id"/>
+                                                </strong>
+                                                <br/>
+                                                <br/>
+                                                <br/>
+                                                <br/>
+                                            </td>
+                                            <td style="padding-left: 3px;">
+                                                <t t-set="l" t-value="invoice.invoice_line_ids[0]"/>
+                                                <pre><span t-field="l.name"/>        <span t-field="l.quantity"/>        <span t-field="l.price_subtotal" t-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/></pre>
+                                                Condition de règlement <span t-field="doc.invoice_period"/>
+                                            </td>
+                                            <td class="text-right" style="width: 100px;">
+                                                <span t-field="l.price_subtotal"
+                                                      t-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <i>
+                                                    <pre>Facture Editée le <span t-field="invoice.date_invoice"/>    par <span t-field="invoice.user_id"/> à <span t-field="invoice.team_id"/>
+                                                                                  Tel 02 62 45 72 30</pre>
+                                                </i>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="invoice.amount_total"
+                                                      t-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <br/>
+                        </div>
+
+                        <!-- COUPON -->
+                        <div t-if="not user.share" id="coupon" class="row" style="position: absolute; bottom: -216mm;">
+                            <div class="col-xs-3" t-attf-style="padding: 0px; width: 246px; height: 162px;">
+                                <br/>
+                                <div class="text-center" style="font-size: 11px;">
+                                    <i>Validité
+                                        <br/>
+                                        <span t-field="doc.period_id.date_start"/> - <span t-field="doc.period_id.date_end"/>
+                                        <br/>
+                                        <span t-field="doc.invoice_period"/>
+                                    </i>
+                                </div>
+                                <br/>
+                                <div class="col-xs-7 text-center">
+                                    <strong style="font-size: 11px;"><span t-field="doc.recipient_id.lastname"/></strong>
+                                    <br/>
+                                    <div style="font-size: 10px;"><span t-field="doc.recipient_id.firstname"/></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PAYMENT TERMS -->
+                        <div id="echeancier" t-if="invoice.move_id and doc.invoice_period != 'annually'">
+                            <h2>Payment terms</h2>
+                            <table style="border-collapse: collapse;">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="invoice.move_id.line_ids.filtered(lambda r: r.debit != 0).
+                                       sorted('date_maturity')" t-as="move_line">
+                                        <tr>
+                                            <td style="border: 1px solid black; padding: 5px;">
+                                                <span t-field="move_line.date_maturity"/>
+                                            </td>
+                                            <td style="border: 1px solid black; padding: 5px;">
+                                                <span t-field="move_line.debit"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    <br/>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

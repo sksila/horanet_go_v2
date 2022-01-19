@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="horanet_license_plate_identification_category" model="res.partner.id_category">
+        <field name="name">License plate</field>
+        <field name="code">license_plate</field>
+        <field name="validation_code">
+re = self.env.context.get('re')
+value = re.sub('([a-zA-Z0-9\-]{7,10})', 'ok', id_number.name.replace(' ', ''), re.IGNORECASE)
+if value != 'ok':
+    failed = True
+        </field>
+    </record>
+</odoo>
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Add cities to the State form -->
+    <record model="ir.ui.view" id="view_country_state_form2">
+        <field name="model">res.country.state</field>
+        <field name="inherit_id" ref="base.view_country_state_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[last()]" position="after">
+                <group>
+                    <field name="city_ids"
+                           context="{'country_id': country_id}"
+                           colspan="4"
+                           nolabel="1">
+                        <tree editable="top">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="country_id"/>
+                        </tree>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_tree_country_state">
+        <field name="model">res.country.state</field>
+        <field name="arch" type="xml">
+            <tree string="State">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_filter_country_state" model="ir.ui.view">
+        <field name="name">country state default filters</field>
+        <field name="model">res.country.state</field>
+        <field name="arch" type="xml">
+            <search string="Search country state">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_id"/>
+                <filter name="filter_french_country_state" string="French country state"
+                        domain="[('country_id', '=', %(base.fr)d)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Country" name="group_by_country" domain="[]" context="{'group_by':'country_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_res_country_state" model="ir.actions.act_window">
+        <field name="name">Country state</field>
+        <field name="res_model">res.country.state</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_country_state"/>
+        <field name="search_view_id" ref="view_filter_country_state"/>
+        <field name="context">{"search_default_filter_french_country_state":1}</field>
+    </record>
+
+</odoo>

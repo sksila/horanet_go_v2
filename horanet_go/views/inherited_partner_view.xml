@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner_form_view" model="ir.ui.view">
+        <field name="name">Add category on partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="category_id" position="after">
+                <field name="subscription_category_ids" widget="many2many_tags"/>
+            </field>
+            <field name="title" position="replace">
+                <div name="labels_title" class="horanet_td_form_label" style="font-style: normal">
+                    <label for="title" string="Company type" attrs="{'invisible': [('is_company', '=', False)]}"/>
+                    <label for="title" string="Title" attrs="{'invisible': [('is_company', '=', True)]}"/>
+                </div>
+                <field name="title" nolabel="1" options="{&quot;no_open&quot;: True}"
+                       domain="[('is_company_title', '=', is_company)]"/>
+            </field>
+        </field>
+    </record>
+</odoo>

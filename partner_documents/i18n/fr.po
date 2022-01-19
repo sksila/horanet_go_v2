@@ -1,0 +1,499 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_documents
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-07-10 08:31+0000\n"
+"PO-Revision-Date: 2018-07-10 08:31+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.add_document_form
+msgid "<br/>\n"
+"                    Max size allowed:"
+msgstr "<br/>\n"
+"                                Taille maximum autorisée:"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.documents
+msgid "<i class=\"fa fa-pencil\" aria-hidden=\"true\"/>\n"
+"                                            Edit"
+msgstr "<i class=\"fa fa-pencil\" aria-hidden=\"true\"/>\n"
+"                                            Modifier"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.add_document_form
+msgid "<i class=\"fa fa-plus\" aria-hidden=\"true\"/>\n"
+"                    Add a document"
+msgstr "<i class=\"fa fa-plus\" aria-hidden=\"true\"/>\n"
+"                                Ajouter un document"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.documents
+msgid "<i class=\"fa fa-plus\" aria-hidden=\"true\"/>\n"
+"                Add a document"
+msgstr "<i class=\"fa fa-plus\" aria-hidden=\"true\"/>\n"
+"                Ajouter un document"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.documents
+msgid "<i class=\"fa fa-trash\" aria-hidden=\"true\"/>\n"
+"                                            Remove"
+msgstr "<i class=\"fa fa-trash\" aria-hidden=\"true\"/>\n"
+"                                            Supprimer"
+
+#. module: partner_documents
+#: code:addons/partner_documents/controllers/main.py:99
+#, python-format
+msgid "A file must be provided."
+msgstr "Un fichier doit être fourni."
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.documents
+msgid "Actions"
+msgstr "Actions"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.add_document
+#: model:ir.ui.view,arch_db:partner_documents.modal_add_document
+msgid "Add a document"
+msgstr "Ajouter un document"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+msgid "Additional informations"
+msgstr "Informations supplémentaires"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_child_ids
+msgid "Additionals pages"
+msgstr "Pages supplémentaires"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_archived
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "Archived"
+msgstr "Archivé"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+msgid "Attached To"
+msgstr "Attaché à"
+
+#. module: partner_documents
+#: model:ir.attachment.type,name:partner_documents.attachment_type_caf_certificate
+msgid "Attestation CAF"
+msgstr "Attestation CAF"
+
+#. module: partner_documents
+#: model:ir.attachment.type,name:partner_documents.attachment_type_school_enrollment_certificate
+msgid "Attestation d'inscription scolaire"
+msgstr "Attestation d'inscription scolaire"
+
+#. module: partner_documents
+#: model:ir.attachment.type,name:partner_documents.attachment_type_tax_notice
+msgid "Avis d'imposition"
+msgstr "Avis d'imposition"
+
+#. module: partner_documents
+#: model:ir.attachment.type,name:partner_documents.attachment_type_pay_slip
+msgid "Bulletin de salaire"
+msgstr "Bulletin de salaire"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+msgid "Checked"
+msgstr "Vérifié"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_checked_by
+msgid "Checked by"
+msgstr "Vérifié par"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_checked_on
+msgid "Checked on"
+msgstr "Vérifié le"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.modal_add_document
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: partner_documents
+#: model:ir.ui.menu,name:partner_documents.menu_document2
+msgid "Collaborative Content"
+msgstr "Contenu collaboratif"
+
+#. module: partner_documents
+#: model:ir.ui.menu,name:partner_documents.menu_document_configuration
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_type_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_type_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+msgid "Creation"
+msgstr "Création"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.documents
+msgid "Date"
+msgstr "Date "
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+msgid "Description"
+msgstr "Description"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_type_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_parent_doc_id
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "Document"
+msgstr "Document"
+
+#. module: partner_documents
+#: model:ir.ui.menu,name:partner_documents.menu_document_management_config
+msgid "Document Management"
+msgstr "Gestion des documents"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_document_type_id
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "Document Type"
+msgstr "Type de document"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_document_date
+msgid "Document date"
+msgstr "Date du document"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.add_document_form
+#: model:ir.ui.view,arch_db:partner_documents.view_document_type_form
+#: model:ir.ui.view,arch_db:partner_documents.view_document_type_search
+msgid "Document type"
+msgstr "Type de document"
+
+#. module: partner_documents
+#: model:ir.actions.act_window,name:partner_documents.action_document
+#: model:ir.ui.menu,name:partner_documents.menu_document
+#: model:ir.ui.menu,name:partner_documents.menu_document_management_documents
+#: model:ir.ui.view,arch_db:partner_documents.add_document
+#: model:ir.ui.view,arch_db:partner_documents.custom_portal_layout
+#: model:ir.ui.view,arch_db:partner_documents.view_document_tree
+msgid "Documents"
+msgstr "Documents"
+
+#. module: partner_documents
+#: model:ir.actions.act_window,name:partner_documents.action_document_type
+#: model:ir.ui.menu,name:partner_documents.menu_document_type
+#: model:ir.ui.view,arch_db:partner_documents.view_document_type_tree
+msgid "Documents types"
+msgstr "Types de document"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.add_document
+msgid "Edit document"
+msgstr "Modifier un document"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "Expiration Month"
+msgstr "Mois d'expiration"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_expiry_date
+#: model:ir.ui.view,arch_db:partner_documents.documents
+msgid "Expiration date"
+msgstr "Date d'expiration"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_is_expired
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "Expired"
+msgstr "Périmé"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.add_document_form
+msgid "File inputs"
+msgstr "Fichiers"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.add_document_form
+msgid "File types allowed:\n"
+"                    bmp, jpeg, png, pdf"
+msgstr "Types de fichiers autorisés :\n"
+"                    bmp, jpeg, png, pdf"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+msgid "History"
+msgstr "Historique"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_type_id
+msgid "ID"
+msgstr "ID"
+
+#. module: partner_documents
+#: model:ir.attachment.type,name:partner_documents.attachment_type_proof_of_address
+msgid "Justificatif de domicile"
+msgstr "Justificatif de domicile"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_type___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_type_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_type_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: partner_documents
+#: model:ir.attachment.type,name:partner_documents.attachment_type_family_record_book
+msgid "Livret de famille"
+msgstr "Livret de famille"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.add_document_form
+msgid "MB"
+msgstr "Mo"
+
+#. module: partner_documents
+#: model:res.groups,name:partner_documents.group_manage_document
+msgid "Manage Document"
+msgstr "Gérer les documents"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+msgid "Modification"
+msgstr "Modification"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.add_document
+msgid "My Account"
+msgstr "Mon compte"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.document
+msgid "My documents"
+msgstr "Mes documents"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_type_name
+#: model:ir.ui.view,arch_db:partner_documents.documents
+msgid "Name"
+msgstr "Nom"
+
+#. module: partner_documents
+#: code:addons/partner_documents/controllers/main.py:88
+#, python-format
+msgid "No document was provided."
+msgstr "Aucun document n'a été fourni."
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "Non admin documents"
+msgstr "Documents non administrateur"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_number_of_files
+#: model:ir.ui.view,arch_db:partner_documents.documents
+msgid "Number of files"
+msgstr "Nombre de fichiers"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_user_id
+msgid "Owner"
+msgstr "Propriétaire"
+
+#. module: partner_documents
+#: model:ir.model,name:partner_documents.model_res_partner
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_type_validity_period
+msgid "Period of validity (in days)"
+msgstr "Durée de validité (en jours)"
+
+#. module: partner_documents
+#: model:res.groups,name:partner_documents.group_read_document
+msgid "Read Document"
+msgstr "Lire les documents"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+msgid "Reject"
+msgstr "Rejeter"
+
+#. module: partner_documents
+#: selection:ir.attachment,status:0
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "Rejected"
+msgstr "Rejeté"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.modal_add_document
+msgid "Save changes"
+msgstr "Sauvegarder"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+msgid "See document"
+msgstr "Voir le document"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.add_document
+msgid "Send"
+msgstr "Envoyer"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_status
+#: model:ir.ui.view,arch_db:partner_documents.documents
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "Status"
+msgstr "État"
+
+#. module: partner_documents
+#: model:ir.model.fields,field_description:partner_documents.field_ir_attachment_type_technical_name
+msgid "Technical name"
+msgstr "Nom technique"
+
+#. module: partner_documents
+#: code:addons/partner_documents/models/inherited_document.py:164
+#, python-format
+msgid "The document date cannot be set after expiration's date."
+msgstr "La date du document ne peut être supérieure à la date d'expiration."
+
+#. module: partner_documents
+#: code:addons/partner_documents/controllers/main.py:86
+#, python-format
+msgid "The document type {type} is not valid."
+msgstr "Le type de document {type} n'est pas valide."
+
+#. module: partner_documents
+#: code:addons/partner_documents/models/inherited_document.py:167
+#, python-format
+msgid "The expiration date cannot be set before today's date."
+msgstr "La date d'expiration ne peut pas être antérieure à la date du jour."
+
+#. module: partner_documents
+#: code:addons/partner_documents/controllers/main.py:114
+#, python-format
+msgid "The file {filename} is too big."
+msgstr "Le fichier {filename} est trop volumineux."
+
+#. module: partner_documents
+#: code:addons/partner_documents/controllers/main.py:103
+#, python-format
+msgid "The type '{mimetype}' of {filename} isn't valid."
+msgstr "Le type '{mimetype}' de {filename} n'est pas valide."
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.portal_my_home_documents
+msgid "There are currently no documents attached to your account."
+msgstr "Il n'y a actuellement aucun document attaché à votre compte."
+
+#. module: partner_documents
+#: selection:ir.attachment,status:0
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "To check"
+msgstr "En cours de vérification"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.documents
+msgid "Type"
+msgstr "Type"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "Typed documents"
+msgstr "Documents typés"
+
+#. module: partner_documents
+#: model:ir.model,name:partner_documents.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_document_search
+msgid "Valid"
+msgstr "Valide"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+msgid "Validate"
+msgstr "Valider"
+
+#. module: partner_documents
+#: selection:ir.attachment,status:0
+msgid "Validated"
+msgstr "Validé"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_document_tree
+msgid "Write Date"
+msgstr "Date d'écriture"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.documents
+msgid "You don't have any documents."
+msgstr "Vous n'avez pas de documents."
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.portal_my_home_documents
+msgid "Your Documents"
+msgstr "Vos Documents"
+
+#. module: partner_documents
+#: model:ir.model,name:partner_documents.model_ir_attachment
+msgid "ir.attachment"
+msgstr "ir.attachment"
+
+#. module: partner_documents
+#: model:ir.model,name:partner_documents.model_ir_attachment_type
+msgid "ir.attachment.type"
+msgstr "ir.attachment.type"
+
+#. module: partner_documents
+#: model:ir.ui.view,arch_db:partner_documents.view_attachment_form
+msgid "on"
+msgstr "le"
+

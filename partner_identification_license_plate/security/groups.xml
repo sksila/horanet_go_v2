@@ -1,0 +1,10 @@
+<odoo>
+	<data>
+        <record id="group_horanet_vehicle_manage" model="res.groups">
+            <field name="name">Manage vehicles</field>
+            <field name="category_id" ref="horanet_go.horanet_go_category" />
+            <field name="comment">Enable the menus to manage vehicle.</field>
+            <field name="users" eval="[(4, ref('base.user_root'))]" />
+        </record>
+	</data>
+</odoo>

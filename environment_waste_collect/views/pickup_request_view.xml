@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="pickup_request_form_view" model="ir.ui.view">
+        <field name="name">pickup.request.form</field>
+        <field name="model">environment.pickup.request</field>
+        <field name="arch" type="xml">
+            <form string="Pickup request">
+                <header>
+                    <button name="action_close" type="object"
+                            string="Close" states="progress"/>
+                    <button name="action_cancel" type="object"
+                            string="Cancel" states="progress"/>
+                    <field name="state" widget="statusbar" clickable="True"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <field name="priority" widget="priority"/>
+                    <group col="4" colspan="4">
+                        <field name="emplacement_id"/>
+                        <field name="service_provider_id"/>
+                        <field name="request_date"/>
+                        <field name="duration" widget="float_time"/>
+                        <field name="schedule_date"/>
+                        <field name="close_date"/>
+                        <field name="created_by"/>
+                        <field name="validated_by"/>
+                        <field name="contract_id" invisible="1"/>
+                        <field name="waste_site_id" invisible="1"/>
+                        <field name="activity_id" invisible="1"/>
+                        <field name="filling_level" invisible="1"/>
+                        <field name="contract_id"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="pickup_request_kanban_view" model="ir.ui.view">
+        <field name="name">pickup.request.kanban</field>
+        <field name="model">environment.pickup.request</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="waste_site_id"/>
+                <field name="activity_id"/>
+                <templates>
+                    <t t-name="kanban-tooltip">
+                    </t>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click oe_semantic_html_override">
+                            <div class="o_dropdown_kanban dropdown">
+
+                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+                                    <span class="fa fa-bars fa-lg"/>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <t t-if="widget.editable">
+                                        <li>
+                                            <a type="edit">Edit...</a>
+                                        </li>
+                                    </t>
+                                    <t t-if="widget.deletable">
+                                        <li>
+                                            <a type="delete">Delete</a>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </div>
+                            <div class="oe_kanban_content" tooltip="kanban-tooltip">
+                                <b>
+                                    <field name="name"/>
+                                </b>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <b>Waste Site:</b>
+                                        <field name="waste_site_id"/>
+                                    </div>
+                                    <div class="row">
+                                        <b>Waste:</b>
+                                        <field name="activity_id"/>
+                                    </div>
+
+                                    <div class="row">
+                                        <b>Service provider:</b>
+                                        <field name="service_provider_id"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oe_clear"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="pickup_request_calendar_view" model="ir.ui.view">
+        <field name="name">pickup.request.calendar</field>
+        <field name="model">environment.pickup.request</field>
+        <field name="arch" type="xml">
+            <calendar string="Pickup requests" date_start="request_date" date_delay="duration"
+                      color="service_provider_id">
+                <field name="emplacement_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="pickup_request_tree_view" model="ir.ui.view">
+        <field name="name">pickup.request.tree</field>
+        <field name="model">environment.pickup.request</field>
+        <field name="arch" type="xml">
+            <tree string="Pickup requests">
+                <field name="name"/>
+                <field name="emplacement_id"/>
+                <field name="request_date"/>
+                <field name="close_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="pickup_request_pivot_view" model="ir.ui.view">
+        <field name="name">pickup.request.pivot</field>
+        <field name="model">environment.pickup.request</field>
+        <field name="arch" type="xml">
+            <pivot string="Pickup requests">
+                <field name="duration" type="measure"/>
+                <field name="request_date" interval="month"/>
+                <field name="waste_site_id"/>
+                <field name="emplacement_id"/>
+                <field name="activity_id"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="pickup_request_graph_view" model="ir.ui.view">
+        <field name="name">pickup.request.graph</field>
+        <field name="model">environment.pickup.request</field>
+        <field name="arch" type="xml">
+            <graph string="Pickup requests">
+                <field name="request_date" interval="month"/>
+                <field name="waste_site_id"/>
+                <field name="activity_id"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="pickup_request_search_view" model="ir.ui.view">
+        <field name="name">pickup.request.search</field>
+        <field name="model">environment.pickup.request</field>
+        <field name="arch" type="xml">
+            <search string="Search pickup request">
+                <field name="name"/>
+                <field name="request_date"/>
+                <field name="close_date"/>
+                <field name="service_provider_id"/>
+                <filter string="In progress requests" name="message_needaction" domain="[('state', '=', 'progress')]"/>
+                <filter string="Done requests" domain="[('state', '=', 'done')]"/>
+                <separator/>
+                <filter name="month_requests" string="Current month"
+                        domain="[('request_date', '&lt;', (context_today() + relativedelta(months=1)).strftime('%Y-%m-01')), ('request_date', '&gt;', time.strftime('%Y-%m-01'))]"/>
+                <group expand="0" name="group_by" string="Group By">
+                    <filter name="by_state" string="State" context="{'group_by':'state'}"/>
+                    <filter name="by_date" string="Request date" context="{'group_by':'request_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="pickup_request_action" model="ir.actions.act_window">
+        <field name="name">Pickup Requests</field>
+        <field name="res_model">environment.pickup.request</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,calendar,tree,form,pivot,graph</field>
+        <field name="context">{'search_default_message_needaction': True}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create a new pickup request.
+            </p>
+        </field>
+    </record>
+
+    <record id="pickup_request_action_from_emplacement" model="ir.actions.act_window">
+        <field name="name">Pickup Requests</field>
+        <field name="res_model">environment.pickup.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('emplacement_id', '=', active_id)]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create a new pickup request.
+            </p>
+        </field>
+    </record>
+</odoo>

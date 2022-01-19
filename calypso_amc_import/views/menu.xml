@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_import_calypso_amc"
+              parent="partner_contact_identification.menu_settings_partner_contact_identification"
+              name="Import Calypso AMC"
+              sequence="45"
+              groups="group_import_calypso_amc"
+              action="action_import_calypso_amc"/>
+
+</odoo>

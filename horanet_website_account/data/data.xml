@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="menu_message" model="website.menu">
+            <field name="name">Messages</field>
+            <field name="url" eval="'/web#menu_id=' + str(ref('mail.mail_inboxfeeds'))"></field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">20</field>
+            <field name="new_window" eval="False"></field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_transport_stop" model="ir.ui.view">
+        <field name="name">tco.transport.stop.form</field>
+        <field name="model">tco.transport.stop</field>
+        <field name="arch" type="xml">
+            <form string="Stop">
+                <sheet>
+                    <group>
+                        <field name="line_id"></field>
+                        <field name="station_id"></field>
+                    </group>
+
+                    <group string="Properties">
+                        <field name="stop_time" widget="float_time"></field>
+                        <field name="stop_distance"></field>
+                        <field name="distance_from_previous_station"></field>
+                        <field name="sequence"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_transport_stop" model="ir.ui.view">
+        <field name="name">tco.transport.stop.tree</field>
+        <field name="model">tco.transport.stop</field>
+        <field name="arch" type="xml">
+            <tree string="Stop">
+                <field name="line_id"/>
+                <field name="station_id"></field>
+                <field name="sequence"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_transport_stop" model="ir.actions.act_window">
+        <field name="name">Stop</field>
+        <field name="res_model">tco.transport.stop</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_transport_stop"/>
+    </record>
+</odoo>

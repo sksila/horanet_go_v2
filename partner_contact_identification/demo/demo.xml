@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- AREA -->
+    <record id="demo_area_transport" model="partner.contact.identification.area">
+        <field name="name">Transport</field>
+    </record>
+    <record id="demo_area_warehouse" model="partner.contact.identification.area">
+        <field name="name">Warehouse</field>
+    </record>
+    <record id="demo_area_swimmingpool" model="partner.contact.identification.area">
+        <field name="name">Swimming Pool</field>
+    </record>
+    <record id="demo_area_school" model="partner.contact.identification.area">
+        <field name="name">School</field>
+    </record>
+    <record id="demo_area_gymnasium" model="partner.contact.identification.area">
+        <field name="name">Gymnasium</field>
+    </record>
+
+    <!-- TECHNOLOGY -->
+
+    <!-- MAPPING -->
+    <record id="demo_mapping_transport_mifare_h3" model="partner.contact.identification.mapping">
+        <field name="mapping">h3</field>
+        <field name="technology_id" ref="partner_contact_identification.technology_mifare"/>
+        <field name="area_id" ref="partner_contact_identification.demo_area_transport"/>
+    </record>
+    <record id="demo_mapping_transport_mifare_csn" model="partner.contact.identification.mapping">
+        <field name="mapping">csn</field>
+        <field name="technology_id" ref="partner_contact_identification.technology_mifare"/>
+        <field name="area_id" ref="partner_contact_identification.demo_area_transport"/>
+    </record>
+
+    <!-- MEDIUM TYPE -->
+    <record id="demo_medium_type_ticket" model="partner.contact.identification.medium.type">
+        <field name="name">Ticket</field>
+    </record>
+    <record id="demo_medium_type_card" model="partner.contact.identification.medium.type">
+        <field name="name">Card</field>
+    </record>
+
+    <!-- MEDIUM -->
+    <record id="demo_medium_1" model="partner.contact.identification.medium">
+        <field name="type_id" ref="partner_contact_identification.medium_type_smartcard"/>
+        <field name="partner_id" ref="base.partner_demo"/>
+    </record>
+    <record id="demo_medium_2" model="partner.contact.identification.medium">
+        <field name="type_id" ref="partner_contact_identification.demo_medium_type_card"/>
+        <field name="partner_id" ref="base.partner_demo"/>
+    </record>
+    <record id="demo_medium_3" model="partner.contact.identification.medium">
+        <field name="type_id" ref="partner_contact_identification.demo_medium_type_ticket"/>
+        <field name="partner_id" ref="base.partner_demo"/>
+    </record>
+
+    <!-- TAG -->
+    <record id="demo_tag_1" model="partner.contact.identification.tag">
+        <field name="number">2574080858</field>
+        <field name="mapping_id" ref="partner_contact_identification.demo_mapping_transport_mifare_csn"/>
+        <field name="medium_id" ref="partner_contact_identification.demo_medium_1"/>
+    </record>
+    <record id="demo_tag_2" model="partner.contact.identification.tag">
+        <field name="number">9859999990000001</field>
+        <field name="mapping_id" ref="partner_contact_identification.demo_mapping_transport_mifare_h3"/>
+        <field name="medium_id" ref="partner_contact_identification.demo_medium_2"/>
+    </record>
+
+    <!-- ASSIGNATION -->
+    <record id="demo_assignation_1" model="partner.contact.identification.assignation">
+        <field name="reference_id" ref="base.partner_demo"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_1"/>
+        <field name="start_date" eval="(datetime.now() - relativedelta(days=60)).strftime('%Y-%m-%d 00:00:00')"/>
+    </record>
+    <record id="demo_assignation_2" model="partner.contact.identification.assignation">
+        <field name="reference_id" ref="base.partner_demo"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_2"/>
+        <field name="start_date" eval="(datetime.now() - relativedelta(days=90)).strftime('%Y-%m-%d 00:00:00')"/>
+    </record>
+</odoo>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="report_sepa_dynamic_elements_form_view" model="ir.ui.view">
+        <field name="name">Report SEPA Dynamic Elements Form View</field>
+        <field name="model">report.sepa.dynamic.element</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="view_template_id" required="True" options="{'no_create': True, 'no_create_edit': True}"/>
+                            <field name="container" required="True"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="report_sepa_dynamic_elements_tree_view" model="ir.ui.view">
+        <field name="name">Report SEPA Dynamic Elements Tree View</field>
+        <field name="model">report.sepa.dynamic.element</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="view_template_id"/>
+                <field name="container"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_report_sepa_dynamic_elements" model="ir.actions.act_window">
+        <field name="name">Report SEPA Dynamic Elements</field>
+        <field name="res_model">report.sepa.dynamic.element</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="account_invoice_report_sepa.report_sepa_dynamic_elements_tree_view"/>
+    </record>
+</odoo>

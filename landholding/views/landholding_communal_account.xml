@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="communal_account_view_form" model="ir.ui.view">
+        <field name="name">Communal account base form view</field>
+        <field name="model">landholding.communal.account</field>
+        <field name="arch" type="xml">
+            <form string="Communal account">
+                <sheet>
+                    <group>
+                        <field name="city_id"/>
+                        <field name="name"/>
+                    </group>
+                    <notebook>
+                        <page name="freeholders" string="Freeholders">
+                            <group>
+                                <field name="communal_account_line_ids">
+                                    <tree string="Freeholder">
+                                        <field name="partial_label_number"/>
+                                        <field name="landholding_prop_id"/>
+                                        <field name="real_part_right_code"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page name="built domains" string="Built domains">
+                            <group>
+                                <field name="landholding_bati_ids"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="communal_account_view_tree" model="ir.ui.view">
+        <field name="name">Communal account base tree view</field>
+        <field name="model">landholding.communal.account</field>
+        <field name="arch" type="xml">
+            <tree string="Communal account">
+                <field name="city_id"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="communal_account_action" model="ir.actions.act_window">
+        <field name="name">Communal accounts action</field>
+        <field name="res_model">landholding.communal.account</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="communal_account_view_tree"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner_title_form_view" model="ir.ui.view">
+        <field name="name">Add active field on partner title</field>
+        <field name="model">res.partner.title</field>
+        <field name="inherit_id" ref="base.view_partner_title_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/group" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                        <field name="active" widget="boolean_button"
+                               options="{'terminology': 'archive'}"/>
+                    </button>
+                </div>
+            </xpath>
+            <!--Ajout du field is_company_title dans la vue form du partner title-->
+             <field name="shortcut" position="after">
+                    <field name="is_company_title"/>
+                </field>
+        </field>
+    </record>
+        <!--Ajout du field is_company_title dans la vue tree du partner title-->
+        <record id="view_partner_title_tree" model="ir.ui.view">
+            <field name="name">Add is_company_title field</field>
+            <field name="model">res.partner.title</field>
+            <field name="inherit_id" ref="base.view_partner_title_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="(//tree)[1]" position="inside">
+                    <field name="is_company_title"/>
+                </xpath>
+            </field>
+        </record>
+</odoo>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- VEHICLE BRAND -->
+    <record id="demo_brand_bmc" model="tco.transport.vehicle.brand">
+        <field name="name">BMC</field>
+    </record>
+    <record id="demo_brand_irisbus" model="tco.transport.vehicle.brand">
+        <field name="name">IRISBUS</field>
+    </record>
+    <record id="demo_brand_iveco" model="tco.transport.vehicle.brand">
+        <field name="name">IVECO</field>
+    </record>
+    <record id="demo_brand_man" model="tco.transport.vehicle.brand">
+        <field name="name">MAN</field>
+    </record>
+    <record id="demo_brand_mercedes" model="tco.transport.vehicle.brand">
+        <field name="name">MERCEDES</field>
+    </record>
+    <record id="demo_brand_otokar" model="tco.transport.vehicle.brand">
+        <field name="name">OTOKAR</field>
+    </record>
+    <record id="demo_brand_peugeot" model="tco.transport.vehicle.brand">
+        <field name="name">PEUGEOT</field>
+    </record>
+    <record id="demo_brand_pvi_carrier" model="tco.transport.vehicle.brand">
+        <field name="name">PVI CARRIER</field>
+    </record>
+    <record id="demo_brand_renault" model="tco.transport.vehicle.brand">
+        <field name="name">RENAULT</field>
+    </record>
+    <record id="demo_brand_setra" model="tco.transport.vehicle.brand">
+        <field name="name">SETRA</field>
+    </record>
+    <record id="demo_brand_solaris" model="tco.transport.vehicle.brand">
+        <field name="name">SOLARIS</field>
+    </record>
+    <record id="demo_brand_toyota" model="tco.transport.vehicle.brand">
+        <field name="name">TOYOTA</field>
+    </record>
+    <record id="demo_brand_vanhool" model="tco.transport.vehicle.brand">
+        <field name="name">VANHOOL</field>
+    </record>
+    <record id="demo_brand_volswagen" model="tco.transport.vehicle.brand">
+        <field name="name">VOLSWAGEN</field>
+    </record>
+    <record id="demo_brand_king_long" model="tco.transport.vehicle.brand">
+        <field name="name">KING LONG</field>
+    </record>
+    <record id="demo_brand_yutong" model="tco.transport.vehicle.brand">
+        <field name="name">YUTONG</field>
+    </record>
+    <record id="demo_brand_kassboher" model="tco.transport.vehicle.brand">
+        <field name="name">KASSBOHER</field>
+    </record>
+    <record id="demo_brand_dietrich_carebus" model="tco.transport.vehicle.brand">
+        <field name="name">DIETRICH CAREBUS</field>
+    </record>
+    <record id="demo_brand_scania" model="tco.transport.vehicle.brand">
+        <field name="name">SCANIA</field>
+    </record>
+    <record id="demo_brand_temsa" model="tco.transport.vehicle.brand">
+        <field name="name">TEMSA</field>
+    </record>
+    <record id="demo_brand_unknown" model="tco.transport.vehicle.brand">
+        <field name="name">UNKNOWN</field>
+    </record>
+    <record id="demo_brand_noeplan" model="tco.transport.vehicle.brand">
+        <field name="name">NOEPLAN</field>
+    </record>
+
+    <!-- VEHICLE CATEGORY -->
+    <record id="demo_category_bus" model="tco.transport.vehicle.category">
+        <field name="name">Bus</field>
+    </record>
+    <record id="demo_category_minibus" model="tco.transport.vehicle.category">
+        <field name="name">Mini-bus</field>
+    </record>
+    <record id="demo_category_taxi" model="tco.transport.vehicle.category">
+        <field name="name">Taxi</field>
+    </record>
+
+    <!-- VEHICLE MODEL -->
+    <record id="demo_model_1" model="tco.transport.vehicle.model">
+        <field name="name">XMQ6120CA1AL2ACC1</field>
+        <field name="vehicle_brand_id" ref="tco_transport.demo_brand_king_long"/>
+        <field name="vehicle_category_id" ref="tco_transport.demo_category_bus"/>
+    </record>
+    <record id="demo_model_2" model="tco.transport.vehicle.model">
+        <field name="name">SFR112A6AP</field>
+        <field name="vehicle_brand_id" ref="tco_transport.demo_brand_renault"/>
+        <field name="vehicle_category_id" ref="tco_transport.demo_category_bus"/>
+    </record>
+
+    <!-- STATION TYPE -->
+    <record id="demo_station_type_regular" model="tco.transport.station.type">
+        <field name="name">Regular stop</field>
+    </record>
+    <record id="demo_station_type_school" model="tco.transport.station.type">
+        <field name="name">School stop</field>
+    </record>
+
+    <!-- STATION -->
+    <record id="demo_station_1" model="tco.transport.station">
+        <field name="name">Station 1</field>
+        <field name="station_number">1</field>
+        <field name="type_id" ref="tco_transport.demo_station_type_regular"/>
+    </record>
+    <record id="demo_station_2" model="tco.transport.station">
+        <field name="name">Station 2</field>
+        <field name="station_number">2</field>
+        <field name="type_id" ref="tco_transport.demo_station_type_regular"/>
+    </record>
+    <record id="demo_station_school_1" model="tco.transport.station">
+        <field name="name">School 1</field>
+        <field name="station_number">3</field>
+        <field name="type_id" ref="tco_transport.demo_station_type_school"/>
+    </record>
+    <record id="demo_station_school_2" model="tco.transport.station">
+        <field name="name">School 2</field>
+        <field name="station_number">4</field>
+        <field name="type_id" ref="tco_transport.demo_station_type_school"/>
+    </record>
+
+    <!-- SERVICE -->
+    <record id="demo_service_1" model="tco.transport.service">
+        <field name="name">Service 1</field>
+    </record>
+    <record id="demo_service_2" model="tco.transport.service">
+        <field name="name">Service 2</field>
+    </record>
+    <record id="demo_service_3" model="tco.transport.service">
+        <field name="name">Service 3</field>
+    </record>
+
+    <!-- LINE -->
+    <record id="demo_line_outward_1" model="tco.transport.line">
+        <field name="name">Line 1 outward</field>
+        <field name="line_type">outward</field>
+        <field name="service_id" ref="tco_transport.demo_service_1"/>
+    </record>
+    <record id="demo_line_return_1" model="tco.transport.line">
+        <field name="name">Line 1 return</field>
+        <field name="line_type">return</field>
+        <field name="service_id" ref="tco_transport.demo_service_3"/>
+    </record>
+    <record id="demo_line_outward_2" model="tco.transport.line">
+        <field name="name">Line 2 outward</field>
+        <field name="line_type">outward</field>
+        <field name="service_id" ref="tco_transport.demo_service_2"/>
+    </record>
+    <record id="demo_line_return_2" model="tco.transport.line">
+        <field name="name">Line 2 return</field>
+        <field name="line_type">return</field>
+        <field name="service_id" ref="tco_transport.demo_service_2"/>
+    </record>
+
+    <!-- STOP -->
+    <record id="demo_stop_1" model="tco.transport.stop">
+        <field name="line_id" ref="tco_transport.demo_line_outward_1"/>
+        <field name="station_id" ref="tco_transport.demo_station_1"/>
+        <field name="stop_time" eval="1"/>
+        <field name="stop_distance" eval="50"/>
+    </record>
+    <record id="demo_stop_2" model="tco.transport.stop">
+        <field name="line_id" ref="tco_transport.demo_line_outward_1"/>
+        <field name="station_id" ref="tco_transport.demo_station_2"/>
+        <field name="stop_time" eval="2"/>
+        <field name="stop_distance" eval="30"/>
+    </record>
+    <record id="demo_stop_2" model="tco.transport.stop">
+        <field name="line_id" ref="tco_transport.demo_line_return_2"/>
+        <field name="station_id" ref="tco_transport.demo_station_2"/>
+        <field name="stop_time" eval="2"/>
+        <field name="stop_distance" eval="50"/>
+    </record>
+
+    <!-- VEHICLE -->
+    <record id="demo_vehicle_1" model="tco.transport.vehicle">
+        <field name="license_plate">V1-0001</field>
+        <field name="capacity" eval="50"/>
+        <field name="owner_id" ref="base.partner_demo"/>
+        <field name="driver_id" ref="base.partner_demo"/>
+        <field name="vehicle_model_id" ref="tco_transport.demo_model_1"/>
+    </record>
+    <record id="demo_vehicle_2" model="tco.transport.vehicle">
+        <field name="license_plate">V2-0002</field>
+        <field name="capacity" eval="47"/>
+        <field name="owner_id" ref="base.partner_demo"/>
+        <field name="driver_id" ref="base.partner_demo"/>
+        <field name="vehicle_model_id" ref="tco_transport.demo_model_2"/>
+    </record>
+
+    <!-- VEHICLE ASSIGNMENT -->
+    <record id="demo_vehicle_assignment_1" model="tco.transport.vehicle.assignment">
+        <field name="vehicle_id" ref="tco_transport.demo_vehicle_1"/>
+        <field name="service_id" ref="tco_transport.demo_service_1"/>
+        <field name="is_valid" eval="True"/>
+    </record>
+    <record id="demo_vehicle_assignment_2" model="tco.transport.vehicle.assignment">
+        <field name="vehicle_id" ref="tco_transport.demo_vehicle_2"/>
+        <field name="service_id" ref="tco_transport.demo_service_2"/>
+        <field name="is_valid" eval="True"/>
+    </record>
+</odoo>

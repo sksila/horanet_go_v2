@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_partner_contact_identification_assignation" model="ir.ui.view">
+        <field name="name">assignation form</field>
+        <field name="model">partner.contact.identification.assignation</field>
+        <field name="arch" type="xml">
+            <form string="assignation" create="false">
+                <header>
+                    <button name="deallocate" type="object" class="oe_highlight oe_left"
+                            attrs="{'invisible': [('end_date', '!=', False)]}"
+                            string="Deallocate"
+                            confirm="Are you sure you want to deallocate this tag?"/>
+                    <button name="set_lost" type="object" class="oe_highlight oe_right"
+                            attrs="{'invisible': [('end_date', '!=', False)]}"
+                            string="Declare lost"
+                            confirm="Are you sure you want to declare this tag as lost? The tag cannot be used anymore after this operation."/>
+                </header>
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <h1>
+                            <field name="id"/>
+                        </h1>
+                    </div>
+                    <group string="Settings" name="settings">
+                        <field name="reference_id"/>
+                        <field name="tag_id" options="{'no_quick_create': True}"/>
+                        <field name="medium_label"/>
+                        <newline/>
+                        <field name="start_date"></field>
+                        <field name="end_date"></field>
+                        <newline/>
+                        <field name="is_active"/>
+                    </group>
+                    <group string="Referenced object" name="reference">
+                        <field name="partner_id" attrs="{'invisible': [('partner_id', '=', False)]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_partner_contact_identification_assignation" model="ir.ui.view">
+        <field name="name">Assignation list</field>
+        <field name="model">partner.contact.identification.assignation</field>
+        <field name="arch" type="xml">
+            <tree string="assignation" create="false">
+                <field name="display_name_assignation"/>
+                <field name="display_type_assignation"/>
+                <field name="tag_id"></field>
+                <field name="start_date"></field>
+                <field name="end_date"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_contact_identification_assignation_search">
+        <field name="name">partner.contact.identification.assignation.search</field>
+        <field name="model">partner.contact.identification.assignation</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="tag_id" string="Tag number"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_identification_assignation" model="ir.actions.act_window">
+        <field name="name">Assignations</field>
+        <field name="res_model">partner.contact.identification.assignation</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_partner_contact_identification_assignation"/>
+    </record>
+</odoo>

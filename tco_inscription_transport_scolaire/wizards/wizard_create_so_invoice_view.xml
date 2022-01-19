@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="wizard_create_so_invoice">
+        <field name="name">wizard.create.so.invoice</field>
+        <field name="model">invoicing.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Create sale order or invoice">
+                You can generate the sale orders and invoices from here.
+                If you choose "sale order and invoice", already processed inscriptions (those who have already a
+                sale order and invoice for exemple) won't have duplicate data.
+                <group>
+                    <field name="inscription_ids" invisible="1"/>
+                    <field name="action_type"/>
+                    <field name="validate_invoice" attrs="{'invisible': [('action_type', '!=', 'so_invoice')]}"/>
+                    <field name="ignore_documents"/>
+                    <field name="ignore_emails"/>
+                </group>
+                <footer>
+                    <button type="object" name="action_inscription_create_so_invoice"
+                            string="Validate" confirm="Are you sure ? This may take some time." class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

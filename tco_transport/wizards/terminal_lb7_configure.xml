@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="terminal_lb7_configure_form_view" model="ir.ui.view">
+            <field name="name">Configure LB7 terminals</field>
+            <field name="model">tco.terminal.lb7.configure</field>
+            <field name="arch" type="xml">
+                <form string="Configure LB7 terminals">
+                    <field name="message" attrs="{'readonly': True}"/>
+                    <separator/>
+                    <footer>
+                        <button name="configure_action" type="object" class="oe_highlight" string="Configure"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

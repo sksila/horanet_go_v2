@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="website_application_main" name="Requests"
+              parent="horanet_go.menu_base_collectivity" sequence="10"
+              groups="horanet_go.group_horanet_go_agent"/>
+
+    <menuitem id="website_application_requests" name="Requests"
+              parent="website_application_main" sequence="20"
+              action="action_website_application"
+              groups="horanet_go.group_horanet_go_agent"/>
+
+    <menuitem id="website_application_template_menu" name="Request templates"
+              parent="horanet_go.menu_collectivity_config"
+              action="website_application.action_website_application_template"
+              groups="website_application.group_website_application_template_manager"/>
+
+</odoo>

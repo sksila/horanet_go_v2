@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+    <button t-name="ListView.row.button_redirect"
+            type="button"
+            t-att-title="widget.string"
+            t-att-disabled="disabled || undefined"
+            t-attf-class="o_icon_button #{disabled ? 'oe_list_button_disabled' : ''}">
+        <i t-attf-class="fa #{widget.icon}" t-att-title="widget.string"/>
+    </button>
+</templates>
+

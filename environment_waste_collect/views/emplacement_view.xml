@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="emplacement_form_view" model="ir.ui.view">
+        <field name="name">Emplacement Form View</field>
+        <field name="model">stock.emplacement</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(pickup_request_action_from_emplacement)d"
+                                type="action"
+                                class="oe_stat_button"
+                                icon="fa-ticket"
+                                context="{'default_emplacement_id': id}">
+                            <field string="Pickup requests" name="pickup_request_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label class="oe_edit_only" for="name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="activity_id"
+                               context="{'tree_view_ref': 'environment_waste_collect.activity_tree_view'}"/>
+                        <label for="filling_level"/>
+                        <div class="o_row">
+                            <field name="filling_level"/>
+                            <label string="% updated on"/>
+                            <field name="filling_update_date" class="oe_inline"/>
+                        </div>
+                        <field name="waste_site_id"
+                               context="{'form_view_ref': 'environment_waste_collect.warehouse_form_view'}"/>
+                        <field name="code"/>
+                        <field name="last_collect_date"/>
+                        <field name="container_type_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="emplacement_kanban_view" model="ir.ui.view">
+        <field name="name">Container Kanban View</field>
+        <field name="model">stock.emplacement</field>
+        <field name="arch" type="xml">
+            <kanban edit="false" quick_create="false">
+                <field name="opened_pickup_request"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown">
+
+                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+                                    <span class="fa fa-bars fa-lg"/>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <t t-if="widget.editable">
+                                        <li>
+                                            <a type="edit">Edit...</a>
+                                        </li>
+                                    </t>
+                                    <t t-if="widget.deletable">
+                                        <li>
+                                            <a type="delete">Delete</a>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </div>
+                            <div class="oe_kanban_content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <field name="name"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <field name="filling_level" widget="better_gauge"
+                                               options="{'max_value':100,'inverse_color':true}"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <field name="waste_site_id"/>
+                                            <field name="code"/>
+                                        </div>
+                                        <div class="row">
+                                            <field name="activity_id"/>
+                                        </div>
+                                        <div class="row">
+                                            Last pickup:
+                                            <field name="last_collect_date"/>
+                                        </div>
+                                        <div class="row" t-if="record.opened_pickup_request.raw_value">
+                                            <span class="label label-info"
+                                                  t-translation="on">Pickup request in progress
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oe_clear"></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="emplacement_tree_view" model="ir.ui.view">
+        <field name="name">Emplacement List View</field>
+        <field name="model">stock.emplacement</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="activity_id"/>
+                <field name="filling_level" widget="progressbar"/>
+                <field name="waste_site_id"/>
+                <field name="code"/>
+                <field name="last_collect_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="emplacement_pivot_view" model="ir.ui.view">
+        <field name="name">emplacement pivot</field>
+        <field name="model">stock.emplacement</field>
+        <field name="arch" type="xml">
+            <pivot string="Pickup requests">
+                <field name="waste_site_id"/>
+                <field name="activity_id"/>
+                <field name="filling_level" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="emplacement_graph_view" model="ir.ui.view">
+        <field name="name">emplacement graph</field>
+        <field name="model">stock.emplacement</field>
+        <field name="arch" type="xml">
+            <graph string="Pickup requests">
+                <field name="waste_site_id"/>
+                <field name="activity_id"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="emplacement_search_view" model="ir.ui.view">
+        <field name="name">Emplacement Search View</field>
+        <field name="model">stock.emplacement</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="waste_site_id"/>
+                <filter string="Pickup requested" domain="[('opened_pickup_request', '=', True)]"/>
+                <separator/>
+
+                <filter string="Currently in use" name="in_use" domain="[('waste_site_id', '!=', False)]"/>
+                <filter string="Available" name="available" domain="[('waste_site_id', '=', False)]"/>
+                <separator/>
+
+                <group expand='0' string='Group by...'>
+                    <filter string='Waste site' domain="[]" context="{'group_by': 'waste_site_id'}"/>
+                    <filter string='Waste' domain="[]" context="{'group_by': 'activity_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="emplacement_action" model="ir.actions.act_window">
+        <field name="name">Emplacements</field>
+        <field name="res_model">stock.emplacement</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create a new emplacement.
+            </p>
+        </field>
+    </record>
+</odoo>

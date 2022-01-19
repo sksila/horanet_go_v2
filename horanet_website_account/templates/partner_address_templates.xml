@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="partner_address" name="Address fields">
+        <!--PAYS-->
+        <div t-attf-class="form-group col-md-6 {{ error.get('country_id') and 'has-error' or '' }}">
+            <label class="control-label" for="country_id">Country</label>
+            <select name="country_id" id="country" class="form-control">
+                <t t-set='selected_id'
+                   t-value="int(post.get('country_id') or partner and partner.id != -1 and partner.country_id and partner.country_id.id or default_country_id or False)"/>
+                <t t-foreach="request.env['res.country'].search([])" t-as="country">
+                    <option t-if="country_index == 0 and not selected_id"
+                            value="" selected="" hidden="">select...
+                    </option>
+                    <option t-att-value="country.id"
+                            t-att-selected="country.id == selected_id">
+                        <t t-esc="country.name"/>
+                    </option>
+                </t>
+            </select>
+        </div>
+        <div class="clearfix"/>
+        <!--CODE POSTAL-->
+        <div t-attf-class="form-group col-md-2 required {{any([k in error for k in ['zip_id','zip_name']]) and 'has-error' or ''}}">
+            <label for="zipcode">* Zipcode</label>
+            <input id="zipcode" name="zipcode" type="text" class="form-control" maxlength="5" required="required"
+                   t-att-value="post.get('zipcode', False) or partner and partner.id != -1 and partner.zip_id.name"
+                   autocomplete="nope"/>
+        </div>
+        <!--CITY-->
+        <div t-attf-class="form-group col-md-10 required {{any([k in error for k in ['city_id','city']]) and 'has-error' or ''}}">
+            <label for="city">* City</label>
+            <select t-if="not city_id" id="city_id" name="city_id" class="form-control" disabled="disabled"
+                    required="required">
+                <option value="">Select...</option>
+            </select>
+            <input name="city" type="hidden" id="city"
+                   t-att-value="post.get('city_id') or partner  and partner.id != -1 and partner.city_id and partner.city_id.id or False"/>
+        </div>
+        <div class="clearfix"/>
+        <!-- STREET NUMBER -->
+        <div t-attf-class="form-group col-md-2 {{any([k in error for k in ['street_number_id','street_number']]) and 'has-error' or ''}}">
+            <label for="street_number">* Street n°</label>
+            <t t-set='is_disabled_street_number'
+               t-value="not post.get('city_id')"/>
+            <t t-if="partner.id != -1">
+                <t t-set='is_disabled_street_number'
+                   t-value="not post.get('city_id') and not partner.street_number_id"/>
+            </t>
+            <input id="street_number" name="street_number" type="text" class="form-control"
+                   t-att-disabled="is_disabled_street_number " required="required"
+                   t-att-value="post.get('street_number', partner and partner.id != -1 and partner.street_number_id and partner.street_number_id.name) or False"
+                   pattern="([\d]+)([ ])?(bis|Bis|ter|Ter|[a-z]|[A-Z])?" autocomplete="nope"/>
+            <input type="hidden" id="street_number_id" name="street_number_id"
+                   t-att-value="post.get('street_number_id', partner and partner.id != -1 and partner.street_number_id and partner.street_number_id.id)"/>
+        </div>
+        <!-- STREET -->
+        <div t-attf-class="form-group col-md-7 required {{any([k in error for k in ['street_id','street']]) and 'has-error' or ''}}">
+            <label for="street">* Street</label>
+            <t t-set='is_disabled_street' t-value="not post.get('street_number')"/>
+            <t t-if="partner.id != -1">
+                <t t-set='is_disabled_street' t-value="not post.get('street_number') and not partner.street_id"/>
+            </t>
+            <input id="street" name="street" type="text" class="form-control"
+                   t-att-disabled="is_disabled_street"
+                   required="required"
+                   t-att-value="post.get('street', partner and partner.id != -1 and partner.street_id and partner.street_id.name) or False"
+                   autocomplete="nope"/>
+            <input type="hidden" id="street_id" name="street_id"
+                   t-att-value="post.get('street_id', partner and partner.id != -1 and partner.street_id and partner.street_id.id)"/>
+        </div>
+        <!-- CHECKBOX NEW STREET -->
+        <div class="form-check" style="margin-top: 30px;">
+            <label class="form-check-label">
+                <input class="form-check-input" name="create_new_street" id="create_new_street" type="checkbox"
+                       onchange="$('div[id=new_street]').fadeToggle()"
+                       t-att-checked="post.get('create_new_street', False)"/>
+                Street not referenced
+            </label>
+        </div>
+        <!-- NEW STREET -->
+        <div id="new_street" style="display: none;"
+             t-attf-class="form-group col-md-12 required {{any([k in error for k in ['new_street']]) and 'has-error' or ''}}">
+            <label for="street">New Street</label>
+            <input name="new_street" id="input_new_street" type="text" class="form-control"
+                   t-att-disabled="not post.get('create_new_street')"
+                   required="required"
+                   t-att-value="post.get('new_street', False)" autocomplete="nope"/>
+        </div>
+        <div class="clearfix"/>
+
+        <!-- STREET ADDITIONAL -->
+        <div t-attf-class="form-group col-md-12 {{error.get('street2') and 'has-error' or ''}}">
+            <label class="control-label" for="street">Street additional (floor, stairs, apartment number)</label>
+            <t t-set='is_disabled_street'
+               t-value="not post.get('street')"/>
+            <t t-if="partner.id != -1">
+                <t t-set='is_disabled_street'
+                   t-value="not post.get('street') and not partner.street2 and not partner.street"/>
+            </t>
+            <input name="street2" id="additional_address1" class="form-control"
+                   t-att-disabled="is_disabled_street"
+                   t-att-value="post.get('street2', partner and partner.id != -1 and partner.street2)"
+                   autocomplete="nope"/>
+        </div>
+        <div class="clearfix"/>
+
+        <!-- STREET SECOND ADDITIONAL -->
+        <div t-attf-class="form-group col-md-12 {{error.get('street3') and 'has-error' or ''}}">
+            <label class="control-label" for="street">Second street additional (building, access)</label>
+            <t t-if="partner.id != -1">
+                <t t-set='is_disabled_street'
+                   t-value="not post.get('street') and not partner.street3 and not partner.street"/>
+            </t>
+            <input name="street3" class="form-control" id="additional_address2"
+                   t-att-disabled="is_disabled_street"
+                   t-att-value="post.get('street3', partner and partner.id != -1 and partner.street3)" autocomplete="nope"/>
+        </div>
+        <div class="clearfix"/>
+    </template>
+
+    <template id="invoice_partner_address" name="Address fields">
+        <!-- NAME -->
+        <div t-attf-class="form-group col-md-8 required {{any([k in error for k in ['invoice_name']]) and 'has-error' or ''}}">
+            <label class="control-label" for="invoice_name">Name</label>
+            <input name="invoice_name" class="form-control"
+                   t-att-value="post.get('invoice_name', invoice_address and invoice_address.name or partner.name)"
+                   autocomplete="nope"/>
+        </div>
+        <!--PAYS-->
+        <div t-attf-class="form-group col-md-6 {{ error.get('invoice_country_id') and 'has-error' or '' }}">
+            <label class="control-label" for="country_id">Country</label>
+            <select name="invoice_country_id" id="invoice_country" class="form-control">
+                <t t-set='selected_id'
+                   t-value="int(post.get('invoice_country_id') or invoice_address and invoice_address.country_id and invoice_address.country_id.id or default_country_id or False)"/>
+                <t t-foreach="partner.country_id.search([])" t-as="country">
+                    <option t-if="country_index == 0 and not selected_id"
+                            value="" selected="" hidden="">select...
+                    </option>
+                    <option t-att-value="country.id"
+                            t-att-selected="country.id == selected_id">
+                        <t t-esc="country.name"/>
+                    </option>
+                </t>
+            </select>
+        </div>
+        <div class="clearfix"/>
+        <!--CODE POSTAL-->
+        <div t-attf-class="form-group col-md-2 required {{any([k in error for k in ['invoice_zipcode']]) and 'has-error' or ''}}">
+            <label for="zipcode">* Zipcode</label>
+            <input id="invoice_zipcode" name="invoice_zipcode" type="text" class="form-control" maxlength="5"
+                   required="required"
+                   disabled="disabled"
+                   t-att-value="post.get('invoice_zipcode', False) or invoice_address and invoice_address.zip_id and invoice_address.zip_id.name"
+                   autocomplete="nope"/>
+        </div>
+        <!--CITY-->
+        <div t-attf-class="form-group col-md-10 required {{any([k in error for k in ['invoice_city_id','invoice_city']]) and 'has-error' or ''}}">
+            <label for="city">* City</label>
+            <select t-if="not city_id" id="invoice_city_id" name="invoice_city_id" class="form-control"
+                    disabled="disabled"
+                    required="required" autocomplete="nope">
+                <option value="">Select...</option>
+            </select>
+            <input name="invoice_city" type="hidden" id="invoice_city"
+                   t-att-value="post.get('invoice_city_id') or invoice_address and invoice_address.city_id and invoice_address.city_id.id or False"/>
+        </div>
+        <div class="clearfix"/>
+        <!-- STREET NUMBER -->
+        <div t-attf-class="form-group col-md-2 {{any([k in error for k in ['invoice_street_number_id','invoice_street_number']]) and 'has-error' or ''}}">
+            <label for="street_number">* Street n°</label>
+            <input id="invoice_street_number" name="invoice_street_number" type="text" class="form-control"
+                   t-att-disabled="not post.get('invoice_city_id') and not invoice_address" required="required"
+                   t-att-value="post.get('invoice_street_number', invoice_address and invoice_address.street_number_id and invoice_address.street_number_id.name) or False"
+                   pattern="([\d]+)([ ])?(bis|ter|[a-z]|[A-Z])?"
+                   autocomplete="nope"/>
+            <input type="hidden" id="invoice_street_number_id" name="invoice_street_number_id"
+                   t-att-value="post.get('invoice_street_number_id', invoice_address and invoice_address.street_number_id and invoice_address.street_number_id.id)"/>
+        </div>
+        <!-- STREET -->
+        <div t-attf-class="form-group col-md-7 required {{any([k in error for k in ['invoice_street_id','invoice_street']]) and 'has-error' or ''}}">
+            <label for="street">* Street</label>
+            <input id="invoice_street" name="invoice_street" type="text" class="form-control"
+                   t-att-disabled="not post.get('invoice_street_number') and not invoice_address"
+                   required="required"
+                   t-att-value="post.get('invoice_street', invoice_address and invoice_address.street_id and invoice_address.street_id.name) or False"
+                   autocomplete="nope"/>
+            <input type="hidden" id="invoice_street_id" name="invoice_street_id"
+                   t-att-value="post.get('invoice_street_id', invoice_address and invoice_address.street_id and invoice_address.street_id.id)"/>
+        </div>
+        <!-- CHECKBOX NEW STREET -->
+        <div class="form-check" style="margin-top: 30px;">
+            <label class="form-check-label">
+                <input class="form-check-input" name="invoice_create_new_street" id="invoice_create_new_street"
+                       type="checkbox"
+                       onchange="$('div[id=invoice_new_street]').fadeToggle()"
+                       t-att-checked="post.get('invoice_create_new_street', False)"/>
+                Street not referenced
+            </label>
+        </div>
+        <!-- NEW STREET -->
+        <div id="invoice_new_street" style="display: none;"
+             t-attf-class="form-group col-md-12 required {{any([k in error for k in ['invoice_new_street']]) and 'has-error' or ''}}">
+            <label for="street">New Street</label>
+            <input name="invoice_new_street" id="invoice_input_new_street" type="text" class="form-control"
+                   t-att-disabled="not post.get('invoice_create_new_street')"
+                   required="required"
+                   t-att-value="post.get('invoice_new_street', False)"
+                   autocomplete="nope"/>
+        </div>
+        <div class="clearfix"/>
+
+        <!-- STREET ADDITIONAL -->
+        <div t-attf-class="form-group col-md-12 {{error.get('invoice_street2') and 'has-error' or ''}}">
+            <label class="control-label" for="street">Street additional (floor, stairs, apartment number)</label>
+            <input name="invoice_street2" id="invoice_additional_address1" class="form-control"
+                   t-att-disabled="not post.get('invoice_street') and not invoice_address"
+                   t-att-value="post.get('invoice_street2', invoice_address and invoice_address.street2)"
+                   autocomplete="nope"/>
+        </div>
+        <div class="clearfix"/>
+
+        <!-- STREET SECOND ADDITIONAL -->
+        <div t-attf-class="form-group col-md-12 {{error.get('invoice_street3') and 'has-error' or ''}}">
+            <label class="control-label" for="street">Second street additional (building, access)</label>
+            <input name="invoice_street3" class="form-control" id="invoice_additional_address2"
+                   t-att-disabled="not post.get('invoice_street') and not invoice_address"
+                   t-att-value="post.get('invoice_street3', invoice_address and invoice_address.street3)"
+                   autocomplete="nope"/>
+        </div>
+    </template>
+
+    <template id="shipping_partner_address" name="Address fields">
+        <!-- NAME -->
+        <div t-attf-class="form-group col-md-8 required {{any([k in error for k in ['shipping_name']]) and 'has-error' or ''}}">
+            <label class="control-label" for="shipping_name">Name</label>
+            <input name="shipping_name" class="form-control"
+                   t-att-value="post.get('shipping_name', shipping_address and shipping_address.name or partner.name)"/>
+        </div>
+        <!--PAYS-->
+        <div t-attf-class="form-group col-md-6 {{ error.get('shipping_country_id') and 'has-error' or '' }}">
+            <label class="control-label" for="country_id">Country</label>
+            <select name="shipping_country_id" id="shipping_country" class="form-control">
+                <t t-set='selected_id'
+                   t-value="int(post.get('shipping_country_id') or shipping_address and shipping_address.country_id and shipping_address.country_id.id or default_country_id or False)"/>
+                <t t-foreach="partner.country_id.search([])" t-as="country">
+                    <option t-if="country_index == 0 and not selected_id"
+                            value="" selected="" hidden="">select...
+                    </option>
+                    <option t-att-value="country.id"
+                            t-att-selected="country.id == selected_id">
+                        <t t-esc="country.name"/>
+                    </option>
+                </t>
+            </select>
+        </div>
+        <div class="clearfix"/>
+        <!--CODE POSTAL-->
+        <div t-attf-class="form-group col-md-2 required {{any([k in error for k in ['shipping_zipcode']]) and 'has-error' or ''}}">
+            <label for="zipcode">* Zipcode</label>
+            <input id="shipping_zipcode" name="shipping_zipcode" type="text" class="form-control" maxlength="5"
+                   required="required"
+                   t-att-value="post.get('shipping_zipcode', False) or shipping_address and shipping_address.zip_id and shipping_address.zip_id.name"
+                   autocomplete="nope"/>
+        </div>
+        <!--CITY-->
+        <div t-attf-class="form-group col-md-10 required {{any([k in error for k in ['shipping_city_id','shipping_city']]) and 'has-error' or ''}}">
+            <label for="city">* City</label>
+            <select t-if="not city_id" id="shipping_city_id" name="shipping_city_id" class="form-control"
+                    disabled="disabled"
+                    required="required">
+                <option value="">Select...</option>
+            </select>
+            <input name="shipping_city" type="hidden" id="shipping_city"
+                   t-att-value="post.get('shipping_city_id') or shipping_address and shipping_address.city_id and shipping_address.city_id.id or False"/>
+        </div>
+        <div class="clearfix"/>
+        <!-- STREET NUMBER -->
+        <div t-attf-class="form-group col-md-2 {{any([k in error for k in ['shipping_street_number_id','shipping_street_number']]) and 'has-error' or ''}}">
+            <label for="street_number">* Street n°</label>
+            <input id="shipping_street_number" name="shipping_street_number" type="text" class="form-control"
+                   t-att-disabled="not post.get('shipping_city_id') and not shipping_address" required="required"
+                   t-att-value="post.get('shipping_street_number', shipping_address and shipping_address.street_number_id and shipping_address.street_number_id.name) or False"
+                   pattern="([\d]+)([ ])?(bis|ter|[a-z]|[A-Z])?"
+                   autocomplete="nope"/>
+            <input type="hidden" id="shipping_street_number_id" name="shipping_street_number_id"
+                   t-att-value="post.get('shipping_street_number_id', shipping_address and shipping_address.street_number_id and shipping_address.street_number_id.id)"/>
+        </div>
+        <!-- STREET -->
+        <div t-attf-class="form-group col-md-7 required {{any([k in error for k in ['shipping_street_id','shipping_street']]) and 'has-error' or ''}}">
+            <label for="street">* Street</label>
+            <input id="shipping_street" name="shipping_street" type="text" class="form-control"
+                   t-att-disabled="not post.get('shipping_street_number') and not shipping_address"
+                   required="required"
+                   t-att-value="post.get('shipping_street', shipping_address and shipping_address.street_id and shipping_address.street_id.name) or False"
+                   autocomplete="nope"/>
+            <input type="hidden" id="shipping_street_id" name="shipping_street_id"
+                   t-att-value="post.get('shipping_street_id', shipping_address and shipping_address.street_id and shipping_address.street_id.id)"/>
+        </div>
+        <!-- CHECKBOX NEW STREET -->
+        <div class="form-check" style="margin-top: 30px;">
+            <label class="form-check-label">
+                <input class="form-check-input" name="shipping_create_new_street" id="shipping_create_new_street"
+                       type="checkbox"
+                       onchange="$('div[id=shipping_new_street]').fadeToggle()"
+                       t-att-checked="post.get('shipping_create_new_street', False)"/>
+                Street not referenced
+            </label>
+        </div>
+        <!-- NEW STREET -->
+        <div id="shipping_new_street" style="display: none;"
+             t-attf-class="form-group col-md-12 required {{any([k in error for k in ['shipping_new_street']]) and 'has-error' or ''}}">
+            <label for="street">New Street</label>
+            <input name="shipping_new_street" id="shipping_input_new_street" type="text" class="form-control"
+                   t-att-disabled="not post.get('shipping_create_new_street')"
+                   required="required"
+                   t-att-value="post.get('shipping_new_street', False)"
+                   autocomplete="nope"/>
+        </div>
+        <div class="clearfix"/>
+
+        <!-- STREET ADDITIONAL -->
+        <div t-attf-class="form-group col-md-12 {{error.get('shipping_street2') and 'has-error' or ''}}">
+            <label class="control-label" for="street">Street additional (floor, stairs, apartment number)</label>
+            <input name="shipping_street2" id="shipping_additional_address1" class="form-control"
+                   t-att-disabled="not post.get('shipping_street') and not shipping_address"
+                   t-att-value="post.get('shipping_street2', shipping_address and shipping_address.street2)"
+                   autocomplete="nope"/>
+        </div>
+        <div class="clearfix"/>
+
+        <!-- STREET SECOND ADDITIONAL -->
+        <div t-attf-class="form-group col-md-12 {{error.get('shipping_street3') and 'has-error' or ''}}">
+            <label class="control-label" for="street">Second street additional (building, access)</label>
+            <input name="shipping_street3" class="form-control" id="shipping_additional_address2"
+                   t-att-disabled="not post.get('shipping_street') and not shipping_address"
+                   t-att-value="post.get('shipping_street3', shipping_address and shipping_address.street3)"
+                   autocomplete="nope"/>
+        </div>
+    </template>
+
+</odoo>

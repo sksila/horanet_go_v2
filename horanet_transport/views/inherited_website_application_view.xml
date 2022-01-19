@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="website_application_transport_form" model="ir.ui.view">
+        <field name="name">website application transport form</field>
+        <field name="model">website.application</field>
+        <field name="inherit_id" ref="website_application.view_form_website_application"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="website_application_template_id" position="attributes">
+                <attribute name="domain">[('application_type', '=', 'transport')]</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_transport_website_application" model="ir.actions.act_window">
+        <field name="name">Requests</field>
+        <field name="res_model">website.application</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="context">{"search_default_group_by_type": True}</field>
+        <field name="domain" eval="[('website_application_template_id.application_type', '=', 'transport')]"/>
+    </record>
+
+    <record id="transport_applications_form_view" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="website_application_transport_form"/>
+        <field name="act_window_id" ref="action_transport_website_application"/>
+    </record>
+
+    <!--Appel de la forme de base afin de garder la main sur l'ordonnancement des vue-->
+    <record id="transport_applications_tree_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="website_application.view_tree_website_application"/>
+        <field name="act_window_id" ref="action_transport_website_application"/>
+    </record>
+</odoo>

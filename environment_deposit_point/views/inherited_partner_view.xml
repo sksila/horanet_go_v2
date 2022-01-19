@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner_form_view" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="environment_waste_collect.res_partner_form_view"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <field name="has_active_environment_subscription" invisible="True"/>
+                <button name="%(environment_deposit_point.deposit_point_deposit_action)d" string="Voluntary deposits"
+                        icon="fa-download"
+                        class="oe_stat_button" type="action"
+                        attrs="{'invisible': [('has_active_environment_subscription', '=', False)]}"
+                        context="{'search_default_operation_partner_id': id}"/>
+            </div>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_terminal" model="ir.ui.view">
+        <field name="name">tco.terminal.form</field>
+        <field name="model">tco.terminal</field>
+        <field name="arch" type="xml">
+            <form string="Terminal">
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="display_name"/>
+                        </div>
+                        <h1>
+                            <field name="display_name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="identification_number"></field>
+                        <field name="model"></field>
+                        <field name="software_id"></field>
+                        <field name="bios_version_id"></field>
+                        <field name="serial_number"></field>
+                    </group>
+                    <group string="Properties">
+                        <field name="is_active"></field>
+                        <field name="last_configuration_date"></field>
+                        <field name="last_synchronisation_date"></field>
+                        <field name="terminal_time"></field>
+                        <field name="dns_name"></field>
+                        <field name="ip_address"></field>
+                        <field name="mac_address"></field>
+                        <field name="port_number"></field>
+                        <field name="communication_type"></field>
+                        <field name="vehicle_id"></field>
+                        <field name="company_owner_id"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_terminal" model="ir.ui.view">
+        <field name="name">tco.terminal.tree</field>
+        <field name="model">tco.terminal</field>
+        <field name="arch" type="xml">
+            <tree string="Terminal">
+                <field name="identification_number"></field>
+                <field name="license_plate"></field>
+                <field name="model"></field>
+                <field name="software_id"></field>
+                <field name="serial_number"></field>
+                <field name="last_configuration_date"></field>
+                <field name="last_synchronisation_date"></field>
+                <field name="terminal_time"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_terminal" model="ir.actions.act_window">
+        <field name="name">Terminal</field>
+        <field name="res_model">tco.terminal</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_terminal"/>
+    </record>
+
+    <act_window id="action_terminal_lb7_configure"
+                name="Configure LB7 terminals"
+                src_model="tco.terminal"
+                res_model="tco.terminal.lb7.configure"
+                view_mode="form"
+                target="new"
+                key2="client_action_multi"/>
+</odoo>

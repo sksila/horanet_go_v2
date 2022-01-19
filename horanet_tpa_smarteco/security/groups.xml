@@ -1,0 +1,8 @@
+<odoo>
+	<data>
+        <!-- Add TPA SmartEco group -->
+		<record id="group_tpa_smarteco" model="res.groups">
+            <field name="name">Auto sync with SmartEco</field>
+        </record>
+	</data>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Global menu -->
+    <menuitem id="deposit_points_global_menu"
+              name="Volontary deposit points"
+              parent="horanet_environment.environment_main"
+              groups="horanet_environment.group_browse_environment"
+              sequence="5"/>
+
+    <!-- Deposit areas -->
+    <menuitem id="deposit_areas_menu"
+              name="Deposit areas"
+              parent="deposit_points_global_menu"
+              action="deposit_area_action"
+              groups="horanet_environment.group_browse_environment"
+              sequence="5"/>
+
+    <!-- Deposit points -->
+    <menuitem id="deposit_points_menu"
+              name="Deposit points"
+              parent="deposit_points_global_menu"
+              action="deposit_point_action"
+              groups="horanet_environment.group_browse_environment"
+              sequence="10"/>
+
+    <!-- Deposit points deposits -->
+    <menuitem id="deposit_points_deposits_menu"
+              name="Deposits"
+              parent="deposit_points_global_menu"
+              action="deposit_point_deposit_action"
+              groups="horanet_environment.group_browse_environment"
+              sequence="15"/>
+
+    <!-- Deposit points deposits -->
+    <menuitem id="deposit_import_datas_menu"
+              name="Deposit imports"
+              parent="deposit_points_global_menu"
+              action="deposit_import_data_action"
+              groups="horanet_environment.group_browse_environment"
+              sequence="15"/>
+
+</odoo>

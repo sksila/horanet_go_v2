@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+        <!--Technologies-->
+        <record id="technology_calypso" model="partner.contact.identification.technology">
+            <field name="name">Calypso</field>
+            <field name="code">Calypso</field>
+        </record>
+
+        <!--Areas-->
+        <record id="area_calypso_fiscality" model="partner.contact.identification.area">
+            <field name="name">Fiscality</field>
+        </record>
+        <record id="area_calypso_work_and_social" model="partner.contact.identification.area">
+            <field name="name">Work And Social</field>
+        </record>
+        <record id="area_calypso_health" model="partner.contact.identification.area">
+            <field name="name">Health</field>
+        </record>
+        <record id="area_calypso_transport" model="partner.contact.identification.area">
+            <field name="name">Calypso Transport</field>
+        </record>
+        <record id="area_calypso_civil_state" model="partner.contact.identification.area">
+            <field name="name">Civil State and Citizenship</field>
+        </record>
+        <record id="area_calypso_relation_with_elected_officials" model="partner.contact.identification.area">
+            <field name="name">Relation with elected officials</field>
+        </record>
+        <record id="area_calypso_sport_recreation_childhood" model="partner.contact.identification.area">
+            <field name="name">Sport, Recreation, Childhood</field>
+        </record>
+        <record id="area_calypso_economy" model="partner.contact.identification.area">
+            <field name="name">Economy</field>
+        </record>
+        <record id="area_calypso_police" model="partner.contact.identification.area">
+            <field name="name">Police</field>
+        </record>
+        <record id="area_calypso_citizens_relations" model="partner.contact.identification.area">
+            <field name="name">Citizens relations</field>
+        </record>
+        <record id="area_calypso_agents_services" model="partner.contact.identification.area">
+            <field name="name">Agents services</field>
+        </record>
+        <record id="area_calypso_studients_facilities" model="partner.contact.identification.area">
+            <field name="name">Studients facilities</field>
+        </record>
+        <record id="area_calypso_business_fidelity" model="partner.contact.identification.area">
+            <field name="name">Fidelity and Business</field>
+        </record>
+
+        <!--Mappings-->
+        <record id="mapping_calypso_csn" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="partner_contact_identification.area_horanet"/>
+            <field name="max_length" eval="8"/>
+        </record>
+
+        <record id="mapping_calypso_fiscality" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_fiscality"/>
+        </record>
+        <record id="mapping_calypso_work_and_social" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_work_and_social"/>
+        </record>
+        <record id="mapping_calypso_health" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_health"/>
+        </record>
+        <record id="mapping_calypso_transport" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_transport"/>
+        </record>
+        <record id="mapping_calypso_civil_state" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_civil_state"/>
+        </record>
+        <record id="mapping_calypso_relation_with_elected_officials" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_relation_with_elected_officials"/>
+        </record>
+        <record id="mapping_calypso_sport_recreation_childhood" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_sport_recreation_childhood"/>
+        </record>
+        <record id="mapping_calypso_economy" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_economy"/>
+        </record>
+        <record id="mapping_calypso_police" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_police"/>
+        </record>
+        <record id="mapping_calypso_citizens_relations" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_citizens_relations"/>
+        </record>
+        <record id="mapping_calypso_agents_services" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_agents_services"/>
+        </record>
+        <record id="mapping_calypso_studients_facilities" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_studients_facilities"/>
+        </record>
+        <record id="mapping_calypso_business_fidelity" model="partner.contact.identification.mapping">
+            <field name="mapping">csn</field>
+            <field name="technology_id" ref="technology_calypso"/>
+            <field name="area_id" ref="area_calypso_business_fidelity"/>
+        </record>
+    </data>
+
+</odoo>
+
+

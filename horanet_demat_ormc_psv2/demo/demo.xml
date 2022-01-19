@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Société -->
+    <record id="base.main_company" model="res.company">
+        <field name="ormc_id_post">056011</field>
+        <field name="ormc_cod_col">123</field>
+        <field name="siret">42281547200010</field>
+    </record>
+
+    <!-- Usagers -->
+    <record id="partner_contact_citizen.demo_partner_1" model="res.partner">
+        <field name="cat_tiers_id" ref="pes_ref_cat_tiers_50"/>
+        <field name="nat_jur_id" ref="pes_ref_nat_jur_03"/>
+    </record>
+
+    <record id="partner_contact_citizen.demo_partner_2" model="res.partner">
+        <field name="cat_tiers_id" ref="pes_ref_cat_tiers_50"/>
+        <field name="nat_jur_id" ref="pes_ref_nat_jur_03"/>
+    </record>
+
+    <record id="partner_contact_citizen.demo_partner_3" model="res.partner">
+        <field name="cat_tiers_id" ref="pes_ref_cat_tiers_01"/>
+        <field name="nat_jur_id" ref="pes_ref_nat_jur_01"/>
+    </record>
+
+    <record id="partner_contact_citizen.demo_partner_4" model="res.partner">
+        <field name="cat_tiers_id" ref="pes_ref_cat_tiers_01"/>
+        <field name="nat_jur_id" ref="pes_ref_nat_jur_01"/>
+    </record>
+</odoo>

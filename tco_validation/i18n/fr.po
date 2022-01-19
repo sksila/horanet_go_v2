@@ -1,0 +1,323 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tco_validation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-20 11:22+0000\n"
+"PO-Revision-Date: 2017-02-20 11:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.view_form_citizen_tovalidate
+msgid "<span>Validate address</span>"
+msgstr "<span>Valider l'adresse</span>"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.view_form_citizen_tovalidate
+msgid "<span>Validate relations</span>"
+msgstr "<span>Validate relations</span>"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_address_status
+msgid "Address State"
+msgstr "Statut de l'adresse"
+
+#. module: tco_validation
+#: model:ir.model.fields,help:tco_validation.field_horanet_citizen_wizard_validate_partner_address_address_status
+msgid "Address state:\n"
+" * Normal is the default situation\n"
+" * Invalid indicates the selected value are not 'referential'"
+msgstr "Statut de l’adresse :\n"
+" * Normal est la situation par défaut\n"
+" * Invalide indique que la valeur sélectionnée n'est pas référentielle"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_address_form
+msgid "Address to validate"
+msgstr "Adresse à valider"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_res_partner_is_address_valid
+msgid "Address valid"
+msgstr "Address valide"
+
+#. module: tco_validation
+#: model:ir.actions.act_window,name:tco_validation.action_wizard_validate_partner_address
+msgid "Address validation wizard"
+msgstr "Assistant de validation d'adresse"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_address_workflow
+#: model:ir.model.fields,field_description:tco_validation.field_res_partner_address_workflow
+msgid "Address workflow state"
+msgstr "Statut de l'adresse"
+
+#. module: tco_validation
+#: model:res.groups,comment:tco_validation.group_citizen_validate
+msgid "Can access to the menu to validate citizens"
+msgstr "Peut accéder au menu de validation des citoyens"
+
+#. module: tco_validation
+#: model:ir.actions.act_window,name:tco_validation.partner_tovalidate_action
+msgid "Partners to validate"
+msgstr "Partenaires à valider"
+
+#. module: tco_validation
+#: model:ir.ui.menu,name:tco_validation.horanet_menu_tovalidate
+msgid "Partners to validate"
+msgstr "Partenaires à valider"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_city
+msgid "City"
+msgstr "Ville"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_create_uid
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_create_date
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_display_name
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_document_id
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_document_id
+msgid "Document"
+msgstr "Document"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_document_status
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_document_status
+msgid "Document status"
+msgstr "Statut du document"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_document_link
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_document_link
+msgid "Download link"
+msgstr "Lien de téléchargement"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_relations_form
+msgid "Family record book"
+msgstr "Livret de famille"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_garant_workflow
+#: model:ir.model.fields,field_description:tco_validation.field_res_partner_garant_workflow
+msgid "Garant relation workflow state"
+msgstr "Statut des relations"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_res_partner_is_garant_valid
+msgid "Garant valid"
+msgstr "Garant valide"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_id
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_id
+msgid "ID"
+msgstr "ID"
+
+#. module: tco_validation
+#: code:addons/tco_validation/controllers/main.py:36
+#, python-format
+msgid "In order to validate your account, you must provide a document that justify your current address."
+msgstr "Pour pouvoir valider votre compte, vous devez soumettre un document justifiant votre adresse."
+
+#. module: tco_validation
+#: selection:res.partner,address_workflow:0
+#: selection:res.partner,garant_workflow:0
+msgid "Initial"
+msgstr "Initial"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address___last_update
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_write_uid
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_write_date
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: tco_validation
+#: model:ir.model,name:tco_validation.model_res_partner
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_partner_id
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.view_tree_horanet_citizen_tovalidate
+msgid "Partners to validate"
+msgstr "Partenaires à valider"
+
+#. module: tco_validation
+#: selection:res.partner,address_workflow:0
+#: selection:res.partner,garant_workflow:0
+msgid "Pending"
+msgstr "En attente"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_address_form
+msgid "Proof of address"
+msgstr "Justificatif de domicile"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_address_form
+msgid "Reject address"
+msgstr "Refuser l'adresse"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_address_form
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_relations_form
+msgid "Reject document"
+msgstr "Refuser le document"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_relations_form
+msgid "Reject relations"
+msgstr "Refuser les relations"
+
+#. module: tco_validation
+#: selection:res.partner,address_workflow:0
+#: selection:res.partner,garant_workflow:0
+msgid "Rejected"
+msgstr "Refusé"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_relations_form
+msgid "Relations to validate"
+msgstr "Relations à valider"
+
+#. module: tco_validation
+#: model:ir.actions.act_window,name:tco_validation.action_wizard_validate_partner_relations
+msgid "Relations validation wizard"
+msgstr "Assistant de validation des relations"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_relations_garant_ids
+msgid "Responsable of"
+msgstr "Responsable de"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_state_id
+msgid "State"
+msgstr "Département"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_street
+msgid "Street"
+msgstr "Rue"
+
+#. module: tco_validation
+#: model:ir.model.fields,field_description:tco_validation.field_horanet_citizen_wizard_validate_partner_address_street_number_id
+msgid "Street number"
+msgstr "Numéro de rue"
+
+#. module: tco_validation
+#: code:addons/tco_validation/wizards/wizard_validate_partner_address.py:127
+#, python-format
+msgid "The document must be valid to validate address."
+msgstr "Le document doit être validé pour valider l'adresse."
+
+#. module: tco_validation
+#: code:addons/tco_validation/wizards/wizard_validate_partner_relations.py:106
+#, python-format
+msgid "The document must be valid to validate relations."
+msgstr "Le document doit être validé pour valider les relations."
+
+#. module: tco_validation
+#: model:res.groups,name:tco_validation.group_citizen_validate
+msgid "Validate citizens"
+msgstr "Valider les citoyens"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_address_form
+msgid "Validate address"
+msgstr "Valider l'adresse"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_address_form
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_relations_form
+msgid "Validate document"
+msgstr "Valider le document"
+
+#. module: tco_validation
+#: model:ir.ui.view,arch_db:tco_validation.wizard_validate_partner_relations_form
+msgid "Validate relations"
+msgstr "Valider les relations"
+
+#. module: tco_validation
+#: selection:res.partner,address_workflow:0
+#: selection:res.partner,garant_workflow:0
+msgid "Validated"
+msgstr "Validé"
+
+#. module: tco_validation
+#: code:addons/tco_validation/controllers/main.py:68
+#, python-format
+msgid "You have to justify the address of {person_name}."
+msgstr "Vous devez justifier l'adresse de {person_name}."
+
+#. module: tco_validation
+#: code:addons/tco_validation/controllers/main.py:82
+#, python-format
+msgid "You must justify the relation with the all the members of your foyer by submitting a family record book."
+msgstr "Vous devez justifier vos relations avec les membres de votre foyer en soumettant un livret de famille."
+
+#. module: tco_validation
+#: code:addons/tco_validation/controllers/main.py:24
+#, python-format
+msgid "Your address is necessary to use our services."
+msgstr "Votre adresse est nécessaire pour pouvoir utiliser nos services."
+
+#. module: tco_validation
+#: code:addons/tco_validation/controllers/main.py:50
+#, python-format
+msgid "Your family quotient must be validated by a CAF certificate."
+msgstr "Votre quotient familial doit être validé par une attestation CAF."
+
+#. module: tco_validation
+#: model:ir.model,name:tco_validation.model_horanet_citizen_wizard_validate_partner_address
+msgid "horanet.citizen.wizard.validate.partner.address"
+msgstr "horanet.citizen.wizard.validate.partner.address"
+
+#. module: tco_validation
+#: model:ir.model,name:tco_validation.model_horanet_citizen_wizard_validate_partner_relations
+msgid "horanet.citizen.wizard.validate.partner.relations"
+msgstr "horanet.citizen.wizard.validate.partner.relations"
+

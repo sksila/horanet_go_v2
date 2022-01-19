@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_partner_contact_identification_mapping" model="ir.ui.view">
+        <field name="name">mapping form</field>
+        <field name="model">partner.contact.identification.mapping</field>
+        <field name="arch" type="xml">
+            <form string="mapping" duplicate="false">
+                <sheet>
+                    <group>
+                        <field name="technology_id"></field>
+                        <field name="area_id"></field>
+                        <field name="mapping"></field>
+                        <field name="max_length"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="regex"/>
+                            <field name="tag_format_recording" widget="radio" options="{'horizontal': true}"/>
+                        </group>
+                        <group>
+                            <label for="regex_test"  groups="base.group_no_one"/>
+                            <div class="o_row">
+                                <field name="regex_test" groups="base.group_no_one" nolabel="1"/>
+                                <field name="regex_result" widget="toggle_button" groups="base.group_no_one" nolabel="1"/>
+                            </div>
+                            <field name="result_of_recording" groups="base.group_no_one" readonly="True"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_partner_contact_identification_mapping" model="ir.ui.view">
+        <field name="name">Mapping list</field>
+        <field name="model">partner.contact.identification.mapping</field>
+        <field name="arch" type="xml">
+            <tree string="mapping">
+                <field name="technology_id"/>
+                <field name="area_id"/>
+                <field name="mapping"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_identification_mapping" model="ir.actions.act_window">
+        <field name="name">Mappings</field>
+        <field name="res_model">partner.contact.identification.mapping</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_partner_contact_identification_mapping"/>
+    </record>
+</odoo>

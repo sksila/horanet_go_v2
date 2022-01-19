@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_invoice_document_sepa_waste_collect" name="Waste collect usages">
+            <!-- LISTE DES DEPOTS EN DECHETTERIE -->
+            <t t-set="list_waste_collect_usages" t-value="o.get_list_waste_collect_usages()"/>
+            <t t-if="list_waste_collect_usages">
+                <div style="text-align: center; background-color: gainsboro;">
+                   <strong> <span style="text-decoration: underline;font-size: 18px;">Détail des dépôts réalisés</span> </strong>
+                </div>
+                <br/>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Site</th>
+                            <th>Date</th>
+                            <th class="text-right">Activity</th>
+                            <th class="text-right">Quantity</th>
+                            <th class="text-right">Unit</th>
+                            <th class="text-right">Invoiced</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="list_waste_collect_usages" t-as="usage">
+                            <td>
+                                <span t-field="usage.origin_operation_id.infrastructure_id.name"/>
+                            </td>
+                            <td>
+                                <span t-field="usage.usage_date"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="usage.activity_id"/>
+                            </td>
+                            <td class="text-right">
+                                <span t-field="usage.quantity"/>
+                            </td>
+                            <td>
+                                <span t-field="usage.unit_id"/>
+                            </td>
+                            <td class="text-center">
+                                <t t-if="usage.invoice_line_ids">
+                                    <strong>*</strong>
+                                </t>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </t>
+        </template>
+    </data>
+</odoo>

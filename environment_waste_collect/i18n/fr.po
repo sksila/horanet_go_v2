@@ -1,0 +1,3557 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* environment_waste_collect
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-22 10:02+0000\n"
+"PO-Revision-Date: 2018-11-22 10:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: environment_waste_collect
+#: model:mail.template,body_html:environment_waste_collect.mail_template_summary_pickup_request_notification
+msgid "\n"
+"            <html lang=\"fr\">\n"
+"            <head>\n"
+"                <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>\n"
+"                <title>\n"
+"                    Notification de relèves de bennes\n"
+"                </title>\n"
+"                <style>\n"
+"                    table {\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        font-size: 1em;\n"
+"                        border-collapse: collapse;\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                    }\n"
+"                    table thead tr {\n"
+"                        background-color: rgb(203, 212, 255);\n"
+"                    }\n"
+"                    table thead th{\n"
+"                        font-size:inherit;\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                        padding: 6px; vertical-align:middle;\n"
+"                    }\n"
+"                    table tbody td{\n"
+"                        font-size:inherit;\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                        padding: 8px;\n"
+"                        vertical-align:middle;\n"
+"                        font-weight: normal;\n"
+"                    }\n"
+"                </style>\n"
+"            </head>\n"
+"            <body>\n"
+"                <div style=\"max-width:800px;\n"
+"                    font-size:13px;\n"
+"                    font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\n"
+"                    color:rgb(76, 76, 76);\">\n"
+"                    <p>\n"
+"                        <span>\n"
+"                            Bonjour,\n"
+"                        </span>\n"
+"                    </p>\n"
+"\n"
+"                    <p>\n"
+"                        <span>\n"
+"                            Ci dessous le résumé des demandes des relèves de bennes\n"
+"                            % if 'current_time' in ctx\n"
+"                                (état au ${format_tz(ctx.current_time)})\n"
+"                            % endif\n"
+"                        </span>\n"
+"                    </p>\n"
+"                    <br/>\n"
+"                    % for contract in object.environment_pickup_contract_ids:\n"
+"                        <p style=\"font-weight: bold;\">\n"
+"                            Contrat n° ${contract.name|e} de la déchetterie \"${contract.waste_site_id.name|e}\" :\n"
+"                        </p>\n"
+"                        % if contract.active_environment_pickup_request_ids:\n"
+"                            <table width=\"800px\">\n"
+"                                <thead>\n"
+"                                    <tr>\n"
+"                                        <th style=\"text-align: left;\">\n"
+"                                            Emplacement\n"
+"                                        </th>\n"
+"                                        <th style=\"text-align: left;\">\n"
+"                                            Déchet\n"
+"                                        </th>\n"
+"                                        <th style=\"width:15em;\">\n"
+"                                            Date d'enlèvement souhaitée\n"
+"                                        </th>\n"
+"                                        <th style=\"width:8em;\">\n"
+"                                            Priorité\n"
+"                                        </th>\n"
+"                                        <th style=\"width:4em;\">\n"
+"                                            ID\n"
+"                                        </th>\n"
+"                                    </tr>\n"
+"                                </thead>\n"
+"                                <tbody>\n"
+"                                    % for pickup in contract.active_environment_pickup_request_ids:\n"
+"                                        <tr style=\"background-color:${loop.cycle('inherit', 'rgb(238, 240, 251)')};\">\n"
+"                                            <td>\n"
+"                                                ${pickup.emplacement_id.name|e}\n"
+"                                            </td>\n"
+"                                            <td>\n"
+"                                                % if pickup.emplacement_id.activity_id:\n"
+"                                                    ${pickup.emplacement_id.activity_id.name|e}\n"
+"                                                % else\n"
+"                                                    ---\n"
+"                                                % endif\n"
+"                                            </td>\n"
+"                                            <td style=\"text-align:center;\">\n"
+"                                                ${format_tz(pickup.schedule_date) or '-&#45;&#45;'}\n"
+"                                            </td>\n"
+"                                            <td style=\"$text-align:center;color:${{'0':'green', '2':'orange', '3':'red'}.get(pickup.priority,'inherit')};\">\n"
+"                                                ${{'0':'faible', '2':'haute', '3':'très haute'}.get(pickup.priority, 'normal')}\n"
+"                                            </td>\n"
+"                                            <td style=\"text-align:center;\">\n"
+"                                                ${pickup.id}\n"
+"                                            </td>\n"
+"                                        </tr>\n"
+"                                    % endfor\n"
+"                                </tbody>\n"
+"                            </table>\n"
+"                        % else\n"
+"                            <p>Aucune relève en attente</p>\n"
+"                        % endif\n"
+"                        <br/>\n"
+"                    % endfor\n"
+"\n"
+"                    <br/>\n"
+"\n"
+"                    <p style=\"font-style: italic;\">\n"
+"                        Ce courriel à été généré automatiquement, merci de ne pas y répondre.\n"
+"                    </p>\n"
+"                </div>\n"
+"            </body>\n"
+"            </html>\n"
+"            \n"
+"        "
+msgstr "\n"
+"            <html lang=\"fr\">\n"
+"            <head>\n"
+"                <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>\n"
+"                <title>\n"
+"                    Notification de relèves de bennes\n"
+"                </title>\n"
+"                <style>\n"
+"                    table {\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        font-size: 1em;\n"
+"                        border-collapse: collapse;\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                    }\n"
+"                    table thead tr {\n"
+"                        background-color: rgb(203, 212, 255);\n"
+"                    }\n"
+"                    table thead th{\n"
+"                        font-size:inherit;\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                        padding: 6px; vertical-align:middle;\n"
+"                    }\n"
+"                    table tbody td{\n"
+"                        font-size:inherit;\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                        padding: 8px;\n"
+"                        vertical-align:middle;\n"
+"                        font-weight: normal;\n"
+"                    }\n"
+"                </style>\n"
+"            </head>\n"
+"            <body>\n"
+"                <div style=\"max-width:800px;\n"
+"                    font-size:13px;\n"
+"                    font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\n"
+"                    color:rgb(76, 76, 76);\">\n"
+"                    <p>\n"
+"                        <span>\n"
+"                            Bonjour,\n"
+"                        </span>\n"
+"                    </p>\n"
+"\n"
+"                    <p>\n"
+"                        <span>\n"
+"                            Ci dessous le résumé des demandes des relèves de bennes\n"
+"                            % if 'current_time' in ctx\n"
+"                                (état au ${format_tz(ctx.current_time)})\n"
+"                            % endif\n"
+"                        </span>\n"
+"                    </p>\n"
+"                    <br/>\n"
+"                    % for contract in object.environment_pickup_contract_ids:\n"
+"                        <p style=\"font-weight: bold;\">\n"
+"                            Contrat n° ${contract.name|e} de la déchetterie \"${contract.waste_site_id.name|e}\" :\n"
+"                        </p>\n"
+"                        % if contract.active_environment_pickup_request_ids:\n"
+"                            <table width=\"800px\">\n"
+"                                <thead>\n"
+"                                    <tr>\n"
+"                                        <th style=\"text-align: left;\">\n"
+"                                            Emplacement\n"
+"                                        </th>\n"
+"                                        <th style=\"text-align: left;\">\n"
+"                                            Déchet\n"
+"                                        </th>\n"
+"                                        <th style=\"width:15em;\">\n"
+"                                            Date d'enlèvement souhaitée\n"
+"                                        </th>\n"
+"                                        <th style=\"width:8em;\">\n"
+"                                            Priorité\n"
+"                                        </th>\n"
+"                                        <th style=\"width:4em;\">\n"
+"                                            ID\n"
+"                                        </th>\n"
+"                                    </tr>\n"
+"                                </thead>\n"
+"                                <tbody>\n"
+"                                    % for pickup in contract.active_environment_pickup_request_ids:\n"
+"                                        <tr style=\"background-color:${loop.cycle('inherit', 'rgb(238, 240, 251)')};\">\n"
+"                                            <td>\n"
+"                                                ${pickup.emplacement_id.name|e}\n"
+"                                            </td>\n"
+"                                            <td>\n"
+"                                                % if pickup.emplacement_id.activity_id:\n"
+"                                                    ${pickup.emplacement_id.activity_id.name|e}\n"
+"                                                % else\n"
+"                                                    ---\n"
+"                                                % endif\n"
+"                                            </td>\n"
+"                                            <td style=\"text-align:center;\">\n"
+"                                                ${format_tz(pickup.schedule_date) or '-&#45;&#45;'}\n"
+"                                            </td>\n"
+"                                            <td style=\"$text-align:center;color:${{'0':'green', '2':'orange', '3':'red'}.get(pickup.priority,'inherit')};\">\n"
+"                                                ${{'0':'faible', '2':'haute', '3':'très haute'}.get(pickup.priority, 'normal')}\n"
+"                                            </td>\n"
+"                                            <td style=\"text-align:center;\">\n"
+"                                                ${pickup.id}\n"
+"                                            </td>\n"
+"                                        </tr>\n"
+"                                    % endfor\n"
+"                                </tbody>\n"
+"                            </table>\n"
+"                        % else\n"
+"                            <p>Aucune relève en attente</p>\n"
+"                        % endif\n"
+"                        <br/>\n"
+"                    % endfor\n"
+"\n"
+"                    <br/>\n"
+"\n"
+"                    <p style=\"font-style: italic;\">\n"
+"                        Ce courriel à été généré automatiquement, merci de ne pas y répondre.\n"
+"                    </p>\n"
+"                </div>\n"
+"            </body>\n"
+"            </html>\n"
+"            \n"
+"        "
+
+#. module: environment_waste_collect
+#: model:mail.template,body_html:environment_waste_collect.mail_template_pickup_request_cancel_notification
+msgid "\n"
+"            <html lang=\"fr\">\n"
+"            <head>\n"
+"                <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>\n"
+"                <title>\n"
+"                    Notification de relèves de bennes\n"
+"                </title>\n"
+"                <style>\n"
+"                    table {\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        font-size: 1em;\n"
+"                        border-collapse: collapse;\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                    }\n"
+"                    table thead tr {\n"
+"                        background-color: rgb(255, 209, 204);\n"
+"                    }\n"
+"                    table thead th{\n"
+"                        font-size:inherit;\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                        padding: 6px; vertical-align:middle;\n"
+"                    }\n"
+"                    table tbody td{\n"
+"                        font-size:inherit;\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                        padding: 8px;\n"
+"                        vertical-align:middle;\n"
+"                        font-weight: normal;\n"
+"                    }\n"
+"                </style>\n"
+"            </head>\n"
+"            <body>\n"
+"                <div style=\"max-width:800px;\n"
+"                    font-size:13px;\n"
+"                    font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\n"
+"                    color:rgb(76, 76, 76);\">\n"
+"                    <p>\n"
+"                        <span>\n"
+"                            Bonjour,\n"
+"                        </span>\n"
+"                    </p>\n"
+"\n"
+"                    <p>\n"
+"                        <span>\n"
+"                            La demande de relève de benne suivante à été annulée\n"
+"                            % if object.close_date:\n"
+"                                (au ${format_tz(object.close_date)})\n"
+"                            % endif\n"
+"                        </span>\n"
+"                    </p>\n"
+"                    <br/>\n"
+"                    <p style=\"font-weight: bold;\">\n"
+"                        Contrat n° ${object.contract_id.name|e} de la déchetterie \"${object.contract_id.waste_site_id.name|e}\" :\n"
+"                    </p>\n"
+"                    <table width=\"800px\">\n"
+"                        <thead>\n"
+"                            <tr>\n"
+"                                <th style=\"text-align: left;\">\n"
+"                                    Emplacement\n"
+"                                </th>\n"
+"                                <th style=\"text-align: left;\">\n"
+"                                    Déchet\n"
+"                                </th>\n"
+"                                <th style=\"width:15em;\">\n"
+"                                    Date d'enlèvement d'origine\n"
+"                                </th>\n"
+"                                <th style=\"width:8em;\">\n"
+"                                    Priorité\n"
+"                                </th>\n"
+"                                <th style=\"width:4em;\">\n"
+"                                    ID\n"
+"                                </th>\n"
+"                            </tr>\n"
+"                        </thead>\n"
+"                        <tbody>\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    ${object.emplacement_id.name|e}\n"
+"                                </td>\n"
+"                                <td>\n"
+"                                    % if object.emplacement_id.activity_id:\n"
+"                                        ${object.emplacement_id.activity_id.name|e}\n"
+"                                    % else\n"
+"                                        ---\n"
+"                                    % endif\n"
+"                                </td>\n"
+"                                <td style=\"text-align:center;text-decoration: line-through;\">\n"
+"                                    ${format_tz(object.schedule_date) or '---'}\n"
+"                                </td>\n"
+"                                <td style=\"$text-align:center;text-decoration: line-through;\n"
+"                                    color:${{'0':'green', '2':'orange', '3':'red'}.get(object.priority,'inherit')};\">\n"
+"                                    ${{'0':'faible', '2':'haute', '3':'très haute'}.get(object.priority, 'normal')}\n"
+"                                </td>\n"
+"                                <td style=\"text-align:center;\">\n"
+"                                    ${object.id}\n"
+"                                </td>\n"
+"                            </tr>\n"
+"                        </tbody>\n"
+"                    </table>\n"
+"\n"
+"                    <br/>\n"
+"\n"
+"                    <p style=\"font-style: italic;\">\n"
+"                        Ce courriel à été généré automatiquement, merci de ne pas y répondre.\n"
+"                    </p>\n"
+"                </div>\n"
+"            </body>\n"
+"            </html>\n"
+"            \n"
+"        "
+msgstr "\n"
+"            <html lang=\"fr\">\n"
+"            <head>\n"
+"                <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"/>\n"
+"                <title>\n"
+"                    Notification de relèves de bennes\n"
+"                </title>\n"
+"                <style>\n"
+"                    table {\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        font-size: 1em;\n"
+"                        border-collapse: collapse;\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                    }\n"
+"                    table thead tr {\n"
+"                        background-color: rgb(255, 209, 204);\n"
+"                    }\n"
+"                    table thead th{\n"
+"                        font-size:inherit;\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                        padding: 6px; vertical-align:middle;\n"
+"                    }\n"
+"                    table tbody td{\n"
+"                        font-size:inherit;\n"
+"                        color:rgb(76, 76, 76);\n"
+"                        border: 1px solid rgb(221, 221, 221);\n"
+"                        padding: 8px;\n"
+"                        vertical-align:middle;\n"
+"                        font-weight: normal;\n"
+"                    }\n"
+"                </style>\n"
+"            </head>\n"
+"            <body>\n"
+"                <div style=\"max-width:800px;\n"
+"                    font-size:13px;\n"
+"                    font-family:'Lucida Grande', Helvetica, Verdana, Arial, sans-serif;\n"
+"                    color:rgb(76, 76, 76);\">\n"
+"                    <p>\n"
+"                        <span>\n"
+"                            Bonjour,\n"
+"                        </span>\n"
+"                    </p>\n"
+"\n"
+"                    <p>\n"
+"                        <span>\n"
+"                            La demande de relève de benne suivante à été annulée\n"
+"                            % if object.close_date:\n"
+"                                (au ${format_tz(object.close_date)})\n"
+"                            % endif\n"
+"                        </span>\n"
+"                    </p>\n"
+"                    <br/>\n"
+"                    <p style=\"font-weight: bold;\">\n"
+"                        Contrat n° ${object.contract_id.name|e} de la déchetterie \"${object.contract_id.waste_site_id.name|e}\" :\n"
+"                    </p>\n"
+"                    <table width=\"800px\">\n"
+"                        <thead>\n"
+"                            <tr>\n"
+"                                <th style=\"text-align: left;\">\n"
+"                                    Emplacement\n"
+"                                </th>\n"
+"                                <th style=\"text-align: left;\">\n"
+"                                    Déchet\n"
+"                                </th>\n"
+"                                <th style=\"width:15em;\">\n"
+"                                    Date d'enlèvement d'origine\n"
+"                                </th>\n"
+"                                <th style=\"width:8em;\">\n"
+"                                    Priorité\n"
+"                                </th>\n"
+"                                <th style=\"width:4em;\">\n"
+"                                    ID\n"
+"                                </th>\n"
+"                            </tr>\n"
+"                        </thead>\n"
+"                        <tbody>\n"
+"                            <tr>\n"
+"                                <td>\n"
+"                                    ${object.emplacement_id.name|e}\n"
+"                                </td>\n"
+"                                <td>\n"
+"                                    % if object.emplacement_id.activity_id:\n"
+"                                        ${object.emplacement_id.activity_id.name|e}\n"
+"                                    % else\n"
+"                                        ---\n"
+"                                    % endif\n"
+"                                </td>\n"
+"                                <td style=\"text-align:center;text-decoration: line-through;\">\n"
+"                                    ${format_tz(object.schedule_date) or '---'}\n"
+"                                </td>\n"
+"                                <td style=\"$text-align:center;text-decoration: line-through;\n"
+"                                    color:${{'0':'green', '2':'orange', '3':'red'}.get(object.priority,'inherit')};\">\n"
+"                                    ${{'0':'faible', '2':'haute', '3':'très haute'}.get(object.priority, 'normal')}\n"
+"                                </td>\n"
+"                                <td style=\"text-align:center;\">\n"
+"                                    ${object.id}\n"
+"                                </td>\n"
+"                            </tr>\n"
+"                        </tbody>\n"
+"                    </table>\n"
+"\n"
+"                    <br/>\n"
+"\n"
+"                    <p style=\"font-style: italic;\">\n"
+"                        Ce courriel à été généré automatiquement, merci de ne pas y répondre.\n"
+"                    </p>\n"
+"                </div>\n"
+"            </body>\n"
+"            </html>\n"
+"            \n"
+"        "
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "% ou plus sont affichés."
+msgstr "% ou plus sont affichés."
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_form_view
+msgid "% updated on"
+msgstr "% mis à jour le"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_session_form_view
+msgid "- The number of operations in Odoo is different from what Ecopad should have transmitted."
+msgstr "- Le nombre d'opérations dans Odoo est différent de ce que l'Ecopad devrait avoir transmis."
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_session_form_view
+msgid "- The number of transactions in Odoo is different from what Ecopad should have transmitted."
+msgstr "- Le nombre de transactions dans Odoo est différent que ce que l'Ecopad devrait avoir transmis."
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_session_form_view
+msgid "- The session isn't closed despite being opened for more than 3 days."
+msgstr "- La session n'est pas fermée en dépit d'être ouverte de plus de 3 jours."
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_kanban_view
+msgid "<b>Model Number:</b>"
+msgstr "<b>Numéro du modèle :</b>"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_kanban_view
+msgid "<b>Serial Number:</b>"
+msgstr "<b>Numéro de série :</b>"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_kanban_view
+msgid "<b>Service provider:</b>"
+msgstr "<b>Prestataire :</b>"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_kanban_view
+msgid "<b>Waste Site:</b>"
+msgstr "<b>Déchèterie :</b>"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_kanban_view
+msgid "<b>Waste:</b>"
+msgstr "<b>Déchet :</b>"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_access
+msgid "<b>You dont have accesses.</b>"
+msgstr "<b>Vous n'avez aucun accès.</b>"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_deposits
+msgid "<b>You dont have deposits.</b>"
+msgstr "<b>Vous n'avez aucun dépôt en PAV.</b>"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+msgid "<strong>Total</strong>"
+msgstr "<strong>Total</strong>"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_config_client_signature_required
+msgid "A client signature is required"
+msgstr "La signature du client est requise"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/pickup_request.py:181
+#, python-format
+msgid "A request is still ongoing for this emplacement"
+msgstr "Une demande est toujours en cours sur cet emplacement"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.environment_access_act_window
+#: model:ir.ui.menu,name:environment_waste_collect.access_menu
+#: model:ir.ui.view,arch_db:environment_waste_collect.res_partner_form_view
+msgid "Access"
+msgstr "Accès"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_access_balance
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_environment_partner_report_wizard
+msgid "Access balance"
+msgstr "Solde d'accès"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_access_balance_opt
+msgid "Access balance criteria"
+msgstr "Critère solde d'accès"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_partner_report.py:134
+#, python-format
+msgid "Access balance inferior to "
+msgstr "Solde d'accès inférieur à "
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+msgid "Access balance on"
+msgstr "Solde d'accès au"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_partner_report.py:131
+#, python-format
+msgid "Access balance superior to "
+msgstr "Solde d'accès supérieur à "
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Access control"
+msgstr "Contrôle d'accès"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_access_number
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_environment_partner_report_wizard
+msgid "Access number"
+msgstr "Nombre d'accès sur la période"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_access_number_opt
+msgid "Access number criteria"
+msgstr "Critère nombre d'accès"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_partner_report.py:141
+#, python-format
+msgid "Access number inferior to "
+msgstr "Nombre d'accès inférieur à "
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_partner_report.py:138
+#, python-format
+msgid "Access number superior to "
+msgstr "Nombre d'accès supérieur à "
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/inherited_horanet_operation.py:65
+#, python-format
+msgid "Access on {}"
+msgstr "Accès le {}"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.accounting_menu
+msgid "Accounting"
+msgstr "Comptabilité"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_action_id
+msgid "Action"
+msgstr "Action"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_xls_report.py:36
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_action_number
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_environment_operation_report_wizard
+#, python-format
+msgid "Action number"
+msgstr "Nombre d'actions"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_action_number_opt
+msgid "Action number criteria"
+msgstr "Critère nombre d'actions"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_report.py:208
+#, python-format
+msgid "Action number inferior to "
+msgstr "Nombre d'actions inférieur à "
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_report.py:205
+#, python-format
+msgid "Action number superior to "
+msgstr "Nombre d'actions supérieur à "
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_report.py:185
+#, python-format
+msgid "Action: "
+msgstr "Action : "
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_config_ecopad_cache_data_activated
+msgid "Activate Ecopad API cached data AND generate cache"
+msgstr "Activer l'API des données du cache de l'Ecopad et la génération du cache"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_horanet_environment_config_ecopad_cache_data_activated
+msgid "Activate or deactivate the CRON that generate periodically the cached data"
+msgstr "Activer ou désactiver la tache CRON qui génère périodiquement les données du cache"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_active_environment_pickup_request_ids
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_contract_form_view
+msgid "Active pickup requests"
+msgstr "Demandes de relève actives"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.environment_activity_action
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_activity_ids
+#: model:ir.ui.menu,name:environment_waste_collect.activities_menu
+msgid "Activities"
+msgstr "Activités"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_report.py:200
+#, python-format
+msgid "Activities: "
+msgstr "Activité(s) : "
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_xls_report.py:36
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_activity_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#, python-format
+msgid "Activity"
+msgstr "Activité"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.activity_rule_action
+#: model:ir.ui.menu,name:environment_waste_collect.activity_rules_menu
+msgid "Activity rules"
+msgstr "Règles d'activité"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.activity_sector_action
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_activity_sector_ids
+#: model:ir.ui.menu,name:environment_waste_collect.activity_sectors_menu
+msgid "Activity sectors"
+msgstr "Zones d'activité"
+
+#. module: environment_waste_collect
+#: selection:partner.setup.wizard,add_or_remove_fixed_part:0
+msgid "Add"
+msgstr "Ajouter"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_stage_fixed_part_choice
+msgid "Add fixed part"
+msgstr "Ajouter une part fixe"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_add_or_remove_fixed_part
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_stage_fixed_part_choice
+msgid "Add or remove fixed part"
+msgstr "Ajouter ou supprimer une part fixe"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_stage_support_attribution
+msgid "Add waste site medium"
+msgstr "Ajouter un badge déchetterie"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_street2
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Additional address"
+msgstr "Complément d'adresse"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_display_address
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Address"
+msgstr "Adresse"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.all_environment_partners_menu
+msgid "All Environment Partners"
+msgstr "Tous les usagers"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.action_all_partner
+msgid "All environment producers"
+msgstr "Tous les usagers"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_horanet_environment_config_group_manage_container
+msgid "Allows users to manage containers if they own them"
+msgstr "Permet aux utilisateurs de gérer leur propres conteneurs"
+
+#. module: environment_waste_collect
+#: selection:horanet.environment.config,ecopad_access_mode_configuration:0
+msgid "Always OFF"
+msgstr "Toujours activé"
+
+#. module: environment_waste_collect
+#: selection:horanet.environment.config,ecopad_access_mode_configuration:0
+msgid "Always ON"
+msgstr "Toujours désactivé"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_prorata_temporis
+msgid "Apply prorata"
+msgstr "Appliquer un prorata"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_users_active_assignation_count
+msgid "Assignations Count"
+msgstr "Nombre d'assignations"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_assign_date
+msgid "Assigned Date"
+msgstr "Date d'attribution"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_manage_wastesite_fmi_wizard
+msgid "Attendance control for the day"
+msgstr "Contrôle de FMI pour la journée"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_manage_wastesite_fmi_wizard
+msgid "Attendance edition"
+msgstr "Modification de la fréquentation"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_attendance_threshold
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_attendance_threshold
+msgid "Attendance threshold"
+msgstr "Seuil de fréquentation"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_config_ecopad_can_assign_medium
+msgid "Authorize Ecopads to assign medium"
+msgstr "Autoriser les Ecopads à assigner un badge"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/waste_site.py:243
+#: code:addons/environment_waste_collect/models/waste_site.py:272
+#, python-format
+msgid "Auto generated for {waste_site_name} / {sector_name}"
+msgstr "Auto-généré pour: {waste_site_name} / {sector_name}"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_kanban_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_search_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_search_view
+msgid "Available"
+msgstr "Disponible"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/wizards/manage_wastesite_fmi_wizard.py:117
+#, python-format
+msgid "Bad parameter, no action found"
+msgstr "Une erreur est survenue, aucune action trouvée pour créer l'opération de FMI"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_begin_date
+msgid "Begin date"
+msgstr "Date de début"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_environment_operation_report_wizard_action_id
+msgid "By default: Action passage"
+msgstr "Par défaut: Action de passage"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "Bonjour,"
+msgstr "Bonjour,"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_csn_number
+msgid "CSN Number"
+msgstr "Numéro CSN"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_could_attend
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_could_attend
+msgid "Can attend"
+msgstr "Peut entrer"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_form_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_environment_operation_report_wizard
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_environment_partner_report_wizard
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_manage_wastesite_fmi_wizard
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_close_contrat_wizard
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_pickup_request_report_wizard
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "Ce courriel à été généré automatiquement, merci de ne pas y répondre."
+msgstr "Ce courriel à été généré automatiquement, merci de ne pas y répondre."
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_check_point_ids
+msgid "Check points"
+msgstr "Points de contrôle"
+
+#. module: environment_waste_collect
+#: selection:partner.wizard.close.contract,close_type:0
+msgid "Chosen date"
+msgstr "Date choisie"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "Ci dessous le résumé des taux de remplissage de bennes."
+msgstr "Ci dessous le résumé des taux de remplissage de bennes."
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_city_ids
+msgid "Cities"
+msgstr "Villes"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_partner_report.py:127
+#, python-format
+msgid "Cities: "
+msgstr "Villes : "
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_city_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "City"
+msgstr "Ville"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.contract_cycle_action
+msgid "Click here to create a contract cycle"
+msgstr "Cliquez ici pour créer un nouveau cycle de contrat"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.contract_template_action
+msgid "Click here to create a contract template"
+msgstr "Cliquez ici pour créer un nouveau modèle de contrat"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.container_action
+msgid "Click here to create a new container."
+msgstr "Cliquez ici pour créer un nouveau conteneur."
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.emplacement_action
+msgid "Click here to create a new emplacement."
+msgstr "Cliquez ici pour créer un nouvel emplacement."
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.pickup_request_action
+#: model:ir.actions.act_window,help:environment_waste_collect.pickup_request_action_from_emplacement
+msgid "Click here to create a new pickup request."
+msgstr "Cliquez ici pour créer une nouvelle demande d'enlèvement"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.waste_site_action
+msgid "Click here to create a new waste_site."
+msgstr "Cliquez ici pour créer une nouvelle déchèterie."
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.partner_category_action
+msgid "Click here to create a partner category"
+msgstr "Cliquez ici pour créer une nouvelle catégorie d'usagers"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.prestation_action
+msgid "Click here to create a prestation"
+msgstr "Cliquez ici pour créer une nouvelle prestation"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.service_action
+msgid "Click here to create a service"
+msgstr "Cliquez ici pour créer un nouveau service"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.terminal_action
+msgid "Click here to create a terminal"
+msgstr "Cliquez ici pour créer un terminal"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.ecopad_action
+msgid "Click here to create an Ecopad"
+msgstr "Cliquez ici pour créer un Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.environment_activity_action
+msgid "Click here to create an activity"
+msgstr "Cliquez ici pour créer une nouvelle activité"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.activity_rule_action
+msgid "Click here to create an activity rule"
+msgstr "Cliquez ici pour créer une nouvelle règle d'activité"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.activity_sector_action
+msgid "Click here to create an activity sector"
+msgstr "Cliquez ici pour créer une nouvelle zone d'activités"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.service_provider_action
+msgid "Click to add a new environment service provider"
+msgstr "Cliquez pour ajouter un nouveau prestataire de relève"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.environment_action_invoice_tree
+msgid "Click to create an invoice."
+msgstr "Cliquer pour créer une facture."
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_form_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_summary
+msgid "Close"
+msgstr "Fermer"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.action_partner_close_contract
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_close_contrat_wizard
+msgid "Close contract"
+msgstr "Fermer le contrat"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_close_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_close_type
+msgid "Close date"
+msgstr "Date de fin"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/pickup_request.py:187
+#, python-format
+msgid "Close date missing"
+msgstr "Date de fin manquante"
+
+#. module: environment_waste_collect
+#: selection:environment.ecopad.session,state:0
+msgid "Closed"
+msgstr "Fermé"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_subscription_end_date
+msgid "Closing date"
+msgstr "Date de clôture"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_is_closing_issue
+msgid "Closing issue"
+msgstr "Closing issue"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_code
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "Code"
+msgstr "Code"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/emplacement.py:120
+#, python-format
+msgid "Code cannot be empty"
+msgstr "Le code ne peut pas être vide"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_res_partner_filter
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: environment_waste_collect
+#: selection:horanet.environment.config,ecopad_access_mode_configuration:0
+msgid "Configurable"
+msgstr "Personnalisable"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_configuration_json
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_environment_waste_site_configuration_json
+msgid "Configuration to be send to the device, regarding the equipment in-situ (like IP address)"
+msgstr "Configuration à envoyer à l'équipement, contient les informations du site (Comme l'adresse IP par exemple)"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_container_id
+msgid "Container"
+msgstr "Bac"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_form_view
+msgid "Container Information"
+msgstr "Infos sur le conteneur"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.container_type_action
+#: model:ir.ui.menu,name:environment_waste_collect.container_type_menu
+msgid "Container Types"
+msgstr "Types de conteneur"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_container_type_id
+msgid "Container type"
+msgstr "Type de conteneur"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.container_action
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_config_group_manage_container
+#: model:ir.ui.menu,name:environment_waste_collect.container_menu
+msgid "Containers"
+msgstr "Conteneurs"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_subscription_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_contract_form_view
+msgid "Contract"
+msgstr "Contrat"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_contract_attachment
+msgid "Contract attachment"
+msgstr "Pièce jointe"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.contract_cycle_action
+#: model:ir.ui.menu,name:environment_waste_collect.contract_cycles_menu
+msgid "Contract cycles"
+msgstr "Cycles de contrat"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_partner_environment_package_ids
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_users_environment_package_ids
+msgid "Contract lines"
+msgstr "Lignes de contrat"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.contract_template_action
+#: model:ir.ui.menu,name:environment_waste_collect.contract_templates_menu
+msgid "Contract templates"
+msgstr "Modèles de contrat"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_contract_tree_view
+msgid "Contracts"
+msgstr "Contrats"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_is_attendance_controlled
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_is_attendance_controlled
+msgid "Control attendance"
+msgstr "Contrôle de fréquentation"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_control_timetable
+msgid "Control timetable"
+msgstr "Contrôle du planning"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_country_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Country"
+msgstr "Pays"
+
+#. module: environment_waste_collect
+#: selection:partner.setup.wizard,create_or_select_subscription:0
+msgid "Create new subscription"
+msgstr "Créer un nouveau contrat"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_create_or_select_subscription
+msgid "Create or select subscription"
+msgstr "Créer ou sélectionner un contrat"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_stage_support_attribution
+msgid "Create tag"
+msgstr "Créer l'identifiant"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_type_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_transaction_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_created_by
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_stage_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_create_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_type_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_transaction_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_stage_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_create_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_current_attendance
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_current_attendance
+msgid "Current attendance"
+msgstr "Fréquentation actuelle"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_search_view
+msgid "Current month"
+msgstr "Mois en cours"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_search_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_search_view
+msgid "Currently in use"
+msgstr "Actuellement utilisé"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_access
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_deposits
+msgid "Date"
+msgstr "Date "
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_partner_wizard_close_contract_subscription_end_date
+msgid "Date at which the subscription is inactive"
+msgstr "Date à laquelle le contrat est inactif"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_date_close
+msgid "Date close"
+msgstr "Date de fermeture"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "Date de mise à jour"
+msgstr "Date de mise à jour"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_close_contrat_wizard
+msgid "Deallocate tag"
+msgstr "Désaffecter l'identifiant"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_report.py:188
+#, python-format
+msgid "Default action "
+msgstr "Action par défaut "
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_kanban_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_kanban_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_kanban_view
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_deposit_activity_sector_id
+msgid "Deposit activity sector"
+msgstr "Zone d'activité de dépôt"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_deposit_check_point_id
+msgid "Deposit check point"
+msgstr "Point de contrôle de dépôt"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/inherited_horanet_operation.py:60
+#, python-format
+msgid "Deposit of {} {} of waste ({})"
+msgstr "Dépôt de {} {} de déchet ({})"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.environment_deposit_act_window
+#: model:ir.ui.menu,name:environment_waste_collect.deposit_menu
+#: model:ir.ui.view,arch_db:environment_waste_collect.res_partner_form_view
+msgid "Deposits"
+msgstr "Dépôts"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_description
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_form_view
+msgid "Description"
+msgstr "Description"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.devices_menu
+msgid "Devices"
+msgstr "Équipements"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_manage_wastesite_fmi_wizard
+msgid "Disable for the day"
+msgstr "Désactiver pour la journée"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_type_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_transaction_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_ecopad_cache_utility_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_stage_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_report_environment_waste_collect_report_environment_operation_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_report_environment_waste_collect_report_environment_partner_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_report_environment_waste_collect_report_pickup_request_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_display_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_message_box
+msgid "Display message"
+msgstr "Message affiché"
+
+#. module: environment_waste_collect
+#: selection:horanet.environment.config,group_manage_container:0
+msgid "Do not manage containers"
+msgstr "Ne pas gérer les conteneurs"
+
+#. module: environment_waste_collect
+#: selection:environment.pickup.request,state:0
+msgid "Done"
+msgstr "Terminé"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_search_view
+msgid "Done requests"
+msgstr "Demande terminées"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_duration
+msgid "Duration"
+msgstr "Durée"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "Déchet"
+msgstr "Déchet"
+
+#. module: environment_waste_collect
+#: model:horanet.action,name:environment_waste_collect.horanet_action_depot
+msgid "Dépot"
+msgstr "Dépôt"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/inherited_partner.py:354
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_partner_derogation_count
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_users_derogation_count
+#: model:ir.ui.view,arch_db:environment_waste_collect.res_partner_form_view
+#, python-format
+msgid "Dérogations"
+msgstr "Dérogations"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_ecopad_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.inherited_horanet_device_view_form
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_environment_waste_collect_config_settings
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_operation_form_view
+msgid "Ecopad"
+msgstr "Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_transaction_ecopad_session_id
+msgid "Ecopad Session"
+msgstr "Session Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.ecopad_session_menu
+msgid "Ecopad Sessions"
+msgstr "Sessions Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_config_ecopad_access_mode_configuration
+msgid "Ecopad access mode configuration"
+msgstr "Configuration du mode d'accès Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_view_form
+msgid "Ecopad name"
+msgstr "Nom de l'Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.ecopad_session_action
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_operation_ecopad_session_id
+msgid "Ecopad session"
+msgstr "Session Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_operation_ecopad_session_guardian_id
+msgid "Ecopad session guardian"
+msgstr "Gardien de session Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_operation_ecopad_session_waste_site_id
+msgid "Ecopad session wastesite"
+msgstr "Déchetterie de session Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_operation_ecopad_transaction_id
+msgid "Ecopad transaction"
+msgstr "Transaction Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.ecopad_action
+#: model:ir.ui.menu,name:environment_waste_collect.ecopads_menu
+msgid "Ecopads"
+msgstr "Ecopads"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_kanban_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_kanban_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_kanban_view
+msgid "Edit..."
+msgstr "Modifier…"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+msgid "Edition of"
+msgstr "Edition du"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.environment_action_invoice_tree
+msgid "Electronic invoicing allows to ease and fasten the\n"
+"                    collection of payments. The partner receives the\n"
+"                    invoice by email and he can pay online and/or import it\n"
+"                    in his own system."
+msgstr "La facturation électronique d'Odoo permet de faciliter et d'accélérer la collection des paiements. L'usager reçoit la facture par courriel et il peut payer en ligne et/ou l'importer dans son propre système."
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_email
+msgid "Email"
+msgstr "Courriel"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_emplacement_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_emplacement_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard_emplacement_ids
+msgid "Emplacement"
+msgstr "Emplacement"
+
+#. module: environment_waste_collect
+#: model:mail.template,subject:environment_waste_collect.mail_template_summary_emplacement_filling_level_notification
+msgid "Emplacement filling level summary"
+msgstr "Résumé des niveaux de remplissage des emplacements"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.emplacement_action
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_emplacement_ids
+#: model:ir.ui.menu,name:environment_waste_collect.emplacement_menu
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Emplacements"
+msgstr "Emplacements"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_config_enable_setup_and_close_wizards
+msgid "Enable Setup and Close wizards"
+msgstr "Activer les assistants de Création et de Clôture"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_horanet_environment_config_enable_setup_and_close_wizards
+msgid "Enable or disable Setup and Close wizards buttons for environment partners"
+msgstr "Activer ou désactiver les boutons des assistants de Création et de Clôture pour les usagers de l'environnement"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.res_partner_form_view
+msgid "End contract wizard"
+msgstr "Assistant de clôture de contrat"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_end_date_time
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/pickup_contract.py:141
+#, python-format
+msgid "End date should be posterior to begin date."
+msgstr "La date de fin doit être postérieure à la date de début."
+
+#. module: environment_waste_collect
+#: selection:partner.wizard.close.contract,close_type:0
+msgid "End of contract period"
+msgstr "A la fin de la période de contrat"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_end_date
+msgid "Ending date"
+msgstr "Date de fin"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.res_partner_form_view
+msgid "Environment"
+msgstr "Environnement"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_partner_environment_subscription_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_users_environment_subscription_id
+msgid "Environment contract"
+msgstr "Contrat Environnement"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.action_environment_operation_report
+#: model:ir.actions.report.xml,name:environment_waste_collect._operation_report
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_environment_operation_report_wizard
+msgid "Environment operation report"
+msgstr "Rapport sur les opérations de l'environnement"
+
+#. module: environment_waste_collect
+#: model:ir.actions.report.xml,name:environment_waste_collect._operation_xls_report
+msgid "Environment operation xls report"
+msgstr "Rapport xls sur les opérations de l'environnement"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.menu_wizard_environment_operation
+msgid "Environment operations reports"
+msgstr "Rapport sur les opérations de l'environnement"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.action_environment_partner_report
+#: model:ir.actions.report,name:environment_waste_collect._report
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_environment_partner_report_wizard
+msgid "Environment partner report"
+msgstr "Rapport sur les producteurs"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.menu_wizard_environment_partner
+msgid "Environment partner reports"
+msgstr "Rapports sur les producteurs"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_res_partner_filter
+msgid "Environment producer"
+msgstr "Producteur de l'environment"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.subscription_env_search_view
+msgid "Environment subscription"
+msgstr "Contrat de l'environnement"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_res_partner_filter
+msgid "Environment user"
+msgstr "Usager de l'environnement"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_manage_wastesite_fmi_wizard
+msgid "FMI Management"
+msgstr "Gestion de la FMI"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "FMI configuration"
+msgstr "Configuration FMI"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_filling_level
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_filling_level
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_filling_level
+msgid "Filling level"
+msgstr "Niveau de remplissage"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:34
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:38
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+#, python-format
+msgid "Filling level (avg/min/max)"
+msgstr "Taux de remplissage (moy/min/max)"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_filling_update_date
+msgid "Filling level last update date"
+msgstr "Dernière mise à jour du niveau de remplissage"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+msgid "Filters :\n"
+"                            <br/>"
+msgstr "Filtres :\n"
+"                            <br/>"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_fixed_part_prestation_id
+msgid "Fixed part"
+msgstr "Part fixe"
+
+#. module: environment_waste_collect
+#: model:partner.setup.wizard.stage,name:environment_waste_collect.wizard_stage_fixed_part_choice
+msgid "Fixed part choice"
+msgstr "Gestion des parts fixe"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_fixed_part_exoneration
+msgid "Fixed part exoneration"
+msgstr "Exonération de part fixe"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_active_subscription_fixed_part_ids
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_subscription_fixed_part_ids
+msgid "Fixed parts"
+msgstr "Parts fixe"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_friday_closing_hour
+msgid "Friday closing hour"
+msgstr "Heure de fermeture du vendredi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_friday_opening_hour
+msgid "Friday opening hour"
+msgstr "Heure d'ouverture du vendredi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_date_from
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_date_from
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard_date_from
+msgid "From"
+msgstr "À partir du"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_environment_waste_collect_config_settings
+msgid "Generate cached data"
+msgstr "Génération des données du cache"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_session_search_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.environment_operation_search_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_search_view
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.environment_operation_search_view
+msgid "Group by Waste site"
+msgstr "Grouper par centre d'exploitation"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.activity_search_view
+msgid "Group by action"
+msgstr "Grouper par action"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_search_view
+msgid "Group by..."
+msgstr "Regrouper par..."
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_guardian_id
+#: model:res.partner.category,name:environment_waste_collect.partner_category_guardian
+msgid "Guardian"
+msgstr "Gardien"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_partner_guardian_ids
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+#: model:subscription.category.partner,name:environment_waste_collect.environment_category_guardian
+msgid "Guardians"
+msgstr "Gardiens"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_partner_has_active_environment_subscription
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_users_has_active_environment_subscription
+msgid "Has active environment contract"
+msgstr "Possède un contrat environnement actif"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_has_active_subscriptions
+msgid "Has active subscriptions"
+msgstr "Possède des contrats actifs"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_has_active_tags
+msgid "Has active tags"
+msgstr "Possède des identifiants actifs"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_access
+msgid "Here is the list of all of your accesses."
+msgstr "Voici une liste de tout vos accès en centre de valorisation."
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_deposits
+msgid "Here is the list of all of your deposits."
+msgstr "Voici une liste de tous vos dépôts en point d'apport volontaire."
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_hide_subscription_block
+msgid "Hide subscription block"
+msgstr "Hide subscription block"
+
+#. module: environment_waste_collect
+#: selection:environment.pickup.request,priority:0
+msgid "High"
+msgstr "Élevée"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_type_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_transaction_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_ecopad_cache_utility_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_stage_id_7152
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_report_environment_waste_collect_report_environment_operation_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_report_environment_waste_collect_report_environment_partner_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_report_environment_waste_collect_report_pickup_request_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "ID"
+msgstr "ID"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_horanet_environment_config_ecopad_access_mode_configuration
+msgid "If 'always ON or OFF', the option will be locked on the Ecopad, if 'configurable' the Ecopad user could change the value."
+msgstr "Si 'Toujours activé/désactivé', l'option sera verrouillée sur l'Ecopad, si 'paramétrable' l'utilisateur Ecopad pourra choisir sa valeur."
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "Il n'y à aucun emplacements à afficher."
+msgstr "Il n'y à aucun emplacements à afficher."
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_image
+msgid "Image"
+msgstr "Image"
+
+#. module: environment_waste_collect
+#: selection:environment.pickup.request,state:0
+msgid "In progress"
+msgstr "En cours"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_search_view
+msgid "In progress requests"
+msgstr "Demande en cours"
+
+#. module: environment_waste_collect
+#: selection:environment.operation.report.wizard,action_number_opt:0
+msgid "Inferior or equal to"
+msgstr "Inférieur ou égal à"
+
+#. module: environment_waste_collect
+#: selection:environment.partner.report.wizard,access_balance_opt:0
+#: selection:environment.partner.report.wizard,access_number_opt:0
+msgid "Inferior to"
+msgstr "Inférieur à"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_stage_template_choice
+msgid "Information"
+msgstr "Information"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_xls_report.py:36
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#, python-format
+msgid "Infrastructure"
+msgstr "Infrastructure"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_infrastructure_id
+msgid "Infrastructure id"
+msgstr "Infrastructure id"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_operation_infrastructure_waste_site_id
+msgid "Infrastructure wastesite"
+msgstr "Infrastructure du centre de collecte"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_infrastructure_ids
+msgid "Infrastructure(s)"
+msgstr "Infrastructure(s)"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_report.py:194
+#, python-format
+msgid "Infrastructure(s): "
+msgstr "Infrastructure(s) : "
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_environment_waste_collect_config_settings
+msgid "Interfaces"
+msgstr "Interfaces"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+msgid "Invoiced"
+msgstr "Facturé"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.environment_action_invoice_tree
+#: model:ir.ui.menu,name:environment_waste_collect.invoices_menu
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_device_is_ecopad
+msgid "Is Ecopad"
+msgstr "Est un Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_partner_is_environment_service_provider
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_users_is_environment_service_provider
+msgid "Is an environment service provider"
+msgstr "Est un prestataire de l'environnement"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_is_fmi_currently_controlled
+msgid "Is attendance currently controlled"
+msgstr "La FMI est-elle actuellement contrôlée"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_subscription_category_partner_is_environment_staff
+msgid "Is environment operator"
+msgstr "Est un personnel d'environnement"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_partner_is_environment_producer
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_users_is_environment_producer
+#: model:ir.model.fields,field_description:environment_waste_collect.field_subscription_category_partner_is_environment_producer
+msgid "Is environment producer"
+msgstr "Est un producteur de l'environnement"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.environment_operation_search_view
+msgid "Is error"
+msgstr "Est en erreur"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_is_linked_to_smarteco
+msgid "Is linked to smarteco"
+msgstr "Est lié à Smarteco"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_is_max_stage
+msgid "Is maximum stage"
+msgstr "Is maximum stage"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_is_validated_stage
+msgid "Is maximum validated stage"
+msgstr "Is maximum validated stage"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_is_min_stage
+msgid "Is minimum stage"
+msgstr "Is minimum stage"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_is_provider_notified
+msgid "Is provider notified"
+msgstr "Le prestataire est informé"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_is_valid
+msgid "Is valid"
+msgstr "Est actif"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_config_ecopad_tag_ext_reference_label
+msgid "Label of external reference field on Ecopad"
+msgstr "Label du champ référence externe des tags pour l'Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_type___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_transaction___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_ecopad_cache_utility___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_stage___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_report_environment_waste_collect_report_environment_operation___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_report_environment_waste_collect_report_environment_partner___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_report_environment_waste_collect_report_pickup_request___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement___last_update
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_type_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_transaction_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_stage_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_write_uid
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_type_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_transaction_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_stage_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_write_date
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_last_collect_date
+msgid "Last collect date"
+msgstr "Date de dernière collecte"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_last_number
+msgid "Last number"
+msgstr "Précédent numéro"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_kanban_view
+msgid "Last pickup:"
+msgstr "Dernière relève :"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_latitude
+msgid "Latitude"
+msgstr "Latitude"
+
+#. module: environment_waste_collect
+#: model:res.partner.id_category,name:environment_waste_collect.horanet_license_plate_identification_category
+msgid "License plate"
+msgstr "Plaque d'immatriculation"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.res_partner_form_view
+msgid "License plates"
+msgstr "Plaques d'immatriculation"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_config_is_linked_to_smarteco
+msgid "Link to SmartEco"
+msgstr "Lien vers SmartEco"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_localisation_map
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Localisation"
+msgstr "Localisation"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_longitude
+msgid "Longitude"
+msgstr "Longitude"
+
+#. module: environment_waste_collect
+#: selection:environment.pickup.request,priority:0
+msgid "Low"
+msgstr "Faible"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.lower_dock_menu
+msgid "Lower dock"
+msgstr "Bas de quai"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_form_view
+msgid "Maintenance"
+msgstr "Maintenance"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Manage FMI"
+msgstr "Gérer la FMI"
+
+#. module: environment_waste_collect
+#: selection:horanet.environment.config,group_manage_container:0
+#: model:res.groups,name:environment_waste_collect.group_manage_containers
+msgid "Manage containers"
+msgstr "Gérer les conteneurs"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_config_module_environment_equipment
+#: model:ir.model.fields,help:environment_waste_collect.field_horanet_environment_config_module_environment_equipment
+msgid "Manage personal and collective containers"
+msgstr "Gérer les bac collectifs et personnels"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_mapping_id
+msgid "Mapping"
+msgstr "Mapping"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_max_length
+msgid "Max length"
+msgstr "Longueur maximale"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_max_validated_stage_id
+msgid "Maximum validated stage"
+msgstr "Maximum validated stage"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_summary
+msgid "Mediums"
+msgstr "Supports"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_close_contrat_wizard
+msgid "Mediums & Tags"
+msgstr "Supports & Identifiants"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_subscription_category_partner_menu_id
+msgid "Menu id"
+msgstr "ID de menu"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_monday_closing_hour
+msgid "Monday closing hour"
+msgstr "Heure de fermeture du lundi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_monday_opening_hour
+msgid "Monday opening hour"
+msgstr "Heure d'ouverture du lundi"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_stage_support_attribution
+msgid "Move tag"
+msgstr "Déplacer l'identifiant"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_xls_report.py:36
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_type_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_stage_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_subscription_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_name
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+#, python-format
+msgid "Name"
+msgstr "Nom"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/container_type.py:23
+#, python-format
+msgid "Name cannot be empty"
+msgstr "Le nom ne peut être vide"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_attendance
+msgid "New attendance"
+msgstr "Nouvelle fréquentation"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_new_situation_date
+msgid "New situation date"
+msgstr "Date de la nouvelle situation"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_base
+msgid "Next stage"
+msgstr "Étape suivante"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "Niveau de remplissage"
+msgstr "Niveau de remplissage"
+
+#. module: environment_waste_collect
+#: selection:horanet.environment.config,ecopad_cache_data_activated:0
+msgid "No"
+msgstr "Non"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+msgid "No data to display."
+msgstr "Aucune données à afficher."
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.ecopad_session_action
+msgid "No session to display"
+msgstr "Aucune session à afficher"
+
+#. module: environment_waste_collect
+#: selection:environment.pickup.request,priority:0
+msgid "Normal"
+msgstr "Normale"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_environment_waste_site_deposit_check_point_id
+msgid "Not intended to display, used to cleanup old checkpoint in case of change of 'deposit_activity_sector_id'"
+msgstr "Non prévu pour être affiché. Utilisé pour mettre à jour le point de contrôle de dépôt en cas de modification du champ 'deposit_activity_sector_id'"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_number
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_transaction_number
+#: model:ir.ui.view,arch_db:environment_waste_collect.res_partner_form_view
+msgid "Number"
+msgstr "Numéro"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_nb_operations_from_ecopad
+msgid "Number of operations"
+msgstr "Nombre d'opérations"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_pickup_request_count
+msgid "Number of pickup request on this emplacement"
+msgstr "Nombre de demandes d’enlèvement pour cet emplacement"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_nb_transactions_from_ecopad
+msgid "Number of transactions"
+msgstr "Nombre de transactions"
+
+#. module: environment_waste_collect
+#: selection:environment.ecopad.session,state:0
+msgid "Open"
+msgstr "Ouvert"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_session_search_view
+msgid "Open sessions"
+msgstr "Sessions ouvertes"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_opened_pickup_request
+msgid "Opened pickup request"
+msgstr "Demande d’enlèvement en cours"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/waste_site.py:218
+#, python-format
+msgid "Opening hour must be inferior to closing hour"
+msgstr "Les heures d'ouverture doivent être inférieures aux heures de fermeture"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_operations_ids
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_transaction_operation_ids
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_session_form_view
+msgid "Operations"
+msgstr "Opérations"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_operations_ids_count
+msgid "Operations count"
+msgstr "Nombre d'opérations"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+msgid "Operations report"
+msgstr "Rapport sur les opérations"
+
+#. module: environment_waste_collect
+#: model:res.partner.category,name:environment_waste_collect.partner_category_operator
+msgid "Operator"
+msgstr "Exploitant"
+
+#. module: environment_waste_collect
+#: model:subscription.category.partner,name:environment_waste_collect.environment_category_operator
+msgid "Operators"
+msgstr "Exploitants"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_stage_order
+msgid "Order"
+msgstr "Ordre"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_res_partner
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_partner_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_partner_id
+msgid "Partner"
+msgstr "Producteur"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.action_partner_setup_wizard
+msgid "Partner Setup Wizard"
+msgstr "Assistant création"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.partner_category_action
+#: model:ir.ui.menu,name:environment_waste_collect.partner_categories_menu
+msgid "Partner categories"
+msgstr "Catégories d'usagers"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.res_partner_form_view
+msgid "Partner setup"
+msgstr "Assistant création"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_base
+msgid "Partner setup wizard"
+msgstr "Assistant création"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_partner_subscription_template_ids
+msgid "Partner subscription templates"
+msgstr "Modèles de contrats du producteur"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_partner_subscription_ids
+msgid "Partner subscriptions"
+msgstr "Contrats du producteur"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_partner_category
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_company_type
+msgid "Partner type"
+msgstr "Type de producteur"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_report.py:181
+#: code:addons/environment_waste_collect/report/environment_partner_report.py:123
+#, python-format
+msgid "Partner type(s): "
+msgstr "Type(s) de producteur: "
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.partner_menu
+msgid "Partners"
+msgstr "Producteurs"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+msgid "Partners report"
+msgstr "Rapport sur les producteurs"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+msgid "Period: from"
+msgstr "Période: du"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_xls_report.py:62
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:159
+#, python-format
+msgid "Period: {date_from} to {date_to}"
+msgstr "Période : {date_from} au {date_to}"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_res_partner_filter
+msgid "Persons"
+msgstr "Personnes"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_phone
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.pickup_contract_action
+msgid "Pickup Contracts"
+msgstr "Contrats de relève"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.pickup_request_action
+#: model:ir.actions.act_window,name:environment_waste_collect.pickup_request_action_from_emplacement
+#: model:ir.ui.menu,name:environment_waste_collect.pickup_request_menu
+msgid "Pickup Requests"
+msgstr "Enlèvements"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_contract_id
+msgid "Pickup contract"
+msgstr "Contrat d'enlèvement"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/inherited_partner.py:368
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_partner_environment_pickup_contract_ids
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_users_environment_pickup_contract_ids
+#: model:ir.ui.view,arch_db:environment_waste_collect.res_partner_form_view
+#, python-format
+msgid "Pickup contracts"
+msgstr "Contrats de relève"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_partner_environment_pickup_contract_count
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_users_environment_pickup_contract_count
+msgid "Pickup contracts count"
+msgstr "Nombre de contrats de relève"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_pickup_delay
+msgid "Pickup delay"
+msgstr "Délai d'intervention contractuel"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:35
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:38
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+#, python-format
+msgid "Pickup delay (avg/min/max)"
+msgstr "Temps d'enlèvement (moy/min/max)"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_form_view
+msgid "Pickup request"
+msgstr "Demande d’enlèvement"
+
+#. module: environment_waste_collect
+#: model:mail.template,subject:environment_waste_collect.pickup_request_stage_changed
+msgid "Pickup request ${object.name} ${object.emplacement_id.waste_site_id.name}"
+msgstr "Demande d'enlèvement ${object.name} ${object.emplacement_id.waste_site_id.name}"
+
+#. module: environment_waste_collect
+#: model:mail.template,subject:environment_waste_collect.mail_template_pickup_request_cancel_notification
+msgid "Pickup request canceled (id : ${object.id})"
+msgstr "Annulation de la demande de relève de benne (id : ${object.id})"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_kanban_view
+msgid "Pickup request in progress"
+msgstr "Demande de relève en cours"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.action_pickup_request_report
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+msgid "Pickup request report"
+msgstr "Rapport d'enlèvement"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.menu_wizard_pickup_request
+msgid "Pickup request reports"
+msgstr "Rapports d'enlèvement"
+
+#. module: environment_waste_collect
+#: model:mail.template,subject:environment_waste_collect.mail_template_summary_pickup_request_notification
+msgid "Pickup request summary"
+msgstr "Bilan des demandes de relèves de benne"
+
+#. module: environment_waste_collect
+#: model:ir.actions.report.xml,name:environment_waste_collect._pickup_request_xls_report
+msgid "Pickup request xls report"
+msgstr "Rapport xls de demandes d'enlèvement"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_search_view
+msgid "Pickup requested"
+msgstr "Demande en cours"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_environment_pickup_request_ids
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_pickup_request_ids
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_form_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_graph_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_pivot_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_calendar_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_graph_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_pivot_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_tree_view
+msgid "Pickup requests"
+msgstr "Demandes d’enlèvement"
+
+#. module: environment_waste_collect
+#: model:ir.actions.report,name:environment_waste_collect.pickup_request_report
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_pickup_request_report_wizard
+msgid "Pickup requests report"
+msgstr "Rapport d'enlèvements"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:35
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:39
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+#, python-format
+msgid "Pickup time (avg/min/max)"
+msgstr "Délais d'enlèvement (moy/min/max)"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_picture
+msgid "Picture"
+msgstr "Photo"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.prestation_action
+#: model:ir.ui.menu,name:environment_waste_collect.prestations_menu
+msgid "Prestations"
+msgstr "Prestations"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_environment_operation_report_wizard
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_environment_partner_report_wizard
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_pickup_request_report_wizard
+msgid "Print"
+msgstr "Imprimer"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_config_print_ticket_transaction
+msgid "Print a ticket a the end of the transaction"
+msgstr "Imprimer un ticket à la fin d'une transaction"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_environment_operation_report_wizard
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_pickup_request_report_wizard
+msgid "Print xls report"
+msgstr "Imprimer au format xls"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_priority
+msgid "Priority"
+msgstr "Priorité"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_device_check_point_ip_address
+msgid "Private IP"
+msgstr "IP privé"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.products_menu
+msgid "Products"
+msgstr "Articles"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_xls_report.py:36
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+#, python-format
+msgid "Profile"
+msgstr "Profil"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_deposits
+msgid "Quantity"
+msgstr "Quantité"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:36
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:39
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+#, python-format
+msgid "Quantity (avg/min/max)"
+msgstr "Quantité (moy/min/max)"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_manage_wastesite_fmi_wizard
+msgid "Re-activate"
+msgstr "Réactiver"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_name
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_name
+msgid "Reference"
+msgstr "Référence"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/wizards/partner_setup_wizard.py:197
+#, python-format
+msgid "Remark"
+msgstr "Remarque"
+
+#. module: environment_waste_collect
+#: selection:partner.setup.wizard,add_or_remove_fixed_part:0
+msgid "Remove"
+msgstr "Supprimer"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_stage_fixed_part_choice
+msgid "Remove fixed part"
+msgstr "Supprimer la part fixe"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.reports_menu
+msgid "Reports"
+msgstr "Rapports"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_kanban_view
+msgid "Request"
+msgstr "Requête"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_request_date
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_search_view
+msgid "Request date"
+msgstr "Date de création"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_environment_waste_site_email
+msgid "Required to be able to receive sent pickup requests"
+msgstr "Requiert d'être capable de recevoir/envoyer des demandes d’enlèvement"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.rule_editor_action
+msgid "Rule editor"
+msgstr "Éditeur de règle"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.rules_editor_menu
+msgid "Rules editor"
+msgstr "Éditeur de règles"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.sales_menu
+msgid "Sale orders"
+msgstr "Encours de facturation"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_saturday_closing_hour
+msgid "Saturday closing hour"
+msgstr "Heure de fermeture du samedi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_saturday_opening_hour
+msgid "Saturday opening hour"
+msgstr "Heure d'ouverture du samedi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_schedule_date
+msgid "Schedule date"
+msgstr "Date prévue"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_search_view
+msgid "Search"
+msgstr "Rechercher"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_res_partner_filter
+msgid "Search Partner"
+msgstr "Rechercher un partenaire"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_contract_search_view
+msgid "Search pickup contract"
+msgstr "Chercher dans les contrats d’enlèvement"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_search_view
+msgid "Search pickup request"
+msgstr "Chercher dans les demandes d’enlevement"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_partner_display_name2
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_users_display_name2
+msgid "Second Names"
+msgstr "Deuxième nom complet"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/wizards/partner_setup_wizard.py:418
+#, python-format
+msgid "Select a fixed part"
+msgstr "Sélectionner une part fixe"
+
+#. module: environment_waste_collect
+#: selection:partner.setup.wizard,create_or_select_subscription:0
+msgid "Select existing subscription"
+msgstr "Sélectionner un contrat existant"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_served_city_ids
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Served cities"
+msgstr "Villes desservies"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:34
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_service_provider_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_service_provider_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard_service_provider_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+#: model:res.partner.category,name:environment_waste_collect.partner_category_service_provider
+#, python-format
+msgid "Service provider"
+msgstr "Prestataire"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/pickup_request.py:184
+#, python-format
+msgid "Service provider missing"
+msgstr "Prestataire manquant"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.service_provider_action
+#: model:ir.ui.menu,name:environment_waste_collect.service_provider_menu
+msgid "Service providers"
+msgstr "Prestataires"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/pickup_request.py:134
+#, python-format
+msgid "Service providers: {providers} have a contract to collect this waste.\n"
+"Please remove this waste from one of those providers contract."
+msgstr "Les prestataires : {providers} possèdent un contrat de collecte sur ce déchet.\n"
+"Veuillez supprimer ce déchet du contrat d'un des prestataires."
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.service_action
+#: model:ir.ui.menu,name:environment_waste_collect.services_menu
+msgid "Services"
+msgstr "Services"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_operation_form_view
+msgid "Session"
+msgstr "Session"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_operation_form_view
+msgid "Session guardian"
+msgstr "Session du gardien"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_device_ecopad_session_ids
+msgid "Sessions"
+msgstr "Sessions"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_manage_wastesite_fmi_wizard
+msgid "Set new attendance"
+msgstr "Définir une nouvelle fréquentation"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_environment_pickup_request_priority
+msgid "Set the priority of the request"
+msgstr "Choisissez la priorité de la demande"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_partner_setup_and_close_wizards_enabled
+#: model:ir.model.fields,field_description:environment_waste_collect.field_res_users_setup_and_close_wizards_enabled
+msgid "Setup and close wizards enabled"
+msgstr "Assistants de Création et de Clôture activés"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "Seul les emplacements remplis à"
+msgstr "Seul les emplacements remplis à"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_transaction_ecopad_signature
+msgid "Signature"
+msgstr "Signature"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_activity_smarteco_product_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_smarteco_activity_id
+msgid "SmartEco Product ID"
+msgstr "ID du produit dans SmartEco"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_smarteco_waste_site_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_smarteco_waste_site_id
+msgid "SmartEco Waste Site ID"
+msgstr "ID de la déchèterie dans SmartEco"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_stage_id
+msgid "Stage"
+msgstr "Étape"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_start_date_time
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_state
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_state
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_state_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_request_search_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "State"
+msgstr "État"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_street_id
+msgid "Street"
+msgstr "Rue"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Street number..."
+msgstr "N°..."
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Street..."
+msgstr "Rue..."
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_subscription_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_close_contrat_wizard
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_stage_template_choice
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_summary
+msgid "Subscription"
+msgstr "Abonnement"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_subscription_template_id
+msgid "Subscription template"
+msgstr "Modèles de contrat"
+
+#. module: environment_waste_collect
+#: model:partner.setup.wizard.stage,name:environment_waste_collect.wizard_stage_subscription_template_choice
+msgid "Subscription template choice"
+msgstr "Gestion des contrats"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_count_subscription_templates
+msgid "Subscription templates count"
+msgstr "Nombre de modèles de contrat"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_count_subscriptions
+msgid "Subscriptions count"
+msgstr "Nombre de contrats"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_xls_report.py:68
+#, python-format
+msgid "Sum of actions: {nb_action}"
+msgstr "Somme des actions: {nb_action}"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_summary
+#: model:partner.setup.wizard.stage,name:environment_waste_collect.wizard_stage_summary
+msgid "Summary"
+msgstr "Résumé"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_date_summer
+msgid "Summer date"
+msgstr "Date de début d'été"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/waste_site.py:222
+#, python-format
+msgid "Summer date must be set"
+msgstr "La date d'été doit être définie"
+
+#. module: environment_waste_collect
+#: selection:environment.operation.report.wizard,action_number_opt:0
+msgid "Superior or equal to"
+msgstr "Supérieur ou égal à"
+
+#. module: environment_waste_collect
+#: selection:environment.partner.report.wizard,access_balance_opt:0
+#: selection:environment.partner.report.wizard,access_number_opt:0
+msgid "Superior to"
+msgstr "Supérieur à"
+
+#. module: environment_waste_collect
+#: model:partner.setup.wizard.stage,name:environment_waste_collect.wizard_stage_support_attribution
+msgid "Support attribution"
+msgstr "Gestion des badges"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+msgid "TOTAL"
+msgstr "TOTAL"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_xls_report.py:36
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_tag_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_wizard_close_contract_tag_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.environment_operation_search_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_setup_wizard_stage_support_attribution
+#, python-format
+msgid "Tag"
+msgstr "Identifiant"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_tag_id
+msgid "Tag id"
+msgstr "Tag id"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_tag_ids
+msgid "Tag list"
+msgstr "Liste des tags"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_tag_number
+msgid "Tag number"
+msgstr "Numéro du Tag"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_horanet_environment_config_ecopad_cache_data_activated_state
+msgid "Technical"
+msgstr "Technique"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.terminal_checkpoint_view_form
+#: model:ir.ui.view,arch_db:environment_waste_collect.terminal_checkpoint_view_tree
+msgid "Terminal check point"
+msgstr "Point de contrôle du terminal"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.terminal_action
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_terminal_ids
+#: model:ir.ui.menu,name:environment_waste_collect.terminals_menu
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Terminals"
+msgstr "Terminaux"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/waste_site.py:187
+#, python-format
+msgid "The attendance control is enabled, but the threshold is set to 0 !"
+msgstr "Le contrôle de fréquentation est défini, mais le seuil est défini à 0 !"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,help:environment_waste_collect.environment_action_invoice_tree
+msgid "The discussions with the partner are automatically displayed at\n"
+"                    the bottom of each invoice."
+msgstr "La discussion avec l'usager est automatiquement affichée en\n"
+"bas de chaque facture."
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_environment_pickup_contract_is_valid
+msgid "The field is set to true if the contract is not expired"
+msgstr "Le champ est coché si le contrat n'est pas expiré"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:163
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+#, python-format
+msgid "The filling level (average, minimum and maximum) at the moment of the pickup in %."
+msgstr "Le taux de remplissage (moyen, minimum et maximum) au moment de l'enlèvement en %."
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:165
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+#, python-format
+msgid "The pickup delay (average, minimum and maximum) in hour."
+msgstr "Le temps d'enlèvement (moyen, minimum et maximum) en heure."
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:166
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+#, python-format
+msgid "The pickup time (average, minimum and maximum) in hour."
+msgstr "Le délais d'enlèvement (moyen, minimum et maximum) en heure."
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:167
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+#, python-format
+msgid "The quantity (average, minimum and maximum) in m3."
+msgstr "La quantité (moyenne, minimum et maximum) en m3."
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/ecopad_session.py:14
+#: sql_constraint:environment.ecopad.session:0
+#, python-format
+msgid "The session number must be unique per ecopad"
+msgstr "Le numéro de session doit être unique par ecopad"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/ecopad_transaction.py:10
+#: sql_constraint:environment.ecopad.transaction:0
+#, python-format
+msgid "The transaction number must be unique per ecopad session"
+msgstr "Le numéro de transaction doit être unique pour chaque session de l'ecopad"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/pickup_contract.py:167
+#, python-format
+msgid "This contract is not valid.\n"
+"An existing contract: {contract_name} is set with the following conflicting configuration: \n"
+"Waste_site: {waste_site}\n"
+"Waste: {wastes}\n"
+"Period: from {begin_period} to {end_period}"
+msgstr "Ce contract n'est pas valide.\n"
+"Un contrat existant : {contract_name} existe déjà avec la configuration suivante : \n"
+"Déchèterie : {waste_site}\n"
+"Déchèts : {wastes}\n"
+"Période : Du {begin_period} au {end_period}"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/subscription_category_partner.py:82
+#, python-format
+msgid "This domain is too complex to create a menu entry"
+msgstr "Ce domaine est trop complexe pour créer un menu"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_close_contrat_wizard
+msgid "This operation cannot be undone, are you sure you want to deallocate this tag?"
+msgstr "Cette opération est irréversible, êtes-vous sûr de vouloir désaffecter cet identifiant ?"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_partner_close_contrat_wizard
+msgid "This operation cannot be undone, are you sure you want to end this contract?"
+msgstr "Cette opération est irréversible, êtes-vous sûr de vouloir clôturer ce contrat ?"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_environment_waste_collect_config_settings
+msgid "This operation could take time, are you sure to proceed ?"
+msgstr "Cette opération peut prendre un certain temps, êtes-vous sûr de vouloir continuer ?"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/wizards/partner_setup_wizard.py:198
+#, python-format
+msgid "This partners already have an active, a pending or a new subscription for this subscription template. If you don't want to attribute another subscription select 'Select existing subscription' or remove the existing subscription before."
+msgstr "Ce producteur a déjà un contrat actif, nouveau, en attente ou à calculer pour ce modèle de contrat. Si vous ne voulez pas attribuer un autre contrat, vous pouvez soit utiliser 'Sélectionner un contrat existant' soit mettre fin au contrat existant."
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:161
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+#, python-format
+msgid "This report contains the following datas for each waste site and each waste:"
+msgstr "Ce rapport contient les données suivantes par centre d'exploitation et pour chaque déchet:"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_environment_ecopad_session_nb_operations_from_ecopad
+#: model:ir.model.fields,help:environment_waste_collect.field_environment_ecopad_session_nb_transactions_from_ecopad
+msgid "This value is retrieved from Ecopad"
+msgstr "Cette valeur est récupérée pour l'Ecopad"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_thursday_closing_hour
+msgid "Thursday closing hour"
+msgstr "Heure de fermeture du jeudi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_thursday_opening_hour
+msgid "Thursday opening hour"
+msgstr "Heure d'ouverture du jeudi"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "Timetable configuration"
+msgstr "Configuration du planning"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_timezone
+msgid "Timezone"
+msgstr "Fuseau horaire"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_operation_report_wizard_date_to
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_partner_report_wizard_date_to
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard_date_to
+msgid "To"
+msgstr "Jusqu'au"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.environment_operation_search_view
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_access
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_deposits
+msgid "Total:"
+msgstr "Total:"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_operation_form_view
+msgid "Transaction"
+msgstr "Transaction"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_transaction_ids
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_session_form_view
+msgid "Transactions"
+msgstr "Transactions"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_tuesday_closing_hour
+msgid "Tuesday closing hour"
+msgstr "Heure de fermeture du mardi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_tuesday_opening_hour
+msgid "Tuesday opening hour"
+msgstr "Heure d'ouverture du mardi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_container_type_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_mapping
+msgid "Type"
+msgstr "Type"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_report.py:158
+#: code:addons/environment_waste_collect/report/environment_operation_report.py:170
+#: code:addons/environment_waste_collect/report/environment_partner_report.py:106
+#: code:addons/environment_waste_collect/report/environment_partner_report.py:112
+#: code:addons/environment_waste_collect/report/pickup_request_report.py:205
+#: code:addons/environment_waste_collect/report/pickup_request_report.py:206
+#, python-format
+msgid "Undefined"
+msgstr "non défini"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.container_search_view
+msgid "Under Maintenance"
+msgstr "En maintenance"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_device_check_point_device_unique_id
+msgid "Unique ID"
+msgstr "ID unique"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/environment_operation_xls_report.py:37
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#, python-format
+msgid "Unit of measure"
+msgstr "Unité"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_environment_pickup_contract_contract_attachment
+msgid "Upload your contract to keep digital copy of the real one"
+msgstr "Envoyer votre contrat pour en garder une copie digitale"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.upper_dock_menu
+msgid "Upper dock"
+msgstr "Haut de quai"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_session_tree_view
+msgid "Usage"
+msgstr "Transaction"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.usage_rights_menu
+msgid "Usage rights"
+msgstr "Droits d'usage"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_subscription_category_partner_is_environment_producer
+#: model:ir.model.fields,help:environment_waste_collect.field_subscription_category_partner_is_environment_staff
+msgid "Used to create menu entries for these categories"
+msgstr "Utilisé pour créer les entrées de menu de ces catégories"
+
+#. module: environment_waste_collect
+#: model:res.groups,comment:environment_waste_collect.group_manage_containers
+msgid "Users allowed to manage containers"
+msgstr "Utilisateurs autorisés à gérer les conteneurs"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_contract_search_view
+msgid "Valid contracts"
+msgstr "Contrats valides"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_manage_wastesite_fmi_wizard
+msgid "Validate"
+msgstr "Valider"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_validated_by
+msgid "Validated by"
+msgstr "Validé par"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_partner_setup_wizard_max_length
+msgid "Value used when creating a tag to prevent its value to be too long"
+msgstr "Valeur utilisée lors de la création d'un identifiant pour prévenir si sa valeur est trop longue."
+
+#. module: environment_waste_collect
+#: selection:environment.pickup.request,priority:0
+msgid "Very High"
+msgstr "Très élevée"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_partner_setup_wizard_stage_view_id
+msgid "View"
+msgstr "Vue"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_type_volume
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_volume
+msgid "Volume (m3)"
+msgstr "Volume (m3)"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/waste_site.py:186
+#: code:addons/environment_waste_collect/wizards/environment_operation_report_wizard.py:60
+#: code:addons/environment_waste_collect/wizards/environment_operation_report_wizard.py:66
+#: code:addons/environment_waste_collect/wizards/environment_partner_report_wizard.py:35
+#: code:addons/environment_waste_collect/wizards/environment_partner_report_wizard.py:41
+#, python-format
+msgid "Warning"
+msgstr "Attention"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_session_form_view
+msgid "Warnings:"
+msgstr "Attention:"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/report/pickup_request_xls_report.py:34
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_activity_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_activity_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_search_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.environment_deposit_operation_form_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_deposits
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+#, python-format
+msgid "Waste"
+msgstr "Déchet"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.view_form_environment_waste_collect_config_settings
+msgid "Waste Collect"
+msgstr "Gestion des déchets"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_waste_site_fmi_wizard_waste_site_id
+msgid "Waste Site"
+msgstr "Centre d'exploitation"
+
+#. module: environment_waste_collect
+#: model:ir.ui.menu,name:environment_waste_collect.waste_site_staff_menu
+msgid "Waste Site Staff"
+msgstr "Personnel d'environnement"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.waste_site_action
+#: model:ir.ui.menu,name:environment_waste_collect.waste_site_global_menu
+#: model:ir.ui.menu,name:environment_waste_collect.waste_site_menu
+msgid "Waste Sites"
+msgstr "Centres d'exploitation"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_device_check_point_environment_waste_site_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_container_waste_site_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_waste_site_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_waste_site_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_waste_site_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_request_wizard_waste_site_id
+#: model:ir.model.fields,field_description:environment_waste_collect.field_stock_emplacement_waste_site_id
+#: model:ir.ui.view,arch_db:environment_waste_collect.emplacement_search_view
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_access
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_deposits
+msgid "Waste site"
+msgstr "Centre d'exploitation"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_session_search_view
+msgid "Waste sites"
+msgstr "Centres d'exploitation"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.custom_portal_layout_access
+msgid "Waste sites access"
+msgstr "Accès en centre de valorisation"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.custom_portal_layout_deposits
+msgid "Waste sites deposits"
+msgstr "Dépôts en centre de valorisation"
+
+#. module: environment_waste_collect
+#: model:ir.actions.act_window,name:environment_waste_collect.action_manage_wastesite_fmi_wizard
+msgid "WasteSite FMI management"
+msgstr "Gestion de la FMI du centre d'exploitation"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_pickup_contract_activity_ids
+#: model:ir.ui.view,arch_db:environment_waste_collect.pickup_contract_form_view
+msgid "Wastes"
+msgstr "Déchets"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_wednesday_closing_hour
+msgid "Wednesday closing hour"
+msgstr "Heure de fermeture du mercredi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_wednesday_opening_hour
+msgid "Wednesday opening hour"
+msgstr "Heure d'ouverture du mercredi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_date_winter
+msgid "Winter date"
+msgstr "Date de début d'hiver"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/waste_site.py:220
+#, python-format
+msgid "Winter date must be set"
+msgstr "La date de début d'hiver doit être définie"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/waste_site.py:227
+#, python-format
+msgid "Winter day must be superior to summer day"
+msgstr "La date d'hiver doit être supérieure à la date d'été"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_friday_closing_hour
+msgid "Winter friday closing hour"
+msgstr "Heure de fermeture d'hiver du vendredi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_friday_opening_hour
+msgid "Winter friday opening hour"
+msgstr "Heure d'ouverture d'hiver du vendredi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_monday_closing_hour
+msgid "Winter monday closing hour"
+msgstr "Heure de fermeture d'hiver du lundi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_monday_opening_hour
+msgid "Winter monday opening hour"
+msgstr "Heure d'ouverture d'hiver du lundi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_saturday_closing_hour
+msgid "Winter saturday closing hour"
+msgstr "Heure de fermeture d'hiver du samedi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_saturday_opening_hour
+msgid "Winter saturday opening hour"
+msgstr "Heure d'ouverture d'hiver du samedi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_thursday_closing_hour
+msgid "Winter thursday closing hour"
+msgstr "Heure de fermeture d'hiver du jeudi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_thursday_opening_hour
+msgid "Winter thursday opening hour"
+msgstr "Heure d'ouverture d'hiver du jeudi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_tuesday_closing_hour
+msgid "Winter tuesday closing hour"
+msgstr "Heure de fermeture d'hiver du mardi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_tuesday_opening_hour
+msgid "Winter tuesday opening hour"
+msgstr "Heure d'ouverture d'hiver du mardi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_wednesday_closing_hour
+msgid "Winter wednesday closing hour"
+msgstr "Heure de fermeture d'hiver du mercredi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_winter_wednesday_opening_hour
+msgid "Winter wednesday opening hour"
+msgstr "Heure d'ouverture d'hiver du mercredi"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_wrong_nb_operations
+msgid "Wrong nb operations"
+msgstr "Mauvais nombre d'opérations"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_ecopad_session_wrong_nb_transactions
+msgid "Wrong nb transactions"
+msgstr "Wrong nb transactions"
+
+#. module: environment_waste_collect
+#: selection:horanet.environment.config,ecopad_cache_data_activated:0
+msgid "Yes"
+msgstr "Oui"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/wizards/environment_operation_report_wizard.py:61
+#: code:addons/environment_waste_collect/wizards/environment_partner_report_wizard.py:36
+#, python-format
+msgid "You can't set a date to inferior to the date from."
+msgstr "Vous ne pouvez mettre une date de fin supérieur à la date de début."
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/wizards/environment_operation_report_wizard.py:67
+#: code:addons/environment_waste_collect/wizards/environment_partner_report_wizard.py:42
+#, python-format
+msgid "You can't set a date to superior to the current date."
+msgstr "Vous ne pouvez mettre une date de fin supérieur à la date d'aujourd'hui."
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/wizards/partner_setup_wizard.py:346
+#, python-format
+msgid "You must add a fixed part or check exoneration box"
+msgstr "Vous devez ajouter une part fixe ou cocher la case exonération"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/wizards/partner_setup_wizard.py:326
+#, python-format
+msgid "You must select a subscription template to continue"
+msgstr "Vous devez sélectionner un modèle de contrat pour continuer"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/wizards/partner_setup_wizard.py:334
+#, python-format
+msgid "You must select a subscription to continue"
+msgstr "Vous devez sélectionner un contrat pour continuer"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.portal_your_access
+msgid "Your waste sites access"
+msgstr "Vos accès en centre de valorisation"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_access
+msgid "Your waste sites accesses"
+msgstr "Vos accès en centre de valorisation"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.my_waste_site_deposits
+#: model:ir.ui.view,arch_db:environment_waste_collect.portal_your_deposit
+msgid "Your waste sites deposits"
+msgstr "Vos dépôts en centre de valorisation"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "ZIP ..."
+msgstr "Code postal ..."
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,field_description:environment_waste_collect.field_environment_waste_site_zip_id
+msgid "ZIP code"
+msgstr "Code postal"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.ecopad_view_form
+msgid "device"
+msgstr "terminal"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_device_check_point
+msgid "device.check.point"
+msgstr "device.check.point"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_environment_container
+msgid "environment.container"
+msgstr "environment.container"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_environment_container_type
+msgid "environment.container.type"
+msgstr "environment.container.type"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_environment_ecopad_session
+msgid "environment.ecopad.session"
+msgstr "environment.ecopad.session"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_environment_ecopad_transaction
+msgid "environment.ecopad.transaction"
+msgstr "environment.ecopad.transaction"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_environment_operation_report_wizard
+msgid "environment.operation.report.wizard"
+msgstr "environment.operation.report.wizard"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_environment_partner_report_wizard
+msgid "environment.partner.report.wizard"
+msgstr "environment.partner.report.wizard"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_environment_pickup_contract
+msgid "environment.pickup.contract"
+msgstr "environment.pickup.contract"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_environment_pickup_request
+msgid "environment.pickup.request"
+msgstr "environment.pickup.request"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_environment_pickup_request_wizard
+msgid "environment.pickup.request.wizard"
+msgstr "environment.pickup.request.wizard"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_environment_waste_site
+msgid "environment.waste.site"
+msgstr "environment.waste.site"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/pickup_contract.py:178
+#, python-format
+msgid "forever"
+msgstr "toujours"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_horanet_activity
+msgid "horanet.activity"
+msgstr "horanet.activity"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_horanet_device
+msgid "horanet.device"
+msgstr "horanet.device"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_horanet_environment_config
+msgid "horanet.environment.config"
+msgstr "horanet.environment.config"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_horanet_environment_ecopad_cache_utility
+msgid "horanet.environment.ecopad.cache.utility"
+msgstr "horanet.environment.ecopad.cache.utility"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_horanet_operation
+msgid "horanet.operation"
+msgstr "horanet.operation"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "lat:"
+msgstr "lat:"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.waste_site_form_view
+msgid "long:"
+msgstr "long:"
+
+#. module: environment_waste_collect
+#: model:product.uom,name:environment_waste_collect.m3_product_uom
+msgid "m3"
+msgstr "m3"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_partner_setup_wizard
+msgid "partner.setup.wizard"
+msgstr "partner.setup.wizard"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_partner_setup_wizard_stage
+msgid "partner.setup.wizard.stage"
+msgstr "partner.setup.wizard.stage"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_partner_wizard_close_contract
+msgid "partner.wizard.close.contract"
+msgstr "partner.wizard.close.contract"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_production_point
+msgid "production.point"
+msgstr "production.point"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_production_point_attribution
+msgid "production.point.attribution"
+msgstr "production.point.attribution"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_report_environment_waste_collect_report_environment_operation
+msgid "report.environment_waste_collect.report_environment_operation"
+msgstr "report.environment_waste_collect.report_environment_operation"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_report_environment_waste_collect_report_environment_partner
+msgid "report.environment_waste_collect.report_environment_partner"
+msgstr "report.environment_waste_collect.report_environment_partner"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_report_environment_waste_collect_report_pickup_request
+msgid "report.environment_waste_collect.report_pickup_request"
+msgstr "report.environment_waste_collect.report_pickup_request"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_res_partner_id_category
+msgid "res.partner.id_category"
+msgstr "Catégorie d'identifiant"
+
+#. module: environment_waste_collect
+#: model:ir.model.fields,help:environment_waste_collect.field_environment_waste_site_city_id
+msgid "select the city"
+msgstr "sélectionnez la ville"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_stock_emplacement
+msgid "stock.emplacement"
+msgstr "stock.emplacement"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_subscription_category_partner
+msgid "subscription.category.partner"
+msgstr "subscription.category.partner"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.terminal_checkpoint_view_form
+msgid "terminal name"
+msgstr "Nom du terminal"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_operation
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_environment_partner
+#: model:ir.ui.view,arch_db:environment_waste_collect.report_pickup_request
+msgid "to"
+msgstr "au"
+
+#. module: environment_waste_collect
+#: model:ir.model,name:environment_waste_collect.model_waste_site_fmi_wizard
+msgid "waste.site.fmi.wizard"
+msgstr "waste.site.fmi.wizard"
+
+#. module: environment_waste_collect
+#: code:addons/environment_waste_collect/models/ecopad_session.py:130
+#, python-format
+msgid "{number} {guardian_name} {waste_site_name}"
+msgstr "{number} {guardian_name} {waste_site_name}"
+
+#. module: environment_waste_collect
+#: model:ir.ui.view,arch_db:environment_waste_collect.mail_summary_emplacement_filling_level_notification
+msgid "État au"
+msgstr "État au"
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="orders_followup" inherit_id="website_portal_sale.orders_followup">
+        <xpath expr="//span[contains(@t-field, 'order.amount_untaxed')]/../.." position="attributes">
+            <attribute
+                    name="t-if">not request.env['website.config.settings'].get_hide_taxes_and_subtotal() or order.amount_tax and float(order.amount_tax)
+            </attribute>
+        </xpath>
+        <xpath expr="//span[contains(@t-field, 'order.amount_tax')]/../.." position="attributes">
+            <attribute
+                    name="t-if">not request.env['website.config.settings'].get_hide_taxes_and_subtotal() or order.amount_tax and float(order.amount_tax)
+            </attribute>
+        </xpath>
+    </template>
+</odoo>

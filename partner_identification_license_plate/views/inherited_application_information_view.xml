@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="inherited_application_information_result_view_form" model="ir.ui.view">
+        <field name="name">Inherited application information result form view</field>
+        <field name="model">application.information</field>
+        <field name="inherit_id" ref="website_application.application_information_result_view_form"/>
+        <field name="arch" type="xml">
+            <field name="value_text" position="replace">
+                <field name="value_text" string="Value"
+                       attrs="{'invisible' : [('type', 'not in', ('char', 'text', 'license_plate'))]}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

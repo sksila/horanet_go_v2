@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="my_waste_site_access" name="Your waste sites access">
+        <t t-call="portal.portal_layout">
+            <h3 class="page-header">Your waste sites accesses</h3>
+            <div>
+                <p>Here is the list of all of your accesses.</p>
+                <table class="table table-hover" t-if="accesses">
+                    <thead>
+                        <tr>
+                            <th style="vertical-align: middle">Waste site</th>
+                            <th style="vertical-align: middle">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="accesses" t-as="access">
+                            <td>
+                                <span t-field="access.infrastructure_id"/>
+                            </td>
+                            <td>
+                                <span t-field="access.time"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Total:
+                    <t t-esc="total"/>
+                </p>
+                <p t-if="not accesses">
+                    <b>You dont have accesses.</b>
+                </p>
+            </div>
+        </t>
+    </template>
+</odoo>

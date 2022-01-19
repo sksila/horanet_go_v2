@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="create_identification_form" model="ir.ui.view">
+        <field name="name">Create tag assignation medium form</field>
+        <field name="model">create.identification</field>
+        <field name="arch" type="xml">
+            <form string="create medium">
+
+                <group col="2" string="Tags and Assignations">
+                    <label for="assignation_ids" string="Assignations of the entity:"/>
+                    <newline/>
+                    <field name="assignation_ids" nolabel="1">
+                        <tree>
+                            <field name="tag_id"/>
+                            <field name="medium_label"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </tree>
+                    </field>
+                    <group>
+                        <field name="entity_to_assigned" widget="radio"
+                               options="{'horizontal': true}"/>
+                        <field name="partner_to_assign"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+
+                    </group>
+                    <group>
+                    </group>
+                </group>
+
+                <group col="2" string="Tags and Medium">
+                    <group>
+                        <field name="create_or_select_tags" nolabel="1" widget="radio"
+                               options="{'horizontal': true}"/>
+                    </group>
+                    <group>
+                        <field name="medium_selection" nolabel="1" widget="radio"
+                               options="{'horizontal': true}"/>
+                    </group>
+                </group>
+
+                <group col="2">
+                    <group attrs="{'invisible': [('create_or_select_tags', '=', 'select')]}">
+
+                        <field name="tag_number"/>
+                        <field name="mapping_id"/>
+                        <field name="external_reference"/>
+
+                        <button string="Create and assing tag"
+                                name="action_create_tag"
+                                type="object"
+                                class="btn-info"
+                                attrs="{'invisible': [('create_or_select_tags', '=', 'select')]}"/>
+                    </group>
+
+                    <group attrs="{'invisible': [('create_or_select_tags', '=', 'create')]}">
+                        <field name="show_assignation_button" nolabel="1" invisible="1"/>
+                        <newline/>
+                        <label for="tag_ids" string="Select tag(s)"/>
+                        <newline/>
+                        <field name="tag_ids" nolabel="1" widget="many2many_tags"/>
+                        <newline/>
+                        <button string="Create assignation(s) from select tags"
+                                name="action_create_assignation"
+                                type="object"
+                                class="btn-info"
+                                attrs="{'invisible': ['|', ('create_or_select_tags', '=', 'create'), ('show_assignation_button', '=', False)]}"/>
+                    </group>
+
+                    <group attrs="{'invisible': [('medium_selection', '=', 'update')]}">
+
+                        <label for="type_id" string="Medium type"/>
+                        <field name="type_id" nolabel="1"/>
+                        <button string="Create medium from select tags"
+                            name="action_create_medium"
+                            type="object"
+                            class="btn-info"/>
+                    </group>
+                    <group attrs="{'invisible': [('medium_selection', '=', 'create')]}">
+                        <label for="medium_id" string="Select medium"/>
+                        <newline/>
+                        <field name="medium_id" nolabel="1"/>
+                        <newline/>
+
+                        <field name="medium_tag_ids" nolabel="1"/>
+                        <newline/>
+                        <button string="Update medium form select tags"
+                            name="action_update_medium"
+                            type="object"
+                            class="btn-info"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <act_window id="action_wizard_create_identification"
+                name="Create identification"
+                res_model="create.identification"
+                view_mode="form"
+                view_id="create_identification_form"
+                target="new"/>
+</odoo>

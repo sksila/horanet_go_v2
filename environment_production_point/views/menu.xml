@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Production points -->
+    <menuitem id="production_point_menu"
+              name="Production points"
+              parent="horanet_environment.environment_main"
+              groups="horanet_environment.group_browse_environment"
+              action="production_point_action"
+              sequence="3"/>
+
+    <!--Ajout d'une vue debug des partner.move-->
+    <menuitem id="partner_move_menu"
+              name="Partner move"
+              parent="horanet_environment.environment_configuration"
+              groups="base.group_no_one"
+              action="action_partner_move"
+              sequence="60"/>
+</odoo>

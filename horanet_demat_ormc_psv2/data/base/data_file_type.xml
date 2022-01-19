@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="pes_file_type_1" model="pes.file.type">
+            <field name="name">PES_Aller</field>
+            <field name="code">PESALR1</field>
+        </record>
+        <record id="pes_file_type_2" model="pes.file.type">
+            <field name="name">ORMC</field>
+            <field name="code">PESORMC</field>
+        </record>
+    </data>
+</odoo>

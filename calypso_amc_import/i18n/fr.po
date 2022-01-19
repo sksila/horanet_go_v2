@@ -1,0 +1,148 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* calypso_amc_import
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-12 10:11+0000\n"
+"PO-Revision-Date: 2017-12-12 10:11+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: calypso_amc_import
+#: model:ir.ui.view,arch_db:calypso_amc_import.wizard_import_calypso_amc
+msgid "<span>Import</span>"
+msgstr "<span>Importer</span>"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_agents_services
+msgid "Agents services"
+msgstr "Services aux agents"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_transport
+msgid "Calypso Transport"
+msgstr "Calypso Transport"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_citizens_relations
+msgid "Citizens relations"
+msgstr "Relations avec les usagers"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_civil_state
+msgid "Civil State and Citizenship"
+msgstr "Etat civil et citoyenneté"
+
+#. module: calypso_amc_import
+#: model:ir.model.fields,field_description:calypso_amc_import.field_partner_contact_identification_wizard_import_calypso_amc_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: calypso_amc_import
+#: model:ir.model.fields,field_description:calypso_amc_import.field_partner_contact_identification_wizard_import_calypso_amc_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: calypso_amc_import
+#: model:ir.model.fields,field_description:calypso_amc_import.field_partner_contact_identification_wizard_import_calypso_amc_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_economy
+msgid "Economy"
+msgstr "Economie et urbanisme"
+
+#. module: calypso_amc_import
+#: model:res.groups,comment:calypso_amc_import.group_import_calypso_amc
+msgid "Enable the menus to import the CSV file."
+msgstr "Active les menus pour import le fichier CSV."
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_business_fidelity
+msgid "Fidelity and Business"
+msgstr "Fidélité et commerce"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_fiscality
+msgid "Fiscality"
+msgstr "Fiscalité"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_health
+msgid "Health"
+msgstr "Santé"
+
+#. module: calypso_amc_import
+#: model:ir.model.fields,field_description:calypso_amc_import.field_partner_contact_identification_wizard_import_calypso_amc_id
+msgid "ID"
+msgstr "ID"
+
+#. module: calypso_amc_import
+#: model:res.groups,name:calypso_amc_import.group_import_calypso_amc
+msgid "Import Callypso AMC"
+msgstr "Import Callypso AMC"
+
+#. module: calypso_amc_import
+#: model:ir.actions.act_window,name:calypso_amc_import.action_import_calypso_amc
+#: model:ir.ui.menu,name:calypso_amc_import.menu_import_calypso_amc
+msgid "Import Calypso AMC"
+msgstr "Import Calypso AMC"
+
+#. module: calypso_amc_import
+#: model:ir.model.fields,field_description:calypso_amc_import.field_partner_contact_identification_wizard_import_calypso_amc_imported_file
+msgid "Imported file"
+msgstr "Fichier importé"
+
+#. module: calypso_amc_import
+#: model:ir.model.fields,field_description:calypso_amc_import.field_partner_contact_identification_wizard_import_calypso_amc___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: calypso_amc_import
+#: model:ir.model.fields,field_description:calypso_amc_import.field_partner_contact_identification_wizard_import_calypso_amc_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: calypso_amc_import
+#: model:ir.model.fields,field_description:calypso_amc_import.field_partner_contact_identification_wizard_import_calypso_amc_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_police
+msgid "Police"
+msgstr "Polices spéciales et voirie"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_relation_with_elected_officials
+msgid "Relation with elected officials"
+msgstr "Relation avec les élus"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_sport_recreation_childhood
+msgid "Sport, Recreation, Childhood"
+msgstr "Prestations sociales et périscolaires, activités sportives et socioculturelles"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_studients_facilities
+msgid "Studients facilities"
+msgstr "Restauration étudiante et accès aux locaux et services étudiants"
+
+#. module: calypso_amc_import
+#: model:partner.contact.identification.area,name:calypso_amc_import.area_calypso_work_and_social
+msgid "Work And Social"
+msgstr "Travail et social"
+
+#. module: calypso_amc_import
+#: model:ir.model,name:calypso_amc_import.model_partner_contact_identification_wizard_import_calypso_amc
+msgid "partner.contact.identification.wizard.import.calypso.amc"
+msgstr "partner.contact.identification.wizard.import.calypso.amc"
+

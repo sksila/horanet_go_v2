@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment_validate" name="Confirm payment">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container mt32 mb32">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <table t-if="action == 'pay_invoice'" class="table table-bordered">
+                                <thead>
+                                    <tr class="active">
+                                        <th>Invoice number</th>
+                                        <th>Invoice amount</th>
+                                        <th>Paid amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="invoices" t-as="invoice">
+                                        <tr>
+                                            <td>
+                                                <t t-esc="invoice.number"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="invoice.amount_total"
+                                                   t-esc-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="paid_amount"
+                                                   t-esc-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/>
+                                            </td>
+                                            <td t-if="transaction_status == 'AUTHORISED'">
+                                                <span class="label label-success">
+                                                    <i class="fa fa-fw fa-check" aria-hidden="true"
+                                                       t-translation="off"/>
+                                                    Paid
+                                                </span>
+                                            </td>
+                                            <td t-if="transaction_status == 'ABANDONED' or transaction_status == 'CANCELED' or transaction_status == 'REFUSED'">
+                                                <span class="label label-danger">
+                                                    <i class="fa fa-fw fa-times" aria-hidden="true"
+                                                       t-translation="off"/>
+                                                    Unpaid
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+
+                            <t t-if="action == 'deposit'">
+                                <div class="alert alert-success" t-if="transaction_status == 'AUTHORISED'">
+                                    Your advance account
+                                    <b>
+                                        <t t-esc="user.partner_id.property_account_customer_advance.name"/>
+                                    </b>
+                                    was successfully credited with the amount :
+                                    <b>
+                                        <t t-esc="paid_amount"
+                                           t-esc-options='{"widget": "monetary", "display_currency": user.partner_id.company_id.currency_id}'/>
+                                    </b>
+                                    .
+                                </div>
+
+                                <div class="alert alert-danger"
+                                     t-if="transaction_status == 'ABANDONED' or transaction_status == 'CANCELED' or transaction_status == 'REFUSED'">
+                                    Your advance account
+                                    <b>
+                                        <t t-esc="user.partner_id.property_account_customer_advance.name"/>
+                                    </b>
+                                    wasn't credited.
+                                </div>
+                            </t>
+                            <div class="col-sm-12">
+                                <a href="/my/home">
+                                    <i class="fa fa-arrow-circle-right" aria-hidden="true" t-translation="off"/>
+                                    Back to My Account
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

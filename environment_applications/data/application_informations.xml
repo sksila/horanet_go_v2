@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="application_information_foyer_members_count" model="application.information">
+            <field name="name">Foyer members count</field>
+            <field name="type">number</field>
+            <field name="sequence">0</field>
+        </record>
+        <record id="application_information_home_type" model="application.information">
+            <field name="name">Home type</field>
+            <field name="type">selection</field>
+            <field name="sequence">10</field>
+            <field name="text_choices">Individual house, Appartment</field>
+        </record>
+        <record id="application_information_residence_type" model="application.information">
+            <field name="name">Residence type</field>
+            <field name="type">selection</field>
+            <field name="sequence">20</field>
+            <field name="text_choices">Main residence, Secondary residence</field>
+        </record>
+        <record id="application_information_owner_type" model="application.information">
+            <field name="name">Owner type</field>
+            <field name="type">selection</field>
+            <field name="sequence">40</field>
+            <field name="text_choices">Owner, Tenant</field>
+        </record>
+        <record id="application_information_number_of_badges" model="application.information">
+            <field name="name">Number of badges</field>
+            <field name="type">number</field>
+            <field name="sequence">0</field>
+        </record>
+        <record id="application_information_lost_type" model="application.information">
+            <field name="name">Lost type</field>
+            <field name="type">selection</field>
+            <field name="sequence">0</field>
+            <field name="text_choices">Lost, Theft</field>
+        </record>
+    </data>
+</odoo>

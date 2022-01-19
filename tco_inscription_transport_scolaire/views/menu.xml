@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--Inscription-->
+    <menuitem id="tco_inscription_transport_scolaire_menu" name="TCO Inscriptions"
+              parent="horanet_transport.transport_requests_menu"
+              action="tco_inscription_transport_scolaire.action_tco_inscription_transport_scolaire" sequence="10"
+              groups="tco_inscription_transport_scolaire.group_tco_inscription_manage"/>
+
+    <menuitem id="tco_inscription_transport_scolaire_menu_followup" name="TCO Inscriptions Followup"
+              parent="horanet_transport.transport_requests_menu"
+              action="tco_inscription_transport_scolaire.action_tco_inscription_transport_scolaire_followup" sequence="15"
+              groups="tco_inscription_transport_scolaire.group_tco_inscription_manage"/>
+
+    <!-- Transport stop -->
+    <menuitem id="tco_inscription_transport_scolaire_menu_establishment_assignation" name="Establishment assignations by city"
+              parent="horanet_transport.transport_requests_menu"
+              action="tco_inscription_transport_scolaire.action_tco_inscription_transport_scolaire_establishment_assignation" sequence="17"
+              groups="tco_inscription_transport_scolaire.group_tco_inscription_manage"/>
+
+    <!--Inscription period-->
+    <menuitem id="tco_inscription_transport_scolaire_period_menu" name="TCO inscription periods"
+              parent="horanet_transport.transport_configuration"
+              action="tco_inscription_transport_scolaire.action_tco_inscription_transport_scolaire_period" sequence="20"
+              groups="horanet_go.group_horanet_go_admin"/>
+
+</odoo>

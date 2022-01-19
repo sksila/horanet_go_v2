@@ -1,0 +1,453 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* environment_applications
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-18 09:46+0000\n"
+"PO-Revision-Date: 2018-05-18 09:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "<b>1. Usagers concernés</b>\n"
+"                                        <br/>\n"
+"                                        Le présent règlement d’utilisation des badges d’accès au centre de valorisation\n"
+"                                        s’applique à l’ensemble des usagers « particuliers » résidant dans l’une des\n"
+"                                        communes de la communauté de communes."
+msgstr "<b>1. Usagers concernés</b>\n"
+"                                        <br/>\n"
+"                                        Le présent règlement d’utilisation des badges d’accès au centre de valorisation\n"
+"                                        s’applique à l’ensemble des usagers « particuliers » résidant dans l’une des\n"
+"                                        communes de la communauté de communes."
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "<b>2. Objet</b>\n"
+"                                        <br/>\n"
+"                                        Le présent règlement a pour objet :"
+msgstr "<b>2. Objet</b>\n"
+"                                        <br/>\n"
+"                                        Le présent règlement a pour objet :"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "<b>3. Responsabilités</b>\n"
+"                                        <br/>\n"
+"                                        Chaque badge est attribué à un foyer. Il possède un numéro d’identification\n"
+"                                        unique, il est nominatif et engage la responsabilité de son détenteur qu’il en\n"
+"                                        soit titulaire direct ou indirect. La cession, le don, le prêt du badge d’accès\n"
+"                                        est interdit ; en cas d’utilisation frauduleuse de celui-ci, la responsabilité\n"
+"                                        du titulaire sera engagée et il pourra voir son badge être désactivé.\n"
+"                                        En cas de perte, vol ou destruction du badge, le titulaire devra avertir la\n"
+"                                        communauté de communes qui procédera à la désactivation du badge.\n"
+"                                        Un nouveau badge pourra être créé à la demande de l’usager à ses frais (15€).\n"
+"                                        Tout usager autorisé à accéder au centre de valorisation respectera le présent\n"
+"                                        règlement d’utilisation.\n"
+"                                        L’usager s’engage et engage les ayants droits au respect du présent règlement\n"
+"                                        et du règlement intérieur du centre de valorisation. Tout comportement ou\n"
+"                                        utilisation frauduleux portant atteinte à l’ordre, à la sécurité des biens et\n"
+"                                        des personnes ou à la salubrité du centre de valorisation est de la\n"
+"                                        responsabilité de l’usager qui s’expose à des poursuites civiles ou pénales\n"
+"                                        et au retrait de son autorisation d’accès (badge désactivé).\n"
+"                                        La communauté de communes ne saurait être tenu pour responsable de la méconnaissance pour\n"
+"                                        l’usager du présent règlement. Tout résultant de l’exécution du présent\n"
+"                                        règlement relève de la compétence du tribunal de Colmar."
+msgstr "<b>3. Responsabilités</b>\n"
+"                                        <br/>\n"
+"                                        Chaque badge est attribué à un foyer. Il possède un numéro d’identification\n"
+"                                        unique, il est nominatif et engage la responsabilité de son détenteur qu’il en\n"
+"                                        soit titulaire direct ou indirect. La cession, le don, le prêt du badge d’accès\n"
+"                                        est interdit ; en cas d’utilisation frauduleuse de celui-ci, la responsabilité\n"
+"                                        du titulaire sera engagée et il pourra voir son badge être désactivé.\n"
+"                                        En cas de perte, vol ou destruction du badge, le titulaire devra avertir la\n"
+"                                        communauté de communes qui procédera à la désactivation du badge.\n"
+"                                        Un nouveau badge pourra être créé à la demande de l’usager à ses frais (15€).\n"
+"                                        Tout usager autorisé à accéder au centre de valorisation respectera le présent\n"
+"                                        règlement d’utilisation.\n"
+"                                        L’usager s’engage et engage les ayants droits au respect du présent règlement\n"
+"                                        et du règlement intérieur du centre de valorisation. Tout comportement ou\n"
+"                                        utilisation frauduleux portant atteinte à l’ordre, à la sécurité des biens et\n"
+"                                        des personnes ou à la salubrité du centre de valorisation est de la\n"
+"                                        responsabilité de l’usager qui s’expose à des poursuites civiles ou pénales\n"
+"                                        et au retrait de son autorisation d’accès (badge désactivé).\n"
+"                                        La communauté de communes ne saurait être tenu pour responsable de la méconnaissance pour\n"
+"                                        l’usager du présent règlement. Tout résultant de l’exécution du présent\n"
+"                                        règlement relève de la compétence du tribunal de Colmar."
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "<b>4. Conditions d’accès au centre de valorisation</b>\n"
+"                                        <br/>\n"
+"                                        L’autorisation d’accéder au centre de valorisation est matérialisée par la\n"
+"                                        délivrance d’un badge d’accès, nominatif, numéroté et répertorié.\n"
+"                                        <br/>\n"
+"                                        <b>4.1 : obligation de l’usager</b>\n"
+"                                        <br/>\n"
+"                                        L’usager s’engage sur l’exactitude des renseignements fournis par ses soins\n"
+"                                        sur le formulaire de demande de badge d’accès ; il sera tenu pour seul\n"
+"                                        responsable de toute indication erronée, incomplète ou obsolète. La communauté de communes\n"
+"                                        se réserve le droit de procéder aux vérifications des informations fournies\n"
+"                                        par l’usager.\n"
+"                                        L’usager est tenu d’informer dans les meilleurs délais la communauté de communes de toute\n"
+"                                        modification concernant sa situation au regard des informations demandées."
+msgstr "<b>4. Conditions d’accès au centre de valorisation</b>\n"
+"                                        <br/>\n"
+"                                        L’autorisation d’accéder au centre de valorisation est matérialisée par la\n"
+"                                        délivrance d’un badge d’accès, nominatif, numéroté et répertorié.\n"
+"                                        <br/>\n"
+"                                        <b>4.1 : obligation de l’usager</b>\n"
+"                                        <br/>\n"
+"                                        L’usager s’engage sur l’exactitude des renseignements fournis par ses soins\n"
+"                                        sur le formulaire de demande de badge d’accès ; il sera tenu pour seul\n"
+"                                        responsable de toute indication erronée, incomplète ou obsolète. La communauté de communes\n"
+"                                        se réserve le droit de procéder aux vérifications des informations fournies\n"
+"                                        par l’usager.\n"
+"                                        L’usager est tenu d’informer dans les meilleurs délais la communauté de communes de toute\n"
+"                                        modification concernant sa situation au regard des informations demandées."
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "<b>4.2: délivrance du badge</b>\n"
+"                                        <br/>\n"
+"                                        La demande de badge d’accès est effectuée directement par l’usager auprès de la\n"
+"                                        communauté de communes. A la remise du formulaire dûment complété, signé et après vérification des\n"
+"                                        justificatifs, la communauté de communes enregistre la demande et attribue un numéro unique à\n"
+"                                        chaque usager. Ce numéro figure au verso du badge d’accès et permet un suivi\n"
+"                                        informatisé de l’utilisation du service par l’usager."
+msgstr "<b>4.2: délivrance du badge</b>\n"
+"                                        <br/>\n"
+"                                        La demande de badge d’accès est effectuée directement par l’usager auprès de la\n"
+"                                        communauté de communes. A la remise du formulaire dûment complété, signé et après vérification des\n"
+"                                        justificatifs, la communauté de communes enregistre la demande et attribue un numéro unique à\n"
+"                                        chaque usager. Ce numéro figure au verso du badge d’accès et permet un suivi\n"
+"                                        informatisé de l’utilisation du service par l’usager."
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "<b>4.3 : validité et propriété des badges</b>\n"
+"                                        <br/>\n"
+"                                        En cas de non utilisation du badge sur une période d’un an, un courrier sera\n"
+"                                        adressé à l’usager pour savoir s’il a toujours besoin de son badge. En cas de\n"
+"                                        non-réponse sous un délai de deux mois, le badge sera désactivé. Le badge\n"
+"                                        d’accès au centre de valorisation est la propriété exclusive de la communauté de communes."
+msgstr "<b>4.3 : validité et propriété des badges</b>\n"
+"                                        <br/>\n"
+"                                        En cas de non utilisation du badge sur une période d’un an, un courrier sera\n"
+"                                        adressé à l’usager pour savoir s’il a toujours besoin de son badge. En cas de\n"
+"                                        non-réponse sous un délai de deux mois, le badge sera désactivé. Le badge\n"
+"                                        d’accès au centre de valorisation est la propriété exclusive de la communauté de communes."
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "<b>4.4 : contrôle des accès au centre de valorisation</b>\n"
+"                                        <br/>\n"
+"                                        La communauté de communes veille au respect du présent règlement et peut, le cas échéant,\n"
+"                                        procéder à la vérification du badge d’accès sur le centre de valorisation. Ce\n"
+"                                        contrôle portera sur l’identité de l’utilisateur et sur la correspondance\n"
+"                                        avec l’enregistrement dans la base de données. L’utilisateur sera invité à\n"
+"                                        apporter immédiatement la preuve de son identité et/ou de son appartenance au\n"
+"                                        foyer ; en cas de fraude, le badge sera confisqué par la communauté de communes et le compte\n"
+"                                        suspendu. Faute de pouvoir apporter la preuve de son identité immédiatement,\n"
+"                                        l’usager aura un délai de 15 jours pour y remédier sous peine de voir son\n"
+"                                        badge d’accès désactivé."
+msgstr "<b>4.4 : contrôle des accès au centre de valorisation</b>\n"
+"                                        <br/>\n"
+"                                        La communauté de communes veille au respect du présent règlement et peut, le cas échéant,\n"
+"                                        procéder à la vérification du badge d’accès sur le centre de valorisation. Ce\n"
+"                                        contrôle portera sur l’identité de l’utilisateur et sur la correspondance\n"
+"                                        avec l’enregistrement dans la base de données. L’utilisateur sera invité à\n"
+"                                        apporter immédiatement la preuve de son identité et/ou de son appartenance au\n"
+"                                        foyer ; en cas de fraude, le badge sera confisqué par la communauté de communes et le compte\n"
+"                                        suspendu. Faute de pouvoir apporter la preuve de son identité immédiatement,\n"
+"                                        l’usager aura un délai de 15 jours pour y remédier sous peine de voir son\n"
+"                                        badge d’accès désactivé."
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "<b>5. Règlement intérieur du centre de valorisation</b>\n"
+"                                        <br/>\n"
+"                                        Le présent règlement d’utilisation des badges fait partie du règlement\n"
+"                                        intérieur du centre de valorisation ; en cas de modification, c’est ce\n"
+"                                        dernier qui fait foi."
+msgstr "<b>5. Règlement intérieur du centre de valorisation</b>\n"
+"                                        <br/>\n"
+"                                        Le présent règlement d’utilisation des badges fait partie du règlement\n"
+"                                        intérieur du centre de valorisation ; en cas de modification, c’est ce\n"
+"                                        dernier qui fait foi."
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "<b>6. Conditions de dépôt au centre de valorisation</b>\n"
+"                                        <br/>\n"
+"                                        Lors de chaque passage au centre de valorisation, l’usager doit présenter\n"
+"                                        devant la borne son badge d’accès. A défaut, l’accès au centre de valorisation\n"
+"                                        est refusé. Le badge d’accès permet d’identifier l’usager et de mesurer\n"
+"                                        l’utilisation qu’il fait du service.\n"
+"                                        <br/>\n"
+"\n"
+"                                        <b>6.1 : produits acceptés au centre de valorisation</b>\n"
+"                                        <br/>\n"
+"                                        La liste des produits acceptés au centre de valorisation figure sur le\n"
+"                                        règlement intérieur du centre de valorisation ; il est consultable directement\n"
+"                                        sur le site, de même que la liste des déchets refusés, ou sur le site\n"
+"                                        internet www.cc-vallee-munster.fr\n"
+"                                        6.2 : limitation des apports\n"
+"                                        Pour certains types de produits, les quantités journalières d’apport sont\n"
+"                                        limitées ; ces limites sont précisées dans le règlement intérieur du\n"
+"                                        centre de valorisation."
+msgstr "<b>6. Conditions de dépôt au centre de valorisation</b>\n"
+"                                        <br/>\n"
+"                                        Lors de chaque passage au centre de valorisation, l’usager doit présenter\n"
+"                                        devant la borne son badge d’accès. A défaut, l’accès au centre de valorisation\n"
+"                                        est refusé. Le badge d’accès permet d’identifier l’usager et de mesurer\n"
+"                                        l’utilisation qu’il fait du service.\n"
+"                                        <br/>\n"
+"\n"
+"                                        <b>6.1 : produits acceptés au centre de valorisation</b>\n"
+"                                        <br/>\n"
+"                                        La liste des produits acceptés au centre de valorisation figure sur le\n"
+"                                        règlement intérieur du centre de valorisation ; il est consultable directement\n"
+"                                        sur le site, de même que la liste des déchets refusés, ou sur le site\n"
+"                                        internet www.cc-vallee-munster.fr\n"
+"                                        6.2 : limitation des apports\n"
+"                                        Pour certains types de produits, les quantités journalières d’apport sont\n"
+"                                        limitées ; ces limites sont précisées dans le règlement intérieur du\n"
+"                                        centre de valorisation."
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "<b>7. Informations et Libertés</b>\n"
+"                                        <br/>\n"
+"                                        Les conditions d’attribution des badges on fait l’objet d’une déclaration\n"
+"                                        auprès de la CNIL ; conformément aux dispositions de la loi 78-17 du 6\n"
+"                                        janvier 1978 relative à l’informatique, aux fichiers et aux libertés,\n"
+"                                        toute personne qui figure sur le fichier centralisé tenu par la communauté de communes\n"
+"                                        dispose d’un droit d’accès et de rectification des informations le concernant."
+msgstr "<b>7. Informations et Libertés</b>\n"
+"                                        <br/>\n"
+"                                        Les conditions d’attribution des badges on fait l’objet d’une déclaration\n"
+"                                        auprès de la CNIL ; conformément aux dispositions de la loi 78-17 du 6\n"
+"                                        janvier 1978 relative à l’informatique, aux fichiers et aux libertés,\n"
+"                                        toute personne qui figure sur le fichier centralisé tenu par la communauté de communes\n"
+"                                        dispose d’un droit d’accès et de rectification des informations le concernant."
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "<b>Edition du 03/05/2017</b>"
+msgstr "<b>Edition du 03/05/2017</b>"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.website_application_environment_form
+msgid "Accept request"
+msgstr "Accepter"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "Badges d’accès au centre de valorisation pour les « particuliers »"
+msgstr "Badges d’accès au centre de valorisation pour les « particuliers »"
+
+#. module: environment_applications
+#: model:ir.attachment.type,name:environment_applications.attachment_type_vehicle_registration_card
+msgid "Carte grise"
+msgstr "Carte grise"
+
+#. module: environment_applications
+#: model:ir.actions.server,name:environment_applications.environment_application_server_action_create_contract
+msgid "Create contract from application (template)"
+msgstr "Créer contrat à partir d'un téléservice (template)"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.website_application_environment_form
+msgid "Create new medium"
+msgstr "Créer un nouveau support"
+
+#. module: environment_applications
+#: model:ir.attachment.type,name:environment_applications.attachment_type_kbis_file
+msgid "Fichier Kbis"
+msgstr "Fichier Kbis"
+
+#. module: environment_applications
+#: code:addons/environment_applications/controllers/application.py:94
+#, python-format
+msgid "For employee creation:"
+msgstr "Concernant l'employé à créer:"
+
+#. module: environment_applications
+#: code:addons/environment_applications/controllers/application.py:46
+#, python-format
+msgid "For recipient creation:"
+msgstr "Pour la création du bénéficiaire:"
+
+#. module: environment_applications
+#: model:application.information,name:environment_applications.application_information_foyer_members_count
+msgid "Foyer members count"
+msgstr "Nombre de membres du foyer"
+
+#. module: environment_applications
+#: model:application.information,name:environment_applications.application_information_home_type
+msgid "Home type"
+msgstr "Type de bien"
+
+#. module: environment_applications
+#: model:application.information,text_choices:environment_applications.application_information_home_type
+msgid "Individual house, Appartment"
+msgstr "Maison individuelle, Appartement"
+
+#. module: environment_applications
+#: model:website.application.template,terms_checkbox_label:environment_applications.application_template_support_loss
+#: model:website.application.template,terms_checkbox_label:environment_applications.application_template_support_request_part
+#: model:website.application.template,terms_checkbox_label:environment_applications.application_template_support_request_pro
+msgid "J'ai lu et accepté les"
+msgstr "J'ai lu et accepté les"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "Le présent règlement est porté à la connaissance des usagers par voie :"
+msgstr "Le présent règlement est porté à la connaissance des usagers par voie :"
+
+#. module: environment_applications
+#: model:application.information,name:environment_applications.application_information_lost_type
+msgid "Lost type"
+msgstr "Type de perte"
+
+#. module: environment_applications
+#: model:application.information,text_choices:environment_applications.application_information_lost_type
+msgid "Lost, Theft"
+msgstr "Perdu, Volé"
+
+#. module: environment_applications
+#: model:application.information,text_choices:environment_applications.application_information_residence_type
+msgid "Main residence, Secondary residence"
+msgstr "Résidence principale, Résidence secondaire"
+
+#. module: environment_applications
+#: model:application.information,name:environment_applications.application_information_number_of_badges
+msgid "Number of badges"
+msgstr "Nombre de badges"
+
+#. module: environment_applications
+#: model:application.information,name:environment_applications.application_information_owner_type
+msgid "Owner type"
+msgstr "Type de propriété"
+
+#. module: environment_applications
+#: model:application.information,text_choices:environment_applications.application_information_owner_type
+msgid "Owner, Tenant"
+msgstr "Propriétaire, Locataire"
+
+#. module: environment_applications
+#: model:ir.attachment.type,name:environment_applications.attachment_type_letterhead
+msgid "Papier en-tête"
+msgstr "Papier en-tête"
+
+#. module: environment_applications
+#: model:ir.attachment.type,name:environment_applications.attachment_type_proof_of_identity
+msgid "Pièce d'identité"
+msgstr "Pièce d'identité"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.website_application_environment_form
+msgid "Reject request"
+msgstr "Rejeter"
+
+#. module: environment_applications
+#: model:ir.ui.menu,name:environment_applications.website_application_template_env_menu
+msgid "Request templates"
+msgstr "Modèles de démarche en ligne"
+
+#. module: environment_applications
+#: model:ir.actions.act_window,name:environment_applications.action_environment_website_application
+#: model:ir.ui.menu,name:environment_applications.environment_requests
+msgid "Requests"
+msgstr "Démarches en ligne"
+
+#. module: environment_applications
+#: model:application.information,name:environment_applications.application_information_residence_type
+msgid "Residence type"
+msgstr "Type de résidence"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "Règlement d’utilisation"
+msgstr "Règlement d’utilisation"
+
+#. module: environment_applications
+#: model:website.application.template,description:environment_applications.application_template_support_request_part
+#: model:website.application.template,description:environment_applications.application_template_support_request_pro
+msgid "To ask a support to access waste sites, simply fill the form below with the following requirements :"
+msgstr "Pour demander un badge d'accès au centre de valorisation, remplissez ce formulaire avec les pièces nécessaires :"
+
+#. module: environment_applications
+#: model:website.application.template,description:environment_applications.application_template_support_loss
+msgid "To declare the lose of a waste site support, simply fill the form below :"
+msgstr "Pour déclarer une perte de badge, remplissez simplement ce formulaire :"
+
+#. module: environment_applications
+#: model:website.application.template,name:environment_applications.application_template_support_loss
+msgid "Waste site support loss"
+msgstr "Déclaration de perte de badge d'accès en centre de valorisation"
+
+#. module: environment_applications
+#: model:website.application.template,name:environment_applications.application_template_support_request_part
+#: model:website.application.template,name:environment_applications.application_template_support_request_pro
+msgid "Waste site support request"
+msgstr "Demande de badge d'accès en centre de valorisation"
+
+#. module: environment_applications
+#: model:ir.actions.act_window,name:environment_applications.action_website_application_template_env
+msgid "Website application templates"
+msgstr "Modèles de démarche en ligne"
+
+#. module: environment_applications
+#: code:addons/environment_applications/controllers/account.py:18
+#, python-format
+msgid "Your address is necessary to apply requests."
+msgstr "Votre adresse est nécessaire pour utiliser les téléservices."
+
+#. module: environment_applications
+#: model:website.application.template,terms_link_label:environment_applications.application_template_support_loss
+#: model:website.application.template,terms_link_label:environment_applications.application_template_support_request_part
+#: model:website.application.template,terms_link_label:environment_applications.application_template_support_request_pro
+msgid "conditions générales"
+msgstr "conditions générales"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "de clarifier les relations entre les « particulier » et la communauté de communes."
+msgstr "de clarifier les relations entre les « particulier » et la communauté de communes."
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "de définir les conditions d’attribution d’un badge d’accès au centre de\n"
+"                                                valorisation de la communauté de communes,"
+msgstr "de définir les conditions d’attribution d’un badge d’accès au centre de\n"
+"                                                valorisation de la communauté de communes,"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "d’affichage au centre de valorisation"
+msgstr "d’affichage au centre de valorisation"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "d’information auprès de la communauté de communes"
+msgstr "d’information auprès de la communauté de communes"
+
+#. module: environment_applications
+#: model:ir.ui.view,arch_db:environment_applications.environment_support_rules
+msgid "d’information sur le site internet de la communauté de communes : www.cc-vallee-munster.fr"
+msgstr "d’information sur le site internet de la communauté de communes : www.cc-vallee-munster.fr"
+
+#. module: environment_applications
+#: model:ir.model,name:environment_applications.model_website_application
+msgid "website.application"
+msgstr "website.application"
+

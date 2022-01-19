@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="my_pav_deposits" name="Your PAV Deposits">
+        <t t-call="website_portal.portal_layout">
+            <h3 class="page-header">Your PAV deposits</h3>
+            <div>
+                <p>Here is the list of all of your deposits.</p>
+                <table class="table table-hover" t-if="deposits">
+                    <thead>
+                        <tr>
+                            <th style="vertical-align: middle">Deposit point</th>
+                            <th style="vertical-align: middle">Waste</th>
+                            <th style="vertical-align: middle">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="deposits" t-as="deposit">
+                            <td>
+                                <span t-field="deposit.infrastructure_deposit_area_id"/>
+                            </td>
+                            <td>
+                                <span t-field="deposit.activity_id"/>
+                            </td>
+                            <td>
+                                <span t-field="deposit.time"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Total:
+                    <t t-esc="total"/>
+                </p>
+                <p t-if="not deposits">
+                    <b>You dont have deposits.</b>
+                </p>
+            </div>
+        </t>
+    </template>
+</odoo>

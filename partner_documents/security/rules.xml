@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="admin_documents_admin_only" model="ir.rule">
+        <field name="name">Only admin can see its documents</field>
+        <field name="model_id" ref="base.model_ir_attachment"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="domain_force">[('user_id','!=',1)]</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="only_documents_owner_can_delete_its_documents" model="ir.rule">
+        <field name="name">Only documents' owner can delete its documents</field>
+        <field name="model_id" ref="base.model_ir_attachment"/>
+        <field name="perm_read" eval="0"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('user_id', '=', False)]</field>
+    </record>
+</odoo>

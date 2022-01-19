@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="routeur_file_settings_view">
+            <field name="name">Add routeur file invoice template settings</field>
+            <field name="model">account.config.settings</field>
+            <field name="inherit_id" ref="account.view_account_config_settings"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='accounting']" position="inside">
+                    <label for="id" string="Routeur File"/>
+                    <div>
+                        <div>
+                            <label for="routeur_file_invoice_template" string="Invoice Template"/>
+                            <field name="routeur_file_invoice_template" class="oe_inline"/>
+                        </div>
+                        <div>
+                           <button type="action"
+                                   name="%(account_invoice_report_sepa.action_report_sepa_dynamic_elements)d"
+                                   string="Configure invoice report SEPA dynamic elements"
+                                   icon="fa-arrow-right"
+                                   class="btn-link"/>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

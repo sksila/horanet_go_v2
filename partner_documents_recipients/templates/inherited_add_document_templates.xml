@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="add_document" name="Attach document to a recipient" inherit_id="partner_documents.add_document_form">
+        <xpath expr="//div[hasclass('document-types')]" position="after">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="recipient">Recipient</label>
+                    <span t-if="err_recipient" class="error label label-danger">
+                        <t t-esc="err_recipient"/>
+                    </span>
+                    <select class="form-control" name="recipient" required="required">
+                        <t t-set='selected_id' t-value="recipient and int(recipient) or partner.id"/>
+                        <t t-foreach="recipients" t-as="recipient_id">
+                            <option t-att-selected="selected_id == recipient_id.id" t-att-value="recipient_id.id">
+                                <t t-esc="recipient_id.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

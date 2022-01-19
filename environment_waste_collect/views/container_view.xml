@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="container_form_view" model="ir.ui.view">
+        <field name="name">Container Form View</field>
+        <field name="model">environment.container</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(maintenance.hr_equipment_request_action_from_equipment)d"
+                                type="action"
+                                class="oe_stat_button"
+                                icon="fa-ticket">
+                            <field string="Maintenance" name="maintenance_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <field name="picture" widget="image" class="oe_avatar"
+                               options="{&quot;volume&quot;: [90, 90]}"/>
+
+                        <label class="oe_edit_only" for="name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="waste_site_id"/>
+                            <field name="emplacement_id"/>
+                            <field name="container_type_id"/>
+                            <field name="volume"/>
+                        </group>
+                        <group>
+                            <field name="filling_level" widget="progressbar"/>
+                            <field name="activity_id"/>
+                            <field name="maintenance_team_id"/>
+                            <field name="technician_user_id"/>
+                            <field name="assign_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name="note"/>
+                        </page>
+                        <page string="Container Information">
+                            <group>
+                                <group>
+                                    <field name="partner_id"/>
+                                    <field name="partner_ref"/>
+                                    <field name="model"/>
+                                    <field name="serial_no"/>
+                                </group>
+                                <group>
+                                    <field name="cost" groups="maintenance.group_equipment_manager"/>
+                                    <field name="warranty"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="container_kanban_view" model="ir.ui.view">
+        <field name="name">Container Kanban View</field>
+        <field name="model">environment.container</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="emplacement_id"/>
+                <field name="color"/>
+                <field name="maintenance_open_count"/>
+                <field name="next_action_date"/>
+                <field name="picture"/>
+                <field name="container_type_id"/>
+                <templates>
+                    <t t-name="kanban-tooltip">
+                        <ul class="oe_kanban_tooltip">
+                            <li>
+                                <b>Serial Number:</b>
+                                <field name="serial_no"/>
+                            </li>
+                            <li>
+                                <b>Model Number:</b>
+                                <field name="model"/>
+                            </li>
+                        </ul>
+                    </t>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('environment.container', 'picture', record.id.value)"/>
+                            </div>
+                            <div class="o_dropdown_kanban dropdown">
+
+                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+                                    <span class="fa fa-bars fa-lg"/>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <t t-if="widget.editable">
+                                        <li>
+                                            <a type="edit">Edit...</a>
+                                        </li>
+                                    </t>
+                                    <t t-if="widget.deletable">
+                                        <li>
+                                            <a type="delete">Delete</a>
+                                        </li>
+                                    </t>
+                                    <li>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="oe_kanban_content" tooltip="kanban-tooltip">
+                                <div>
+                                    <b>
+                                        <field name="waste_site_id"/>
+                                        <span t-if="record.model.raw_value">(<field name="model"/>)
+                                        </span>
+                                    </b>
+                                </div>
+                                <field name="name"/>
+                                <br/>
+                                <field name="container_type_id"/>
+                                <br/>
+                                <div class="mt4">
+                                    <div t-if="!record.emplacement_id.raw_value">Available</div>
+                                </div>
+                                <div class="oe_kanban_footer_left mt4 label label-danger"
+                                     t-if="record.maintenance_open_count.raw_value">
+                                    <t t-raw="record.maintenance_open_count.raw_value"/>
+                                    Request
+                                </div>
+                                <div class="oe_kanban_footer_left mt4 label label-default"
+                                     t-if="record.next_action_date.raw_value">
+                                    <t t-raw="moment(record.next_action_date.raw_value).format('MMMM Do')"/>
+                                </div>
+                            </div>
+                            <div class="oe_clear"></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="container_tree_view" model="ir.ui.view">
+        <field name="name">Container List View</field>
+        <field name="model">environment.container</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="emplacement_id"/>
+                <field name="waste_site_id"/>
+                <field name="container_type_id"/>
+                <field name="volume"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="container_search_view" model="ir.ui.view">
+        <field name="name">Container Search View</field>
+        <field name="model">environment.container</field>
+        <field name="arch" type="xml">
+            <search string="Search">
+                <field name="emplacement_id"/>
+                <field name="waste_site_id"/>
+                <filter string="Under Maintenance" domain="[('maintenance_open_count', '&gt;', 0)]"/>
+                <separator/>
+                <filter string="Currently in use" name="in_use" domain="[('emplacement_id', '!=', False)]"/>
+                <filter string="Available" name="available" domain="[('emplacement_id', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="container_action" model="ir.actions.act_window">
+        <field name="name">Containers</field>
+        <field name="res_model">environment.container</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create a new container.
+            </p>
+        </field>
+    </record>
+</odoo>

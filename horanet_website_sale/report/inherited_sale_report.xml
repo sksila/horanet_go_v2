@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+    Set quantity into order PDF visible as int if it's really an integer, otherwise visible as float.
+    The modification as been disapproved by Odoo Community cause it's change the DOM and cannot do in 10.0 version.
+    https://github.com/odoo/odoo/issues/22443
+    -->
+    <template id="quantity_as_int_in_report_saleorder_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//table/tbody[@class='sale_tbody']//tr/td/span[@t-field='l.product_uom_qty']" position="replace">
+            <span t-if="l.product_uom_qty == int(l.product_uom_qty)" t-field="l.product_uom_qty" t-options='{"widget": "int"}'/>
+            <span t-if="l.product_uom_qty != int(l.product_uom_qty)" t-field="l.product_uom_qty" t-options='{"widget": "float"}'/>
+        </xpath>
+        <xpath expr="//table/thead/tr/th[5]" position="attributes">
+            <attribute name="t-if">not request.env['website.config.settings'].get_hide_taxes_and_subtotal() or doc.amount_tax and float(doc.amount_tax)</attribute>
+        </xpath>
+        <xpath expr="//table/tbody//td[5]" position="attributes">
+            <attribute name="t-if">not request.env['website.config.settings'].get_hide_taxes_and_subtotal() or doc.amount_tax and float(doc.amount_tax)</attribute>
+        </xpath>
+
+        <xpath expr="//span[@t-field='doc.amount_untaxed']/../.." position="attributes">
+            <attribute name="t-if">not request.env['website.config.settings'].get_hide_taxes_and_subtotal() or doc.amount_tax and float(doc.amount_tax)</attribute>
+        </xpath>
+
+    </template>
+</odoo>

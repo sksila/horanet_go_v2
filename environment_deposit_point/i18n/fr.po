@@ -1,0 +1,723 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* environment_deposit_point
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-03-28 08:43+0000\n"
+"PO-Revision-Date: 2018-03-28 08:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.my_pav_deposits
+msgid "<b>You dont have deposits.</b>"
+msgstr "<b>Vous n'avez aucun dépôt en PAV.</b>"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_operation_search_view
+msgid "Activity"
+msgstr "Activité"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.inherited_view_partner_setup_wizard_pav
+msgid "Add deposit point medium"
+msgstr "Ajouter un badge PAV"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_street2
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "Additional address"
+msgstr "Complément d'adresse"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_display_address
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "Address"
+msgstr "Adresse"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_point.py:169
+#: code:addons/environment_deposit_point/models/deposit_point.py:197
+#, python-format
+msgid "Auto generated for {reference} / {sector_name}"
+msgstr "Auto-généré pour {reference} / {sector_name}"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_point_equipment_rel_beginning_date
+msgid "Beginning date"
+msgstr "Date de début"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_point_equipment_rel.py:74
+#, python-format
+msgid "Beginning date must be inferior to ending date"
+msgstr "La date de début doit être inférieure à la date de fin"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_partner_setup_wizard_deposit_point_csn_number
+msgid "CSN Number"
+msgstr "Numéro CSN"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_check_point_ids
+msgid "Check points"
+msgstr "Points de contrôle"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_city_id
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_city_id
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "City"
+msgstr "Ville"
+
+#. module: environment_deposit_point
+#: model:ir.actions.act_window,help:environment_deposit_point.deposit_area_action
+msgid "Click here to create a new deposit area."
+msgstr "Cliquez ici pour créer une nouvelle aire d'apports."
+
+#. module: environment_deposit_point
+#: model:ir.actions.act_window,help:environment_deposit_point.deposit_import_data_action
+msgid "Click here to create a new deposit import data."
+msgstr "Cliquez ici pour créer un nouvel import de données de dépôt"
+
+#. module: environment_deposit_point
+#: model:ir.actions.act_window,help:environment_deposit_point.deposit_point_action
+msgid "Click here to create a new deposit point."
+msgstr "Cliquez ici pour créer un nouveau point d'apports."
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_code
+msgid "Code"
+msgstr "Code"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/controllers/main.py:32
+#, python-format
+msgid "Code not provided"
+msgstr "Code non fourni"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_comment
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_point_equipment_rel_maintenance_equipment_id
+msgid "Container"
+msgstr "Bac"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_equipment_rel_ids
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_form_view
+msgid "Containers"
+msgstr "Bacs"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_country_id
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "Country"
+msgstr "Pays"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.inherited_view_partner_setup_wizard_pav
+msgid "Create tag"
+msgstr "Créer l'identifiant"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,help:environment_deposit_point.field_environment_deposit_point_deposit_check_point_id
+msgid "Created automatically, not intended to display"
+msgstr "Créé automatiquement, n'est pas censé être affiché"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_create_uid
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_point_equipment_rel_create_uid
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_create_uid
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_create_date
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_point_equipment_rel_create_date
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_create_date
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_created_operations_count
+msgid "Created operations"
+msgstr "Opérations créées"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_data
+msgid "Data"
+msgstr "Données"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_data_count
+msgid "Data count"
+msgstr "Nombre de données"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/controllers/main.py:35
+#, python-format
+msgid "Data not provided"
+msgstr "Données non fournies"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.my_pav_deposits
+msgid "Date"
+msgstr "Date"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_commissioning_date
+msgid "Date of commissioning"
+msgstr "Date de mise en service"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_kanban_view
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_deposit_area_id
+#: model:ir.model.fields,field_description:environment_deposit_point.field_horanet_operation_infrastructure_deposit_area_id
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_operation_search_view
+msgid "Deposit area"
+msgstr "Aire d'apports"
+
+#. module: environment_deposit_point
+#: model:ir.actions.act_window,name:environment_deposit_point.deposit_area_action
+#: model:ir.ui.menu,name:environment_deposit_point.deposit_areas_menu
+msgid "Deposit areas"
+msgstr "Aires d'apports"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_deposit_check_point_id
+msgid "Deposit check point"
+msgstr "Point de contrôle de dépôt"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_import_data.py:209
+#, python-format
+msgid "Deposit date not provided in line: "
+msgstr "Date de dépôt non fournie sur la ligne : "
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/controllers/main.py:79
+#, python-format
+msgid "Deposit import data {} created and processed. {} operations created"
+msgstr "Import de données {} créé et traité. {} operations créées"
+
+#. module: environment_deposit_point
+#: model:ir.actions.act_window,name:environment_deposit_point.deposit_import_data_action
+msgid "Deposit import datas"
+msgstr "Import de données de dépôt"
+
+#. module: environment_deposit_point
+#: model:ir.ui.menu,name:environment_deposit_point.deposit_import_datas_menu
+msgid "Deposit imports"
+msgstr "Imports de données"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_point_equipment_rel_deposit_point_id
+#: model:ir.model.fields,field_description:environment_deposit_point.field_horanet_operation_deposit_point_id
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_operation_search_view
+#: model:ir.ui.view,arch_db:environment_deposit_point.my_pav_deposits
+msgid "Deposit point"
+msgstr "Point d'apports"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_import_data.py:202
+#, python-format
+msgid "Deposit point not found for line: "
+msgstr "Point d'apports non trouvé pour la ligne : "
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_operation_pivot_view
+msgid "Deposit point operation"
+msgstr "Opération point d'apports"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_collectivity_config_settings_deposit_point_mapping_id
+msgid "Deposit point support mapping"
+msgstr "Mapping cartes points d'apports volontaires"
+
+#. module: environment_deposit_point
+#: model:ir.actions.act_window,name:environment_deposit_point.deposit_point_action
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_deposit_point_ids
+#: model:ir.ui.menu,name:environment_deposit_point.deposit_points_menu
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "Deposit points"
+msgstr "Points d'apports"
+
+#. module: environment_deposit_point
+#: model:ir.actions.act_window,name:environment_deposit_point.deposit_point_deposit_action
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_operation_ids
+#: model:ir.ui.menu,name:environment_deposit_point.deposit_points_deposits_menu
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_form_view
+msgid "Deposits"
+msgstr "Dépôts"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_description
+msgid "Description"
+msgstr "Description"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_display_name
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_point_equipment_rel_display_name
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_display_name
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: environment_deposit_point
+#: model:horanet.action,name:environment_deposit_point.horanet_action_depot_pav
+msgid "Dépôt PAV"
+msgstr "Dépôt PAV"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_kanban_view
+msgid "Edit..."
+msgstr "Modifier…"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_point_equipment_rel_ending_date
+msgid "Ending date"
+msgstr "Date de fin"
+
+#. module: environment_deposit_point
+#: selection:deposit.import.data,state:0
+msgid "Error"
+msgstr "Erreur"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_errors
+msgid "Errors"
+msgstr "Erreurs"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_filling_level
+msgid "Filling level"
+msgstr "Niveau de remplissage"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_first_deposit_date
+msgid "First deposit"
+msgstr "Premier dépôt"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_operation_search_view
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_search_view
+msgid "Group by City"
+msgstr "Grouper par ville"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_search_view
+msgid "Group by Deposit area"
+msgstr "Grouper par aire d'apports"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.my_pav_deposits
+msgid "Here is the list of all of your deposits."
+msgstr "Voici une liste de tous vos dépôts en point d'apport volontaire."
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_id
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_point_equipment_rel_id
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_id
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_id
+msgid "ID"
+msgstr "ID"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_image
+msgid "Image"
+msgstr "Image"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_import_date
+msgid "Import date"
+msgstr "Date de l'import"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_infrastructure_id
+msgid "Infrastructure"
+msgstr "Infrastructure"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data___last_update
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_point_equipment_rel___last_update
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area___last_update
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_write_uid
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_point_equipment_rel_write_uid
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_write_uid
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_write_date
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_point_equipment_rel_write_date
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_write_date
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_last_deposit_date
+msgid "Last deposit"
+msgstr "Dernier dépôt"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_last_import_date
+msgid "Last import date"
+msgstr "Date de dernier import"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_latitude
+msgid "Latitude"
+msgstr "Latitude"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_localisation_map
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "Localisation"
+msgstr "Localisation"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_longitude
+msgid "Longitude"
+msgstr "Longitude"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_form_view
+msgid "Maintenance"
+msgstr "Maintenance"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_deposit_point_mapping_id
+#: model:ir.model.fields,field_description:environment_deposit_point.field_partner_setup_wizard_deposit_point_mapping_id
+msgid "Mapping"
+msgstr "Mapping"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/controllers/main.py:38
+#, python-format
+msgid "Mapping not provided"
+msgstr "Le mapping n'est pas fourni"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_partner_setup_wizard_deposit_point_max_length
+msgid "Max length"
+msgstr "Longueur maximale"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.inherited_view_partner_setup_wizard_pav
+msgid "Move tag"
+msgstr "Déplacer l'identifiant"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_name
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: environment_deposit_point
+#: selection:deposit.import.data,state:0
+msgid "Not processed"
+msgstr "Non traité"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_import_data.py:155
+#, python-format
+msgid "Operation not created for line: {}. Error : {}"
+msgstr "Operation non créée pour la ligne : {}. Erreur : {}"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_pickup_ids
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_point_form_view
+msgid "Pickups"
+msgstr "Relèves"
+
+#. module: environment_deposit_point
+#: model:ir.actions.server,name:environment_deposit_point.deposit_import_data_process_data_action_server
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_import_data_form_view
+msgid "Process data"
+msgstr "Générer les données"
+
+#. module: environment_deposit_point
+#: selection:deposit.import.data,state:0
+msgid "Processed"
+msgstr "Traité"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_display_count
+msgid "Processed data"
+msgstr "Données générées"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/controllers/main.py:41
+#, python-format
+msgid "Provided mapping does not exist"
+msgstr "Le mapping fourni n'éxiste pas"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_reference
+msgid "Reference"
+msgstr "Référence"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_import_data_search_view
+msgid "Search import"
+msgstr "Chercher import"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_serial_no
+msgid "Serial Number"
+msgstr "Numéro de série"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_import_data.py:196
+#, python-format
+msgid "Serial number not provided in line: "
+msgstr "Numéro de série non fourni pour la ligne : "
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,help:environment_deposit_point.field_collectivity_config_settings_deposit_point_mapping_id
+msgid "Set this value to use as default mapping value when launching the creation medium wizard."
+msgstr "Le mapping défini sera utilisé par défaut lors de l'utilisation de l'assistant d'assignation de badge."
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_deposit_import_data_state
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_state_id
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "State"
+msgstr "État"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_street_id
+msgid "Street"
+msgstr "Rue"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "Street number..."
+msgstr "N°..."
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "Street..."
+msgstr "Rue..."
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_partner_setup_wizard_deposit_point_tag_id
+msgid "Tag"
+msgstr "Identifiant"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_import_data.py:188
+#, python-format
+msgid "Tag not found for line: "
+msgstr "Identifiant non trouvé pour la ligne : "
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_import_data.py:179
+#, python-format
+msgid "Tag number not provided in line: "
+msgstr "Numéro d'identifiant non fourni pour la ligne : "
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_import_data.py:15
+#: sql_constraint:deposit.import.data:0
+#, python-format
+msgid "The import code value must be unique"
+msgstr "La valeur du code d'import doit être unique"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_point.py:10
+#: sql_constraint:environment.deposit.point:0
+#, python-format
+msgid "The reference value must be unique"
+msgstr "La référence doit être unique"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_point.py:151
+#, python-format
+msgid "The selected waste must be present in the deposit area's activity sector."
+msgstr "L'activité saisie doit être présente dans la zone d'activités de la zone d'apport."
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_point_equipment_rel.py:61
+#, python-format
+msgid "There is already a container at this deposit point for the provided dates"
+msgstr "Il y a déjà un bac à ce point d'apports aux dates fournies"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_import_data_search_view
+msgid "This Year"
+msgstr "Cette année"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_point_equipment_rel.py:47
+#, python-format
+msgid "This equipment is already attributed to another deposit point ({})"
+msgstr "Ce bac est déjà attribué à un autre point d'apports({})"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_import_data_search_view
+msgid "This month"
+msgstr "Ce mois"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_import_data_search_view
+msgid "This week"
+msgstr "Cette semaine"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_import_data_search_view
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.my_pav_deposits
+msgid "Total:"
+msgstr "Total:"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_partner_setup_wizard_deposit_point_mapping
+msgid "Type"
+msgstr "Type"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,help:environment_deposit_point.field_partner_setup_wizard_deposit_point_max_length
+msgid "Value used when creating a tag to prevent its value to be too long"
+msgstr "Valeur utilisée lors de la création d'un identifiant pour prévenir si sa valeur est trop longue."
+
+#. module: environment_deposit_point
+#: model:ir.ui.menu,name:environment_deposit_point.deposit_points_global_menu
+msgid "Volontary deposit points"
+msgstr "Points d'apports volontaires"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_volume
+msgid "Volume (litres)"
+msgstr "Volume (litres)"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.res_partner_form_view
+msgid "Voluntary deposits"
+msgstr "Apports volontaires"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_point_activity_id
+#: model:ir.ui.view,arch_db:environment_deposit_point.my_pav_deposits
+msgid "Waste"
+msgstr "Déchet"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_import_data.py:215
+#, python-format
+msgid "Wrong deposit date format in line: {}. Provide date in format: Y-m-d H:M:S"
+msgstr "Mauvais format de date de dépôt pour la ligne : {}. Fournir une date au format : Y-m-d H:M:S"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.custom_portal_layout
+msgid "Your PAV Deposits"
+msgstr "Vos dépôts PAV"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.my_pav_deposits
+#: model:ir.ui.view,arch_db:environment_deposit_point.portal_your_pav_deposit
+msgid "Your PAV deposits"
+msgstr "Vos dépôts PAV"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "ZIP"
+msgstr "Code postal"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,field_description:environment_deposit_point.field_environment_deposit_area_zip_id
+msgid "ZIP code"
+msgstr "Code postal"
+
+#. module: environment_deposit_point
+#: model:ir.model,name:environment_deposit_point.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: environment_deposit_point
+#: model:product.uom,name:environment_deposit_point.deposit_unit_product_uom
+msgid "deposit(s)"
+msgstr "dépôt(s)"
+
+#. module: environment_deposit_point
+#: model:ir.model,name:environment_deposit_point.model_deposit_import_data
+msgid "deposit.import.data"
+msgstr "deposit.import.data"
+
+#. module: environment_deposit_point
+#: model:ir.model,name:environment_deposit_point.model_deposit_point_equipment_rel
+msgid "deposit.point.equipment.rel"
+msgstr "deposit.point.equipment.rel"
+
+#. module: environment_deposit_point
+#: model:ir.model,name:environment_deposit_point.model_environment_deposit_area
+msgid "environment.deposit.area"
+msgstr "environment.deposit.area"
+
+#. module: environment_deposit_point
+#: model:ir.model,name:environment_deposit_point.model_environment_deposit_point
+msgid "environment.deposit.point"
+msgstr "environment.deposit.point"
+
+#. module: environment_deposit_point
+#: model:ir.model,name:environment_deposit_point.model_horanet_operation
+msgid "horanet.operation"
+msgstr "horanet.operation"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "lat:"
+msgstr "lat:"
+
+#. module: environment_deposit_point
+#: model:ir.ui.view,arch_db:environment_deposit_point.deposit_area_form_view
+msgid "long:"
+msgstr "long:"
+
+#. module: environment_deposit_point
+#: model:ir.model,name:environment_deposit_point.model_partner_setup_wizard
+msgid "partner.setup.wizard"
+msgstr "partner.setup.wizard"
+
+#. module: environment_deposit_point
+#: model:ir.model.fields,help:environment_deposit_point.field_environment_deposit_area_city_id
+msgid "select the city"
+msgstr "sélectionnez la ville"
+
+#. module: environment_deposit_point
+#: code:addons/environment_deposit_point/models/deposit_import_data.py:161
+#, python-format
+msgid "{} operations created"
+msgstr "{} operations créées"
+

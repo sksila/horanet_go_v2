@@ -1,0 +1,102 @@
+#breadcrumb-arrow {
+    height: 36px;
+    padding: 0;
+    line-height: 36px;
+    list-style: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+
+        &:first-child {
+            border-radius: 4px 0 0 4px;
+            -webkit-border-radius: 4px 0 0 4px;
+            -moz-border-radius: 4px 0 0 4px;
+            padding: 0 10px;
+            padding-left: 10px;
+        }
+
+        span {
+            display: inline-block;
+            vertical-align: top;
+            padding: 0 10px;
+            color: #434a54;
+        }
+
+        display: inline-block;
+        vertical-align: top;
+        height: 36px;
+        padding: 0 10px 0 10px;
+        line-height: 36px;
+        position: relative;
+        text-decoration: none;
+        background-color: #CCCCCC;
+        border: 1px solid #CCCCCC;
+
+        &:after, &:before {
+            position: absolute;
+            top: -1px;
+            width: 0;
+            height: 0;
+            content: '';
+            border-top: 18px solid transparent;
+            border-bottom: 18px solid transparent
+        }
+        &:before {
+            right: -10px;
+            z-index: 3;
+            border-left-color: #CCCCCC;
+            border-left-style: solid;
+            border-left-width: 11px
+        }
+        &:after {
+            right: -11px;
+            z-index: 2;
+            border-left: 11px solid #2494be
+        }
+
+        &:last-child:after {
+            border-left: 11px solid #CCCCCC
+        }
+
+        &.current {
+            background-color: #2494be;
+            border: 1px solid #2494be;
+
+            span {
+                color: #fff;
+            }
+            &:after, &:before {
+                border-left-color: #2494be
+            }
+
+        }
+
+        &:not(:first-child) {
+            margin-left: -5px;
+
+            span {
+                height: 36px;
+                padding: 0 10px 0 25px;
+                line-height: 36px;
+            }
+        }
+        & + &:before {
+            padding: 0;
+            content: ""
+        }
+    }
+}
+
+.block-header {
+    color: #2494be;
+}
+
+label.required::after {
+    content: "*";
+    position: absolute;
+    margin-left: 2px;
+    color: brown;
+}

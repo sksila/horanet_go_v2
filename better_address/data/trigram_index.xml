@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="index_trigram_city_name" model="trgm.index">
+        <field name="field_id" ref="better_address.field_res_city_name"/>
+        <field name="index_type">gin</field>
+    </record>
+    <record id="index_trigram_street_name" model="trgm.index">
+        <field name="field_id" ref="better_address.field_res_street_name"/>
+        <field name="index_type">gin</field>
+    </record>
+</odoo>

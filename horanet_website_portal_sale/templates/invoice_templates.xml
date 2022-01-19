@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="invoice" name="Invoice">
+        <t t-call="website.layout">
+            <div class="horanet_blockui horanet_spinner" style="display:inline-block"/>
+            <div id="wrap">
+                <div class="container mt32 mb32 horanet_invoice">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="/my/home">
+                                <i class="fa fa-home"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/my/invoices">My invoices</a>
+                        </li>
+                        <li>My schedules</li>
+                    </ol>
+
+                    <div class="row">
+                        <div t-if="not payment_ready" class="col-md-12">
+                            <h3>Your schedules for your invoice
+                                <t t-esc="invoice.number"/>
+                            </h3>
+
+                            <div t-if="error" class="alert alert-warning">
+                                <t t-esc="error"/>
+                            </div>
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr class="active">
+                                        <th>Due date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Cart</th>
+                                    </tr>
+                                </thead>
+                                <t t-set="move_lines"
+                                   t-value="invoice.move_id.line_ids.filtered(lambda r: not r.credit).sorted(lambda r: r.date_maturity)"/>
+                                <t t-foreach="move_lines" t-as="move_line">
+                                    <t t-if="move_line.date_maturity">
+                                        <tr t-att-data_id="move_line.id">
+                                            <td>
+                                                <t t-esc="tools.format_date(move_line.date_maturity)"/>
+                                            </td>
+                                            <td>
+                                                <t t-if="not move_line.full_reconcile_id">
+                                                    <t t-esc="move_line.amount_residual"
+                                                       t-esc-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/>
+                                                </t>
+                                                <t t-if="move_line.full_reconcile_id">
+                                                    <t t-esc="move_line.debit"
+                                                       t-esc-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/>
+                                                </t>
+                                            </td>
+                                            <td>
+                                                <span t-if="move_line.full_reconcile_id" class="label label-success"
+                                                      style="display: inline-block;">
+                                                    <i class="fa fa-fw fa-check" aria-hidden="true"
+                                                       t-translation="off"/>
+                                                    Paid
+                                                </span>
+                                                <span t-if="not move_line.full_reconcile_id" class="label label-info"
+                                                      style="display: inline-block;">
+                                                    <i class="fa fa-fw fa-clock-o" aria-hidden="true"
+                                                       t-translation="off"/>
+                                                    Waiting for Payment
+                                                </span>
+                                                <span t-if="move_line.date_maturity &lt; current_date and not move_line.full_reconcile_id"
+                                                      class="label label-danger" style="display: inline-block;">
+                                                    <i class="fa fa-fw fa-clock-o" aria-hidden="true"
+                                                       t-translation="off"/>
+                                                    Due date expired
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <t t-if="not move_line.full_reconcile_id">
+                                                    <input type="checkbox" name="pay-checkbox"
+                                                           t-att-checked="move_line_ids and move_line.id in move_line_ids"/>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </t>
+                            </table>
+
+                            <p>
+                                Total left to pay :
+                                <b>
+                                    <t t-esc="invoice.residual"
+                                       t-esc-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/>
+                                </b>
+                            </p>
+
+                            <form id="bulk-payment-form" t-attf-action="/my/invoice/{{ invoice.id }}" method="post">
+                                <input type="hidden" name="invoice_id" t-att-value="invoice.id"/>
+                                <input type="hidden" name="move_line_ids" t-att-value="move_line_ids"/>
+                                <input type="hidden" name="payment_ready" t-att-value="payment_ready"/>
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                <button type="submit"
+                                        class="btn btn-primary pull-right bulk-pay-button">Pay selected schedules
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="col-md-8 col-md-offset-2 horanet_payment" t-if="payment_ready">
+                            <input type="hidden" id="acquirer_id" t-att-value="acquirer_id"/>
+                            <input type="hidden" id="action" t-att-value="action"/>
+                            <input type="hidden" id="invoice_id" t-att-value="invoice.id"/>
+                            <input type="hidden" id="move_line_ids" t-att-value="move_line_ids"/>
+                            <input type="hidden" id="reference" t-att-value="reference"/>
+                            <input type="hidden" id="amount_total" t-att-value="amount_total"/>
+                            <p>
+                                You are about to pay:
+                                <b>
+                                    <t t-esc="amount_total"
+                                       t-esc-options='{"widget": "monetary", "display_currency": invoice.currency_id}'/>
+                                </b>
+                                on your invoice:
+                                <b><t t-esc="invoice.number"/>.
+                                </b>
+                            </p>
+                            <div class="col-sm-12 o_website_payment_form" t-raw="payment_form"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

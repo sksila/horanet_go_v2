@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="tpa_configuration_form" model="ir.ui.view">
+        <field name="name">Location general settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="horanet_go.view_form_collectivity_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='horanet_go']/*[last()]" position="after">
+                <h2>Settings Location</h2>
+                <div class="row mt16 o_settings_container" name="settings_auth_signup">
+                    <div class="col-xs-12 col-md-6 o_setting_box" groups="better_address.group_address_manage">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                <label for="protected_countries_ids" class="o_light_label"/>
+                                <field name="protected_countries_ids" widget="many2many_tags"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

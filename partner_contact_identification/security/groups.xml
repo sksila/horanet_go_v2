@@ -1,0 +1,9 @@
+<odoo>
+    <record id="group_partner_contact_identification_manage" model="res.groups">
+        <field name="name">Manage Identification</field>
+        <field name="category_id" ref="horanet_go.horanet_go_category"/>
+        <field name="comment">Enable the menus to manage identification mediums and tag assignations on partners.
+        </field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+</odoo>

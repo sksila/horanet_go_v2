@@ -1,0 +1,370 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_website_portal_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-07-26 09:08+0000\n"
+"PO-Revision-Date: 2017-07-26 09:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.add_credit
+msgid "0.0"
+msgstr "0.0"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.deposit_account
+msgid "Account"
+msgstr "Compte"
+
+#. module: horanet_website_portal_sale
+#: model:ir.model.fields,field_description:horanet_website_portal_sale.field_res_partner_property_account_customer_advance
+#: model:ir.model.fields,field_description:horanet_website_portal_sale.field_res_users_property_account_customer_advance
+msgid "Account Customer Advance"
+msgstr "Compte de dépôt client"
+
+#. module: horanet_website_portal_sale
+#: model:ir.model.fields,field_description:horanet_website_portal_sale.field_res_partner_property_account_supplier_advance
+#: model:ir.model.fields,field_description:horanet_website_portal_sale.field_res_users_property_account_supplier_advance
+msgid "Account Supplier Advance"
+msgstr "Compte de dépôt fournisseur"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.deposit_account
+msgid "Actions"
+msgstr "Actions"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.add_credit
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.confirm_payment
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.deposit_account
+msgid "Add credits"
+msgstr "Ajouter des crédits"
+
+#. module: horanet_website_portal_sale
+#: model:ir.model.fields,field_description:horanet_website_portal_sale.field_account_payment_advance_account_id
+msgid "Advance Account"
+msgstr "Compte de dépôt"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+msgid "Amount"
+msgstr "Montant"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoices_without_payment_terms
+msgid "Amount Due"
+msgstr "Montant dû"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.payment_validate
+msgid "Back to My Account"
+msgstr "Revenir sur Mon Compte"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.deposit_account
+msgid "Balance"
+msgstr "Balance"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoices_without_payment_terms
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+msgid "Cart"
+msgstr "Panier"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.confirm_payment
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.custom_portal_layout
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.portal_my_home_deposit
+msgid "Deposit Account"
+msgstr "Compte de dépôt"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+msgid "Due date"
+msgstr "Date d'échéance"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+msgid "Due date expired"
+msgstr "Date d'échéance dépassée"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.add_credit
+msgid "How much credit do you want to add to the account"
+msgstr "Combien d'argent voulez-vous déposer sur le compte"
+
+#. module: horanet_website_portal_sale
+#: model:ir.model.fields,field_description:horanet_website_portal_sale.field_payment_transaction_invoice_id
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoices_without_payment_terms
+msgid "Invoice #"
+msgstr "Facture n°"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoices_without_payment_terms
+msgid "Invoice Date"
+msgstr "Date de facturation"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.payment_validate
+msgid "Invoice amount"
+msgstr "Montant de la facture"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.payment_validate
+msgid "Invoice number"
+msgstr "Numéro de facture"
+
+#. module: horanet_website_portal_sale
+#: model:ir.model,name:horanet_website_portal_sale.model_account_move_line
+msgid "Journal Item"
+msgstr "Écriture comptable"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoices_without_payment_terms
+msgid "Last due Date"
+msgstr "Dernière date d'échéance"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.add_credit
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.confirm_payment
+msgid "My Deposit Account"
+msgstr "Mon compte de dépôt"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+msgid "My invoices"
+msgstr "Mes factures"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+msgid "My schedules"
+msgstr "Mes échéanciers"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoices_without_payment_terms
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.payment_validate
+msgid "Paid"
+msgstr "Payée"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.payment_validate
+msgid "Paid amount"
+msgstr "Montant payé"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.transaction_form
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: horanet_website_portal_sale
+#: model:ir.model,name:horanet_website_portal_sale.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: horanet_website_portal_sale
+#. openerp-web
+#: code:addons/horanet_website_portal_sale/static/src/js/horanet_website_portal_sale.js:139
+#, python-format
+msgid "Pay"
+msgstr "Payer"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.confirm_payment
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoices_without_payment_terms
+msgid "Pay Now"
+msgstr "Payer maintenant"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+msgid "Pay selected schedules"
+msgstr "Payer les échéances sélectionnées"
+
+#. module: horanet_website_portal_sale
+#: model:ir.model,name:horanet_website_portal_sale.model_payment_transaction
+msgid "Payment Transaction"
+msgstr "Transaction"
+
+#. module: horanet_website_portal_sale
+#: model:ir.model,name:horanet_website_portal_sale.model_account_payment
+msgid "Payments"
+msgstr "Paiements"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.inherited_website_payment
+msgid "Payments are currently unavailable.\n"
+"                        <br/>\n"
+"                        Please try again later or contact the site administrator."
+msgstr "Les paiements sont actuellement indisponibles.\n"
+"                        <br/>\n"
+"                        Veuillez ressayer plus tard ou contacter l'administrateur du site."
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoices_without_payment_terms
+msgid "Scheduler"
+msgstr "Échéancier"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.payment_validate
+msgid "Status"
+msgstr "Statut"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.portal_my_home_title_invoices
+msgid "There are currently no invoices for your account."
+msgstr "Il n'y a pas de facture pour votre compte."
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.portal_my_home_title_orders
+msgid "There are currently no orders for your account."
+msgstr "Il n'y a actuellement pas de commande pour votre compte."
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.portal_my_home_title_quotes
+msgid "There are currently no quotes for your account."
+msgstr "Il n'y a actuellement pas de devis pour votre compte."
+
+#. module: horanet_website_portal_sale
+#: model:ir.model.fields,help:horanet_website_portal_sale.field_res_partner_property_account_customer_advance
+#: model:ir.model.fields,help:horanet_website_portal_sale.field_res_users_property_account_customer_advance
+msgid "This account will be used for advance payment of customer"
+msgstr "The compte sera utilisé pour le compte de dépôt client"
+
+#. module: horanet_website_portal_sale
+#: model:ir.model.fields,help:horanet_website_portal_sale.field_res_partner_property_account_supplier_advance
+#: model:ir.model.fields,help:horanet_website_portal_sale.field_res_users_property_account_supplier_advance
+msgid "This account will be used for advance payment of suppliers"
+msgstr "The compte sera utilisé pour le compte de dépôt fournisseur"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.inherited_website_payment
+msgid "This transaction will be processed by"
+msgstr "Cette transaction sera effectuée par"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+msgid "Total left to pay :"
+msgstr "Montant restant à payer :"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.transaction_form
+msgid "Transaction state"
+msgstr "État de la transaction"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.payment_validate
+msgid "Unpaid"
+msgstr "Non payée"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoices_without_payment_terms
+msgid "Waiting for Payment"
+msgstr "En attente de paiement"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+msgid "You are about to pay:"
+msgstr "Vous êtes sur le point de payer :"
+
+#. module: horanet_website_portal_sale
+#: code:addons/horanet_website_portal_sale/controllers/main.py:385
+#: code:addons/horanet_website_portal_sale/controllers/main.py:389
+#, python-format
+msgid "You cannot pay a schedule before its predecessors."
+msgstr "Vous devez payer les échéances dans l'ordre chronologique."
+
+#. module: horanet_website_portal_sale
+#: code:addons/horanet_website_portal_sale/controllers/main.py:347
+#, python-format
+msgid "You did not select any schedule to pay."
+msgstr "Vous n'avez sélectionné aucune échéance à payer."
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.add_credit
+msgid "You have entered a null value"
+msgstr "Vous avez entré une valeur nulle"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.confirm_payment
+msgid "You're about to credit your account"
+msgstr "Vous êtes sur le point de créditer votre compte"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.portal_my_home_title_invoices
+msgid "Your Invoices and Payments"
+msgstr "Vos Factures et Paiements"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.portal_my_home_title_orders
+msgid "Your Orders"
+msgstr "Vos commandes"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.portal_my_home_title_quotes
+msgid "Your Quotes"
+msgstr "Vos devis"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.payment_validate
+msgid "Your advance account"
+msgstr "Votre compte de dépôt"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.deposit_account
+msgid "Your deposit account"
+msgstr "Votre compte de dépôt"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+msgid "Your schedules for your invoice"
+msgstr "Les échéances pour votre facture"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.invoice
+msgid "on your invoice:"
+msgstr "sur votre facture :"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.inherited_website_payment
+msgid "payment_provider_logo"
+msgstr "payment_provider_logo"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.payment_validate
+msgid "was successfully credited with the amount :"
+msgstr "a bien été crédit du montant :"
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.payment_validate
+msgid "wasn't credited."
+msgstr "n'a pas été crédité."
+
+#. module: horanet_website_portal_sale
+#: model:ir.ui.view,arch_db:horanet_website_portal_sale.confirm_payment
+msgid "with an amount of"
+msgstr "d'un montant de"
+

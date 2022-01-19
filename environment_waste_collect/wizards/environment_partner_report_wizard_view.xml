@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_environment_partner_report_wizard" model="ir.ui.view">
+        <field name="name">pickup.environment.partner.report.wizard.form</field>
+        <field name="model">environment.partner.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Environment partner report">
+                <group>
+                    <field name="company_type" widget="many2many_tags"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="city_ids" widget="many2many_tags"/>
+                    <label for="access_balance" string="Access balance"/>
+                    <div class="o_row">
+                        <field name="access_balance_opt"/>
+                        <field name="access_balance"/>
+                    </div>
+                    <label for="access_number" string="Access number"/>
+                    <div class="o_row">
+                        <field name="access_number_opt"/>
+                        <field name="access_number"/>
+                    </div>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print" type="object" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-default"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_environment_partner_report" model="ir.actions.act_window">
+        <field name="name">Environment partner report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">environment.partner.report.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="pes_domain_1" model="pes.domain">
+            <field name="name">General</field>
+            <field name="code">general</field>
+        </record>
+        <!-- <record id="pes_domain_1" model="pes.domain">
+            <field name="name">Facture</field>
+            <field name="code">facture</field>
+        </record>
+        <record id="pes_domain_2" model="pes.domain">
+            <field name="name">Dépense</field>
+            <field name="code">depense</field>
+        </record>
+        <record id="pes_domain_3" model="pes.domain">
+            <field name="name">Recette</field>
+            <field name="code">recette</field>
+        </record> -->
+    </data>
+</odoo>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- CITY -->
+    <record id="demo_city_fontenay_le_comte" model="res.city">
+        <field name="name">Fontenay-le-Comte</field>
+        <field name="state">confirmed</field>
+        <field name="code" eval="85092"/>
+        <field name="country_id" ref="base.fr"/>
+        <field name="country_state_id" ref="state_fr_85"/>
+    </record>
+    <record id="demo_city_la_rochelle" model="res.city">
+        <field name="name">La Rochelle</field>
+        <field name="state">confirmed</field>
+        <field name="code" eval="17300"/>
+        <field name="country_id" ref="base.fr"/>
+        <field name="country_state_id" ref="state_fr_17"/>
+    </record>
+
+    <!-- ZIP -->
+    <record id="demo_zip_17000" model="res.zip">
+        <field name="name">17000</field>
+        <field name="state">confirmed</field>
+        <field name="city_ids" eval="[(6, 0, [ref('demo_city_la_rochelle')])]"/>
+    </record>
+    <record id="demo_zip_85200" model="res.zip">
+        <field name="name">85200</field>
+        <field name="state">confirmed</field>
+        <field name="city_ids" eval="[(6, 0, [ref('demo_city_fontenay_le_comte')])]"/>
+    </record>
+    <record id="demo_zip_85206" model="res.zip">
+        <field name="name">85206</field>
+        <field name="state">confirmed</field>
+        <field name="city_ids" eval="[(6, 0, [ref('demo_city_fontenay_le_comte')])]"/>
+    </record>
+
+    <!-- STREET -->
+    <record id="demo_street_puits" model="res.street">
+        <field name="name">Allée du Puits</field>
+        <field name="state">confirmed</field>
+        <field name="city_id" ref="demo_city_fontenay_le_comte"/>
+    </record>
+    <record id="demo_street_cordiers" model="res.street">
+        <field name="name">Rue des Cordiers</field>
+        <field name="state">confirmed</field>
+        <field name="city_id" ref="demo_city_fontenay_le_comte"/>
+    </record>
+    <record id="demo_street_hotel_ville" model="res.street">
+        <field name="name">Rue de l'Hôtel de Ville</field>
+        <field name="state">confirmed</field>
+        <field name="city_id" ref="demo_city_la_rochelle"/>
+    </record>
+
+    <!-- STREET NUMBER -->
+    <record id="demo_street_number_1" model="res.street.number">
+        <field name="name">1</field>
+    </record>
+    <record id="demo_street_number_2" model="res.street.number">
+        <field name="name">2</field>
+    </record>
+    <record id="demo_street_number_3" model="res.street.number">
+        <field name="name">3</field>
+    </record>
+    <record id="demo_street_number_4" model="res.street.number">
+        <field name="name">4</field>
+    </record>
+    <record id="demo_street_number_5" model="res.street.number">
+        <field name="name">5</field>
+    </record>
+    <record id="demo_street_number_6" model="res.street.number">
+        <field name="name">6</field>
+    </record>
+    <record id="demo_street_number_7" model="res.street.number">
+        <field name="name">7</field>
+    </record>
+    <record id="demo_street_number_8" model="res.street.number">
+        <field name="name">8</field>
+    </record>
+    <record id="demo_street_number_9" model="res.street.number">
+        <field name="name">9</field>
+    </record>
+    <record id="demo_street_number_10" model="res.street.number">
+        <field name="name">10</field>
+    </record>
+</odoo>

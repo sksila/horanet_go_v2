@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="inherited_view_form_transport_line" model="ir.ui.view">
+        <field name="name">inherited.tco.transport.line.form</field>
+        <field name="model">tco.transport.line</field>
+        <field name="inherit_id" ref="tco_transport.view_form_transport_line"/>
+        <field name="arch" type="xml">
+            <xpath expr="(//field[@name='line_type'])" position="after">
+                <field name="school_cycle_ids" widget="many2many_tags"/>
+            </xpath>
+
+            <xpath expr="(//notebook)" position="inside">
+                <page name="capacity" string="Capacity">
+                    <group>
+                        <field name="remaining_places"/>
+                        <label for="vehicle_occupation"/>
+                        <div class="o_row">
+                            <field name="vehicle_occupation"/>%
+                        </div>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherited_view_tree_transport_line" model="ir.ui.view">
+        <field name="name">transport line tree add vehicle occupation</field>
+        <field name="model">tco.transport.line</field>
+        <field name="inherit_id" ref="tco_transport.view_tree_transport_line"/>
+        <field name="arch" type="xml">
+            <field name="line_type" position="after">
+                <field name="remaining_places"/>
+                <field name="vehicle_occupation"/>
+            </field>
+        </field>
+    </record>
+</odoo>

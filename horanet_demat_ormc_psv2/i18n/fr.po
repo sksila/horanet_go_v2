@@ -1,0 +1,1152 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_demat_ormc_psv2
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-11 16:09+0000\n"
+"PO-Revision-Date: 2018-12-11 16:09+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.declaration,state:0
+msgid "Ack"
+msgstr "Ack"
+
+#. module: horanet_demat_ormc_psv2
+#: model:res.groups,name:horanet_demat_ormc_psv2.group_admin_ormc_psv2
+msgid "Administrator ORMC PSV2"
+msgstr "Administrateur ORMC PSV2"
+
+#. module: horanet_demat_ormc_psv2
+#: model:res.groups,comment:horanet_demat_ormc_psv2.group_admin_ormc_psv2
+msgid "Allow user to see and edit PESV2 related objects"
+msgstr "Autorise l'utilisateur à voir et éditer les objets PESV2"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_application_id
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_search
+msgid "Application"
+msgstr "Démarche en ligne"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.act_open_pes_application_view
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_application
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.menu_application
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_application_search
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_application_tree
+msgid "Applications"
+msgstr "Applications"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_attrs_type
+msgid "Attribute type"
+msgstr "Type d'attribut"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_ids
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_bloc_form
+msgid "Attributes"
+msgstr "Attributs"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_bloc_attrs
+msgid "Bloc Attribute"
+msgstr "Attribut du bloc"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_bloc_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_ref_form
+msgid "Block children"
+msgstr "Sous-blocs"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_psv2_import_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.psv2_information_partner
+msgid "Cat Tiers"
+msgstr "Catégorie de Tiers"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_res_partner_cat_tiers_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_res_users_cat_tiers_id
+msgid "CatTiers"
+msgstr "CatTiers"
+
+#. module: horanet_demat_ormc_psv2
+#: code:addons/horanet_demat_ormc_psv2/models/inherited_partner.py:77
+#, python-format
+msgid "CatTiers and NatJur values are not consistent.\n"
+"\n"
+"Valid values of NatJur for CatTiers '{cat_tiers}':\n"
+"{valid_nat_jur_values}\n"
+"\n"
+"Valid values of CatTiers for NatJur '{nat_jur}':\n"
+"{valid_cat_tiers_values}"
+msgstr "La catégorie de tiers et la nature juridique ne sont pas cohérentes.\n"
+"\n"
+"Valeurs de nature juridique valides pour la catégorie de tiers '{cat_tiers}' :\n"
+"{valid_nat_jur_values}\n"
+"\n"
+"Valeurs de catégorie de tiers valides pour la nature juridique '{nat_jur}' :\n"
+"{valid_cat_tiers_values}"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_psv2_import_form
+msgid "Check Validity"
+msgstr "Vérifier la validité"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_children_bloc_ids
+msgid "Children Blocs"
+msgstr "Sous-blocs"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_psv2_export_form
+msgid "Close"
+msgstr "Fermer"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_horanet_budget_code_ormc_cod_bud
+msgid "CodBud"
+msgstr "CodBud"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_res_company_ormc_cod_col
+msgid "CodCol"
+msgstr "CodCol"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_res_country_ormc_cod_pays
+msgid "CodPays"
+msgstr "CodPays"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_product_product_cod_prod_loc
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_product_template_cod_prod_loc
+msgid "CodProdLoc"
+msgstr "CodProdLoc"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_application_code
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_code
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_code
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_domain_code
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_type_code
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_input_object_code
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_name
+msgid "Code"
+msgstr "Code"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_conditionnal_attr_id
+msgid "Conditionnal attribute"
+msgstr "Attribut conditionnel"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_res_country
+msgid "Country"
+msgstr "Pays"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_application_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_domain_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_type_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_import_wizard_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_input_object_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_constraint_create_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_application_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_domain_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_type_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_import_wizard_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_input_object_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_constraint_create_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_date
+msgid "Date"
+msgstr "Date "
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_horanet_role_date_declaration
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_date_declaration
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_date_declaration
+msgid "Date declaration"
+msgstr "Date de déclaration"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_horanet_role_pes_declaration_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_pes_declaration_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_pes_declaration_id
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_declaration_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_declaration_tree
+msgid "Declaration"
+msgstr "Déclaration"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_declaration_file_id
+msgid "Declaration file"
+msgstr "Fichier déclaration"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_default_value
+msgid "Default value"
+msgstr "Valeur par défaut"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_description
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_description
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_domain_description
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_description
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_description
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_description
+msgid "Description"
+msgstr "Description"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_application_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_domain_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_type_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_import_wizard_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_input_object_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_constraint_display_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_pes_domain_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_pes_domain_id
+msgid "Domain"
+msgstr "Domaine"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.declaration,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.menu_declaration_psv2
+msgid "Déclaration"
+msgstr "Déclaration"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.menu_management_psv2
+msgid "Dématérialisation PSV2"
+msgstr "Dématérialisation PSV2"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.bloc,element_value_type:0
+msgid "Element"
+msgstr "Element"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_element_value_type
+msgid "Element value Type"
+msgstr "Element value Type"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.declaration,state:0
+msgid "En attente de transmission"
+msgstr "En attente de transmission"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.declaration,state:0
+msgid "En traitement"
+msgstr "En traitement"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.declaration,state:0
+msgid "Erreur"
+msgstr "Erreur"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.message,type:0
+msgid "Error"
+msgstr "Erreur"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_error_ids
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_error_ids
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_error
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_declaration_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_search
+msgid "Errors"
+msgstr "Erreurs"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_is_actif
+msgid "Etat fichier"
+msgstr "Etat fichier"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_declaration_form
+msgid "Export"
+msgstr "Exporter"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.ormc_export_role_form_view
+msgid "Export ORMC"
+msgstr "Export ORMC"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_psv2_export_form
+msgid "Export PSV2"
+msgstr "Export PSV2"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.psv2_export_action
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_export_wizard
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_psv2_export_form
+msgid "Export PSV2 Wizard"
+msgstr "Assistant d'exportation PSV2"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.bloc,field_type:0
+#: selection:pes.bloc.attrs,field_type:0
+msgid "Field"
+msgstr "Champ"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_field_type
+msgid "Field Type"
+msgstr "Type de Champ"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.pes_declaration_file_action
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_data
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_data
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_import_wizard_file_import
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_declaration_file_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_declaration_file_tree
+msgid "File"
+msgstr "Fichier"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.pes_file_action
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_file
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_file_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_file_tree
+msgid "File Architecture"
+msgstr "Architecture de fichier"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.pes_bloc_action
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_bloc
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_bloc_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_bloc_tree
+msgid "File Bloc"
+msgstr "Bloc du Fichier"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_bloc_attrs_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_bloc_attrs_tree
+msgid "File Bloc Attribute"
+msgstr "Attribut du Bloc"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.pes_bloc_attrs_action
+msgid "File Bloc attributes"
+msgstr "Attribut du Bloc"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_filename
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_filename
+msgid "File Name"
+msgstr "Nom de Fichier"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_struct_fichier_id
+msgid "File Structure"
+msgstr "Structure du fichier"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_file_type
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_file_type_id
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_file_type_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_file_type_tree
+msgid "File Type"
+msgstr "Type de fichier"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.menu_pes_bloc
+msgid "File bloc"
+msgstr "Bloc de fichier"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.menu_pes_bloc_attrs
+msgid "File bloc attributes"
+msgstr "Attributs de bloc de fichier"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_import_wizard_file_title
+msgid "Filename"
+msgstr "Nom du fichier"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_ids
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_declaration_form
+msgid "Files"
+msgstr "Fichiers"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.bloc,field_type:0
+#: selection:pes.bloc.attrs,field_type:0
+msgid "Function"
+msgstr "Fonction"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_psv2_export_form
+msgid "Generation Complete"
+msgstr "Génération complète"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_psv2_export_form
+msgid "Here is the generated file:"
+msgstr "Voici le fichier généré :"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_application_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_domain_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_type_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_import_wizard_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_input_object_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_constraint_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_id
+msgid "ID"
+msgstr "ID"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_res_company_ormc_id_post
+msgid "IdPost"
+msgstr "IdPost"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_declaration_form
+msgid "Import"
+msgstr "Importer"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_psv2_import_form
+msgid "Import PSV2"
+msgstr "Import PSV2"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.psv2_import_action
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_import_wizard
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_psv2_import_form
+msgid "Import PSV2 Wizard"
+msgstr "Assistant d'importation PSV2"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.message,type:0
+msgid "Information"
+msgstr "Information"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_search
+msgid "Informations"
+msgstr "Informations"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.declaration,state:0
+msgid "Informations disponibles"
+msgstr "Informations disponibles"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_input_object
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_pes_input_object_id
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_input_object_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_input_object_tree
+msgid "Input Object"
+msgstr "Input Object"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.pes_input_object_action
+msgid "Input object"
+msgstr "Objet d'entrée"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_account_invoice
+msgid "Invoice"
+msgstr "Facture"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Ligne de facture"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_invoice_ids
+msgid "Invoices"
+msgstr "Factures"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_account_move_line
+msgid "Journal Item"
+msgstr "Écriture comptable"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_application___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_domain___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_type___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_import_wizard___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_input_object___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value___last_update
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_constraint___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_application_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_domain_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_type_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_import_wizard_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_input_object_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_constraint_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_write_uid
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_application_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_domain_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_type_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_import_wizard_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_input_object_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_constraint_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_write_date
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_last_id_pce
+msgid "Last id pce"
+msgstr "Id dernière pièce"
+
+#. module: horanet_demat_ormc_psv2
+#: code:addons/horanet_demat_ormc_psv2/wizards/pes_export_wizard.py:303
+#, python-format
+msgid "Les erreurs suivantes doivent être corrigées avant de pouvoir Générer le fichier XML : %s !"
+msgstr "Les erreurs suivantes doivent être corrigées avant de pouvoir Générer le fichier XML : %s !"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_horanet_budget_code_ormc_libelle_cod_bud
+msgid "LibelleCodBud"
+msgstr "LibelleCodBud"
+
+#. module: horanet_demat_ormc_psv2
+#: model:res.groups,name:horanet_demat_ormc_psv2.group_center_manager
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_form
+msgid "Mark as Read"
+msgstr "Marqué comme lu"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_form
+msgid "Mark as Unread"
+msgstr "Marquer comme non lu"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_message
+msgid "Message"
+msgstr "Message"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.module.category,description:horanet_demat_ormc_psv2.module_pes_message
+msgid "Message center"
+msgstr "Centre de message"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.act_open_pes_message_view
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_message
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.menu_message
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_search
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_tree
+msgid "Messages"
+msgstr "Messages"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.module.category,name:horanet_demat_ormc_psv2.module_pes_message
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.menu_main_center
+msgid "Messages center"
+msgstr "Centre de messages"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_input_object_model
+msgid "Model"
+msgstr "Modèle"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.declaration,state:0
+msgid "Nack"
+msgstr "Nack"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_application_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_domain_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_type_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_input_object_name
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_namespace_id
+#: selection:pes.bloc.attrs,attrs_type:0
+msgid "Namespace"
+msgstr "Namespace"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.psv2_information_partner
+msgid "Nat Jur"
+msgstr "Nature Juridique"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_res_partner_nat_jur_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_res_users_nat_jur_id
+msgid "NatJur"
+msgstr "NatJur"
+
+#. module: horanet_demat_ormc_psv2
+#: code:addons/horanet_demat_ormc_psv2/wizards/pes_export_wizard.py:93
+#, python-format
+msgid "No invoice to export."
+msgstr "Pas de factures à exporter."
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_invoice_ids_count
+msgid "Number of invoices"
+msgstr "Nombre de factures"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.inherited_view_res_partner_form
+msgid "ORMC PES V2"
+msgstr "ORMC PES V2"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.inherited_view_company_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.mass_invoicing_budget_code_form_view
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.product_template_only_form_view
+msgid "ORMC PESV2"
+msgstr "ORMC PESV2"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_horanet_role_ormc_pes_file_ids
+msgid "ORMC files"
+msgstr "Fichiers ORMC"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.pes_declaration_action
+msgid "PES Declaration"
+msgstr "Déclaration PES"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.pes_domain_action
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_domain
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_file_pes_domain_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_pes_domain_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_pes_domain_id
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_domain_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_domain_tree
+msgid "PES Domain"
+msgstr "Domaine PES"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_pes_file_id
+msgid "PES File"
+msgstr "Fichier PES"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.pes_file_type_action
+msgid "PES File Type"
+msgstr "Types de fichier PES"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_pes_declaration_id
+msgid "PES declaration"
+msgstr "Déclaration PES"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.pes_domain_psv2
+msgid "PES domain"
+msgstr "Domaine PES"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.menu_pes_file
+msgid "PES file construction"
+msgstr "Fichier de construction PES"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.psv2_root_menu
+msgid "PESV2"
+msgstr "PESV2"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.menu_construct_pse
+msgid "PSE construction"
+msgstr "Construction PES"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_declaration
+msgid "PSV2 Declaration"
+msgstr "Déclaration PSV2"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_declaration_file
+msgid "PSV2 Declaration File"
+msgstr "Fichier de déclaration PSV2"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.declaration,state:0
+msgid "Posté"
+msgstr "Posté"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_account_invoice_line_price_tva_value
+msgid "Price TVA"
+msgstr "Prix TVA"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_search
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_tree
+#: selection:pes.message,state:0
+msgid "Read"
+msgstr "Lu"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.pes_ref_action
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.pes_ref_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_ref_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_ref_tree
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_ref_value_constraint_form
+#: selection:pes.bloc.attrs,value_type:0
+msgid "Reference"
+msgstr "Référence"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.pes_ref_value_constraint_action
+#: model:ir.ui.menu,name:horanet_demat_ormc_psv2.pes_ref_constraint_psv2
+msgid "Reference constraints"
+msgstr "Contraintes de référence"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.actions.act_window,name:horanet_demat_ormc_psv2.pes_ref_value_action
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_ref_value_form
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_ref_value_tree
+msgid "Reference value"
+msgstr "Valeur de référence"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_ref_value_constraint_tree
+msgid "Reference value constraint"
+msgstr "Contrainte de valeur de référence"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_referential
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_reference_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_ref_id
+msgid "Referential"
+msgstr "Référentiel"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_referential_value
+msgid "Referential Value"
+msgstr "Valeur de Référence"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_pes_referential_value_constraint
+msgid "Referential Value Constraint"
+msgstr "Contrainte Valeur Référence"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_constraint_ref_value_1_id
+msgid "Referential value 1"
+msgstr "Valeur de référence 1"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_constraint_ref_value_2_id
+msgid "Referential value 2"
+msgstr "Valeur de référence 2"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_is_required
+msgid "Required"
+msgstr "Requis"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_collectivity_config_settings_required_cat_tiers
+msgid "Required CatTiers for company"
+msgstr "CatTiers requise pour les professionnels"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_collectivity_config_settings_required_nat_jur
+msgid "Required NatJur for company"
+msgstr "NatJur requise pour les professionnels"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_role_id
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_role_id
+msgid "Role"
+msgstr "Rôle"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_is_root
+msgid "Root element"
+msgstr "Élément racine"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.psv2_information_partner
+msgid "Select Cat Tiers"
+msgstr "Veuillez sélectionner une catégorie de tiers"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.psv2_information_partner
+msgid "Select Nat Jur"
+msgstr "Veuillez sélectionner une nature juridique"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_application_sequence
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.bloc.attrs,attrs_type:0
+#: selection:pes.bloc.attrs,value_type:0
+msgid "Simple"
+msgstr "Simple"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_declaration_state
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_state
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_state
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_message_type
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_search
+msgid "State"
+msgstr "État"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.bloc,element_value_type:0
+#: selection:pes.bloc,field_type:0
+#: selection:pes.bloc.attrs,field_type:0
+msgid "Text"
+msgstr "Texte"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_field_type
+msgid "Text value Type"
+msgstr "Text value Type"
+
+#. module: horanet_demat_ormc_psv2
+#: code:addons/horanet_demat_ormc_psv2/tools/utils.py:141
+#, python-format
+msgid "The CatTiers is required"
+msgstr "La catégorie de tiers est requise"
+
+#. module: horanet_demat_ormc_psv2
+#: code:addons/horanet_demat_ormc_psv2/models/inherited_horanet_budget_code.py:37
+#, python-format
+msgid "The CodBud must be on two characters maximum."
+msgstr "Le CodBud ne doit pas dépasser deux caractères."
+
+#. module: horanet_demat_ormc_psv2
+#: code:addons/horanet_demat_ormc_psv2/tools/utils.py:137
+#, python-format
+msgid "The Natjur is required"
+msgstr "La nature juridique est requise"
+
+#. module: horanet_demat_ormc_psv2
+#: code:addons/horanet_demat_ormc_psv2/models/inherited_product_template.py:31
+#, python-format
+msgid "The length of cod_prod_loc must be maximum four characters."
+msgstr "Le cod_prod_loc ne doit pas dépasser les quartes caractères."
+
+#. module: horanet_demat_ormc_psv2
+#: code:addons/horanet_demat_ormc_psv2/models/inherited_campaign_prestation_period.py:41
+#, python-format
+msgid "There must be one and only one product code beyond all prestations involved.\n"
+"\n"
+"                    Product codes found: {}.\n"
+"\n"
+"                    Please, check activities products of prestations."
+msgstr "Il doit y avoir un et un seul code produit parmi toutes les prestations incluses.\n"
+"\n"
+"                    Codes produits trouvés : {}.\n"
+"\n"
+"                    Merci de vérifier les produits des activités des prestations."
+
+#. module: horanet_demat_ormc_psv2
+#: code:addons/horanet_demat_ormc_psv2/models/inherited_invoice_campaign.py:47
+#, python-format
+msgid "There must be one and only one product code beyond all prestations involved.\n"
+"Product codes found: {}.\n"
+"Please, check activities products of prestations."
+msgstr "Il doit y avoir un et un seul code produit parmis tous les articles inclus.\n"
+"Codes produits trouvés : {}.\n"
+"Merci de vérifier les articles des activités des prestations."
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,help:horanet_demat_ormc_psv2.field_account_invoice_line_price_tva_value
+msgid "Total amount in the currency of the company, negative for credit notes."
+msgstr "Montant total dans la devise de l'entreprise, n��gatifs pour les avoirs."
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.declaration,state:0
+msgid "Transmis"
+msgstr "Transmis"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_search
+msgid "Type"
+msgstr "Type"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_search
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_tree
+#: selection:pes.message,state:0
+msgid "Unread"
+msgstr "Non lu"
+
+#. module: horanet_demat_ormc_psv2
+#: model:res.groups,name:horanet_demat_ormc_psv2.group_center_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_value
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_value
+msgid "Value"
+msgstr "Valeur"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_bloc_attrs_value_type
+msgid "Value Type"
+msgstr "Type valeur"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_value
+msgid "Value ref"
+msgstr "Valeur référence"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_value_name
+msgid "Value src"
+msgstr "Valeur src"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,help:horanet_demat_ormc_psv2.field_res_partner_cat_tiers_id
+#: model:ir.model.fields,help:horanet_demat_ormc_psv2.field_res_users_cat_tiers_id
+msgid "Value used to fill CatTiers attribute in ORMC file"
+msgstr "Valeur utilisé pour remplir l'attribut 'CatTiers' dans les fichiers ORMC"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,help:horanet_demat_ormc_psv2.field_horanet_budget_code_ormc_cod_bud
+msgid "Value used to fill CodBud attribute in ORMC file"
+msgstr "Valeur utilisé pour remplir l'attribut 'CodBud' dans les fichiers ORMC"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,help:horanet_demat_ormc_psv2.field_res_company_ormc_cod_col
+msgid "Value used to fill CodCol attribute in ORMC file"
+msgstr "Valeur utilisé pour remplir l'attribut 'CodCol' dans les fichiers ORMC"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,help:horanet_demat_ormc_psv2.field_product_product_cod_prod_loc
+#: model:ir.model.fields,help:horanet_demat_ormc_psv2.field_product_template_cod_prod_loc
+msgid "Value used to fill CodProdLoc attribute in ORMC file"
+msgstr "Valeur utilisé pour remplir l'attribut 'CodProdLoc' dans les fichiers ORMC"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,help:horanet_demat_ormc_psv2.field_res_company_ormc_id_post
+msgid "Value used to fill IdPost attribute in ORMC file"
+msgstr "Valeur utilisé pour remplir l'attribut 'IdPost' dans les fichiers ORMC"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,help:horanet_demat_ormc_psv2.field_horanet_budget_code_ormc_libelle_cod_bud
+msgid "Value used to fill LibelleCodBud attribute in ORMC file"
+msgstr "Valeur utilisé pour remplir l'attribut 'LibelleCodBud' dans les fichiers ORMC"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,help:horanet_demat_ormc_psv2.field_res_partner_nat_jur_id
+#: model:ir.model.fields,help:horanet_demat_ormc_psv2.field_res_users_nat_jur_id
+msgid "Value used to fill NatJur attribute in ORMC file"
+msgstr "Valeur utilisé pour remplir l'attribut 'NatJur' dans les fichiers ORMC"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_referential_ref_value_ids
+msgid "Values"
+msgstr "Valeurs"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_file_version
+msgid "Version"
+msgstr "Version"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.message,type:0
+msgid "Warning"
+msgstr "Attention"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.view_pes_message_search
+msgid "Warnings"
+msgstr "Attention"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_pes_export_wizard_domain_code
+msgid "domain code"
+msgstr "code domaine"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_collectivity_config_settings_cat_tiers_help
+msgid "help message for cat tiers"
+msgstr "Message d'aide pour l'information catégorie de tiers"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model.fields,field_description:horanet_demat_ormc_psv2.field_collectivity_config_settings_nat_jur_help
+msgid "help message for nat jur"
+msgstr "Message d'aide pour l'information nature juridique"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.ui.view,arch_db:horanet_demat_ormc_psv2.horanet_demat_ormc_configuration_form
+msgid "help message for website user"
+msgstr "Message d'aide pour les usagers"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_horanet_budget_code
+msgid "horanet.budget.code"
+msgstr "horanet.budget.code"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_horanet_campaign_prestation_period
+msgid "horanet.campaign.prestation.period"
+msgstr "horanet.campaign.prestation.period"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_horanet_invoice_campaign
+msgid "horanet.invoice.campaign"
+msgstr "horanet.invoice.campaign"
+
+#. module: horanet_demat_ormc_psv2
+#: model:ir.model,name:horanet_demat_ormc_psv2.model_horanet_role
+msgid "horanet.role"
+msgstr "horanet.role"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.export.wizard,state:0
+msgid "step1"
+msgstr "Étape 1"
+
+#. module: horanet_demat_ormc_psv2
+#: selection:pes.export.wizard,state:0
+msgid "step2"
+msgstr "Étape 2"
+

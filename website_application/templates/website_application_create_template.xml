@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="create_request" name="Make a request">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container mt8 mb32 application_create">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="/my/home">My home</a>
+                        </li>
+                        <li>
+                            <a href="/my/requests/">My requests</a>
+                        </li>
+                        <li>Make a request</li>
+                    </ol>
+                    <div id="templates_call">
+                        <t t-if="request_template"
+                           t-call="website_application.create_request_application_template"/>
+
+                        <!-- Insert other type of request here -->
+                    </div>
+
+                    <div t-if="errors" class="col-md-offset-3 col-sm-offset-4 col-sm-8 col-md-7 alert alert-danger">
+                        <t t-foreach="errors" t-as="error">
+                            <p>
+                                <t t-esc="error"/>
+                            </p>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

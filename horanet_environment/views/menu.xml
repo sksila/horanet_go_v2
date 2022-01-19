@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="environment_main" name="Environment"/>
+
+    <menuitem id="environment_configuration"
+              name="Configuration"
+              parent="horanet_environment.environment_main"
+              groups="horanet_environment.group_browse_environment"
+              sequence="100"/>
+
+    <menuitem id="environment_configuration_general_settings" name="Settings"
+              parent="environment_configuration"
+              groups="base.group_erp_manager"
+              action="action_horanet_environment_settings" sequence="0"/>
+</odoo>

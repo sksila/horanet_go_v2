@@ -1,0 +1,13 @@
+<odoo>
+
+    <template id="second_names_on_contact" name="Add second names on contact" inherit_id="base.contact">
+        <xpath expr="//address/div/span[contains(@t-esc,'name')][not(contains(@t-esc,'parent_name'))]" position="after">
+            <div t-if="(object.lastname2 or object.firstname2) and 'lastname2' in fields">
+                <t t-set="display_name2"
+                   t-value="' '.join([object.lastname2 or (object.firstname2 and object.lastname) or '', object.firstname2 or '']).strip()"/>
+                <div itemprop="lastname2" t-esc="display_name2"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

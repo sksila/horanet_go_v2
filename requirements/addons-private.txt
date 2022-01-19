@@ -1,0 +1,13 @@
+# Those packages require an authentication using login/password thus
+# cannot be used in CI
+
+# git+https://gitlab.horanet.com/ingenierie/projets/environment/sulo.git@10.1.2.0 TODO : MIG V11
+# git+https://gitlab.horanet.com/ingenierie/projets/environment/emz.git@10.1.0.1 TODO : MIG V11
+git+https://github.com/Horanet/backend_theme.git@11.0#egg=odoo11_addon_backend_theme_v11
+
+# ORMC PESv2 modules
+# git+https://gitlab.horanet.com/cadrin_situ/hn_demat_const.git@10.0.1.0.1 TODO : MIG V11
+# git+https://gitlab.horanet.com/cadrin_situ/hn_demat_data_nsbase.git@10.0.1.0.1 TODO : MIG V11
+# git+https://gitlab.horanet.com/cadrin_situ/hn_demat_data_nsfacture.git@10.0.1.0.0 TODO : MIG V11
+# git+https://gitlab.horanet.com/cadrin_situ/hn_demat_psv2.git@10.0.1.0.3 TODO : MIG V11
+# git+https://gitlab.horanet.com/cadrin_situ/hn_message_center.git@10.0.1.0.0 TODO : MIG V11

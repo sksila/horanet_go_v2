@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_subscription_view_form" model="ir.ui.view">
+        <field name="name">horanet contract form</field>
+        <field name="model">horanet.subscription</field>
+        <field name="arch" type="xml">
+            <form string="Contract">
+                <header attrs="{'invisible':[('on_create','=',True)]}">
+                    <button string="Confirm" name="action_confirm_subscription" type="object" class="oe_highlight"
+                            attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <button string="Compute" name="action_compute_subscription" type="object"
+                            attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <field name="id" invisible="1"/>
+                    <field name="cycle_id_period_type" invisible="1"/>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name" attrs="{'invisible':[('id','=',False)]}"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Contract name"
+                                   attrs="{ 'readonly': [('id','=',False)],
+                                            'invisible':[('on_create','=',True)]}"/>
+                        </h1>
+                        <label for="code"/>
+                        <field name="code" attrs="{'readonly':[('id','!=',False)]}"/>
+                    </div>
+                    <div class="oe_right" attrs="{'invisible':[('on_create','!=',True)]}">
+                        <label for="on_create" groups="horanet_subscription.group_subscription_admin"/>
+                        <field name="on_create" widget="toggle_button"
+                           groups="horanet_subscription.group_subscription_admin"/>
+                    </div>
+                    <group col="4" name="on_create_view" string="Quick creation"
+                           attrs="{'invisible':[('on_create','!=',True)]}">
+                        <field name="on_create_client_id" attrs="{'required':[('on_create','=',True)]}"/>
+                        <field name="on_create_template_id" attrs="{'required':[('on_create','=',True)]}"
+                               options="{'no_create': True}"/>
+                        <newline/>
+                        <field name="on_create_immediate_opening"/>
+                        <field name="on_create_start_date"
+                               attrs="{ 'required':[('on_create','=',True)],
+                                        'invisible':[('on_create_immediate_opening','=',True)]}"/>
+                        <newline/>
+                        <field name="on_create_prorata_temporis"/>
+                    </group>
+                    <group col="4" attrs="{'invisible':[('on_create','=',True)]}" string="Settings">
+                        <field name="client_id" can_create="true" can_write="true"
+                               attrs="{ 'readonly':[('state','!=','draft')],
+                                        'required':[('on_create','=',False)]}"/>
+                        <field name="subscription_template_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                        <field name="cycle_id" attrs="{'required':[('on_create','=',False)]}"/>
+                        <field name="is_renewable" attrs="{'invisible':[('cycle_id_period_type','=','unlimited')]}"/>
+                        <field name="payment_type"/>
+                        <field name="payment_term_id"/>
+                        <field name="application_type"/>
+                    </group>
+                    <group col="5" attrs="{'invisible':[('on_create','=',True)]}" string="Dates">
+                        <field name="confirmation_date" colspan="4"/>
+                        <button string="Change dates" type="action"
+                                name="%(horanet_subscription.action_wizard_subscription_update_date)d"
+                                class="oe_button oe_form_button center-block"
+                                attrs="{'invisible':[('state','=','done')]}"/>
+                        <newline/>
+                        <field name="display_opening_date" readonly="1"/>
+                        <field name="start_date" readonly="1" groups="base.group_no_one" required="0"/>
+                        <newline/>
+                        <field name="display_closing_date" readonly="1"/>
+                        <field name="end_date" readonly="1" groups="base.group_no_one"/>
+                        <newline/>
+                    </group>
+                    <notebook colspan="4" attrs="{'invisible':[('on_create','=',True)]}">
+                        <page name="contract_lines" string="Contract lines">
+                            <field name="package_ids"
+                                   context="{   'default_recipient_id': client_id,
+                                                'default_subscription_id' : active_id,
+                                                'default_on_create_recipient_id': client_id,
+                                                'default_on_create_subscription_id' : active_id}">
+                                <tree limit="20" delete="false">
+                                    <field name="code"/>
+                                    <field name="name"/>
+                                    <field name="display_progress_period" widget="progressbar"/>
+                                    <field name="display_opening_date"/>
+                                    <field name="display_closing_date"/>
+                                    <field name="is_derogation"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="subscription_lines" string="Periods">
+                            <field name="line_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_subscription_view_tree" model="ir.ui.view">
+        <field name="name">horanet contract tree</field>
+        <field name="model">horanet.subscription</field>
+        <field name="arch" type="xml">
+            <tree string="Contract"
+                  decoration-muted="state=='done'"
+                  decoration-bf="state=='draft'"
+                  decoration-success="state=='active'"
+                  decoration-warning="state=='draft'"
+                  decoration-info="state=='pending'">
+                <field name="code"/>
+                <field name="name" invisible="1"/>
+                <field name="client_id"/>
+                <field name="subscription_template_id"/>
+                <field name="cycle_id"/>
+                <field name="display_progress_period" widget="progressbar"/>
+                <field name="display_opening_date"/>
+                <field name="display_closing_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_horanet_subscription" model="ir.actions.act_window">
+        <field name="name">Contracts</field>
+        <field name="res_model">horanet.subscription</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_filter_state_active': 1, 'search_default_filter_state_draft': 1}</field>
+        <field name="view_id" ref="horanet_subscription_view_tree"/>
+    </record>
+
+    <record id="subscription_search_view" model="ir.ui.view">
+        <field name="name">Subscription search view</field>
+        <field name="model">horanet.subscription</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="client_id" string="Client" filter_domain="[('client_id.name','ilike',self)]"/>
+                <field name="code" string="Code" operator="ilike"/>
+                <field name="subscription_template_id" string="Template"
+                       filter_domain="[('subscription_template_id.name','ilike',self)]"/>
+                <separator/>
+                <filter string="Today" name="filter_today"
+                        domain="[('opening_date', '&lt;=', time.strftime('%Y-%m-%d 23:59:59')),('opening_date', '&gt;=', time.strftime('%Y-%m-%d 00:00:00'))]"/>
+                <filter string="This week" name="filter_week"
+                        domain="[('opening_date', '&lt;=', time.strftime('%Y-%m-%d 23:59:59')),('opening_date', '&gt;=', ((context_today()+relativedelta(weeks=-1, days=1, weekday=0)).strftime('%Y-%m-%d 00:00:00')))]"/>
+                <filter string="This month" name="filter_month"
+                        domain="[('opening_date', '&lt;=', time.strftime('%Y-%m-%d 23:59:59')),('opening_date', '&gt;=', time.strftime('%Y-%m-01 00:00:00'))]"/>
+                <filter string="This Year" name="filter_year"
+                        domain="[('opening_date','&lt;=',time.strftime('%%Y-12-31 23:59:59')),('opening_date','&gt;=',time.strftime('%%Y-01-01 00:00:00'))]"/>
+                <separator/>
+                <filter string="Active" name="filter_state_active"
+                        domain="[('state', '=', 'active')]"/>
+                <filter string="Draft" name="filter_state_draft"
+                        domain="[('state', '=', 'draft')]"/>
+                <filter string="Pending" name="filter_state_pending"
+                        domain="[('state', '=', 'pending')]"/>
+                <filter string="Closed" name="filter_state_closed"
+                        domain="[('state', '=', 'closed')]"/>
+                <filter string="Done" name="filter_state_done"
+                        domain="[('state', '=', 'done')]"/>
+                <filter string="To compute" name="filter_state_to_compute"
+                        domain="[('state', '=', 'to_compute')]"/>
+                <newline/>
+                <filter string="Has closing date" name="filter_has_closing_date"
+                        domain="[('closing_date', '!=', False)]"/>
+                <group expand="1" string="Group By">
+                    <filter name="group_by_client" string="Group by client" context="{'group_by': 'client_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_partner_subscription_tree" model="ir.actions.act_window">
+        <field name="name">Subscriptions</field>
+        <field name="res_model">horanet.subscription</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_subscription_view_tree"/>
+        <field name="domain">[]</field>
+        <field name="context">{'active_test': False}</field>
+        <field name="search_view_id" ref="subscription_search_view"/>
+    </record>
+
+</odoo>

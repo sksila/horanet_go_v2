@@ -1,0 +1,12 @@
+<odoo>
+	<data>
+        <!-- Add TPA SmartBambi group -->
+		<record id="group_tpa_smartbambi" model="res.groups">
+            <field name="name">Auto sync with SmartBambi</field>
+        </record>
+        <!-- Add other TPA SmartBambi group -->
+        <record id="group_tpa_other_smartbambi" model="res.groups">
+            <field name="name">Auto sync with other SmartBambi</field>
+        </record>
+	</data>
+</odoo>

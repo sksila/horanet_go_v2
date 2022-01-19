@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_setup_wizard_stage_equipment_attribution" model="ir.ui.view">
+        <field name="name">partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_base"/>
+        <field name="mode">primary</field>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='view_partner_setup_wizard_content']" position="inside">
+                <group name="equipments">
+                    <field name="create_or_select_production_point" invisible="1"/>
+                    <field name="has_active_stay_equipment" invisible="1"/>
+                    <field name="new_production_point_id" invisible="1"/>
+                    <field name="active_move_equipment_ids"
+                           context="{'form_view_ref' : 'environment_equipment.environment_equipment_form_view'}">
+                        <tree>
+                            <field name="category_id"/>
+                            <field name="chip_number"/>
+                            <field name="tub_number"/>
+                            <field name="owner_partner_id"/>
+                            <field name="assign_date"/>
+                        </tree>
+                    </field>
+                    <field name="equipment_stay_in_production_point"
+                           attrs="{'invisible': [('has_active_stay_equipment', '=', False)]}">
+                        <tree>
+                            <field name="equipment_id"/>
+                            <field name="chip_number"/>
+                            <field name="tub_number"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </tree>
+                    </field>
+                </group>
+
+                <group name="equipment" string="Add a container to the partner move">
+                    <group name="create_equipment">
+                        <field name="chip_number" attrs="{'readonly': [('equipment_id', '!=', False)]}"/>
+                        <field name="tub_number" attrs="{'readonly': [('equipment_id', '!=', False)]}"/>
+                        <field name="equipment_id" options="{'no_create': True}"/>
+                        <field name="equipment_category_id" attrs="{'required': ['|', ('chip_number', '!=', False),
+                                                                                      ('tub_number', '!=', False)],
+                                                                    'readonly': [('equipment_id', '!=', False)]}"/>
+                    </group>
+                    <group name="selected_equipment" attrs="{'invisible': [('has_active_stay_equipment', '=', False)]}">
+                        <field name="attribution_stay_equipment" widget="many2many_tags"/>
+                    </group>
+                </group>
+                <group>
+                    <group name="create_equipment_button">
+                        <button string="Create equipment" name="action_create_or_move_equipment"
+                                type="object" class="btn-info"
+                                attrs="{'invisible': [('equipment_id', '!=', False)]}"
+                                context="{'create_equipment': True, 'move_equipment': False}"/>
+                    </group>
+                    <group name="select_equipment_button"
+                           attrs="{'invisible': [('has_active_stay_equipment', '=', False)]}">
+                        <button string="Attribute selected equipment"
+                                name="action_attribute_selected_equipment" type="object" class="btn-info"/>
+                    </group>
+                </group>
+                <separator/>
+
+
+                <button string="Allocate equipment" name="action_create_or_move_equipment" type="object"
+                        class="btn-info"
+                        attrs="{'invisible': [('equipment_id', '=', False)]}"
+                        context="{'create_equipment': False,
+                                  'move_equipment': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherited_view_partner_setup_wizard_summary_equipment" model="ir.ui.view">
+        <field name="name">inherited.partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_summary"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='subscription']" position="after">
+                <group name="equipment" string="Equipments">
+                    <field name="active_move_equipment_ids" widget="many2many_kanban" readonly="1" nolabel="1">
+                        <kanban>
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <div style="position: relative">
+                                        <div class="oe_module_vignette">
+                                            <div class="oe_module_desc">
+                                                <h4>
+                                                    <field name="category_id"/>
+                                                </h4>
+                                                <p class="oe_module_name">
+                                                    <field name="chip_number"/>
+                                                </p>
+                                                <p class="oe_module_name">
+                                                    <field name="tub_number"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </templates>
+                        </kanban>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_school_sector_view_form" model="ir.ui.view">
+        <field name="name">horanet_school_sector form</field>
+        <field name="model">horanet.school.sector</field>
+        <field name="arch" type="xml">
+            <form string="School sector">
+                <sheet>
+                    <group></group>
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group></group>
+                    <group string="Street sectors">
+                        <field name="street_sector_ids" nolabel="1" colspan="2">
+                            <tree editable="bottom">
+                                <field name='street_id'></field>
+                                <field name="odd_start"/>
+                                <field name="odd_end"/>
+                                <field name="even_start"/>
+                                <field name="even_end"/>
+                                <field name='city_id'></field>
+                            </tree>
+                        </field>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_school_sector_view_tree" model="ir.ui.view">
+        <field name="name">res_street_sector tree</field>
+        <field name="model">horanet.school.sector</field>
+        <field name="arch" type="xml">
+            <tree string="School sector">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="horanet_school_sector_action" model="ir.actions.act_window">
+        <field name="name">School Sectors</field>
+        <field name="res_model">horanet.school.sector</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_school_sector_view_tree"/>
+    </record>
+</odoo>

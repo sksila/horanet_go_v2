@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_contact_merge" model="res.groups">
+        <field name="name">Merge contacts</field>
+        <field name="category_id" ref="horanet_go.horanet_go_category"/>
+        <field name="comment">Used to restrict merge feature to allowed users</field>
+        <field name="implied_ids"
+               eval="[(4, ref('base.group_partner_manager')),
+                (4, ref('partner_contact_personal_information.group_contact_personal_information'))]" />
+    </record>
+</odoo>

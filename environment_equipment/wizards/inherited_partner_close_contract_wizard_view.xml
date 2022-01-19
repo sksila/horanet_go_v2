@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_close_contrat_wizard" model="ir.ui.view">
+        <field name="name">partner.close.contract.wizard.form</field>
+        <field name="model">partner.wizard.close.contract</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_close_contrat_wizard"/>
+        <field name="arch" type="xml">
+            <field name="has_active_moves" position="after">
+                <field name="has_active_equipments" invisible="True"/>
+            </field>
+            <div name="tags" position="after">
+                <div name="equipments"
+                     attrs="{'invisible': [('has_active_equipments', '=', False)]}">
+                    <group string="Equipments">
+                        <field name="equipment_id" options="{'no_open': True, 'no_create': True}"/>
+                        <field name="allocation_end_date" attrs="{'required': [('equipment_id', '!=', False)]}"/>
+                    </group>
+                    <div attrs="{'invisible': [('equipment_id', '=', False)]}">
+                        <button name="action_deallocate_equipment" string="Deallocate container" type="object"
+                                class="btn-primary"
+                                confirm="This operation cannot be undone, are you sure you want to deallocate this container?"/>
+                    </div>
+                    <hr/>
+                </div>
+            </div>
+        </field>
+    </record>
+</odoo>
+

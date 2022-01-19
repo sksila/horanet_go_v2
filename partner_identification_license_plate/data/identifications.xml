@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="immatriculation_medium_type" model="partner.contact.identification.medium.type">
+            <field name="name">Plaque Immatriculation</field>
+        </record>
+
+        <record id="immatriculation_technology" model="partner.contact.identification.technology">
+            <field name="name">IMMAT</field>
+            <field name="code">IMMAT</field>
+        </record>
+
+        <record id="immatriculation_mapping" model="partner.contact.identification.mapping">
+            <field name="technology_id" ref="immatriculation_technology"/>
+            <field name="area_id" ref="partner_contact_identification.area_horanet"/>
+            <field name="mapping">csn</field>
+            <field name="max_length">10</field>
+        </record>
+    </data>
+
+    <data noupdate="0">
+        <record id="vehicle_medium_type" model="partner.contact.identification.medium.type">
+            <field name="name">Vehicle</field>
+        </record>
+    </data>
+</odoo>

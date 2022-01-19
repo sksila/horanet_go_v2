@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="environment_maintenance_requests_application_action" model="ir.actions.act_window">
+        <field name="name">New maintenance request</field>
+        <field name="res_model">maintenance.request</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="context" eval="{'equipment_environment': True}"/>
+    </record>
+
+    <record id="website_application_container_request_form" model="ir.ui.view">
+        <field name="name">website application container request form</field>
+        <field name="model">website.application</field>
+        <field name="inherit_id" ref="environment_applications.website_application_environment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="(//button[@name='action_accept'])" position="after">
+                <button name="%(environment_maintenance_requests_application_action)d"
+                        type="action" string="New maintenance request"
+                        class="oe_highlight"
+                        context="{'default_equipment_id': container_id, 'environment_application_id': id}"
+                        attrs="{'invisible': ['|', '|', ('state', '!=', 'accepted'),
+                                                   ('website_application_template_id', '!=', %(environment_equipment.application_template_container_maintenance)d),
+                                                   ('maintenance_request_id', '!=', False)]}"/>
+                <field name="container_id" invisible="1"/>
+                <field name="maintenance_request_id" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//div[@class='oe_title oe_left']" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_open_maintenance_request" type="object"
+                            string="Maintenance" icon="fa-ticket" class="oe_stat_button"
+                            attrs="{'invisible': [('maintenance_request_id', '=', False)]}"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Activate the pricelist "percentage" mode-->
+    <function model="ir.config_parameter" name="set_param" eval="('sale.sale_pricelist_setting', 'percentage')"/>
+
+    <!--Add groups as if we activated pricelist and different unit of mesure from the interface-->
+    <record id="base.group_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('product.group_product_pricelist')),
+                                         (4, ref('product.group_sale_pricelist')),
+                                         (4, ref('product.group_uom'))]"/>
+    </record>
+</odoo>
+

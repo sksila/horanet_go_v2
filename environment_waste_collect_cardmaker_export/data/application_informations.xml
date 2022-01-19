@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="application_information_licenses_plate" model="application.information">
+            <field name="name">License plates</field>
+            <field name="technical_name">license_plates</field>
+            <field name="type">text</field>
+            <field name="sequence">0</field>
+            <field name="description">Enter license plates separated by comma. (example: "AA-123-BB, CC-456-DD")</field>
+        </record>
+    </data>
+</odoo>

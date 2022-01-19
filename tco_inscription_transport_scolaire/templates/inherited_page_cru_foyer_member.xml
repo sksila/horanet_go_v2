@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inherited_cru_foyer_member" inherit_id="partner_type_foyer.cru_foyer_member"
+              name="Birthdate mandatory">
+        <xpath expr="//div[@id='partner_birthdate']/div" position="replace">
+            <div t-attf-class="form-group col-md-2 required {{error.get('birthdate_date') and 'has-error' or ''}}">
+                <label class="control-label horanet_textfill" for="birthdate_date"
+                       style="font-size:auto">Birthdate
+                </label>
+                <input type="text" name="birthdate_date" class="form-control" size="10"
+                       t-att-data_date_format="date_format"
+                       t-att-value="post.get('birthdate_date') or member.birthdate_date and lang_model.format_date(member.birthdate_date)"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

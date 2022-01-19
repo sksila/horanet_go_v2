@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="seq_ref_horanet_action" model="ir.sequence">
+        <field name="name">device action</field>
+        <field name="prefix">_ACTION</field>
+        <field name="padding">3</field>
+        <field name="code">action.code</field>
+        <field name="company_id" eval="False"/>
+    </record>
+    <data noupdate="1">
+        <record id="seq_ref_horanet_prestation" model="ir.sequence">
+            <field name="name">reference prestation</field>
+            <field name="prefix">PRESTA</field>
+            <field name="padding">3</field>
+            <field name="code">prestation.reference</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_ref_horanet_activity" model="ir.sequence">
+            <field name="name">reference action</field>
+            <field name="prefix">ACT</field>
+            <field name="padding">3</field>
+            <field name="code">activity.reference</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_ref_device_check_point" model="ir.sequence">
+            <field name="name">Device check point code</field>
+            <field name="prefix">CPi</field>
+            <field name="padding">3</field>
+            <field name="code">device.check.point.code</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_ref_activity_sector" model="ir.sequence">
+            <field name="name">activity sector</field>
+            <field name="prefix">SECT</field>
+            <field name="padding">3</field>
+            <field name="code">activity.sector.code</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_ref_contract_code" model="ir.sequence">
+            <field name="name">contract code</field>
+            <field name="prefix">PACK</field>
+            <field name="padding">4</field>
+            <field name="code">contract.code</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_ref_subscription_code" model="ir.sequence">
+            <field name="name">Subscription code</field>
+            <field name="prefix">SUB</field>
+            <field name="padding">4</field>
+            <field name="code">subscription.code</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_ref_activity_rule_code" model="ir.sequence">
+            <field name="name">activity rule code</field>
+            <field name="prefix">RULE</field>
+            <field name="padding">3</field>
+            <field name="code">activity.rule.code</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Sale orders -->
+    <record id="inherited_view_order_form" model="ir.ui.view">
+        <field name="name">inherited.sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <button name="action_done" position="replace">
+            </button>
+            <xpath expr="//sheet/notebook/page[1]" position="after">
+                <page name="usages_list" string="Usages" attrs="{'invisible': [('usage_ids','=', [])]}">
+                    <field name="usage_ids"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Invoices -->
+    <record id="inherited_view_account_invoice" model="ir.ui.view">
+        <field name="name">inherited.account.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]" position="after">
+                <page name="usages_list" string="Usages" attrs="{'invisible': [('usage_ids','=', [])]}">
+                    <field name="usage_ids"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!--invoice line-->
+    <record id="sale_order_line_make_invoice_action_server" model="ir.actions.server">
+        <field name="name">Invoice Orders lines</field>
+        <field name="model_id" ref="model_sale_order_line"/>
+        <field name="binding_model_id" ref="sale.model_sale_order_line"/>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+            action = records.invoice_create_delivered()
+        </field>
+    </record>
+
+    <!-- Invoices report -->
+    <template id="inherited_report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//p[@t-if='o.comment']" position="before">
+            <div class="row" t-if="o.usage_ids">
+                <div class="col-xs-6">
+                    <br/>
+                    <strong>
+                        <span t-field="o.usage_ids[0].activity_id.default_action_id.name"/>
+                    </strong>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Site</th>
+                                <th>Date</th>
+                                <th class="text-right">Activity</th>
+                                <th class="text-right">Quantity</th>
+                                <th class="text-right">Unit</th>
+                                <th class="text-right">Invoiced</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="o.usage_ids" t-as="usage">
+                                <td>
+                                    <span t-field="usage.origin_operation_id.infrastructure_id.name"/>
+                                </td>
+                                <td>
+                                    <span t-field="usage.usage_date"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="usage.activity_id"/>
+                                </td>
+                                <td class="text-right">
+                                    <span t-field="usage.quantity"/>
+                                </td>
+                                <td>
+                                    <span t-field="usage.unit_id"/>
+                                </td>
+                                <td class="text-center">
+                                    <t t-if="usage.invoice_line_ids">
+                                        <strong>*</strong>
+                                    </t>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="inherited_environment_partner_form_view" model="ir.ui.view">
+        <field name="name">Environment Equipment Partner Form View</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="environment_waste_collect.res_partner_form_view"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="%(environment_equipment.environment_equipment_operation_pickups_action)d"
+                        string="Pickups" icon="fa-trash"
+                        class="oe_stat_button" type="action"
+                        attrs="{'invisible': [('has_active_environment_subscription', '=', False)]}"
+                        context="{'search_default_operation_partner_id': id}"/>
+            </div>
+
+            <xpath expr="//page[@name='environment']" position="inside">
+                <label for="equipment_allocations_ids" colspan="2"/>
+                <field name="equipment_allocations_ids" colspan="2">
+                    <tree decoration-success="is_move_id_active==True and is_active==True"
+                          decoration-info="is_move_id_active==True and is_active==False"
+                          decoration-danger="is_move_id_active==False and is_active==True"
+                          decoration-muted="is_move_id_active==False and is_active==False"
+                          default_order="start_date desc">
+                        <field name="is_move_id_active" invisible="1"/>
+                        <field name="is_active" invisible="1"/>
+                        <field name="category_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="chip_number"/>
+                        <field name="tub_number"/>
+                    </tree>
+                </field>
+            </xpath>
+
+        </field>
+    </record>
+    <record id="all_environment_view_partner_tree" model="ir.ui.view">
+        <field name="name">Add equipment count in view</field>
+        <field name="model">res.partner</field>
+         <field name="inherit_id" ref="environment_waste_collect.all_partner_view_tree"/>
+        <field name="arch" type="xml">
+          <field name="email" position="after">
+              <field name="active_equipment_allocations_count"/>
+          </field>
+        </field>
+    </record>
+    <record id="environment_view_partner_tree" model="ir.ui.view">
+        <field name="name">environment Partner list</field>
+        <field name="model">res.partner</field>
+         <field name="inherit_id" ref="environment_waste_collect.environment_partner_view_tree"/>
+        <field name="arch" type="xml">
+          <field name="email" position="after">
+              <field name="active_equipment_allocations_count"/>
+          </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="environment_category_professional" model="subscription.category.partner">
+            <field name="name">Professionals</field>
+            <field name="domain">[[u'is_company', u'=', 1], ['category_id', '=', False]]</field>
+            <field name="code">ENVIRONMENT_PRO</field>
+            <field name="application_type">environment</field>
+        </record>
+
+        <record id="environment_category_particulier" model="subscription.category.partner">
+            <field name="name">Individuals</field>
+            <field name="domain">[[u'is_company', u'=', 0], ['category_id', '=', False]]</field>
+            <field name="code">ENVIRONMENT_PARTICULIER</field>
+            <field name="application_type">environment</field>
+        </record>
+
+        <record id="environment_category_collectivity" model="subscription.category.partner">
+            <field name="name">Collectivities</field>
+            <field name="domain"
+                   eval="[[u'is_company', u'=', 1], ['category_id', '=', ref('horanet_go.partner_category_collectivity')]]"/>
+            <field name="code">ENVIRONMENT_COLLECTIVITY</field>
+            <field name="application_type">environment</field>
+        </record>
+
+        <record id="environment_category_association" model="subscription.category.partner">
+            <field name="name">Associations</field>
+            <field name="domain"
+                   eval="[[u'is_company', u'=', 1], ['category_id', '=', ref('horanet_go.partner_category_association')]]"/>
+            <field name="code">ENVIRONMENT_ASSOCIATION</field>
+            <field name="application_type">environment</field>
+        </record>
+    </data>
+</odoo>

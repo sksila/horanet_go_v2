@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">Mediums and Tags page</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Display a tab with partner's mediums -->
+            <xpath expr="//page[@name='internal_notes']" position="before">
+                <page name="mediums_page" string="Mediums &amp; tags">
+                    <br/>
+                    <label for="assignation_ids" class="oe_inline"/>
+                    <field name="assignation_ids" default_order="end_date desc"
+                           context="{'default_reference_id': 'res.partner,' + str(active_id)}">
+                        <tree>
+                            <field name="tag_id"/>
+                            <field name="medium_label"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="external_reference"/>
+                        </tree>
+                    </field>
+
+                    <field name="has_active_medium" invisible="True"/>
+                    <!-- Add a button to display the creation medium wizard -->
+                    <group name="assignation_ids_footer">
+                        <button type="action" name="partner_contact_identification.action_wizard_create_identification"
+                                context="{'default_entity_to_assigned': 'res.partner', 'default_partner_to_assign': active_id}"
+                                groups="base.group_no_one"
+                                string="Identification manager" class="btn-primary pull-right">
+                        </button>
+                        <button type="action" name="partner_contact_identification.launch_create_medium_wizard"
+                                context="{'default_reference_id': active_id}"
+                                groups="partner_contact_identification.group_partner_contact_identification_manage,
+                                        horanet_go.group_horanet_go_agent"
+                                string="Create new medium" class="btn-primary pull-right">
+                         </button>
+                    </group>
+
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

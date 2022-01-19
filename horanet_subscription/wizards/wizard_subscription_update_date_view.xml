@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_subscription_update_date_form_view" model="ir.ui.view">
+        <field name="name">Wizard update subscription period</field>
+        <field name="model">wizard.subscription.update.date</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet style="overflow-x: hidden;">
+                    <div class="text-center">
+                        <h1>
+                            <field name="display_form_title" readonly="1"/>
+                        </h1>
+                    </div>
+
+                    <field name="is_multiple_update" invisible="1"/>
+
+                    <group string="Selected subscriptions" name="display_subscription_id" col="1"
+                           attrs="{'invisible': [('is_multiple_update','!=',True)]}">
+                        <group></group>
+                        <field name="subscription_ids" nolabel="1" readonly="0">
+                            <tree limit="10" default_order="opening_date" options="{'no_create' : True}"
+                                  decoration-warning="state=='draft'"
+                                  decoration-bf="state=='done'"
+                                  decoration-danger="state=='done'">
+                                <field name="opening_date" invisible="1"/>
+                                <field name="code"/>
+                                <field name="name"/>
+                                <field name="cycle_id"/>
+                                <field name="display_opening_date"/>
+                                <field name="display_closing_date"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </group>
+
+                    <div attrs="{'invisible': [('is_multiple_update','=',True)]}">
+                        <separator string="Selected subscription"/>
+                        <div class="row mt8">
+                            <div class="col-md-12">
+                                <field name="subscription_id" readonly="1" nolabel="1"
+                                       options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <group>
+                                    <field name="current_opening_date"/>
+
+                                    <field name="current_closing_date"/>
+                                </group>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <separator string="Dates to change"/>
+                    <div class="row mt16l">
+                        <div class="col-md-3">
+                            <label for="define_new_opening_date"/>
+                            <field name="define_new_opening_date" nolabel="1" style="margin-left:8px"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="new_opening_date"
+                                   attrs="{ 'invisible':[('define_new_opening_date','!=',True)]}"/>
+                            <field name="new_opening_date"
+                                   attrs="{ 'invisible':[('define_new_opening_date','!=',True)],
+                                    'required': [('define_new_opening_date','=',True),('immediate_opening','!=',True)]}"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="immediate_opening"
+                                   attrs="{ 'invisible':[('define_new_opening_date','!=',True)]}"/>
+                            <field name="immediate_opening" style="margin-left:8px"
+                                   attrs="{ 'invisible':[('define_new_opening_date','!=',True)]}"/>
+                        </div>
+                    </div>
+                    <div class="row mt32">
+                        <div class="col-md-3">
+                            <label for="define_new_closing_date"/>
+                            <field name="define_new_closing_date" nolabel="1" style="margin-left:8px"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="new_closing_date"
+                                   attrs="{ 'invisible':[('define_new_closing_date','!=',True)]}"/>
+                            <field name="new_closing_date"
+                                   attrs="{ 'invisible':[('define_new_closing_date','!=',True)],
+                                    'required': [   ('define_new_closing_date','=',True),
+                                                    ('immediate_closing','!=',True),
+                                                    ('closing_at_cycle_end','!=',True)]}"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="immediate_closing"
+                                   attrs="{ 'invisible':[('define_new_closing_date','!=',True)]}"/>
+                            <field name="immediate_closing" style="margin-left:8px"
+                                   attrs="{ 'invisible':[('define_new_closing_date','!=',True)]}"/>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="closing_at_cycle_end"
+                                   attrs="{ 'invisible':[('define_new_closing_date','!=',True)]}"/>
+                            <field name="closing_at_cycle_end" style="margin-left:8px"
+                                   attrs="{ 'invisible':[('define_new_closing_date','!=',True)]}"/>
+                        </div>
+                    </div>
+
+                    <group class="row mt32">
+                        <field name="remove_closing_date" widget="radio" options="{'horizontal': true}"/>
+                    </group>
+
+                    <group class="row mt16">
+                        <field name="prorata_temporis" widget="radio" options="{'horizontal': true}"/>
+                    </group>
+                    <group col="1" name="message_box" attrs="{'invisible':[('message_box','=',False)]}">
+                        <separator string="Information"/>
+                        <field name="message_box" nolabel="1" widget="html" readonly="1"/>
+                    </group>
+                    <footer>
+                        <button type="object" name="action_update_date" string="Update subscription period"/>
+                        <button special="cancel" string="Cancel" class="oe_link"/>
+                    </footer>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+    <act_window id="action_wizard_subscription_update_date"
+                name="Update subscription date"
+                src_model="horanet.subscription"
+                res_model="wizard.subscription.update.date"
+                view_mode="form"
+                view_id="wizard_subscription_update_date_form_view"
+                target="new"
+                multi="True"
+                key2="client_action_multi"/>
+</odoo>
+
+

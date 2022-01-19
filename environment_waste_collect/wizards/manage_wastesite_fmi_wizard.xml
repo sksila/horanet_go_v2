@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_form_manage_wastesite_fmi_wizard" model="ir.ui.view">
+        <field name="model">waste.site.fmi.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="text-center">
+                    <h1>FMI Management</h1>
+                </div>
+                <group col="6">
+                    <field name="waste_site_id" readonly="True"/>
+                    <newline/>
+                    <field name="is_attendance_controlled"/>
+                    <newline/>
+                    <field name="attendance_threshold"/>
+                    <field name="current_attendance"/>
+                    <field name="could_attend" widget="boolean_button"
+                           options="{'terminology': {
+                                           'string_true':'Yes',
+                                           'string_false':'No',
+                                           'hover_true':'A person could attend this waste site',
+                                           'hover_false':'A person could not attend this waste site'
+                                           }}"/>
+                    <newline/>
+                </group>
+                <group string="Attendance edition" col="4">
+                    <field name="attendance"/>
+                    <button string="Set new attendance"
+                            name="action_calibrate_fmi" type="object" class="btn-primary"/>
+                    <newline/>
+
+                </group>
+                <group string="Attendance control for the day" col="4"
+                       attrs="{'invisible': [('is_attendance_controlled', '=', False)]}">
+                    <field name="is_fmi_currently_controlled" widget="boolean_button"
+                           options="{'terminology': {
+                               'string_true':'Yes',
+                               'string_false':'No',
+                               'hover_true':'The attendance is currently controlled',
+                               'hover_false':'The attendance is disabled for the day'
+                               }}"/>
+                    <button string="Re-activate"
+                            name="action_enable_for_the_day" type="object" class="btn-primary"
+                            attrs="{'invisible': [('is_fmi_currently_controlled', '=', True)]}"/>
+                    <button string="Disable for the day"
+                            name="action_disable_for_the_day" type="object" class="btn-primary"
+                            attrs="{'invisible': [('is_fmi_currently_controlled', '=', False)]}"/>
+                </group>
+                <footer>
+                    <button string="Validate" name="action_validate" type="object" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-default"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_manage_wastesite_fmi_wizard" model="ir.actions.act_window">
+        <field name="name">WasteSite FMI management</field>
+        <field name="res_model">waste.site.fmi.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="src_model">environment.waste.site</field>
+        <field name="context">{'default_waste_site_id': active_id}</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

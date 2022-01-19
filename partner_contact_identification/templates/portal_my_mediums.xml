@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add "Mediums" entry to portal menu -->
+    <template id="portal_my_home_menu_mediums" name="Portal Layout : Mediums menu entry"
+              inherit_id="website_portal.portal_layout" customize_show="True" active="True">
+        <xpath expr="//ul[contains(@class,'o_portal_submenu')]" position="inside">
+            <li>
+                <a href="/my/mediums">Mediums</a>
+            </li>
+        </xpath>
+    </template>
+
+    <!-- Add "Mediums" entry to portal home -->
+    <template id="portal_my_home_mediums" name="Portal My Home : Mediums entry"
+              inherit_id="website_portal.portal_my_home" customize_show="True" active="True">
+        <xpath expr="//div[contains(@class,'o_my_home_content')]" position="inside">
+            <h3 class="page-header">
+                <a href="/my/mediums">Your Mediums
+                    <small class="ml8">
+                        <t t-if="medium_count">
+                            <span class='badge'>
+                                <t t-esc="medium_count"/>
+                            </span>
+                        </t>
+                        <t t-if="not medium_count">
+                            There are currently no mediums for your account.
+                        </t>
+                    </small>
+                </a>
+            </h3>
+        </xpath>
+    </template>
+
+    <!-- Mediums portal view -->
+    <template id="portal_my_mediums" name="My mediums">
+        <t t-call="website_portal.portal_layout">
+            <div id="portal-mediums">
+                <h3 class="page-header">Your Mediums</h3>
+                <p t-if="not mediums">There are currently no mediums for your account.</p>
+                <t t-if="mediums">
+                    <table class="table table-hover" t-if="mediums">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Tag</th>
+                                <th>Holder</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="mediums" t-as="medium">
+                                <t t-foreach="medium.tag_ids" t-as="tag">
+                                    <tr>
+                                        <td t-if="tag_first" t-att-rowspan="len(medium.tag_ids)">
+                                            <span t-field="medium.type_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="tag.number"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="tag.partner_id"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </t>
+                        </tbody>
+                    </table>
+                    <div t-if="pager" class="o_portal_pager text-center">
+                        <t t-call="website.pager"/>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

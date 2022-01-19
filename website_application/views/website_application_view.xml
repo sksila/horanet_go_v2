@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_website_application" model="ir.ui.view">
+        <field name="name">website application form</field>
+        <field name="model">website.application</field>
+        <field name="arch" type="xml">
+            <form string="Request">
+                <header>
+                    <button name="action_pending" string="In progress" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state','in',['accepted', 'rejected', 'pending'])]}"/>
+                    <button name="action_accept" string="Accept request" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state','in',['accepted', 'rejected'])]}"/>
+                    <button name="action_reject" string="Reject request" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state','in',['accepted', 'rejected'])]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <label for="name"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group id="general">
+                        <group id="informations" string="Informations">
+                            <field name="date"/>
+                            <field name="applicant_id"/>
+                            <field name="recipient_id"/>
+                            <field name="applicant_address"/>
+                            <field name="same_address" invisible="1"/>
+                            <field name="website_application_template_id"/>
+                            <field name="auto_validation" invisible="1"/>
+                            <field name="applicant_partner_id" invisible="1"/>
+                            <field name="new_messages" invisible="1"/>
+                            <field name="application_type" invisible="1"/>
+                            <field name="functionality_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <p attrs="{'invisible': [('same_address', '=', 'no_same_address')]}">
+                        <strong class="text-danger"
+                                attrs="{'invisible': [('same_address', '!=', 'same_address_warning')]}">
+                            Warnings:
+                        </strong>
+                        <br/>
+                        <span class="text-danger"
+                              attrs="{'invisible': [('same_address', '!=', 'same_address_warning')]}">
+                            -Multi requests with the same address
+                            <br/>
+                        </span>
+                        <span class="text-warning"
+                              attrs="{'invisible': [('same_address', '!=', 'same_address_accepted')]}">
+                            -Multi requests with the same address
+                            <br/>
+                        </span>
+                        <field name="address_duplication"/>
+                    </p>
+                    <label for="attachment_ids"/>
+                    <field name="attachment_ids" domain="[('user_id', '=', applicant_id)]" context="{'active_id': id}">
+                        <tree decoration-success="status=='valid'"
+                              decoration-info="status=='to_check'"
+                              decoration-danger="status=='rejected'"
+                              default_order="document_date desc">
+                            <field name="document_date" invisible="1"/>
+                            <field name="document_type_id"/>
+                            <field name="number_of_files" />
+                            <field name="status"/>
+                            <field name="checked_by"/>
+                            <field name="checked_on"/>
+                        </tree>
+                    </field>
+                    <label for="application_information_ids"/>
+                    <field name="application_information_ids"
+                           options="{'no_create': True}"
+                           context="{'default_mode': 'result',
+                                     'tree_view_ref': 'website_application.application_information_result_view_tree',
+                                     'form_view_ref': 'website_application.application_information_result_view_form',
+                                     'applicant_id': applicant_id,
+                                     'applicant_partner_id': applicant_partner_id,
+                                     'website_application_template_id': website_application_template_id}">
+                        <tree>
+                            <field name="name"/>
+                            <field name="value"/>
+                        </tree>
+                    </field>
+                    <label for="messages_ids"/>
+                    <field name="messages_ids">
+                        <tree editable="top">
+                            <field name="user_id"/>
+                            <field name="submit_date"/>
+                            <field name="text"/>
+                            <field name="is_read"/>
+                        </tree>
+                    </field>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_website_application" model="ir.ui.view">
+        <field name="name">website application tree</field>
+        <field name="model">website.application</field>
+        <field name="arch" type="xml">
+            <tree default_order="new_messages desc, id desc" decoration-primary="new_messages==True"
+                  decoration-danger="same_address == 'same_address_warning'"
+                  decoration-warning="same_address == 'same_address_accepted'">
+                <field name="name"/>
+                <field name="website_application_template_id"/>
+                <field name="applicant_id"/>
+                <field name="recipient_id"/>
+                <field name="applicant_address"/>
+                <field name="same_address" invisible="1"/>
+                <field name="date"/>
+                <field name="state"/>
+                <field name="new_messages"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_pivot_website_application" model="ir.ui.view">
+        <field name="name">website application pivot</field>
+        <field name="model">website.application</field>
+        <field name="arch" type="xml">
+            <pivot string="pivot view">
+                <field name="website_application_template_id"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_graph_website_application" model="ir.ui.view">
+        <field name="name">website application graph</field>
+        <field name="model">website.application</field>
+        <field name="arch" type="xml">
+            <graph>
+                <field name="website_application_template_id"/>
+            </graph>
+        </field>
+    </record>
+
+
+    <record id="view_search_website_application" model="ir.ui.view">
+        <field name="name">website application search</field>
+        <field name="model">website.application</field>
+        <field name="arch" type="xml">
+            <search string="Search request">
+                <field name="name"/>
+                <field name="applicant_id"/>
+                <filter string="New" name="message_needaction"
+                        domain="['|', '|', ('state', '=', 'new'), ('new_messages', '=', True), ('attachment_ids.status', '=', 'to_check')]"/>
+                <separator/>
+                <filter string="Today" name="filter_today"
+                        domain="[('date', '&lt;=', time.strftime('%Y-%m-%d 23:59:59')),('date', '&gt;=', time.strftime('%Y-%m-%d 00:00:00'))]"/>
+                <filter string="This week" name="filter_week"
+                        domain="[('date', '&lt;=', time.strftime('%Y-%m-%d 23:59:59')),('date', '&gt;=', ((context_today()+relativedelta(weeks=-1, days=1, weekday=0)).strftime('%Y-%m-%d 00:00:00')))]"/>
+                <filter string="This month" name="filter_month"
+                        domain="[('date', '&lt;=', time.strftime('%Y-%m-%d 23:59:59')),('date', '&gt;=', time.strftime('%Y-%m-01 00:00:00'))]"/>
+                <filter string="This Year" name="filter_year"
+                        domain="[('date','&lt;=',time.strftime('%%Y-12-31 23:59:59')),('date','&gt;=',time.strftime('%%Y-01-01 00:00:00'))]"/>
+                <separator/>
+                <filter string="No same address"
+                        domain="[('same_address', '=', 'no_same_address')]"/>
+                <filter string="Same address warning"
+                        domain="[('same_address', '=', 'same_address_warning')]"/>
+                <filter string="Same address accepted"
+                        domain="[('same_address', '=', 'same_address_accepted')]"/>
+                <group string="Group By">
+                    <filter name="group_by_type" string="Type"
+                            context="{'group_by': 'website_application_template_id'}"/>
+                    <filter name="group_by_applicant" string="Applicant"
+                            context="{'group_by': 'applicant_id'}"/>
+                    <filter name="group_by_recipient" string="Recipient"
+                            context="{'group_by': 'recipient_id'}"/>
+                    <filter name="group_by_removal_reason" string="Reason"
+                            context="{'group_by': 'value_removal_reason'}"/>
+                    <filter name="group_by_state" string="State"
+                            context="{'group_by': 'state'}"/>
+                    <filter name="group_by_refund_type" string="Refund type"
+                            context="{'group_by': 'value_refund_type'}"/>
+                    <filter name="group_by_date_changing_establishment" string="Date of changing establishment"
+                            context="{'group_by': 'value_date_changing_establishment'}"/>
+                    <filter name="group_by_date_changing_residence" string="Date of changing residence"
+                            context="{'group_by': 'value_date_changing_residence'}"/>
+                    <filter name="group_by_address" string="Address"
+                            context="{'group_by': 'applicant_address'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="action_website_application" model="ir.actions.act_window">
+        <field name="name">Requests</field>
+        <field name="res_model">website.application</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{"search_default_group_by_type": True}</field>
+    </record>
+
+    <record id="website_application_form_view" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_form_website_application"/>
+        <field name="act_window_id" ref="action_website_application"/>
+    </record>
+
+    <record id="website_application_tree_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_tree_website_application"/>
+        <field name="act_window_id" ref="action_website_application"/>
+    </record>
+</odoo>

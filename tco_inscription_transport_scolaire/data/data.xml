@@ -1,0 +1,9 @@
+<odoo>
+    <data noupdate="1">
+        <record id="tco_terms_and_conditions_document" model="ir.attachment">
+            <field name="name">TCO terms and conditions</field>
+            <field name="public">True</field>
+            <field name="user_id">1</field>
+        </record>
+    </data>
+</odoo>

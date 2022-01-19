@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="wizard_stage_production_point_attribution" model="partner.setup.wizard.stage">
+            <field name="name">Production point attribution</field>
+            <field name="order">00</field>
+            <field name="view_id" ref="view_partner_setup_wizard_stage_production_point_attribution"/>
+        </record>
+    </data>
+</odoo>

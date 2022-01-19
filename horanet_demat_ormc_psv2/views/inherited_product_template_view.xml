@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add the cod_prod_loc field -->
+    <record id="product_template_only_form_view" model="ir.ui.view">
+        <field name="name">CodProdLoc on product.template</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page name="ormc_pesv2" string="ORMC PESV2">
+                    <group>
+                        <group>
+                            <field name="cod_prod_loc"/>
+                        </group>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

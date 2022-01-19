@@ -1,0 +1,6 @@
+<odoo noupdate="1">
+    <record id="attachment_type_terms_and_conditions" model="ir.attachment.type">
+        <field name="name">Conditions générales</field>
+        <field name="technical_name">terms_and_conditions</field>
+    </record>
+</odoo>

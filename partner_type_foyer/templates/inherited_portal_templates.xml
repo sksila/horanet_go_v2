@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="custom_portal_layout" inherit_id="portal.portal_layout" name="Portal Layout with Foyer">
+        <xpath expr="//ol[contains(@class,'o_portal_submenu')]" position="inside">
+            <li t-if="not user_id.partner_id.is_company">
+                <a href="/my/foyers">Foyers</a>
+            </li>
+        </xpath>
+    </template>
+
+</odoo>

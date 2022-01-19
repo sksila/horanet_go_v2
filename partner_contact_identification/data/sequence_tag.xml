@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="sequence_tag_h3" model="ir.sequence">
+        <field name="name">H3 Tag Sequence</field>
+        <field name="code">partner.contact.identification.tag</field>
+        <field name="padding">20</field>
+        <field name="implementation">no_gap</field>
+    </record>
+</odoo>

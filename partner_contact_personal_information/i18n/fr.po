@@ -1,0 +1,233 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_contact_personal_information
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-02-08 12:04+0000\n"
+"PO-Revision-Date: 2017-02-08 12:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_contact_personal_information
+#: code:addons/partner_contact_personal_information/models/inherited_partner.py:103
+#, python-format
+msgid " and {nb_month} {month_txt}"
+msgstr " et {nb_month} {month_txt}"
+
+#. module: partner_contact_personal_information
+#: model:res.groups,name:partner_contact_personal_information.group_contact_information_birth_date
+msgid "Access birth date information"
+msgstr "Accès aux informations de date de naissance"
+
+#. module: partner_contact_personal_information
+#: model:res.groups,name:partner_contact_personal_information.group_contact_information_birth_place
+msgid "Access birth place information"
+msgstr "Accès aux informations de lieu de naissance"
+
+#. module: partner_contact_personal_information
+#: model:res.groups,name:partner_contact_personal_information.group_contact_information_quotient_fam
+msgid "Access family quotient information"
+msgstr "Accès aux informations de quotient familiale"
+
+#. module: partner_contact_personal_information
+#: model:res.groups,name:partner_contact_personal_information.group_contact_information_gender
+msgid "Access gender information"
+msgstr "Accès aux informations de genre"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_res_partner_display_partner_age
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_res_partner_partner_age
+msgid "Age"
+msgstr "Âge"
+
+#. module: partner_contact_personal_information
+#: model:ir.ui.view,arch_db:partner_contact_personal_information.personal_information
+msgid "Birth information"
+msgstr "Informations de naissance"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_res_partner_birthdate_date
+msgid "Birthdate"
+msgstr "Date de naissance"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_res_partner_birth_city_id
+msgid "City of birth"
+msgstr "Ville de naissance"
+
+#. module: partner_contact_personal_information
+#: model:res.groups,name:partner_contact_personal_information.group_contact_personal_information
+msgid "Contact personal information"
+msgstr "Informations personnel de contact"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_res_partner_birth_country_id
+msgid "Country of birth"
+msgstr "Pays de naissance"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_res_partner_quotient_fam
+msgid "Family quotient"
+msgstr "Quotient familiale"
+
+#. module: partner_contact_personal_information
+#: selection:res.partner,gender:0
+#: selection:res.partner.title,gender:0
+msgid "Female"
+msgstr "Féminin"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_res_partner_gender
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_res_partner_title_gender
+msgid "Gender"
+msgstr "Genre"
+
+#. module: partner_contact_personal_information
+#: selection:res.partner,gender:0
+#: selection:res.partner.title,gender:0
+msgid "Male"
+msgstr "Masculin"
+
+#. module: partner_contact_personal_information
+#: model:ir.ui.view,arch_db:partner_contact_personal_information.personal_information
+msgid "Misc"
+msgstr "Divers"
+
+#. module: partner_contact_personal_information
+#: selection:res.partner,gender:0
+#: selection:res.partner.title,gender:0
+msgid "Neutral"
+msgstr "Neutre"
+
+#. module: partner_contact_personal_information
+#: model:ir.model,name:partner_contact_personal_information.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_collectivity_config_settings_group_contact_personal_information
+msgid "Personal information page"
+msgstr "Page d'information personnelle"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,help:partner_contact_personal_information.field_res_partner_birth_city_id
+msgid "Select the city of birth"
+msgstr "Sélectionnez la ville de naissance"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,help:partner_contact_personal_information.field_res_partner_birth_country_id
+msgid "Select the country of birth"
+msgstr "Sélectionnez le pays de naissance"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,help:partner_contact_personal_information.field_res_partner_birth_state_id
+msgid "Select the state of birth"
+msgstr "Sélectionnez le département de naissance"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_res_partner_birth_state_id
+msgid "State of birth"
+msgstr "Département de naissance"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_collectivity_config_settings_group_add_personal_birth_place
+msgid "Use birth place"
+msgstr "Utiliser le lieu de naissance"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_collectivity_config_settings_group_add_personal_birth_date
+msgid "Use birthdate/age"
+msgstr "Utiliser l'âge/date de naissance"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_collectivity_config_settings_group_add_personal_family_quotient
+msgid "Use family quotient"
+msgstr "Utiliser le quotient familiale"
+
+#. module: partner_contact_personal_information
+#: model:ir.model.fields,field_description:partner_contact_personal_information.field_collectivity_config_settings_group_add_personal_gender
+msgid "Use gender"
+msgstr "Utiliser le genre"
+
+#. module: partner_contact_personal_information
+#: model:res.groups,comment:partner_contact_personal_information.group_contact_personal_information
+msgid "Used to restrict access to personal information page on contact form"
+msgstr "Utilisé pour restreindre l'accès de la page des informations personnelles du formulaire de contact"
+
+#. module: partner_contact_personal_information
+#: model:res.groups,comment:partner_contact_personal_information.group_contact_information_birth_date
+msgid "Used to restrict access to sensible information (birth date)"
+msgstr "Utilisé pour restreindre l'accès de des informations sensibles (date de naissance)"
+
+#. module: partner_contact_personal_information
+#: model:res.groups,comment:partner_contact_personal_information.group_contact_information_birth_place
+msgid "Used to restrict access to sensible information (birth place)"
+msgstr "Utilisé pour restreindre l'accès de des informations sensibles (lieu de naissance)"
+
+#. module: partner_contact_personal_information
+#: model:res.groups,comment:partner_contact_personal_information.group_contact_information_quotient_fam
+msgid "Used to restrict access to sensible information (family quotient)"
+msgstr "Utilisé pour restreindre l'accès de des informations sensibles (quotient familiale)"
+
+#. module: partner_contact_personal_information
+#: model:res.groups,comment:partner_contact_personal_information.group_contact_information_gender
+msgid "Used to restrict access to sensible information (gender)"
+msgstr "Utilisé pour restreindre l'accès de des informations sensibles (genre)"
+
+#. module: partner_contact_personal_information
+#: selection:collectivity.config.settings,group_contact_personal_information:0
+msgid "Visible for everyone"
+msgstr "Accessible pour tout le monde"
+
+#. module: partner_contact_personal_information
+#: selection:collectivity.config.settings,group_contact_personal_information:0
+msgid "Visible only for users in group 'Contact personal information'"
+msgstr "Accessible uniquement au utilisateurs ayant le droit 'Informations personnel de contact'"
+
+#. module: partner_contact_personal_information
+#: code:addons/partner_contact_personal_information/models/inherited_partner.py:101
+#, python-format
+msgid "Year"
+msgstr "An"
+
+#. module: partner_contact_personal_information
+#: code:addons/partner_contact_personal_information/models/inherited_partner.py:101
+#, python-format
+msgid "Years"
+msgstr "Ans"
+
+#. module: partner_contact_personal_information
+#: model:ir.model,name:partner_contact_personal_information.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: partner_contact_personal_information
+#: code:addons/partner_contact_personal_information/models/inherited_partner.py:105
+#, python-format
+msgid "month"
+msgstr "mois"
+
+#. module: partner_contact_personal_information
+#: code:addons/partner_contact_personal_information/models/inherited_partner.py:105
+#, python-format
+msgid "months"
+msgstr "mois"
+
+#. module: partner_contact_personal_information
+#: model:ir.model,name:partner_contact_personal_information.model_res_partner_title
+msgid "res.partner.title"
+msgstr "res.partner.title"
+
+#. module: partner_contact_personal_information
+#: code:addons/partner_contact_personal_information/models/inherited_partner.py:99
+#, python-format
+msgid "{nb_year} {year_txt}"
+msgstr "{nb_year} {year_txt}"
+

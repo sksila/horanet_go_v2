@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Ref Edition -->
+        <record id="pes_ref_8_v_1" model="pes.referential.value">
+            <field name="name">Avis des sommes à payer à éditer</field>
+            <field name="description">Avis des sommes à payer à éditer</field>
+            <field name="value">01</field>
+        </record>
+        <record id="pes_ref_8_v_2" model="pes.referential.value">
+            <field name="name">Avis des sommes à payer CPP</field>
+            <field name="description">Avis des sommes à payer CPP</field>
+            <field name="value">02</field>
+        </record>
+        <record id="pes_ref_8_v_3" model="pes.referential.value">
+            <field name="name">Avis des sommes à payer ORMC CPP</field>
+            <field name="description">Avis des sommes à payer ORMC CPP</field>
+            <field name="value">03</field>
+        </record>
+        <record id="pes_ref_8_v_4" model="pes.referential.value">
+            <field name="name">Avis des sommes à payer sans traitement DGFIP</field>
+            <field name="description">Avis des sommes à payer sans traitement DGFIP</field>
+            <field name="value">04</field>
+        </record>
+
+        <!-- Ref TypPce -->
+        <record id="pes_ref_7_v_1" model="pes.referential.value">
+            <field name="name">Fonctionnement</field>
+            <field name="description">Fonctionnement</field>
+            <field name="value">01</field>
+        </record>
+        <record id="pes_ref_7_v_2" model="pes.referential.value">
+            <field name="name">Investissement</field>
+            <field name="description">Investissement</field>
+            <field name="value">02</field>
+        </record>
+        <record id="pes_ref_7_v_3" model="pes.referential.value">
+            <field name="name">Inventaire</field>
+            <field name="description">Inventaire</field>
+            <field name="value">03</field>
+        </record>
+        <record id="pes_ref_7_v_4" model="pes.referential.value">
+            <field name="name">Emprunt</field>
+            <field name="description">Emprunt</field>
+            <field name="value">04</field>
+        </record>
+        <record id="pes_ref_7_v_5" model="pes.referential.value">
+            <field name="name">Régie</field>
+            <field name="description">Régie</field>
+            <field name="value">05</field>
+        </record>
+        <record id="pes_ref_7_v_6" model="pes.referential.value">
+            <field name="name">Annulation-Réduction</field>
+            <field name="description">Annulation-Réduction</field>
+            <field name="value">06</field>
+        </record>
+        <record id="pes_ref_7_v_7" model="pes.referential.value">
+            <field name="name">Complémentaire</field>
+            <field name="description">Complémentaire</field>
+            <field name="value">07</field>
+        </record>
+        <record id="pes_ref_7_v_8" model="pes.referential.value">
+            <field name="name">Réémis</field>
+            <field name="description">Réémis</field>
+            <field name="value">08</field>
+        </record>
+        <record id="pes_ref_7_v_9" model="pes.referential.value">
+            <field name="name">Annulant un mandat</field>
+            <field name="description">Annulant un mandat</field>
+            <field name="value">09</field>
+        </record>
+        <record id="pes_ref_7_v_10" model="pes.referential.value">
+            <field name="name">Annulation du titre de rattachement</field>
+            <field name="description">Annulation du titre de rattachement</field>
+            <field name="value">10</field>
+        </record>
+        <record id="pes_ref_7_v_11" model="pes.referential.value">
+            <field name="name">Marché</field>
+            <field name="description">Marché</field>
+            <field name="value">11</field>
+        </record>
+        <record id="pes_ref_7_v_18" model="pes.referential.value">
+            <field name="name">Opération d’ordre liée aux cessions</field>
+            <field name="description">Opération d’ordre liée aux cessions</field>
+            <field name="value">18</field>
+        </record>
+
+        <!-- Ref TypPce -->
+        <record id="pes_ref_6_v_1" model="pes.referential.value">
+            <field name="name">Titre ordinaire</field>
+            <field name="description">Titre ordinaire</field>
+            <field name="value">01</field>
+        </record>
+        <record id="pes_ref_6_v_2" model="pes.referential.value">
+            <field name="name">Titre correctif</field>
+            <field name="description">Titre correctif</field>
+            <field name="value">02</field>
+        </record>
+        <record id="pes_ref_6_v_3" model="pes.referential.value">
+            <field name="name">Titre d'ordre budgétaire</field>
+            <field name="description">Titre d'ordre budgétaire</field>
+            <field name="value">03</field>
+        </record>
+        <record id="pes_ref_6_v_4" model="pes.referential.value">
+            <field name="name">Titre d'ordre mixte</field>
+            <field name="description">Titre d'ordre mixte</field>
+            <field name="value">04</field>
+        </record>
+        <record id="pes_ref_6_v_5" model="pes.referential.value">
+            <field name="name">Titre émis après paiement</field>
+            <field name="description">Titre émis après paiement</field>
+            <field name="value">05</field>
+        </record>
+        <record id="pes_ref_6_v_6" model="pes.referential.value">
+            <field name="name">Titre récapitulatif avec rôle</field>
+            <field name="description">Titre récapitulatif avec rôle</field>
+            <field name="value">06</field>
+        </record>
+        <record id="pes_ref_6_v_7" model="pes.referential.value">
+            <field name="name">Titre récapitulatif sans rôle</field>
+            <field name="description">Titre récapitulatif sans rôle</field>
+            <field name="value">07</field>
+        </record>
+        <record id="pes_ref_6_v_9" model="pes.referential.value">
+            <field name="name">Titre de majoration</field>
+            <field name="description">Titre de majoration</field>
+            <field name="value">09</field>
+        </record>
+        <record id="pes_ref_6_v_10" model="pes.referential.value">
+            <field name="name">Titre en plusieurs années</field>
+            <field name="description">Titre en plusieurs années</field>
+            <field name="value">10</field>
+        </record>
+        <record id="pes_ref_6_v_11" model="pes.referential.value">
+            <field name="name">Titre de rattachement</field>
+            <field name="description">Titre de rattachement</field>
+            <field name="value">11</field>
+        </record>
+        <record id="pes_ref_6_v_12" model="pes.referential.value">
+            <field name="name">Ordre de recette ordonnateur</field>
+            <field name="description">Ordre de recette ordonnateur</field>
+            <field name="value">12</field>
+        </record>
+        <record id="pes_ref_6_v_14" model="pes.referential.value">
+            <field name="name">Produits constatés d'avance</field>
+            <field name="description">Produits constatés d'avance</field>
+            <field name="value">14</field>
+        </record>
+        <record id="pes_ref_6_v_15" model="pes.referential.value">
+            <field name="name">Titre ORMC</field>
+            <field name="description">Titre ORMC</field>
+            <field name="value">15</field>
+        </record>
+
+        <!-- Ref TypBordAller -->
+        <record id="pes_ref_5_v_1" model="pes.referential.value">
+            <field name="name">Ordinaire</field>
+            <field name="description">Ordinaire</field>
+            <field name="value">01</field>
+        </record>
+        <record id="pes_ref_5_v_2" model="pes.referential.value">
+            <field name="name">Annulation/réduction</field>
+            <field name="description">Annulation/réduction</field>
+            <field name="value">02</field>
+        </record>
+        <record id="pes_ref_5_v_3" model="pes.referential.value">
+            <field name="name">Ordres de recette</field>
+            <field name="description">Ordres de recette</field>
+            <field name="value">03</field>
+        </record>
+        <record id="pes_ref_5_v_6" model="pes.referential.value">
+            <field name="name">Ordres de recette multi créanciers (ORMC)</field>
+            <field name="description">Ordres de recette multi créanciers (ORMC)</field>
+            <field name="value">06</field>
+        </record>
+
+        <!-- Ref TypePJ -->
+        <record id="pes_ref_4_v_1" model="pes.referential.value">
+            <field name="name">Document Budgétaire</field>
+            <field name="description">Document Budgétaire</field>
+            <field name="value">001</field>
+        </record>
+        <record id="pes_ref_4_v_2" model="pes.referential.value">
+            <field name="name">Recette</field>
+            <field name="description">Recette</field>
+            <field name="value">002</field>
+        </record>
+        <record id="pes_ref_4_v_3" model="pes.referential.value">
+            <field name="name">Dépense</field>
+            <field name="description">Dépense</field>
+            <field name="value">003</field>
+        </record>
+        <record id="pes_ref_4_v_4" model="pes.referential.value">
+            <field name="name">Etat de Paye</field>
+            <field name="description">Etat de Paye</field>
+            <field name="value">004</field>
+        </record>
+        <record id="pes_ref_4_v_5" model="pes.referential.value">
+            <field name="name">Etat d'Aide sociale</field>
+            <field name="description">Etat d'Aide sociale</field>
+            <field name="value">005</field>
+        </record>
+        <record id="pes_ref_4_v_6" model="pes.referential.value">
+            <field name="name">PES Facture</field>
+            <field name="description">PES Facture</field>
+            <field name="value">006</field>
+        </record>
+        <record id="pes_ref_4_v_7" model="pes.referential.value">
+            <field name="name">Facture ORMC</field>
+            <field name="description">Facture ORMC</field>
+            <field name="value">007</field>
+        </record>
+        <record id="pes_ref_4_v_8" model="pes.referential.value">
+            <field name="name">Document complémentaire à l'ASAP</field>
+            <field name="description">Document complémentaire à l'ASAP</field>
+            <field name="value">008</field>
+        </record>
+
+        <!-- Ref Value -->
+        <record id="pes_ref_val_1" model="pes.referential.value">
+            <field name="name">FACTURE</field>
+            <field name="description">Une facture</field>
+            <field name="value">01</field>
+        </record>
+        <record id="pes_ref_val_2" model="pes.referential.value">
+            <field name="name">COMMANDE</field>
+            <field name="description">Une commande</field>
+            <field name="value">02</field>
+        </record>
+        <record id="pes_ref_val_3" model="pes.referential.value">
+            <field name="name">AVOIR</field>
+            <field name="description">Un avoir</field>
+            <field name="value">03</field>
+        </record>
+        <record id="pes_ref_val_4" model="pes.referential.value">
+            <field name="name">DEVIS</field>
+            <field name="description">Un devis</field>
+            <field name="value">04</field>
+        </record>
+        <record id="pes_ref_val_5" model="pes.referential.value">
+            <field name="name">PRO FORMA</field>
+            <field name="description">Une facture pro forma</field>
+            <field name="value">05</field>
+        </record>
+        <record id="pes_ref_val_6" model="pes.referential.value">
+            <field name="name">CARTE ACHAT</field>
+            <field name="description">Un relevé de carte achat</field>
+            <field name="value">06</field>
+        </record>
+        <record id="pes_ref_val_7" model="pes.referential.value">
+            <field name="name">AVIS ECHEANCE</field>
+            <field name="description">Un avis d'échéance</field>
+            <field name="value">07</field>
+        </record>
+        <record id="pes_ref_val_8" model="pes.referential.value">
+            <field name="name">QUITTANCE</field>
+            <field name="description">Une quittance</field>
+            <field name="value">08</field>
+        </record>
+        <record id="pes_ref_val_9" model="pes.referential.value">
+            <field name="name">ASAP</field>
+            <field name="description">Avis des sommes à payer</field>
+            <field name="value">09</field>
+        </record>
+        <record id="pes_ref_cod_res_1" model="pes.referential.value">
+            <field name="name">France</field>
+            <field name="description">CodRes</field>
+            <field name="value">0</field>
+        </record>
+
+        <!-- Ref Value for TypTiersFacture-->
+        <record id="pes_ref_tpf_1" model="pes.referential.value">
+            <field name="name">Débiteur principal</field>
+            <field name="description">Débiteur principal</field>
+            <field name="value">01</field>
+        </record>
+        <record id="pes_ref_tpf_2" model="pes.referential.value">
+            <field name="name">Débiteur appliquant des règles particulières et pouvant assumer la totalité des frais de séjours</field>
+            <field name="description">Débiteur appliquant des règles particulières et pouvant assumer la totalité des frais de séjours</field>
+            <field name="value">02</field>
+        </record>
+        <record id="pes_ref_tpf_3" model="pes.referential.value">
+            <field name="name">Débiteur solidaire</field>
+            <field name="description">Débiteur solidaire</field>
+            <field name="value">03</field>
+        </record>
+        <record id="pes_ref_tpf_4" model="pes.referential.value">
+            <field name="name">Co-débiteur</field>
+            <field name="description">Co-débiteur</field>
+            <field name="value">04</field>
+        </record>
+        <record id="pes_ref_tpf_5" model="pes.referential.value">
+            <field name="name">Employeur</field>
+            <field name="description">Employeur</field>
+            <field name="value">05</field>
+        </record>
+        <record id="pes_ref_tpf_6" model="pes.referential.value">
+            <field name="name">Malade</field>
+            <field name="description">Malade</field>
+            <field name="value">06</field>
+        </record>
+        <record id="pes_ref_tpf_7" model="pes.referential.value">
+            <field name="name">Assuré</field>
+            <field name="description">Assuré</field>
+            <field name="value">07</field>
+        </record>
+        <record id="pes_ref_tpf_8" model="pes.referential.value">
+            <field name="name">Client</field>
+            <field name="description">Client</field>
+            <field name="value">10</field>
+        </record>
+        <record id="pes_ref_tpf_9" model="pes.referential.value">
+            <field name="name">Acheteur</field>
+            <field name="description">Acheteur</field>
+            <field name="value">11</field>
+        </record>
+        <record id="pes_ref_tpf_10" model="pes.referential.value">
+            <field name="name">Destinataire</field>
+            <field name="description">Destinataire</field>
+            <field name="value">12</field>
+        </record>
+        <record id="pes_ref_tpf_11" model="pes.referential.value">
+            <field name="name">Facture</field>
+            <field name="description">Facture</field>
+            <field name="value">13</field>
+        </record>
+        <record id="pes_ref_tpf_12" model="pes.referential.value">
+            <field name="name">Gestionnaire TVA</field>
+            <field name="description">Gestionnaire TVA</field>
+            <field name="value">14</field>
+        </record>
+        <record id="pes_ref_tpf_13" model="pes.referential.value">
+            <field name="name">DébiteurComptable ( Client)</field>
+            <field name="description">Comptable ( Client)</field>
+            <field name="value">15</field>
+        </record>
+        <record id="pes_ref_tpf_14" model="pes.referential.value">
+            <field name="name">Emetteur</field>
+            <field name="description">Emetteur</field>
+            <field name="value">20</field>
+        </record>
+        <record id="pes_ref_tpf_15" model="pes.referential.value">
+            <field name="name">Vendeur</field>
+            <field name="description">Vendeur</field>
+            <field name="value">21</field>
+        </record>
+        <record id="pes_ref_tpf_16" model="pes.referential.value">
+            <field name="name">Expéditeur</field>
+            <field name="description">Expéditeur</field>
+            <field name="value">22</field>
+        </record>
+        <record id="pes_ref_tpf_17" model="pes.referential.value">
+            <field name="name">Fabricant</field>
+            <field name="description">Fabricant</field>
+            <field name="value">23</field>
+        </record>
+        <record id="pes_ref_tpf_18" model="pes.referential.value">
+            <field name="name">Fournisseur</field>
+            <field name="description">Fournisseur</field>
+            <field name="value">24</field>
+        </record>
+        <record id="pes_ref_tpf_19" model="pes.referential.value">
+            <field name="name">Destinataire Paiement</field>
+            <field name="description">Destinataire Paiement</field>
+            <field name="value">25</field>
+        </record>
+        <record id="pes_ref_tpf_20" model="pes.referential.value">
+            <field name="name">Comptable ( Emetteur)</field>
+            <field name="description">Comptable ( Emetteur)</field>
+            <field name="value">26</field>
+        </record>
+        <record id="pes_ref_tpf_21" model="pes.referential.value">
+            <field name="name">Logement</field>
+            <field name="description">Logement</field>
+            <field name="value">30</field>
+        </record>
+
+        <!-- Values CatTiers -->
+        <record id="pes_ref_cat_tiers_01" model="pes.referential.value">
+            <field name="name">Personnes physiques</field>
+            <field name="description">Personnes physiques</field>
+            <field name="value">01</field>
+        </record>
+        <record id="pes_ref_cat_tiers_20" model="pes.referential.value">
+            <field name="name">Etat et établissements publics nationaux</field>
+            <field name="description">Etat et établissements publics nationaux</field>
+            <field name="value">20</field>
+        </record>
+        <record id="pes_ref_cat_tiers_21" model="pes.referential.value">
+            <field name="name">Régions</field>
+            <field name="description">Régions</field>
+            <field name="value">21</field>
+        </record>
+        <record id="pes_ref_cat_tiers_22" model="pes.referential.value">
+            <field name="name">Départements</field>
+            <field name="description">Départements</field>
+            <field name="value">22</field>
+        </record>
+        <record id="pes_ref_cat_tiers_23" model="pes.referential.value">
+            <field name="name">Communes</field>
+            <field name="description">Communes</field>
+            <field name="value">23</field>
+        </record>
+        <record id="pes_ref_cat_tiers_24" model="pes.referential.value">
+            <field name="name">Groupements de collectivités</field>
+            <field name="description">Groupements de collectivités</field>
+            <field name="value">24</field>
+        </record>
+        <record id="pes_ref_cat_tiers_25" model="pes.referential.value">
+            <field name="name">Caisses des écoles</field>
+            <field name="description">Caisses des écoles</field>
+            <field name="value">25</field>
+        </record>
+        <record id="pes_ref_cat_tiers_26" model="pes.referential.value">
+            <field name="name">CCAS</field>
+            <field name="description">CCAS</field>
+            <field name="value">26</field>
+        </record>
+        <record id="pes_ref_cat_tiers_27" model="pes.referential.value">
+            <field name="name">Etablissements publics de santé</field>
+            <field name="description">Etablissements publics de santé</field>
+            <field name="value">27</field>
+        </record>
+        <record id="pes_ref_cat_tiers_28" model="pes.referential.value">
+            <field name="name">Ecole nationale de la santé publique</field>
+            <field name="description">Ecole nationale de la santé publique</field>
+            <field name="value">28</field>
+        </record>
+        <record id="pes_ref_cat_tiers_29" model="pes.referential.value">
+            <field name="name">Autres établissements publics et organismes internationaux</field>
+            <field name="description">Autres établissements publics et organismes internationaux</field>
+            <field name="value">29</field>
+        </record>
+        <record id="pes_ref_cat_tiers_74" model="pes.referential.value">
+            <field name="name">Autres organismes sociaux</field>
+            <field name="description">Autres organismes sociaux</field>
+            <field name="value">74</field>
+        </record>
+        <record id="pes_ref_cat_tiers_50" model="pes.referential.value">
+            <field name="name">Personnes morales de droit privé autres qu'organismes sociaux</field>
+            <field name="description">Personnes morales de droit privé autres qu'organismes sociaux</field>
+            <field name="value">50</field>
+        </record>
+        <record id="pes_ref_cat_tiers_60" model="pes.referential.value">
+            <field name="name">Caisses de sécurité sociale régime général</field>
+            <field name="description">Caisses de sécurité sociale régime général</field>
+            <field name="value">60</field>
+        </record>
+        <record id="pes_ref_cat_tiers_61" model="pes.referential.value">
+            <field name="name">Caisses de sécurité sociale régime agricole</field>
+            <field name="description">Caisses de sécurité sociale régime agricole</field>
+            <field name="value">61</field>
+        </record>
+        <record id="pes_ref_cat_tiers_62" model="pes.referential.value">
+            <field name="name">Sécurité sociale des travailleurs non salariés et professions non agricoles</field>
+            <field name="description">Sécurité sociale des travailleurs non salariés et professions non agricoles</field>
+            <field name="value">62</field>
+        </record>
+        <record id="pes_ref_cat_tiers_63" model="pes.referential.value">
+            <field name="name">Autres régimes obligatoires de sécurité sociale</field>
+            <field name="description">Autres régimes obligatoires de sécurité sociale</field>
+            <field name="value">63</field>
+        </record>
+        <record id="pes_ref_cat_tiers_64" model="pes.referential.value">
+            <field name="name">Mutuelles et organismes d'assurance</field>
+            <field name="description">Mutuelles et organismes d'assurance</field>
+            <field name="value">64</field>
+        </record>
+        <record id="pes_ref_cat_tiers_65" model="pes.referential.value">
+            <field name="name">Divers autres tiers payants</field>
+            <field name="description">Divers autres tiers payants</field>
+            <field name="value">65</field>
+        </record>
+        <record id="pes_ref_cat_tiers_70" model="pes.referential.value">
+            <field name="name">CNRACL</field>
+            <field name="description">CNRACL</field>
+            <field name="value">70</field>
+        </record>
+        <record id="pes_ref_cat_tiers_71" model="pes.referential.value">
+            <field name="name">IRCANTEC</field>
+            <field name="description">IRCANTEC</field>
+            <field name="value">71</field>
+        </record>
+        <record id="pes_ref_cat_tiers_72" model="pes.referential.value">
+            <field name="name">ASSEDIC</field>
+            <field name="description">ASSEDIC</field>
+            <field name="value">72</field>
+        </record>
+        <record id="pes_ref_cat_tiers_73" model="pes.referential.value">
+            <field name="name">Caisses mutualistes de retraite complémentaires</field>
+            <field name="description">Caisses mutualistes de retraite complémentaires</field>
+            <field name="value">73</field>
+        </record>
+
+        <!-- Values NatJur -->
+        <record id="pes_ref_nat_jur_01" model="pes.referential.value">
+            <field name="name">Particuliers</field>
+            <field name="description">Particuliers</field>
+            <field name="value">01</field>
+        </record>
+        <record id="pes_ref_nat_jur_02" model="pes.referential.value">
+            <field name="name">Artisan / Commerçant / Agriculteur</field>
+            <field name="description">Artisan / Commerçant / Agriculteur</field>
+            <field name="value">02</field>
+        </record>
+        <record id="pes_ref_nat_jur_03" model="pes.referential.value">
+            <field name="name">Société</field>
+            <field name="description">Société</field>
+            <field name="value">03</field>
+        </record>
+        <record id="pes_ref_nat_jur_04" model="pes.referential.value">
+            <field name="name">CAM ou caisse appliquant les mêmes règles</field>
+            <field name="description">CAM ou caisse appliquant les mêmes règles</field>
+            <field name="value">04</field>
+        </record>
+        <record id="pes_ref_nat_jur_05" model="pes.referential.value">
+            <field name="name">Caisse complémentaire</field>
+            <field name="description">Caisse complémentaire</field>
+            <field name="value">05</field>
+        </record>
+        <record id="pes_ref_nat_jur_06" model="pes.referential.value">
+            <field name="name">Association</field>
+            <field name="description">Association</field>
+            <field name="value">06</field>
+        </record>
+        <record id="pes_ref_nat_jur_07" model="pes.referential.value">
+            <field name="name">Etat ou organisme d'Etat</field>
+            <field name="description">Etat ou organisme d'Etat</field>
+            <field name="value">07</field>
+        </record>
+        <record id="pes_ref_nat_jur_08" model="pes.referential.value">
+            <field name="name">Etablissement public national</field>
+            <field name="description">Etablissement public national</field>
+            <field name="value">08</field>
+        </record>
+        <record id="pes_ref_nat_jur_09" model="pes.referential.value">
+            <field name="name">Collectivité territoriale / EPL / EPS</field>
+            <field name="description">Collectivité territoriale / EPL / EPS</field>
+            <field name="value">09</field>
+        </record>
+        <record id="pes_ref_nat_jur_10" model="pes.referential.value">
+            <field name="name">Etat étranger / ambassade</field>
+            <field name="description">Etat étranger / ambassade</field>
+            <field name="value">10</field>
+        </record>
+        <record id="pes_ref_nat_jur_11" model="pes.referential.value">
+            <field name="name">CAF</field>
+            <field name="description">CAF</field>
+            <field name="value">11</field>
+        </record>
+    </data>
+</odoo>

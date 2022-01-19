@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Attributs pour InfoLignePiece -->
+        <record id="pes_attrs_sr_2_2_1_2_1_1_4" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Nature</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Nature</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">588</field>
+        </record>
+
+        <record id="pes_attrs_sr_id_ligne" model="pes.bloc.attrs">
+            <field name="name">Attrs pour IdLigne</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour IdLigne</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">1</field>
+        </record>
+
+        <record id="pes_attrs_sr_cod_prod_loc" model="pes.bloc.attrs">
+            <field name="name">Attrs pour CodProdLoc</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour CodProdLoc</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value_type">simple</field>
+            <field name="value">get_product_code</field>
+        </record>
+
+        <record id="pes_attrs_sr_majo" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Majo</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Majo</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">0</field>
+        </record>
+
+        <record id="pes_attrs_sr_tva_intracom" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TvaIntraCom</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TvaIntraCom</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">0</field>
+        </record>
+
+        <!-- Attributs pour BlocPiece -->
+        <record id="pes_attrs_sr_2_2_1_1_2" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TypPce</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TypPce</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value_type">reference</field>
+            <field name="reference_id" ref="horanet_demat_ormc_psv2.pes_ref_6"/>
+            <field name="value">Titre ORMC</field>
+        </record>
+        <record id="pes_attrs_sr_2_2_1_1_3" model="pes.bloc.attrs">
+            <field name="name">Attrs pour NatPce</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour NatPce</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value_type">reference</field>
+            <field name="reference_id" ref="horanet_demat_ormc_psv2.pes_ref_7"/>
+            <field name="value">Fonctionnement</field>
+        </record>
+        <record id="pes_attrs_sr_2_2_1_1_4" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Edition</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Edition</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value_type">reference</field>
+            <field name="reference_id" ref="horanet_demat_ormc_psv2.pes_ref_8"/>
+            <field name="value">Avis des sommes à payer ORMC CPP</field>
+        </record>
+
+        <record id="pes_attrs_sr_id_pce" model="pes.bloc.attrs">
+            <field name="name">Attrs pour IdPce</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour IdPce</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value_type">simple</field>
+            <field name="value">get_id_pce</field>
+        </record>
+
+        <record id="pes_attrs_sr_num_dette" model="pes.bloc.attrs">
+            <field name="name">Attrs pour NumDette</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour NumDette</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value">id</field>
+        </record>
+
+        <record id="pes_attrs_sr_obj_pce" model="pes.bloc.attrs">
+            <field name="name">Attrs pour ObjPce</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour ObjPce</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value_type">simple</field>
+            <field name="value">batch_id.campaign_id.name</field>
+        </record>
+
+        <record id="pes_attrs_sr_per" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Per</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Per</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value_type">simple</field>
+            <field name="value">1</field>
+        </record>
+
+        <record id="pes_attrs_sr_cle1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Cle1</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Cle1</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value_type">simple</field>
+            <field name="value">get_cle1</field>
+        </record>
+
+        <record id="pes_attrs_sr_cle2" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Cle2</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Cle2</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value_type">simple</field>
+            <field name="value">get_cle2</field>
+        </record>
+
+        <!-- Attributs pour BlocBordereau -->
+        <record id="pes_attrs_sr_2_2_2_4" model="pes.bloc.attrs">
+            <field name="name">Attrs pour TypBord</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour TypBord</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value_type">reference</field>
+            <field name="reference_id" ref="horanet_demat_ormc_psv2.pes_ref_5"/>
+            <field name="value">Ordres de recette multi créanciers (ORMC)</field>
+        </record>
+        <record id="pes_attrs_sr_2_2_2_5" model="pes.bloc.attrs">
+            <field name="name">Attrs pour NbrPce</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour NbrPce</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_nbr_pieces</field>
+        </record>
+        <record id="pes_attrs_sr_2_2_2_6" model="pes.bloc.attrs">
+            <field name="name">Attrs pour MtBordHt</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour MtBordHt</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">_compute_total_untaxed_amount</field>
+        </record>
+        <record id="pes_attrs_sr_2_2_2_7" model="pes.bloc.attrs">
+            <field name="name">Attrs pour DteAsp</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour DteAsp</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_date_emission_bordereau</field>
+        </record>
+        <record id="pes_attrs_sr_2_2_2_8" model="pes.bloc.attrs">
+            <field name="name">Attrs pour Objet</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour Objet</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_object</field>
+        </record>
+
+        <!-- Attributs pour EnTeteRecette -->
+        <record id="pes_attrs_sr_2_1_1" model="pes.bloc.attrs">
+            <field name="name">Attrs pour IdVer</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour IdVer</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">2</field>
+        </record>
+        <record id="pes_attrs_sr_2_1_2" model="pes.bloc.attrs">
+            <field name="name">Attrs pour InfoDematerialisee</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour InfoDematerialisee</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">1</field>
+        </record>
+
+        <!-- Attributs pour InfoPrelevementSEPA -->
+        <record id="pes_bloc_attrs_mandate_infos_to_add" model="pes.bloc.attrs">
+            <field name="name">Attrs pour ajouter les blocs d'informations du mandat</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour ajouter les blocs d'informations du mandat</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">subscription_id.banking_mandate</field>
+        </record>
+
+        <record id="pes_bloc_attrs_nat_prel" model="pes.bloc.attrs">
+            <field name="name">Attrs pour NatPrel</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour NatPrel</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">01</field>
+        </record>
+
+        <record id="pes_bloc_attrs_per_prel" model="pes.bloc.attrs">
+            <field name="name">Attrs pour PerPrel</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour PerPrel</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">07</field>
+        </record>
+
+        <record id="pes_bloc_attrs_dte_prel" model="pes.bloc.attrs">
+            <field name="name">Attrs pour DtePrel</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour DtePrel</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">date_maturity</field>
+        </record>
+
+        <record id="pes_bloc_attrs_mt_prel" model="pes.bloc.attrs">
+            <field name="name">Attrs pour MtPrel</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour MtPrel</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_ormc_debit</field>
+        </record>
+
+        <record id="pes_bloc_attrs_sequence_pres" model="pes.bloc.attrs">
+            <field name="name">Attrs pour SequencePres</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour SequencePres</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">text</field>
+            <field name="value">03</field>
+        </record>
+
+        <record id="pes_bloc_attrs_date_sign_mandat" model="pes.bloc.attrs">
+            <field name="name">Attrs pour DateSignMandat</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour DateSignMandat</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">mandate_id.signature_date</field>
+        </record>
+
+        <record id="pes_bloc_attrs_ref_unit_md" model="pes.bloc.attrs">
+            <field name="name">Attrs pour RefUniMdt</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour RefUniMdt</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">field</field>
+            <field name="value">mandate_id.unique_mandate_reference</field>
+        </record>
+
+        <record id="pes_bloc_attrs_lib_prel" model="pes.bloc.attrs">
+            <field name="name">Attrs pour LibPrel</field>
+            <field name="code">V</field>
+            <field name="description">Attribut pour LibPrel</field>
+            <field name="attrs_type">simple</field>
+            <field name="field_type">function</field>
+            <field name="value">get_product_code</field>
+        </record>
+
+
+    </data>
+</odoo>

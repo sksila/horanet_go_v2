@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="inherited_view_partner_setup_wizard_stage_template_choice_pp" model="ir.ui.view">
+        <field name="name">partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_stage_template_choice"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='new_situation_date']" position="replace"/>
+        </field>
+    </record>
+
+    <record id="inherited_view_partner_setup_wizard_stage_support_attribution" model="ir.ui.view">
+        <field name="name">partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_stage_support_attribution"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='tags_list']" position="after">
+                <field name="old_production_point_id" invisible="1"/>
+                <field name="new_production_point_id" invisible="1"/>
+                <field name="create_or_select_production_point" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_setup_wizard_stage_production_point_attribution" model="ir.ui.view">
+        <field name="name">partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_base"/>
+        <field name="mode">primary</field>
+        <field name="priority">0</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='view_partner_setup_wizard_content']" position="inside">
+                <field name="count_production_points" invisible="1"/>
+                <field name="count_new_production_points" invisible="1"/>
+                <field name="partner_move_id" invisible="1"/>
+
+                <group colspan="4">
+                    <field name="new_situation_date"/>
+                </group>
+
+                <group>
+                    <group colspan="4">
+                        <field name="create_or_select_production_point" widget="radio" nolabel="1"
+                               options="{'horizontal': true}"/>
+                    </group>
+
+                    <newline/>
+
+                    <div attrs="{'invisible': [('create_or_select_production_point', '=', 'new')]}">
+                        <div name="old_production_point">
+                            <h2 style="color: #7c7bad;">Current production point</h2>
+                            <label for="old_production_point_id" style="font-weight: bold;"/>
+                            <field name="old_production_point_id"
+                                   options="{'no_open': True, 'no_create': True}"
+                                   attrs="{'required': [('create_or_select_production_point', '!=', 'new')]}"/>
+                            <label for="old_residence_type" style="font-weight: bold;"
+                                   attrs="{'invisible': [('old_production_point_id', '=', False)]}"/>
+                            <field name="old_residence_type"
+                                   attrs="{'invisible': [('old_production_point_id', '=', False)]}"
+                                   readonly="1"/>
+                            <group>
+                                <button string="Change residence type"
+                                        name="action_change_old_residence_type" type="object" class="btn-info"
+                                        attrs="{'invisible': [('create_or_select_production_point', '!=', 'modify')]}"/>
+                            </group>
+
+                        </div>
+                    </div>
+
+                    <div attrs="{'invisible': [('create_or_select_production_point', '=', 'modify')]}">
+                        <field name="city_state_id" invisible="1"/>
+                        <field name="city_country_id" invisible="1"/>
+                        <field name="zip" invisible="1"/>
+                        <div name="new_production_point">
+                            <h2 style="color: #7c7bad;">New production point</h2>
+                            <div class="oe_edit_only o_address_format" colspan="2">
+                                <field name="zip_id" placeholder="ZIP" class="h_address_zip"
+                                       options="{'no_open': True, 'no_create': False}"/>
+                                <field name="city_id" placeholder="City" class="h_address_city"
+                                       options="{'no_open': True, 'no_create': False}"/>
+                                <field name="street_number_id" placeholder="Street number..."
+                                       class="h_address_street_number"
+                                       options="{'no_open': True, 'no_create': False}"/>
+                                <field name="street_id" placeholder="Street..." class="h_address_street"
+                                       options="{'no_open': True, 'no_create': False}"/>
+                                <field name="street2"
+                                       placeholder="Additional address (floor, stairs, apartment number) ..."/>
+                                <field name="street3" placeholder="Second additional address (building, access) ..."/>
+                                <field name="state_id" placeholder="State..." class="h_address_state"
+                                       options="{'no_open': True, 'no_create': True}"/>
+                                <field name="country_id" placeholder="Country ..." class="h_address_country"
+                                       options="{'no_open': True, 'no_create': True}"/>
+                            </div>
+
+                            <newline/>
+                            <newline/>
+
+                            <label for="new_production_point_id" style="font-weight: bold;"
+                                   attrs="{'invisible': [('count_new_production_points','=',0)]}"/>
+                            <field name="new_production_point_id"
+                                   options="{'no_open': True, 'no_create': True}"
+                                   attrs="{'invisible': [('count_new_production_points','=',0)]}"/>
+
+                            <newline/>
+
+                            <label for="new_residence_type" style="font-weight: bold;"/>
+                            <field name="new_residence_type" widget="radio" options="{'horizontal': true}"
+                                   attrs="{'required': [('create_or_select_production_point', '!=', 'modify')]}"/>
+
+                            <newline/>
+
+                            <label for="shown_production_point_move_ids" style="font-weight: bold;"
+                                   attrs="{'invisible': ['|',
+                                                     ('new_production_point_id', '=', False),
+                                                     ('count_new_production_points','=',0),
+                                                     ]}"/>
+                            <field name="shown_production_point_move_ids"
+                                   attrs="{'invisible': ['|',
+                                                     ('new_production_point_id', '=', False),
+                                                     ('count_new_production_points','=',0),
+                                                     ]}">
+                                <tree editable="top"
+                                      default_order="end_date desc"
+                                >
+                                    <field name="partner_id"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                </tree>
+                            </field>
+
+                            <button string="Validate new production point"
+                                    name="action_create_production_point" type="object" class="btn-info"
+                                    attrs="{'invisible': [('count_new_production_points','>',0)]}"/>
+                        </div>
+                    </div>
+
+                    <group colspan="4">
+                        <div class="alert alert-info"
+                             attrs="{'invisible': [
+                                                  '|',
+                                                  '|',
+                                                  ('new_production_point_id', '=', False),
+                                                  ('create_or_select_production_point', '!=', 'move'),
+                                                  ('partner_move_id', '!=', False),
+                                                  ]}">
+                            By validating this stage, you will end the old partner's move and create the new one
+                        </div>
+                        <newline/>
+                        <div class="alert alert-info"
+                             attrs="{'invisible': [
+                                                  '|',
+                                                  '|',
+                                                  ('new_production_point_id', '=', False),
+                                                  ('create_or_select_production_point', '!=', 'new'),
+                                                  ('partner_move_id', '!=', False),
+                                                  ]}">
+                            By validating this stage, you will create partner's move
+                        </div>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherited_view_partner_setup_wizard_summary_production_point" model="ir.ui.view">
+        <field name="name">inherited.partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_summary"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='subscription']" position="before">
+                <field name="new_production_point_id" invisible="1"/>
+
+                <group name="production_point" string="Partner moves">
+                    <field name="partner_move_ids" context="{'default_partner_id': id}" nolabel="1" readonly="1">
+                        <tree default_order="start_date desc, end_date desc">
+                            <field name="production_point_id"/>
+                            <field name="residence_type"/>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </tree>
+                    </field>
+                </group>
+            </xpath>
+            <xpath expr="//button[@name='close']" position="before">
+                <button string="Create another production point"
+                        name="action_create_another_production_point" type="object" class="btn-info"
+                        context="{'current_stage': stage_id}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="inherited_res_partner_form_view" model="ir.ui.view">
+        <field name="name">inherited.partner.setup.wizard.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="environment_waste_collect.res_partner_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='%(environment_waste_collect.action_partner_setup_wizard)d']"
+                   position="replace">
+                <button name="%(environment_waste_collect.action_partner_setup_wizard)d" string="Partner setup"
+                        type="action"
+                        class="oe_highlight oe_read_only"
+                        context="{
+                            'default_partner_id': id,
+                            'default_city_id': city_id,
+                            'default_zip_id': zip_id,
+                            'default_street_id': street_id,
+                            'default_street2': street2,
+                            'default_street3': street3,
+                            'default_street_number_id': street_number_id,
+                            'default_country_id': country_id,
+                            'default_state_id': state_id,
+                            }"
+                        attrs="{'invisible': [('setup_and_close_wizards_enabled', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

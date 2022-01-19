@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_pes_bloc_attrs_form" model="ir.ui.view">
+        <field name="name">PES bloc attributes base form</field>
+        <field name="model">pes.bloc.attrs</field>
+        <field name="arch" type="xml">
+            <form string="File Bloc Attribute">
+                <header>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="attrs_type"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="value_type"/>
+                            <field name="reference_id" attrs="{'invisible': [('value_type','!=','reference')]}"/>
+                            <field name="field_type"/>
+                            <field name="value"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_pes_bloc_attrs_tree" model="ir.ui.view">
+        <field name="name">PES bloc attributes tree</field>
+        <field name="model">pes.bloc.attrs</field>
+        <field name="arch" type="xml">
+            <tree string="File Bloc Attribute">
+                <field name="name"/>
+                <field name="attrs_type"/>
+                <field name="description"/>
+                <field name="field_type"/>
+                <field name="value_type"/>
+                <field name="value"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="pes_bloc_attrs_action">
+        <field name="name">File Bloc attributes</field>
+        <field name="res_model">pes.bloc.attrs</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>

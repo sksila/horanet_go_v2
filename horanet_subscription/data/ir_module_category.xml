@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_group_subscription_role" model="ir.module.category">
+        <field name="name">Subscription</field>
+        <field name="description">Subscription rôle</field>
+        <field name="sequence">10</field>
+    </record>
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- On calcule les opérations encore à l'état nouveau pour pouvoir les facturer -->
+    <function model="exploitation.engine" name="_cron_compute_operation" eval="({'max_retry': 1, 'limit': 10},)"/>
+
+    <!-- Code budget -->
+    <record id="demo_env_budget_code" model="horanet.budget.code">
+        <field name="budget_code">OM COLL</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="application_type">environment</field>
+    </record>
+
+    <!-- Types de lots -->
+    <record id="demo_env_batch_type" model="horanet.invoice.batch.type">
+        <field name="application_type">environment</field>
+        <!--<field name="payment_mode_id" ref="payment_method_not_withdrawn"/>-->
+        <field name="partner_category_id" ref="horanet_environment.environment_category_professional"/>
+    </record>
+
+    <!-- Exercice -->
+    <record id="demo_env_accounting_date_range" model="horanet.accounting.date.range">
+        <field name="accouting_year" eval="(datetime.now()).strftime('%Y')"/>
+        <field name="company_id" ref="base.main_company"/>
+    </record>
+
+    <!-- Campagnes -->
+    <record id="demo_env_campaign" model="horanet.invoice.campaign">
+        <field name="name">3 derniers mois</field>
+        <field name="budget_code_id" ref="demo_env_budget_code"/>
+    </record>
+
+    <!-- Périodes de prestation -->
+    <record id="demo_env_prestation_periods" model="horanet.campaign.prestation.period">
+        <field name="campaign_id" ref="demo_env_campaign"/>
+        <field name="prestation_ids" eval="[(6,0,[ref('environment_waste_collect.demo_prestation_environment_deposit_free'),
+                                                  ref('environment_waste_collect.demo_prestation_environment_deposit_salable')])]"/>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=3)).strftime('%Y-%m-01 00:00')"/>
+        <field name="end_date" eval="(datetime.now()).strftime('%Y-%m-01 00:00')"/>
+    </record>
+
+    <!-- Lots -->
+    <record id="demo_env_batch" model="horanet.invoice.batch">
+        <field name="type_id" ref="demo_env_batch_type"/>
+        <field name="campaign_id" ref="demo_env_campaign"/>
+    </record>
+    <function model="horanet.invoice.batch" name="action_generate" eval="[ref('demo_env_batch')]"/>
+
+    <!-- Rôles -->
+    <record id="demo_env_role" model="horanet.role">
+        <field name="batch_id" ref="demo_env_batch"/>
+        <field name="fiscal_year" ref="demo_env_accounting_date_range"/>
+        <field name="number">1</field>
+        <field name="recipe_title">123</field>
+    </record>
+    <function model="horanet.role" name="action_change_state_role" eval="[ref('demo_env_role')]"/>
+</odoo>

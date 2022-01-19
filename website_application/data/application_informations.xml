@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="application_information_other_informations" model="application.information">
+        <field name="name">Other informations</field>
+        <field name="type">text</field>
+        <field name="sequence">0</field>
+    </record>
+</odoo>

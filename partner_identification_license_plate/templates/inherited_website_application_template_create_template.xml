@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inherited_create_request_application_template" name="Create a request"
+              inherit_id="website_application.create_request_application_template">
+        <!-- xpath mortel -->
+        <xpath expr="//div[@class='application_add_documents']/form//t[@t-if='other_informations']/t/div//div[@class='col-md-7']"
+               position="inside">
+            <t t-if="other_information.type == 'license_plate'">
+                <input class="form-control"
+                       type="text"
+                       t-att-name="'information_' + str(other_information.id)"
+                       style="width: 100%;"
+                       t-att-required="other_information.is_required and (other_information.website_application_stage_id.name or '') == current_stage"
+                       t-att-value="post.get('information_' + str(other_information.id), '') or False"
+                />
+            </t>
+        </xpath>
+    </template>
+</odoo>

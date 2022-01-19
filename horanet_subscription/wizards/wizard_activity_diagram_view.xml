@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_activity_diagram" model="ir.ui.view">
+        <field name="name">Diagram relation sectors and rules</field>
+        <field name="model">wizard.activity.diagram</field>
+        <field name="arch" type="xml">
+            <diagram string="Activity diagram">
+                <node object="wizard.activity.diagram.node" shape="rectangle:type=='sector'"
+                      bgcolor="
+                      #ffd9a3:type=='sector' and outgoing_arrow;
+                      #f7a03e:type=='sector' and not outgoing_arrow;
+                      #ddc2f3:type=='rule' and outgoing_arrow;
+                      #ba74f3:type=='rule' and not outgoing_arrow;">
+                    <field name="name"/>
+                    <field name="diagram"/>
+                    <field name="type"/>
+                    <field name="outgoing_arrow"/>
+                </node>
+                <arrow object="wizard.activity.diagram.arrow" source="source" destination="destination"
+                       label="['label']">
+                    <field name="source"/>
+                    <field name="destination"/>
+                    <field name="label"/>
+                </arrow>
+                <label string="This diagram represent the relations between activity rules and sectors"/>
+            </diagram>
+        </field>
+    </record>
+
+    <record id="wizard_activity_diagram_action" model="ir.actions.act_window">
+        <field name="name">Activity diagram</field>
+        <field name="res_model">wizard.activity.diagram</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,diagram</field>
+        <field name="target">inline</field>
+    </record>
+</odoo>

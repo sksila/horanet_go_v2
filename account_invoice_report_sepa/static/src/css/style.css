@@ -1,0 +1,10 @@
+@font-face
+{
+    font-family: font_ocrb;
+    src: url('/account_invoice_report_sepa/static/src/font/ocrbb.ttf');
+}
+#kjhfljrhbdljkrgbidurthgnbody
+{
+font-family:font_ocrb;
+text-align:center;
+}

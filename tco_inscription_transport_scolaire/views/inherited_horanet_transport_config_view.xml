@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_collectivity_config_settings" model="ir.ui.view">
+        <field name="name">TCO inscription Setting</field>
+        <field name="model">horanet.transport.config</field>
+        <field name="inherit_id" ref="horanet_transport.view_form_horanet_transport_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='group_settings_contact_detail']" position="after">
+                <newline/>
+                <group name="tco_inscription_settings" string="Transport" colspan="2">
+                    <group>
+                        <label for="cheque_background_image"></label>
+                        <field name="cheque_background_image" nolabel="1" widget='image' options='{"size": [100, 50]}'
+                               style="width:100px"/>
+                    </group>
+                    <group></group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

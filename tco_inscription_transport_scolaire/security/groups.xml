@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_tco_inscription_manage" model="res.groups">
+        <field name="name">Manage Inscription</field>
+        <field name="category_id" ref="horanet_go.horanet_go_category"/>
+        <field name="comment">Enable the menus to manage scholar transport inscriptions.</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    </record>
+</odoo>

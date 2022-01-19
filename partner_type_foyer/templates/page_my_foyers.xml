@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="my_foyers" name="Foyer">
+        <div class="horanet_blockui horanet_spinner" style="display:inline-block"/>
+        <t t-call="website.layout">
+            <div class="container mt16 mb32 view_foyer">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ol class="breadcrumb">
+                            <li>
+                                <a href="/my/home">My Account</a>
+                            </li>
+                            <li>Foyers</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row" t-if="foyer">
+                    <div class="col-md-6">
+                        <h3 class="page-header">Foyer details</h3>
+                        <div class="col-md-8" style="font-size: 1.1em;" t-field="foyer.self"
+                             t-field-options='{"widget": "contact", "fields": ["email", "phone", "address", "name"]}'/>
+
+                        <div class="col-md-12 mt32 clearfix">
+                            <a href="/my/foyers/create/member" class="btn btn-default btn-primary pull-left a-submit">
+                                <i class="fa fa-user-plus" aria-hidden="true" t-translation="off"/>
+                                Create new member
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 class="page-header">Member list</h3>
+                        <div class="member_accordion base">
+                            <t t-foreach="foyer.foyer_member_ids.sorted(key=lambda b: b.partner_id.name)"
+                               t-as="relation">
+                                <t t-foreach="relation.partner_id" t-as="member">
+                                    <h3>
+                                        <t t-esc="member.name"/>
+                                        <t t-if="member.id == partner.id">
+                                            (It's you)
+                                        </t>
+                                    </h3>
+                                    <div class="portlet-content">
+                                        <div class="row mt8">
+                                            <span class="col-md-3" style="text-align: center;"
+                                                  t-field="member.image"
+                                                  t-field-options='{"widget": "image", "class": "img-thumbnail"}'/>
+                                            <div class="col-md-9" t-field="member.self"
+                                                 t-field-options='{"widget": "contact", "fields": ["email", "phone", "address", "name"]}'/>
+                                        </div>
+
+                                        <hr class="separator"/>
+                                        <div class="row">
+                                            <div t-if="member.id == partner.id" class="col-md-12 mt8 mb8"
+                                                 t-att-user_member="member.id == partner.id">
+                                                <!--<button type="button"
+                                                        class="btn btn-warning pull-right remove_member">
+                                                    <span class="fa fa-user-times"/>
+                                                    Remove from foyer
+                                                </button>-->
+                                                <a href="/my/account"
+                                                   class="btn btn-default btn-primary pull-left a-submit"
+                                                   style="color:#fff;">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"
+                                                       t-translation="off"/>
+                                                    Edit your informations
+                                                </a>
+                                            </div>
+                                            <div t-if="member.id != partner.id" class="col-md-12 mt8 mb8">
+                                                <!--<button type="button"
+                                                        class="btn btn-warning pull-right remove_member">
+                                                    <span class="fa fa-user-times"/>
+                                                    Remove from foyer
+                                                </button>-->
+                                                <a t-attf-href="/my/foyers/edit/member/{{ member.id }}"
+                                                   class="btn btn-default btn-primary pull-left a-submit"
+                                                   style="color:#fff;">
+                                                    <i class="fa fa-pencil-square-o" aria-hidden="true"
+                                                       t-translation="off"/>
+                                                    Edit member informations
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" t-if="not foyer">
+                    <div class="col-sm-12">
+                        <div class="text-center">
+                            <div class="span12">
+                                <h1 class="page-header mb32">There is no foyer</h1>
+                                <p>It seems that you do not belong to any foyer.</p>
+                                <form action="/my/foyers" method="post">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <button type="submit" class="btn btn-primary" name="add_new_foyer" value="True">
+                                        <i class="fa fa-users" aria-hidden="true" t-translation="off"/>
+                                        Create a foyer
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

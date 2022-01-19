@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_method_withdrawn" model="account.payment.method">
+        <field name="name">Withdrawn</field>
+        <field name="code">withdrawn</field>
+        <field name="payment_type">inbound</field>
+        <field name="bank_account_required">True</field>
+    </record>
+    <record id="payment_method_not_withdrawn" model="account.payment.method">
+        <field name="name">Not withdrawn</field>
+        <field name="code">not_withdrawn</field>
+        <field name="payment_type">inbound</field>
+        <field name="bank_account_required">False</field>
+    </record>
+</odoo>

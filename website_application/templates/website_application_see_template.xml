@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="see_request" name="See a request">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container mt8 mb32">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="/my/home">My home</a>
+                        </li>
+                        <li>
+                            <a href="/my/requests/">My requests</a>
+                        </li>
+                        <li>See a request</li>
+                    </ol>
+
+                    <div class="mt16 mb16">
+                        <h1 class="text-center">
+                            Request reference:
+                            <span t-field="web_request.name"/>
+                        </h1>
+                    </div>
+
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <b>Type:</b>
+                        <span t-field="web_request.website_application_template_id"/>
+                        <br/>
+                        <br/>
+                        <b>State:</b>
+                        <span t-field="web_request.state"/>
+                        <br/>
+                        <t t-if="web_request.recipient_id">
+                            <br/>
+                            <b>Recipient:</b>
+                            <span t-field="web_request.recipient_id"/>
+                            <br/>
+                        </t>
+                        <t t-if="attachment_ids">
+                            <t t-foreach="attachment_ids" t-as="document">
+                                <br/>
+                                <b><t t-esc="document.document_type_id.name"/>:
+                                </b>
+                                <a t-attf-href="/my/documents/preview/{{ document.id }}" target="_blank">
+                                    <span t-field="document.name"/>
+                                </a>
+                                <t t-if="document.status == 'rejected'">
+                                    <a t-att-href="'/my/documents/update/%s?redirect=/my/requests/%s' % (str(document.id), str(web_request.id))"
+                                       class="btn btn-info">
+                                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                                        Edit
+                                    </a>
+                                </t>
+                                <br/>
+                            </t>
+                        </t>
+                        <br/>
+                        <t t-if="information_ids">
+                            <t t-foreach="information_ids" t-as="information">
+                                <b><t t-esc="information.name"/>:
+                                </b>
+                                <span t-field="information.value"/>
+                                <br/>
+                                <br/>
+                            </t>
+                        </t>
+                        <b>Messages</b>
+                        <br/>
+                        <table class="table table-striped table-bordered table-hover table-condensed">
+                            <t t-foreach="web_request.messages_ids" t-as="message">
+                                <tr>
+                                    <td>
+                                        <div style="font-style: italic;">From:
+                                            <span t-field="message.user_id"/>
+                                            at
+                                            <span t-field="message.submit_date"/>
+                                        </div>
+                                        <br/>
+                                        <span t-field="message.text"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
+
+                        <form method="POST" t-att-action="'/my/requests/' + str(request_id)">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <b>Post a message</b>
+                            <br/>
+                            <textarea class="form-control" name="message" style="min-height: 100px"
+                                      required="True"></textarea>
+                            <br/>
+                            <button class="btn btn-default">Submit</button>
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

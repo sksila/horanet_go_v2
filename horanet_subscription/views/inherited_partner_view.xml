@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner_form_view" model="ir.ui.view">
+        <field name="name">Add contract informations</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button type="object"
+                        class="oe_stat_button"
+                        id="subscription_list_button"
+                        icon="fa-pencil-square-o"
+                        name="open_partner_subscription"
+                        context="{'default_client_id': active_id}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="subscription_count"/>
+                        </span>
+                        <span class="o_stat_text">Subscription</span>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

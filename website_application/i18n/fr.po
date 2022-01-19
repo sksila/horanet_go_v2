@@ -1,0 +1,1343 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_application
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-14 09:35+0000\n"
+"PO-Revision-Date: 2018-11-14 09:35+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_website_application_template_state
+msgid "'active': this application template is available to front users\n"
+"\n"
+"            'inactive': this application template is not available to front users"
+msgstr "'active': ce téléservice est proposé aux utilisateurs du site web\n"
+"\n"
+"            'inactive': ce téléservice n'est pas proposé aux utilisateurs du site web"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_application_information_type
+msgid "'number': number input field\n"
+"\n"
+"            'text': one-line text input field\n"
+"\n"
+"            'option': radio button to get a boolean value\n"
+"\n"
+"            'selection': selection box with custom choice values\n"
+"\n"
+"            'date': date input field\n"
+"\n"
+"            'document': document input field\n"
+"\n"
+"            'explanation': informative html field\n"
+"\n"
+"            'model': selection box with values from corresponding model"
+msgstr "'number': number input field\n"
+"\n"
+"            'text': one-line text input field\n"
+"\n"
+"            'option': radio button to get a boolean value\n"
+"\n"
+"            'selection': selection box with custom choice values\n"
+"\n"
+"            'date': date input field\n"
+"\n"
+"            'document': document input field\n"
+"\n"
+"            'explanation': informative html field\n"
+"\n"
+"            'model': selection box with values from corresponding model"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.website_application_template_view_form
+msgid "/page/terms-and-conditions"
+msgstr "/page/conditions-generales"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "<b>\n"
+"                            I certify the accuracy of the informations provided\n"
+"                        </b>\n"
+"                        <br/>\n"
+"                        <br/>"
+msgstr "<b>\n"
+"                        Je certifie l'exactitude des informations fournies\n"
+"                    </b>\n"
+"                    <br/>\n"
+"                    <br/>"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "<b>Messages</b>\n"
+"                        <br/>"
+msgstr "<b>Messages</b>\n"
+"                        <br/>"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "<b>Post a message</b>\n"
+"                            <br/>"
+msgstr "<b>Poster un message</b>\n"
+"                            <br/>"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "<b>Type:</b>"
+msgstr "<b>Type :</b>"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "<br/>\n"
+"                            <b>Recipient:</b>"
+msgstr "<br/>\n"
+"                            <b>Bénéficiaire :</b>"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "<br/>\n"
+"                        <br/>\n"
+"                        <b>State:</b>"
+msgstr "<br/>\n"
+"                        <br/>\n"
+"                        <b>Statut :</b>"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "<i class=\"fa fa-pencil\" aria-hidden=\"true\"/>\n"
+"                                        Edit"
+msgstr "<i class=\"fa fa-pencil\" aria-hidden=\"true\"/>\n"
+"                                        Modifier"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "<i>Click on the document to select it (hold down the control (Ctrl) button to select multiple documents)</i>"
+msgstr "<i>Veuillez cliquer sur le document déposé pour le selectionner (maintenez la touche contrôle (Ctrl) enfoncée pour sélectionner plusieurs documents)</i>"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "<i>Hold down the control (Ctrl) button to select multiple documents</i>"
+msgstr "<i>Maintenez la touche contrôle (Ctrl) enfoncée pour sélectionner plusieurs documents</i>"
+
+#. module: website_application
+#: model:mail.template,body_html:website_application.email_application_accepted
+msgid "<p>${object.applicant_id.partner_id.title.name or ''}\n"
+"${object.applicant_id.partner_id.name},<br/>\n"
+"<br/>\n"
+"We want you to acknowledge that your request reference ${object.name} has been accepted.\n"
+"For further details, you can check <a href=\"/my/requests/${object.id}\">your account</a>.<br/>\n"
+"<br/>\n"
+"Best regards, the Odoo team.</p>"
+msgstr "<p>${object.applicant_id.partner_id.title.name or ''}\n"
+"${object.applicant_id.partner_id.name},<br/>\n"
+"<br/>\n"
+"Nous vous apprenons que votre demande référencée ${object.name} a été acceptée.\n"
+"Pour plus de détails, vous pouvez accéder à <a href=\"/my/requests/${object.id}\">votre compte</a>.<br/>\n"
+"<br/>\n"
+"Cordialement,<br/>\n"
+"${user.signature | safe}</p>"
+
+#. module: website_application
+#: model:mail.template,body_html:website_application.email_application_rejected
+msgid "<p>${object.applicant_id.partner_id.title.name or ''}\n"
+"${object.applicant_id.partner_id.name},<br/>\n"
+"<br/>\n"
+"We want you to acknowledge that your request reference ${object.name} has been rejected.\n"
+"For further details, you can check <a href=\"/my/requests/${object.id}\">your account</a>.<br/>\n"
+"<br/>\n"
+"Best regards, the Odoo team.</p>"
+msgstr "<p>${object.applicant_id.partner_id.title.name or ''}\n"
+"${object.applicant_id.partner_id.name},<br/>\n"
+"<br/>\n"
+"Nous vous apprenons que votre demande référencée ${object.name} a été rejetée.\n"
+"Pour plus de détails, vous pouvez accéder à <a href=\"/my/requests/${object.id}\">votre compte</a>.<br/>\n"
+"<br/>\n"
+"Cordialement,<br/>\n"
+"${user.signature | safe}</p>"
+
+#. module: website_application
+#: model:mail.template,body_html:website_application.email_application_pending
+msgid "<p>${object.applicant_id.partner_id.title.name or ''}\n"
+"${object.applicant_id.partner_id.name},<br/>\n"
+"<br/>\n"
+"We want you to acknowledge that your request reference ${object.name} is currently studied.\n"
+"You will receive soon an answer for it.<br/>\n"
+"<br/>\n"
+"Best regards, the Odoo team.</p>"
+msgstr "<p>${object.applicant_id.partner_id.title.name or ''}\n"
+"${object.applicant_id.partner_id.name},<br/>\n"
+"<br/>\n"
+"Nous vous apprenons que votre demande référencée ${object.name} est en cours d'étude.\n"
+"Vous recevrez bientôt une réponse la concernant.<br/>\n"
+"<br/>\n"
+"Cordialement,<br/>\n"
+"${user.signature | safe}</p>"
+
+#. module: website_application
+#: model:mail.template,body_html:website_application.email_application_new_message
+msgid "<p>${object.applicant_id.partner_id.title.name or ''}\n"
+"${object.applicant_id.partner_id.name},<br/>\n"
+"<br/>\n"
+"You have received a new message for your request reference ${object.name}.\n"
+"For further details, you can check <a href=\"/my/requests/${object.id}\">your account</a>.<br/>\n"
+"<br/>\n"
+"Best regards, the Odoo team.</p>"
+msgstr "<p>${object.applicant_id.partner_id.title.name or ''}\n"
+"${object.applicant_id.partner_id.name},<br/>\n"
+"<br/>\n"
+"Vous avez reçu un nouveau message pour votre demande référencée ${object.name}.\n"
+"Pour plus de détails, vous pouvez accéder à <a href=\"/my/requests/${object.id}\">votre compte</a>.<br/>\n"
+"<br/>\n"
+"Cordialement,<br/>\n"
+"${user.signature | safe}</p>"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_form_website_application
+msgid "<strong class=\"text-danger\" attrs=\"{'invisible': [('same_address', '!=', 'same_address_warning')]}\">\n"
+"                            Warnings:\n"
+"                        </strong>\n"
+"                        <br/>\n"
+"                        <span class=\"text-danger\" attrs=\"{'invisible': [('same_address', '!=', 'same_address_warning')]}\">\n"
+"                            -Multi requests with the same address\n"
+"                            <br/>\n"
+"                        </span>\n"
+"                        <span class=\"text-warning\" attrs=\"{'invisible': [('same_address', '!=', 'same_address_accepted')]}\">\n"
+"                            -Multi requests with the same address\n"
+"                            <br/>\n"
+"                        </span>"
+msgstr "<strong class=\"text-danger\" attrs=\"{'invisible': [('same_address', '!=', 'same_address_warning')]}\">\n"
+"                            Attention:\n"
+"                        </strong>\n"
+"                        <br/>\n"
+"                        <span class=\"text-danger\" attrs=\"{'invisible': [('same_address', '!=', 'same_address_warning')]}\">\n"
+"                            -Demande(s) en ligne similaire(s) avec la même adresse\n"
+"                            <br/>\n"
+"                        </span>\n"
+"                        <span class=\"text-warning\" attrs=\"{'invisible': [('same_address', '!=', 'same_address_accepted')]}\">\n"
+"                            -Demande(s) en ligne similaire(s) avec la même adresse:\n"
+"                            <br/>\n"
+"                        </span>"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "Abort"
+msgstr "Annuler"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_form_website_application
+msgid "Accept request"
+msgstr "Accepter"
+
+#. module: website_application
+#: selection:website.application,state:0
+msgid "Accepted"
+msgstr "Acceptée"
+
+#. module: website_application
+#: selection:website.application.template,state:0
+msgid "Active"
+msgstr "Actif"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "Add any additional informations"
+msgstr "Ajoutez des informations supplémentaires si nécessaire"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_applicant_address
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Address"
+msgstr "Adresse"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_address_duplication
+msgid "Address duplication"
+msgstr "Adresses dupliquées"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_allow_multiple_documents_selection
+msgid "Allow multiple documents selection"
+msgstr "Autoriser la sélection de plusieurs documents"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_multiple_requests_allowed
+msgid "Allow multiple requests"
+msgstr "Autoriser plusieurs demandes"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_information.py:329
+#, python-format
+msgid "An explanation information can not be required"
+msgstr "Une information de type explication ne peut pas être obligatoire"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_application_information_allow_multiple_documents_selection
+msgid "Allow user to select multiple documents in list"
+msgstr "Autoriser l'utilisateur à sélectionner plusieurs documents dans la liste"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_applicant_id
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Applicant"
+msgstr "Demandeur"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_applicant_partner_id
+msgid "Applicant partner"
+msgstr "Demandeur partenaire"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_message_application_id
+msgid "Application"
+msgstr "Démarche en ligne"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.application_information_result_view_form
+#: model:ir.ui.view,arch_db:website_application.application_information_result_view_tree
+#: model:ir.ui.view,arch_db:website_application.application_information_view_form
+#: model:ir.ui.view,arch_db:website_application.application_information_view_tree
+msgid "Application information"
+msgstr "Information de démarche en ligne"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_application_type
+msgid "Application type"
+msgstr "Type d'application"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application.py:277
+#, python-format
+msgid "Attachments must be validated before accepting the request"
+msgstr "Les documents doivent être validés avant d'accepter la demande"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.website_application_template_view_form
+msgid "Automatic validation"
+msgstr "Validation automatique"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.website_application_template_view_form
+msgid "Avaibility properties"
+msgstr "Propriétés de disponibilité"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_template.py:196
+#, python-format
+msgid "Beginning and ending hours must be different"
+msgstr "Les heures de début et de fin doivent être différentes"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_beginning_date
+msgid "Beginning date"
+msgstr "Date de début"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_template.py:222
+#, python-format
+msgid "Beginning date must be inferior to ending date"
+msgstr "La date de début doit être inférieure à la date de fin"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_website_application_block_id
+msgid "Block"
+msgstr "Bloc"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_terms_checkbox_label
+msgid "Checkbox label"
+msgstr "Libellé de la case à cocher"
+
+#. module: website_application
+#: selection:application.information,type:0
+#: model:ir.model.fields,field_description:website_application.field_application_information_choice_name
+msgid "Choice"
+msgstr "Choix"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_closing_hour
+msgid "Closing hour"
+msgstr "Heure de fin"
+
+#. module: website_application
+#: model:ir.attachment.type,name:website_application.attachment_type_terms_and_conditions
+msgid "Conditions générales"
+msgstr "Conditions générales"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "Continue"
+msgstr "Continuer"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_functionality_create_uid
+#: model:ir.model.fields,field_description:website_application.field_application_information_choice_create_uid
+#: model:ir.model.fields,field_description:website_application.field_application_information_create_uid
+#: model:ir.model.fields,field_description:website_application.field_website_application_block_create_uid
+#: model:ir.model.fields,field_description:website_application.field_website_application_create_uid
+#: model:ir.model.fields,field_description:website_application.field_website_application_message_create_uid
+#: model:ir.model.fields,field_description:website_application.field_website_application_stage_create_uid
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_functionality_create_date
+#: model:ir.model.fields,field_description:website_application.field_application_information_choice_create_date
+#: model:ir.model.fields,field_description:website_application.field_application_information_create_date
+#: model:ir.model.fields,field_description:website_application.field_website_application_block_create_date
+#: model:ir.model.fields,field_description:website_application.field_website_application_create_date
+#: model:ir.model.fields,field_description:website_application.field_website_application_message_create_date
+#: model:ir.model.fields,field_description:website_application.field_website_application_stage_create_date
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: website_application
+#: selection:application.information,type:0
+#: model:ir.ui.view,arch_db:website_application.requests
+msgid "Date"
+msgstr "Date "
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_value_date_changing_establishment
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Date of changing establishment"
+msgstr "Date du changement d'établissement"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_value_date_changing_residence
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Date of changing residence"
+msgstr "Date du changement de résidence"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_value_date
+msgid "Date of the request"
+msgstr "Date de la requête"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_description
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_description
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "Description"
+msgstr "Description"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_website_application_template_description
+msgid "Description of the application"
+msgstr "Description de la démarche en ligne"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_application_information_description
+msgid "Description shown to front users"
+msgstr "Description destinée aux utilisateurs"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.requests
+msgid "Destinataire"
+msgstr "Bénéficiaire"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_functionality_display_name
+#: model:ir.model.fields,field_description:website_application.field_application_information_choice_display_name
+#: model:ir.model.fields,field_description:website_application.field_application_information_display_name
+#: model:ir.model.fields,field_description:website_application.field_website_application_block_display_name
+#: model:ir.model.fields,field_description:website_application.field_website_application_display_name
+#: model:ir.model.fields,field_description:website_application.field_website_application_message_display_name
+#: model:ir.model.fields,field_description:website_application.field_website_application_stage_display_name
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: website_application
+#: selection:application.information,type:0
+#: selection:website.application.template,terms_link_target_type:0
+msgid "Document"
+msgstr "Document"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_document_type_id
+msgid "Document type"
+msgstr "Type de document"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_attachment_ids
+msgid "Documents"
+msgstr "Documents"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_ending_date
+msgid "Ending date"
+msgstr "Date de fin"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_template.py:200
+#, python-format
+msgid "Enter a valid beginning hour"
+msgstr "Veuillez renseigner une heure de début valide"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_template.py:205
+#, python-format
+msgid "Enter a valid closing hour"
+msgstr "Veuillez renseigner une heure de fin valide"
+
+#. module: website_application
+#: selection:application.information,type:0
+msgid "Explanation"
+msgstr "Explication"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_text_explanation
+msgid "Explanation text"
+msgstr "Texte d'explication"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_message_user_id
+msgid "From"
+msgstr "De"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "From:"
+msgstr "De:"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_website_application_template_validation_action_id
+#: model:ir.model.fields,help:website_application.field_website_application_validation_action_id
+msgid "Function to call on application's validation"
+msgstr "Fonction à appeler à la validation de la demande"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_functionality_id
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_functionality_id
+msgid "Functionality"
+msgstr "Fonctionnalité"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.requests
+#: model:ir.ui.view,arch_db:website_application.website_application_template_view_form
+msgid "General"
+msgstr "Général"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_help_image
+msgid "Help image"
+msgstr "Image d'aide"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_template.py:99
+#, python-format
+msgid "I have read and accepted the"
+msgstr "J'ai lu et accepté les"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_functionality_id
+#: model:ir.model.fields,field_description:website_application.field_application_information_choice_id
+#: model:ir.model.fields,field_description:website_application.field_application_information_id
+#: model:ir.model.fields,field_description:website_application.field_website_application_block_id
+#: model:ir.model.fields,field_description:website_application.field_website_application_id
+#: model:ir.model.fields,field_description:website_application.field_website_application_message_id
+#: model:ir.model.fields,field_description:website_application.field_website_application_stage_id
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_id
+msgid "ID"
+msgstr "ID"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_application_information_help_image
+msgid "Image shown on mouse hover to help front user"
+msgstr "Image affichée au passage de la souris pour aider l'utilisateur"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_application_front_image
+msgid "Image used in applications list"
+msgstr "Image utilisé dans la liste des démarches en lignes"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_form_website_application
+msgid "In progress"
+msgstr "En cours"
+
+#. module: website_application
+#: selection:website.application.template,state:0
+msgid "Inactive"
+msgstr "Inactif"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_form_website_application
+msgid "Informations"
+msgstr "Informations"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_information.py:389
+#, python-format
+msgid "Invalid type"
+msgstr "Type non valide"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_is_active_all_day
+msgid "Is active all day long"
+msgstr "Est actif toute la journée"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_functionality___last_update
+#: model:ir.model.fields,field_description:website_application.field_application_information___last_update
+#: model:ir.model.fields,field_description:website_application.field_application_information_choice___last_update
+#: model:ir.model.fields,field_description:website_application.field_website_application___last_update
+#: model:ir.model.fields,field_description:website_application.field_website_application_block___last_update
+#: model:ir.model.fields,field_description:website_application.field_website_application_message___last_update
+#: model:ir.model.fields,field_description:website_application.field_website_application_stage___last_update
+#: model:ir.model.fields,field_description:website_application.field_website_application_template___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_functionality_write_uid
+#: model:ir.model.fields,field_description:website_application.field_application_information_choice_write_uid
+#: model:ir.model.fields,field_description:website_application.field_application_information_write_uid
+#: model:ir.model.fields,field_description:website_application.field_website_application_block_write_uid
+#: model:ir.model.fields,field_description:website_application.field_website_application_message_write_uid
+#: model:ir.model.fields,field_description:website_application.field_website_application_stage_write_uid
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_write_uid
+#: model:ir.model.fields,field_description:website_application.field_website_application_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_functionality_write_date
+#: model:ir.model.fields,field_description:website_application.field_application_information_choice_write_date
+#: model:ir.model.fields,field_description:website_application.field_application_information_write_date
+#: model:ir.model.fields,field_description:website_application.field_website_application_block_write_date
+#: model:ir.model.fields,field_description:website_application.field_website_application_message_write_date
+#: model:ir.model.fields,field_description:website_application.field_website_application_stage_write_date
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_write_date
+#: model:ir.model.fields,field_description:website_application.field_website_application_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_terms_link_label
+msgid "Link label"
+msgstr "Libellé du lien"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.website_application_template_view_form
+msgid "Link target"
+msgstr "Cible du lien"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_choice_information_id
+msgid "Linked query information"
+msgstr "Information de type requête liée"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request
+msgid "Make a request"
+msgstr "Faire une demande"
+
+#. module: website_application
+#: model:res.groups,comment:website_application.group_website_application_template_manager
+msgid "Manage website application templates"
+msgstr "Gérer les modèles de démarche en ligne"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_messages_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_mode
+msgid "Mode"
+msgstr "Mode"
+
+#. module: website_application
+#: selection:application.information,type:0
+#: model:ir.model.fields,field_description:website_application.field_application_information_model
+#: model:ir.model.fields,field_description:website_application.field_application_information_model_id
+msgid "Model"
+msgstr "Modèle"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_domain
+msgid "Model domain"
+msgstr "Domaine de modèle"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_information.py:302
+#, python-format
+msgid "Model must exist"
+msgstr "Le modèle doit exister"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "My home"
+msgstr "Mon compte"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request
+#: model:ir.ui.view,arch_db:website_application.requests
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "My requests"
+msgstr "Mes demandes effectuées"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_functionality_name
+#: model:ir.model.fields,field_description:website_application.field_application_information_name
+#: model:ir.model.fields,field_description:website_application.field_website_application_block_name
+#: model:ir.model.fields,field_description:website_application.field_website_application_stage_name
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+#: selection:website.application,state:0
+msgid "New"
+msgstr "Nouveau"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_new_messages
+msgid "New message"
+msgstr "Nouveau message"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "No"
+msgstr "Non"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "No same address"
+msgstr "Adresses unique"
+
+#. module: website_application
+#: selection:application.information,type:0
+msgid "Number"
+msgstr "Nombre"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_opening_hour
+msgid "Opening hour"
+msgstr "Heure de début"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_template.py:209
+#, python-format
+msgid "Opening hour must be inferior to closing hour"
+msgstr "L'heure de début doit être inférieure à l'heure de fin"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.application_information_view_form
+msgid "Option 1, Option 2, ..."
+msgstr "Option 1, Option 2, ..."
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_application_informations
+msgid "Other data"
+msgstr "Autres informations"
+
+#. module: website_application
+#: model:application.information,name:website_application.application_information_other_informations
+msgid "Other informations"
+msgstr "Autres informations"
+
+#. module: website_application
+#: selection:website.application.template,terms_link_target_type:0
+msgid "Page"
+msgstr "Page"
+
+#. module: website_application
+#: model:ir.model,name:website_application.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_subscription_category_partner_ids
+msgid "Partner categories"
+msgstr "Catégories d'usagers"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_ask_partner_informations
+msgid "Partner informations"
+msgstr "Informations du demandeur"
+
+#. module: website_application
+#: selection:website.application,state:0
+msgid "Pending"
+msgstr "En cours"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_text_choices
+msgid "Possible choices"
+msgstr "Choix possibles"
+
+#. module: website_application
+#: selection:application.information,mode:0
+msgid "Query"
+msgstr "Demande"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_value_removal_reason
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Reason"
+msgstr "Motif"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_recipient_id
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Recipient"
+msgstr "Destinataire"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_recipient_domain
+msgid "Recipient domain"
+msgstr "Domaine de bénéficiaire"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.requests
+msgid "Ref"
+msgstr "Réf."
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_choice_reference
+#: model:ir.model.fields,field_description:website_application.field_website_application_name
+msgid "Reference"
+msgstr "Référence"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_information.py:304
+#, python-format
+msgid "Reference must be an integer"
+msgstr "La référence doit être un entier"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_value_refund_type
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Refund type"
+msgstr "Type du remboursement"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_form_website_application
+msgid "Reject request"
+msgstr "Rejeter"
+
+#. module: website_application
+#: selection:website.application,state:0
+msgid "Rejected"
+msgstr "Rejetée"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_model_relational_field_id
+msgid "Relational field"
+msgstr "Champ relationnel"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_information.py:267
+#, python-format
+msgid "Relational field must be one of model's fields"
+msgstr "Le champ relationnel doit appartenir au modèle"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_form_website_application
+msgid "Request"
+msgstr "Requête"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "Request reference:"
+msgstr "Référence de la demande:"
+
+#. module: website_application
+#: model:ir.ui.menu,name:website_application.website_application_template_menu
+msgid "Request templates"
+msgstr "Modèles de démarche en ligne"
+
+#. module: website_application
+#: model:ir.actions.act_window,name:website_application.action_website_application
+#: model:ir.model.fields,field_description:website_application.field_res_partner_website_application_ids
+#: model:ir.model.fields,field_description:website_application.field_res_users_website_application_ids
+#: model:ir.ui.menu,name:website_application.website_application_main
+#: model:ir.ui.menu,name:website_application.website_application_requests
+#: model:ir.ui.view,arch_db:website_application.applications_portal_layout
+#: model:ir.ui.view,arch_db:website_application.requests
+#: model:ir.ui.view,arch_db:website_application.res_partner_website_application_form_view
+msgid "Requests"
+msgstr "Démarches en ligne"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_is_required
+msgid "Required"
+msgstr "Requis"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.website_application_template_view_form
+msgid "Required data"
+msgstr "Données requises"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_attachment_types
+msgid "Required documents"
+msgstr "Documents requis"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_application_information_ids
+msgid "Required informations"
+msgstr "Informations requises"
+
+#. module: website_application
+#: selection:application.information,mode:0
+msgid "Result"
+msgstr "Résultat"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Same address accepted"
+msgstr "Adresses similaires acceptées"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Same address warning"
+msgstr "Adresses similaires avec état en cours"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Search request"
+msgstr "Chercher une demande"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.website_application_template_view_filter
+msgid "Search website application template"
+msgstr "Chercher un modèle de démarche en ligne"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "See a request"
+msgstr "Voir une demande"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "Select a recipient"
+msgstr "Sélectionnez un bénéficiaire"
+
+#. module: website_application
+#: selection:application.information,type:0
+msgid "Selection"
+msgstr "Sélection"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_is_recipient_to_select
+msgid "Selection of a recipient"
+msgstr "Sélection d'un bénéficiaire"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_sequence
+#: model:ir.model.fields,field_description:website_application.field_website_application_block_sequence
+#: model:ir.model.fields,field_description:website_application.field_website_application_stage_sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_show_existing_documents
+msgid "Show existing documents"
+msgstr "Montrer les documents existants"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_application_information_show_existing_documents
+msgid "Show user's documents of same type already provided by the user"
+msgstr "Montrer les documents du même type déjà fournis par l'utilisateur"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_website_application_stage_id
+msgid "Stage"
+msgstr "Étape"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_state
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_state
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "State"
+msgstr "État"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.requests
+msgid "Statut"
+msgstr "Statut"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "Submit"
+msgstr "Soumettre"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "Submit Request"
+msgstr "Soumettre la demande"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_date
+#: model:ir.model.fields,field_description:website_application.field_website_application_message_submit_date
+msgid "Submit date"
+msgstr "Date"
+
+#. module: website_application
+#: model:application.functionality,name:website_application.application_functionality_support_loss
+msgid "Support loss"
+msgstr "Perte de carte"
+
+#. module: website_application
+#: model:application.functionality,name:website_application.application_functionality_support_request
+msgid "Support request"
+msgstr "Demande de carte"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_choice_technical_name
+#: model:ir.model.fields,field_description:website_application.field_application_information_technical_name
+msgid "Technical name"
+msgstr "Nom technique"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_information.py:286
+#, python-format
+msgid "Technical name must be unique"
+msgstr "Le nom technique doit être unique"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_information.py:279
+#, python-format
+msgid "Technical name must only contain lowercase letters, numbers and underscores"
+msgstr "Le nom technique ne doit contenir que des lettres minuscules, des chiffres et des underscores"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.website_application_template_view_form
+msgid "Template name"
+msgstr "Nom de la démarche en ligne"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.website_application_template_view_form
+msgid "Terms and conditions"
+msgstr "Conditions générales"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_show_terms_link
+msgid "Terms and conditions link"
+msgstr "Lien conditions générales"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_terms_link_target_document
+msgid "Terms link target document"
+msgstr "Document cible du lien"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_terms_link_target_type
+msgid "Terms link target type"
+msgstr "Type de cible du lien"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_terms_link_target_url
+msgid "Terms link target url"
+msgstr "Page cible du lien"
+
+#. module: website_application
+#: selection:application.information,type:0
+#: model:ir.model.fields,field_description:website_application.field_website_application_message_text
+msgid "Text"
+msgstr "Texte"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application.py:290
+#, python-format
+msgid "The information '{}' is missing"
+msgstr "Il manque l'information '{}'"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_application_information_technical_name
+msgid "The name of the field stored to be able to reference it in other models"
+msgstr "Le nom du champ à stocker pour pouvoir y faire référence dans d'autres modèles"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_website_application_template_name
+msgid "The text of the application link on the front interface"
+msgstr "Le texte du lien du téléservice sur le site web"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_application_functionality_name
+msgid "The text of the application's functionality"
+msgstr "Le texte de la fonctionnalité de la démarche en ligne"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_application_information_name
+msgid "The text of the information asked to the user on the front interface request"
+msgstr "Le texte de l'information demandée à l'utilisateur du site web dans la demande"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_website_application_block_name
+msgid "The title of the block on the online application"
+msgstr "Le titre du bloc sur la demande en ligne"
+
+#. module: website_application
+#: model:ir.model.fields,help:website_application.field_website_application_stage_name
+msgid "The title of the stage on the online application"
+msgstr "Le titre de l'étape sur la demande en ligne"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "This Year"
+msgstr "Cette année"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "This month"
+msgstr "Ce mois"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "This week"
+msgstr "Cette semaine"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_type
+#: model:ir.model.fields,field_description:website_application.field_website_application_website_application_template_id
+#: model:ir.ui.view,arch_db:website_application.requests
+#: model:ir.ui.view,arch_db:website_application.view_search_website_application
+msgid "Type"
+msgstr "Type"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_auto_validation
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_auto_validation
+msgid "Validate application automatically"
+msgstr "Valider automatiquement le téléservice"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_template_validation_action_id
+#: model:ir.model.fields,field_description:website_application.field_website_application_validation_action_id
+msgid "Validation action"
+msgstr "Validation action"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_information_choice_id
+#: model:ir.model.fields,field_description:website_application.field_application_information_reference_field_id
+#: model:ir.model.fields,field_description:website_application.field_application_information_selection_field_id
+#: model:ir.model.fields,field_description:website_application.field_application_information_value
+#: model:ir.ui.view,arch_db:website_application.application_information_result_view_form
+msgid "Value"
+msgstr "Valeur"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_value_date
+msgid "Value date"
+msgstr "Valeur date"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_value_integer
+msgid "Value integer"
+msgstr "Valeur entier"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_information.py:298
+#, python-format
+msgid "Value must be 'model,id'"
+msgstr "La valeur doit être 'modele,id'"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_value_reference
+msgid "Value reference"
+msgstr "Valeur référence"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_application_information_value_text
+msgid "Value text"
+msgstr "Valeur"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.website_application_template_view_form
+#: model:ir.ui.view,arch_db:website_application.website_application_template_view_tree
+msgid "Website application template"
+msgstr "Modèle de démarche en ligne"
+
+#. module: website_application
+#: model:ir.actions.act_window,name:website_application.action_website_application_template
+msgid "Website application templates"
+msgstr "Modèles de démarche en ligne"
+
+#. module: website_application
+#: model:res.groups,name:website_application.group_website_application_template_manager
+msgid "Website application templates manager"
+msgstr "Gérer les modèles de démarche en ligne"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "Yes"
+msgstr "Oui"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_template.py:182
+#, python-format
+msgid "You cannot have two templates of same functionality/application type/partner category on a same period. (see template #{} named '{}')"
+msgstr "Il ne peut pas y avoir deux modèles de même fonctionnalité/type de téléservice/catégorie de partenaire sur la même période. (voir modèle n°{} nommé '{}')"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.requests
+msgid "You don't have any request."
+msgstr "Vous n'avez aucune demande."
+
+#. module: website_application
+#: code:addons/website_application/models/website_application.py:312
+#, python-format
+msgid "You have already submitted this kind of request."
+msgstr "Vous avez déjà soumis ce type de demande."
+
+#. module: website_application
+#: code:addons/website_application/models/website_application.py:270
+#, python-format
+msgid "You must provide a document of type "
+msgstr "Vous devez fournir un document de type "
+
+#. module: website_application
+#: code:addons/website_application/controllers/main.py:260
+#, python-format
+msgid "You must select a recipient."
+msgstr "Vous devez sélectionner un bénéficiaire."
+
+#. module: website_application
+#: code:addons/website_application/controllers/main.py:255
+#, python-format
+msgid "You must submit a "
+msgstr "Vous devez fournir un(e) "
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.portal_my_home_application
+msgid "Your Requests"
+msgstr "Vos démarches en ligne"
+
+#. module: website_application
+#: model:mail.template,subject:website_application.email_application_new_message
+msgid "Your have received a new message"
+msgstr "Vous avez reçu un nouveau message"
+
+#. module: website_application
+#: model:mail.template,subject:website_application.email_application_accepted
+msgid "Your request is accepted"
+msgstr "Votre demande est acceptée"
+
+#. module: website_application
+#: model:mail.template,subject:website_application.email_application_pending
+msgid "Your request is in progress"
+msgstr "Votre demande est en cours"
+
+#. module: website_application
+#: model:mail.template,subject:website_application.email_application_rejected
+msgid "Your request is rejected"
+msgstr "Votre demande est rejetée"
+
+#. module: website_application
+#: model:ir.model,name:website_application.model_application_functionality
+msgid "application.functionality"
+msgstr "application.functionality"
+
+#. module: website_application
+#: model:ir.model,name:website_application.model_application_information
+msgid "application.information"
+msgstr "application.information"
+
+#. module: website_application
+#: model:ir.model,name:website_application.model_application_information_choice
+msgid "application.information.choice"
+msgstr "application.information.choice"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.see_request
+msgid "at"
+msgstr "à"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "dated from"
+msgstr "daté de"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_message_is_read
+msgid "is read"
+msgstr "Lu"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.create_request_application_template
+msgid "months or less"
+msgstr "mois maximum"
+
+#. module: website_application
+#: model:ir.ui.view,arch_db:website_application.view_pivot_website_application
+msgid "pivot view"
+msgstr "pivot view"
+
+#. module: website_application
+#: model:ir.model.fields,field_description:website_application.field_website_application_same_address
+msgid "same address"
+msgstr "Adresses similaires"
+
+#. module: website_application
+#: selection:website.application,same_address:0
+msgid "same address accepted"
+msgstr "Adresses similaires acceptées"
+
+#. module: website_application
+#: selection:website.application,same_address:0
+msgid "same address warning"
+msgstr "Attention adresses similaires"
+
+#. module: website_application
+#: code:addons/website_application/models/website_application_template.py:100
+#, python-format
+msgid "terms and conditions"
+msgstr "conditions générales"
+
+#. module: website_application
+#: selection:website.application,same_address:0
+msgid "unique address"
+msgstr "Adresse unique"
+
+#. module: website_application
+#: model:ir.model,name:website_application.model_website_application
+msgid "website.application"
+msgstr "website.application"
+
+#. module: website_application
+#: model:ir.model,name:website_application.model_website_application_block
+msgid "website.application.block"
+msgstr "website.application.block"
+
+#. module: website_application
+#: model:ir.model,name:website_application.model_website_application_message
+msgid "website.application.message"
+msgstr "website.application.message"
+
+#. module: website_application
+#: model:ir.model,name:website_application.model_website_application_stage
+msgid "website.application.stage"
+msgstr "website.application.stage"
+
+#. module: website_application
+#: model:ir.model,name:website_application.model_website_application_template
+msgid "website.application.template"
+msgstr "website.application.template"
+

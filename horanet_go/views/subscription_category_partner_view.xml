@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="partner_category_view_form" model="ir.ui.view">
+        <field name="name">partner category form</field>
+        <field name="model">subscription.category.partner</field>
+        <field name="arch" type="xml">
+            <form string="category" duplicate="false">
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="category name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="code"/>
+                        <field name="application_type"/>
+                    </group>
+                    <group name="group-domain" string="Domain">
+                        <field name="domain" widget="domain" options="{'model': 'res.partner'}" nolabel="1"/>
+                    </group>
+                    <notebook name="notebook"></notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="partner_category_view_tree" model="ir.ui.view">
+        <field name="name">partner category tree</field>
+        <field name="model">subscription.category.partner</field>
+        <field name="arch" type="xml">
+            <tree string="category">
+                <field name="name"/>
+                <field name="domain"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_partner_category" model="ir.actions.act_window">
+        <field name="name">category</field>
+        <field name="res_model">subscription.category.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="partner_category_view_tree"/>
+    </record>
+</odoo>

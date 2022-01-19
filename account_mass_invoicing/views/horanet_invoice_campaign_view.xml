@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="mass_invoicing_invoice_campaign_form_view" model="ir.ui.view">
+        <field name="name">Campaigns Form View</field>
+        <field name="model">horanet.invoice.campaign</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="budget_code_id"/>
+                        <field name="prestation_period_ids"/>
+                        <field name="product_ids"/>
+                        <field name="batch_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mass_invoicing_invoice_campaign_tree_view" model="ir.ui.view">
+        <field name="name">Campaigns Tree View</field>
+        <field name="model">horanet.invoice.campaign</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_account_mass_invoicing_invoice_campaign" model="ir.actions.act_window">
+        <field name="name">Campaigns</field>
+        <field name="res_model">horanet.invoice.campaign</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="account_mass_invoicing.mass_invoicing_invoice_campaign_tree_view"/>
+    </record>
+</odoo>

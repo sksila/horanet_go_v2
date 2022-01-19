@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="website_account_configuration_form" model="ir.ui.view">
+        <field name="name">Website account general settings</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="horanet_go.view_form_collectivity_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='group_settings_contact']" position="inside">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <field name="manage_employees"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <label for="manage_employees"/>
+                    </div>
+                </div>
+            </xpath>
+
+            <xpath expr="//div[@name='group_settings_contact_detail']" position="after">
+                <newline/>
+                <h2>Custom partner informations of Front Office</h2>
+                <div class="row mt16 o_settings_container" name="custom_partner_front_office">
+                    <label string="Warning! Check before if fields are not invisible in the custom view."/>
+                    <div class="row mt16 o_settings_container" name="group_required_front_field">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="required_vat_number"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="required_vat_number"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="required_siret_code"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="required_siret_code"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="required_ape_code"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="required_ape_code"/>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <label for="custom_front_view_id"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <field name="custom_front_view_id"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_general_configuration" model="ir.ui.view">
+        <field name="name">Display default country used in portal</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="horanet_auth_signup.inherited_base_setup"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='group_settings_contact']" position="inside">
+                <div class="col-xs-12 col-md-6 o_setting_box">
+                    <div class="o_setting_left_pane">
+                        <label for="country_id"/>
+                    </div>
+                    <div class="o_setting_right_pane">
+                        <field name="country_id" class="oe_inline"
+                           attrs="{'invisible': [('auth_signup_uninvited', '=', False)]}"/>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_setup_wizard_base" model="ir.ui.view">
+        <field name="name">partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <form string="Partner setup wizard">
+                <header>
+                    <button name="next_stage" type="object" class="fa fa-chevron-right oe_right btn-default"
+                            attrs="{'invisible': ['|',('is_max_stage', '=', True),('is_validated_stage', '=', False)]}"
+                            context="{'current_stage': stage_id, 'stage_modified': True}"/>
+                    <button name="action_previous_stage" type="object" class="fa fa-chevron-left oe_right btn-default"
+                            attrs="{'invisible': [('is_min_stage', '=', True)]}"/>
+                </header>
+
+                <field name="partner_id" invisible="1"/>
+                <field name="stage_id" invisible="1"/>
+                <field name="max_validated_stage_id" invisible="1"/>
+                <field name="is_validated_stage" invisible="1"/>
+                <field name="is_min_stage" invisible="1"/>
+                <field name="is_max_stage" invisible="1"/>
+
+                <div name="view_partner_setup_wizard_content">
+                </div>
+
+                <footer>
+                    <button string="Next stage" name="action_next_stage" type="object" class="btn-primary"
+                            attrs="{'invisible': [('is_max_stage', '=', True)]}"
+                            context="{'current_stage': stage_id}"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_partner_setup_wizard_stage_support_attribution" model="ir.ui.view">
+        <field name="name">partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_base"/>
+        <field name="mode">primary</field>
+        <field name="priority">40</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='view_partner_setup_wizard_content']" position="inside">
+                <group name="tags_list">
+                    <field name="tag_ids" widget="many2many" context="{'active_test': False}"
+                           readonly="1"
+                           default_order="active">
+                        <tree>
+                            <field name="mapping_id" readonly="1"/>
+                            <field name="number" string="Tag"/>
+                            <field name="assignation_start_date"/>
+                            <field name="medium_label"/>
+                        </tree>
+                    </field>
+                </group>
+                <group name="add_medium">
+                    <group string="Add waste site medium">
+                        <field name="mapping_id"/>
+                        <field name="max_length" invisible="True"/>
+                        <field name="mapping" invisible="True"/>
+                        <field name="csn_number"/>
+                        <field name="tag_id" invisible="True"/>
+                        <button string="Create tag" name="action_enroll_medium" type="object" class="btn-info"
+                                attrs="{'invisible': [('tag_id', '!=', False)]}"
+                                context="{'csn_number': csn_number,
+                                      'mapping_id': mapping_id}"/>
+                        <button string="Move tag" name="action_move_tag" type="object" class="btn-info"
+                                attrs="{'invisible': [('tag_id', '=', False)]}"
+                                context="{'tag_id': tag_id}"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_setup_wizard_stage_fixed_part_choice" model="ir.ui.view">
+        <field name="name">partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_base"/>
+        <field name="mode">primary</field>
+        <field name="priority">50</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='view_partner_setup_wizard_content']" position="inside">
+                <field name="subscription_id" invisible="1"/>
+                <newline/>
+
+                <group name="fixed_part">
+                    <field name="subscription_fixed_part_ids">
+                        <tree default_order="opening_date desc, closing_date desc">
+                            <field name="name"/>
+                            <field name="opening_date"/>
+                            <field name="closing_date"/>
+                        </tree>
+                    </field>
+                </group>
+                <group string="Add or remove fixed part">
+                    <group>
+                        <field name="add_or_remove_fixed_part" widget="radio" nolabel="1"
+                               options="{'horizontal': true}"/>
+                        <newline/>
+
+                        <field name="fixed_part_prestation_id"
+                               options="{'no_open': True, 'no_create': True}"
+                               attrs="{'readonly': [('fixed_part_exoneration', '=', True)]}"/>
+                        <button string="Add fixed part" name="action_add_or_remove_fixed_part" type="object"
+                                class="btn-info"
+                                attrs="{'invisible': ['|',
+                                    ('fixed_part_exoneration', '=', True),
+                                    '&amp;',
+                                    ('fixed_part_exoneration', '=', False),
+                                    ('add_or_remove_fixed_part', '=', 'remove')
+                                ]}"/>
+                        <button string="Remove fixed part" name="action_add_or_remove_fixed_part" type="object"
+                                class="btn-info"
+                                attrs="{'invisible': ['|',
+                                    ('fixed_part_exoneration', '=', True),
+                                    '&amp;',
+                                    ('fixed_part_exoneration', '=', False),
+                                    ('add_or_remove_fixed_part', '=', 'add')
+                                ]}"/>
+                    </group>
+                    <group>
+                        <field name="fixed_part_exoneration"
+                               attrs="{'readonly': [('fixed_part_prestation_id', '!=', False)]}"/>
+                    </group>
+                </group>
+
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_setup_wizard_stage_template_choice" model="ir.ui.view">
+        <field name="name">partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="inherit_id" ref="environment_waste_collect.view_partner_setup_wizard_base"/>
+        <field name="mode">primary</field>
+        <field name="priority">10</field>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='view_partner_setup_wizard_content']" position="inside">
+                <group name="subscription" string="Subscription">
+                    <field name="new_situation_date"/>
+                    <newline/>
+                    <field name="count_subscription_templates" invisible="1"/>
+                    <field name="partner_subscription_template_ids" invisible="1"/>
+                    <field name="create_or_select_subscription" widget="radio"/>
+                    <field name="subscription_template_id" attrs="{'required': [('create_or_select_subscription', '=', 'existing')],
+                                                                   'invisible': ['|', ('count_subscription_templates', '=', 1),
+                                                                                      ('create_or_select_subscription', '=', 'existing')]}"/>
+                    <field name="subscription_id" attrs="{'invisible': [('create_or_select_subscription', '=', 'new')],
+                                                          'required': [('create_or_select_subscription', '=', 'existing')]}"/>
+                </group>
+                <separator string="Information" attrs="{'invisible': [('message_box', '=', False)]}"/>
+                <field name="message_box" nolabel="1" widget="html" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_setup_wizard_summary" model="ir.ui.view">
+        <field name="name">partner.setup.wizard.form</field>
+        <field name="model">partner.setup.wizard</field>
+        <field name="priority">99</field>
+        <field name="arch" type="xml">
+            <form string="Summary">
+                <header>
+                    <button name="action_previous_stage" type="object" class="fa fa-chevron-left oe_right btn-default"/>
+                </header>
+
+                <field name="stage_id" invisible="1"/>
+                <field name="partner_id" invisible="1"/>
+                <field name="subscription_id" invisible="1"/>
+                <newline/>
+
+                <group name="subscription" string="Subscription">
+                    <group name="subscription_data">
+                        <field colspan="2" name="subscription_name" nolabel="1" readonly="1"/>
+                    </group>
+                    <group name="fixed_parts">
+                        <field name="fixed_part_exoneration" readonly="1"/>
+                        <field name="subscription_fixed_part_ids" invisible="1"/>
+                        <field colspan="2" name="active_subscription_fixed_part_ids"
+                               widget="many2many_kanban" readonly="1" nolabel="1"
+                               attrs="{'invisible': [('fixed_part_exoneration', '=', True)]}">
+                            <kanban>
+                                <templates>
+                                    <t t-name="kanban-box">
+                                        <div style="position: relative">
+                                            <div class="oe_module_vignette">
+                                                <div class="oe_module_desc">
+                                                    <strong>
+                                                        <field name="name"/>
+                                                    </strong>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                    </group>
+
+
+                </group>
+
+                <group name="mediums" string="Mediums">
+                    <field name="tag_ids" widget="many2many_kanban" readonly="1" nolabel="1">
+                        <kanban>
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <div style="position: relative">
+                                        <div class="oe_module_vignette">
+                                            <div class="oe_module_desc">
+                                                <h4>
+                                                    <field name="mapping_id"/>
+                                                </h4>
+                                                <p class="oe_module_name">
+                                                    <field name="number"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </templates>
+                        </kanban>
+                    </field>
+                </group>
+
+                <footer>
+                    <button name="close" string="Close" special="cancel" class="btn-default"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_partner_setup_wizard" model="ir.actions.act_window">
+        <field name="name">Partner Setup Wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">partner.setup.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

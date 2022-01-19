@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_user_unsubscribe" name="Unsubscriptions"
+              parent="horanet_go.menu_collectivity_config"
+              action="action_unsubscribe_users" sequence="30"
+              groups="horanet_go.group_horanet_go_agent"/>
+</odoo>

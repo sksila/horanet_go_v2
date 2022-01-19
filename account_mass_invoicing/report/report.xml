@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                id="role_mass_invoice"
+                model="horanet.role"
+                string="Role Report"
+                report_type="qweb-pdf"
+                name="account_mass_invoicing.report_role_mass_invoice"
+                file="account_mass_invoicing.report_role_mass_invoice"
+                attachment_use="False"
+        />
+
+        <report
+            id="batch_mass_invoice"
+            model="horanet.invoice.batch"
+            string="Batch Report"
+            report_type="qweb-pdf"
+            name="account_mass_invoicing.report_batch_mass_invoice"
+            file="account_mass_invoicing.report_batch_mass_invoice"
+            attachment_use="False"
+        />
+
+        <!--Add a specific name of report file-->
+        <record id="batch_mass_invoice" model="ir.actions.report.xml">
+            <field name="print_report_name">'Lot_' + object.slugify_batch_report_name()</field>
+        </record>
+
+    </data>
+</odoo>

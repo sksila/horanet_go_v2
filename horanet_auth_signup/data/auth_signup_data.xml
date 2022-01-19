@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+     <!-- Horanet template customer for new users signing in -->
+        <record id="horanet_template_customer" model="res.users">
+            <field name="name">Template Citoyen</field>
+            <field name="login">citoyen</field>
+            <field name="active" eval="False"/>
+            <!-- Avoid auto-including this user in any default group, just like a typical portal member -->
+            <field name="groups_id" eval="[(6, 0,  [ref('base.group_portal'),
+                                                    ref('horanet_go.group_horanet_go_citizen'),
+                                                    ref('base.group_partner_manager')])]"/>
+            <!-- Set this to enable the customer property of the related partner -->
+            <field name="customer" eval="True"/>
+            <field name="action_id" eval="ref('website.action_website_homepage')"/>
+        </record>
+</odoo>

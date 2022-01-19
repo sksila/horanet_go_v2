@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="assets_common" name="Horanet commons sources" inherit_id="web.assets_common">
+
+            <!-- Common javascript sources -->
+            <xpath expr="//script[last()]" position="after">
+            </xpath>
+
+            <!-- Common CSS sources -->
+            <xpath expr="//link[last()]" position="after">
+            </xpath>
+        </template>
+    </data>
+</openerp>

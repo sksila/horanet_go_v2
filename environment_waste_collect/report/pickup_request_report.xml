@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<odoo>
+    <report
+            id="pickup_request_report"
+            string="Pickup requests report"
+            model="environment.pickup.request"
+            report_type="qweb-pdf"
+            name="environment_waste_collect.report_pickup_request"
+            file="environment_waste_collect.report_pickup_request"
+            menu="False"/>
+
+    <template id="report_pickup_request">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h3>Pickup request report</h3>
+                    <br/>
+                    <h4>Period: from
+                        <t t-esc="date_from"/>
+                        to
+                        <t t-esc="date_to"/>
+                    </h4>
+                    <br/>
+                    <p style="font-style: italic;">This report contains the following datas for each waste site and each waste:
+                        <ul style="margin-left: 50px; font-style: italic;">
+                            <li>The filling level (average, minimum and maximum) at the moment of the pickup in %.</li>
+                            <li>The pickup delay (average, minimum and maximum) in hour.</li>
+                            <li>The pickup time (average, minimum and maximum) in hour.</li>
+                            <li>The quantity (average, minimum and maximum) in m3.</li>
+                        </ul>
+                    </p>
+                    <br/>
+                    <div t-if="datas">
+                        <t t-foreach="datas" t-as="waste_site">
+                            <h4>
+                                <t t-esc="waste_site['waste_site']"/>
+                            </h4>
+                            <table class="table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Service provider</th>
+                                        <th class="text-center">Waste</th>
+                                        <th class="text-center">Filling level (avg/min/max)</th>
+                                        <th class="text-center">Pickup delay (avg/min/max)</th>
+                                        <th class="text-center">Pickup time (avg/min/max)</th>
+                                        <th class="text-center">Quantity (avg/min/max)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="waste_site['wastes']" t-as="waste">
+                                        <td style="padding: 5px;">
+                                            <t t-esc="waste['service_provider']"/>
+                                        </td>
+                                        <td style="padding: 5px;">
+                                            <t t-esc="waste['name']"/>
+                                        </td>
+                                        <td class="text-center" style="padding: 5px;">
+                                            <t t-esc="waste['filling_level']['avg']"/>
+                                            /
+                                            <t t-esc="waste['filling_level']['min']"/>
+                                            /
+                                            <t t-esc="waste['filling_level']['max']"/>
+                                        </td>
+                                        <td class="text-center" style="padding: 5px;">
+                                            <t t-esc="'%d:%02d' % (waste['pickup_delay']['avg'], (waste['pickup_delay']['avg'] * 60) % 60)"/>
+                                            /
+                                            <t t-esc="'%d:%02d' % (waste['pickup_delay']['min'], (waste['pickup_delay']['min'] * 60) % 60)"/>
+                                            /
+                                            <t t-esc="'%d:%02d' % (waste['pickup_delay']['max'], (waste['pickup_delay']['max'] * 60) % 60)"/>
+                                        </td>
+                                        <td class="text-center" style="padding: 5px;">
+                                            <t t-esc="'%d:%02d' % (waste['pickup_time']['avg'], (waste['pickup_time']['avg'] * 60) % 60)"/>
+                                            /
+                                            <t t-esc="'%d:%02d' % (waste['pickup_time']['min'], (waste['pickup_time']['min'] * 60) % 60)"/>
+                                            /
+                                            <t t-esc="'%d:%02d' % (waste['pickup_time']['max'], (waste['pickup_time']['max'] * 60) % 60)"/>
+                                        </td>
+                                        <td class="text-center" style="padding: 5px;">
+                                            <t t-esc="waste['quantity']['avg']"/>
+                                            /
+                                            <t t-esc="waste['quantity']['min']"/>
+                                            /
+                                            <t t-esc="waste['quantity']['max']"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td style="padding: 5px;">
+                                            <strong>Total</strong>
+                                        </td>
+                                        <td class="text-center" style="padding: 5px;">
+                                            <strong>
+                                                <t t-esc="waste_site['total']['filling_level']['avg']"/>
+                                                /
+                                                <t t-esc="waste_site['total']['filling_level']['min']"/>
+                                                /
+                                                <t t-esc="waste_site['total']['filling_level']['max']"/>
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" style="padding: 5px;">
+                                            <strong>
+                                                <t t-esc="'%d:%02d' % (waste_site['total']['pickup_delay']['avg'], (waste_site['total']['pickup_delay']['avg'] * 60) % 60)"/>
+                                                /
+                                                <t t-esc="'%d:%02d' % (waste_site['total']['pickup_delay']['min'], (waste_site['total']['pickup_delay']['min'] * 60) % 60)"/>
+                                                /
+                                                <t t-esc="'%d:%02d' % (waste_site['total']['pickup_delay']['max'], (waste_site['total']['pickup_delay']['max'] * 60) % 60)"/>
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" style="padding: 5px;">
+                                            <strong>
+                                                <t t-esc="'%d:%02d' % (waste_site['total']['pickup_time']['avg'], (waste_site['total']['pickup_time']['avg'] * 60) % 60)"/>
+                                                /
+                                                <t t-esc="'%d:%02d' % (waste_site['total']['pickup_time']['min'], (waste_site['total']['pickup_time']['min'] * 60) % 60)"/>
+                                                /
+                                                <t t-esc="'%d:%02d' % (waste_site['total']['pickup_time']['max'], (waste_site['total']['pickup_time']['max'] * 60) % 60)"/>
+                                            </strong>
+                                        </td>
+                                        <td class="text-center" style="padding: 5px;">
+                                            <strong>
+                                                <t t-esc="waste_site['total']['quantity']['avg']"/>
+                                                /
+                                                <t t-esc="waste_site['total']['quantity']['min']"/>
+                                                /
+                                                <t t-esc="waste_site['total']['quantity']['max']"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br/>
+                        </t>
+                        <table class="table-bordered table-striped" t-if="len(datas) > 1">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="text-center">Filling level (avg/min/max)</th>
+                                    <th class="text-center">Pickup delay (avg/min/max)</th>
+                                    <th class="text-center">Pickup time (avg/min/max)</th>
+                                    <th class="text-center">Quantity (avg/min/max)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center" style="padding: 5px;">
+                                        <strong t-translation="on">TOTAL</strong>
+                                    </td>
+                                    <td class="text-center" style="padding: 5px;">
+                                        <strong>
+                                            <t t-esc="total['filling_level']['avg']"/>
+                                            /
+                                            <t t-esc="total['filling_level']['min']"/>
+                                            /
+                                            <t t-esc="total['filling_level']['max']"/>
+                                        </strong>
+                                    </td>
+                                    <td class="text-center" style="padding: 5px;">
+                                        <strong>
+                                            <t t-esc="'%d:%02d' % (total['pickup_delay']['avg'], (total['pickup_delay']['avg'] * 60) % 60)"/>
+                                            /
+                                            <t t-esc="'%d:%02d' % (total['pickup_delay']['min'], (total['pickup_delay']['min'] * 60) % 60)"/>
+                                            /
+                                            <t t-esc="'%d:%02d' % (total['pickup_delay']['max'], (total['pickup_delay']['max'] * 60) % 60)"/>
+                                        </strong>
+                                    </td>
+                                    <td class="text-center" style="padding: 5px;">
+                                        <strong>
+                                            <t t-esc="'%d:%02d' % (total['pickup_time']['avg'], (total['pickup_time']['avg'] * 60) % 60)"/>
+                                            /
+                                            <t t-esc="'%d:%02d' % (total['pickup_time']['min'], (total['pickup_time']['min'] * 60) % 60)"/>
+                                            /
+                                            <t t-esc="'%d:%02d' % (total['pickup_time']['max'], (total['pickup_time']['max'] * 60) % 60)"/>
+                                        </strong>
+                                    </td>
+                                    <td class="text-center" style="padding: 5px;">
+                                        <strong>
+                                            <t t-esc="total['quantity']['avg']"/>
+                                            /
+                                            <t t-esc="total['quantity']['min']"/>
+                                            /
+                                            <t t-esc="total['quantity']['max']"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div t-if="not datas">
+                        <p>No data to display.</p>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

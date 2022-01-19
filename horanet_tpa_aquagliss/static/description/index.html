@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width:100%">
+        <h2 class="oe_slogan" style="color:#04445D;">TPA du système Aquagliss</h2>
+        <h3 class="oe_slogan">Interface TPA entre Horanet GO et Aquagliss</h3>
+    </div>
+    <section class="oe_container oe_dark text-justify">
+        <div class="oe_row oe_spaced" style="width:100%">
+            <div class="oe_mt32">
+                <h3 class="oe_slogan"
+                    style="text-align: left; border-bottom: 1px solid #eee; opacity: 1;">Description</h3>
+                <div style="padding: 0 48px;">
+                    <p>Ce module ajoute les fonctionnalités suivantes :</p>
+                    <ul>
+                        <li style="margin-left:48px;">Descente des usagers depuis Horanet GO vers SmartIntegral -
+                            Aquagliss
+                        </li>
+                        <li style="margin-left:48px;">Suivi des descentes des usagers</li>
+                        <li style="margin-left:48px;">Fusion des usagers depuis Horanet GO et répercutée sur
+                            SmartIntegral - Aquagliss
+                        </li>
+                        <li style="margin-left:48px;">Descente automatique des usagers s'inscrivant sur Horanet GO vers
+                            SmartIntegral - Aquagliss
+                        </li>
+                        <li style="margin-left:48px;">Descente automatique des usagers validant un téléservice vers
+                            SmartIntegral - Aquagliss
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="oe_mt32">
+                <h3 class="oe_slogan" style="text-align: left; border-bottom: 1px solid #eee; opacity: 1;">Usage</h3>
+                <div style="padding: 0 48px;">
+                    <p>Dans le menu Horanet GO -> Configuration -> Interfaces TPA</p>
+                    <p style="text-align: center;">
+                        <img alt="TPA Menu"
+                             src="https://cdn.horanet.com/horanet_go/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/menu_tpa.png"
+                             class="oe_screenshot"
+                             style="max-width:100%;">
+                    </p>
+
+                    <div class="oe_mt32">
+                        <h4>Descente des usagers depuis Horanet GO vers SmartIntegral - Aquagliss</h4>
+
+                        <p>La descente des usagers permet d'avoir une uniformité de données entre Horanet GO et
+                            SmartIntegral - Aquagliss. Toute modification d'informations de l'usager faite sur Horanet
+                            GO descendra dans le système SmartIntegral - Aquagliss, à condition biensûr que l'usager
+                            soit coché en tant que membre du TPA associé au métier visé de SmartIntegral.</p>
+                        <p style="text-align: center;">
+                            <img alt="Partner Membrship"
+                                 src="https://cdn.horanet.com/horanet_go/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/partner_membership.png"
+                                 class="oe_screenshot"
+                                 style="max-width:100%;">
+                        </p>
+                    </div>
+
+                    <div class="oe_mt32">
+                        <h4>Suivi des descentes des usagers</h4>
+
+                        <p class="oe_mt32">Une fois des modifications effectuées sur un usager synchronisé via le TPA,
+                            nous pouvons suivre la synchronisation pour savoir si elle a bien eu lieu et avoir des
+                            informations supplémentaires (horodatage de la synchronisation, message d'erreur, ...). Ces
+                            informations seront disponibles dans Horanet GO -> Configuration -> Interfaces TPA ->
+                            Synchronisations status.</p>
+                        <p style="text-align: center;">
+                            <img alt="Synchronization status - Tree"
+                                 src="https://cdn.horanet.com/horanet_collectivity/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/synchronization-status-tree.png"
+                                 class="oe_screenshot"
+                                 style="max-width:100%;">
+                            <img alt="Synchronization status - Form"
+                                 src="https://cdn.horanet.com/horanet_collectivity/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/synchronization-status-form.png"
+                                 class="oe_screenshot"
+                                 style="max-width:100%;">
+                        </p>
+                    </div>
+
+                    <div class="oe_mt32">
+                        <h4>Fusion des usagers depuis Horanet GO et répercutée sur SmartIntegral - Aquagliss</h4>
+
+                        <p>Afin de fusionner des usagers, il faut s'assurer que l'utilisateur ait bien les droits pour
+                            effectuer la fusion sur Horanet GO. Voir dans Configuration -> Utilisateurs.</p>
+                        <p style="text-align: center;">
+                            <img alt="User rights - Merge"
+                                 src="https://cdn.horanet.com/horanet_collectivity/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/user_rights_merge.png"
+                                 class="oe_screenshot"
+                                 style="max-width:100%;">
+                        </p>
+
+                        <p>Une fois que l'utilisateur a les droits nécessaires, dans la page d'un usager, il est
+                            possible de le déclarer comme étant un doublon et de démarrer la fusion.</p>
+                        <p style="text-align: center;">
+                            <img alt="User rights - Merge"
+                                 src="https://cdn.horanet.com/horanet_collectivity/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/partner_is_duplicate.png"
+                                 class="oe_screenshot"
+                                 style="max-width:100%;">
+                            <img alt="Merge wizard"
+                                 src="https://cdn.horanet.com/horanet_collectivity/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/merge_wizard_odoo.png"
+                                 class="oe_screenshot"
+                                 style="max-width:100%;">
+                        </p>
+
+                        <p>Une fois la fusion Horanet GO terminée, une fusion dans SmartIntegral - Aquagliss sera
+                            demandée et pourra être suivie dans Horanet GO -> Configuration -> Interfaces TPA ->
+                            Synchronizations merge.</p>
+                        <p style="text-align: center;">
+                            <img alt="Synchronization merge - Tree"
+                                 src="https://cdn.horanet.com/horanet_collectivity/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/synchronization-merge-tree.png"
+                                 class="oe_screenshot"
+                                 style="max-width:100%;">
+                            <img alt="Synchronization merge - Form"
+                                 src="https://cdn.horanet.com/horanet_collectivity/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/synchronization-merge-form.png"
+                                 class="oe_screenshot"
+                                 style="max-width:100%;">
+                        </p>
+                    </div>
+
+                    <div class="oe_mt32">
+                        <h4>Descente automatique des usagers s'inscrivant sur le portail Horanet GO vers SmartIntegral -
+                            Aquagliss</h4>
+                        <p>Dans le cadre d'un portail métier, les usagers peuvent se créer un compte sur le portail
+                            Horanet GO et seront déscendus automatiquement vers SmartIntegral - Aquagliss. Il suffira de
+                            configurer le modèle d'utilisateur "Template Citoyen".</p>
+
+                        <p>Pour configurer le modèle d'utilisateur "Template Citoyen", il faudra se rendre dans
+                            Configuration -> Utilisateurs et choisir le filtre "Utilisateurs inactifs".
+                        </p>
+                        <p style="text-align: center;">
+                            <img alt="Users - Template Citoyen"
+                                 src="https://cdn.horanet.com/horanet_collectivity/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/users_template_citoyen.png"
+                                 class="oe_screenshot"
+                                 style="max-width:100%;">
+                        </p>
+
+                        <p>Afin que les usagers du portail métier soient automatiquement synchronisés avec le TPA
+                            Aquagliss, il suffira de cocher la case "Synchronisation automatique avec Aquagliss" sur le
+                            modèle d'utilisateur "Template Citoyen".</p>
+                        <p style="text-align: center;">
+                            <img alt="Users - Template Citoyen - Synchronize right"
+                                 src="https://cdn.horanet.com/horanet_collectivity/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/users_template_citoyen_synchronize_right.png"
+                                 class="oe_screenshot"
+                                 style="max-width:100%;">
+                        </p>
+                    </div>
+
+                    <div class="oe_mt32">
+                        <h4>Descente automatique des usagers validant un téléservice vers SmartIntegral - Aquagliss</h4>
+                        <p>Dans le cadre d'un portail mutli-métiers, les usagers peuvent se créer un compte sur le
+                            portail Horanet GO mais ne seront pas déscendus automatiquement vers SmartIntegral -
+                            Aquagliss. Il faudra qu'il passe par une étape de validation de téléservice.</p>
+
+                        <p>Pour configurer ce téléservice, il faut se rendre dans Horanet GO -> Configuration -> Modèles
+                            de téléservice et créer un nouveau téléservice pointant vers l'action "Activation Service
+                            Sports". Il devra ensuite être associé à la catégorie d'usager qui doit pouvoir accéder à
+                            cette démarche "Catégories d'usagers".</p>
+                        <p style="text-align: center;">
+                            <img alt="Téléservice - Aquagliss"
+                                 src="https://cdn.horanet.com/horanet_collectivity/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/teleservice_aquagliss.png"
+                                 class="oe_screenshot"
+                                 style="max-width:100%;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_mt32">
+                <h3 class="oe_slogan" style="text-align: left; border-bottom: 1px solid #eee; opacity: 1;">
+                    Installation</h3>
+                <div style="padding: 0 48px;">
+                    <p>Ce module doit être impérativement configurer pour pouvoir fonctionner correctement car sinon
+                        aucun échange ne sera fait avec le système SmartIntegral - Aquagliss.</p>
+                    <p>Pour se faire, il suffit d'aller dans Horanet GO -> Configuration -> Configuration et de remplir
+                        les informations du bloc "Configurations TPA". Les informations à remplir pour la
+                        synchronisation des usagers seront les suivantes&nbsp;:</p>
+                    <ul>
+                        <li>URL du service web Aquagliss</li>
+                        <li>Méthode du service web appelée</li>
+                        <li>Activation du TPA Aquagliss</li>
+                    </ul>
+                    <div style="text-align: center;">
+                        <img alt="TPA Configuration"
+                             src="https://cdn.horanet.com/horanet_collectivity/modules/horanet_tpa_aquagliss/description/10.0.18.02.22/tpa_configuration.png"
+                             class="oe_screenshot"
+                             style="max-width:100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced" style="width:100%">
+            <h3 class="oe_slogan" style="text-align: left; border-bottom: 1px solid #eee; opacity: 1;">Credits</h3>
+            <p>Les personnes créditées peuvent être contactées pour toutes questions relatives à ce module</p>
+            <ul>
+                <li>Adrien Didenot &lt;<a href="mailto:adrien.didenot@horanet.com">adrien.didenot@horanet.com</a>&gt;
+                </li>
+                <li>Fabienne Robergeau &lt;<a href="mailto:fabienne.robergeau@horanet.com">fabienne.robergeau@horanet.com</a>&gt;
+                </li>
+                <li>Maximilien Tantin &lt;<a
+                        href="mailto:maximilien.tantin@horanet.com">maximilien.tantin@horanet.com</a>&gt;
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="oe_row oe_spaced" style="width:100%">
+        <h4 class="oe_slogan">Maintainer</h4>
+        <a href="http://horanet.com" style="display: block;text-align: center">
+            <img alt="Horanet"
+                 src="https://cdn.horanet.com/horanet_collectivity/logos/LOGO_HORANET_2017.png"
+                 class="oe_screenshot"
+                 style="max-width: 60%;">
+        </a>
+        <div class="oe_row oe_spaced" style="width:100%; text-align: center">
+            <p>This module is maintained by Horanet</p>
+            <p>Horanet is a editor specialized in providing solutions for collectivities</p>
+        </div>
+    </div>
+</section>

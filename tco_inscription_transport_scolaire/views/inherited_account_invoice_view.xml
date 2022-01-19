@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Modification de la vue form pour y ajouter les champs de mapping d'inscription TCO -->
+    <record id="view_invoice_form" model="ir.ui.view">
+        <field name="name">horanet add delayed payment term beginning</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <!-- Ajout du champ de décalage de début d'échéancier -->
+            <field name="date_invoice" position="after">
+                <field name="date_payment_term_start"/>
+            </field>
+        </field>
+    </record>
+</odoo>

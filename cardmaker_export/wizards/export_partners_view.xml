@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="cardmaker_export_wizard_form_view" model="ir.ui.view">
+        <field name="name">Cardmaker Export Wizard Form View</field>
+        <field name="model">partner.contact.identification.cardmaker.export.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="category_id"/>
+                        <field name="mapping_id"/>
+                        <field name="partner_ids">
+                            <tree>
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                        <field name="invalid_partner_ids">
+                            <tree decoration-danger="True">
+                                <field name="name"/>
+                            </tree>
+                        </field>
+                    </group>
+
+                    <footer>
+                        <button name="action_export" string="Export" type="object" class="btn-primary"/>
+                        <button string="Cancel" special="cancel" class="btn-default"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_cardmaker_export_wizard" model="ir.actions.act_window">
+        <field name="name">Export partners for cardmaker wizard</field>
+        <field name="res_model">partner.contact.identification.cardmaker.export.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

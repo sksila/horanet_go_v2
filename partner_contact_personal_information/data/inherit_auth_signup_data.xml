@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <!-- Add group edit personal information as default for template citizen -->
+    <!--TODO : ajouter settings pour implied group customisable-->
+    <record id="horanet_auth_signup.horanet_template_customer" model="res.users">
+        <field name="groups_id"
+               eval="[(4, ref('partner_contact_personal_information.group_contact_personal_information'))]"/>
+    </record>
+</odoo>

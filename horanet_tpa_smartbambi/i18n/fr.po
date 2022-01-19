@@ -1,0 +1,147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_tpa_smartbambi
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-10-30 14:05+0000\n"
+"PO-Revision-Date: 2017-10-30 14:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_tpa_smartbambi
+#: model:res.groups,name:horanet_tpa_smartbambi.group_tpa_smartbambi
+msgid "Auto sync with SmartBambi"
+msgstr "Synchronisation automatique avec SmartBambi"
+
+#. module: horanet_tpa_smartbambi
+#: model:res.groups,name:horanet_tpa_smartbambi.group_tpa_other_smartbambi
+msgid "Auto sync with other SmartBambi"
+msgstr "Synchronisation automatique avec l'autre SmartBambi"
+
+#. module: horanet_tpa_smartbambi
+#: code:addons/horanet_tpa_smartbambi/models/inherited_tpa_synchronization_status.py:188
+#, python-format
+msgid "Bad or missing values in JSON response : %s"
+msgstr "Données JSON érronées ou manquantes : %s"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.ui.view,arch_db:horanet_tpa_smartbambi.view_form_tpa_synchronization_merge
+#: model:ir.ui.view,arch_db:horanet_tpa_smartbambi.view_form_tpa_synchronization_status
+msgid "Force export"
+msgstr "Forcer l'exportation"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_collectivity_config_settings_tpa_smartbambi_force_membership
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_tpa_config_settings_tpa_smartbambi_force_membership
+msgid "Force membership"
+msgstr "Forcer la synchronisation SmartEco de tous les acteurs"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model.fields,help:horanet_tpa_smartbambi.field_collectivity_config_settings_tpa_smartbambi_force_membership
+#: model:ir.model.fields,help:horanet_tpa_smartbambi.field_tpa_config_settings_tpa_smartbambi_force_membership
+msgid "Force membership to all new partners"
+msgstr "Forcer la synchronisation SmartEco de tous les nouveaux acteurs"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_collectivity_config_settings_tpa_smartbambi_is_enable
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_tpa_config_settings_tpa_smartbambi_is_enable
+msgid "Is TPA SmartBambi enable"
+msgstr "TPA SmartBambi activé"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_collectivity_config_settings_tpa_smartbambi_is_other_enable
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_tpa_config_settings_tpa_smartbambi_is_other_enable
+msgid "Is other TPA SmartBambi enable"
+msgstr "Autre TPA SmartBambi activé"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_collectivity_config_settings_tpa_smartbambi_name_method_partner
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_tpa_config_settings_tpa_smartbambi_name_method_partner
+msgid "Method backend SmartBambi"
+msgstr "Méthode du service web de SmartBambi"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_collectivity_config_settings_tpa_smartbambi_name_method_other_partner
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_tpa_config_settings_tpa_smartbambi_name_method_other_partner
+msgid "Method backend other SmartBambi"
+msgstr "Méthode du service web de l'autre SmartBambi"
+
+#. module: horanet_tpa_smartbambi
+#: code:addons/horanet_tpa_smartbambi/models/inherited_tpa_synchronization_merge.py:142
+#, python-format
+msgid "No answer from the service, the made supposed treatment."
+msgstr "Pas de réponse du service web, on suppose que le traitement est validé."
+
+#. module: horanet_tpa_smartbambi
+#: code:addons/horanet_tpa_smartbambi/models/inherited_tpa_synchronization_status.py:204
+#: code:addons/horanet_tpa_smartbambi/models/inherited_tpa_synchronization_status.py:220
+#, python-format
+msgid "No answer of the service, the made supposed treatment."
+msgstr "Pas de réponse du service web, Le traitement est considéré comme terminé."
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model,name:horanet_tpa_smartbambi.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.ui.view,arch_db:horanet_tpa_smartbambi.view_partner_form
+msgid "SmartBambi"
+msgstr "SmartBambi"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.ui.view,arch_db:horanet_tpa_smartbambi.view_form_collectivity_config_settings
+msgid "SmartBambi TPA Settings"
+msgstr "Configuration du TPA SmartBambi"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_res_partner_tpa_membership_other_smartbambi
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_res_users_tpa_membership_other_smartbambi
+msgid "Synchronize with Other TPA SmartBambi"
+msgstr "Synchroniser avec l'autre TPA SmartBambi"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_res_partner_tpa_membership_smartbambi
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_res_users_tpa_membership_smartbambi
+msgid "Synchronize with SmartBambi"
+msgstr "Synchroniser avec SmartBambi"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_collectivity_config_settings_tpa_smartbambi_other_url
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_tpa_config_settings_tpa_smartbambi_other_url
+msgid "URL backend Other SmartBambi"
+msgstr "URL du service web de l'autre SmartBambi"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_collectivity_config_settings_tpa_smartbambi_url
+#: model:ir.model.fields,field_description:horanet_tpa_smartbambi.field_tpa_config_settings_tpa_smartbambi_url
+msgid "URL backend SmartBambi"
+msgstr "URL du service web de SmartBambi"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model,name:horanet_tpa_smartbambi.model_base_partner_merge_automatic_wizard
+msgid "base.partner.merge.automatic.wizard"
+msgstr "base.partner.merge.automatic.wizard"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model,name:horanet_tpa_smartbambi.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model,name:horanet_tpa_smartbambi.model_tpa_synchronization_merge
+msgid "tpa.synchronization.merge"
+msgstr "tpa.synchronization.merge"
+
+#. module: horanet_tpa_smartbambi
+#: model:ir.model,name:horanet_tpa_smartbambi.model_tpa_synchronization_status
+msgid "tpa.synchronization.status"
+msgstr "tpa.synchronization.status"
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--add personal fields in page "personal informations" on partner contact form-->
+    <record id="personal_information" model="ir.ui.view">
+        <field name="name">add personal field on partner contacts form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_personal_information_page.personal_information"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='personal_information_page']/group[@name='personal_information_group']"
+                   position="inside">
+                <group string="Birth information" name='personal_information_birth_group' groups='
+                       partner_contact_personal_information.group_contact_information_birth_place,
+                       partner_contact_personal_information.group_contact_information_birth_date'>
+                    <field name="birthdate_date"/>
+                    <field name="display_partner_age"/>
+                    <newline/>
+                    <field name="birth_country_id" options='{"no_open": True, "no_create": True}'
+                           groups='partner_contact_personal_information.group_contact_information_birth_place'/>
+                    <field name="birth_state_id" options='{"no_open": True, "no_create": True}'/>
+                    <field name="birth_city_id"/>
+                </group>
+                <group string="Misc" name='personal_information_misc_group' groups='
+                       partner_contact_personal_information.group_contact_information_gender,
+                       partner_contact_personal_information.group_contact_information_quotient_fam'>
+                    <field name="quotient_fam"/>
+                    <field name="gender"/>
+                </group>
+            </xpath>
+
+            <!-- Hide personal info page to everyone but user with granted access-->
+            <xpath expr="//page[@name='personal_information_page']" position="attributes">
+                <attribute name="groups">partner_contact_personal_information.group_contact_personal_information
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

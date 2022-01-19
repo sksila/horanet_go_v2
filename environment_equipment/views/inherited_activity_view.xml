@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="environment_equipment_activity_form_view" model="ir.ui.view">
+        <field name="name">Environment Equipment Activity Form View</field>
+        <field name="model">horanet.activity</field>
+        <field name="inherit_id" ref="environment_waste_collect.activity_form_view"/>
+        <field name="arch" type="xml">
+            <field name="default_action_id" position="attributes">
+                <attribute name="domain">[('code','in',['PASS','DEPOT','RELEVEBAC'])]</attribute>
+            </field>
+        </field>
+    </record>
+</odoo>

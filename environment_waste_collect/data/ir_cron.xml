@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Add CRON job for generating ecopad synchronization cached data -->
+        <record id="cron_ecopad_synchronization_cached_file" model="ir.cron" forcecreate="True">
+            <field name="name">Environment Waste Collect: Ecopad synchronization cache files</field>
+             <field name="model_id" ref="environment_waste_collect.model_horanet_environment_ecopad_cache_utility"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_ecopad_synchronization_cache_file()</field>
+            <field name="active">False</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">weeks</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(datetime.utcnow() + timedelta(days=7)).strftime('%Y-%m-%d 1:00:00')"/>
+        </record>
+
+        <!-- CRON d'envoi de mail de relèves de bennes -->
+        <record id="cron_environment_pickup_daily_notification" model="ir.cron">
+            <field name="name">Environment pickup-request daily notification</field>
+            <field name="active">False</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <!--Run this task each day at midnight (UTC)-->
+            <field name="nextcall" eval="(datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d 00:00:00')"/>
+            <field name="model" eval="'environment.pickup.request'"/>
+            <field name="function" eval="'_cron_send_pickup_request_mail'"/>
+            <field name="args" eval="({'authorized_week_days':[0,1,2,3,4,5,6]},)"/>
+        </record>
+
+        <!-- CRON d'envoi de mail de résumé de taux de remplissage de bennes -->
+        <record id="cron_environment_emplacement_filling__notification" model="ir.cron">
+            <field name="name">WasteSite emplacement filling level notification</field>
+            <field name="active">False</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <!--Run this task each day at midnight (UTC)-->
+            <field name="nextcall" eval="(datetime.now() + timedelta(days=1)).strftime('%Y-%m-%d 00:00:00')"/>
+            <field name="model" eval="'stock.emplacement'"/>
+            <field name="function" eval="'_cron_send_emplacement_filling_level_mail'"/>
+            <field name="args" eval="({'authorized_week_days':[0,1,2,3,4,5,6], 'send_empty_mail':True, 'minimum_filling_level':0,},)"/>
+        </record>
+    </data>
+</odoo>
+

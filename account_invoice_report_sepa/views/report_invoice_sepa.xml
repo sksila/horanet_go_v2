@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="account_invoices_sepa"
+            model="account.invoice"
+            string="Invoices SEPA"
+            report_type="qweb-pdf"
+            name="account_invoice_report_sepa.report_invoice_sepa"
+            file="account_invoice_report_sepa.report_invoice_sepa"
+            attachment_use="False"
+            attachment="(object.state in ('open','paid')) and ('INV'+(object.number or '').replace('/','')+'.pdf')"
+        />
+
+        <record id="account_invoices_sepa" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="account_invoice_report_sepa.custom_paperformat_euro_sepa_lowmargin"/>
+        </record>
+
+        <template id="report_invoice_document_sepa">
+            <t t-call="account_invoice_report_sepa.external_layout_sepa">
+                <!-- Initialisation des variables -->
+                <t t-set="o" t-value="o.with_context({'lang':o.partner_id.lang})"/>
+
+                <!-- On affiche la facture SEPA que si on a toute les données -->
+                <div class="page">
+
+                    <style type="text/css">
+                        @font-face
+                        {
+                            font-family: font_ocrb;
+                            src: url('/account_invoice_report_sepa/static/src/font/ocrbb.ttf');
+                        }
+                        #footer_first_page_invoice_sepa
+                        {
+                        width: 167mm;
+                        margin-left: 100px;
+                        font-family: font_ocrb;
+                        text-align: right;
+                        }
+                        #list_price td
+                        {
+                        border: 1px solid black;
+                        text-align: center;
+                        }
+                    </style>
+                    <t t-set="fiscal_year" t-value="o.get_accounting_year()"/>
+                    <div class="row">
+                            <div class="col-xs-4">
+                                <img style="width: 280px; height: 100px;" t-att-src="'data:image/png;base64,%s' % user.company_id.logo" t-if="user.company_id.logo"/>
+                            </div>
+
+                            <div class="col-xs-2"/>
+
+                            <div class="col-xs-4" style="margin: 50px 0px 0px 10px;">
+                                <br/>
+                                <strong>
+                                   Date de la facture : <span t-field="o.date_invoice"/>
+                                </strong>
+                            </div>
+                    </div>
+                        <br/> <br/>
+                    <div class="row">
+                        <div class="col-xs-5" style="margin-left: 10px;font-size:11px; background-color: gainsboro; border-color: black; border: 1px solid black;">
+                            <br/>
+                            <p>
+                                <strong><span>Pour toute explication sur votre facture, déclaration d’un changement contacter le service Déchets de :</span> </strong>
+                                <br/>   <br/>
+                                 <strong><spant t-field="o.company_id.name"/></strong><br/>
+                                 <t t-if="o.company_id.street"><spant t-field="o.company_id.street"/></t>
+                                 <t t-if="o.company_id.street2">, <spant t-field="o.company_id.street2"/>  </t>
+                                 <t t-if="o.company_id.zip">, <spant t-field="o.company_id.zip"/> </t>
+                                 <t t-if="o.company_id.city"> , <spant t-field="o.company_id.city"/>  <br/> </t>
+                                 <t t-if="o.company_id.phone"><strong>Tél:<spant t-field="o.company_id.phone"/> </strong><br/> </t>
+                                 <t t-if="o.company_id.email"> <spant t-field="o.company_id.email"/> <br/> </t>
+                                 <t t-if="o.company_id.website"><spant t-esc="o.company_id.website.replace('https://','').replace('http://','')"/> <br/> </t>
+                                 <container name="bellow_collectivity_data" string="Bellow collectivity data"/>
+                            </p>
+                        </div>
+                        <div class="col-xs-1"/>
+                        <div class="col-xs-5" style="font-size:10px;">
+                            <container name="above_partner_adress" string="Above partner adress"/>
+
+                             <div style="text-transform: uppercase; font-size: 17px; height: 32mm; overflow: hidden;">
+                                 <address t-field="o.partner_id" t-options="{'widget': 'contact', 'fields': ['address', 'lastname2', 'name'], 'no_marker': True}"/>
+                             </div>
+                            <container name="bellow_partner_adress" string="Bellow partner adress"/>
+                        </div>
+                    </div>
+
+
+                        <br/>
+                    <div class="row">
+                        <div name="informations_usager" class="col-xs-4" style="font-size:10px;">
+                            <strong><span>Code usager : <span t-field="o.partner_id.ref"/></span></strong><br/>
+                            <span>Periode: du
+                                <t t-if="o.batch_id and o.batch_id.role_ids">
+                                    <span t-field="o.batch_id.role_ids[0].fiscal_year.start_date"/> au
+                                    <span t-field="o.batch_id.role_ids[0].fiscal_year.end_date"/>
+                                </t>
+                            </span><br/>
+                            <span>N° de facture : <span t-esc="o.id"/></span><br/>
+                            <span>Type d'usager : <t t-if="o.partner_id.subscription_category_ids"><span t-field="o.partner_id.subscription_category_ids[0].name"/></t></span><br/>
+                        </div>
+
+                        <container name="beside_informations_usager" string="Beside partner informations"/>
+                    </div>
+
+                   <br/>
+                    <div style="text-align: center; border: 1px solid black; background-color: #848181; border-color: black;">
+                       <strong> <span style="color: white;">REDEVANCE INCITATIVE <t t-esc="fiscal_year"/> - DECHETS</span> </strong>
+                    </div>
+                    <table class="table table-condensed" style="border: 1px solid black; margin-bottom: 0px;">
+                        <thead>
+                            <tr>
+                                <th class="col-xs-5" style="text-align: center; border: 1px solid black; font-size: 11px;">Service</th>
+                                <th class="col-xs-3" style="text-align: center; border: 1px solid black; font-size: 11px;">Période de service</th>
+                                <th class="col-xs-1" style="text-align: center; border: 1px solid black; font-size: 11px;">Quantité</th>
+                                <th class="col-xs-2" style="text-align: center; border: 1px solid black; font-size: 11px;">Prix unitaire</th>
+                                <th class="col-xs-1" style="text-align: center; border: 1px solid black; font-size: 11px;">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody class="invoice_tbody">
+                            <tr t-foreach="o.get_printable_invoice_lines()" t-as="l">
+                                <td style="border: 1px solid black;font-size:9px;">
+                                    <span t-esc="l['name']"/>
+                                </td>
+                                <td style="border: 1px solid black;font-size:9px;" class="text-center">
+                                    <span t-if="l['period_line']">
+                                        du <span t-esc="l['period_line'].display_opening_date[0:10]"/>
+                                        au <span t-esc="l['period_line'].display_closing_date[0:10]"/>
+                                    </span>
+                                </td>
+                                <td style="border: 1px solid black;font-size:9px;" class="text-center">
+                                    <span t-esc="l['quantity']"/>
+                                </td>
+                                <td style="border: 1px solid black;font-size:9px;" class="text-center">
+                                    <span t-esc="'{0:.2f}'.format(l['price_unit'])"/>
+                                </td>
+                                <td style="border: 1px solid black;font-size:9px;" class="text-center">
+                                    <span t-esc="l['price_subtotal']" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table" style="border: 1px solid black; font-size:11px">
+                        <tr style=" background-color: gainsboro;">
+                            <td style="border: 1px solid black;" class="col-xs-10 text-right"><strong>Solde</strong></td>
+                            <td style="border: 1px solid black;" class="text-center">
+                                 <strong><span t-field="o.amount_total" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/></strong>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <div class="row" style="margin-top: -10px;">
+                        <!-- Paiement -->
+                        <div class="col-xs-4 pull-right" t-if="o.amount_total &gt; 0"
+                             style="margin-right:15px; background-color: gainsboro; border-color: black; border: 1px solid black; text-align: center;">
+                           <strong>
+                               <span>A PAYER POUR LE :  <t t-if="o.amount_total &gt; 0 and not o.subscription_id.banking_mandate"><span t-field="o.account_move_line_ids and o.account_move_line_ids[0].date_maturity"/></t></span>
+                           </strong>
+                        </div>
+                        <!-- Remboursement -->
+                        <div class="col-xs-11 pull-right" t-if="o.amount_total &lt; 0"
+                             style="margin-right:15px; background-color: gainsboro; border-color: black; border: 1px solid black; text-align: center;">
+                           <strong>
+                               <span>Remboursement par virement bancaire sous réserve d'avoir fourni votre RIB au service déchets</span>
+                           </strong>
+                        </div>
+                    </div>
+                    <br/>
+
+                    <div class="row" style="font-size:7px;">
+                        <container name="bellow_invoice_lines" string="Bellow invoice lines"/>
+                        <div class="col-xs-12">
+                            <t t-call="account_invoice_report_sepa.report_invoice_sepa_enforceable_title"/>
+                        </div>
+                    </div>
+
+                    <!-- TIP SEPA -->
+                    <div id="tip_sepa" t-if="o.amount_total &gt; 0 and not o.subscription_id.banking_mandate" style="position: absolute; bottom: 0mm;">
+                        <div style="width: 100%; height: 62mm; margin-top: 0mm;">
+                            <div style="width: 177mm; height: 57.1mm; float: right; margin-left: 27mm; border-bottom: 1mm solid black; padding-left: 0px; padding-right: 0px; border-top: 0px solid white; border-left: 0px solid white; ">
+                            <div class="row" style="padding-left: 0; padding-right: 0px; margin-left: 0px; margin-right: 0px;">
+                                <div class="col-xs-5" style="width: 73mm; border: 0px solid white; padding-left: 0; padding-right: 0px; font-size: 6px;">
+                                    <span>Mandat de prélèvement SEPA ponctuel : en signant ce formulaire de mandat,
+                                    vous autorisez le créancier à envoyer des instructions à votre banque pour débiter
+                                    votre compte, et votre banque à débiter votre compte conformément aux instructions du créancier.
+                                    Vous bénéficiez du droit d'être remboursé par votre banque selon les conditions décrites dans
+                                    la convention que vous avez passée avec elle. Une demande de remboursement doit être présentée
+                                    dans les 8 semaines suivant la date de débit de votre compte pour un prélèvement autorisé.
+                                    Vos droits concernant le présent mandat sont expliqués dans un document que vous pouvez obtenir
+                                    auprès de votre banque.<br/>
+                                     Le présent document a valeur de mandat de prélèvement SEPA ponctuel.
+                                     <strong>Votre signature vaut autorisation pour débiter, à réception, votre compte pour le montant indiqué. </strong></span>
+                                    <br/><br/>
+                                    <div id="main_frame">
+                                        <div class="row">
+                                            <div class="col-xs-1">
+                                                <div id="upper_left_corner" style="width: 20px; height: 20px; border-top: 1px solid black; border-left: 1px solid black;"/>
+                                            </div>
+                                            <div class="col-xs-7" style="margin-top: 2px;">
+                                                <span style="position: absolute;left: -10px;">DATE et LIEU</span>
+                                                <span style="position: absolute; float: right; right: -10px;">SIGNATURE</span>
+                                            </div>
+                                            <div class="col-xs-1">
+                                                <div id="upper_right_corner" style="float: right; width: 20px; height: 20px; border-top: 1px solid black; border-right: 1px solid black;"/>
+                                            </div>
+                                        </div>
+                                        <br/><br/><br/>
+                                        <div class="row">
+                                            <div class="col-xs-1">
+                                                <div id="lower_left_corner" style="width: 20px; height: 20px; border-bottom: 1px solid black; border-left: 1px solid black;"/>
+                                            </div>
+                                            <div class="col-xs-7"/>
+                                            <div class="col-xs-1">
+                                                <div id="lower_right_corner" style="float: right; width: 20px; height: 20px; border-bottom: 1px solid black; border-right: 1px solid black;"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <span t-if="o.subscription_id.bank_account_id">
+                                        <strong><span style="font-size:9px">En cas de modification, joindre un relevé d'identité bancaire</span></strong><br/>
+                                        <span style="font-size:9px;">IBAN : <strong><t t-esc="o.get_split_bank_account()"/></strong></span><br/>
+                                        <span style="font-size:9px;">Titulaire du compte : <span t-field="o.partner_id"/></span>
+                                    </span>
+                                    <span t-if="not o.subscription_id.bank_account_id">
+                                        <strong><span style="font-size:9px">Joindre un relevé d'identité bancaire</span></strong>
+                                    </span>
+
+                                </div>
+
+
+                                <div class="col-xs-7" style="padding-left: 8px; padding-bottom: 4mm">
+                                    <div style="text-transform: uppercase;font-size:10px; height: 20mm; overflow: hidden;">
+                                     <address t-field="o.partner_id" t-options="{'widget': 'contact', 'fields': ['address', 'name'], 'no_marker': True}"/>
+                                    </div>
+
+                                    <div style="float: right; margin-right: -1mm; margin-top: -16mm; font-style: latin1; font-size: 40px;">
+                                        <span><strong>*</strong></span>
+                                    </div>
+
+                                     <strong><span style="font-size:14px;">TIP SEPA</span></strong><br/>
+
+                                     <span style="font-size:10px;">Référence Unique de Mandat: <t t-esc="o.mandate_id.unique_mandate_reference"/></span><br/>
+                                     <span style="font-size:10px;">ICS : <t t-esc="o.company_id.sepa_creditor_identifier"/></span><br/>
+                                     <span style="font-size:10px;">Référence : <t t-esc="fiscal_year"/>-<t t-esc="o.get_product_code()"/>-<span t-field="o.batch_id.campaign_id.budget_code_id.ormc_cod_bud"/>-<span t-esc="o.id"/> &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Montant :
+                                         <span t-field="o.amount_total" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                     </span><br/>
+                                     <span style="font-size:10px;">Créancier : <spant t-field="o.company_id.name"/></span><br/>
+                                     <br/>
+                                    <t t-call="account_invoice_report_sepa.report_invoice_sepa_collection_center_address"/>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div id="footer_first_page_invoice_sepa" class="row" style="margin-bottom: 2mm; line-height: 8.5mm;">
+                           <span style="text-transform: uppercase; font-size: 16px;"><t t-esc="o.get_formule_code()"/><t t-esc="o.get_key_five()"/> <span t-esc="o.partner_id.name[0:18]"/><t t-foreach="range(18 - len(str(o.partner_id.name[0:18])))" t-as="oo">&amp;nbsp;</t><t t-if="o.subscription_id.bank_account_id.acc_number">&amp;nbsp;<t t-foreach="range(23 - len(o.subscription_id.bank_account_id.acc_number[4:]))" t-as="pp">0</t><t t-esc="o.subscription_id.bank_account_id.acc_number[4:]"/></t><t t-if="not o.subscription_id.bank_account_id.acc_number"><t t-foreach="range(24)" t-as="oo">&amp;nbsp;</t></t></span><br/>
+                           <span style="text-transform: uppercase; font-size: 16px;">941133000175 <t t-esc="o.get_key_two()"/>23<t t-esc="o.get_roldeb()"/><span t-field="o.company_id.ormc_id_post"/>49<t t-esc="o.get_key_one()"/>706 <t t-foreach="range(8 - len('%.0f' % (100 * o.amount_total)))" t-as="oo">&amp;nbsp;</t><t t-esc="'%.0f' %(100 * o.amount_total)"/></span><br/>
+                        </div>
+                    </div>
+
+                    <!--ECHEANCIER-->
+                    <div id="payment_terms" t-if="o.amount_total &gt; 0 and o.subscription_id.banking_mandate">
+                        <div style="text-align: center; background-color: gainsboro;">
+                            <strong><span style="text-decoration: underline;font-size: 16px;">NE PAS REGLER CETTE FACTURE - ELLE SERA PAYEE PAR PRELEVEMENT AUTOMATIQUE</span> </strong>
+                        </div>
+                        <h4>Echéancier prévisionnel des prélèvements</h4>
+                        <table style="border-collapse: collapse;">
+                            <tbody>
+                                <tr>
+                                    <t t-foreach="o.account_move_line_ids.sorted('date_maturity')" t-as="move_line">
+                                        <td style="border: 1px solid black; padding: 5px;">le <span t-field="move_line.date_maturity"/> de <span t-field="move_line.debit"/></td>
+                                    </t>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>Informations de prélèvement</h4>
+                        <span t-if="o.mandate_id">Compte bancaire: <span t-field="o.mandate_id.partner_bank_id"/> &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; Titulaire du compte: <span t-field="o.mandate_id.partner_id"/></span>
+                    </div>
+                    <br/><br/>
+                    <div t-if="o.amount_total &gt; 0" style="margin-top: 500px;">
+                        <br/>
+                    </div>
+
+                    <!-- GRILLE TARIFAIRE -->
+                    <container name="before_usages_list" string="Before usages list"/>
+                    <container name="usages_list" string="Usages list"/>
+                    <container name="after_usages_list" string="After usages list"/>
+                </div>
+            </t>
+        </template>
+
+        <template id="report_invoice_sepa">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="account_invoice_report_sepa.report_invoice_document_sepa" t-lang="o.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+    </data>
+
+    <data noupdate="1">
+        <template id="report_invoice_document_sepa_opening_hours" name="Collectivity opening hours">
+            <span>Du lundi au vendredi, de 9h à 12h et de 14h à 17h (fermé le mardi après-midi)</span>
+        </template>
+
+        <template id="report_invoice_document_sepa_finance_center_info" name="Finance center informations">
+            <strong style="text-decoration: underline;">
+              Comptable en charge du recouvrement :<br/>
+            </strong>
+            <span>Centre des finances publiques de Questembert 13, boulevard Saint Pierre 56 230 QUESTEMBERT<br/>
+            Accueil de 8h45 à 12H et de 13h30 à 16H,<br/>fermeture les mercredi et vendredi après midi</span>
+            <br/><br/>
+        </template>
+
+        <template id="report_invoice_document_sepa_payment_methods" name="Payment methods">
+            <div class="col-xs-4" style="font-size:10px;">
+                <strong><span>MODES DE REGLEMENT :</span></strong><br/>
+                <strong><span>- @Paiement par internet</span></strong><br/>
+                <strong><span>Identifiant collectivité : 000811</span></strong><br/>
+                <strong><span>Référence : <t t-esc="fiscal_year"/>-<t t-esc="o.get_product_code()"/>-<span t-field="o.batch_id.campaign_id.budget_code_id.ormc_cod_bud"/>-<span t-esc="o.id"/></span></strong><br/>
+                <strong><span>www.questembert-communaute.fr</span></strong><br/>
+            </div>
+            <div class="col-xs-4" style="font-size:10px;">
+                <strong><span>- Tip</span></strong><span> à signer</span><br/>
+                <strong><span>- Cheque</span></strong><span> à l'ordre du Trésor Public</span><br/>
+                <strong><span>- Prélèvement en 3 fois (nous contacter)</span></strong><br/>
+            </div>
+        </template>
+
+        <template id="report_invoice_sepa_enforceable_title">
+            <span><strong>TITRE EXECUTOIRE</strong> en application de l’article L.
+            252 A du livre des procédures fiscales,
+            émis et rendu exécutoire conformément aux dispositions des articles L.1617-5, D.1617-23, R.2342-4 du code général des collectivités territoriales par Marie Claude COSTA RIBEIRO GOMES,
+            Présidente de Questembert Communauté ou son représentant dûment habilité par délégation.
+            Les montants sont fixés annuellement par délibération du Conseil Communautaire.
+            Cette redevance est non soumise à TVA.</span>
+            <br/><br/>
+
+            <span><strong>VOIE DE RECOURS :</strong> dans un délai de deux mois suivant la réception de la facture,
+             vous pouvez contester la somme indiquée au recto en saisissant le tribunal judiciaire
+             (instance ou grande instance selon la somme et le seuil défini à l’article R321-1 du Code de l’Organisation Judicaire)
+             conformément à l’article L1617-5 du Code Général des Collectivités Territoriales.
+             Questembert Communauté dispose de moyens informatiques destinés à gérer plus facilement la redevance incitative.
+             Les informations enregistrées sont réservées à l'usage du service concerné et ne peuvent être communiquées qu’aux
+             destinataires suivants : Trésoreries. Conformément à la loi informatique et libertés du 6 janvier 1978,
+             vous bénéficiez d’un droit d’accès et de rectification aux informations qui vous concernent en vous adressant aux
+             services de Questembert Communauté.</span>
+            <br/><br/>
+        </template>
+
+        <template id="report_invoice_sepa_collection_center_address" name="Collection center address">
+            <strong>
+                 <span style="text-transform: uppercase;font-size:11px">CENTRE D'ENCAISSEMENT DE RENNES</span><br/>
+                 <span style="text-transform: uppercase;font-size:11px">35908 RENNES CEDEX 9</span>
+            </strong>
+        </template>
+
+        <template id="report_invoice_document_sepa_collection_price_list" name="Price list">
+            <div style="text-align: center; border-style: solid; background-color: #848181; border-color: black;">
+               <strong> <span style="color: white;font-size: 14px;">Grilles tarifaires suivant délibération n°2017.12.19 du conseil communautaire du 11 décembre 2017</span> </strong>
+            </div>
+            <table id="list_price" class="table table-condensed"
+                   style="border: 1px solid black;margin-bottom: 0px; font-size:10px;" >
+                <thead>
+                    <tr>
+                        <th style="text-align: center; border: 1px solid black;">Taille du bac</th>
+                        <th style="text-align: center; border: 1px solid black;">Part fixe résidences principale*</th>
+                        <th style="text-align: center; border: 1px solid black;">Part fixe résidences secondaires **</th>
+                        <th style="text-align: center; border: 1px solid black;">Coût unitaire du vidage</th>
+                    </tr>
+                </thead>
+                <tbody class="invoice_tbody">
+                    <tr>
+                        <td>
+                            <span><strong>50 l (sac rouge)</strong></span>
+                        </td>
+                        <td>
+                            <span>2.00 €</span>
+                        </td>
+                        <td>
+                            <span>2.00 €</span>
+                        </td>
+                        <td>
+                            <span><em>Inclus</em></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span><strong>30 l (badge)</strong></span>
+                        </td>
+                        <td>
+                            <span>107.94 €</span>
+                        </td>
+                        <td>
+                            <span>86.58 €</span>
+                        </td>
+                        <td>
+                            <span><em>0.89 €</em></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span><strong>120 l</strong></span>
+                        </td>
+                        <td>
+                            <span>107.94 €</span>
+                        </td>
+                        <td>
+                            <span>86.58 €</span>
+                        </td>
+                        <td>
+                            <span><em>3.56 €</em></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span><strong>180 l</strong></span>
+                        </td>
+                        <td>
+                            <span>151.61 €</span>
+                        </td>
+                        <td>
+                            <span>121.55 €</span>
+                        </td>
+                        <td>
+                            <span><em>5.01 €</em></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span><strong>240 l</strong></span>
+                        </td>
+                        <td>
+                            <span>195.54 €</span>
+                        </td>
+                        <td>
+                            <span>156.78 €</span>
+                        </td>
+                        <td>
+                            <span><em>6.46 €</em></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span><strong>340 l</strong></span>
+                        </td>
+                        <td>
+                            <span>268.69 €</span>
+                        </td>
+                        <td>
+                            <span>215.41 €</span>
+                        </td>
+                        <td>
+                            <span><em>8.88 €</em></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span><strong>770 l</strong></span>
+                        </td>
+                        <td>
+                            <span>583.20 €</span>
+                        </td>
+                        <td>
+                            <span>467.58 €</span>
+                        </td>
+                        <td>
+                            <span><em>19.27 €</em></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br/>
+            <p style="font-size:10px;">* 12 vidages inclus ou 52 accès badge magnétique sauf personnes incontinentes 18 vidages inclus et surdotation possible. <br/>
+            ** 6 vidages inclus ou 26 accès badge magnétique.
+            </p>
+            <p style="font-size:10px;"><em>Pour les usagers ayant refusé de s'inscrire au service Déchets, application d'un tarif forfaitaire équivalent à un bac 180 litres vidé 18 fois (conformément au règlement de facturation).</em></p>
+            <br/>
+        </template>
+    </data>
+</odoo>

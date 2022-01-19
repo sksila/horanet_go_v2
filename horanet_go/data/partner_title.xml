@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="company_title_AE" model="res.partner.title">
+        <field name="name">Self-employed</field>
+        <field name="shortcut">AE</field>
+        <field name="is_company_title">True</field>
+    </record>
+    <record id="company_title_EI" model="res.partner.title">
+        <field name="name">Individual company</field>
+        <field name="shortcut">EI</field>
+        <field name="is_company_title">True</field>
+    </record>
+    <record id="company_title_EURL" model="res.partner.title">
+        <field name="name">One-person limited liability companie</field>
+        <field name="shortcut">EOOD</field>
+        <field name="is_company_title">True</field>
+    </record>
+    <record id="company_title_GAEC" model="res.partner.title">
+        <field name="name">Collective farming grouping</field>
+        <field name="shortcut">GAEC</field>
+        <field name="is_company_title">True</field>
+    </record>
+    <record id="company_title_SARL" model="res.partner.title">
+        <field name="name">Limited Liability Company</field>
+        <field name="shortcut">LLC</field>
+        <field name="is_company_title">True</field>
+    </record>
+    <record id="company_title_SA" model="res.partner.title">
+        <field name="name">Public limited company</field>
+        <field name="shortcut">PLC</field>
+        <field name="is_company_title">True</field>
+    </record>
+    <record id="company_title_SAS" model="res.partner.title">
+        <field name="name">Simplified joint-stock company</field>
+        <field name="shortcut">SAS</field>
+        <field name="is_company_title">True</field>
+    </record>
+    <record id="company_title_SCI" model="res.partner.title">
+        <field name="name">Non trading company</field>
+        <field name="shortcut">SCI</field>
+        <field name="is_company_title">True</field>
+    </record>
+    <record id="company_title_CESU" model="res.partner.title">
+        <field name="name">Universal services employment voucher</field>
+        <field name="shortcut">CESU</field>
+        <field name="is_company_title">True</field>
+    </record>
+    <record id="company_title_craftsman" model="res.partner.title">
+        <field name="name">Trader</field>
+        <field name="shortcut">Trader</field>
+        <field name="is_company_title">True</field>
+    </record>
+    <record id="company_title_commercant" model="res.partner.title">
+        <field name="name">Merchant</field>
+        <field name="shortcut">Merchant</field>
+        <field name="is_company_title">True</field>
+    </record>
+</odoo>

@@ -1,0 +1,82 @@
+<odoo>
+    <template id="inherited_website_application_requests" inherit_id="website_application.requests"
+              name="My Requests Add Inscriptions">
+        <xpath expr="//h3[@id='request_list']" position="before">
+            <div t-if="not inscriptions">
+                <div class="text-center">
+                    <div class="span12">
+                        <h1 class="page-header mb32">Aucune inscription</h1>
+                    </div>
+                </div>
+            </div>
+            <div t-if="inscriptions">
+                <h3 class="page-header mb32">Inscriptions</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>N°</th>
+                            <th>Type</th>
+                            <th>Responsable</th>
+                            <th>Bénéficiaire</th>
+                            <th>Période</th>
+                            <th>Statut</th>
+                            <th/>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="inscriptions" t-as="inscription">
+                            <tr t-att-onclick="inscription.status == 'draft' and 'window.location=\'/my/inscription/edit/' + str(inscription.id) + '\';' or ''"
+                                t-att-class="inscription.status == 'draft' and 'cursor-pointer' or ''">
+                                <td>
+                                    <t t-esc="inscription.name"/>
+                                </td>
+                                <td>
+                                    <span>Inscription transport</span>
+                                </td>
+                                <td>
+                                    <t t-esc="inscription.responsible_id.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="inscription.recipient_id.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="inscription.period_id.name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="dict(inscription.fields_get('status')['status']['selection'])[inscription.status]"/>
+                                </td>
+                                <td>
+                                    <form t-if="inscription.status == 'draft'"
+                                          t-attf-action="/my/inscription/edit/{{inscription.id}}"
+                                          method="get">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fa fa-pencil-square-o" aria-hidden="true" t-translation="off"/>
+                                            Modifier
+                                        </button>
+                                    </form>
+                                    <a t-if="inscription.status == 'to_validate' or inscription.status == 'cancelled' or inscription.status == 'progress'"
+                                       target="_blank" role="button"
+                                       class="btn btn-info btn-large"
+                                       t-attf-href="/report/pdf/tco_inscription_transport_scolaire.view_tco_inscription_transport_scolaire_report/{{inscription.id}}">
+                                        <i class=" fa fa-file-pdf-o" aria-hidden="true" t-translation="off"/>
+                                        PDF
+
+                                    </a>
+                                    <a t-if="inscription.status == 'validated'"
+                                       target="_blank" role="button"
+                                       class="btn btn-info btn-large"
+                                       t-attf-href="/report/pdf/tco_inscription_transport_scolaire.global_report_view/{{inscription.id}}">
+                                        <i class=" fa fa-file-pdf-o" aria-hidden="true" t-translation="off"/>
+                                        PDF
+                                    </a>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                <br/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,8 @@
+<odoo>
+    <data noupdate="1">
+        <record id="attachment_type_routeur_file" model="ir.attachment.type">
+            <field name="name">Fichier routeur</field>
+            <field name="technical_name">routeur_file</field>
+        </record>
+    </data>
+</odoo>

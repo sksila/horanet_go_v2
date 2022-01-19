@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_tco_inscription_period" model="ir.ui.view">
+        <field name="name">horanet.tco.inscription.period.form</field>
+        <field name="model">tco.inscription.period</field>
+        <field name="arch" type="xml">
+            <form string="Period">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options="{'terminology': 'archive'}"/>
+                        </button>
+                    </div>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Name"/>
+                        </h1>
+                    </div>
+                    <group></group>
+                    <group string="Period dates">
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_tco_inscription_period" model="ir.ui.view">
+        <field name="name">horanet.tco.inscription.period.tree</field>
+        <field name="model">tco.inscription.period</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_tco_inscription_transport_scolaire_period" model="ir.actions.act_window">
+        <field name="name">Inscription period</field>
+        <field name="res_model">tco.inscription.period</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_tco_inscription_period"/>
+    </record>
+</odoo>

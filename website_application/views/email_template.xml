@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="email_application_pending" model="mail.template">
+        <field name="name">Application request pending</field>
+        <field name="email_from">${user.company_id.email}</field>
+        <field name="subject">Your request is in progress</field>
+        <field name="email_to">${object.applicant_id.email}</field>
+        <field name="model_id" ref="website_application.model_website_application"/>
+        <field name="lang">${object.applicant_id.lang}</field>
+        <field name="auto_delete" eval="False"/>
+        <field name="body_html"><![CDATA[<p>${object.applicant_id.partner_id.title.name or ''}
+${object.applicant_id.partner_id.name},<br/>
+<br/>
+We want you to acknowledge that your request reference ${object.name} is currently studied.
+You will receive soon an answer for it.<br/>
+<br/>
+Best regards, the Odoo team.</p>]]></field>
+    </record>
+
+    <record id="email_application_accepted" model="mail.template">
+        <field name="name">Application request accepted</field>
+        <field name="email_from">${user.company_id.email}</field>
+        <field name="subject">Your request is accepted</field>
+        <field name="email_to">${object.applicant_id.email}</field>
+        <field name="model_id" ref="website_application.model_website_application"/>
+        <field name="lang">${object.applicant_id.lang}</field>
+        <field name="auto_delete" eval="False"/>
+        <field name="body_html"><![CDATA[<p>${object.applicant_id.partner_id.title.name or ''}
+${object.applicant_id.partner_id.name},<br/>
+<br/>
+We want you to acknowledge that your request reference ${object.name} has been accepted.
+For further details, you can check <a href="/my/requests/${object.id}">your account</a>.<br/>
+<br/>
+Best regards, the Odoo team.</p>]]></field>
+    </record>
+
+    <record id="email_application_rejected" model="mail.template">
+        <field name="name">Application request rejected</field>
+        <field name="email_from">${user.company_id.email}</field>
+        <field name="subject">Your request is rejected</field>
+        <field name="email_to">${object.applicant_id.email}</field>
+        <field name="model_id" ref="website_application.model_website_application"/>
+        <field name="lang">${object.applicant_id.lang}</field>
+        <field name="auto_delete" eval="False"/>
+        <field name="body_html"><![CDATA[<p>${object.applicant_id.partner_id.title.name or ''}
+${object.applicant_id.partner_id.name},<br/>
+<br/>
+We want you to acknowledge that your request reference ${object.name} has been rejected.
+For further details, you can check <a href="/my/requests/${object.id}">your account</a>.<br/>
+<br/>
+Best regards, the Odoo team.</p>]]></field>
+    </record>
+
+    <record id="email_application_new_message" model="mail.template">
+        <field name="name">Application request new message</field>
+        <field name="email_from">${user.company_id.email}</field>
+        <field name="subject">Your have received a new message</field>
+        <field name="email_to">${object.applicant_id.email}</field>
+        <field name="model_id" ref="website_application.model_website_application"/>
+        <field name="lang">${object.applicant_id.lang}</field>
+        <field name="auto_delete" eval="False"/>
+        <field name="body_html"><![CDATA[<p>${object.applicant_id.partner_id.title.name or ''}
+${object.applicant_id.partner_id.name},<br/>
+<br/>
+You have received a new message for your request reference ${object.name}.
+For further details, you can check <a href="/my/requests/${object.id}">your account</a>.<br/>
+<br/>
+Best regards, the Odoo team.</p>]]></field>
+    </record>
+</odoo>

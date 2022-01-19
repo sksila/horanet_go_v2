@@ -1,0 +1,9 @@
+<odoo>
+    <record id="group_landholding_manage" model="res.groups">
+        <field name="name">Manage Landholding</field>
+        <field name="category_id" ref="horanet_go.horanet_go_category"/>
+        <field name="comment">Enable the menus to manage landholding.</field>
+        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="implied_ids" eval="[(4, ref('better_address.group_address_manage'))]"/>
+    </record>
+</odoo>

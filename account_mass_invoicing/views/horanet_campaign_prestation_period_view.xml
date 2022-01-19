@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="mass_invoicing_campaign_prestation_period_form_view" model="ir.ui.view">
+        <field name="name">Campaign prestation periods Form View</field>
+        <field name="model">horanet.campaign.prestation.period</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group col="4">
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <newline/>
+                        <field name="prestation_ids" colspan="4"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mass_invoicing_campaign_prestation_period_tree_view" model="ir.ui.view">
+        <field name="name">Campaign prestation periods Tree View</field>
+        <field name="model">horanet.campaign.prestation.period</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="prestation_ids"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_account_mass_invoicing_campaign_prestation_period" model="ir.actions.act_window">
+        <field name="name">Campaign prestation periods</field>
+        <field name="res_model">horanet.campaign.prestation.period</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="account_mass_invoicing.mass_invoicing_campaign_prestation_period_tree_view"/>
+    </record>
+</odoo>

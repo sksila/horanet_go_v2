@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<odoo>
+    <report
+            id="_pickup_request_xls_report"
+            string="Pickup request xls report"
+            model="environment.pickup.request"
+            report_type="xlsx"
+            name="environment_waste_collect.xlsx_report_pickup_request.xlsx"
+            file="environment_waste_collect.xlsx_report_pickup_request.xlsx"
+            menu="False"/>
+</odoo>

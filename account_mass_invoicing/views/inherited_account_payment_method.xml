@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="account_payment_method_form_view" model="ir.ui.view">
+        <field name="name">Account Payment Method</field>
+        <field name="model">account.payment.method</field>
+        <field name="inherit_id" ref="account_payment_mode.account_payment_method_form"/>
+        <field name="arch" type="xml">
+            <!--<xpath expr="//field[@name='pain_version']" position="replace"></xpath>-->
+            <xpath expr="//field[@name='active']" position="replace">
+            </xpath>
+            <xpath expr="//group" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                        <field name="active" widget="boolean_button" options="{'terminology': 'archive'}"/>
+                    </button>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="pain_version_account_payment_method_form_view" model="ir.ui.view">
+        <field name="name">Account Payment Method without pain in form</field>
+        <field name="model">account.payment.method</field>
+        <field name="inherit_id" ref="account_banking_pain_base.account_payment_method_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='pain_version']" position="replace"></xpath>
+            <xpath expr="//field[@name='convert_to_ascii']" position="replace"></xpath>
+        </field>
+    </record>
+
+    <record id="pain_version_account_payment_method_tree_view" model="ir.ui.view">
+        <field name="name">Account Payment Method without pain in tree</field>
+        <field name="model">account.payment.method</field>
+        <field name="inherit_id" ref="account_banking_pain_base.account_payment_method_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='pain_version']" position="replace"></xpath>
+        </field>
+    </record>
+</odoo>

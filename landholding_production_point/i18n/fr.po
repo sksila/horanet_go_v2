@@ -1,0 +1,77 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* landholding_production_point
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-30 09:41+0000\n"
+"PO-Revision-Date: 2017-11-30 09:41+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: landholding_production_point
+#: model:ir.ui.view,arch_db:landholding_production_point.inherited_production_point_view_form
+msgid "Additional address (floor, stairs, apartment number) ..."
+msgstr "Complément d'adresse (n° appartement, étage, escalier) ..."
+
+#. module: landholding_production_point
+#: model:ir.ui.view,arch_db:landholding_production_point.inherited_production_point_view_form
+msgid "Address"
+msgstr "Adresse"
+
+#. module: landholding_production_point
+#: model:ir.model.fields,field_description:landholding_production_point.field_production_point_bati_id
+msgid "Building"
+msgstr "Bati"
+
+#. module: landholding_production_point
+#: model:ir.ui.view,arch_db:landholding_production_point.inherited_production_point_view_form
+msgid "City"
+msgstr "Ville"
+
+#. module: landholding_production_point
+#: model:ir.ui.view,arch_db:landholding_production_point.inherited_production_point_view_form
+msgid "Country ..."
+msgstr "Pays ..."
+
+#. module: landholding_production_point
+#: model:ir.ui.view,arch_db:landholding_production_point.inherited_production_point_view_form
+msgid "Localize"
+msgstr "Localiser"
+
+#. module: landholding_production_point
+#: model:ir.ui.view,arch_db:landholding_production_point.inherited_production_point_view_form
+msgid "Second additional address (building, access) ..."
+msgstr "Deuxième complément d'adresse (bâtiment, porte) ..."
+
+#. module: landholding_production_point
+#: model:ir.ui.view,arch_db:landholding_production_point.inherited_production_point_view_form
+msgid "State..."
+msgstr "Département..."
+
+#. module: landholding_production_point
+#: model:ir.ui.view,arch_db:landholding_production_point.inherited_production_point_view_form
+msgid "Street number..."
+msgstr "N°..."
+
+#. module: landholding_production_point
+#: model:ir.ui.view,arch_db:landholding_production_point.inherited_production_point_view_form
+msgid "Street..."
+msgstr "Rue..."
+
+#. module: landholding_production_point
+#: model:ir.ui.view,arch_db:landholding_production_point.inherited_production_point_view_form
+msgid "ZIP"
+msgstr "Code postal"
+
+#. module: landholding_production_point
+#: model:ir.model,name:landholding_production_point.model_production_point
+msgid "production.point"
+msgstr "production.point"
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_partner_contact_identification_technology" model="ir.ui.view">
+        <field name="name">technology form</field>
+        <field name="model">partner.contact.identification.technology</field>
+        <field name="arch" type="xml">
+            <form string="technology" duplicate="false">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_partner_contact_identification_technology" model="ir.ui.view">
+        <field name="name">Technology list</field>
+        <field name="model">partner.contact.identification.technology</field>
+        <field name="arch" type="xml">
+            <tree string="technology">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_identification_technology" model="ir.actions.act_window">
+        <field name="name">Technologies</field>
+        <field name="res_model">partner.contact.identification.technology</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_partner_contact_identification_technology"/>
+    </record>
+</odoo>

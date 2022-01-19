@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="subscription_env_search_view" model="ir.ui.view">
+        <field name="name">Environment Subscription Search View</field>
+        <field name="model">horanet.subscription</field>
+        <field name="inherit_id" ref="horanet_subscription.subscription_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='filter_state_to_compute']" position="after">
+                <filter string="Environment subscription" name="filter_environment" domain="[('application_type', '=', 'environment')]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

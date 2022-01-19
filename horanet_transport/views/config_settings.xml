@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_horanet_transport_config_settings" model="ir.ui.view">
+        <field name="name">Horanet Transport settings</field>
+        <field name="model">horanet.transport.config</field>
+        <field name="arch" type="xml">
+            <form string="Configure Horanet Transport" class="oe_form_configuration"
+                  name="collectivity_config_form">
+                <header>
+                    <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                    <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                </header>
+                <div id="main"/>
+                <!-- On insère le code ici -->
+                <group name='group_settings_contact'>
+                    <group>
+
+                    </group>
+
+                    <group name='group_settings_contact_detail'>
+
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_horanet_transport_settings" model="ir.actions.act_window">
+        <field name="name">Configure Horanet Transport settings</field>
+        <field name="res_model">horanet.transport.config</field>
+        <field name="view_id" ref="view_form_horanet_transport_config_settings"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+    </record>
+</odoo>

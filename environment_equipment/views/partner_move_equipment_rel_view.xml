@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="equipment_allocation_form_view" model="ir.ui.view">
+        <field name="name">Equipment Allocation Form View</field>
+        <field name="model">partner.move.equipment.rel</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="equipment_id"/>
+                        <field name="move_id"/>
+                        <newline/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="is_active"/>
+                        <newline/>
+                        <field name="chip_number"/>
+                        <field name="tub_number"/>
+                        <field name="category_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="equipment_allocation_tree_view" model="ir.ui.view">
+        <field name="name">Equipment Allocation Tree View</field>
+        <field name="model">partner.move.equipment.rel</field>
+        <field name="arch" type="xml">
+            <tree colors="gray:not is_active">
+                <field name="move_id"/>
+                <field name="equipment_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="is_active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_equipment_allocation" model="ir.actions.act_window">
+        <field name="name">Equipment Allocation</field>
+        <field name="res_model">partner.move.equipment.rel</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="equipment_allocation_tree_view"/>
+    </record>
+</odoo>
+

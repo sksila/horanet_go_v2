@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="assignation_form_view" model="ir.ui.view">
+        <field name="name">assignation form without headers</field>
+        <field name="model">partner.contact.identification.assignation</field>
+        <field name="inherit_id"
+               ref="partner_contact_identification.view_form_partner_contact_identification_assignation"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

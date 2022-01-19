@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="equipment_menu"
+              name="Containers"
+              parent="horanet_environment.environment_main"
+              sequence="20"/>
+    <menuitem id="equipment_container_menu"
+              name="Containers"
+              parent="equipment_menu"
+              action="environment_equipment_action"
+              sequence="10"/>
+    <menuitem id="equipment_maintenance_menu"
+              name="Containers maintenance"
+              parent="equipment_menu"
+              action="environment_maintenance_requests_action"
+              sequence="20"/>
+    <menuitem id="equipment_operation_pickups_menu"
+              name="Pickups"
+              parent="equipment_menu"
+              action="environment_equipment_operation_pickups_action"
+              sequence="30"/>
+    <menuitem id="equipment_category_id_menu"
+              name="Container types"
+              parent="equipment_menu"
+              action="environment_equipment_category_action"
+              sequence="35"/>
+    <menuitem id="equipment_pickup_import_menu"
+              name="Pickups import"
+              parent="equipment_menu"
+              action="equipment_pickup_import_action"
+              sequence="40"/>
+
+    <menuitem id="equipment_configuration_menu"
+              name="Containers and maintenance"
+              groups="maintenance.group_equipment_manager"
+              parent="horanet_environment.environment_configuration"
+              sequence="5"/>
+    <menuitem id="menu_equipment_container_category"
+              name="Containers categories"
+              parent="equipment_configuration_menu"
+              action="environment_equipment_category_action"
+              sequence="10"/>
+    <menuitem id="menu_maintenance_intervention_types"
+              name="Intervention types"
+              parent="equipment_configuration_menu"
+              action="maintenance_intervention_type_action"
+              sequence="20"/>
+    <menuitem id="menu_equipment_allocation"
+              name="Allocations"
+              groups="base.group_no_one"
+              parent="equipment_configuration_menu"
+              action="action_equipment_allocation"
+              sequence="20"/>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Terms checkbox checked setting -->
+        <record model="ir.config_parameter" id="terms_checkbox_checked">
+            <field name="key">horanet_website_sale.terms_checkbox_checked</field>
+            <field name="value">False</field>
+        </record>
+        <record model="ir.config_parameter" id="shop_privacy_mode">
+            <field name="key">horanet_website_sale.shop_privacy_mode</field>
+            <field name="value">public</field>
+        </record>
+    </data>
+</odoo>

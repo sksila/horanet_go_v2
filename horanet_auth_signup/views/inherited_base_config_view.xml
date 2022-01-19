@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--We hide the checkbox to allow user to register-->
+    <record id="auth_view_general_configuration" model="ir.ui.view">
+        <field name="name">Display checkboxes to allow companies or persons register on portal</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="auth_signup.res_config_settings_view_form"/>
+        <field name="priority">32</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='auth_signup_uninvited']/.." position="after">
+                <group name="signup_titles" col="1">
+                    <div attrs="{'invisible':[('auth_signup_uninvited','=',False)]}" groups="base.group_no_one">
+                        <field name="auth_signup_allow_title_person" class="oe_inline"/>
+                        <label for="auth_signup_allow_title_person"/>
+                    </div>
+                    <div attrs="{'invisible':[('auth_signup_uninvited','=',False)]}" groups="base.group_no_one">
+                        <field name="auth_signup_allow_title_company" class="oe_inline"/>
+                        <label for="auth_signup_allow_title_company"/>
+                    </div>
+                </group>
+                <group name="invalid_signup_limit_time" col="1">
+                    <div>
+                        <label for="invalid_signup_limit_hours"/>
+                        <field name="invalid_signup_limit_hours" class="oe_inline"/> hours
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="website_application_environment_form" model="ir.ui.view">
+        <field name="name">website application environment form</field>
+        <field name="model">website.application</field>
+        <field name="inherit_id" ref="website_application.view_form_website_application"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="(//button[@name='action_accept'])" position="replace">
+                <button name="action_accept" string="Accept request" type="object"
+                        class="oe_highlight"
+                        attrs="{'invisible': [('state', '=', 'accepted')]}"/>
+                <button name="action_create_medium" string="Create new medium" type="object"
+                        class="oe_highlight"
+                        attrs="{'invisible': ['|', '|', ('state', '!=', 'accepted'),
+                                                        ('application_type', '!=', 'environment'),
+                                                        ('functionality_id', '!=', %(website_application.application_functionality_support_request)d)
+                                             ]}"/>
+            </xpath>
+            <xpath expr="(//button[@name='action_reject'])" position="replace">
+                <button name="action_reject" string="Reject request" type="object"
+                        class="oe_highlight"
+                        attrs="{'invisible': [('state', '=', 'rejected')]}"/>
+            </xpath>
+
+            <field name="recipient_id" position="attributes">
+                <attribute name="context">{'form_view_ref' : 'environment_waste_collect.res_partner_form_view'}
+                </attribute>
+            </field>
+
+            <field name="website_application_template_id" position="attributes">
+                <attribute name="domain">[('application_type', '=', 'environment')]</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="action_environment_website_application" model="ir.actions.act_window">
+        <field name="name">Requests</field>
+        <field name="res_model">website.application</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{"search_default_group_by_type": True}</field>
+        <field name="domain" eval="[('website_application_template_id.application_type', '=', 'environment')]"/>
+    </record>
+
+    <record id="environment_applications_form_view" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="website_application_environment_form"/>
+        <field name="act_window_id" ref="action_environment_website_application"/>
+    </record>
+    <!--Appel de la forme de base afin de garder la main sur l'ordonnancement des vue-->
+    <record id="environment_applications_tree_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="website_application.view_tree_website_application"/>
+        <field name="act_window_id" ref="action_environment_website_application"/>
+    </record>
+</odoo>

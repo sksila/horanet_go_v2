@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<odoo>
+    <report
+            id="_report_environment_partner"
+            string="Environment partner report"
+            model="res.partner"
+            report_type="qweb-pdf"
+            name="environment_waste_collect.report_environment_partner"
+            file="environment_waste_collect.report_environment_partner"
+            menu="False"/>
+
+    <template id="report_environment_partner">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h3>Partners report</h3>
+                    <br/>
+                    <p>
+                        <i>Filters :
+                            <br/>
+                            <ul style="margin-left: 50px;">
+                                <t t-foreach="filters" t-as="i">
+                                    <li>
+                                        <t t-esc="i"/>
+                                    </li>
+                                </t>
+                            </ul>
+                        </i>
+                    </p>
+                    <br/>
+                    <h4>Edition of
+                        <t t-esc="today"/>
+                    </h4>
+                    <br/>
+                    <h4>Period: from
+                        <t t-esc="date_from"/>
+                        to
+                        <t t-esc="date_to"/>
+                    </h4>
+                    <br/>
+                    <div t-if="datas">
+                        <table class="table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th style="padding: 5px;" class="text-center">Name</th>
+                                    <th style="padding: 5px;" class="text-center">Profile</th>
+                                    <th style="padding: 5px;" class="text-center">City</th>
+                                    <th style="padding: 5px;" class="text-center">Access number</th>
+                                    <th style="padding: 5px;" class="text-center">Access balance on
+                                        <t t-esc="today"/>
+                                    </th>
+                                    <th style="padding: 5px;" class="text-center">Invoiced</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="datas" t-as="partner">
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['name']"/>
+                                    </td>
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['type']"/>
+                                    </td>
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['city']"/>
+                                    </td>
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['access_number']"/>
+                                    </td>
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['access_balance']"/>
+                                    </td>
+                                    <td style="padding: 5px;">
+                                        <t t-esc="partner['sales_amount']"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 5px;">
+                                        <strong>Total</strong>
+                                    </td>
+                                    <td colspan="5" style="padding: 5px 15px 5px 5px;" class="text-right">
+                                        <strong>
+                                            <t t-esc="len(datas)"/>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                    </div>
+                    <div t-if="not datas">
+                        <p>No data to display.</p>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

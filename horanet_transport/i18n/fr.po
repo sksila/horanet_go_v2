@@ -1,0 +1,159 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* horanet_transport
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-22 13:57+0000\n"
+"PO-Revision-Date: 2018-01-22 13:57+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: horanet_transport
+#: model:res.groups,name:horanet_transport.group_admin_transport
+msgid "Administrator"
+msgstr "Administrateur"
+
+#. module: horanet_transport
+#: model:res.groups,comment:horanet_transport.group_browse_transport
+msgid "Allow browsing records related to transport management"
+msgstr "Autorise à parcourir les enregistrements relatifs à la gestion du transport"
+
+#. module: horanet_transport
+#: model:res.groups,comment:horanet_transport.group_manage_transport
+msgid "Allow editing records related to transport management"
+msgstr "Autorise à éditer les enregistrements relatifs à la gestion du transport"
+
+#. module: horanet_transport
+#: model:res.groups,comment:horanet_transport.group_admin_transport
+msgid "Allow user to see and edit transport related objects"
+msgstr "Permet à l'utilisateur de modifier les objets liés au transport"
+
+#. module: horanet_transport
+#: model:ir.ui.view,arch_db:horanet_transport.view_form_horanet_transport_config_settings
+msgid "Apply"
+msgstr "Appliquer"
+
+#. module: horanet_transport
+#: model:res.groups,name:horanet_transport.group_browse_transport
+msgid "Browser"
+msgstr "Navigateur"
+
+#. module: horanet_transport
+#: model:ir.ui.view,arch_db:horanet_transport.view_form_horanet_transport_config_settings
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: horanet_transport
+#: model:ir.ui.menu,name:horanet_transport.transport_citizen_menu
+msgid "Citizen"
+msgstr "Citoyen"
+
+#. module: horanet_transport
+#: model:ir.ui.menu,name:horanet_transport.transport_citizen_citizens_menu
+msgid "Citizens"
+msgstr "Citoyens"
+
+#. module: horanet_transport
+#: model:ir.ui.menu,name:horanet_transport.transport_configuration
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: horanet_transport
+#: model:ir.ui.view,arch_db:horanet_transport.view_form_horanet_transport_config_settings
+msgid "Configure Horanet Transport"
+msgstr "Configurer Horanet Transport"
+
+#. module: horanet_transport
+#: model:ir.actions.act_window,name:horanet_transport.action_horanet_transport_settings
+msgid "Configure Horanet Transport settings"
+msgstr "Configurer les paramètres d'Horanet Transport"
+
+#. module: horanet_transport
+#: model:ir.model.fields,field_description:horanet_transport.field_horanet_transport_config_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: horanet_transport
+#: model:ir.model.fields,field_description:horanet_transport.field_horanet_transport_config_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: horanet_transport
+#: model:ir.model.fields,field_description:horanet_transport.field_horanet_transport_config_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: horanet_transport
+#: model:ir.model.fields,field_description:horanet_transport.field_horanet_transport_config_id
+msgid "ID"
+msgstr "ID"
+
+#. module: horanet_transport
+#: model:ir.model.fields,field_description:horanet_transport.field_horanet_transport_config___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: horanet_transport
+#: model:ir.model.fields,field_description:horanet_transport.field_horanet_transport_config_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: horanet_transport
+#: model:ir.model.fields,field_description:horanet_transport.field_horanet_transport_config_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: horanet_transport
+#: model:res.groups,name:horanet_transport.group_manage_transport
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: horanet_transport
+#: model:ir.ui.menu,name:horanet_transport.transport_website_application_template_menu
+msgid "Request templates"
+msgstr "Modèles de demandes en ligne"
+
+#. module: horanet_transport
+#: model:ir.actions.act_window,name:horanet_transport.action_transport_website_application
+#: model:ir.ui.menu,name:horanet_transport.transport_requests_menu
+#: model:ir.ui.menu,name:horanet_transport.transport_website_application_menu
+msgid "Requests"
+msgstr "Demandes en ligne"
+
+#. module: horanet_transport
+#: model:ir.ui.menu,name:horanet_transport.transport_main
+msgid "School transport"
+msgstr "Transport scolaire"
+
+#. module: horanet_transport
+#: model:ir.ui.menu,name:horanet_transport.transport_configuration_general_settings
+msgid "Settings"
+msgstr "Configuration"
+
+#. module: horanet_transport
+#: model:ir.module.category,name:horanet_transport.horanet_transport_category
+msgid "Transport"
+msgstr "Transport"
+
+#. module: horanet_transport
+#: model:ir.actions.act_window,name:horanet_transport.action_website_application_template_transport
+msgid "Website application templates"
+msgstr "Modèles de demandes en ligne"
+
+#. module: horanet_transport
+#: model:ir.model,name:horanet_transport.model_application_type
+msgid "application.type"
+msgstr "application.type"
+
+#. module: horanet_transport
+#: model:ir.model,name:horanet_transport.model_horanet_transport_config
+msgid "horanet.transport.config"
+msgstr "horanet.transport.config"
+

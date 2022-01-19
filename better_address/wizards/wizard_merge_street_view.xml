@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <record id="wizard_merge_street_form_view" model="ir.ui.view">
+        <field name="name">Wizard to help merging street</field>
+        <field name="model">horanet.wizard.merge.street</field>
+        <field name="arch" type="xml">
+            <form string="Title">
+
+                <group name="Street to merge" col="4" string="Street merge utility" style="margin:0px">
+                    <field name="street_to_merge_id"/>
+                    <div colspan="2">
+                        <label for="number_partner_with_street_id"/>
+                        <field name="number_partner_with_street_id" nolabel="1"/>
+                        <button name="action_open_google_map"
+                                type="object"
+                                class="pull-right mr16" string="Ask Google map"/>
+                    </div>
+                </group>
+
+                <group name="main" string="Duplicate street search" col="4" style="margin:0px">
+                    <label for="street_renamed"/>
+                    <div style="display:flex;">
+                        <field name="street_renamed" readonly="False" nolabel="1"
+                               style="margin-bottom:0px;"/>
+                        <div class="btn btn-light" style="background-color: #dddddd;">
+                            <span class="fa fa-search" aria-hidden="true"/>
+                        </div>
+                    </div>
+
+                    <field name="similarity_threshold" widget="priority"/>
+
+                    <field name="street_to_merge_code"/>
+                    <field name="use_code"/>
+
+                    <field name="street_to_merge_city_id"/>
+                    <field name="use_city_id"/>
+                </group>
+
+                <group string="Similar streets" name="search_result" style="margin:0px">
+                    <field name="similar_street_ids" nolabel="1" widget="one2many" readonly="0">
+                        <tree limit="10"
+                              default_order='state'
+                              options="{'no_create' : True}"
+                              decoration-muted="state=='draft'"
+                              decoration-warning="state=='invalidated'"
+                              decoration-bf="state=='confirmed'"
+                              decoration-success="state=='confirmed'">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="city_id"/>
+                            <field name="state"/>
+                        </tree>
+                    </field>
+                </group>
+                <group style="margin:0px">
+                    <group string="Merge" style="padding-right: 3em; display: inherit;">
+                        <label for="street_merge_destination_id" style="padding-bottom: 18px;"/>
+                        <field name="street_merge_destination_id" nolabel="1"/>
+
+                        <label for="destination_code" style="padding-bottom: 18px;"/>
+                        <field name="destination_code" nolabel="1"/>
+
+                        <label for="destination_country_id" style="padding-bottom: 18px;"/>
+                        <field name="destination_country_id" nolabel="1"/>
+
+                        <label for="destination_country_state_id" style="padding-bottom: 18px;"/>
+                        <field name="destination_country_state_id" nolabel="1"/>
+
+                        <label for="destination_city_id" style="padding-bottom: 18px;"/>
+                        <field name="destination_city_id" nolabel="1"/>
+
+                        <label for="destination_street_number" style="padding-bottom: 18px;"/>
+                        <field name="destination_street_number" nolabel="1"/>
+
+                        <button name="action_merge_street" type="object" colspan="2"
+                                attrs="{'invisible':[('street_merge_destination_id','=', False)]}"
+                                class="center-block mt16" string="Merge to selected street"/>
+                        <button name="action_merge_street" type="object" colspan="2"
+                                attrs="{'invisible':[('street_merge_destination_id','!=', False)]}"
+                                class="center-block mt16"
+                                style="cursor: not-allowed;"
+                                string="Merge to selected street"/>
+                    </group>
+
+                    <group string="Add to referential">
+                        <field name="new_name"/>
+                        <field name="new_code"/>
+                        <field name="new_country_id"/>
+                        <field name="new_country_state_id"/>
+                        <field name="new_city_id" widget="many2many_tags" options="{'no_open': False}"/>
+                        <field name="new_street_number"/>
+                        <button name="action_add_street_to_referential" type="object" colspan="2"
+                                class="center-block mt16" string="Confirm and add to referential"/>
+                    </group>
+                </group>
+                <footer>
+                    <button special="cancel" string="Cancel" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="wizard_merge_street_action" model="ir.actions.act_window">
+        <field name="name">Wizard to help merging street</field>
+        <field name="res_model">horanet.wizard.merge.street</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</openerp>

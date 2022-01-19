@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="confirm_payment" name="Confirm payment">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container horanet_payment mt32 mb32">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="/my/home">
+                                <i class="fa fa-home"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/my/deposit">My Deposit Account</a>
+                        </li>
+                        <li>
+                            <a href="/my/add-credit">Add credits</a>
+                        </li>
+                        <li>Confirm</li>
+                    </ol>
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <t t-if="action == 'deposit'">
+                                <p>You're about to credit your account
+                                    <b>
+                                        <t t-esc="user.partner_id.property_account_customer_advance.name"/>
+                                    </b>
+                                    with an amount of
+                                    <b>
+                                        <t t-esc="amount_total"
+                                           t-esc-options='{"widget": "monetary", "display_currency": user.partner_id.company_id.currency_id}'/>
+                                    </b>
+                                    .
+                                </p>
+
+                                <form t-att-action="payzen_url" method="post" class="form">
+                                    <button type="submit" class="btn btn-primary confirm-payment-btn">Pay Now</button>
+                                    <input type="hidden" id="acquirer_id" t-att-value="acquirer_id"/>
+                                    <input type="hidden" id="action" t-att-value="action"/>
+                                    <input type="hidden" id="amount" t-att-value="amount_total"/>
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                </form>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

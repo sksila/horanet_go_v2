@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="inherited_website_payment" inherit_id="website_payment.pay">
+        <!-- We add the invoice attribute in the div -->
+        <xpath expr="(//div[@class='form-horizontal row o_website_payment_new_payment'])" position="attributes">
+            <attribute name="t-att-data-invoice_ref">invoice_ref</attribute>
+        </xpath>
+        <xpath expr="//div[@class='col-sm-9 col-sm-offset-3 text-muted mt16']" position="replace">
+            <t t-if="acquirer.journal_id">
+                <div class="col-sm-9 col-sm-offset-3 text-muted mt16" t-raw="acquirer.pre_msg"/>
+            </t>
+        </xpath>
+        <xpath expr="//div[@class='col-sm-12 o_website_payment_form']" position="replace">
+            <t t-if="acquirer.journal_id">
+                <div class="col-sm-12 o_website_payment_form" t-raw="payment_form"/>
+            </t>
+            <t t-if="not acquirer.journal_id">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <div class="alert alert-warning">
+                        Payments are currently unavailable.
+                        <br/>
+                        Please try again later or contact the site administrator.
+                    </div>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//div[@class='col-sm-6 col-sm-offset-6 text-muted mt16']" position="replace">
+            <t t-if="acquirer.journal_id">
+                <div class="col-sm-6 col-sm-offset-6 text-muted mt16">
+                    <img alt="payment_provider_logo" class="pull-right ml8"
+                         t-att-src="website.image_url(acquirer, 'image_small')"/>
+                    <span>This transaction will be processed by<t t-esc="acquirer.name"/>.
+                    </span>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

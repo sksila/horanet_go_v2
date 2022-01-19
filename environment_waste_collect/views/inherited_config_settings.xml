@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_environment_waste_collect_config_settings" model="ir.ui.view">
+        <field name="name">Horanet Environment Waste Collect settings</field>
+        <field name="model">horanet.environment.config</field>
+        <field name="inherit_id" ref="horanet_environment.view_form_horanet_environment_config_settings"/>
+        <field name="arch" type="xml">
+            <div id="main" position="inside">
+                <group string="Waste Collect">
+                    <field name="group_manage_container" widget="radio"/>
+                    <field name="module_environment_equipment"/>
+                    <field name="enable_setup_and_close_wizards"/>
+                </group>
+                <group string="Interfaces">
+                    <field name="is_linked_to_smarteco"/>
+                </group>
+                <group name="ecopad" string="Ecopad" col="4">
+                    <field name="print_ticket_transaction"/>
+                    <newline/>
+                    <field name="client_signature_required"/>
+                    <newline/>
+                    <field name="ecopad_tag_ext_reference_label"/>
+                    <newline/>
+                    <field name="ecopad_can_assign_medium"/>
+                    <newline/>
+                    <field name="ecopad_access_mode_configuration" widget="radio" options="{'horizontal': true}"/>
+                    <newline/>
+                    <field name="ecopad_cache_data_activated" widget="radio" options="{'horizontal': true}"/>
+                    <button name="action_generate_cached_data" type="object"
+                            attrs="{'invisible': [('ecopad_cache_data_activated_state', '=', False)]}"
+                            class="oe_highlight" string="Generate cached data"
+                            confirm="This operation could take time, are you sure to proceed ?"/>
+                    <field name="ecopad_cache_data_activated_state" invisible="1"/>
+                </group>
+            </div>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="psv2_information_partner" inherit_id="horanet_website_account.partner_informations">
+            <!-- Add Nat jur and cat tiers into the partner_informations template-->
+        <xpath expr="//div/div/input[@name = 'siret_code']/../.." position="after">
+            <!--Nat jur-->
+            <div class="row" t-if="partner.is_company">
+                <div t-attf-class="{{'required' if required_nat_jur else ''}} form-group col-md-12 #{error.get('nat_jur_id') and 'has-error' or ''}">
+                    <label class="control-label" for="nat_jur_id">Nat Jur
+                        <i t-if="nat_jur_message != ''" class="fa fa-info-circle" data-html="true" data-toggle="popover" data-trigger="hover"
+                           t-att-data-information="'nat_jur_information'" t-att-data-mess_nat_jur="nat_jur_message"/>
+                    </label>
+                    <select class="form-control" name="nat_jur_id">
+                        <t t-foreach="nat_jur or []" t-as="nat_jur_id">
+                            <option t-if="nat_jur_id_index == 0 and not post.get('nat_jur_id', partner.nat_jur_id and partner.nat_jur_id.id)"
+                                    value="" selected="" hidden="">Select Nat Jur
+                            </option>
+                            <option t-att-value="nat_jur_id.id"
+                                    t-att-selected="nat_jur_id.id == int(post.get('nat_jur_id') or partner.nat_jur_id and partner.nat_jur_id.id)">
+                                <t t-esc="nat_jur_id.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+            </div>
+
+            <!--Cat tiers-->
+            <div class="row" t-if="partner.is_company">
+                <div t-attf-class="{{'required' if required_cat_tiers else ''}} form-group col-md-12 #{error.get('cat_tiers_id') and 'has-error' or ''}">
+                    <label class="control-label" for="cat_tiers_id">Cat Tiers
+
+                        <i t-if="cat_tiers_message != ''" class="fa fa-info-circle" data-html="true" data-toggle="popover" data-trigger="hover"
+                           t-att-data-information="'cat_tiers_information'" t-att-data-mess_cat_tiers="cat_tiers_message"
+                            t-attrs="{'invisible':[('disable_computation','=',True)]}"/>
+
+                    </label>
+                    <select class="form-control" name="cat_tiers_id">
+                        <t t-foreach="cat_tiers or []" t-as="cat_tiers_id">
+                            <option t-if="cat_tiers_id_index == 0 and not post.get('cat_tiers_id', partner.cat_tiers_id and partner.cat_tiers_id.id)"
+                                    value="" selected="" hidden="">Select Cat Tiers
+                            </option>
+                            <option t-att-value="cat_tiers_id.id"
+                                    t-att-selected="cat_tiers_id.id == int(post.get('cat_tiers_id') or partner.cat_tiers_id and partner.cat_tiers_id.id)">
+                                <t t-esc="cat_tiers_id.name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <script type="text/javascript"><![CDATA[
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+    container: 'body',
+    content: function () {
+            var info = $(this).data('information');
+            var message = "";
+            if (info === 'cat_tiers_information') {
+                message =$(this).data('mess_cat_tiers');
+            }
+            if (info === 'nat_jur_information') {
+                message =$(this).data('mess_nat_jur');
+            }
+            return message;
+        }
+    });
+});
+            ]]></script>
+
+
+        </xpath>
+    </template>
+
+</odoo>

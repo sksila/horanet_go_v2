@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_foyer_view_form" model="ir.ui.view">
+        <field name="name">res.partner.foyer.form</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <form string="Foyer">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="foyer_name"/>
+                        </h1>
+                    </div>
+                    <group>
+                    </group>
+                    <group string="Foyer properties">
+                        <field name="fixed_name" class="oe_edit_only oe_inline"/>
+                        <!--<field name="is_residentiel"/>-->
+                        <field name="active_foyer_member_ids" widget="many2many_tags"></field>
+                    </group>
+                    <group string="List of related partners">
+                        <field name="foyer_member_ids" nolabel="1"
+                               context="{'default_foyer_id': active_id}">
+                            <tree editable="bottom" colors="grey:is_valid==False;">
+                                <field name="foyer_id" invisible="1"/>
+                                <field name="partner_id" context="{'get_default_address_from_foyer': foyer_id}"/>
+                                <button type='object' name='action_open_partner_form' widget="redirect">
+                                </button>
+                                <field name="begin_date"/>
+                                <field name="end_date"/>
+                                <field name="is_valid"/>
+                                <field name="is_responsible"/>
+                            </tree>
+                        </field>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_foyer_view_kanban" model="ir.ui.view">
+        <field name="name">res.partner.foyer.kanban</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//t[@t-name='kanban-box']//ul//li[1]" position="before">
+                <li>
+                    <span>
+                        <t t-esc="record['active_member_count']['string']"/>
+                        :
+                        <field name="active_member_count"/>
+                    </span>
+                </li>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="horanet_foyer_view_tree" model="ir.ui.view">
+        <field name="name">res.partner.foyer.tree</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <tree string="Foyer">
+                <field name="foyer_name"/>
+                <field name="active_member_count"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="horanet_foyer_action" model="ir.actions.act_window">
+        <field name="name">Foyer Management</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('company_type','=','foyer')]</field>
+        <field name="context">{'default_customer':1,'default_company_type':'foyer', 'search_default_customer':0,
+            'default_name':'Foyer', 'default_is_company' : True, 'partner_view_mode' : 'foyer'}
+        </field>
+    </record>
+
+    <record id="act_foyer_kanban_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="horanet_foyer_view_kanban"/>
+        <field name="act_window_id" ref="horanet_foyer_action"/>
+    </record>
+    <record id="act_foyer_form_view" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="horanet_foyer_view_form"/>
+        <field name="act_window_id" ref="horanet_foyer_action"/>
+    </record>
+    <record id="act_foyer_tree_view" model="ir.actions.act_window.view">
+        <field eval="3" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="horanet_foyer_view_tree"/>
+        <field name="act_window_id" ref="horanet_foyer_action"/>
+    </record>
+</odoo>
+

@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="create_inscription" name="Creation inscription">
+        <t t-call="website.layout">
+            <div class="horanet_blockui horanet_spinner" style="display:inline-block"/>
+            <!-- Modal dialog template for documents -->
+            <t t-call="partner_documents.modal_add_document"/>
+            <div id="wrap" class="horanet_page_inscription">
+                <div class="container mb32 mt16">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <ol class="breadcrumb">
+                                <li>
+                                    <a href="/my/home">My Account</a>
+                                </li>
+                                <li>
+                                    <a href="/my/requests">Téléservices</a>
+                                </li>
+                                <li class="active">Nouvelle pré-inscription</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1>Demande de pré-inscription</h1>
+                        </div>
+                        <div class="col-sm-12">
+                            <div>
+                                Ce formulaire vous permet d'exprimer vos souhaits d'inscription pour votre enfant au transport scolaire du TCO. L'inscription définitive sera confirmée ultérieurement.
+                            </div>
+                        </div>
+                    </div>
+                    <form method="post" class="form-group" name="form_inscription">
+                        <div class="row mt16" t-if="error_message">
+                            <div class="col-md-12">
+                                <div class="alert alert-danger">
+                                    <t t-foreach="error_message" t-as="err">
+                                        <t t-esc="err"/>
+                                        <br/>
+                                    </t>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt16">
+                            <div class="col-sm-6 required">
+                                <div class="row">
+                                    <div class="col-sm-12 required">
+                                        <!-- Responsable -->
+                                        <label class="control-label">Responsable</label>
+                                        <input type="text" class="form-control" name="responsable"
+                                               readonly="readonly"
+                                               t-att-value="post.get('responsable') or inscription.responsible_id and inscription.responsible_id.name"/>
+                                        <input type="hidden" name="responsible_id"
+                                               t-att-value="post.get('responsible_id') or inscription.responsible_id and inscription.responsible_id.id"/>
+                                        <small class="form-text text-muted">Responsable de l'inscription</small>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div t-attf-class="col-sm-12 required {{error.get('period_id') and 'has-error' or ''}} ">
+                                        <!--Période-->
+                                        <label class="control-label">Période</label>
+                                        <input type="text" class="form-control" name="period"
+                                               placeholder="Enter period"
+                                               t-att-value="post.get('period') or inscription.period_id and inscription.period_id.name"/>
+                                        <input type="hidden" name="period_id"
+                                               t-att-value="post.get('period_id') or inscription.period_id and inscription.period_id.id"/>
+                                        <small class="form-text text-muted">Sélectionner la période d'inscription
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Bénéficiaire-->
+                            <div t-attf-class="col-sm-6 required {{error.get('recipient_id') and 'has-error' or ''}} ">
+                                <label class="control-label">Bénéficiaire</label>
+                                <div style="display:table;width:100%">
+                                    <select class="form-control" name="recipient_id" style="display:table-cell;">
+                                        <t t-foreach="recipients" t-as="item">
+                                            <option t-if="not post.get('recipient_id') and not inscription.recipient_id"
+                                                    value="" disabled=""
+                                                    selected="" hidden="">Please Choose...
+                                            </option>
+                                            <option t-att-value="item.id"
+                                                    t-att-data-street_id="item.street_id and item.street_id.id or False"
+                                                    t-att-data-is_als="item.is_als"
+                                                    t-att-data-is_self="item.id == partner.id"
+                                                    t-att-data-address_valid="item.address_status != 'incomplete'"
+                                                    t-att-selected="post.get('recipient_id') == str(item.id) or inscription.recipient_id.id == item.id">
+                                                <t t-esc="item.name"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                    <a href="/my/foyers?add_new_foyer=True"
+                                       class="btn btn-default a-submit"
+                                       style="display:table-cell; width:20px">
+                                        <span class="fa fa-plus"/>
+                                    </a>
+                                </div>
+                                <small class="form-text text-muted">Sélectionner la personne qui doit être inscrite
+                                </small>
+                                <div style="display:none;padding-left: 0.5em; border: 1px solid #a94442;cursor:pointer;"
+                                     class="bg-danger"
+                                     name="message_missing_address">Attention, ce bénéficaire ne possède pas d'addresse valide
+                                    <br/>Cliquez ce message pour éditer l'adresse
+                                </div>
+                            </div>
+                            <!-- Accompagnant -->
+                            <div t-attf-class="col-sm-3 {{error.get('assist') and 'has-error' or ''}} ">
+                                <label class="control-label">Personne mandatée</label>
+                                <input name="assist" type="text" class="form-control"
+                                       t-att-value="post.get('assist') or inscription.assist and inscription.assist or ''"/>
+                            </div>
+                            <!-- Tel Accompagnant -->
+                            <div t-attf-class="col-sm-2 {{error.get('assist_phone') and 'has-error' or ''}} ">
+                                <label class="control-label">Téléphone</label>
+                                <input name="assist_phone" type="text" class="form-control"
+                                       t-att-value="post.get('assist_phone') or inscription.assist_phone and inscription.assist_phone or ''"/>
+                            </div>
+                            <!-- 2ème Accompagnant -->
+                            <div t-attf-class="col-sm-3 {{error.get('assist2') and 'has-error' or ''}} ">
+                                <br/>
+                                <input name="assist2" type="text" class="form-control"
+                                       t-att-value="post.get('assist2') or inscription.assist2 and inscription.assist2 or ''"/>
+                                <small class="form-text text-muted">Entrez le nom d'une personne mandatée. Obligatoire pour
+                                    les élèves de maternelle: nom et téléphone des adultes mandatés pour la prise en charge
+                                    des élèves à la montée et à la descente du car. Ces personnes devront avoir sur
+                                    eux une pièce d'identité.
+                                </small>
+                            </div>
+                            <!-- Tel 2ème Accompagnant -->
+                            <div t-attf-class="col-sm-2 {{error.get('assist_phone2') and 'has-error' or ''}} ">
+                                <br/>
+                                <input name="assist_phone2" type="text" class="form-control"
+                                       t-att-value="post.get('assist_phone2') or inscription.assist_phone2 and inscription.assist_phone2 or ''"/>
+                            </div>
+                        </div>
+
+                        <fieldset class="mt16">
+                            <div class="row">
+                                <legend class="col-form-legend col-sm-12">Établissement scolaire</legend>
+                            </div>
+                            <div class="row">
+                                <!--Cycle scolaire-->
+                                <div class="col-sm-6">
+                                    <label>Cycle scolaire</label>
+                                    <select class="form-control" id="school_cycle" name="school_cycle">
+                                        <t t-foreach="school_cycles or []" t-as="item">
+                                            <option t-att-value="item.id"
+                                                    t-att-selected="post.get('school_cycle') == str(item.id) or inscription.school_cycle and inscription.school_cycle.id == item.id or item_index == 0">
+                                                <t t-esc="item.name"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                    <small class="form-text text-muted">Cycle scolaire de l'inscription
+                                    </small>
+                                </div>
+                                <!-- Niveau scolaire -->
+                                <div t-attf-class="col-sm-6 required {{error.get('school_grade_id') and 'has-error' or ''}} ">
+                                    <label>Niveau scolaire</label>
+                                    <select class="form-control" id="school_grade" name="school_grade_id">
+                                        <t t-foreach="school_grades or []" t-as="grade">
+                                            <option t-att-value="grade.id"
+                                                    t-att-school_cycle_id="grade.school_cycle_id.id"
+                                                    t-att-selected="post.get('school_grade_id') == str(grade.id) or inscription.school_grade_id and inscription.school_grade_id.id == grade.id or item_index == 0">
+                                                <t t-esc="grade.name"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                    <small class="form-text text-muted">Niveau scolaire de l'inscription
+                                    </small>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <!--Etablissement-->
+                                <div t-attf-class="col-sm-6">
+                                    <label>Etablissement</label>
+                                    <input type="text" class="form-control" name="etablissement"
+                                           placeholder="Etablissement"
+                                           t-att-value="post.get('etablissement') or inscription.school_establishment_id and inscription.school_establishment_id.name or ''"/>
+                                    <input type="hidden" name="school_establishment_id"
+                                           t-att-value="post.get('school_establishment_id') or inscription.school_establishment_id and inscription.school_establishment_id.id"/>
+                                    <small class="form-text text-muted">Etablissement fréquenté par l'élève.
+                                        <br/>
+                                        Pour les élèves fréquentant les établissements du Nord et de l'Est, vous devez obligatoirement
+                                        fournir une attestation d'hébergement et un justificatif de domicile de la famille d'accueil.
+                                    </small>
+                                </div>
+                                <!--Etablissement publique-->
+                                <div class="col-sm-3">
+                                    <label>Type établissement</label>
+                                    <div class="clearfix"/>
+                                    <input name="is_public" type="radio" class="custom-control-input" value="public"
+                                           t-att-checked="post.get('is_public',inscription.school_establishment_id and inscription.school_establishment_id.is_public or True)"/>
+                                    <span class="custom-control-description">Public</span>
+                                    <input name="is_public" type="radio" class="custom-control-input"
+                                           value="private"
+                                           t-att-checked="not post.get('is_public',inscription.school_establishment_id and inscription.school_establishment_id.is_public or True)"/>
+                                    <span class="custom-control-description">Privé</span>
+                                    <div class="clearfix"/>
+                                    <small class="form-text text-muted">Cocher le type d'établissement
+                                    </small>
+                                </div>
+
+                                <!--Is student-->
+                                <div class="col-sm-3">
+                                    <label>Etudiant</label>
+                                    <div class="clearfix"/>
+                                    <input name="is_student" type="radio" class="custom-control-input" value="true"
+                                           t-att-checked="post.get('is_student') or inscription.is_student"/>
+                                    <span class="custom-control-description">Oui</span>
+                                    <input name="is_student" type="radio" class="custom-control-input" value=""
+                                           t-att-checked="post.get('is_student') or not inscription.is_student"/>
+                                    <span class="custom-control-description">Non</span>
+                                    <div class="clearfix"/>
+                                    <small class="form-text text-muted">Indiquer si l'élève est étudiant (BTS, DUT...)
+                                    </small>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <fieldset class="mt16">
+                            <div class="row">
+                                <legend class="col-form-legend col-sm-12">Choix du titre de transport et du mode de règlement
+                                    <small>
+                                        <a href="http://karouest.re/les-scolaires/les-tarifs/"
+                                           target="_blank">(voir tarifs)
+                                        </a>
+                                    </small>
+                                </legend>
+                            </div>
+                            <div class="row">
+                                <!-- Titre de transport -->
+                                <div class="col-sm-4">
+                                    <label>Titre de transport</label>
+                                    <select class="form-control" name="transport_titre">
+                                        <t t-foreach="inscription.fields_get('transport_titre').get('transport_titre').get('selection') or []"
+                                           t-as="item">
+                                            <option t-att-value="item[0]"
+                                                    t-att-selected="post.get('transport_titre') == item[0] or inscription.transport_titre == item[0] or item_index == 0">
+                                                <t t-esc="item[1]"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                    <small class="form-text text-muted">Choisir le type de forfait:
+                                        <br/>
+                                        Cool (transports scolaires uniquement)
+                                        <br/>
+                                        Cool+ (transports scolaires + lignes régulières)
+                                    </small>
+                                </div>
+                                <!-- Quotient familial-->
+                                <div t-attf-class="col-sm-4 {{error.get('family_quotient') and 'has-error' or ''}} ">
+                                    <label>Quotient familial</label>
+                                    <input type="number" class="form-control" name="family_quotient"
+                                           placeholder="Saisir la valeur"
+                                           t-att-value="post.get('family_quotient') or inscription.family_quotient or partner.quotient_fam or ''"/>
+                                    <small class="form-text text-muted">Votre quotient familial définit le tarif du titre. Si le quotient familial n'est pas renseigné, c'est le tarif le plus élevé qui sera appliqué
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="row mt8">
+                                <!--invoice_period-->
+                                <div class="col-sm-4">
+                                    <label>Modalité de règlement</label>
+                                    <select class="form-control" name="invoice_period">
+                                        <t t-foreach="inscription.fields_get('invoice_period').get('invoice_period').get('selection') or []"
+                                           t-as="item">
+                                            <t t-if="item[0] != 'monthly' and item[0] != 'quarterly'">
+                                                <option t-att-value="item[0]"
+                                                        t-att-selected="post.get('invoice_period') == item[0] or inscription.invoice_period == item[0]">
+                                                    <t t-esc="item[1]"/>
+                                                </option>
+                                            </t>
+                                        </t>
+                                    </select>
+                                    <small class="form-text text-muted">Choisir la modalité du règlement
+                                    </small>
+                                </div>
+                                <!--is_automatic_payment-->
+                                <div class="col-sm-4">
+                                    <label>Prélèvement automatique</label>
+                                    <div class="clearfix"/>
+                                    <input name="is_automatic_payment" type="radio" class="custom-control-input"
+                                           value="true"
+                                           t-att-checked="post.get('is_automatic_payment', inscription.is_automatic_payment or False)"/>
+                                    <span class="custom-control-description">Oui</span>
+
+                                    <input name="is_automatic_payment" type="radio" class="custom-control-input"
+                                           value=""
+                                           t-att-checked="not post.get('is_automatic_payment', inscription.is_automatic_payment or False)"/>
+                                    <span class="custom-control-description">Non</span>
+                                    <div class="clearfix"/>
+                                    <small class="form-text text-muted">Souhaitez-vous opter pour le prélèvement automatique
+                                    </small>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="mt16">
+                            <div class="row">
+                                <legend class="col-form-legend col-sm-12">Complément</legend>
+                            </div>
+                            <div class="row">
+                                <!--Régime-->
+                                <div class="col-sm-4">
+                                    <label>Régime</label>
+                                    <select class="form-control" name="regime">
+                                        <t t-foreach="inscription.fields_get('regime').get('regime').get('selection') or []"
+                                           t-as="item">
+                                            <option t-att-value="item[0]"
+                                                    t-att-selected="post.get('regime') == item[0] or inscription.regime == item[0] or item_index == 0">
+                                                <t t-esc="item[1]"/>
+                                            </option>
+                                        </t>
+                                    </select>
+                                    <div class="clearfix"/>
+                                    <small class="form-text text-muted">Régime externe et demi-pensionnaire: 1 trajet
+                                        aller le matin et 1 trajet retour le soir.
+                                        <br/>
+                                        Régime interne: 1 trajet aller en début de semaine et 1 trajet retour en fin de semaine.
+                                    </small>
+                                </div>
+                                <!--als-->
+                                <div class="col-sm-4">
+                                    <label>Enfant confié aux services d'aide sociale à l'enfance</label>
+                                    <div class="clearfix"/>
+                                    <input name="is_als" type="radio" class="custom-control-input" value="true"
+                                           t-att-checked="post.get('is_alsh',inscription.recipient_id and inscription.recipient_id.is_als or False)"/>
+                                    <span class="custom-control-description">Oui</span>
+                                    <input name="is_als" type="radio" class="custom-control-input" value=""
+                                           t-att-checked="not post.get('is_alsh',inscription.recipient_id and inscription.recipient_id.is_als or False)"/>
+                                    <span class="custom-control-description">Non</span>
+                                    <div class="clearfix"/>
+                                    <small class="form-text text-muted">Choisir la case correspondante
+                                        <br/>
+                                        Fournir une photocopie de l'attestation de placement et l'original de l'attestation des frais de transport.
+                                    </small>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="row mt16">
+                            <legend class="col-form-legend col-sm-12">Documents justificatifs</legend>
+                            <div class="row">
+                            <div t-attf-class="col-sm-6 {{error.get('qf_certificate') and 'has-error' or ''}}">
+                                <label>Certificat du quotient familial</label>
+                                <t t-set="type_caf_certificate"
+                                   t-value="document_types.filtered(lambda r: r.technical_name == 'caf_certificate')"/>
+                                <select size="3" class="form-control" id="document_selection"
+                                        name="qf_certificate" data-technical-name="caf_certificate"
+                                        t-att-data-document-type-id="type_caf_certificate.id"
+                                        style="width: 85%;display:inline-block;margin-right:5px;">
+                                    <t t-foreach="user_documents" t-as="doc">
+                                        <t t-if="doc.document_type_id.id == type_caf_certificate.id">
+                                            <option t-att-value="doc.id"
+                                                    t-att-selected="int(post.get('qf_certificate', inscription.qf_certificate.id or False))">
+                                                <t t-esc="doc.name"/>
+                                                (<t t-esc="doc.datas_fname"/>
+                                                <t t-foreach="doc.child_ids" t-as="child">
+                                                    ,<t t-esc="child.datas_fname"/>
+                                                </t>)
+                                            </option>
+                                        </t>
+                                    </t>
+                                </select>
+                                <button class="btn btn-default a-submit modalButton"
+                                        type="button" data-toggle="modal"
+                                        style="display:inline-block;margin-top: -20px;"
+                                        data-target="#ModalDocument"
+                                        data-document-technical-name="caf_certificate"
+                                        t-att-data-document-type-id="type_caf_certificate.id">
+                                    <span class="fa fa-plus"/>
+                                </button>
+                                <small class="form-text text-muted">Sélectionnez un document dans la liste ou ajoutez-en
+                                    un via le bouton à droite.<br/>
+                                    Le bénéficiaire de ce document est vous-même.
+                                </small>
+                            </div>
+                            <div t-attf-class="col-sm-6 {{error.get('school_enrollment_certificate') and 'has-error' or ''}} ">
+                                <label>Certificat d'inscription scolaire</label>
+                                <t t-set="type_school_enrollment_certificate"
+                                   t-value="document_types.filtered(lambda r: r.technical_name == 'school_enrollment_certificate')"/>
+                                <select size="3" class="form-control" id="document_selection"
+                                        name="school_enrollment_certificate"
+                                        data-technical-name="school_enrollment_certificate"
+                                        t-att-data-document-type-id="type_school_enrollment_certificate.id"
+                                        style="width: 85%;display:inline-block;margin-right:5px;">
+                                    <t t-foreach="user_documents" t-as="doc">
+                                        <t t-if="doc.document_type_id.id == type_school_enrollment_certificate.id">
+                                            <option t-att-value="doc.id"
+                                                    t-att-selected="int(post.get('school_enrollment_certificate', inscription.school_enrollment_certificate.id or False))">
+                                                <t t-esc="doc.name"/>
+                                                (<t t-esc="doc.datas_fname"/>
+                                                <t t-foreach="doc.child_ids" t-as="child">
+                                                    ,<t t-esc="child.datas_fname"/>
+                                                </t>)
+                                            </option>
+                                        </t>
+                                    </t>
+                                </select>
+                                <button class="btn btn-default a-submit modalButton"
+                                        name="ButtonDocumentSchoolCertificate"
+                                        type="button" data-toggle="modal"
+                                        style="display:inline-block;margin-top: -20px;"
+                                        data-target="#ModalDocument"
+                                        data-recipient-id=""
+                                        data-document-technical-name="school_enrollment_certificate"
+                                        t-att-data-document-type-id="type_school_enrollment_certificate.id">
+                                    <span class="fa fa-plus"/>
+                                </button>
+                                <small class="form-text text-muted">Sélectionnez un document dans la liste ou ajoutez-en
+                                    un via le bouton à droite.<br/>
+                                    Le bénéficiaire de ce document est votre enfant.
+                                </small>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div t-attf-class="col-sm-6 {{error.get('address_certificate') and 'has-error' or ''}} ">
+                                <label>Justificatifs de domicile</label>
+                                <t t-set="type_proof_of_address"
+                                   t-value="document_types.filtered(lambda r: r.technical_name == 'proof_of_address')"/>
+                                <select size="3" class="form-control" id="document_selection"
+                                        name="address_certificate"
+                                        data-technical-name="proof_of_address"
+                                        t-att-data-document-type-id="type_proof_of_address.id"
+                                        style="width: 85%;display:inline-block;margin-right:5px;">
+                                    <t t-foreach="user_documents" t-as="doc">
+                                        <t t-if="doc.document_type_id.id == type_proof_of_address.id">
+                                            <option t-att-value="doc.id"
+                                                    t-att-selected="int(post.get('address_certificate', inscription.address_certificate.id or False))">
+                                                <t t-esc="doc.name"/>
+                                                (<t t-esc="doc.datas_fname"/>
+                                                <t t-foreach="doc.child_ids" t-as="child">
+                                                    ,<t t-esc="child.datas_fname"/>
+                                                </t>)
+                                            </option>
+                                        </t>
+                                    </t>
+                                </select>
+                                <button class="btn btn-default a-submit modalButton"
+                                        type="button" data-toggle="modal"
+                                        style="display:inline-block;margin-top: -20px;"
+                                        data-target="#ModalDocument"
+                                        data-document-technical-name="proof_of_address"
+                                        t-att-data-document-type-id="type_proof_of_address.id">
+                                    <span class="fa fa-plus"/>
+                                </button>
+                                <small class="form-text text-muted">Sélectionnez un document dans la liste ou ajoutez-en
+                                    un via le bouton à droite.<br/>
+                                    Le bénéficiaire de ce document est vous-même.
+                                </small>
+                            </div>
+                            </div>
+                        </fieldset>
+
+                        <!--Authorisations-->
+                        <fieldset class="row mt16">
+                            <legend class="col-form-legend col-sm-12">Autorisations</legend>
+                            <div class="col-sm-12">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" name="is_allowing_picture"
+                                           t-att-checked="post.get('is_allowing_picture') or inscription.is_allowing_picture"/>
+                                    <small class="form-text text-muted">Acceptation de la prise de vue de votre enfant pour le droit à l'image</small>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input"
+                                           name="is_allowing_hospitalization"
+                                           t-att-checked="post.get('is_allowing_hospitalization') or inscription.is_allowing_hospitalization"/>
+                                    <small class="form-text text-muted">Acceptation d'hospitalisation</small>
+                                </div>
+                                <br/>
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input"
+                                           name="is_accepting_conditions"
+                                           t-att-checked="post.get('is_accepting_conditions', False)"/>
+                                    <b>J'ai lu et accepté les
+                                        <a target="_blank"
+                                           href="http://karouest.re/les-scolaires/reglement-transports-scolaires/">
+                                            terms and conditions
+                                        </a>
+                                    </b>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="clearfix mt32">
+                            <a href="/my/requests" class="btn btn-default">
+                                <i class="fa fa-long-arrow-left" aria-hidden="true" t-translation="off"/>
+                                Annuler
+                            </a>
+                            <t t-if="inscription.id">
+                                <a t-attf-href="/my/inscription/delete/{{inscription.id}}"
+                                   class="btn btn-danger" t-translation="off">
+                                    <i class="fa fa-trash" aria-hidden="true"/>
+                                    Supprimer
+                                </a>
+                            </t>
+                            <button type="submit" name="submit_validate"
+                                    class="btn btn-default btn-primary pull-right"
+                                    disabled="1">
+                                <i class="fa fa-check" aria-hidden="true" t-translation="off"/>
+                                Valider la pré-inscription
+                            </button>
+                            <button type="submit" name="submit_draft"
+                                    class="btn btn-default btn-info pull-right"
+                                    style="margin-right:16px">
+                                <i class="fa fa-floppy-o" aria-hidden="true" t-translation="off"/>
+                                Enregistrer le brouillon
+                            </button>
+
+                        </div>
+                        <input type="hidden" name="redirect" t-att-value="redirect or ''"/>
+                        <input type="hidden" name="validate" value=""/>
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    </form>
+                </div>
+            </div>
+            <script src="/website_application/static/src/js/website_application_documents_reload.js"
+                    type="text/javascript"></script>
+        </t>
+    </template>
+</odoo>

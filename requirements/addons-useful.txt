@@ -1,0 +1,14 @@
+odoo11-addon-account-check-deposit>=11.0.1<11.0.2 # odoo11-addon-account-check-deposit 11.0.1.0.0.99.dev2
+# odoo10-addon-web-widget-image-webcam>=10.0.1<10.0.2 not found in V11 TODO : MIG V11
+odoo11-addon-web-widget-image-download>=11.0.<11.0.2 # odoo11-addon-web-widget-image-download 11.0.1.0.0.99.dev4
+odoo11-addon-mass-editing>=11.0.1<11.0.2
+odoo11-addon-web-favicon>=11.0.1<12.0.0
+# odoo10-addon-auth-admin-passkey>=10.0.0<11.0.0 not found in V11 TODO : MIG V11
+
+--extra-index-url=https://wheelhouse.odoo-community.org/oca-simple
+odoo11-addon-web-environment-ribbon>=11.0.1<12.0.1
+odoo11-addon-website-odoo-debranding>=11.0.1<12.0.1
+
+# git+https://github.com/Horanet/menu_foldable.git#egg=odoo10_addon_menu_foldable TODO : MIG V11
+git+https://github.com/Horanet/toggle_developer_mode.git@11.0#egg=odoo11_addon_toggle_developer_mode
+# git+https://gitlab.horanet.com/open-source/base_synchronisation.git@10.1.4.2 TODO : MIG V11

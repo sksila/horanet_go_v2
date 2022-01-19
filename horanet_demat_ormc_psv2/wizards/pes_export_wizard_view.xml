@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_psv2_export_form" model="ir.ui.view">
+            <field name="name">PES export wizard form</field>
+            <field name="model">pes.export.wizard</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Export PSV2 Wizard">
+                    <field name="state" invisible="1"/>
+                    <field name="filename" invisible="1"/>
+                    <div states="step1">
+                        <group>
+                            <field name="pes_declaration_id" invisible="1"/>
+                            <field name="company_id" invisible="0"/>
+                            <field name="role_id"/>
+                            <field name="date_declaration"/>
+                            <field name="pes_domain_id"/>
+                            <field name="domain_code" invisible="1"/>
+                            <field name="pes_file_id" domain="[('pes_domain_id','=',pes_domain_id)]" required="1"/>
+                        </group>
+                        <group attrs="{'invisible':[('domain_code','!=','facture')]}">
+                            <field name="invoice_ids_count"/>
+                        </group>
+                    </div>
+                    <div states="step2">
+                        <h2>Generation Complete</h2>
+                        <p>Here is the generated file:
+                            <field name="data" readonly="1" filename="filename"/>
+                        </p>
+                    </div>
+                    <footer>
+                        <button type="object" states="step1" string="Export PSV2" name="action_export_psv2"
+                                class="oe_highlight"/>
+                        <button type="special" special="cancel" string="Close"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="psv2_export_action">
+            <field name="name">Export PSV2 Wizard</field>
+            <field name="res_model">pes.export.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="context">{}</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

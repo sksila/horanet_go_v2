@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="partner_move_form_view" model="ir.ui.view">
+        <field name="name">Partner Move Form View</field>
+        <field name="model">partner.move</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" placeholder="Move name"/>
+                        </h1>
+                    </div>
+                    <group string="Settings" name="settings">
+                        <field name="production_point_id"/>
+                        <field name="partner_id"/>
+                        <field name="subscription_id"/>
+                        <field name="residence_type"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <newline/>
+                        <field name="assignation_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="partner_move_tree_view" model="ir.ui.view">
+        <field name="name">Partner Move Tree View</field>
+        <field name="model">partner.move</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="production_point_id"/>
+                <field name="partner_id"/>
+                <field name="subscription_id"/>
+                <field name="residence_type"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_partner_move" model="ir.actions.act_window">
+        <field name="name">Partner move</field>
+        <field name="res_model">partner.move</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="partner_move_tree_view"/>
+    </record>
+
+</odoo>

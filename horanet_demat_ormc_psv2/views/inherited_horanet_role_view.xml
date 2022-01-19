@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="ormc_export_role_form_view">
+            <field name="name">Add ORMC export button</field>
+            <field name="model">horanet.role</field>
+            <field name="inherit_id" ref="account_mass_invoicing.mass_invoicing_role_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="action_export" type="object"
+                            string="Export ORMC"
+                            attrs="{'invisible': ['|',('state', '!=', 'locked'),('recipe_title', '=', 0)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='fiscal_year']" position="after">
+                    <field name="pes_declaration_id" readonly="1"/>
+                    <field name="date_declaration" readonly="1"/>
+                </xpath>
+                <xpath expr="//page[@name='role_files']" position="inside">
+                    <label for="ormc_pes_file_ids"/>
+                    <field name="ormc_pes_file_ids" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="activity_rule_action" model="ir.actions.act_window">
+        <field name="name">Activity rules</field>
+        <field name="res_model">activity.rule</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create an activity rule
+            </p>
+        </field>
+    </record>
+
+</odoo>

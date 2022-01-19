@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="horanet_vehicle_type_form_view" model="ir.ui.view">
+        <field name="name">Horanet vehicle type form</field>
+        <field name="model">partner.contact.identification.vehicle.type</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle type">
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="country_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="horanet_vehicle_type_tree_view" model="ir.ui.view">
+        <field name="name">Horanet vehicle type tree</field>
+        <field name="model">partner.contact.identification.vehicle.type</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicle type">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="country_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_horanet_vehicle_type" model="ir.actions.act_window">
+        <field name="name">Vehicles types</field>
+        <field name="res_model">partner.contact.identification.vehicle.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="horanet_vehicle_type_tree_view"/>
+    </record>
+</odoo>

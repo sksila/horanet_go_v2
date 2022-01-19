@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_collectivity_config_settings" model="ir.ui.view">
+        <field name="name">Contact personal information setting</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="horanet_go.view_form_collectivity_config_settings"/>
+
+        <field name="arch" type="xml">
+            <xpath expr="(//div[@name='group_settings_contact']/div)[1]" position="inside">
+                <field name="param_group_contact_merge" widget="radio"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

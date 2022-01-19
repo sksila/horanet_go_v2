@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="custom_env_partner_form_view" model="ir.ui.view">
+            <field name="name">Custom env partner form view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="environment_waste_collect.res_partner_form_view"/>
+            <field name="priority">64</field>
+            <field name="arch" type="xml">
+                <!--Warning, the modification of this view will change all views of partner in the menu Environment.-->
+                <data>
+                    <field name="name"/>
+                    <!--Exemple of modification-->
+                    <!-- <field name="firstname2" position="attributes"> -->
+                    <!--    <attribute name="required">1</attribute> -->
+                    <!-- </field> -->
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Cycle de contrat -->
+    <record id="demo_subscription_cycle_civilyear" model="horanet.subscription.cycle">
+        <field name="period_type">civil_year</field>
+        <field name="period_quantity">1</field>
+    </record>
+
+    <!-- Articles -->
+    <record id="demo_product_badgeage" model="product.product">
+        <field name="name">Demo Product Badgeage</field>
+        <field name="standard_price">5.0</field>
+        <field name="list_price">5.0</field>
+        <field name="type">service</field>
+        <field name="uom_id" ref="product.product_uom_unit"/>
+        <field name="uom_po_id" ref="product.product_uom_unit"/>
+        <field name="taxes_id">False</field>
+        <field name="supplier_taxes_id">False</field>
+    </record>
+
+    <!-- Activités -->
+    <record id="demo_activity_access" model="horanet.activity">
+        <field name="name">Demo Activity Access</field>
+        <field name="reference">DEMO_ACCESS_ACTIVITY</field>
+        <field name="default_action_id" ref="horanet_subscription.action_access"/>
+        <field name="product_uom_id" ref="product.product_uom_unit"/>
+    </record>
+    <record id="demo_activity_badgeage" model="horanet.activity">
+        <field name="name">Demo Activity Badgeage</field>
+        <field name="reference">DEMO_BADGEAGE_ACTIVITY</field>
+        <field name="default_action_id" ref="horanet_subscription.action_badgeage"/>
+        <field name="product_uom_id" ref="product.product_uom_unit"/>
+        <field name="product_id" ref="horanet_subscription.demo_product_badgeage"/>
+    </record>
+
+    <!-- Services -->
+    <record id="demo_service_access" model="horanet.service">
+        <field name="name">Demo Service Access</field>
+        <field name="product_uom_categ_id" ref="product.product_uom_categ_unit"/>
+        <field name="activity_ids" eval="[(6,0,[ref('demo_activity_access')])]"/>
+    </record>
+    <record id="demo_service_badgeage" model="horanet.service">
+        <field name="name">Demo Service Badgeage</field>
+        <field name="product_uom_categ_id" ref="product.product_uom_categ_unit"/>
+        <field name="activity_ids" eval="[(6,0,[ref('demo_activity_badgeage')])]"/>
+    </record>
+
+    <!-- Prestations -->
+    <record id="demo_prestation_access" model="horanet.prestation">
+        <field name="device_label">ACCESS</field>
+        <field name="reference">DEMO_ACCESS</field>
+        <field name="impact_fmi">True</field>
+        <field name="need_recipient">True</field>
+        <field name="description"></field>
+        <field name="use_product">False</field>
+        <field name="is_blocked">False</field>
+        <field name="name">Demo Prestation Access</field>
+        <field name="cycle_id" ref="demo_subscription_cycle_civilyear"/>
+        <field name="is_salable">False</field>
+        <field name="service_id" ref="demo_service_access"/>
+        <field name="balance">0</field>
+        <field name="subscription_category_ids" eval="[(6,0,[ref('horanet_go.demo_category_professional'),
+                                                             ref('horanet_go.demo_category_individual')])]"/>
+    </record>
+    <record id="demo_prestation_badgeage_free" model="horanet.prestation">
+        <field name="device_label">BADGEAGE FREE</field>
+        <field name="reference">DEMO_BADGEAGE_FREE</field>
+        <field name="impact_fmi">False</field>
+        <field name="need_recipient">True</field>
+        <field name="description"></field>
+        <field name="use_product">False</field>
+        <field name="is_blocked">True</field>
+        <field name="name">Demo Prestation Badgeage Free</field>
+        <field name="cycle_id" ref="demo_subscription_cycle_civilyear"/>
+        <field name="is_salable">False</field>
+        <field name="service_id" ref="demo_service_badgeage"/>
+        <field name="balance">3</field>
+        <field name="subscription_category_ids" eval="[(6,0,[ref('horanet_go.demo_category_professional'),
+                                                             ref('horanet_go.demo_category_individual')])]"/>
+    </record>
+    <record id="demo_prestation_badgeage_salable" model="horanet.prestation">
+        <field name="device_label">BADGEAGE SALABLE</field>
+        <field name="reference">DEMO_BADGEAGE_SALABLE</field>
+        <field name="impact_fmi">False</field>
+        <field name="need_recipient">True</field>
+        <field name="description"></field>
+        <field name="use_product">False</field>
+        <field name="is_blocked">False</field>
+        <field name="name">Demo Prestation Badgeage Salable</field>
+        <field name="cycle_id" ref="demo_subscription_cycle_civilyear"/>
+        <field name="is_salable">True</field>
+        <field name="service_id" ref="demo_service_badgeage"/>
+        <field name="balance">0</field>
+        <field name="subscription_category_ids" eval="[(6,0,[ref('horanet_go.demo_category_professional'),
+                                                             ref('horanet_go.demo_category_individual')])]"/>
+    </record>
+
+    <!-- Modèles de contrats -->
+    <record id="demo_subscription_template" model="horanet.subscription.template">
+        <field name="name">Demo Subscription Template</field>
+        <field name="subscription_category_ids" eval="[(6,0,[ref('horanet_go.demo_category_professional'),
+                                                             ref('horanet_go.demo_category_individual')])]"/>
+        <field name="payment_type">after</field>
+        <field name="is_renewable">True</field>
+        <field name="cycle_id" eval="ref('demo_subscription_cycle_civilyear')"/>
+        <field name="prestation_ids" eval="[(6,0,[ref('demo_prestation_access'),
+                                                  ref('demo_prestation_badgeage_free'),
+                                                  ref('demo_prestation_badgeage_salable'),])]"/>
+    </record>
+
+    <!-- Appareils communicants -->
+    <record id="demo_device" model="horanet.device">
+        <field name="name">Demo Device Terminal</field>
+        <field name="unique_id">123456ABCD</field>
+    </record>
+
+    <!-- Infrastructures -->
+    <record id="demo_infrastructure" model="horanet.infrastructure">
+        <field name="name">Demo Infrastructure</field>
+    </record>
+
+    <!-- Secteurs d'activités -->
+    <record id="demo_activity_sector_parent" model="activity.sector">
+        <field name="name">Demo Parent sector</field>
+        <field name="code">DEMO_SECT_PARENT</field>
+        <field name="is_counting">True</field>
+        <field name="custom_activity_ids" eval="[(6,0,[ref('demo_activity_access'), ref('demo_activity_badgeage')])]"/>
+    </record>
+    <record id="demo_activity_sector_acces" model="activity.sector">
+        <field name="name">Demo Access Sector</field>
+        <field name="code">DEMO_SECT_ACCESS</field>
+        <field name="is_counting">True</field>
+        <field name="custom_activity_ids" eval="[(6,0,[ref('demo_activity_access')])]"/>
+        <field name="parent_id" ref="demo_activity_sector_parent"/>
+    </record>
+    <record id="demo_activity_sector_badgeage" model="activity.sector">
+        <field name="name">Demo Badgeage Sector</field>
+        <field name="code">DEMO_SECT_BADGEAGE</field>
+        <field name="is_counting">True</field>
+        <field name="custom_activity_ids" eval="[(6,0,[ref('demo_activity_badgeage')])]"/>
+        <field name="parent_id" ref="demo_activity_sector_parent"/>
+    </record>
+
+    <!-- Points de contrôle -->
+    <record id="demo_device_check_point" model="device.check.point">
+        <field name="name">Demo Device Checkpoint Terminal</field>
+        <field name="device_id" ref="demo_device"/>
+        <field name="code">DEMO_CP_TERMINAL</field>
+        <field name="input_activity_sector_id" ref="demo_activity_sector_parent"/>
+        <field name="infrastructure_id" ref="demo_infrastructure"/>
+    </record>
+
+    <!-- Contrats -->
+    <record id="demo_horanet_subscription_1" model="horanet.subscription">
+        <field name="client_id" ref="partner_contact_citizen.demo_partner_1"/>
+        <field name="cycle_id" ref="demo_subscription_cycle_civilyear"/>
+        <field name="subscription_template_id" ref="demo_subscription_template"/>
+        <field name="is_renewable">True</field>
+        <field name="payment_type">after</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(years=7)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="opening_date" eval="(datetime.now() - relativedelta(years=7)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="confirmation_date" eval="(datetime.now() - relativedelta(years=7)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+
+    <record id="demo_horanet_subscription_2" model="horanet.subscription">
+        <field name="client_id" ref="partner_contact_citizen.demo_partner_2"/>
+        <field name="cycle_id" ref="demo_subscription_cycle_civilyear"/>
+        <field name="subscription_template_id" ref="demo_subscription_template"/>
+        <field name="is_renewable">True</field>
+        <field name="payment_type">after</field>
+        <field name="start_date">2012-08-08</field>
+        <field name="opening_date">2012-08-08 00:00:00</field>
+        <field name="confirmation_date">2012-08-08 00:00:00</field>
+    </record>
+
+    <record id="demo_horanet_subscription_3" model="horanet.subscription">
+        <field name="client_id" ref="partner_contact_citizen.demo_partner_3"/>
+        <field name="cycle_id" ref="demo_subscription_cycle_civilyear"/>
+        <field name="subscription_template_id" ref="demo_subscription_template"/>
+        <field name="is_renewable">True</field>
+        <field name="payment_type">after</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=18)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="opening_date" eval="(datetime.now() - relativedelta(months=18)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="confirmation_date" eval="(datetime.now() - relativedelta(months=18)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+
+    <record id="demo_horanet_subscription_4" model="horanet.subscription">
+        <field name="client_id" ref="partner_contact_citizen.demo_partner_4"/>
+        <field name="cycle_id" ref="demo_subscription_cycle_civilyear"/>
+        <field name="subscription_template_id" ref="demo_subscription_template"/>
+        <field name="is_renewable">True</field>
+        <field name="payment_type">after</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=5)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="opening_date" eval="(datetime.now() - relativedelta(months=5)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="confirmation_date" eval="(datetime.now() - relativedelta(months=5)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+
+    <record id="demo_horanet_subscription_5" model="horanet.subscription">
+        <field name="client_id" ref="base.partner_demo"/>
+        <field name="cycle_id" ref="demo_subscription_cycle_civilyear"/>
+        <field name="subscription_template_id" ref="demo_subscription_template"/>
+        <field name="is_renewable">True</field>
+        <field name="payment_type">after</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=9)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="opening_date" eval="(datetime.now() - relativedelta(months=9)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="confirmation_date" eval="(datetime.now() - relativedelta(months=9)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+
+    <function model="horanet.package" name="_create_packages_from_template"
+              eval="[[ref('demo_horanet_subscription_1'),
+                      ref('demo_horanet_subscription_2'),
+                      ref('demo_horanet_subscription_3'),
+                      ref('demo_horanet_subscription_4'),
+                      ref('demo_horanet_subscription_5'),]]"/>
+
+    <function model="horanet.subscription" name="action_compute_subscription"
+              eval="[[ref('demo_horanet_subscription_1'),
+                      ref('demo_horanet_subscription_2'),
+                      ref('demo_horanet_subscription_3'),
+                      ref('demo_horanet_subscription_4'),
+                      ref('demo_horanet_subscription_5'),]]"/>
+
+    <function model="horanet.subscription" name="update_active_period"
+              eval="([ref('demo_horanet_subscription_2')],'2012-08-08 00:00:00', '2014-01-01 00:00:00')"/>
+
+    <!-- Activity rule -->
+    <record id="demo_activity_rule_1" model="activity.rule">
+        <field name="name">Demo rule</field>
+        <field name="beginning_date" eval="(datetime.now() - relativedelta(years=2)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="activity_sector_id" ref="demo_activity_sector_parent"/>
+        <field name="use_sector_activity">True</field>
+        <field name="rule_code"><![CDATA[
+if QUERY:
+    if not contractlines.filtered(lambda p: p.state == 'active'):
+        response(False,' ACCES REFUSE      AUCUN CONTRAT VALIDE')
+    elif not contractlines:
+        response(False,' ACCES REFUSE      AUCUN CONTRAT ')
+    else:
+        is_pro = QUERY.query_partner_id and QUERY.query_partner_id.is_company
+        response(True,' FAITES AVANCER  VOTRE VEHICULE 1' if is_pro else '    BONJOUR        BIENVENUE    0')
+
+if OPERATION:
+    if contractlines:
+        usage(1,activity)]]>
+        </field>
+    </record>
+
+    <!-- Opérations -->
+    <record id="demo_operation_01" model="horanet.operation">
+        <field name="action_id" ref="action_access"/>
+        <field name="activity_id" ref="demo_activity_access"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_1"/>
+        <field name="check_point_id" ref="demo_device_check_point"/>
+        <field name="infrastructure_id" ref="demo_infrastructure"/>
+        <field name="device_id" ref="demo_device"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=90)).strftime('%Y-%m-%d 10:%M:%S')"/>
+    </record>
+    <record id="demo_operation_02" model="horanet.operation">
+        <field name="action_id" ref="action_access"/>
+        <field name="activity_id" ref="demo_activity_access"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_1"/>
+        <field name="check_point_id" ref="demo_device_check_point"/>
+        <field name="infrastructure_id" ref="demo_infrastructure"/>
+        <field name="device_id" ref="demo_device"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=90)).strftime('%Y-%m-%d 11:%M:%S')"/>
+    </record>
+    <record id="demo_operation_03" model="horanet.operation">
+        <field name="action_id" ref="action_access"/>
+        <field name="activity_id" ref="demo_activity_access"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_2"/>
+        <field name="check_point_id" ref="demo_device_check_point"/>
+        <field name="infrastructure_id" ref="demo_infrastructure"/>
+        <field name="device_id" ref="demo_device"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=80)).strftime('%Y-%m-%d 12:%M:%S')"/>
+    </record>
+    <record id="demo_operation_04" model="horanet.operation">
+        <field name="action_id" ref="action_access"/>
+        <field name="activity_id" ref="demo_activity_access"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_2"/>
+        <field name="check_point_id" ref="demo_device_check_point"/>
+        <field name="infrastructure_id" ref="demo_infrastructure"/>
+        <field name="device_id" ref="demo_device"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=79)).strftime('%Y-%m-%d 13:%M:%S')"/>
+    </record>
+    <record id="demo_operation_05" model="horanet.operation">
+        <field name="action_id" ref="action_access"/>
+        <field name="activity_id" ref="demo_activity_access"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_1"/>
+        <field name="check_point_id" ref="demo_device_check_point"/>
+        <field name="infrastructure_id" ref="demo_infrastructure"/>
+        <field name="device_id" ref="demo_device"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=70)).strftime('%Y-%m-%d 14:%M:%S')"/>
+    </record>
+    <record id="demo_operation_06" model="horanet.operation">
+        <field name="action_id" ref="action_badgeage"/>
+        <field name="activity_id" ref="demo_activity_badgeage"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_1"/>
+        <field name="check_point_id" ref="demo_device_check_point"/>
+        <field name="infrastructure_id" ref="demo_infrastructure"/>
+        <field name="device_id" ref="demo_device"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=65)).strftime('%Y-%m-%d 15:%M:%S')"/>
+    </record>
+    <record id="demo_operation_07" model="horanet.operation">
+        <field name="action_id" ref="action_badgeage"/>
+        <field name="activity_id" ref="demo_activity_badgeage"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_2"/>
+        <field name="check_point_id" ref="demo_device_check_point"/>
+        <field name="infrastructure_id" ref="demo_infrastructure"/>
+        <field name="device_id" ref="demo_device"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=60)).strftime('%Y-%m-%d 16:%M:%S')"/>
+    </record>
+    <record id="demo_operation_08" model="horanet.operation">
+        <field name="action_id" ref="action_badgeage"/>
+        <field name="activity_id" ref="demo_activity_badgeage"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_1"/>
+        <field name="check_point_id" ref="demo_device_check_point"/>
+        <field name="infrastructure_id" ref="demo_infrastructure"/>
+        <field name="device_id" ref="demo_device"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=45)).strftime('%Y-%m-%d 17:%M:%S')"/>
+    </record>
+    <record id="demo_operation_09" model="horanet.operation">
+        <field name="action_id" ref="action_badgeage"/>
+        <field name="activity_id" ref="demo_activity_badgeage"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_1"/>
+        <field name="check_point_id" ref="demo_device_check_point"/>
+        <field name="infrastructure_id" ref="demo_infrastructure"/>
+        <field name="device_id" ref="demo_device"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=30)).strftime('%Y-%m-%d 18:%M:%S')"/>
+    </record>
+    <record id="demo_operation_10" model="horanet.operation">
+        <field name="action_id" ref="action_badgeage"/>
+        <field name="activity_id" ref="demo_activity_badgeage"/>
+        <field name="tag_id" ref="partner_contact_identification.demo_tag_2"/>
+        <field name="check_point_id" ref="demo_device_check_point"/>
+        <field name="infrastructure_id" ref="demo_infrastructure"/>
+        <field name="device_id" ref="demo_device"/>
+        <field name="time" eval="(datetime.now() - relativedelta(days=5)).strftime('%Y-%m-%d 19:%M:%S')"/>
+    </record>
+
+    <function model="exploitation.engine" name="_cron_compute_operation" eval="({'max_retry': 1, 'limit': 10},)"/>
+</odoo>
+
+

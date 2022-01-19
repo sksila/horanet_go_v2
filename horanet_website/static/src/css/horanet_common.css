@@ -1,0 +1,76 @@
+.img-vignette {
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    overflow: hidden;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    -box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.ui-autocomplete-loading {
+    background-image: url('/horanet_website/static/src/img/ajax-loader.gif');
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+}
+
+.ui-autocomplete.ui-widget-content {
+    font-size: 1em;
+}
+
+.horanet_spinner {
+    background-image: url('/horanet_website/static/src/img/spinner-128.gif');
+    background-repeat: no-repeat;
+    background-size: 5%;
+    background-position: center;
+}
+
+@media only screen and (min-width: 1920px) {
+    .horanet_spinner {
+        background-size: 128px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .horanet_spinner {
+        background-size: 40px;
+    }
+}
+
+.horanet_blockui {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.form-group.required .control-label:before {
+    /*color: red;*/
+    content: "*";
+    position: absolute;
+    margin-left: -10px;
+}
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+/*.ui-accordion-header.ui-accordion-header-active {*/
+    /*background: #f5f5f5 none;*/
+    /*border-bottom: 1px solid #c5c5c5 !important;*/
+/*}*/
+/*.ui-accordion-header.ui-state-default {*/
+    /*background: #f5f5f5 none;*/
+/*}*/

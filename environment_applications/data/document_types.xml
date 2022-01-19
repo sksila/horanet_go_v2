@@ -1,0 +1,29 @@
+<odoo>
+    <data noupdate="1">
+        <record id="attachment_type_proof_of_identity" model="ir.attachment.type">
+            <field name="name">Pièce d'identité</field>
+            <field name="technical_name">proof_of_identity</field>
+            <field name="validity_period">12</field>
+        </record>
+        <record id="attachment_type_vehicle_registration_card" model="ir.attachment.type">
+            <field name="name">Carte grise</field>
+            <field name="technical_name">vehicle_registration_card</field>
+            <field name="validity_period">12</field>
+        </record>
+        <record id="attachment_type_letterhead" model="ir.attachment.type">
+            <field name="name">Papier en-tête</field>
+            <field name="technical_name">letterhead</field>
+            <field name="validity_period">12</field>
+        </record>
+        <record id="attachment_type_kbis_file" model="ir.attachment.type">
+            <field name="name">Fichier Kbis</field>
+            <field name="technical_name">kbis_file</field>
+            <field name="validity_period">12</field>
+        </record>
+        <record id="attachment_type_employer_certificate" model="ir.attachment.type">
+            <field name="name">Attestation employeur</field>
+            <field name="technical_name">employer_certificate</field>
+            <field name="validity_period">12</field>
+        </record>
+    </data>
+</odoo>

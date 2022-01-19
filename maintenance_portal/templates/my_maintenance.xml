@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="my_maintenance_requests" name="Maintenance requests">
+        <t t-call="website_portal.portal_layout">
+            <h3 class="page-header">Your maintenance requests</h3>
+            <div>
+                <p>Here is the list of all the maintenance requests related to your equipments.</p>
+                <table class="table table-hover" t-if="maintenance_requests">
+                    <thead>
+                        <tr>
+                            <th style="vertical-align: middle">Name</th>
+                            <th style="vertical-align: middle">Equipment</th>
+                            <th style="vertical-align: middle">Create date</th>
+                            <th style="vertical-align: middle">Schedule date</th>
+                            <th style="vertical-align: middle">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="maintenance_requests" t-as="maintenance_request">
+                            <td>
+                                <span t-field="maintenance_request.name"/>
+                            </td>
+                            <td>
+                                <span t-field="maintenance_request.equipment_id"/>
+                            </td>
+                            <td>
+                                <span t-field="maintenance_request.create_date"/>
+                            </td>
+                            <td>
+                                <span t-field="maintenance_request.schedule_date"/>
+                            </td>
+                            <td>
+                                <span t-field="maintenance_request.stage_id"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p t-if="not maintenance_requests">
+                    <b>You dont have any maintenance requests.</b>
+                </p>
+            </div>
+        </t>
+    </template>
+</odoo>

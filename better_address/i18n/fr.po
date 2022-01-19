@@ -1,0 +1,818 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* better_address
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-06 11:20+0000\n"
+"PO-Revision-Date: 2018-12-06 11:20+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_form_partner
+msgid "(edit)"
+msgstr "(éditer)"
+
+#. module: better_address
+#: model:ir.model.fields,help:better_address.field_collectivity_config_settings_protected_countries_ids
+msgid "A regular user will not be able to create a city or a country state belonging to the selected         countries (these record are supposed to have been imported)"
+msgstr "Un utilisateur du portail n'aura pas le droit de créer une ville/département/code postal appartenant au pays sélectionnés (ces données sont supposés déjà importés par un référentiel)"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_form
+msgid "Add or Remove cities ..."
+msgstr "Ajout et suppression de villes"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_city_view_form
+msgid "Add or remove ZIP code ..."
+msgstr "Ajout et suppression de codes postaux"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_form_partner
+#: model:ir.ui.view,arch_db:better_address.view_partner_address_form
+msgid "Additional address (floor, stairs, apartment number) ..."
+msgstr "Complément d'adresse (n° appartement, étage, escalier) ..."
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_company_form
+msgid "Additional address ..."
+msgstr "Complément d'adresse ..."
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_form_partner
+msgid "Address"
+msgstr "Adresse"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_partner_address_status
+#: model:ir.model.fields,field_description:better_address.field_res_users_address_status
+msgid "Address State"
+msgstr "État de l'adresse"
+
+#. module: better_address
+#: code:addons/better_address/models/inherited_partner.py:52
+#: model:ir.model.fields,help:better_address.field_res_partner_address_status
+#: model:ir.model.fields,help:better_address.field_res_users_address_status
+#, python-format
+msgid "Address state:\n"
+" * Normal is the default situation\n"
+" * Invalid indicates the selected value are not 'referential'"
+msgstr "Address state:\n"
+" * Normal est la situation par défaut\n"
+" * Invalide indique que la valeur sélectionnée n'est pas référentielle"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_partner_better_contact_address
+#: model:ir.model.fields,field_description:better_address.field_res_users_better_contact_address
+msgid "Better complete Address"
+msgstr "Adresse complète"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_form_partner
+msgid "ZIP ..."
+msgstr "CP ..."
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.wizard_form_view
+#: model:ir.ui.view,arch_db:better_address.wizard_import_data_fr_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_chunk_size
+msgid "Chunk size for street data"
+msgstr "Taille des blocs de traitement"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_country_state_city_ids
+#: model:ir.model.fields,field_description:better_address.field_res_zip_city_ids
+#: model:ir.ui.menu,name:better_address.menu_res_city
+msgid "Cities"
+msgstr "Villes"
+
+#. module: better_address
+#: model:ir.actions.act_window,name:better_address.action_res_city
+msgid "Cities Management"
+msgstr "Villes"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_form
+msgid "Cities list"
+msgstr "Liste des villes"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_company_city_id
+#: model:ir.model.fields,field_description:better_address.field_res_partner_city_id
+#: model:ir.model.fields,field_description:better_address.field_res_users_city_id
+#: model:ir.ui.view,arch_db:better_address.res_city_view_form
+#: model:ir.ui.view,arch_db:better_address.res_city_view_tree
+msgid "City"
+msgstr "Ville"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_company_form
+#: model:ir.ui.view,arch_db:better_address.view_form_partner
+#: model:ir.ui.view,arch_db:better_address.view_partner_address_form
+msgid "City ..."
+msgstr "Ville ..."
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_city_code
+msgid "City Code"
+msgstr "Code INSEE"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_street_city_country_state
+msgid "City Country state"
+msgstr "Département"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_street_city_code
+msgid "City code"
+msgstr "City code"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_city_name
+#: model:ir.model.fields,field_description:better_address.field_res_street_city_name
+#: model:ir.ui.view,arch_db:better_address.res_city_view_form
+msgid "City name"
+msgstr "Nom de la ville"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_city_view_form
+msgid "City properties"
+msgstr "Propriétés de la ville"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_datafile
+msgid "Compressed file containing data"
+msgstr "Archive contenant les données"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_city_view_form
+#: model:ir.ui.view,arch_db:better_address.res_street_view_form
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_form
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: better_address
+#: selection:horanet.location.wizard.import.fr,state_import:0
+#: selection:res.city,state:0
+#: selection:res.partner,address_status:0
+#: selection:res.street,state:0
+#: selection:res.zip,state:0
+msgid "Confirmed"
+msgstr "Confirmé"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_conserve_uploaded_file
+msgid "Conserve uploaded file"
+msgstr "Conserver les fichiers importés"
+
+#. module: better_address
+#: model:ir.ui.menu,name:better_address.menu_country_partner
+msgid "Countries"
+msgstr "Pays"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_res_country
+#: model:ir.model.fields,field_description:better_address.field_res_city_country_id
+#: model:ir.ui.view,arch_db:better_address.res_city_view_filter
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_filter
+#: model:ir.ui.view,arch_db:better_address.view_country_search
+#: model:ir.ui.view,arch_db:better_address.view_filter_country_state
+msgid "Country"
+msgstr "Pays"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_company_form
+#: model:ir.ui.view,arch_db:better_address.view_form_partner
+#: model:ir.ui.view,arch_db:better_address.view_partner_address_form
+msgid "Country ..."
+msgstr "Pays ..."
+
+#. module: better_address
+#: model:ir.ui.menu,name:better_address.menu_country_group
+msgid "Country Group"
+msgstr "Groupe de pays"
+
+#. module: better_address
+#: model:ir.actions.act_window,name:better_address.action_res_country_state
+#: model:ir.model,name:better_address.model_res_country_state
+#: model:ir.ui.view,arch_db:better_address.res_city_view_filter
+msgid "Country state"
+msgstr "Département"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_city_country_state_id
+msgid "Country state id"
+msgstr "Département"
+
+#. module: better_address
+#: model:ir.ui.menu,name:better_address.menu_country_state_partner
+msgid "Country states"
+msgstr "Départements"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_create_externalid
+msgid "Create external id"
+msgstr "Créer les ID externes"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_create_uid
+#: model:ir.model.fields,field_description:better_address.field_horanet_wizard_deletion_create_uid
+#: model:ir.model.fields,field_description:better_address.field_res_city_create_uid
+#: model:ir.model.fields,field_description:better_address.field_res_street_create_uid
+#: model:ir.model.fields,field_description:better_address.field_res_street_number_create_uid
+#: model:ir.model.fields,field_description:better_address.field_res_zip_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_create_date
+#: model:ir.model.fields,field_description:better_address.field_horanet_wizard_deletion_create_date
+#: model:ir.model.fields,field_description:better_address.field_res_city_create_date
+#: model:ir.model.fields,field_description:better_address.field_res_street_create_date
+#: model:ir.model.fields,field_description:better_address.field_res_street_number_create_date
+#: model:ir.model.fields,field_description:better_address.field_res_zip_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_state_import
+msgid "Creation state"
+msgstr "Etat des objet à créer"
+
+#. module: better_address
+#: model:ir.actions.act_window,name:better_address.action_wizard_delete_all_cities
+#: model:ir.actions.act_window,name:better_address.action_wizard_delete_all_street
+#: model:ir.ui.view,arch_db:better_address.wizard_form_view
+msgid "Delete All"
+msgstr "Supprimer tout"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_delete_all_before_import
+msgid "Delete all data before import"
+msgstr "Supprimer les données avant l'import"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_display_name
+#: model:ir.model.fields,field_description:better_address.field_horanet_wizard_deletion_display_name
+#: model:ir.model.fields,field_description:better_address.field_res_street_display_name
+#: model:ir.model.fields,field_description:better_address.field_res_street_number_display_name
+#: model:ir.model.fields,field_description:better_address.field_res_zip_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.wizard_form_view
+msgid "Do you really want to delete everything ? this operation can't be undone"
+msgstr "Voulez-vous vraiment tout supprimer ? cette opération ne peut être annulée"
+
+#. module: better_address
+#: code:addons/better_address/controllers/api_rest.py:392
+#, python-format
+msgid "Domain argument must be a list!"
+msgstr "Le domaine doit être une liste!"
+
+#. module: better_address
+#: selection:horanet.location.wizard.import.fr,state_import:0
+#: selection:res.city,state:0
+#: selection:res.street,state:0
+#: selection:res.zip,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_wizard_deletion_type_element
+msgid "Element"
+msgstr "Elément"
+
+#. module: better_address
+#: model:res.groups,comment:better_address.group_address_manage
+msgid "Enable the menus to manage addresses like cities and streets."
+msgstr "Active les menus pour gérer les adresses comme les villes et les rues."
+
+#. module: better_address
+#: code:addons/better_address/controllers/api_rest.py:387
+#, python-format
+msgid "Fields argument must be a list!"
+msgstr "L'argument de champ doi être une liste!"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_filter_country_state
+msgid "French country state"
+msgstr "Départements français"
+
+#. module: better_address
+#: model:ir.actions.act_window,name:better_address.res_street_action
+msgid "Gestion des rues"
+msgstr "Gestion des rues"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_city_view_filter
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_filter
+#: model:ir.ui.view,arch_db:better_address.view_filter_country_state
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_id
+#: model:ir.model.fields,field_description:better_address.field_horanet_wizard_deletion_id
+#: model:ir.model.fields,field_description:better_address.field_res_city_id
+#: model:ir.model.fields,field_description:better_address.field_res_street_id
+#: model:ir.model.fields,field_description:better_address.field_res_street_number_id
+#: model:ir.model.fields,field_description:better_address.field_res_zip_id
+msgid "ID"
+msgstr "ID"
+
+#. module: better_address
+#: model:ir.model.fields,help:better_address.field_horanet_location_wizard_import_fr_create_externalid
+msgid "If disable, it will not be possible to insert Partner via import, but the database size and the import time will be reduced by 50% !  (And the performance of the system will be improved due to the database size reduction)"
+msgstr "If disable, it will not be possible to insert Partner via import, but the database size and the import time will be reduced by 50% !  (And the performance of the system will be improved due to the database size reduction)"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.wizard_import_data_fr_form
+msgid "Import"
+msgstr "Importer"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_horanet_location_wizard_import_fr
+msgid "Import data location fr"
+msgstr "Import data location fr"
+
+#. module: better_address
+#: model:ir.actions.act_window,name:better_address.wizard_import_data_fr_action
+#: model:ir.ui.menu,name:better_address.wizard_import_data_fr_menu
+#: model:ir.ui.view,arch_db:better_address.wizard_import_data_fr_form
+msgid "Import french address (admin)"
+msgstr "Import référentiel fr (admin)"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.wizard_import_data_fr_form
+msgid "Imports base parameters"
+msgstr "Paramètres de base de l'import"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.wizard_import_data_fr_form
+msgid "Imports data file"
+msgstr "Import des données"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.wizard_import_data_fr_form
+msgid "Imports performance parameters"
+msgstr "Paramètres de performance de l'import"
+
+#. module: better_address
+#: selection:res.partner,address_status:0
+msgid "Incomplete"
+msgstr "Incomplet"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_city_view_form
+#: model:ir.ui.view,arch_db:better_address.res_street_view_form
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_form
+msgid "Invalidate"
+msgstr "Invalider"
+
+#. module: better_address
+#: selection:horanet.location.wizard.import.fr,state_import:0
+#: selection:res.city,state:0
+#: selection:res.partner,address_status:0
+#: selection:res.street,state:0
+#: selection:res.zip,state:0
+msgid "Invalidated"
+msgstr "Invalidé"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_city_view_filter
+#: model:ir.ui.view,arch_db:better_address.res_street_view_filter
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_filter
+msgid "Is draft"
+msgstr "Est en brouillon"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr___last_update
+#: model:ir.model.fields,field_description:better_address.field_horanet_wizard_deletion___last_update
+#: model:ir.model.fields,field_description:better_address.field_res_city___last_update
+#: model:ir.model.fields,field_description:better_address.field_res_street___last_update
+#: model:ir.model.fields,field_description:better_address.field_res_street_number___last_update
+#: model:ir.model.fields,field_description:better_address.field_res_zip___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_write_uid
+#: model:ir.model.fields,field_description:better_address.field_horanet_wizard_deletion_write_uid
+#: model:ir.model.fields,field_description:better_address.field_res_city_write_uid
+#: model:ir.model.fields,field_description:better_address.field_res_street_number_write_uid
+#: model:ir.model.fields,field_description:better_address.field_res_street_write_uid
+#: model:ir.model.fields,field_description:better_address.field_res_zip_write_uid
+msgid "Last Updated by"
+msgstr "Dernière modification par"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_write_date
+#: model:ir.model.fields,field_description:better_address.field_horanet_wizard_deletion_write_date
+#: model:ir.model.fields,field_description:better_address.field_res_city_write_date
+#: model:ir.model.fields,field_description:better_address.field_res_street_number_write_date
+#: model:ir.model.fields,field_description:better_address.field_res_street_write_date
+#: model:ir.model.fields,field_description:better_address.field_res_zip_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: better_address
+#: code:addons/better_address/models/res_city.py:270
+#, python-format
+msgid "Le code saisi existe déjà pour la ville \"{0}\""
+msgstr "Le code saisi existe déjà pour la ville \"{0}\""
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_city_view_form
+msgid "List ZIP codes"
+msgstr "Liste des codes postaux"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_collectivity_config_settings_protected_countries_ids
+msgid "List of country with protected address"
+msgstr "Liste des pays avec protection d'adresse"
+
+#. module: better_address
+#: model:ir.ui.menu,name:better_address.menu_horanet_address
+msgid "Location"
+msgstr "Référentiel Adresses"
+
+#. module: better_address
+#: model:res.groups,name:better_address.group_address_manage
+msgid "Manage Location"
+msgstr "Gérer le référentiel d'adresses"
+
+#. module: better_address
+#: code:addons/better_address/controllers/api_rest.py:119
+#: code:addons/better_address/controllers/api_rest.py:215
+#: code:addons/better_address/controllers/api_rest.py:276
+#: code:addons/better_address/controllers/api_rest.py:351
+#, python-format
+msgid "Missing the argument 'term'"
+msgstr "Argument 'term' manquant"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_module_name
+msgid "Module name for external id"
+msgstr "Nom du module pour la création des ID externes"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_multi_transaction
+msgid "Multi transaction"
+msgstr "Transactionné"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_city_display_name
+#: model:ir.model.fields,field_description:better_address.field_res_street_name
+#: model:ir.model.fields,field_description:better_address.field_res_zip_name
+#: model:ir.ui.view,arch_db:better_address.res_street_number_view_form
+#: model:ir.ui.view,arch_db:better_address.res_street_view_form
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_form
+msgid "Name"
+msgstr "Nom"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_wizard_deletion_nb_element
+#: model:ir.model.fields,field_description:better_address.field_res_street_number_name
+msgid "Number"
+msgstr "Numéro"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_street_view_form
+msgid "Optional"
+msgstr "Optionnel"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_street_city_id
+msgid "Related city"
+msgstr "Ville"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_city_view_form
+#: model:ir.ui.view,arch_db:better_address.res_street_view_form
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_form
+msgid "Reset to draft"
+msgstr "Remettre en brouillon"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_city_view_filter
+#: model:ir.ui.view,arch_db:better_address.res_street_number_view_filter
+#: model:ir.ui.view,arch_db:better_address.res_street_view_filter
+msgid "Search city"
+msgstr "Recherche ville"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_filter_country_state
+msgid "Search country state"
+msgstr "Recherche des départements"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_filter
+msgid "Search zip"
+msgstr "Recherche code postal"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_partner_street3
+#: model:ir.model.fields,field_description:better_address.field_res_users_street3
+msgid "Second additional address"
+msgstr "Deuxième complément d'adresse"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_form_partner
+#: model:ir.ui.view,arch_db:better_address.view_partner_address_form
+msgid "Second additional address (building, access) ..."
+msgstr "Deuxième complément d'adresse (bâtiment, porte) ..."
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_city_view_form
+msgid "Select a country ..."
+msgstr "Sélectionner un pays ..."
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_city_view_form
+msgid "Select a state ..."
+msgstr "Sélectionner un département ..."
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_street_view_form
+msgid "Select the related city"
+msgstr "Sélectionner la ville liée"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_selected_states
+msgid "Selected states"
+msgstr "Départements"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.tpa_configuration_form
+msgid "Settings Location"
+msgstr "Paramètres d'adresse"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_filter
+#: model:ir.ui.view,arch_db:better_address.view_tree_country_state
+msgid "State"
+msgstr "Département"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_company_form
+#: model:ir.ui.view,arch_db:better_address.view_form_partner
+#: model:ir.ui.view,arch_db:better_address.view_partner_address_form
+msgid "State ..."
+msgstr "Département"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_city_state
+#: model:ir.model.fields,field_description:better_address.field_res_street_state
+#: model:ir.model.fields,field_description:better_address.field_res_zip_state
+msgid "Status"
+msgstr "État"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_company_street_id
+#: model:ir.model.fields,field_description:better_address.field_res_partner_street_id
+#: model:ir.model.fields,field_description:better_address.field_res_users_street_id
+#: model:ir.ui.view,arch_db:better_address.res_street_number_view_form
+#: model:ir.ui.view,arch_db:better_address.res_street_number_view_tree
+#: model:ir.ui.view,arch_db:better_address.res_street_view_form
+#: model:ir.ui.view,arch_db:better_address.res_street_view_tree
+msgid "Street"
+msgstr "Rue"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_company_form
+#: model:ir.ui.view,arch_db:better_address.view_form_partner
+#: model:ir.ui.view,arch_db:better_address.view_partner_address_form
+msgid "Street ..."
+msgstr "Voie ..."
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_street_code
+msgid "Street Code"
+msgstr "Code voie"
+
+#. module: better_address
+#: model:ir.actions.act_window,name:better_address.res_street_number_action
+msgid "Street Number"
+msgstr "Numéro de rue"
+
+#. module: better_address
+#: model:ir.ui.menu,name:better_address.res_street_number_menu
+msgid "Street numbers"
+msgstr "Numéros de rue"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.res_street_view_form
+msgid "Street parameters"
+msgstr "Paramètres des voies"
+
+#. module: better_address
+#: model:ir.ui.menu,name:better_address.res_street_menu
+msgid "Streets"
+msgstr "Rues"
+
+#. module: better_address
+#: code:addons/better_address/models/res_zip.py:52
+#, python-format
+msgid "The ZIP code already exist"
+msgstr "Ce code postal existe déjà"
+
+#. module: better_address
+#: code:addons/better_address/models/res_zip.py:20
+#: sql_constraint:res.zip:0
+#, python-format
+msgid "The Zip value must be unique"
+msgstr "Le code postal doit être unique"
+
+#. module: better_address
+#: code:addons/better_address/models/res_city.py:18
+#: sql_constraint:res.city:0
+#, python-format
+msgid "The city code must be unique if not null"
+msgstr "Le code de la ville doit être unique si il existe"
+
+#. module: better_address
+#: model:ir.model.fields,help:better_address.field_res_zip_name
+msgid "The localized ZIP code"
+msgstr "Le code postal localisé"
+
+#. module: better_address
+#: model:ir.model.fields,help:better_address.field_res_city_code
+#: model:ir.model.fields,help:better_address.field_res_street_city_code
+msgid "The official code for the city"
+msgstr "Le code officiel de la ville"
+
+#. module: better_address
+#: model:ir.model.fields,help:better_address.field_res_street_code
+msgid "The official code for the street"
+msgstr "Le code officiel de la rue"
+
+#. module: better_address
+#: code:addons/better_address/models/res_street.py:228
+#, python-format
+msgid "The specified code already exist for the street '{0}', and the city '{1}'"
+msgstr "Le code saisi existe déjà pour la rue '{0}', et la ville '{1}'"
+
+#. module: better_address
+#: code:addons/better_address/models/res_city.py:65
+#, python-format
+msgid "The state {state_name} does not exist in this country ({country_name})"
+msgstr "TLe département {state_name} n'existe pas dans ce pays : ({country_name})"
+
+#. module: better_address
+#: code:addons/better_address/models/res_street.py:22
+#: sql_constraint:res.street:0
+#, python-format
+msgid "The street code must be unique by city if not null"
+msgstr "Le code de la rue doit être unique par ville"
+
+#. module: better_address
+#: code:addons/better_address/models/res_street_number.py:16
+#: sql_constraint:res.street.number:0
+#, python-format
+msgid "The street number must be unique"
+msgstr "Le numéro de rue doit être unique"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.wizard_form_view
+msgid "There is currently :"
+msgstr "Il y a actuellement :"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.wizard_import_data_fr_form
+msgid "This operation could take time and is irreversible, are you sure to proceed ?"
+msgstr "Cette opération peut prendre du temps et est irréversible, êtes-vous sur de vouloir continuer"
+
+#. module: better_address
+#: selection:res.partner,address_status:0
+msgid "To confirm"
+msgstr "A confirmer"
+
+#. module: better_address
+#: model:ir.model.fields,help:better_address.field_horanet_location_wizard_import_fr_multi_transaction
+msgid "True : a commit will be executed every chunks\n"
+"False : The creation of all records will be transactionned (no commit during import)"
+msgstr "True : a commit will be executed every chunks\n"
+"False : The creation of all records will be transactionned (no commit during import)"
+
+#. module: better_address
+#: model:ir.model.fields,help:better_address.field_horanet_location_wizard_import_fr_conserve_uploaded_file
+msgid "Uploaded archive content is save on the server in a temporary directory, if set to true, the folder will be conserved after the import, otherwise it will be regarding of the import result. (consult the log for the path)"
+msgstr "L'archive est sauvegardée dans un répertoire temporaire, si cette case est cochée, le dossier sera conservé après l'import, autrement cela dépendra du résultat de l'importation. (consultez les logs pour le chemin)"
+
+#. module: better_address
+#: model:ir.model.fields,help:better_address.field_horanet_location_wizard_import_fr_state_import
+msgid "Validation state in witch the new records will be created"
+msgstr "Etat de validation dans lequel les nouveaux enregistrements seront crée"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.wizard_form_view
+msgid "Wizard city"
+msgstr "Wizard city"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_company_zip_id
+#: model:ir.ui.menu,name:better_address.res_zip_menu
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_form
+#: model:ir.ui.view,arch_db:better_address.res_zip_view_tree
+msgid "ZIP"
+msgstr "Code postal"
+
+#. module: better_address
+#: model:ir.ui.view,arch_db:better_address.view_company_form
+#: model:ir.ui.view,arch_db:better_address.view_form_partner
+#: model:ir.ui.view,arch_db:better_address.view_partner_address_form
+msgid "ZIP ..."
+msgstr "Code postal ..."
+
+#. module: better_address
+#: model:ir.actions.act_window,name:better_address.action_res_zip
+msgid "ZIP Management"
+msgstr "Codes postaux"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_partner_zip_id
+#: model:ir.model.fields,field_description:better_address.field_res_users_zip_id
+msgid "ZIP code"
+msgstr "Code postal"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_res_city_zip_ids
+msgid "ZIP codes"
+msgstr "Code postal"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_collectivity_config_settings
+msgid "collectivity.config.settings"
+msgstr "collectivity.config.settings"
+
+#. module: better_address
+#: model:ir.model.fields,field_description:better_address.field_horanet_location_wizard_import_fr_datafile_file_name
+msgid "hidden file name"
+msgstr "nom de fichier caché"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_horanet_wizard_deletion
+msgid "horanet.wizard.deletion"
+msgstr "horanet.wizard.deletion"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_horanet_wizard_merge_city
+msgid "horanet.wizard.merge.city"
+msgstr "horanet.wizard.merge.city"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_horanet_wizard_merge_street
+msgid "horanet.wizard.merge.street"
+msgstr "horanet.wizard.merge.street"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_res_city
+msgid "res.city"
+msgstr "res.city"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_res_street
+msgid "res.street"
+msgstr "res.street"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_res_street_number
+msgid "res.street.number"
+msgstr "res.street.number"
+
+#. module: better_address
+#: model:ir.model,name:better_address.model_res_zip
+msgid "res.zip"
+msgstr "res.zip"
+
+#. module: better_address
+#: model:ir.model.fields,help:better_address.field_res_company_city_id
+#: model:ir.model.fields,help:better_address.field_res_partner_city_id
+#: model:ir.model.fields,help:better_address.field_res_users_city_id
+msgid "select the city"
+msgstr "sélectionnez la ville"
+

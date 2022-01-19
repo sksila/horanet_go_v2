@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="custom_portal_layout" inherit_id="website_portal.portal_layout"
+              customize_show="True" active="False" name="Maintenance menu" priority="30">
+        <xpath expr="//ul[contains(@class,'o_portal_submenu')]" position="inside">
+            <li>
+                <a href="/my/maintenance">Maintenance</a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_maintenance" name="Portal My Home : maintenance" inherit_id="website_portal.portal_my_home"
+              customize_show="True" active="False" priority="30">
+        <xpath expr="//div[contains(@class,'o_my_home_content')]" position="inside">
+            <h3 class="page-header">
+                <a href="/my/maintenance">Maintenance
+                    <small class="ml8">
+                        <span class='badge'>
+                            <t t-esc="maintenance_count"/>
+                        </span>
+                    </small>
+                </a>
+            </h3>
+        </xpath>
+    </template>
+</odoo>

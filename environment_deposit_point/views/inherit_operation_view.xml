@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="deposit_point_operation_view_form" model="ir.ui.view">
+        <field name="name">Deposit Point Operation View Form</field>
+        <field name="model">horanet.operation</field>
+        <field name="inherit_id" ref="horanet_subscription.horanet_operation_view_form"/>
+        <field name="mode">primary</field>
+        <field name="priority">32</field>
+        <field name="arch" type="xml">
+            <field name="action_id" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+            <field name="device_id" position="replace"/>
+            <field name="is_offline" position="replace"/>
+            <field name="disable_computation" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <field name="check_point_id" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+            <field name="infrastructure_id" position="replace"/>
+            <field name="activity_sector_id" position="replace"/>
+            <field name="origin_operation_id" position="replace"/>
+            <field name="query_id" position="replace"/>
+            <field name="activity_id" position="replace">
+                <field name="activity_id"
+                       domain="[('default_action_id','=',%(environment_deposit_point.horanet_action_depot_pav)d)]"/>
+            </field>
+
+            <xpath expr="//group[./field[@name='tag_id']]" position="inside">
+                <field name="infrastructure_deposit_area_id"/>
+                <field name="deposit_point_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="deposit_point_operation_pivot_view" model="ir.ui.view">
+        <field name="name">Deposit Point Operation View Pivot</field>
+        <field name="model">horanet.operation</field>
+        <field name="priority">32</field>
+        <field name="arch" type="xml">
+            <pivot string="Deposit point operation">
+                <field name="infrastructure_deposit_area_id"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="deposit_point_operation_view_tree" model="ir.ui.view">
+        <field name="name">Deposit Point Operation View Tree</field>
+        <field name="model">horanet.operation</field>
+        <field name="priority">32</field>
+        <field name="arch" type="xml">
+            <tree
+                    decoration-success="state in ['done','processed']"
+                    decoration-muted="state=='null'"
+                    decoration-warning="state=='pending'"
+                    decoration-bf="state=='error'"
+                    decoration-danger="state=='error'">
+                <field name="time"/>
+                <field name="deposit_point_id"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="deposit_point_operation_search_view" model="ir.ui.view">
+        <field name="name">Deposit point Operation Search View</field>
+        <field name="model">horanet.operation</field>
+        <field name="mode">primary</field>
+        <field name="inherit_id" ref="horanet_subscription.view_filter_horanet_operation"/>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_deposit_area" string="Deposit area"
+                            context="{'group_by': 'infrastructure_deposit_area_id'}"/>
+                    <filter name="group_by_deposit_point" string="Deposit point"
+                        context="{'group_by': 'deposit_point_id'}"/>
+
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="deposit_point_deposit_action" model="ir.actions.act_window">
+        <field name="name">Deposits</field>
+        <field name="res_model">horanet.operation</field>
+        <field name="view_mode">tree,form,pivot</field>
+        <field name="search_view_id" ref="deposit_point_operation_search_view"/>
+        <field name="domain" eval="[('activity_id.application_type', '=', 'environment'),
+                                    ('action_id', '=', ref('environment_deposit_point.horanet_action_depot_pav'))]"/>
+        <field name="context" eval="{'search_default_group_by_deposit_area': True}"/>
+    </record>
+
+    <record id="deposit_point_operation_tree_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="environment_deposit_point.deposit_point_operation_view_tree"/>
+        <field name="act_window_id" ref="deposit_point_deposit_action"/>
+    </record>
+
+    <record id="deposit_point_operation_deposit_form_view" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="environment_deposit_point.deposit_point_operation_view_form"/>
+        <field name="act_window_id" ref="deposit_point_deposit_action"/>
+    </record>
+
+    <record id="deposit_point_operation_deposit_pivot_view" model="ir.actions.act_window.view">
+        <field eval="3" name="sequence"/>
+        <field name="view_mode">pivot</field>
+        <field name="view_id" ref="environment_deposit_point.deposit_point_operation_pivot_view"/>
+        <field name="act_window_id" ref="deposit_point_deposit_action"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner_form_view" model="ir.ui.view">
+        <field name="name">Add toggle all button to Portal Access Management</field>
+        <field name="model">portal.wizard</field>
+        <field name="inherit_id" ref="portal.wizard_view"/>
+        <field name="arch" type="xml">
+            <field name="welcome_message" position="after">
+                <label for="toggle_portal"/>
+                <field name="toggle_portal"/>
+            </field>
+        </field>
+    </record>
+</odoo>

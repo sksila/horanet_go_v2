@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Terms checkbox checked setting -->
+        <record model="ir.config_parameter" id="is_linked_to_smarteco">
+            <field name="key">environment_waste_collect.is_linked_to_smarteco</field>
+            <field name="value">False</field>
+        </record>
+    </data>
+</odoo>

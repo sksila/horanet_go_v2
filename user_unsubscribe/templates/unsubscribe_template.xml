@@ -1,0 +1,60 @@
+<odoo>
+    <template id="custom_footer_unsubscribe" inherit_id="website.footer_default" name="Footer unsubscribe">
+        <xpath expr="//ul[@id='products']/li[1]" position="inside">
+            <li t-if="website.user_id != user_id">
+                <a href="/unsubscribe">Unsubscribe</a>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="user_unsubscribe_page" name="Unsubscribe">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <section>
+                    <div class="container mt8 mb32">
+                        <div class="row">
+                            <div class="col-md-offset-2">
+                                <h2>Unsubscribe</h2>
+                                <p>If you want to unsubscribe to our services, you have to click on the button below :</p>
+                                <form method="POST" id="unsubscribe_form">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <button class="btn btn-danger">
+                                        Unsubscribe
+                                    </button>
+                                </form>
+                                <br/>
+                                <p class="alert alert-danger">A mail will be send and your request will be studied.
+                                    <br/>
+                                    You will not be able to access to your account after your request is accepted.
+                                </p>
+                                <p class="alert alert-danger" t-if="errors">
+                                    <t t-foreach="errors" t-as="error">
+                                        <t t-esc="error"/>
+                                    </t>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <template id="user_unsubscribe_accepted" name="Unsubscribe">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty">
+                <section>
+                    <div class="container mt8 mb32">
+                        <div class="row">
+                            <div class="col-md-offset-2">
+                                <h4>You request has been saved. You will soon receive an email with the details of the
+                                    procedure.
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

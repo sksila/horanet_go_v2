@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pickup_request_report_wizard" model="ir.ui.view">
+        <field name="name">pickup.request.report.wizard.form</field>
+        <field name="model">environment.pickup.request.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Pickup requests report">
+                <group>
+                    <field name="waste_site_id"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="emplacement_ids" widget="many2many_tags"/>
+                    <field name="service_provider_id"/>
+                </group>
+                <footer>
+                    <button name="print_report" string="Print" type="object" class="btn-primary"/>
+                    <button name="print_xls_report" string="Print xls report" type="object" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-default"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pickup_request_report" model="ir.actions.act_window">
+        <field name="name">Pickup request report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">environment.pickup.request.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

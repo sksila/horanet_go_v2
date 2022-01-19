@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_operation_recompute_form" model="ir.ui.view">
+        <field name="name">Wizard multi operation recompute</field>
+        <field name="model">wizard.operation.recompute</field>
+        <field name="arch" type="xml">
+            <form class="o-form-sheet-width-wider">
+                <sheet>
+                    <div class="text-center">
+                        <h1>Operation recompute</h1>
+                    </div>
+                    <group>
+                        <field name="package_line_ids" invisible="1"/>
+                        <field name="package_line_operation_ids" attrs="{'invisible': [('package_line_ids', '=', False)]}"/>
+                        <field name="operation_ids" attrs="{'invisible': [('package_line_ids', '!=', False)]}"/>
+                    </group>
+                    <separator/>
+                    <footer>
+                        <button name="action_multi_recompute"
+                                confirm="Do you really want to recompute those operations ? this operation can't be undone"
+                                type="object"
+                                class="oe_highlight"
+                                string="Recompute"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_multi_wizard_recompute_operation"
+                name="Recompute operation"
+                src_model="horanet.operation"
+                res_model="wizard.operation.recompute"
+                view_mode="form"
+                target="new"
+                multi="True"
+                context="{'default_operation_ids': active_ids}"
+                groups="horanet_subscription.group_activity_rule_manager"
+                key2="client_action_multi"/>
+</odoo>

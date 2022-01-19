@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <!-- Add municipality and EPCI notions to the company -->
+        <record id="view_company_form" model="ir.ui.view">
+            <field name="name">res.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//page//group[1]" position="after">
+                    <group string="Municipalities">
+                        <field name="municipality_ids" nolabel="1" widget="many2many_tags"
+                               context="{'footer_hide': False}"/>
+                    </group>
+
+                    <group string="EPCIs">
+                        <field name="epci_ids" nolabel="1" widget="many2many_tags" context="{'footer_hide': False}"/>
+                    </group>
+                </xpath>
+
+                <field name="company_registry" position="after">
+                    <field name="type_company" attrs="{'readonly': True}"></field>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_company_tree" model="ir.ui.view">
+            <field name="name">res.company.tree</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_tree"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//tree[1]" position="attributes">
+                    <attribute name="decoration-success">(type_company == 'epci')</attribute>
+                    <attribute name="decoration-info">(type_company == 'municipality')</attribute>
+                </xpath>
+
+                <field name="partner_id" position="after">
+                    <field name="type_company"></field>
+                </field>
+            </field>
+        </record>
+
+        <record id="res_company_view_filter" model="ir.ui.view">
+            <field name="name">res.company.filter</field>
+            <field name="model">res.company</field>
+            <field name="arch" type="xml">
+                <search string="Search company">
+                    <field name="name"/>
+                    <field name="type_company"/>
+                    <group expand="0" string="Company type">
+                        <filter string="EPCI" name="epci" domain="[('type_company', '=', 'epci')]"/>
+                        <filter string="Municipality" name="municipality"
+                                domain="[('type_company', '=', 'municipality')]"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="horanet_company_action_tree_view" model="ir.actions.act_window">
+            <field name="name">Companies hierarchy</field>
+            <field name="res_model">res.company</field>
+            <field name="view_type">tree</field>
+            <field name="view_id" ref="view_company_tree"/>
+            <field name="domain">[('parent_id','=',False)]</field>
+        </record>
+        <record id="horanet_company_action_epci" model="ir.actions.act_window">
+            <field name="name">EPCIs</field>
+            <field name="res_model">res.company</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_company_tree"/>
+            <field name="search_view_id" ref="res_company_view_filter"/>
+            <field name="context">{"search_default_epci": True}</field>
+        </record>
+        <record id="horanet_company_action_municipality" model="ir.actions.act_window">
+            <field name="name">Municipalities</field>
+            <field name="res_model">res.company</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_company_tree"/>
+            <field name="search_view_id" ref="res_company_view_filter"/>
+            <field name="context">{"search_default_municipality": True}</field>
+        </record>
+        <menuitem action="horanet_company_action_epci" id="action_res_company_epci"
+                  parent="base.menu_action_res_company_form"/>
+        <menuitem action="horanet_company_action_municipality" id="haction_res_company_municipality"
+                  parent="base.menu_action_res_company_form"/>
+        <menuitem action="horanet_company_action_tree_view" id="action_res_company_hierarchy"
+                  parent="base.menu_action_res_company_form"/>
+    </data>
+</odoo>

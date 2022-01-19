@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_street_view_form" model="ir.ui.view">
+        <field name="name">res.street.form</field>
+        <field name="model">res.street</field>
+        <field name="arch" type="xml">
+            <form string="Street">
+                <header groups="better_address.group_address_manage">
+                    <button name="action_open_merge_street_wizard" type="object"
+                            groups="better_address.group_address_manage"
+                            string="Manage draft street"
+                            states="draft"/>
+                    <button name="action_draft" type="object"
+                            string="Reset to draft"
+                            groups="base.group_no_one"
+                            states="confirmed,invalidated"/>
+                    <button name="action_confirm" type="object"
+                            string="Confirm" states="draft,invalidated"
+                            groups="base.group_no_one"
+                            class="oe_highlight"/>
+                    <button name="action_invalidate" type="object"
+                            groups="base.group_no_one"
+                            string="Invalidate" states="confirmed"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group></group>
+                    <div class="oe_title oe_left">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="Name"/>
+                        </h1>
+                    </div>
+                    <group></group>
+                    <group col="4" string="Street parameters">
+                        <field name="code" placeholder="Optional"/><!--on_change="onchange_code(code)"-->
+                        <newline/>
+                        <field name="city_id" placeholder="Select the related city"/>
+                        <field name="city_code" readonly="True"/>
+                    </group>
+                    <!-- <group string="Street numbers list">
+                            <field name="street_number_ids" nolabel="1" list_options='{"limit":10}'>
+                                <tree editable="bottom" default_order="name desc">
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </group>-->
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_street_view_tree" model="ir.ui.view">
+        <field name="name">res.street.tree</field>
+        <field name="model">res.street</field>
+        <field name="arch" type="xml">
+            <tree string="Street">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="city_id"/>
+                <field name="city_code"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_street_view_filter" model="ir.ui.view">
+        <field name="name">res.street.filter</field>
+        <field name="model">res.street</field>
+        <field name="arch" type="xml">
+            <search string="Search city">
+                <field name="name"/>
+                <field name="code"/>
+                <field name='city_id'/>
+                <filter string="Is draft" name="message_needaction" domain="[('state', '=', 'draft')]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_street_action" model="ir.actions.act_window">
+        <field name="name">Gestion des rues</field>
+        <field name="res_model">res.street</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="res_street_view_tree"/>
+        <field name="search_view_id" ref="res_street_view_filter"/>
+    </record>
+
+    <act_window id="action_wizard_delete_all_street"
+                name="Delete All"
+                src_model="res.street"
+                res_model="horanet.wizard.deletion"
+                view_mode="form"
+                target="new"
+                key2="client_action_multi"/>
+    <!--groups="base.group_no_one"-->
+</odoo>

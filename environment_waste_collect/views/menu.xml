@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="partner_menu"
+              name="Partners"
+              parent="horanet_environment.environment_main"
+              groups="horanet_environment.group_browse_environment"
+              sequence="1"/>
+
+    <menuitem id="all_environment_partners_menu"
+              name="All Environment Partners"
+              parent="partner_menu"
+              groups="horanet_environment.group_browse_environment"
+              action="action_all_partner"
+              sequence="0"/>
+
+    <!-- Waste Sites -->
+    <menuitem id="waste_site_global_menu"
+              name="Waste Sites"
+              parent="horanet_environment.environment_main"
+              groups="horanet_environment.group_browse_environment"
+              sequence="5"/>
+
+    <!-- Upper dock -->
+    <menuitem id="upper_dock_menu"
+              name="Upper dock"
+              parent="waste_site_global_menu"
+              groups="horanet_environment.group_browse_environment"
+              sequence="5"/>
+    <menuitem id="deposit_menu"
+              name="Deposits"
+              parent="environment_waste_collect.upper_dock_menu"
+              groups="horanet_environment.group_browse_environment"
+              action="environment_deposit_act_window"
+              sequence="5"/>
+    <menuitem id="access_menu"
+              name="Access"
+              parent="environment_waste_collect.upper_dock_menu"
+              groups="horanet_environment.group_browse_environment"
+              action="environment_access_act_window"
+              sequence="10"/>
+
+    <!-- Lower dock -->
+    <menuitem id="lower_dock_menu"
+              name="Lower dock"
+              parent="waste_site_global_menu"
+              groups="horanet_environment.group_browse_environment"
+              sequence="10"/>
+    <menuitem id="emplacement_menu"
+              name="Emplacements"
+              parent="lower_dock_menu"
+              action="emplacement_action"
+              groups="horanet_environment.group_browse_environment"
+              sequence="5"/>
+    <menuitem id="pickup_request_menu"
+              name="Pickup Requests"
+              parent="lower_dock_menu"
+              action="pickup_request_action"
+              groups="horanet_environment.group_browse_environment"
+              sequence="10"/>
+    <menuitem id="container_menu"
+              name="Containers"
+              parent="lower_dock_menu"
+              groups="environment_waste_collect.group_manage_containers"
+              action="container_action"
+              sequence="15"/>
+
+    <!-- Accounting -->
+    <menuitem id="accounting_menu"
+              name="Accounting"
+              parent="horanet_environment.environment_main"
+              groups="horanet_environment.group_browse_environment"
+              sequence="10"/>
+    <!-- Sale orders -->
+    <menuitem id="sales_menu"
+              name="Sale orders"
+              parent="accounting_menu"
+              groups="horanet_environment.group_browse_environment"
+              action="sale.action_orders"
+              sequence="1"/>
+    <!-- Invoices -->
+    <menuitem id="invoices_menu"
+              name="Invoices"
+              parent="accounting_menu"
+              groups="horanet_environment.group_browse_environment"
+              action="environment_action_invoice_tree"
+              sequence="5"/>
+    <!-- Products -->
+    <menuitem id="products_menu"
+              name="Products"
+              parent="accounting_menu"
+              groups="horanet_environment.group_browse_environment"
+              action="product.product_template_action"
+              sequence="10"/>
+
+    <!-- Reports -->
+    <menuitem id="reports_menu"
+              name="Reports"
+              parent="horanet_environment.environment_main"
+              groups="horanet_environment.group_browse_environment"
+              sequence="20"/>
+    <!-- Partners Reports -->
+    <menuitem id="menu_wizard_environment_partner"
+              name="Environment partner reports"
+              parent="reports_menu"
+              action="action_environment_partner_report"
+              sequence="10"/>
+    <!-- Pickup Reports -->
+    <menuitem id="menu_wizard_pickup_request"
+              name="Pickup request reports"
+              parent="reports_menu"
+              action="action_pickup_request_report"
+              sequence="20"/>
+    <menuitem id="menu_wizard_environment_operation"
+              name="Environment operations reports"
+              parent="reports_menu"
+              action="action_environment_operation_report"
+              sequence="30"/>
+
+    <!-- Settings -->
+    <menuitem id="service_provider_menu"
+              name="Service providers"
+              parent="horanet_environment.environment_configuration"
+              action="service_provider_action"
+              groups="horanet_environment.group_browse_environment"
+              sequence="5"/>
+    <menuitem id="container_type_menu"
+              name="Container Types"
+              parent="horanet_environment.environment_configuration"
+              action="container_type_action"
+              groups="horanet_environment.group_browse_environment"
+              sequence="10"/>
+    <menuitem id="waste_site_menu"
+              name="Waste Sites"
+              parent="horanet_environment.environment_configuration"
+              action="waste_site_action"
+              groups="horanet_environment.group_browse_environment"
+              sequence="15"/>
+    <menuitem id="waste_site_staff_menu"
+              name="Waste Site Staff"
+              parent="horanet_environment.environment_configuration"
+              groups="horanet_environment.group_browse_environment"
+              sequence="15"/>
+    <menuitem id="ecopad_session_menu"
+              name="Ecopad Sessions"
+              parent="horanet_environment.environment_configuration"
+              action="ecopad_session_action"
+              groups="horanet_environment.group_browse_environment"
+              sequence="30"/>
+
+    <!--Usage rights-->
+    <menuitem id="usage_rights_menu"
+              name="Usage rights"
+              parent="horanet_environment.environment_configuration"
+              groups="horanet_environment.group_admin_environment"
+              sequence="35"/>
+    <menuitem id="activities_menu"
+              name="Activities"
+              parent="usage_rights_menu"
+              action="environment_activity_action"
+              sequence="5"/>
+    <menuitem id="services_menu"
+              name="Services"
+              parent="usage_rights_menu"
+              action="service_action"
+              sequence="10"/>
+    <menuitem id="prestations_menu"
+              name="Prestations"
+              parent="usage_rights_menu"
+              action="prestation_action"
+              sequence="15"/>
+    <menuitem id="contract_templates_menu"
+              name="Contract templates"
+              parent="usage_rights_menu"
+              action="contract_template_action"
+              sequence="20"/>
+    <menuitem id="activity_sectors_menu"
+              name="Activity sectors"
+              parent="usage_rights_menu"
+              action="activity_sector_action"
+              sequence="25"/>
+    <menuitem id="activity_rules_menu"
+              name="Activity rules"
+              parent="usage_rights_menu"
+              action="activity_rule_action"
+              sequence="30"/>
+    <menuitem id="rules_editor_menu"
+              name="Rules editor"
+              parent="usage_rights_menu"
+              action="rule_editor_action"
+              sequence="35"/>
+    <menuitem id="partner_categories_menu"
+              name="Partner categories"
+              parent="usage_rights_menu"
+              action="partner_category_action"
+              sequence="40"/>
+    <menuitem id="contract_cycles_menu"
+              name="Contract cycles"
+              parent="usage_rights_menu"
+              action="contract_cycle_action"
+              sequence="45"/>
+
+    <!--Devices-->
+    <menuitem id="devices_menu"
+              name="Devices"
+              parent="horanet_environment.environment_configuration"
+              groups="horanet_environment.group_admin_environment"
+              sequence="40"/>
+    <menuitem id="ecopads_menu"
+              name="Ecopads"
+              parent="devices_menu"
+              action="ecopad_action"
+              sequence="5"/>
+    <menuitem id="terminals_menu"
+              name="Terminals"
+              parent="devices_menu"
+              action="terminal_action"
+              sequence="10"/>
+</odoo>

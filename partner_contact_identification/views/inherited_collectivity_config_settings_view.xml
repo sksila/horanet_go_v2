@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_collectivity_config_settings" model="ir.ui.view">
+        <field name="name">Partner Contact Identification Setting</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="horanet_go.view_form_collectivity_config_settings"/>
+
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='group_settings_contact_detail']" position="after">
+                <newline/>
+                <h2>Identification</h2>
+                <div class="row mt16 o_settings_container" name='partner_contact_identification_settings'>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                <label for="identification_windows_service_port"/>
+                                <field name="identification_windows_service_port"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <div class="content-group">
+                                <label for="mapping_id"/>
+                                <field name="mapping_id"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <label for="medium_recto_image"/>
+                            <div class="mt32">
+                                <field name="medium_recto_image" widget='image' options='{"size": [159, 100]}'
+                                       style="width:159px"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <label for="medium_verso_image"/>
+                            <div class="mt32">
+                                <field name="medium_verso_image" widget='image' options='{"size": [159, 100]}'
+                                       style="width:159px"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <button type="action" name="partner_contact_identification.action_download_windows_service"
+                                    string="Download windows service"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_download_windows_service" model="ir.actions.act_url">
+        <field name="name">Download windows service</field>
+        <field name="target">self</field>
+        <field name="url">
+            http://cdn.horanet.com/horanet_collectivity/modules/partner_contact_identification/binaries/latest.msi
+        </field>
+    </record>
+</odoo>

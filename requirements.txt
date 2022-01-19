@@ -1,0 +1,4 @@
+-r ./requirements/python.txt
+-r ./requirements/addons-required.txt
+-r ./requirements/addons-useful.txt
+-r ./requirements/addons-private.txt

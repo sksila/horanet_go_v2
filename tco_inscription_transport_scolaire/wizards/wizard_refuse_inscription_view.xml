@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="refuse_inscription_form" model="ir.ui.view">
+        <field name="name">Refuse inscription</field>
+        <field name="model">tco.inscription.refuse</field>
+        <field name="arch" type="xml">
+            <form>
+                <p>You are going to refuse a school transport inscription. Please provide a reason for the refusal.</p>
+                <group>
+                    <field name="reason"/>
+                </group>
+                <field name="inscription_id" invisible="1"/>
+                <footer>
+                    <button type="object" name="action_refuse"
+                            string="Refuse inscription" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <act_window id="action_wizard_refuse_inscription"
+                name="Inscription refuse wizard"
+                res_model="tco.inscription.refuse"
+                view_mode="form"
+                view_id="refuse_inscription_form"
+                target="new"/>
+</odoo>

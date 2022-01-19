@@ -1,0 +1,564 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* landholding
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-04 08:53+0000\n"
+"PO-Revision-Date: 2017-12-04 08:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_address_line_1
+msgid "1st address line"
+msgstr "1re ligne d'adresse"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_address_line_2
+msgid "2nd address line"
+msgstr "2e ligne d'adresse"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_address_line_3
+msgid "3rd address line"
+msgstr "3e ligne d'adresse"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_address_line_4
+msgid "4th address line"
+msgstr "4e ligne d'adresse"
+
+#. module: landholding
+#: code:addons/landholding/models/landholding_bati.py:159
+#, python-format
+msgid "APPT. "
+msgstr "APPT. "
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_street2
+msgid "Additional address"
+msgstr "Complément d'adresse"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_display_address
+msgid "Address"
+msgstr "Addresse"
+
+#. module: landholding
+#: model:ir.ui.view,arch_db:landholding.landholding_bati_view_form
+#: model:ir.ui.view,arch_db:landholding.landholding_prop_view_form
+msgid "Adress"
+msgstr "Adresse"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Antichrésiste"
+msgstr "Antichrésiste"
+
+#. module: landholding
+#: selection:landholding.bati,local_type:0
+msgid "Appartement"
+msgstr "Appartement"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Associé dans une société en transparence fiscale"
+msgstr "Associé dans une société en transparence fiscale"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Autorisation d'occupation temporaire"
+msgstr "Autorisation d'occupation temporaire"
+
+#. module: landholding
+#: code:addons/landholding/models/landholding_bati.py:167
+#, python-format
+msgid "BAT. "
+msgstr "BAT. "
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Bailleur d'un bail à réhabilitation"
+msgstr "Bailleur d'un bail à réhabilitation"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Bailleur à construction"
+msgstr "Bailleur à construction"
+
+#. module: landholding
+#: model:ir.ui.view,arch_db:landholding.landholding_bati_view_form
+#: model:ir.ui.view,arch_db:landholding.landholding_bati_view_tree
+msgid "Built domain"
+msgstr "Propriété bâtie"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_communal_account_landholding_bati_ids
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_landholding_bati_ids
+#: model:ir.ui.menu,name:landholding.landholding_bati_menu
+#: model:ir.ui.view,arch_db:landholding.communal_account_view_form
+#: model:ir.ui.view,arch_db:landholding.landholding_prop_view_form
+msgid "Built domains"
+msgstr "Propriétés bâties"
+
+#. module: landholding
+#: model:ir.actions.act_window,name:landholding.landholding_bati_action
+msgid "Built domains action"
+msgstr "Action propriétés bâties"
+
+#. module: landholding
+#: model:ir.ui.view,arch_db:landholding.wizard_import_data_fr_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_chunk_size
+msgid "Chunk size for street data"
+msgstr "Taille des blocs de traitement"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line_city_id
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_city_id
+#: model:ir.model.fields,field_description:landholding.field_landholding_communal_account_city_id
+msgid "City"
+msgstr "Ville"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line_communal_account_id
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_communal_account_id
+#: model:ir.model.fields,field_description:landholding.field_landholding_communal_account_name
+#: model:ir.ui.view,arch_db:landholding.communal_account_view_form
+#: model:ir.ui.view,arch_db:landholding.communal_account_view_tree
+msgid "Communal account"
+msgstr "Compte communal"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_communal_account_line_ids
+#: model:ir.ui.menu,name:landholding.communal_account_menu
+#: model:ir.ui.view,arch_db:landholding.landholding_prop_view_form
+msgid "Communal accounts"
+msgstr "Comptes communaux"
+
+#. module: landholding
+#: model:ir.actions.act_window,name:landholding.communal_account_action
+msgid "Communal accounts action"
+msgstr "Action comptes communaux"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_datafile
+msgid "Compressed file containing data"
+msgstr "Archive contenant les données"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_conserve_uploaded_file
+msgid "Conserve uploaded file"
+msgstr "Conserver les fichiers importés"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line_create_uid
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_create_uid
+#: model:ir.model.fields,field_description:landholding.field_landholding_communal_account_create_uid
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_create_uid
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line_create_date
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_create_date
+#: model:ir.model.fields,field_description:landholding.field_landholding_communal_account_create_date
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_create_date
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_delete_all_before_import
+msgid "Delete all data before import"
+msgstr "Supprimer les données avant l'import"
+
+#. module: landholding
+#: model:ir.ui.view,arch_db:landholding.landholding_bati_view_form
+#: model:ir.ui.view,arch_db:landholding.landholding_prop_view_form
+msgid "Denomination"
+msgstr "Dénomination"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line_display_name
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_display_name
+#: model:ir.model.fields,field_description:landholding.field_landholding_communal_account_display_name
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_display_name
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Domanier"
+msgstr "Domanier"
+
+#. module: landholding
+#: selection:landholding.bati,local_type:0
+msgid "Dépendances"
+msgstr "Dépendances"
+
+#. module: landholding
+#: code:addons/landholding/models/landholding_bati.py:168
+#, python-format
+msgid "ENT. "
+msgstr "ENT. "
+
+#. module: landholding
+#: code:addons/landholding/models/landholding_bati.py:157
+#, python-format
+msgid "ET. "
+msgstr "ET. "
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Emphytéole"
+msgstr "Emphytéole"
+
+#. module: landholding
+#: model:res.groups,comment:landholding.group_landholding_manage
+msgid "Enable the menus to manage landholding."
+msgstr "Active les menus pour gérer le foncier."
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Fiduciaire"
+msgstr "Fiduciaire"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Foncier"
+msgstr "Foncier"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Fonctionnaire logé"
+msgstr "Fonctionnaire logé"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line_landholding_prop_id
+#: model:ir.ui.view,arch_db:landholding.communal_account_view_form
+#: model:ir.ui.view,arch_db:landholding.landholding_prop_view_form
+#: model:ir.ui.view,arch_db:landholding.landholding_prop_view_tree
+msgid "Freeholder"
+msgstr "Propriétaire foncier"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_communal_account_communal_account_line_ids
+#: model:ir.ui.menu,name:landholding.landholding_prop_menu
+#: model:ir.ui.view,arch_db:landholding.communal_account_view_form
+msgid "Freeholders"
+msgstr "Propriétaires fonciers"
+
+#. module: landholding
+#: model:ir.actions.act_window,name:landholding.landholding_prop_action
+msgid "Freeholders action"
+msgstr "Action propriétaires"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Gestionnaire taxe sur les bureaux"
+msgstr "Gestionnaire taxe sur les bureaux"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Gérant, madataire, gestionnaire"
+msgstr "Gérant, madataire, gestionnaire"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line_id
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_id
+#: model:ir.model.fields,field_description:landholding.field_landholding_communal_account_id
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_id
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_id
+msgid "ID"
+msgstr "ID"
+
+#. module: landholding
+#: model:ir.ui.view,arch_db:landholding.wizard_import_data_fr_form
+msgid "Import"
+msgstr "Import"
+
+#. module: landholding
+#: model:ir.model,name:landholding.model_landholding_wizard_import_fr
+msgid "Import data landholding fr"
+msgstr "Import données foncier fr"
+
+#. module: landholding
+#: model:ir.ui.menu,name:landholding.wizard_import_landholding_data_fr_menu
+msgid "Import landholding (admin)"
+msgstr "Import foncier (admin)"
+
+#. module: landholding
+#: model:ir.actions.act_window,name:landholding.wizard_import_landholding_data_fr_action
+msgid "Import landholding action"
+msgstr "Action import foncier"
+
+#. module: landholding
+#: model:ir.ui.view,arch_db:landholding.wizard_import_data_fr_form
+msgid "Import landholdings (admin)"
+msgstr "Import foncier (admin)"
+
+#. module: landholding
+#: model:ir.ui.view,arch_db:landholding.wizard_import_data_fr_form
+msgid "Imports base parameters"
+msgstr "Paramètres de base de l'import"
+
+#. module: landholding
+#: model:ir.ui.view,arch_db:landholding.wizard_import_data_fr_form
+msgid "Imports data file"
+msgstr "Import des données"
+
+#. module: landholding
+#: model:ir.ui.view,arch_db:landholding.wizard_import_data_fr_form
+msgid "Imports performance parameters"
+msgstr "Paramètres de performance de l'import"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_unique_id
+msgid "Invariant number"
+msgstr "Numéro invariant"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Jeune agriculteur"
+msgstr "Jeune agriculteur"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "La poste, occupant et non propriétaire"
+msgstr "La poste, occupant et non propriétaire"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "La poste, propriétaire et occupant"
+msgstr "La poste, propriétaire et occupant"
+
+#. module: landholding
+#: model:ir.ui.menu,name:landholding.menu_landholding
+msgid "Landholding"
+msgstr "Foncier"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line___last_update
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati___last_update
+#: model:ir.model.fields,field_description:landholding.field_landholding_communal_account___last_update
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop___last_update
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line_write_uid
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_write_uid
+#: model:ir.model.fields,field_description:landholding.field_landholding_communal_account_write_uid
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_write_uid
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line_write_date
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_write_date
+#: model:ir.model.fields,field_description:landholding.field_landholding_communal_account_write_date
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_write_date
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: landholding
+#: selection:landholding.bati,local_type:0
+msgid "Local commercial ou industriel"
+msgstr "Local commercial ou industriel"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_local_type
+msgid "Local type"
+msgstr "Type de local"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Locataire-attributaire"
+msgstr "Locataire-attributaire"
+
+#. module: landholding
+#: selection:landholding.bati,local_type:0
+msgid "Maison"
+msgstr "Maison"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_majic_person_number
+msgid "Majic person number"
+msgstr "Numéro de personne MAJIC"
+
+#. module: landholding
+#: model:res.groups,name:landholding.group_landholding_manage
+msgid "Manage Landholding"
+msgstr "Gérer le foncier"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_multi_transaction
+msgid "Multi transaction"
+msgstr "Multi transaction"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_prop_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Nu-propriétaire"
+msgstr "Nu-propriétaire"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Occupant d'une parcelle appartenant au département de Mayotte ou à l'état"
+msgstr "Occupant d'une parcelle appartenant au département de Mayotte ou à l'état"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line_partial_label_number
+msgid "Partial label number"
+msgstr "Numéro de libellé partiel"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Preneur d'un bail à réhabilitation"
+msgstr "Preneur d'un bail à réhabilitation"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Preneur à construction"
+msgstr "Preneur à construction"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Propriétaire"
+msgstr "Propriétaire"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_communal_account_line_real_part_right_code
+msgid "Real or particular right"
+msgstr "Droit réel ou particulier"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_street3
+msgid "Second additional address"
+msgstr "Deuxième complément d'adresse"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_state_id
+msgid "State"
+msgstr "Département"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_street_id
+msgid "Street"
+msgstr "Rue"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Syndic de copropriété"
+msgstr "Syndic de copropriété"
+
+#. module: landholding
+#: code:addons/landholding/models/landholding_communal_account_line.py:48
+#: sql_constraint:communal.account.line:0
+#, python-format
+msgid "The communal_account_id + partial_label_number must be unique !"
+msgstr "Le communal_account_id + partial_label_number doit être unique !"
+
+#. module: landholding
+#: code:addons/landholding/models/landholding_prop.py:24
+#: sql_constraint:landholding.prop:0
+#, python-format
+msgid "The majic_person_number must be unique !"
+msgstr "Le majic_person_number doit être unique !"
+
+#. module: landholding
+#: code:addons/landholding/models/landholding_communal_account.py:18
+#: sql_constraint:landholding.communal.account:0
+#, python-format
+msgid "The name + city_id must be unique !"
+msgstr "Le name + city_id doit être unique !"
+
+#. module: landholding
+#: code:addons/landholding/models/landholding_bati.py:26
+#: sql_constraint:landholding.bati:0
+#, python-format
+msgid "The unique_id must be unique !"
+msgstr "Le unique_id doit être unique !"
+
+#. module: landholding
+#: model:ir.ui.view,arch_db:landholding.wizard_import_data_fr_form
+msgid "This operation could take time and is irreversible, are you sure to proceed ?"
+msgstr "Cette opération peut prendre du temps et est irréversible, êtes-vous sur de vouloir continuer"
+
+#. module: landholding
+#: model:ir.model.fields,help:landholding.field_landholding_wizard_import_fr_multi_transaction
+msgid "True : a commit will be executed every chunks\n"
+"False : The creation of all records will be transactionned (no commit during import)"
+msgstr "True : un commit sera effectué pour chaque tranche\n"
+"False : La création de tous les enregistrements sera transactionnelle (pas de commit pendant l'import)"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Ténuyer"
+msgstr "Ténuyer"
+
+#. module: landholding
+#: model:ir.model.fields,help:landholding.field_landholding_wizard_import_fr_conserve_uploaded_file
+msgid "Uploaded archive content is saved on the server in a temporary directory, if set to true, the folder will be conserved after the import, otherwise it will be regarding of the import result. (consult the log for the path)"
+msgstr "L'archive est chargée sur le serveur dans un répertoire temporaire; si coché, le répertoire sera conservé après l'import, sinon, cela dépendra du résultat de l'import. (consultez la log pour obtenir le chemin)"
+
+#. module: landholding
+#: selection:communal.account.line,real_part_right_code:0
+msgid "Usufruitier"
+msgstr "Usufruitier"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_bati_zip_id
+msgid "Zip code"
+msgstr "Code postal"
+
+#. module: landholding
+#: model:ir.model,name:landholding.model_communal_account_line
+msgid "communal.account.line"
+msgstr "communal.account.line"
+
+#. module: landholding
+#: model:ir.model.fields,field_description:landholding.field_landholding_wizard_import_fr_datafile_file_name
+msgid "hidden file name"
+msgstr "hidden file name"
+
+#. module: landholding
+#: model:ir.model,name:landholding.model_landholding_bati
+msgid "landholding.bati"
+msgstr "landholding.bati"
+
+#. module: landholding
+#: model:ir.model,name:landholding.model_landholding_communal_account
+msgid "landholding.communal.account"
+msgstr "landholding.communal.account"
+
+#. module: landholding
+#: model:ir.model,name:landholding.model_landholding_prop
+msgid "landholding.prop"
+msgstr "landholding.prop"
+

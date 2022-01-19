@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Lots de facturation-->
+    <menuitem id="mass_invoicing_batches"
+              name="Invoicing batches"
+              parent="account.menu_finance"
+              groups="account_mass_invoicing.group_browse_mass_invoicing"
+              sequence="8"/>
+
+    <menuitem id="mass_invoicing_invoice_batches"
+              name="Batches"
+              parent="account_mass_invoicing.mass_invoicing_batches"
+              groups="account_mass_invoicing.group_browse_mass_invoicing"
+              action="action_account_mass_invoicing_invoice_batch"
+              sequence="0"/>
+
+    <menuitem id="mass_invoicing_campaigns"
+              name="Campaigns"
+              parent="account_mass_invoicing.mass_invoicing_batches"
+              groups="account_mass_invoicing.group_browse_mass_invoicing"
+              action="action_account_mass_invoicing_invoice_campaign"
+              sequence="10"/>
+
+    <menuitem id="invoice_archive"
+              name="Archived invoices"
+              parent="account_mass_invoicing.mass_invoicing_batches"
+              groups="account_mass_invoicing.group_browse_mass_invoicing"
+              action="action_archive_min_invoices"
+              sequence="25"/>
+
+    <menuitem id="mass_invoicing_wizard"
+              name="Mass invoicing"
+              parent="account_mass_invoicing.mass_invoicing_batches"
+              groups="account_mass_invoicing.group_manage_mass_invoicing"
+              action="action_account_mass_invoicing_wizard_mass_invoicing"
+              sequence="20"/>
+
+    <!-- Rôles-->
+    <menuitem id="mass_invoicing_roles"
+              name="Roles"
+              parent="account.menu_finance"
+              groups="account_mass_invoicing.group_browse_mass_invoicing"
+              sequence="11"/>
+
+    <menuitem id="mass_invoicing_roles_roles"
+              name="Roles"
+              parent="account_mass_invoicing.mass_invoicing_roles"
+              groups="account_mass_invoicing.group_browse_mass_invoicing"
+              action="action_account_mass_invoicing_role"
+              sequence="20"/>
+    <menuitem
+            id="menu_import_ORDOTIP_file"
+            name="Import ORDOTIP file"
+            parent="account_mass_invoicing.mass_invoicing_roles"
+            action="action_Import_ordotip_menu"
+            sequence="21"
+    />
+
+    <!-- Configuration -->
+    <menuitem id="mass_invoicing_batch_types"
+              name="Batch types"
+              parent="account.account_management_menu"
+              groups="account_mass_invoicing.group_admin_mass_invoicing"
+              action="action_account_mass_invoicing_invoice_batch_type"
+              sequence="100"/>
+
+    <menuitem id="mass_invoicing_budget_code"
+              name="Budget Codes"
+              parent="account.menu_finance_configuration"
+              groups="account_mass_invoicing.group_admin_mass_invoicing"
+              action="action_account_mass_invoicing_budget_code"
+              sequence="110"/>
+
+    <menuitem id="mass_invoicing_accounting_date_range"
+              name="Accounting Date Range"
+              parent="account.account_account_menu"
+              groups="account_mass_invoicing.group_admin_mass_invoicing"
+              action="action_account_mass_invoicing_accounting_date_range"
+              sequence="120"/>
+
+</odoo>

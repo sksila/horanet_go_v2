@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_transport_vehicle_model" model="ir.ui.view">
+        <field name="name">tco.transport.vehicle.model.form</field>
+        <field name="model">tco.transport.vehicle.model</field>
+        <field name="arch" type="xml">
+            <form string="Vehicle model">
+                <sheet>
+                    <group>
+                        <field name="vehicle_category_id"></field>
+                        <field name="vehicle_brand_id"></field>
+                    </group>
+                    <group>
+                        <field name="name"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_transport_vehicle_model" model="ir.ui.view">
+        <field name="name">tco.transport.vehicle.model.tree</field>
+        <field name="model">tco.transport.vehicle.model</field>
+        <field name="arch" type="xml">
+            <tree string="Vehicle model">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_transport_vehicle_model" model="ir.actions.act_window">
+        <field name="name">Vehicle model</field>
+        <field name="res_model">tco.transport.vehicle.model</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_transport_vehicle_model"/>
+    </record>
+</odoo>

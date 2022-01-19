@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Rue -->
+    <record id="demo_street_republique_street" model="res.street">
+        <field name="name">Rue de la République</field>
+        <field name="state">confirmed</field>
+        <field name="city_id" ref="better_address.demo_city_fontenay_le_comte"/>
+    </record>
+
+    <!-- Point de production -->
+    <record id="demo_production_point_1" model="production.point">
+        <field name="street_id" ref="better_address.demo_street_hotel_ville"/>
+        <field name="city_id" ref="better_address.demo_city_la_rochelle"/>
+        <field name="zip_id" ref="better_address.demo_zip_17000"/>
+        <field name="country_id" ref="base.fr"/>
+    </record>
+
+    <record id="demo_production_point_2" model="production.point">
+        <field name="street_id" ref="demo_street_republique_street"/>
+        <field name="city_id" ref="better_address.demo_city_fontenay_le_comte"/>
+        <field name="zip_id" ref="better_address.demo_zip_85200"/>
+        <field name="country_id" ref="base.fr"/>
+    </record>
+
+    <record id="demo_production_point_3" model="production.point">
+        <field name="street_id" ref="better_address.demo_street_puits"/>
+        <field name="city_id" ref="better_address.demo_city_fontenay_le_comte"/>
+        <field name="zip_id" ref="better_address.demo_zip_85200"/>
+        <field name="country_id" ref="base.fr"/>
+    </record>
+
+    <record id="demo_production_point_4" model="production.point">
+        <field name="street_id" ref="better_address.demo_street_cordiers"/>
+        <field name="city_id" ref="better_address.demo_city_fontenay_le_comte"/>
+        <field name="zip_id" ref="better_address.demo_zip_85206"/>
+        <field name="country_id" ref="base.fr"/>
+    </record>
+
+    <!-- Emménagements -->
+    <record id="demo_partner_move_1" model="partner.move">
+        <field name="production_point_id" ref="demo_production_point_1"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_1"/>
+        <field name="subscription_id" ref="environment_waste_collect.demo_env_subscription_1"/>
+        <field name="residence_type">main</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=18)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="end_date" eval="(datetime.now() - relativedelta(months=13)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+    <record id="demo_partner_move_2" model="partner.move">
+        <field name="production_point_id" ref="demo_production_point_2"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_1"/>
+        <field name="subscription_id" ref="environment_waste_collect.demo_env_subscription_1"/>
+        <field name="residence_type">main</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=13)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="end_date" eval="(datetime.now() - relativedelta(months=8)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+    <record id="demo_partner_move_3" model="partner.move">
+        <field name="production_point_id" ref="demo_production_point_2"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_2"/>
+        <field name="subscription_id" ref="environment_waste_collect.demo_env_subscription_2"/>
+        <field name="residence_type">main</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=6)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+    <record id="demo_partner_move_4" model="partner.move">
+        <field name="production_point_id" ref="demo_production_point_3"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_1"/>
+        <field name="subscription_id" ref="environment_waste_collect.demo_env_subscription_1"/>
+        <field name="residence_type">main</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=8)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+    <record id="demo_partner_move_5" model="partner.move">
+        <field name="production_point_id" ref="demo_production_point_2"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_3"/>
+        <field name="subscription_id" ref="environment_waste_collect.demo_env_subscription_3"/>
+        <field name="residence_type">main</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=17)).strftime('%Y-%m-%d 00:00')"/>
+        <field name="end_date" eval="(datetime.now() - relativedelta(months=14)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+    <record id="demo_partner_move_6" model="partner.move">
+        <field name="production_point_id" ref="demo_production_point_4"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_3"/>
+        <field name="subscription_id" ref="environment_waste_collect.demo_env_subscription_3"/>
+        <field name="residence_type">main</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=14)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+    <record id="demo_partner_move_7" model="partner.move">
+        <field name="production_point_id" ref="demo_production_point_1"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_4"/>
+        <field name="subscription_id" ref="environment_waste_collect.demo_env_subscription_4"/>
+        <field name="residence_type">main</field>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=12)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+
+    <!-- Supports -->
+    <record id="demo_move_medium_1" model="partner.contact.identification.medium">
+        <field name="type_id" ref="partner_contact_identification.demo_medium_type_card"/>
+        <field name="partner_id" ref="partner_contact_citizen.demo_partner_4"/>
+    </record>
+
+    <!-- Identifiants -->
+    <record id="demo_move_tag_1" model="partner.contact.identification.tag">
+        <field name="number">PP12345678</field>
+        <field name="mapping_id" ref="partner_contact_identification.mapping_mifare_csn_horanet"/>
+        <field name="medium_id" ref="environment_waste_collect.demo_env_medium_2"/>
+    </record>
+    <record id="demo_move_tag_2" model="partner.contact.identification.tag">
+        <field name="number">MO87654321</field>
+        <field name="mapping_id" ref="partner_contact_identification.mapping_mifare_csn_horanet"/>
+        <field name="medium_id" ref="demo_move_medium_1"/>
+    </record>
+
+    <!-- Assignations -->
+    <record id="environment_waste_collect.demo_env_assignation_1" model="partner.contact.identification.assignation">
+        <field name="reference_id" ref="demo_partner_move_4"/>
+    </record>
+    <record id="environment_waste_collect.demo_env_assignation_4" model="partner.contact.identification.assignation">
+        <field name="reference_id" ref="demo_partner_move_6"/>
+    </record>
+    <record id="demo_move_assignation_1" model="partner.contact.identification.assignation">
+        <field name="reference_id" ref="demo_partner_move_3"/>
+        <field name="tag_id" ref="demo_move_tag_1"/>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=8)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+    <record id="demo_move_assignation_2" model="partner.contact.identification.assignation">
+        <field name="reference_id" ref="demo_partner_move_7"/>
+        <field name="tag_id" ref="demo_move_tag_2"/>
+        <field name="start_date" eval="(datetime.now() - relativedelta(months=12)).strftime('%Y-%m-%d 00:00')"/>
+    </record>
+
+
+</odoo>

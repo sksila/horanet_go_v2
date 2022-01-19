@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.citizen</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!--Ajout d'un style custom pour agrandir la vue form/sheet-->
+            <xpath expr="//sheet" position="attributes">
+                <attribute name="class">o-form-sheet-width-wider</attribute>
+            </xpath>
+
+            <!--Ajout d'un champ de nom en fonction du type de partner-->
+            <field name="name" position="after">
+                <field name="abridged_display_name"
+                       attrs="{'invisible': [('company_type','!=', 'foyer')]}">
+                </field>
+            </field>
+
+            <!--Ajout d'une page dans la vue formulaire qui contient les informations du foyer-->
+            <xpath expr="//page[@name='internal_notes']" position="before">
+                <page name="personal_foyer_page"
+                      string="My foyers"
+                      attrs="{'invisible': [('is_company','=', True)]}">
+                    <group name="personal_foyer_group">
+                        <field name="foyer_relation_ids" nolabel="1" colspan="2"
+                               context="{'default_partner_id': active_id, 'readonly_partner_id' : True}">
+                            <tree>
+                                <field name="foyer_id"/>
+                                <button type='object' name='action_open_foyer_form' widget="redirect">
+                                </button>
+                                <field name="begin_date"/>
+                                <field name="end_date"/>
+                                <field name="is_valid"/>
+                                <field name="is_responsible"/>
+                                <field name="computed_list_name_foyer_members"/>
+                            </tree>
+                        </field>
+                        <!--Ajout d'un boutton de création de foyer automatisé-->
+                        <button name="action_add_foyer" string="Save and add a new foyer" colspan="2"
+                                type="object"
+                                class="oe_highlight oe_edit_only"
+                                attrs="{'invisible': [('foyer_relation_ids', '!=', [])]}"/>
+                        <button name="action_add_foyer" string="Add a new foyer" colspan="2"
+                                type="object"
+                                class="oe_read_only"
+                                attrs="{'invisible': [('foyer_relation_ids', '!=', [])]}"/>
+                    </group>
+                </page>
+            </xpath>
+            <!--Ajout de pages pour visualiser les informations de gestion du foyer-->
+            <xpath expr="//page[1]" position="before">
+                <page name="informations_foyer" string="Information du foyer"
+                      attrs="{'invisible': [('company_type','!=', 'foyer')]}">
+                    <div class="oe_title">
+                        <label for="foyer_name"/>
+                        <h1>
+                            <field name="foyer_name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <field name="fixed_name" class="oe_edit_only oe_inline"/>
+                    </group>
+                    <group string="Foyer current members">
+                        <field name="active_foyer_member_ids" nolabel="1"></field>
+                    </group>
+                    <group string="List of related partners">
+                        <field name="foyer_member_ids" nolabel="1"
+                               filter_domain="[('foyer_id', '!=', active_id)]"
+                               context="{'default_foyer_id': active_id}">
+                            <tree editable="bottom" colors="grey:is_valid==False;">
+                                <field name="foyer_id" invisible="1"/>
+                                <field name="partner_id" context="{'get_default_address_from_foyer': foyer_id}"/>
+                                <button type='object' name='action_open_partner_form' widget="redirect">
+                                </button>
+                                <field name="begin_date"/>
+                                <field name="end_date"/>
+                                <field name="is_valid"/>
+                                <field name="is_responsible"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">partner and foyer filters</field>
+        <field name="model">res.partner</field>
+        <field name="type">search</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <filter string="Persons" name="type_person" domain="[('is_company','=',0)]"/>
+            <filter string="Companies" name="type_company" domain="[('is_company','=',1)]"/>
+            <xpath expr="//filter[@name='type_company']" position="after">
+                <filter string="Companies type foyer"
+                        name="type_company_foyer"
+                        domain="[('company_type', '=', 'foyer')]"/>
+                <separator/>
+            </xpath>
+            <field name="parent_id" position="before">
+                <field name='search_field_foyer_member'
+                       invisible="context.get('partner_view_mode', False) in ['citizen']"/>
+                <field name='search_field_foyer_address'
+                       invisible="context.get('partner_view_mode', False) in ['citizen']"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="res_partner_kanban_view" model="ir.ui.view">
+        <field name="name">add short display name for partner foyer</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//t[@t-name='kanban-box']//field[@name='display_name']" position="replace">
+                <field name="company_type" attrs="{'invisible': [('company_type','!=', 'foyer')]}"/>
+                <field name="display_name" attrs="{'invisible': [('company_type','=', 'foyer')]}"/>
+            </xpath>
+            <xpath expr="//t[@t-name='kanban-box']//ul//li[1]" position="before">
+                <field name="abridged_display_name" attrs="{'invisible': [('company_type','!=', 'foyer')]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

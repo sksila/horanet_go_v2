@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add the cat_tiers_id and nat_jur_id fields -->
+    <record id="inherited_view_res_partner_form" model="ir.ui.view">
+        <field name="name">CatTiers and NatJur on res.partner</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <group name="accounting_entries" position="after">
+                <group name="ormc_pesv2" string="ORMC PES V2">
+                    <field name="cat_tiers_id" options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                    <field name="nat_jur_id" options="{'no_create': True, 'no_create_edit': True, 'no_open': True}"/>
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>

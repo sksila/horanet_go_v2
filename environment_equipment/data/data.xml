@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Sequence for import -->
+        <record id="seq_equipment_pickup_import" model="ir.sequence">
+            <field name="name">Equipment pickups import</field>
+            <field name="prefix">IMP</field>
+            <field name="padding">5</field>
+            <field name="code">equipment.pickup.import</field>
+            <field name="implementation">no_gap</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <!-- Equipment-related subtypes for messaging / Chatter -->
+        <record id="mt_address_assign" model="mail.message.subtype">
+            <field name="name">Equipment Assigned</field>
+            <field name="res_model">maintenance.equipment</field>
+            <field name="description">Equipment Assigned</field>
+        </record>
+
+        <!-- Application template -->
+        <record id="application_functionality_container_maintenance" model="application.functionality">
+            <field name="name">Container maintenance</field>
+        </record>
+
+        <record id="application_template_container_maintenance" model="website.application.template">
+            <field name="name">Container maintenance request</field>
+            <field name="description">To ask for a maintenance of your container, just fill this form below :</field>
+            <field name="beginning_date" eval="datetime.now()"/>
+            <field name="functionality_id"
+                   eval="ref('environment_equipment.application_functionality_container_maintenance')"/>
+            <field name="application_type">environment</field>
+            <field name="multiple_requests_allowed">True</field>
+            <field name="ask_partner_informations">False</field>
+        </record>
+
+        <!-- Maintenance equipment categories -->
+        <record id="horanet_action_container_green_140" model="maintenance.equipment.category">
+            <field name="name">Bac vert 140L</field>
+            <field name="capacity">140</field>
+            <field name="capacity_unit_id" ref="product.product_uom_litre"/>
+        </record>
+
+        <record id="horanet_action_container_grey_140" model="maintenance.equipment.category">
+            <field name="name">Bac gris 140L</field>
+            <field name="capacity">140</field>
+            <field name="capacity_unit_id" ref="product.product_uom_litre"/>
+        </record>
+
+        <record id="horanet_action_container_yellow_140" model="maintenance.equipment.category">
+            <field name="name">Bac jaune 140L</field>
+            <field name="capacity">140</field>
+            <field name="capacity_unit_id" ref="product.product_uom_litre"/>
+        </record>
+
+        <!-- Operation data -->
+        <record id="horanet_action_container_pickup" model="horanet.action">
+            <field name="name">Relève bac</field>
+            <field name="code">RELEVEBAC</field>
+            <field name="type">operation</field>
+        </record>
+
+        <record id="activity_container_pickup_green_140" model="horanet.activity">
+            <field name="name">Relève bac vert 140L</field>
+            <field name="application_type">environment</field>
+            <field name="reference">RBV140</field>
+            <field name="default_action_id" ref="horanet_action_container_pickup"/>
+            <field name="product_uom_id" ref="product.product_uom_unit"/>
+            <field name="image" type="base64"
+                   file="environment_equipment/static/src/img/bac_vert.jpg"/>
+        </record>
+
+        <record id="activity_container_pickup_yellow_140" model="horanet.activity">
+            <field name="name">Relève bac jaune 140L</field>
+            <field name="application_type">environment</field>
+            <field name="reference">RBJ140</field>
+            <field name="default_action_id" ref="horanet_action_container_pickup"/>
+            <field name="product_uom_id" ref="product.product_uom_unit"/>
+            <field name="image" type="base64"
+                   file="environment_equipment/static/src/img/bac_jaune.jpg"/>
+        </record>
+
+        <record id="activity_container_pickup_grey_140" model="horanet.activity">
+            <field name="name">Relève bac gris 140L</field>
+            <field name="application_type">environment</field>
+            <field name="reference">RBG140</field>
+            <field name="default_action_id" ref="horanet_action_container_pickup"/>
+            <field name="product_uom_id" ref="product.product_uom_unit"/>
+            <field name="image" type="base64"
+                   file="environment_equipment/static/src/img/bac_gris.jpg"/>
+        </record>
+
+        <record id="horanet_activity_sector_pickup" model="activity.sector">
+            <field name="name">Relève</field>
+            <field name="custom_activity_ids" eval="[(6, 0, [ref('activity_container_pickup_green_140'), ref('activity_container_pickup_grey_140'), ref('activity_container_pickup_yellow_140')])]"/>
+        </record>
+
+        <!-- Mail templates -->
+        <record id="email_maintenance_request_stage_changed" model="mail.template">
+            <field name="name">Maintenance request stage changed</field>
+            <field name="email_from">${user.company_id.email}</field>
+            <field name="subject">Status of your request: ${object.stage_id.name}</field>
+            <field name="email_to">${object.equipment_id.owner_partner_id.email}</field>
+            <field name="model_id" ref="maintenance.model_maintenance_request"/>
+            <field name="lang">${object.equipment_id.owner_partner_id.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[<p><table style="width:600px;background:inherit;color:inherit" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+            <td style="padding:10px 10px 10px 5px;font-size: 12px" width="200" valign="center">
+                <img src="/logo.png" style="border-image-repeat:initial;border-image-outset:initial;border-image-width:initial;border-image-slice:initial;border-image-source:initial;border-left-color:initial;border-bottom-color:initial;border-right-color:initial;border-top-color:initial;border-left-style:initial;border-bottom-style:initial;border-right-style:initial;border-top-style:initial;padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${user.company_id.name}">
+            </td>
+        </tr></tbody>
+    </table>
+            ${object.equipment_id.partner_id.title or ''}
+            ${object.equipment_id.owner_partner_id.name or ''},</p>
+            <br/>
+<p>The status of your request is now: ${object.stage_id.name}.</p>
+<p>Equipment: <b>${object.equipment_id.name}</b></p>
+<p>Equipment type: <b>${object.equipment_id.category_id.name}</b></p>
+<p>Regards,<br/>
+${user.signature | safe}
+<br/>
+<br/>
+Sent by ${user.company_id.name} using Odoo
+</p>]]></field>
+        </record>
+
+        <record id="email_maintenance_request_stage_new" model="mail.template">
+            <field name="name">New maintenance request</field>
+            <field name="email_from">${user.company_id.email}</field>
+            <field name="subject">A new maintenance request has been created</field>
+            <field name="email_to">${object.equipment_id.owner_partner_id.email}</field>
+            <field name="model_id" ref="maintenance.model_maintenance_request"/>
+            <field name="lang">${object.equipment_id.owner_partner_id.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[<p><table style="width:600px;background:inherit;color:inherit" cellspacing="0" cellpadding="0">
+        <tbody><tr>
+            <td style="padding:10px 10px 10px 5px;font-size: 12px" width="200" valign="center">
+                <img src="/logo.png" style="border-image-repeat:initial;border-image-outset:initial;border-image-width:initial;border-image-slice:initial;border-image-source:initial;border-left-color:initial;border-bottom-color:initial;border-right-color:initial;border-top-color:initial;border-left-style:initial;border-bottom-style:initial;border-right-style:initial;border-top-style:initial;padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${user.company_id.name}">
+            </td>
+        </tr></tbody>
+    </table>
+            ${object.equipment_id.partner_id.title or ''}
+            ${object.equipment_id.owner_partner_id.name or ''},</p>
+            <br/>
+<p>A new maintenance request has been created. You will be notified of the avancement of the request soon.
+<p>Equipment: <b>${object.equipment_id.name}</b></p>
+<p>Equipment type: <b>${object.equipment_id.category_id.name}</b></p>
+<p>Regards,<br/>
+${user.signature | safe}
+<br/>
+<br/>
+Sent by ${user.company_id.name} using Odoo
+</p>]]></field>
+        </record>
+    </data>
+</odoo>

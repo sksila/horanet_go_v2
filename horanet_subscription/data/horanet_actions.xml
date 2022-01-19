@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_passage" model="horanet.action">
+        <field name="name">Passage</field>
+        <field name="code">PASS</field>
+        <field name="type">operation</field>
+    </record>
+    <record id="action_exit" model="horanet.action">
+        <field name="name">Exit</field>
+        <field name="code">EXIT</field>
+        <field name="type">operation</field>
+    </record>
+    <record id="action_disable_fmi" model="horanet.action">
+        <field name="name">Disable FMI</field>
+        <field name="code">DISABLE_FMI</field>
+        <field name="type">operation</field>
+    </record>
+    <record id="action_enable_fmi" model="horanet.action">
+        <field name="name">Enable FMI</field>
+        <field name="code">ENABLE_FMI</field>
+        <field name="type">operation</field>
+    </record>
+    <record id="action_calibrate_fmi" model="horanet.action">
+        <field name="name">Calibrate FMI</field>
+        <field name="code">CALIBRATE_FMI</field>
+        <field name="type">operation</field>
+    </record>
+
+    <record id="action_badgeage" model="horanet.action">
+        <field name="name">Badgeage</field>
+        <field name="code">BADGE</field>
+        <field name="type">query</field>
+    </record>
+    <record id="action_access" model="horanet.action">
+        <field name="name">Accès</field>
+        <field name="code">ACCESS</field>
+        <field name="type">query</field>
+    </record>
+</odoo>

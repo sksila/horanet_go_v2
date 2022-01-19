@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="unsubscribe_refused" model="mail.template">
+            <field name="name">Unsubscription refuse</field>
+            <field name="email_from">${user.company_id.email}</field>
+            <field name="subject">Your unsubscription request has been refused</field>
+            <field name="email_to">${object.user_id.email}</field>
+            <field name="model_id" ref="user_unsubscribe.model_user_unsubscribe"/>
+            <field name="lang">${object.user_id.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[<p>${object.partner_id.title.name or ''} ${object.partner_id.name},<br/>
+Your unsubscription request has been refused for the following reason:<br/>
+<br/>
+<i>${object.refuse_reason}</i><br/>
+<br/>
+You can contact our services any time you want for further informations.</p>]]></field>
+        </record>
+
+        <record id="unsubscribe_accepted" model="mail.template">
+            <field name="name">Unsubscription accepted</field>
+            <field name="email_from">${user.company_id.email}</field>
+            <field name="subject">Your unsubscription request has been accepted</field>
+            <field name="email_to">${object.user_id.email}</field>
+            <field name="model_id" ref="user_unsubscribe.model_user_unsubscribe"/>
+            <field name="lang">${object.user_id.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[<p>${object.partner_id.title.name or ''} ${object.partner_id.name},<br/>
+Your unsubscription request has been accepted. You can no longer access your portal.</p>]]></field>
+        </record>
+
+        <record id="unsubscribe_pending" model="mail.template">
+            <field name="name">Unsubscription pending</field>
+            <field name="email_from">${user.company_id.email}</field>
+            <field name="subject">Your unsubscription request has been created</field>
+            <field name="email_to">${object.user_id.email}</field>
+            <field name="model_id" ref="user_unsubscribe.model_user_unsubscribe"/>
+            <field name="lang">${object.user_id.lang}</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[<p>${object.partner_id.title.name or ''} ${object.partner_id.name},<br/>
+Your unsubscription request has been created. We are currently studying your request to see if everything is valid.</p>
+<p>You will soon receive a mail about the evolution of your request.</p>]]></field>
+        </record>
+    </data>
+</odoo>

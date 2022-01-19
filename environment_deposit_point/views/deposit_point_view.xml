@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="deposit_point_form_view" model="ir.ui.view">
+        <field name="name">Deposit Point Form View</field>
+        <field name="model">environment.deposit.point</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="%(maintenance.hr_equipment_request_action_from_equipment)d"
+                                type="action"
+                                class="oe_stat_button"
+                                icon="fa-ticket">
+                            <field string="Maintenance" name="maintenance_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group col="4">
+                        <field name="deposit_area_id"/>
+                        <field name="activity_id"/>
+                        <newline/>
+                        <field name="reference"/>
+                        <field name="serial_no" required="1"/>
+                        <label for="filling_level"/>
+                        <div class="o_row">
+                            <field name="filling_level"/>
+                            <label string="%"/>
+                        </div>
+                        <field name="commissioning_date"/>
+                        <field name="volume"/>
+                        <field name="last_import_date"/>
+
+                        <field name="city_id" invisible="1" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Containers">
+                            <field name="equipment_rel_ids">
+                                <tree editable="top" default_order="ending_date desc">
+                                    <field name="maintenance_equipment_id"/>
+                                    <field name="beginning_date"/>
+                                    <field name="ending_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Deposits">
+                            <field name="operation_ids"
+                                   context="{'form_view_ref': 'environment_deposit_point.deposit_point_operation_view_form'}">
+                                <tree>
+                                    <field name="time"/>
+                                    <field name="partner_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Pickups">
+                            <field name="pickup_ids"
+                                   context="{'form_view_ref': 'environment_equipment.action_environment_equipment_operation_pickups_view_form'}">
+                                <tree default_order="time desc">
+                                    <field name="time"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="deposit_point_tree_view" model="ir.ui.view">
+        <field name="name">Deposit Point List View</field>
+        <field name="model">environment.deposit.point</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="activity_id"/>
+                <field name="volume"/>
+                <field name="city_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="deposit_point_kanban_view" model="ir.ui.view">
+        <field name="name">Deposit Point Kanban View</field>
+        <field name="model">environment.deposit.point</field>
+        <field name="arch" type="xml">
+            <kanban edit="false" quick_create="false" group_create="false">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div class="o_dropdown_kanban dropdown">
+
+                                <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">
+                                    <span class="fa fa-bars fa-lg"/>
+                                </a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                    <t t-if="widget.editable">
+                                        <li>
+                                            <a type="edit">Edit...</a>
+                                        </li>
+                                    </t>
+                                    <t t-if="widget.deletable">
+                                        <li>
+                                            <a type="delete">Delete</a>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </div>
+                            <div class="oe_kanban_content">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <field name="filling_level" widget="better_gauge"
+                                               options="{'max_value':100,'inverse_color':true}"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="oe_kanban_details">
+                                            <div class="row">
+                                                <strong>
+                                                    <field name="reference"/>
+                                                </strong>
+                                            </div>
+                                            <div class="row">
+                                                <field name="deposit_area_id"/>
+                                            </div>
+                                            <div class="row">
+                                                <field name="activity_id"/>
+                                            </div>
+                                            <field name="city_id" invisible="1"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="oe_clear"></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="deposit_point_search_view" model="ir.ui.view">
+        <field name="name">Deposit Point Search View</field>
+        <field name="model">environment.deposit.point</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="city_id"/>
+                <filter name="group_by_deposit_area" string="Group by Deposit area"
+                        context="{'group_by': 'deposit_area_id'}"/>
+                <filter name="group_by_city" string="Group by City"
+                        context="{'group_by': 'city_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="deposit_point_action" model="ir.actions.act_window">
+        <field name="name">Deposit points</field>
+        <field name="res_model">environment.deposit.point</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="deposit_point_search_view"/>
+        <field name="context" eval="{'search_default_group_by_deposit_area': True}"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click here to create a new deposit point.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,1001 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* environment_equipment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-09 09:10+0000\n"
+"PO-Revision-Date: 2018-08-09 09:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.my_pickups
+msgid "<b>You dont have pickups.</b>"
+msgstr "<b>You dont have pickups.</b>"
+
+#. module: environment_equipment
+#: model:mail.template,body_html:environment_equipment.email_maintenance_request_stage_new
+msgid "<p><table style=\"width:600px;background:inherit;color:inherit\" cellspacing=\"0\" cellpadding=\"0\">\n"
+"        <tbody><tr>\n"
+"            <td style=\"padding:10px 10px 10px 5px;font-size: 12px\" width=\"200\" valign=\"center\">\n"
+"                <img src=\"/logo.png\" style=\"border-image-repeat:initial;border-image-outset:initial;border-image-width:initial;border-image-slice:initial;border-image-source:initial;border-left-color:initial;border-bottom-color:initial;border-right-color:initial;border-top-color:initial;border-left-style:initial;border-bottom-style:initial;border-right-style:initial;border-top-style:initial;padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${user.company_id.name}\">\n"
+"            </td>\n"
+"        </tr></tbody>\n"
+"    </table>\n"
+"            ${object.equipment_id.partner_id.title or ''}\n"
+"            ${object.equipment_id.owner_partner_id.name or ''},</p>\n"
+"            <br/>\n"
+"<p>A new maintenance request has been created. You will be notified of the avancement of the request soon.\n"
+"<p>Equipment: <b>${object.equipment_id.name}</b></p>\n"
+"<p>Equipment type: <b>${object.equipment_id.category_id.name}</b></p>\n"
+"<p>Regards,<br/>\n"
+"${user.signature | safe}\n"
+"<br/>\n"
+"<br/>\n"
+"Sent by ${user.company_id.name} using Odoo\n"
+"</p>"
+msgstr "<p><table style=\"width:600px;background:inherit;color:inherit\" cellspacing=\"0\" cellpadding=\"0\">\n"
+"        <tbody><tr>\n"
+"            <td style=\"padding:10px 10px 10px 5px;font-size: 12px\" width=\"200\" valign=\"center\">\n"
+"                <img src=\"/logo.png\" style=\"border-image-repeat:initial;border-image-outset:initial;border-image-width:initial;border-image-slice:initial;border-image-source:initial;border-left-color:initial;border-bottom-color:initial;border-right-color:initial;border-top-color:initial;border-left-style:initial;border-bottom-style:initial;border-right-style:initial;border-top-style:initial;padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${user.company_id.name}\">\n"
+"            </td>\n"
+"        </tr></tbody>\n"
+"    </table>\n"
+"            ${object.equipment_id.partner_id.title or ''}\n"
+"            ${object.equipment_id.owner_partner_id.name or ''},</p>\n"
+"            <br/>\n"
+"<p>Une nouvelle demande de maintenance a été créée. Vous serez notifié(e) de son avancement très bientôt.\n"
+"<p>Equipement: <b>${object.equipment_id.name}</b></p>\n"
+"<p>Catégorie d'équipement: <b>${object.equipment_id.category_id.name}</b></p>\n"
+"<p>Cordialement,<br/>\n"
+"${user.signature | safe}\n"
+"<br/>\n"
+"<br/>\n"
+"Envoyé par ${user.company_id.name} avec Odoo\n"
+"</p>"
+
+#. module: environment_equipment
+#: model:mail.template,body_html:environment_equipment.email_maintenance_request_stage_changed
+msgid "<p><table style=\"width:600px;background:inherit;color:inherit\" cellspacing=\"0\" cellpadding=\"0\">\n"
+"        <tbody><tr>\n"
+"            <td style=\"padding:10px 10px 10px 5px;font-size: 12px\" width=\"200\" valign=\"center\">\n"
+"                <img src=\"/logo.png\" style=\"border-image-repeat:initial;border-image-outset:initial;border-image-width:initial;border-image-slice:initial;border-image-source:initial;border-left-color:initial;border-bottom-color:initial;border-right-color:initial;border-top-color:initial;border-left-style:initial;border-bottom-style:initial;border-right-style:initial;border-top-style:initial;padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${user.company_id.name}\">\n"
+"            </td>\n"
+"        </tr></tbody>\n"
+"    </table>\n"
+"            ${object.equipment_id.partner_id.title or ''}\n"
+"            ${object.equipment_id.owner_partner_id.name or ''},</p>\n"
+"            <br/>\n"
+"<p>The status of your request is now: ${object.stage_id.name}.</p>\n"
+"<p>Equipment: <b>${object.equipment_id.name}</b></p>\n"
+"<p>Equipment type: <b>${object.equipment_id.category_id.name}</b></p>\n"
+"<p>Regards,<br/>\n"
+"${user.signature | safe}\n"
+"<br/>\n"
+"<br/>\n"
+"Sent by ${user.company_id.name} using Odoo\n"
+"</p>"
+msgstr "<p><table style=\"width:600px;background:inherit;color:inherit\" cellspacing=\"0\" cellpadding=\"0\">\n"
+"        <tbody><tr>\n"
+"            <td style=\"padding:10px 10px 10px 5px;font-size: 12px\" width=\"200\" valign=\"center\">\n"
+"                <img src=\"/logo.png\" style=\"border-image-repeat:initial;border-image-outset:initial;border-image-width:initial;border-image-slice:initial;border-image-source:initial;border-left-color:initial;border-bottom-color:initial;border-right-color:initial;border-top-color:initial;border-left-style:initial;border-bottom-style:initial;border-right-style:initial;border-top-style:initial;padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${user.company_id.name}\">\n"
+"            </td>\n"
+"        </tr></tbody>\n"
+"    </table>\n"
+"            ${object.equipment_id.partner_id.title or ''}\n"
+"            ${object.equipment_id.owner_partner_id.name or ''},</p>\n"
+"            <br/>\n"
+"<p>Le statut e votre demande de maintenance est passée à : ${object.stage_id.name}.</p>\n"
+"<p>Equipement: <b>${object.equipment_id.name}</b></p>\n"
+"<p>Catégorie d'équipement: <b>${object.equipment_id.category_id.name}</b></p>\n"
+"<p>Regards,<br/>\n"
+"${user.signature | safe}\n"
+"<br/>\n"
+"<br/>\n"
+"Envoyé par ${user.company_id.name} avec Odoo\n"
+"</p>"
+
+#. module: environment_equipment
+#: model:mail.template,subject:environment_equipment.email_maintenance_request_stage_new
+msgid "A new maintenance request has been created"
+msgstr "Une nouvelle demande de maintenance a été créée"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_category_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_res_partner_active_equipment_allocations_ids
+#: model:ir.model.fields,field_description:environment_equipment.field_res_users_active_equipment_allocations_ids
+msgid "Active environment containers"
+msgstr "Equipements actifs"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_res_partner_active_equipment_allocations_count
+#: model:ir.model.fields,field_description:environment_equipment.field_res_users_active_equipment_allocations_count
+msgid "Active environment containers count"
+msgstr "Nombre d'équipements actifs"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_category_activity_id
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_operation_pickups_search_view
+msgid "Activity"
+msgstr "Activité"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.view_partner_setup_wizard_stage_equipment_attribution
+msgid "Add a container to the partner move"
+msgstr "Ajouter un bac à l'emménagement"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_kanban_view
+msgid "Alert"
+msgstr "Alerte"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.view_partner_setup_wizard_stage_equipment_attribution
+msgid "Allocate equipment"
+msgstr "Affecter le bac"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_wizard_close_contract_allocation_end_date
+msgid "Allocation end date"
+msgstr "Date de désaffectation"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_allocation_ids
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_allocation_ids
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_allocation_ids
+#: model:ir.ui.menu,name:environment_equipment.menu_equipment_allocation
+msgid "Allocations"
+msgstr "Dotations"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_maintenance_equipment_category
+msgid "Asset Category"
+msgstr "Catégorie d'immobilisation"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_search_view
+msgid "Assigned"
+msgstr "Assigné"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.view_partner_setup_wizard_stage_equipment_attribution
+msgid "Attribute selected equipment"
+msgstr "Attribuer les équipements selectionnés"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_search_view
+msgid "Available"
+msgstr "Disponible"
+
+#. module: environment_equipment
+#: model:maintenance.equipment.category,name:environment_equipment.horanet_action_container_grey_140
+msgid "Bac gris 140L"
+msgstr "Bac gris 140L"
+
+#. module: environment_equipment
+#: model:maintenance.equipment.category,name:environment_equipment.horanet_action_container_yellow_140
+msgid "Bac jaune 140L"
+msgstr "Bac jaune 140L"
+
+#. module: environment_equipment
+#: model:maintenance.equipment.category,name:environment_equipment.horanet_action_container_green_140
+msgid "Bac vert 140L"
+msgstr "Bac vert 140L"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_capacity
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_capacity
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_category_capacity
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_category_form_view
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_form_view
+msgid "Capacity"
+msgstr "Capacité"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_capacity_unit_id
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_capacity_unit_id
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_category_capacity_unit_id
+msgid "Capacity unit"
+msgstr "Unité de la capacité"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.my_pickups
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_chip_number
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_chip_number
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_chip_number
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_setup_wizard_chip_number
+msgid "Chip number"
+msgstr "N° de puce"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/equipment_pickups_import.py:120
+#, python-format
+msgid "Chip number not provided in line: "
+msgstr "N° de puce non fourni dans la ligne : "
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_operation_pickups_search_view
+msgid "Chip read"
+msgstr "Puce lue"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_kanban_view
+msgid "Chip:"
+msgstr "Puce :"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_code
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_status_code
+msgid "Code"
+msgstr "Code"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/controllers/main.py:32
+#, python-format
+msgid "Code not provided"
+msgstr "Code non fourni"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_comment
+msgid "Comment"
+msgstr "Commentaire"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_horanet_operation_maintenance_equipment_id
+#: model:ir.model.fields,field_description:environment_equipment.field_website_application_container_id
+msgid "Container"
+msgstr "Bac"
+
+#. module: environment_equipment
+#: model:ir.actions.act_window,name:environment_equipment.environment_equipment_category_action
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_category_tree_view
+msgid "Container categories"
+msgstr "Types de bac"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_form_view
+msgid "Container category"
+msgstr "Type de bac"
+
+#. module: environment_equipment
+#: model:application.functionality,name:environment_equipment.application_functionality_container_maintenance
+msgid "Container maintenance"
+msgstr "Maintenance des bacs"
+
+#. module: environment_equipment
+#: model:website.application.template,name:environment_equipment.application_template_container_maintenance
+msgid "Container maintenance request"
+msgstr "Demande de maintenance de bac"
+
+#. module: environment_equipment
+#: model:ir.actions.act_window,name:environment_equipment.environment_maintenance_requests_action
+msgid "Container maintenance requests"
+msgstr "Demandes de maintenance de bac"
+
+#. module: environment_equipment
+#: model:ir.actions.act_window,name:environment_equipment.environment_equipment_action
+msgid "Container management"
+msgstr "Gestion des bacs"
+
+#. module: environment_equipment
+#: model:ir.ui.menu,name:environment_equipment.equipment_category_id_menu
+msgid "Container types"
+msgstr "Types de bac"
+
+#. module: environment_equipment
+#: model:ir.ui.menu,name:environment_equipment.equipment_container_menu
+#: model:ir.ui.menu,name:environment_equipment.equipment_menu
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_tree_view
+msgid "Containers"
+msgstr "Bacs"
+
+#. module: environment_equipment
+#: model:ir.ui.menu,name:environment_equipment.equipment_configuration_menu
+msgid "Containers and maintenance"
+msgstr "Bacs et maintenance"
+
+#. module: environment_equipment
+#: model:ir.ui.menu,name:environment_equipment.menu_equipment_container_category
+msgid "Containers categories"
+msgstr "Catégories des bacs"
+
+#. module: environment_equipment
+#: model:ir.ui.menu,name:environment_equipment.equipment_maintenance_menu
+msgid "Containers maintenance"
+msgstr "Maintenance des bacs"
+
+#. module: environment_equipment
+#: selection:maintenance.intervention.type,maintenance_type:0
+msgid "Corrective"
+msgstr "Corrective"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.view_partner_setup_wizard_stage_equipment_attribution
+msgid "Create equipment"
+msgstr "Créer le bac"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_create_uid
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_status_create_uid
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_intervention_type_create_uid
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_create_date
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_status_create_date
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_intervention_type_create_date
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_created_operations_count
+msgid "Created operations"
+msgstr "Opérations créées"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_data
+msgid "Data"
+msgstr "Données"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_data_count
+msgid "Data count"
+msgstr "Nombre de données"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/controllers/main.py:35
+#, python-format
+msgid "Data not provided"
+msgstr "Données non fournies"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.my_pickups
+msgid "Date"
+msgstr "Date "
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.view_partner_close_contrat_wizard
+msgid "Deallocate container"
+msgstr "Désaffecter le bac"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_display_name
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_status_display_name
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_intervention_type_display_name
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/partner_move_equipment_rel.py:136
+#, python-format
+msgid "Duplicate allocation ({duplicate_ids}) found for the equipment id {equip_id} for the period {periode}."
+msgstr "Doublons d'allocation ({duplicate_ids}) trouvées pour l'équipement {equip_id} sur la période {periode}."
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/partner_move_equipment_rel.py:96
+#, python-format
+msgid "End date should be posterior or equal to start date."
+msgstr "La date de fin doit être supérieure ou égale à la date de début."
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_form_view
+msgid "Environment"
+msgstr "Environnement"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_res_partner_equipment_allocations_ids
+#: model:ir.model.fields,field_description:environment_equipment.field_res_users_equipment_allocations_ids
+msgid "Environment containers"
+msgstr "Bacs"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_maintenance_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_equipment_id
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_setup_wizard_equipment_id
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_wizard_close_contract_equipment_id
+#: model:ir.ui.view,arch_db:environment_equipment.my_pickups
+msgid "Equipment"
+msgstr "Équipement"
+
+#. module: environment_equipment
+#: model:ir.actions.act_window,name:environment_equipment.action_equipment_allocation
+msgid "Equipment Allocation"
+msgstr "Affectation des équipements"
+
+#. module: environment_equipment
+#: model:mail.message.subtype,description:environment_equipment.mt_address_assign
+#: model:mail.message.subtype,name:environment_equipment.mt_address_assign
+msgid "Equipment Assigned"
+msgstr "Bac assigné"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_horanet_operation_equipment_allowed
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_operation_pickups_search_view
+msgid "Equipment allowed"
+msgstr "Equipement autorisé"
+
+#. module: environment_equipment
+#: model:partner.setup.wizard.stage,name:environment_equipment.wizard_stage_equipment_attribution
+msgid "Equipment attribution"
+msgstr "Gestion des bacs"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_horanet_operation_equipment_broken
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_operation_pickups_search_view
+msgid "Equipment broken"
+msgstr "Equipement cassé"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_category_id
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_setup_wizard_equipment_category_id
+msgid "Equipment category"
+msgstr "Type de bac"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_horanet_operation_equipment_emptied
+msgid "Equipment emptied"
+msgstr "Bac vidé"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_category_equipment_follows_producer
+msgid "Equipment follows producer"
+msgstr "L'équipement suit le producteur"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/equipment_pickups_import.py:201
+#, python-format
+msgid "Equipment with chip {} not found"
+msgstr "Equipement avec puce {} introuvable"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.inherited_view_partner_setup_wizard_summary_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.view_partner_close_contrat_wizard
+msgid "Equipments"
+msgstr "Équipements"
+
+#. module: environment_equipment
+#: selection:equipment.pickup.import,state:0
+msgid "Error"
+msgstr "Erreur"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_errors
+msgid "Errors"
+msgstr "Erreurs"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_request_exchanged
+msgid "Exchanged"
+msgstr "Echangé"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_first_pickup_date
+msgid "First pickup"
+msgstr "Première relève"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_operation_pickups_search_view
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_wizard_close_contract_has_active_equipments
+msgid "Has active equipments"
+msgstr "A des bacs affectés"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_setup_wizard_has_active_stay_equipment
+msgid "Has active stay equipment"
+msgstr "Possède un équipement lié au point de production"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_has_alert
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_has_alert
+msgid "Has alert"
+msgstr "A une alerte"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.my_pickups
+msgid "Here is the list of all pickups related to your equipments."
+msgstr "Voici une liste de toutes les relèves concernant vos bacs."
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_id
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_status_id
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_intervention_type_id
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_id
+msgid "ID"
+msgstr "ID"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_category_image
+msgid "Image"
+msgstr "Image"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_import_date
+msgid "Import date"
+msgstr "Date de l'import"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_operation_pickups_form_view
+msgid "Informations"
+msgstr "Informations"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_request_intervention_type_ids
+#: model:ir.ui.view,arch_db:environment_equipment.maintenance_intervention_type_form_view
+msgid "Intervention type"
+msgstr "Type d'intervention"
+
+#. module: environment_equipment
+#: model:ir.actions.act_window,name:environment_equipment.maintenance_intervention_type_action
+#: model:ir.ui.menu,name:environment_equipment.menu_maintenance_intervention_types
+#: model:ir.ui.view,arch_db:environment_equipment.maintenance_intervention_type_tree_view
+msgid "Intervention types"
+msgstr "Types d'intervention"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_is_active
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_is_move_id_active
+msgid "Is active"
+msgstr "Actif"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_horanet_operation_chip_read
+msgid "Is the chip read"
+msgstr "La puce est lue"
+
+#. module: environment_equipment
+#: model:website.application.template,terms_checkbox_label:environment_equipment.application_template_container_maintenance
+msgid "J'ai lu et accepté les"
+msgstr "J'ai lu et accepté les"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import___last_update
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_status___last_update
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_intervention_type___last_update
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_write_uid
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_status_write_uid
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_intervention_type_write_uid
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_write_date
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_status_write_date
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_intervention_type_write_date
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_last_pickup_date
+msgid "Last pickup"
+msgstr "Dernière relève"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_category_form_view
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_form_view
+msgid "Linked to product"
+msgstr "Lié à un produit"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.website_application_container_request_form
+msgid "Maintenance"
+msgstr "Maintenance"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_maintenance_request
+msgid "Maintenance Requests"
+msgstr "Demandes de maintenance"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_website_application_maintenance_request_id
+msgid "Maintenance request"
+msgstr "Demande de maintenance"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_intervention_type_maintenance_type
+msgid "Maintenance type"
+msgstr "Type de maintenance"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_move_id
+msgid "Move"
+msgstr "Emménagement"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_status_name
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_category_tree_view
+msgid "Name"
+msgstr "Nom"
+
+#. module: environment_equipment
+#: model:ir.actions.act_window,name:environment_equipment.environment_maintenance_requests_application_action
+#: model:ir.ui.view,arch_db:environment_equipment.website_application_container_request_form
+msgid "New maintenance request"
+msgstr "Nouvelle demande de maintenance"
+
+#. module: environment_equipment
+#: selection:equipment.pickup.import,state:0
+msgid "Not processed"
+msgstr "Non procédé"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_alert
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_alert
+msgid "Notes about pickups"
+msgstr "Notes sur les relèves"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/equipment_pickups_import.py:197
+#, python-format
+msgid "Operation not created for line: {}. Error : {}"
+msgstr "Operation pour la ligne: {}. Erreur : {}"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/inherited_partner.py:93
+#, python-format
+msgid "Operator ({bad_operator}) not supported"
+msgstr "Opérateur ({bad_operator}) non supporté"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_operation_pickups_form_view
+msgid "Parameters"
+msgstr "Paramètres"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_setup_wizard_partner_equipment_ids
+msgid "Partner equipments"
+msgstr "Bacs du producteur"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_move_id
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_move_id
+msgid "Partner move"
+msgstr "Emménagement"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_setup_wizard_active_move_equipment_ids
+msgid "Partner move equipments"
+msgstr "Bacs liés à l'emménagement"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/equipment_pickups_import.py:97
+#, python-format
+msgid "Pickup date not provided in line: "
+msgstr "Date de relève non fournies pour la ligne: "
+
+#. module: environment_equipment
+#: model:ir.actions.act_window,name:environment_equipment.environment_equipment_operation_pickups_action
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_operation_ids
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_operation_ids
+#: model:ir.ui.menu,name:environment_equipment.equipment_operation_pickups_menu
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_form_view
+#: model:ir.ui.view,arch_db:environment_equipment.inherited_environment_partner_form_view
+msgid "Pickups"
+msgstr "Relèves"
+
+#. module: environment_equipment
+#: model:ir.actions.act_window,name:environment_equipment.equipment_pickup_import_action
+#: model:ir.ui.menu,name:environment_equipment.equipment_pickup_import_menu
+msgid "Pickups import"
+msgstr "Import relèves"
+
+#. module: environment_equipment
+#: selection:maintenance.intervention.type,maintenance_type:0
+msgid "Preventive"
+msgstr "Preventive"
+
+#. module: environment_equipment
+#: model:ir.actions.server,name:environment_equipment.pickup_import_data_process_data_action_server
+#: model:ir.ui.view,arch_db:environment_equipment.equipment_pickup_import_form_view
+msgid "Process data"
+msgstr "Générer les données"
+
+#. module: environment_equipment
+#: selection:equipment.pickup.import,state:0
+msgid "Processed"
+msgstr "Généré"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_display_count
+msgid "Processed data"
+msgstr "Données générées"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_owner_partner_id
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_owner_partner_id
+msgid "Producer"
+msgstr "Producteur"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_product_id
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_category_product_id
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_product_id
+msgid "Product"
+msgstr "Article"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_production_point_id
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_production_point_id
+msgid "Production point"
+msgstr "Point de production"
+
+#. module: environment_equipment
+#: model:horanet.action,name:environment_equipment.horanet_action_container_pickup
+msgid "Relève bac"
+msgstr "Relève bac"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_kanban_view
+msgid "Request"
+msgstr "Requête"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.equipment_pickup_import_search_view
+msgid "Search import"
+msgstr "Chercher import"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_setup_wizard_attribution_stay_equipment
+msgid "Select equipments that are related to the production point"
+msgstr "Sélectionnez les équipements liés au point de production à attribuer"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_horanet_operation_size_exceeding
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_operation_pickups_search_view
+msgid "Size exceeding"
+msgstr "Taille en excédant"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_setup_wizard_equipment_stay_in_production_point
+msgid "Some equipments are related to the production point"
+msgstr "Equipements liés au point de production"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_horanet_operation_sorting_problem
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_operation_pickups_search_view
+msgid "Sorting problem"
+msgstr "Problème de tri"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_equipment_pickup_import_state
+msgid "State"
+msgstr "État"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_status_id
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_status_id
+msgid "Status"
+msgstr "État"
+
+#. module: environment_equipment
+#: model:mail.template,subject:environment_equipment.email_maintenance_request_stage_changed
+msgid "Status of your request: ${object.stage_id.name}"
+msgstr "Statut de votre demande: ${object.stage_id.name}"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/inherited_maintenance_equipment.py:19
+#: sql_constraint:maintenance.equipment:0
+#, python-format
+msgid "The chip number and tub number combination must be unique"
+msgstr "La combinaison du numéro de puce et du numéro de cuve doit être unique"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/equipment_pickups_import.py:14
+#: sql_constraint:equipment.pickup.import:0
+#, python-format
+msgid "The import code value must be unique"
+msgstr "Le code de l'import doit être unique"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/inherited_maintenance_equipment.py:154
+#, python-format
+msgid "The monthly average number of pickups on this container ({}) is higher than the average of the others ({})."
+msgstr "Le nombre moyen de relève mensuel pour ce bac ({}) est supérieur à celui des autres ({})."
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.equipment_pickup_import_search_view
+msgid "This Year"
+msgstr "Cette année"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/inherited_maintenance_equipment.py:133
+#, python-format
+msgid "This container has not been picked up during the last picking on {}."
+msgstr "Ce bac n'a pas été relevé durant la dernière relève le {}."
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/inherited_maintenance_equipment.py:274
+#, python-format
+msgid "This equipment has an active allocation. If you want to deactivate this equipment, put a end to its allocations."
+msgstr "Cet équipement a une dotation active. Si vous voulez archiver cet équipement, vous devez mettre fin à ses dotations."
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.equipment_pickup_import_search_view
+msgid "This month"
+msgstr "Ce mois"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.view_partner_close_contrat_wizard
+msgid "This operation cannot be undone, are you sure you want to deallocate this container?"
+msgstr "Cette opération est irréversible, êtes-vous sûr de vouloir désaffecter ce bac ?"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.equipment_pickup_import_search_view
+msgid "This week"
+msgstr "Cette semaine"
+
+#. module: environment_equipment
+#: model:website.application.template,description:environment_equipment.application_template_container_maintenance
+msgid "To ask for a maintenance of your container, just fill this form below :"
+msgstr "Pour faire une demande de maintenance de votre bac, remplissez simplement ce formulaire :"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.equipment_pickup_import_search_view
+msgid "Today"
+msgstr "Aujourd'hui"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_tub_number
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_tub_number
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_move_equipment_rel_tub_number
+#: model:ir.model.fields,field_description:environment_equipment.field_partner_setup_wizard_tub_number
+msgid "Tub number"
+msgstr "Numéro de cuve"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_kanban_view
+msgid "Tub:"
+msgstr "Cuve :"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_kanban_view
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_search_view
+msgid "Unassigned"
+msgstr "Non assigné"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_environment_container_use_product
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_category_use_product
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_equipment_use_product
+msgid "Use product"
+msgstr "Utilise un produit"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/equipment_pickups_import.py:103
+#, python-format
+msgid "Wrong pickup date format in line: {}. Provide date in format: Y-m-d H:M:S"
+msgstr "Mauvaise date de relève pour la ligne: {}. Veuillez fournir une date au format: Y-m-d H:M:S"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/wizards/inherited_partner_setup_wizard.py:155
+#, python-format
+msgid "You may enter some data"
+msgstr "Merci de renseigner les champs"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.custom_portal_layout
+msgid "Your Pickups"
+msgstr "Vos Relèves"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.my_pickups
+#: model:ir.ui.view,arch_db:environment_equipment.portal_your_pickups
+msgid "Your pickups"
+msgstr "Vos relèves"
+
+#. module: environment_equipment
+#: model:website.application.template,terms_link_label:environment_equipment.application_template_container_maintenance
+msgid "conditions générales"
+msgstr "conditions générales"
+
+#. module: environment_equipment
+#: model:ir.ui.view,arch_db:environment_equipment.environment_equipment_operation_pickups_pivot_view
+msgid "environment equipment operation pickups"
+msgstr "Opération Relèves bacs"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_equipment_pickup_import
+msgid "equipment.pickup.import"
+msgstr "equipment.pickup.import"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_equipment_status
+msgid "equipment.status"
+msgstr "equipment.status"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_horanet_operation
+msgid "horanet.operation"
+msgstr "horanet.operation"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_maintenance_intervention_type
+msgid "maintenance.intervention.type"
+msgstr "maintenance.intervention.type"
+
+#. module: environment_equipment
+#: model:ir.model.fields,field_description:environment_equipment.field_maintenance_intervention_type_name
+msgid "name"
+msgstr "Nom"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_partner_move
+msgid "partner.move"
+msgstr "partner.move"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_partner_move_equipment_rel
+msgid "partner.move.equipment.rel"
+msgstr "partner.move.equipment.rel"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_partner_setup_wizard
+msgid "partner.setup.wizard"
+msgstr "partner.setup.wizard"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_partner_wizard_close_contract
+msgid "partner.wizard.close.contract"
+msgstr "partner.wizard.close.contract"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/controllers/main.py:68
+#, python-format
+msgid "pickup import data {} created and processed. {} operations created"
+msgstr "Import de données {} créé et traité. {} opérations créées"
+
+#. module: environment_equipment
+#: model:ir.model,name:environment_equipment.model_website_application
+msgid "website.application"
+msgstr "website.application"
+
+#. module: environment_equipment
+#: code:addons/environment_equipment/models/equipment_pickups_import.py:75
+#, python-format
+msgid "{} operations created"
+msgstr "{} operations created"
+

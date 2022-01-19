@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="citizen_access_portal_group_default" model="ir.config_parameter">
+        <field name="key">auth.access_portal_group_default</field>
+        <field name="value" eval="ref('horanet_go.group_horanet_go_citizen')"/>
+    </record>
+
+    <!-- Replace the settings value of which template will be used for registering users -->
+    <record id="auth_signup.default_template_user_config" model="ir.config_parameter">
+        <field name="key">auth_signup.template_user_id</field>
+        <field name="value" ref="horanet_template_customer"/>
+    </record>
+</odoo>

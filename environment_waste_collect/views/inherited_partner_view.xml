@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner_form_view" model="ir.ui.view">
+        <field name="name">Environment Partner Form View</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_citizen.view_citizen_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="%(action_partner_setup_wizard)d" string="Partner setup" type="action"
+                            class="oe_highlight oe_read_only"
+                            context="{'default_partner_id': id}"
+                            attrs="{'invisible': [('setup_and_close_wizards_enabled', '=', False)]}"/>
+                    <button name="%(action_partner_close_contract)d" string="End contract wizard" type="action"
+                            class="oe_highlight oe_read_only"
+                            context="{'default_partner_id': id}"
+                            attrs="{'invisible': ['|',
+                                                  ('has_active_environment_subscription', '=', False),
+                                                  ('setup_and_close_wizards_enabled', '=', False),
+                                                  ]}"/>
+                </header>
+            </xpath>
+            <xpath expr="//div[@name='button_box']/button[@name='open_partner_subscription']" position="attributes">
+                <attribute name="context">{'default_client_id': active_id, 'search_default_filter_environment': True}</attribute>
+            </xpath>
+            <div name="button_box" position="inside">
+                <field name="has_active_environment_subscription" invisible="True"/>
+                <field name="setup_and_close_wizards_enabled" invisible="True"/>
+                <button type="object"
+                        class="oe_stat_button"
+                        id="partner_pickup_contract_list_button"
+                        icon="fa-files-o"
+                        name="action_open_partner_pickup_contract">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="environment_pickup_contract_count"/>
+                        </span>
+                        <span class="o_stat_text" t-translation="on">Pickup contracts</span>
+                    </div>
+                </button>
+                <button name="%(environment_waste_collect.environment_deposit_act_window)d" string="Deposits"
+                        icon="fa-download"
+                        class="oe_stat_button" type="action"
+                        attrs="{'invisible': [('has_active_environment_subscription', '=', False)]}"
+                        context="{'search_default_operation_partner_id': id}"/>
+                <button name="%(environment_waste_collect.environment_access_act_window)d" string="Access"
+                        icon="fa-sign-in"
+                        class="oe_stat_button" type="action"
+                        attrs="{'invisible': [('has_active_environment_subscription', '=', False)]}"
+                        context="{'search_default_operation_partner_id': id}"/>
+                <button type="object"
+                        class="oe_stat_button"
+                        id="derogation_list_button"
+                        icon="fa-pencil-square-o"
+                        name="action_open_partner_package_derogation"
+                        context="{'default_recipient_id': active_id}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="derogation_count"/>
+                        </span>
+                        <span class="o_stat_text" t-translation="on">Dérogations</span>
+                    </div>
+                </button>
+            </div>
+
+            <!--We don't want to select the company as already provided in the context-->
+            <field name="company_type" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+
+            <!-- Pour afficher le(s) deuxième(s) nom(s) du partner -->
+            <xpath expr="//field[@name='lastname']/../.." position="before">
+                <div class="oe_read_only">
+                    <field name="display_name2"/>
+                </div>
+            </xpath>
+
+            <!-- Référence interne du partner -->
+            <field name="ref" position="replace"></field>
+            <field name="subscription_category_ids" position="after">
+                <field name="ref" readonly="1"/>
+            </field>
+
+            <xpath expr="//page[@name='personal_foyer_page']" position="replace">
+            </xpath>
+            <xpath expr="//page[@name='is_responsible_page']" position="replace">
+            </xpath>
+
+            <xpath expr="//page[last()]" position="before">
+                <page name="environment" string="Environment">
+                    <br/>
+                    <field name="is_environment_service_provider" invisible="True"/>
+                    <field name="environment_subscription_id" invisible="1"/>
+                    <group>
+                        <label for="environment_package_ids" colspan="2"/>
+                        <field name="environment_package_ids" options="{'no_create': True}" nolabel="1" colspan="2">
+                            <tree>
+                                <field name="code"/>
+                                <field name="name"/>
+                                <field name="display_progress_period" widget="progressbar"/>
+                                <field name="display_opening_date"/>
+                                <field name="display_closing_date"/>
+                                <field name="is_blocked"/>
+                                <field name="is_salable"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                        <newline/>
+                    </group>
+                </page>
+            </xpath>
+
+            <page name="sales_purchases" position="attributes">
+                <attribute name="attrs">{'invisible': True}</attribute>
+            </page>
+
+            <!-- Remove page added by partner_identification module as we
+                 will add it to our own identification page -->
+            <page name="id_numbers" position="replace"/>
+
+            <xpath expr="//page[@name='mediums_page']" position="inside">
+                <br/>
+                <label for="id_numbers" string="License plates"/>
+                <field name="id_numbers" widget="one2many_list" domain="[('category_id', '=', %(environment_waste_collect.horanet_license_plate_identification_category)d)]"
+                       context="{'default_category_id': %(environment_waste_collect.horanet_license_plate_identification_category)d}">
+                    <tree editable="top">
+                        <field name="category_id" invisible="True"/>
+                        <field name="name" string="Number"/>
+                    </tree>
+                </field>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="all_partner_view_kanban" model="ir.ui.view">
+        <field name="name">All env partner kanban view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="partner_contact_citizen.citizen_kanban_view"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+            <xpath expr="//strong[hasclass('oe_partner_heading')]" position="after">
+                <t t-if="record.display_name2">
+                    <ul>
+                        <li>
+                            <em>
+                                <field name="display_name2"/>
+                            </em>
+                        </li>
+                    </ul>
+                </t>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="all_partner_view_tree" model="ir.ui.view">
+        <field name="name">All env partner tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+            <field name="email" position="after">
+                <field name="active_assignation_count"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="all_partner_view_form" model="ir.ui.view">
+        <field name="name">All env partner form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="environment_waste_collect.res_partner_form_view"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="create">false</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="environment_partner_view_tree" model="ir.ui.view">
+        <field name="name">environment partner tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="mode">primary</field>
+        <field name="priority">32</field>
+        <field name="arch" type="xml">
+            <field name="email" position="after">
+                <field name="active_assignation_count"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="service_provider_action" model="ir.actions.act_window">
+        <field name="name">Service providers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                    (0, 0, {'sequence': 1, 'view_mode': 'kanban', 'view_id': ref('partner_contact_citizen.citizen_kanban_view')}),
+                    (0, 0, {'sequence': 2, 'view_mode': 'tree', 'view_id': ref('base.view_partner_tree')}),
+                    (0, 0, {'sequence': 3, 'view_mode': 'form', 'view_id': ref('environment_waste_collect.res_partner_form_view')}),
+                ]"/>
+        <field name="context"
+               eval="{'default_category_id': [(4, ref('environment_waste_collect.partner_category_service_provider'))], 'default_is_company': True}"/>
+        <field name="domain"
+               eval="[('category_id', '=', ref('environment_waste_collect.partner_category_service_provider'))]"/>
+        <field name="search_view_id" ref="base.view_res_partner_filter"/>
+        <field name="help" type="html">
+            <p>Click to add a new environment service provider</p>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.select</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <search string="Search Partner">
+                <field name="name"
+                       filter_domain="['|','|', '|', ('display_name2','ilike',self),('display_name','ilike',self),
+                                                     ('ref','=',self),('email','ilike',self)]"/>
+                <field name="ref"/>
+                <field name="tag_ids"/>
+                <separator/>
+                <filter string="Persons" name="type_person"
+                        domain="[('is_company','=',0),('company_type','!=','foyer')]"/>
+                <filter string="Companies" name="type_company"
+                        domain="[('is_company','=',1),('company_type','!=','foyer')]"/>
+                <separator/>
+                <filter string="Environment user" name="environment_user"
+                        domain="[('has_active_environment_subscription', '=', True)]"/>
+                <separator/>
+                <filter string="Environment producer" name="environment_producer"
+                        domain="[('is_environment_producer', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_all_partner" model="ir.actions.act_window">
+        <field name="name">All environment producers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain"></field>
+        <field name="context">{'search_default_environment_producer': True, 'environment_partner': True}</field>
+        <field name="search_view_id" ref="view_res_partner_filter"/>
+        <field name="view_ids"
+               eval="[(5, 0, 0),
+                    (0, 0, {'sequence': 1, 'view_mode': 'kanban', 'view_id': ref('all_partner_view_kanban')}),
+                    (0, 0, {'sequence': 2, 'view_mode': 'tree', 'view_id': ref('all_partner_view_tree')}),
+                    (0, 0, {'sequence': 3, 'view_mode': 'form', 'view_id': ref('all_partner_view_form')}),
+                ]"/>
+    </record>
+</odoo>

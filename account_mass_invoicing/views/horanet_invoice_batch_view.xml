@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="mass_invoicing_invoice_batch_form_view" model="ir.ui.view">
+        <field name="name">Batch Form View</field>
+        <field name="model">horanet.invoice.batch</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_generate" type="object"
+                            class="oe_highlight oe_read_only"
+                            string="Generate"
+                            attrs="{'invisible': [('state','!=','to_generate')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" attrs="{'invisible': ['|', ('type_id','=',False), ('campaign_id','=',False)]}"/>
+                        <field name="type_id" attrs="{'readonly': [('state','!=','to_generate')]}"/>
+                        <field name="campaign_id" attrs="{'readonly': [('state','!=','to_generate')]}"/>
+                        <label for="message_time_recover_valuation" string=" " attrs="{'invisible': [('state', '!=', 'to_generate')]}"/>
+                        <field name="message_time_recover_valuation" nolabel="1" attrs="{'invisible': [('state', '!=', 'to_generate')]}"/>
+                        <label for="message_amount_total_rejected" string=" "/>
+                        <field name="message_amount_total_rejected" nolabel="1"/>
+                        <field name="domain" groups="base.group_no_one" widget="char_domain"
+                               options="{'model': 'horanet.subscription'}"/>
+                        <field name="role_ids" widget="many2many_tags"/>
+                        <field name="invoice_ids" context="{'form_view_ref' : 'account_mass_invoicing.mass_invoicing_invoice_form'}">
+                            <tree limit="10" default_order="partner_id" options="{'no_create' : True}">
+                                <field name="partner_id" groups="base.group_user" string="Customer"/>
+                                <field name="number"/>
+                                <field name="origin"/>
+                                <field name="amount_total_signed" string="Total" sum="Total"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                        <field name="amount_total" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mass_invoicing_invoice_batch_tree_view" model="ir.ui.view">
+        <field name="name">Batch Tree View</field>
+        <field name="model">horanet.invoice.batch</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="role_ids">
+                <field name="name"/>
+                <field name="invoice_number"/>
+                <field name="amount_total"/>
+                <field name="state"/>
+                <field name="role_ids" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_account_mass_invoicing_invoice_batch" model="ir.actions.act_window">
+        <field name="name">Batches</field>
+        <field name="res_model">horanet.invoice.batch</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="account_mass_invoicing.mass_invoicing_invoice_batch_tree_view"/>
+    </record>
+
+    <record id="batches_merge_action_server" model="ir.actions.server">
+        <field name="name">Merge</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_horanet_invoice_batch"/>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+            action = records.action_merge()
+        </field>
+    </record>
+
+    <record id="action_merge_batches" model="ir.values">
+        <field name="name">Merge</field>
+        <field name="model_id" ref="model_horanet_invoice_batch"/>
+        <field name="model">horanet.invoice.batch</field>
+        <field name="key2">client_action_multi</field>
+        <field eval="'ir.actions.server,%d'%batches_merge_action_server" name="value"/>
+    </record>
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!--TECHNOLOGY-->
+    <record id="technology_mifare" model="partner.contact.identification.technology">
+        <field name="name">Mifare</field>
+        <field name="code">MifareClassic</field>
+    </record>
+    <record id="technology_barcode" model="partner.contact.identification.technology">
+        <field name="name">Barcode</field>
+        <field name="code">Barcode</field>
+    </record>
+
+    <!--AREA-->
+    <record id="area_horanet" model="partner.contact.identification.area">
+        <field name="name">Horanet</field>
+        <field name="code">Horanet</field>
+    </record>
+
+    <!--MAPPING-->
+    <record id="mapping_mifare_csn_horanet" model="partner.contact.identification.mapping">
+        <field name="mapping">csn</field>
+        <field name="technology_id" ref="technology_mifare"/>
+        <field name="area_id" ref="area_horanet"/>
+        <field name="max_length" eval="8"/>
+    </record>
+    <record id="mapping_mifare_h3_horanet" model="partner.contact.identification.mapping">
+        <field name="mapping">h3</field>
+        <field name="technology_id" ref="technology_mifare"/>
+        <field name="area_id" ref="area_horanet"/>
+        <field name="max_length" eval="15"/>
+    </record>
+
+    <!--MEDIUM TYPE-->
+    <record id="demo_medium_type_card" model="partner.contact.identification.medium.type">
+        <field name="name">Card</field>
+    </record>
+    <record id="medium_type_smartcard" model="partner.contact.identification.medium.type">
+        <field name="name">Smart card</field>
+    </record>
+</odoo>
+

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Sous-Bloc de la Racine : PES facture -->
+        <record id="pes_bloc_sr_1" model="pes.bloc">
+            <field name="name">PES_Facture</field>
+            <field name="code">PES_Facture</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">PES_Facture</field>
+            <!-- <field name="children_bloc_ids" 
+            	eval="[(4,ref('pes_bloc_sf_1')),(4,ref('pes_bloc_sf_2')),
+            	(4,ref('pes_bloc_sf_3')),(4,ref('pes_bloc_sf_4')),(4,ref('pes_bloc_sf_5')),
+            	(4,ref('pes_bloc_sf_6')),(4,ref('pes_bloc_sf_7')),(4,ref('pes_bloc_sf_8'))]" /> -->
+            <!-- TODO: Maybe we shouldn't remove NumSequence bloc.. -->
+            <field name="children_bloc_ids"
+                   eval="[
+                    (4,ref('pes_bloc_sf_1')),
+                    (4,ref('pes_bloc_sf_2')),
+                    (4,ref('pes_bloc_sf_4')),
+                    (4,ref('pes_bloc_sf_5')),
+                    (4,ref('pes_bloc_sf_6')),
+                    (4,ref('pes_bloc_sf_7')),
+                    (4,ref('pes_bloc_sf_8'))
+                   ]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+
+        <!-- Sous-Bloc de la Racine : PES_Aller -->
+        <record id="pes_bloc_sr_3" model="pes.bloc">
+            <field name="name">PES_PJ</field>
+            <field name="code">PES_PJ</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">PES_PJ</field>
+            <field name="children_bloc_ids"
+                   eval="[(4,ref('pes_bloc_pj_1_1')),(4,ref('pes_bloc_pj_1_2'))]"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+
+        <!-- Bloc Racine du PES Aller de la facture -->
+        <record id="pes_bloc_1" model="pes.bloc">
+            <field name="name">PES Aller</field>
+            <field name="code">PES_Aller</field>
+            <field name="is_required" eval="True"/>
+            <field name="description">Élément racine PES Aller</field>
+            <field name="is_root" eval="True"/>
+            <field name="namespace_id" ref="horanet_demat_ormc_psv2.pes_bloc_attrs_ns_1"/>
+            <field name="pes_domain_id" ref="pes_domain_1"/>
+            <!--
+                        <field name="children_bloc_ids" eval="[(4,ref('horanet_demat_ormc_psv2.pes_bloc_2')),
+                            (4,ref('horanet_demat_ormc_psv2.pes_bloc_3')),(4,ref('pes_bloc_sr_1')),
+                            (4,ref('pes_bloc_sr_2')),(4,ref('pes_bloc_sr_3'))]" />
+            -->
+            <field name="children_bloc_ids" eval="[(4,ref('horanet_demat_ormc_psv2.pes_bloc_2')),
+            	(4,ref('horanet_demat_ormc_psv2.pes_bloc_3')),
+            	(4,ref('pes_bloc_sr_2'))]"/>
+            <field name="attrs_ids" eval="[(4,ref('horanet_demat_ormc_psv2.pes_bloc_attrs_ns_1')),
+            	(4,ref('horanet_demat_ormc_psv2.pes_bloc_attrs_ns_2')),(4,ref('horanet_demat_ormc_psv2.pes_bloc_attrs_ns_3')),
+            	(4,ref('horanet_demat_ormc_psv2.pes_bloc_attrs_ns_5')),(4,ref('horanet_demat_ormc_psv2.pes_bloc_attrs_ns_6'))
+            	]"/>
+            <field name="pes_input_object_id" ref="horanet_demat_ormc_psv2.pes_input_object_0"/>
+        </record>
+    </data>
+</odoo>

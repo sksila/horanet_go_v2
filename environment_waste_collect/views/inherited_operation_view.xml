@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Inherit base operation, to add environment specific fields-->
+    <record id="waste_operation_form_view" model="ir.ui.view">
+        <field name="name">Add Ecopad informations</field>
+        <field name="model">horanet.operation</field>
+        <field name="inherit_id" ref="horanet_subscription.horanet_operation_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]" position="before">
+                <page string="Ecopad" attrs="{'invisible': [('ecopad_transaction_id', '=', False)]}">
+                    <group>
+                        <label for="ecopad_transaction_id"
+                               string="Transaction"/>
+                        <field name="ecopad_transaction_id" nolabel="1"/>
+                        <label for="ecopad_session_id"
+                               string="Session"/>
+                        <field name="ecopad_session_id" nolabel="1"/>
+                        <label for="ecopad_session_guardian_id"
+                               string="Session guardian"/>
+                        <field name="ecopad_session_guardian_id" nolabel="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Specific view used to display environment deposit -->
+    <record id="environment_deposit_operation_form_view" model="ir.ui.view">
+        <field name="name">Environment deposit operation form view</field>
+        <field name="model">horanet.operation</field>
+        <field name="inherit_id" ref="horanet_subscription.horanet_operation_view_form"/>
+        <field name="priority">32</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="activity_id" string="Waste"/>
+        </field>
+    </record>
+
+    <!-- Specific view used to display environment operation -->
+    <record id="environment_operation_tree_view" model="ir.ui.view">
+        <field name="name">Environment operation Tree View</field>
+        <field name="model">horanet.operation</field>
+        <field name="inherit_id" ref="horanet_subscription.horanet_operation_view_tree"/>
+        <field name="priority">32</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <field name="action_id" position="replace">
+            </field>
+            <field name="device_id" position="after">
+                <field name="infrastructure_id"/>
+            </field>
+            <field name="operation_partner_id" position="after">
+                <field name="quantity"/>
+            </field>
+        </field>
+    </record>
+
+
+    <record id="environment_operation_search_view" model="ir.ui.view">
+        <field name="name">Environment operation Search View</field>
+        <field name="model">horanet.operation</field>
+        <field name="priority">32</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="device_id"/>
+                <field name="operation_partner_id"/>
+                <field name="action_id"/>
+                <field name="tag_id" string="Tag" filter_domain="[('tag_id.number', 'ilike', self)]"/>
+                <filter string="Is error" name="message_needaction" domain="[('state', '=', 'error')]"/>
+                <filter string="Today" name="filter_today"
+                        domain="[('time', '&lt;=', time.strftime('%Y-%m-%d 23:59:59')),('time', '&gt;=', time.strftime('%Y-%m-%d 00:00:00'))]"/>
+
+                <group expand="0" string="Group By">
+                    <filter name="group_by_waste_site" string="Group by Waste site"
+                            context="{'group_by': 'infrastructure_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="environment_deposit_act_window" model="ir.actions.act_window">
+        <field name="name">Deposits</field>
+        <field name="res_model">horanet.operation</field>
+        <field name="view_mode">tree,form,pivot</field>
+        <field name="search_view_id" ref="environment_operation_search_view"/>
+        <field name="context" eval="{'display_partner_in_tag_name':True, 'search_default_group_by_waste_site': True}"/>
+        <field name="domain" eval="[('activity_id.application_type', '=', 'environment'),
+                                    ('action_id', '=', ref('environment_waste_collect.horanet_action_depot'))]"/>
+    </record>
+    <record id="environment_deposit__tree_act_window_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="environment_waste_collect.environment_operation_tree_view"/>
+        <field name="act_window_id" ref="environment_deposit_act_window"/>
+    </record>
+    <record id="environment_deposit_form_act_window_view" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="environment_waste_collect.environment_deposit_operation_form_view"/>
+        <field name="act_window_id" ref="environment_deposit_act_window"/>
+    </record>
+
+    <record id="environment_access_act_window" model="ir.actions.act_window">
+        <field name="name">Access</field>
+        <field name="res_model">horanet.operation</field>
+        <field name="view_mode">tree,form,pivot</field>
+        <field name="search_view_id" ref="environment_operation_search_view"/>
+        <field name="context" eval="{'display_partner_in_tag_name': True, 'search_default_group_by_waste_site': True}"/>
+        <field name="domain" eval="['&amp;',
+                                    ('activity_id.application_type', '=', 'environment'),
+                                    '|',
+                                    ('action_id', '=', ref('horanet_subscription.action_passage')),
+                                    ('action_id', '=', ref('horanet_subscription.action_exit'))]"/>
+    </record>
+    <record id="environment_access_tree_act_window_view" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="environment_waste_collect.environment_operation_tree_view"/>
+        <field name="act_window_id" ref="environment_access_act_window"/>
+    </record>
+    <record id="environment_access_form_act_window_view" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="horanet_subscription.horanet_operation_view_form"/>
+        <field name="act_window_id" ref="environment_access_act_window"/>
+    </record>
+
+</odoo>
+

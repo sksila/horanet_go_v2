@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_form_transport_service" model="ir.ui.view">
+        <field name="name">tco.transport.service.form</field>
+        <field name="model">tco.transport.service</field>
+        <field name="arch" type="xml">
+            <form string="Service">
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="line_ids" widget="many2many"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_tree_transport_service" model="ir.ui.view">
+        <field name="name">tco.transport.service.tree</field>
+        <field name="model">tco.transport.service</field>
+        <field name="arch" type="xml">
+            <tree string="Service">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_search_transport_service" model="ir.ui.view">
+        <field name="name">view.search.transport.service</field>
+        <field name="model">tco.transport.service</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="line_ids"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_transport_service" model="ir.actions.act_window">
+        <field name="name">Service</field>
+        <field name="res_model">tco.transport.service</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_tree_transport_service"/>
+    </record>
+</odoo>

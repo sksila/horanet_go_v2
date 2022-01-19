@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_horanet_tco_inscriptions_default,default access inscriptions,model_tco_inscription_transport_scolaire,,1,0,0,0
+access_tco_inscription_period_default,default access inscription_period,model_tco_inscription_period,,1,0,0,0
+
+access_horanet_tco_inscriptions_grp_portal,access_horanet_tco_inscriptions,model_tco_inscription_transport_scolaire,base.group_portal,1,1,1,0
+access_tco_inscription_period_grp_portal,access_tco_inscription_period_grp_portal,model_tco_inscription_period,base.group_portal,1,0,0,0
+
+access_horanet_tco_inscriptions_grp_agent,access_horanet_tco_inscriptions_grp_agent,model_tco_inscription_transport_scolaire,horanet_go.group_horanet_go_agent,1,1,1,1
+access_tco_inscription_period_grp_agent,access_tco_inscription_period_grp_agent,model_tco_inscription_period,horanet_go.group_horanet_go_agent,1,1,1,1
+
+access_account_move_portal,account.move portal users,account.model_account_move,base.group_portal,1,0,0,0
+access_account_move_line_portal,account.move.line portal users,account.model_account_move_line,base.group_portal,1,0,0,0

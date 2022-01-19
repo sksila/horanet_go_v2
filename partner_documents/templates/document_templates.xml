@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="document" name="User documents">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="container mt8 mb32">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="/my/home">
+                                <i class="fa fa-home"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/my/documents/">My documents</a>
+                        </li>
+                        <li>
+                            <t t-esc="document.display_name"/>
+                        </li>
+                    </ol>
+
+                    <ul>
+                        <li>
+                            <a t-attf-href="/my/documents/preview/{{ document.id }}" target="_blank">
+                                <t t-esc="document.datas_fname"/>
+                            </a>
+                        </li>
+                        <t t-foreach="document.child_ids" t-as="data_id">
+                            <li>
+                                <a t-attf-href="/my/documents/preview/{{ data_id.id }}" target="_blank">
+                                    <t t-esc="data_id.datas_fname"/>
+                                </a>
+                            </li>
+                        </t>
+                    </ul>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

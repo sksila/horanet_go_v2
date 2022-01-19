@@ -1,0 +1,216 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* cardmaker_export
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-05 15:00+0000\n"
+"PO-Revision-Date: 2017-12-05 15:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cardmaker_export
+#: code:addons/cardmaker_export/wizards/export_partners.py:82
+#, python-format
+msgid "\"ID\";\"TITLE\";\"FIRSTNAME\";\"LASTNAME\";\"STREET1\";\"STREET2\";\"ZIP\";\"CITY\";\"STATE\";\"COUNTRY\";\"MAPPING\";\"NUMBER\";\"UID\""
+msgstr "\"ID\";\"TITRE\";\"PRENOM\";\"NOM\";\"ADRESSE_1\";\"ADRESSE_2\";\"CP\";\"VILLE\";\"ETAT\";\"PAYS\";\"MAPPING\";\"NUMERO\";\"UID\""
+
+#. module: cardmaker_export
+#: code:addons/cardmaker_export/models/export.py:104
+#, python-format
+msgid "CSN column not filled on line %s."
+msgstr "La colonne CSN n'est pas remplie à la ligne %s."
+
+#. module: cardmaker_export
+#: model:ir.ui.view,arch_db:cardmaker_export.cardmaker_export_wizard_form_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: cardmaker_export
+#: model:ir.ui.menu,name:cardmaker_export.menu_cardmaker_export_base
+msgid "Cardmaker exports"
+msgstr "Exports encarteur"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_create_date
+msgid "Create date"
+msgstr "Date de création"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_create_uid
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard_create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard_create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_display_name
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard_display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_do_files_match
+msgid "Do files match"
+msgstr "Les fichiers correspondent"
+
+#. module: cardmaker_export
+#: code:addons/cardmaker_export/models/export.py:109
+#, python-format
+msgid "Duplicated CSN number found \"%s\"."
+msgstr "Numéro CSN dupliqué trouvé \"%s\"."
+
+#. module: cardmaker_export
+#: model:res.groups,comment:cardmaker_export.group_cardmaker_export
+msgid "Enable the menus to create an export of partners without medium."
+msgstr "Active les menus pour créer des exports d'usager sans support."
+
+#. module: cardmaker_export
+#: model:ir.ui.view,arch_db:cardmaker_export.cardmaker_export_wizard_form_view
+msgid "Export"
+msgstr "Exporter"
+
+#. module: cardmaker_export
+#: model:ir.actions.act_window,name:cardmaker_export.action_cardmaker_export_wizard
+msgid "Export partners for cardmaker wizard"
+msgstr "Assistant d'export d'usager pour encarteur"
+
+#. module: cardmaker_export
+#: model:res.groups,name:cardmaker_export.group_cardmaker_export
+msgid "Export/Import partners without medium"
+msgstr "Exporter/Importer les usagers sans support"
+
+#. module: cardmaker_export
+#: model:ir.actions.act_window,name:cardmaker_export.action_cardmaker_export
+#: model:ir.ui.menu,name:cardmaker_export.menu_cardmaker_export
+msgid "Exports history"
+msgstr "Historique des exports"
+
+#. module: cardmaker_export
+#: code:addons/cardmaker_export/models/export.py:101
+#, python-format
+msgid "Files don't match on line %s."
+msgstr "Les fichiers ne correspondent pas à la ligne %s."
+
+#. module: cardmaker_export
+#: model:ir.ui.view,arch_db:cardmaker_export.cardmaker_export_form_view
+msgid "Generate mediums"
+msgstr "Générer les supports"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_generated_file
+msgid "Generated file"
+msgstr "Fichier généré"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_generated_filename
+msgid "Generated filename"
+msgstr "Nom du fichier généré"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_id
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard_id
+msgid "ID"
+msgstr "ID"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_import_date
+msgid "Import date"
+msgstr "Date d'import"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_imported_file
+msgid "Imported file"
+msgstr "Fichier importé"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_imported_filename
+msgid "Imported filename"
+msgstr "Nom du fichier importé"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard_invalid_partner_ids
+msgid "Invalid partners"
+msgstr "Usagers invalides"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export___last_update
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard___last_update
+msgid "Last Modified on"
+msgstr "Dernière Modification le"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard_write_uid
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard_write_date
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard_mapping_id
+msgid "Mapping"
+msgstr "Mapping"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_name
+msgid "Name"
+msgstr "Nom"
+
+#. module: cardmaker_export
+#: model:ir.ui.menu,name:cardmaker_export.menu_cardmaker_export_wizard
+msgid "New export"
+msgstr "Nouvel export"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_nb_partners
+msgid "Number of partners"
+msgstr "Nombre d'usagers"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_partner_ids
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard_partner_ids
+msgid "Partners"
+msgstr "Usagers"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_category_id
+#: model:ir.model.fields,field_description:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard_category_id
+msgid "Partners category"
+msgstr "Catégorie d'usagers"
+
+#. module: cardmaker_export
+#: model:ir.model.fields,help:cardmaker_export.field_partner_contact_identification_cardmaker_export_wizard_invalid_partner_ids
+msgid "Partners in this list won't be exported because they have missing informations (address or title fields)"
+msgstr "Les usagers de cette liste ne seront pas exportés car il leur manque des informations (champs civilité ou adresse)"
+
+#. module: cardmaker_export
+#: code:addons/cardmaker_export/models/export.py:95
+#, python-format
+msgid "The number of lines don't match"
+msgstr "Le nombre de lignes ne correspond pas"
+
+#. module: cardmaker_export
+#: model:ir.model,name:cardmaker_export.model_partner_contact_identification_cardmaker_export
+msgid "partner.contact.identification.cardmaker.export"
+msgstr "partner.contact.identification.cardmaker.export"
+
+#. module: cardmaker_export
+#: model:ir.model,name:cardmaker_export.model_partner_contact_identification_cardmaker_export_wizard
+msgid "partner.contact.identification.cardmaker.export.wizard"
+msgstr "partner.contact.identification.cardmaker.export.wizard"
+
